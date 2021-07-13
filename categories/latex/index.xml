@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LaTeX on Xiao-Le Deng</title>
+    <link>https://www.xiaoledeng.cn/categories/latex/</link>
+    <description>Recent content in LaTeX on Xiao-Le Deng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2012 – 2021 · [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style) for [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Fri, 02 Jul 2021 17:20:00 +0800</lastBuildDate><atom:link href="https://www.xiaoledeng.cn/categories/latex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LaTeX大括号的多行公式</title>
+      <link>https://www.xiaoledeng.cn/2021/07/02/latex-big-brackets-for-formulae/</link>
+      <pubDate>Fri, 02 Jul 2021 17:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/07/02/latex-big-brackets-for-formulae/</guid>
+      <description>1. 方法一 aligned \begin{equation} \label{eq_a} x= \left\{ \begin{aligned} a &amp;amp;, &amp;amp; &amp;amp; x=0 \\ b &amp;amp;, &amp;amp; &amp;amp; x=1 \\ c &amp;amp;, &amp;amp; &amp;amp; x=2 \end{aligned} \right. \end{equation} 2. 方法二 array \begin{equation} \label{eq_b} x= \left\{ \begin{array}{c c} a &amp;amp;, &amp;amp; &amp;amp; x=0 \\ b &amp;amp;, &amp;amp; &amp;amp; x=1 \\ c &amp;amp;, &amp;amp; &amp;amp; x=2 \end{array} \right. \end{equation} 3. 参考  LaTex中插入大括号的多行公式 - 云+社区 - 腾讯云  </description>
+    </item>
+    
+    <item>
+      <title>LaTeX多行文字对齐</title>
+      <link>https://www.xiaoledeng.cn/2021/06/23/latex-left-right-center/</link>
+      <pubDate>Wed, 23 Jun 2021 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/23/latex-left-right-center/</guid>
+      <description>\begin{center} 居中文字 \\ 居中文字 \end{center} \begin{flushleft} 左对齐文字 \\ 左对齐文字 \end{flushleft} \begin{flushright} 右对齐文字 \\ 右对齐文字 \end{flushright} 参考  LaTeX技巧66：页面设置&amp;amp;常见段落格式的设定_LaTeX_Fun_新浪博客  </description>
+    </item>
+    
+    <item>
+      <title>随笔—写文章用LaTeX</title>
+      <link>https://www.xiaoledeng.cn/2021/06/22/essay-write-with-latex/</link>
+      <pubDate>Tue, 22 Jun 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/22/essay-write-with-latex/</guid>
+      <description>最近，看到师弟在写文章，用的是Word，其中跟Grammarly搭配，适合检查英语语法的对错。
+不过，个人认为：进行英文学术写作，LaTeX比Word效率高。
+自从在2016年用Word修改论文时，全篇公式变成图片之后，下定决心用LaTeX写和修改论文。至此，从2017年1月开始就用LaTeX写英文论文。
+一般而言，国外的学术期刊都会有固定的LaTeX投稿模版，比如，Nature、Springer、Elsevier和Wiley等平台。这样做的目的，是让作者把精力放在论文的质量上，而不是过多把时间和精力放在论文的排版上，毕竟后期的接收文章后有专门的杂志团队来排版。
+LaTeX有一些优点，其中，重要的是文章的格式已固定，填充关键的内容即可。再者，还有固定的模块代码——图片、公式和表格等。
+投稿的时候，只需要提交tex源码、相关配置文件和图片等即可。在投稿系统上，从tex源码生成的PDF文件仔细检查后，即可提交。</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装overleaf的sharelatex</title>
+      <link>https://www.xiaoledeng.cn/2021/06/03/ubuntu-install-overleaf-sharelatex/</link>
+      <pubDate>Thu, 03 Jun 2021 17:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/03/ubuntu-install-overleaf-sharelatex/</guid>
+      <description>1. 安装docker 打开 /etc/apt/sources.list.d/docker.list：
+sudo vi /etc/apt/sources.list.d/docker.list 添加下面内容：
+deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable 更新并安装：
+sudo apt-get update sudo apt-get install docker-ce 查看是否安装成功：
+docker --version Docker version 20.10.7, build f0df350
+2. 安装 docker-Compose 进入 https://github.com/docker/compose/releases 查看最新版本，当前版本为1.29.2
+sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose 设置权限:
+sudo chmod +x /usr/local/bin/docker-compose 查看是否安装成功:
+docker-compose --version docker-compose version 1.29.2, build 5becea4c
+3. 安装Overleaf的开源版本sharelatex docker权限问题，添加docker用户组：
+#添加docker用户组 sudo groupadd docker #将登陆用户加入到docker用户组中 sudo gpasswd -a $USER docker #更新用户组 newgrp docker 通过docker安装Overleaf的开源版本sharelatex：</description>
+    </item>
+    
+    <item>
+      <title>bibmap：LaTeX中文参考文献拼音排序</title>
+      <link>https://www.xiaoledeng.cn/2021/05/26/latex-bibmap/</link>
+      <pubDate>Wed, 26 May 2021 12:40:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/26/latex-bibmap/</guid>
+      <description>1. 说明 中文参考文献，作者的拼音是常用的排序依据。需要自动的添加拼音信息。
+2. bibmap 下载地址： https://github.com/hushidong/biblatex-map
+用法：
+ 在 https://github.com/hushidong/biblatex-map 下载bibmap程序。下载整个binary目录即可。 把需要添加拼音的bib文件放到这个binary目录下面，然后在命令行，运行命令：  python bibmap.py biblatex-map-test.bib --nofmt --addpinyin python bibmap.py biblatex-map-test.bib --nofmt -m bibmapaddpinyinkey.py 得到新的bib文件为newbiblatex-map-test.bib。其命名规则是：如果原文件c.bib，则修改后的文件名为newc.bib。  3. 多音字出错的处理 有时默认的拼音可能存在问题，那么这时可以手动调整，在 bibmapaddpinyinkey.py 添加需要修改的多音字的拼音，比如：
+#设置多音字的首读音 multiplepinyin={ &#39;曾&#39;:&#39;zeng1&#39;, &#39;沈&#39;:&#39;shen3&#39;, &#39;翟&#39;:&#39;zhai2&#39; } 4. 参考  为中文参考文献自动添加排序用的拼音信息域  </description>
+    </item>
+    
+    <item>
+      <title>LaTeX绘图之TikZ入门资料清单</title>
+      <link>https://www.xiaoledeng.cn/2021/04/16/latex-tikz/</link>
+      <pubDate>Fri, 16 Apr 2021 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/04/16/latex-tikz/</guid>
+      <description>1. 简要清单  awesome-tikz：xiaohanyu/awesome-tikz: A curated list of awesome TikZ documentations, libraries and resources 英文文档：tikzpgfmanual.pdf 命令大全：VisualTikZ.pdf Version 0.66 May 31, 2018 社区问答：Newest &amp;lsquo;tikz-pgf&amp;rsquo; Questions - TeX - LaTeX Stack Exchange 各种样例: TikZ and PGF examples A very minimal introduction to TikZ：minimaltikz.pdf  2. Awesome TikZ This part is from xiaohanyu/awesome-tikz: A curated list of awesome TikZ documentations, libraries and resources.
+TikZ is a wonderful awesome graph drawing package for TeX/LaTeX/ConTeXt. Unlike other TeX packages, TikZ itself is really huge, its manual contains about 1100+ pages, 100+ chapters.</description>
+    </item>
+    
+    <item>
+      <title>LaTeX常用网站清单</title>
+      <link>https://www.xiaoledeng.cn/2021/03/30/latex-website-list/</link>
+      <pubDate>Tue, 30 Mar 2021 07:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/30/latex-website-list/</guid>
+      <description>1. 大学课程  华东师范大学的 LaTeX 课程主页 黄正华的教学信息页面  2. 常用网址  TeX Users Group (TUG) TeX 宏包大本营 ctan.org TikZ 绘图样例合集 TeXample.net TeX - LaTeX Stack Exchange LaTeX工作室 Overleaf, Online LaTeX Editor  3. 常用工具  Mathpix Snip LaTeX Templates LaTeX Color Definitions The Comprehensive LaTeX Symbol List 数学符号表.pdf The Comprehensive LaTeX Symbol List Mathematical Symbols.pdf  4. 博客分享  LaTeX - Xiao-Le Deng 分类: LaTeX | 始终 归档 | stone-zeng.github.io ElegantLaTeX Templates :: Documentation for ElegantLaTeX Templates  5.</description>
+    </item>
+    
+    <item>
+      <title>LaTeX设置参考文献之间的间距</title>
+      <link>https://www.xiaoledeng.cn/2021/03/03/latex-set-references-space/</link>
+      <pubDate>Wed, 03 Mar 2021 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/03/latex-set-references-space/</guid>
+      <description>1. 问题描述 如何缩小参考文献之间的间距？
+2. 解决问题  如果参考文献格式是natbib格式，直接用\bibsep (\setlength{\bibsep}{18pt}设置：  \usepackage{natbib} \setlength{\bibsep}{18pt} 注意：调节18pt的数值，即可调节间距，数值越大间距越大，数值越小，间距越小。
+ 如果参考文献格式不是natbib格式，可用etoolbox包设置：  \usepackage{etoolbox} \apptocmd{\thebibliography}{\setlength{\itemsep}{18pt}}{}{} 注意：调节方法与前面类似。
+3. 参考  spacing - How to increase space between bibliography without using biblatex - TeX - LaTeX Stack Exchange spacing - Condense the space between bibliographic entries - TeX - LaTeX Stack Exchange  </description>
+    </item>
+    
+    <item>
+      <title>LaTeX设置标题和正文第一行的间距</title>
+      <link>https://www.xiaoledeng.cn/2021/03/02/latex-title-first-content-space/</link>
+      <pubDate>Tue, 02 Mar 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/02/latex-title-first-content-space/</guid>
+      <description>1. 问题描述 如何缩小标题和正文第一行的间距？
+2. 解决问题 \title{content \vspace{-2em}} \vspace{-2em} 是实现以上功能的命令：
+ 负数表示缩小间距； 正数表示扩大间距。  3. 参考  latex中如何缩小标题（title）和正文第一行的间距-CSDN博客 spacing - Reducing the space between the \title and the first line of the the abstract in IEEEtran - TeX - LaTeX Stack Exchange  </description>
+    </item>
+    
+    <item>
+      <title>LaTeX设置加粗楷体</title>
+      <link>https://www.xiaoledeng.cn/2021/02/20/latex-bold-kaiti/</link>
+      <pubDate>Sat, 20 Feb 2021 13:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/02/20/latex-bold-kaiti/</guid>
+      <description>1. 问题描述 在LaTeX使用楷体加粗，会出现字体变成了黑体加粗。
+2. 解决问题 粗体命令用 \bfseries{} 或 \textbf{}，不用 \bf{}。
+\documentclass[AutoFakeBold]{ctexbook} \begin{document} {\kaishu 楷书} {\bfseries\kaishu 伪粗体楷书} \end{document} AutoFakeBold 是全局打开伪粗体功能。
+3. 参考  xelatex编译加粗楷体为什么会失败？ - 知乎  </description>
+    </item>
+    
+    <item>
+      <title>LaTeX设置页眉页脚</title>
+      <link>https://www.xiaoledeng.cn/2021/02/06/latex-pagestyle/</link>
+      <pubDate>Sat, 06 Feb 2021 19:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/02/06/latex-pagestyle/</guid>
+      <description>1. 关键命令  pagestyle：当前页以及后续页面  \pagestyle{empty} % 无页眉页脚 \pagestyle{plain} % 无页眉，页脚为居中页码 \pagestyle{headings} % 页眉为章节标题，无页脚 \pagestyle{myheadings} % 页眉内容可自定义，无页脚  thispagestyle：当前页  2. 延伸阅读  latex如何把目录页的页码去掉？ - aou - 博客园 latex 页眉页脚设置 - 简书 574. LaTeX技巧83：fancyhdr页眉页脚设计史上最全代码 - LaTeX科技排版工作室  </description>
+    </item>
+    
+    <item>
+      <title>LaTeX手动给Table和Figure编号</title>
+      <link>https://www.xiaoledeng.cn/2020/11/21/latex-manual-number-table-figure/</link>
+      <pubDate>Sat, 21 Nov 2020 12:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/21/latex-manual-number-table-figure/</guid>
+      <description>一般而言，LaTeX会自动给Table和Figure编号，但是偶尔要手动给Table和Figure编号时，可用下面的命令：
+\begin{table} \renewcommand\thetable{4.5} ... \end{table} \begin{figure} \renewcommand\thefigure{4.5} ... \end{figure}  \renewcommand\thetable{4.5}命令就是手动给Table编号。 \renewcommand\thefigure{4.5}命令就是手动给Figure编号。  参考  manual numbering of tables  </description>
+    </item>
+    
+    <item>
+      <title>LaTeX表格太长自动分页</title>
+      <link>https://www.xiaoledeng.cn/2020/11/21/latex-long-table-auto-page/</link>
+      <pubDate>Sat, 21 Nov 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/21/latex-long-table-auto-page/</guid>
+      <description>\usepackage{supertabular} {\scriptsize \begin{center} \topcaption{...} \label{name} \begin{supertabular}{l l r r r r} \hline{} Parameters &amp;amp; Numbers &amp;amp; Min &amp;amp; Max &amp;amp; Mean &amp;amp; STD \\ \hline &amp;amp; 04 &amp;amp; -123 &amp;amp; 20 &amp;amp; 3 &amp;amp; 1 \\ \hline \end{supertabular} \end{center} } </description>
+    </item>
+    
+    <item>
+      <title>LaTeX图表位置操作</title>
+      <link>https://www.xiaoledeng.cn/2020/11/20/latex-location-figure-table/</link>
+      <pubDate>Fri, 20 Nov 2020 16:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/20/latex-location-figure-table/</guid>
+      <description>1. 代码及说明 固定表格的位置：
+\usepackage{float} \restylefloat{table} \begin{table} ... \end{table} 固定图片的位置：
+\usepackage{float} \restylefloat{figure} \begin{figure} ... \end{figure} 其他：
+\usepackage{placeins} \FloatBarrier \begin{table}[H] \begin{tabular}{llll} .... \end{tabular} \end{table} \FloatBarrier \begin{table}[!htbp] !-忽略“美学”标准 h-here t-top b-bottom p-page-of-its-own  h Place the float here, i.e., approximately at the same point it occurs in the source text (however, not exactly at the spot) t Position at the top of the page. b Position at the bottom of the page. p Put on a special page for floats only.</description>
+    </item>
+    
+    <item>
+      <title>handcalcs:  Python 计算代码转换为LaTeX公式</title>
+      <link>https://www.xiaoledeng.cn/2020/11/18/handcalcs/</link>
+      <pubDate>Wed, 18 Nov 2020 12:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/18/handcalcs/</guid>
+      <description>1. 简介 handcalcs is a library to render Python calculation code automatically in LaTeX, but in a manner that mimics how one might format their calculation if it were written with a pencil: write the symbolic formula, followed by numeric substitutions, and then the result.
+Because handcalcs shows the numeric substitution, the calculations become significantly easier to check and verify by hand.
+Github: https://github.com/connorferster/handcalcs
+Install:
+pip install handcalcs 2. 参考  Python代码转Latex公式，这个开源库用一行代码帮你搞定  </description>
+    </item>
+    
+    <item>
+      <title>LaTeX加粗操作</title>
+      <link>https://www.xiaoledeng.cn/2020/11/17/latex-bf/</link>
+      <pubDate>Tue, 17 Nov 2020 10:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/17/latex-bf/</guid>
+      <description>\usepackage{tempora} {\bf ???} \textbf{} \usepackage{bm} \bm{} </description>
+    </item>
+    
+    <item>
+      <title>LaTeX表格长公式换行</title>
+      <link>https://www.xiaoledeng.cn/2020/11/10/latex-table-long-formula/</link>
+      <pubDate>Tue, 10 Nov 2020 09:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/10/latex-table-long-formula/</guid>
+      <description>在LaTeX的表格环境中，如果有长公式需要换行，需要以下命令：
+$\begin{array}{l} ... \\ ... \end{array}$ 说明：
+ \\表示要换行的部分； ...和...分别为前半公式和后半公式。  </description>
+    </item>
+    
+    <item>
+      <title>scihub2pdf: Python download pdf tool</title>
+      <link>https://www.xiaoledeng.cn/2020/11/08/scihub2pdf/</link>
+      <pubDate>Sun, 08 Nov 2020 16:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/08/scihub2pdf/</guid>
+      <description>1. 简介 scihub2pdf is a module of bibcure, which downloads pdfs via a DOI number, article title or a bibtex file, using the database of libgen, Sci-Hub and Arxiv.
+Github: https://github.com/bibcure/scihub2pdf
+pip install scihub2pdf Mac:
+brew tap homebrew/cask brew cask install phantomjs Ubuntu:
+sudo apt-get install phantomjs sudo apt-get install nodejs sudo apt-get install npm sudo npm -g install phantomjs-prebuilt sudo npm -g install phantomjs-prebuilt@2.1.16 --ignore-script 注意：
+由于scihub2pdf默认用的sci-hub的地址为： https://sci-hub.cc
+需要在 /Users/shalom/anaconda3/lib/python3.</description>
+    </item>
+    
+    <item>
+      <title>bibcure: Python bib tool</title>
+      <link>https://www.xiaoledeng.cn/2020/11/08/bibcure/</link>
+      <pubDate>Sun, 08 Nov 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/08/bibcure/</guid>
+      <description>1. 简介 Bibcure helps in boring tasks by keeping your bibtex file up to date and normalized.
+Install:
+pip install bibcure Github: https://github.com/bibcure/bibcure
+2. 说明 bibcure -h usage: bibcure [-h] --input INPUT --output OUTPUT Bibcure helps in boring tasks by keeping your bibfile up to date and normalized. $ bibcure -i input.bib -o output.bib Given a bib file... . check sure the Arxiv items have been published, then update them(requires internet connection) .</description>
+    </item>
+    
+    <item>
+      <title>doi2bib: Python doi to bib tool</title>
+      <link>https://www.xiaoledeng.cn/2020/11/08/doi2bib/</link>
+      <pubDate>Sun, 08 Nov 2020 15:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/08/doi2bib/</guid>
+      <description>1. 简介 doi2bib is a module of bibcure and scihub2pdf from https://pypi.org/project/doi2bib/
+GitHub: https://github.com/bibcure/doi2bib
+pip install doi2bib 2. 说明 doi2bib -i inputfile -o outputfile --abstract doi2bib -h usage: doi2bib [-h] [--input INPUT] [--output OUTPUT] [--abstract] Convert a list of DOIs in a bibfile. You also can convert a simple DOI, like: $ doi2bib 10.1063/1.3149495 ----------------------------------------------------- @author: Bruno Messias @email: messias.physics@gmail.com @telegram: @brunomessias @github: https://github.com/bibcure/doi2bib optional arguments: -h, --help show this help message and exit --input INPUT, -i INPUT input file --output OUTPUT, -o OUTPUT bibtex output file --abstract try to import the abstract info </description>
+    </item>
+    
+    <item>
+      <title>LaTeX表格横置</title>
+      <link>https://www.xiaoledeng.cn/2020/11/05/latex-horizontal-table/</link>
+      <pubDate>Thu, 05 Nov 2020 08:40:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/05/latex-horizontal-table/</guid>
+      <description>1. 说明 长表格超出页面的右边界，而不显示，需将长表格旋转90度横放。
+2. 解决方案   在导言区添加rotating宏包：\usepackage[figuresright]{rotating} 
+  将table环境改为sidewaystable环境：
+  \begin{table}[thp] \caption{This is the caption} \centering \begin{tabular}{|c|c|c|c|} \hline ....... \end{tabular} \end{table} \begin{sidewaystable}[thp] \caption{This is the caption} \centering \begin{tabular}{|c|c|c|c|} \hline ....... \end{tabular} \end{sidewaystable} 3. 参考  Latex如何将长表格Table横置(旋转90度) Haifeng的博客-CSDN博客  </description>
+    </item>
+    
+    <item>
+      <title>Nature期刊的LaTeX模版</title>
+      <link>https://www.xiaoledeng.cn/2020/11/03/nature-latex-templates/</link>
+      <pubDate>Tue, 03 Nov 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/03/nature-latex-templates/</guid>
+      <description>1. 下载Nature的LaTeX模版 在CTAN: /tex-archive/macros/latex/contrib/nature下载模版，基本信息如下：
+Nature package Version: 1.0, 24 Feb. 2004 by Peter Czoschke 2. 添加图片模块 默认Nature模版是不加入图片模块的，可通过templates - Nature include graphics - TeX - LaTeX Stack Exchange给出的解决方案：
+\documentclass{nature} \usepackage{graphicx} \makeatletter \let\saved@includegraphics\includegraphics \AtBeginDocument{\let\includegraphics\saved@includegraphics} \renewenvironment*{figure}{\@float{figure}}{\end@float} \makeatother \begin{document} \begin{figure}[!htbp] \centering \includegraphics[width=4.0in]{name.pdf} \caption{Descriptions of the picture} \label{label of the picture} \end{figure} \end{document} </description>
+    </item>
+    
+    <item>
+      <title>Python实现从doi号到bib文件</title>
+      <link>https://www.xiaoledeng.cn/2020/11/02/doi2bib/</link>
+      <pubDate>Mon, 02 Nov 2020 15:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/02/doi2bib/</guid>
+      <description>1. 简介 在LaTeX的文献管理技能中，有个技能是：知道了doi号，如何得到bib文件。
+2. 在线网站  ZoteroBib: https://zbib.org/ doi2bib: https://doi2bib.org/  3. Python代码实现 来自DOI to BibTeX的Python3代码doi2bib.py：
+import sys import urllib.request from urllib.error import HTTPError BASE_URL = &amp;#39;http://dx.doi.org/&amp;#39; try: doi = sys.argv[1] except IndexError: print(&amp;#39;Usage:\n{} &amp;lt;doi&amp;gt;&amp;#39;.format(sys.argv[0])) sys.exit(1) url = BASE_URL + doi req = urllib.request.Request(url) req.add_header(&amp;#39;Accept&amp;#39;, &amp;#39;application/x-bibtex&amp;#39;) try: with urllib.request.urlopen(req) as f: bibtex = f.read().decode() print(bibtex) except HTTPError as e: if e.code == 404: print(&amp;#39;DOI not found.&amp;#39;) else: print(&amp;#39;Service unavailable.&amp;#39;) sys.exit(1) 示例：</description>
+    </item>
+    
+    <item>
+      <title>LaTeX三剑客（图、表、公式）的通用模块</title>
+      <link>https://www.xiaoledeng.cn/2020/10/29/latex-module-picture-table-formula/</link>
+      <pubDate>Thu, 29 Oct 2020 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/29/latex-module-picture-table-formula/</guid>
+      <description>1. 图 \begin{figure}[!htbp] \centering \includegraphics[width=4.0in]{name.pdf} \caption{Descriptions of the picture} \label{label of the picture} \end{figure} 2. 表 \begin{table}[!htbp] \caption{Descriptions of the table} \centering \begin{tabular}{l l l l} \hline A &amp;amp; B &amp;amp; C &amp;amp; D \\ \hline x &amp;amp; y &amp;amp; z &amp;amp; a \\ \hline \end{tabular} \label{label of the table} \end{table} 3. 公式 \begin{equation} \label{label of the equation} content of the equation \end{equation} </description>
+    </item>
+    
+    <item>
+      <title>LaTeX引用一段话</title>
+      <link>https://www.xiaoledeng.cn/2020/09/18/latex-cite-notes/</link>
+      <pubDate>Fri, 18 Sep 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/18/latex-cite-notes/</guid>
+      <description>\begin{quotation} ``一段话内容&amp;#39;&amp;#39; \end{quotation} </description>
+    </item>
+    
+    <item>
+      <title>latexify: Python生成LaTeX公式</title>
+      <link>https://www.xiaoledeng.cn/2020/09/05/latexify-python-latex/</link>
+      <pubDate>Sat, 05 Sep 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/05/latexify-python-latex/</guid>
+      <description>1.简介 latexify_py: Generates LaTeX math description from Python functions。在Python编程中，将Python函数公式生成为LaTeX代码。
+Github地址为：latexify_py。
+2.示例代码 安装：pip install latexify-py
+以下示例代码下载地址为：latexify_example.ipynb
+pip uninstall -y latexify-py # 卸载latexify-py pip install latexify-py # 安装latexify-py import math # 导入math模块 import latexify # 导入latexify模块 # 示例一 # 定义函数 @latexify.with_latex def solve(a, b, c): return (-b + math.sqrt(b**2 - 4*a*c)) / (2*a) print(solve(1, 4, 3)) # 计算函数值 print(solve)	# 得到函数的LaTeX公式代码 solve	# 在jupyter notebook中直接展示函数公式 # 示例二 # 定义函数 @latexify.with_latex def sinc(x): if x == 0: return 1 else: return math.</description>
+    </item>
+    
+    <item>
+      <title>Python生成LaTeX表格</title>
+      <link>https://www.xiaoledeng.cn/2020/08/04/python-latex-table/</link>
+      <pubDate>Tue, 04 Aug 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/08/04/python-latex-table/</guid>
+      <description>问题: 如何将Python下的表格数据导出为LaTeX表格？
+简言之，Python输出表格结果到LaTeX，这里介绍3个工具：
+ pandas.DataFrame.to_latex PyTex PyLaTeX  1. pandas.DataFrame.to_latex 地址：pandas.DataFrame.to_latex documentation
+&amp;gt;&amp;gt;&amp;gt; df = pandas.DataFrame({&#39;name&#39;: [&#39;Raphael&#39;, &#39;Donatello&#39;],&#39;mask&#39;: [&#39;red&#39;, &#39;purple&#39;],&#39;weapon&#39;: [&#39;sai&#39;, &#39;bo staff&#39;]})&amp;gt;&amp;gt;&amp;gt; print(df.to_latex(index=False))\begin{tabular}{lll}\toprulename &amp;amp; mask &amp;amp; weapon \\\midruleRaphael &amp;amp; red &amp;amp; sai \\Donatello &amp;amp; purple &amp;amp; bo staff \\\bottomrule\end{tabular}2.PyTex 地址：HarryXD2018/PyTex: A python tool that generate latex(e.g. Table, matrix) code.
+ 这是一个可以将Python中的列表、Numpy类型的二元数组，CSV表格文件或是代码转化为Latex代码的Python第三方库。您可以将此第三方库作为脚本运行，或是在命令提示行中将CSV文件或是图片文件拖拽至其中运行，即可得到对应的Tex代码。在脚本运行中，如果有需要，可以将生产的内容复制到剪切板中。
+ 3.PyLaTeX 地址：PyLaTeX documentation
+ PyLaTeX is a Python library for creating and compiling LaTeX files.</description>
+    </item>
+    
+    <item>
+      <title>LaTeX入门汇总</title>
+      <link>https://www.xiaoledeng.cn/2019/09/25/latex-introduction/</link>
+      <pubDate>Wed, 25 Sep 2019 22:18:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2019/09/25/latex-introduction/</guid>
+      <description>1. 引言 从2017年01月创建简书的LaTeX文集到如今（2019年09月），大约已有两年多的时间，本页面汇集了这期间个人学习LaTeX科研写作方面的经验。这些经验也包含在LaTeX科研写作-专题里，希望对读者在LaTeX方面的学习有所帮助。
+2. 学习LaTeX必读  学习LaTeX的一点想法 LaTeX科研写作——入门手册 LaTeX式科研方式 Mac下为什么卸载Microsoft Office系列和Mathtype？  3. 有用的建议  LaTeX的一些好习惯 在arXiv下载论文的LaTeX源码  4. 安装  Mac安装MacTex  5. 字体  LaTeX提示安装字体STHeiti LaTeX字体颜色 24种常用颜色的中英文名字 LaTeX设置Times News Roman字体 LaTeX设置字体大小 LaTeX英文模版变中文  6. 列表  LaTeX编号设置 LaTeX中的有序列表和无序列表  7. 术语表  LaTeX术语表 LaTeX术语表的一个经典模版  8. 代码  LaTeX插入代码块  9. 公式  Markdown文本如何插入LaTeX公式 LaTeX公式换行 LaTeX公式中的空格 LaTeX数学字体加粗 公式图片转换为LaTeX公式代码——Mathpix Snip 去掉图表的冒号  10. 表格  LaTeX的表格注释 LaTeX表格横置 LaTeX表格浮动在新页面放在页面顶部，而不是页面居中 三线表的加粗  11.</description>
+    </item>
+    
+    <item>
+      <title>地学下大地测量学方向的学术期刊</title>
+      <link>https://www.xiaoledeng.cn/2017/04/08/geodesy-article/</link>
+      <pubDate>Sat, 08 Apr 2017 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2017/04/08/geodesy-article/</guid>
+      <description>本文主要关注的是：大地测量学方向，即为Geodesy。 另外，本文参考了SeisMan(地震学方向)的地学学术期刊列表。
+重点推荐：
+ 使用Email来订阅每个杂志的最新动态； 投稿时，可以采用每个杂志的Latex模板；  1. Nature系列  Nature Geoscience； Scientific Reports;  Latex模板：https://pan.baidu.com/s/1dFEGdix 密码: jsft
+2. Wiley-AGU系列   Reviews of Geophysics
+ http://agupubs.onlinelibrary.wiley.com/hub/journal/10.1002/(ISSN)1944-9208/issues/    Geophysical Research Letters
+ http://agupubs.onlinelibrary.wiley.com/hub/journal/10.1002/(ISSN)1944-8007/issues/    Journal of Geophysical Research: Solid Earth
+ http://agupubs.onlinelibrary.wiley.com/hub/jgr/journal/10.1002/(ISSN)2169-9356/issues/    Journal of Geophysical Research: Planets
+ http://agupubs.onlinelibrary.wiley.com/hub/jgr/journal/10.1002/(ISSN)2169-9100/    Geophysical Prospecting
+ http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1365-2478    Latex模板：https://pan.baidu.com/s/1hsecmaC 密码: 1tn2
+3. OxfordAcademic系列  Geophysical Journal International；  Latex模板：https://pan.</description>
+    </item>
+    
+  </channel>
+</rss>

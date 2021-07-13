@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fortran on Xiao-Le Deng</title>
+    <link>https://www.xiaoledeng.cn/categories/fortran/</link>
+    <description>Recent content in Fortran on Xiao-Le Deng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2012 – 2021 · [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style) for [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Mon, 24 May 2021 11:10:00 +0800</lastBuildDate><atom:link href="https://www.xiaoledeng.cn/categories/fortran/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fortran书单</title>
+      <link>https://www.xiaoledeng.cn/2021/05/24/fortran-booklist/</link>
+      <pubDate>Mon, 24 May 2021 11:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/24/fortran-booklist/</guid>
+      <description>1. Booklist  FORTRAN常用算法程序集，徐士良 Fortran 95/2003科学计算与工程 Fortran 95 程序设计，彭国伦 Visual Fortran常用数值算法集，何光渝 Fortran 95/2003程序设计，Stephen J.Chapman Intel Visual Fortran应用程序开发，周振红 FORTRAN 77: With Numerical Methods for Engineers and Scientists Fortran95 2003 For Scientists and Engineers，Stephen J.Chapman Introduction to Modern Fortran for the Earth System Sciences Parallel Programming in Fortran 95 using OpenMP 使用OpenMP 进行 Fortran95并行计算 The new features of Fortran 2008 Modern Fortran Explained，Michael Metcalf Fortran权威指南，Ian Chivers Computational Physics Developing Statistical Software in Fortran95，David R.</description>
+    </item>
+    
+    <item>
+      <title>Fortran forrtl: severe (174): SIGSEGV, segmentation fault occurred</title>
+      <link>https://www.xiaoledeng.cn/2021/04/30/fortran-error-forrtl/</link>
+      <pubDate>Fri, 30 Apr 2021 14:40:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/04/30/fortran-error-forrtl/</guid>
+      <description>1. 说明 运行Fortran时，遇到以下问题：
+forrtl: severe (174): SIGSEGV, segmentation fault occurred 2. 解决方案 定义变量后，要紧接着给变量赋值，包括初始值。
+如果没有赋值，直接使用，则可能出现变量为零或者报以上错误。</description>
+    </item>
+    
+    <item>
+      <title>Fortran ld: can&#39;t open output file for writing: MainDouble, errno=21 for architecture x86_64</title>
+      <link>https://www.xiaoledeng.cn/2021/04/28/fortran-error-ld-writing/</link>
+      <pubDate>Wed, 28 Apr 2021 16:40:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/04/28/fortran-error-ld-writing/</guid>
+      <description>1. 说明 ifort MainDouble.f90 -o MainDouble &amp;amp;&amp;amp; ./MainDouble 运行Fortran时，遇到了以下错误：
+ ld: can&amp;rsquo;t open output file for writing: MainDouble, errno=21 for architecture x86_64
+ 2. 解决方案 因为MainDouble在当前目录的文件夹重名了，所以要更改文件夹名或者执行文件名。
+ifort MainDouble.f90 -o MainDoubleResult &amp;amp;&amp;amp; ./MainDoubleResult 3. 参考  Mac VSCode报错：ld: can&amp;rsquo;t open output file for writing: test, errno=21 for architecture x86_64_Tr0ub1e的博客-CSDN博客  </description>
+    </item>
+    
+    <item>
+      <title>Fortran的四精度(Quadruple Precision)</title>
+      <link>https://www.xiaoledeng.cn/2021/03/31/fortran-quad/</link>
+      <pubDate>Wed, 31 Mar 2021 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/31/fortran-quad/</guid>
+      <description>1. 说明 什么是四精度 Intel的Fortran编译器ifort支持四精度的实数，即四精度常数(Quadruple (or Quad) Precision Constants)有小数点后33位有效数字，比双精度(double precision, d or e)精度更高。
+四精度的定义 用q或Q来表示：
+3.141592653589793238462643383279502q0 −7.98765432198765432198765432112345q1 ! for intel ifort compiler real(16):: parameters 2. 参考  Subrata Ray. (2020). Fortran 2018 with Parallel Programming. Quadruple-precision floating-point format - Wikipedia  </description>
+    </item>
+    
+    <item>
+      <title>Mac下ifort出现ld: library not found for -lSystem问题</title>
+      <link>https://www.xiaoledeng.cn/2021/01/11/mac-ifort-ld-problem/</link>
+      <pubDate>Mon, 11 Jan 2021 13:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/01/11/mac-ifort-ld-problem/</guid>
+      <description>1. 前言 在Mac安装Intel Parallel Studio XE Composer Edition for Fortran中，简介了Mac下安装ifort的过程。
+使用ifort时，出现如下错误：
+&amp;quot;ld: library not found for -lSystem&amp;quot;  2. 解决方案 系统信息为：
+macOS Big Sur 11.0.1  ifort版本为：
+$ ifort -V Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.1.2.258 Build 20200623 Copyright (C) 1985-2020 Intel Corporation. All rights reserved.  短期解决措施：在ifort编译时加上lib的路径：
+ifort -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib  长期解决措施：在~/.zshrc或~/.bashrc写入：
+alias ifort=&#39;ifort -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib&#39;  说明：更新后的macOS系统的lib不在默认路径下面，即the lib is now not under the default path.</description>
+    </item>
+    
+    <item>
+      <title>GNSS-IR tools using Fortran and Matlab</title>
+      <link>https://www.xiaoledeng.cn/2020/12/26/gnss-ir/</link>
+      <pubDate>Sat, 26 Dec 2020 18:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/12/26/gnss-ir/</guid>
+      <description>1. Introduction Download: https://geodesy.noaa.gov/gps-toolbox/exist.htm
+2. References Roesler, C., Larson, K.M. Software tools for GNSS interferometric reflectometry (GNSS-IR). GPS Solution, 22, 80 (2018). https://doi.org/10.1007/s10291-018-0744-8</description>
+    </item>
+    
+    <item>
+      <title>PGPLOT Graphics Subroutine Library</title>
+      <link>https://www.xiaoledeng.cn/2020/11/27/pgplot/</link>
+      <pubDate>Fri, 27 Nov 2020 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/27/pgplot/</guid>
+      <description>Introduction The PGPLOT Graphics Subroutine Library is a Fortran- or C-callable, device-independent graphics package for making simple scientific graphs.
+Main Page: https://sites.astro.caltech.edu/~tjp/pgplot/
+Installation Instructions: https://sites.astro.caltech.edu/~tjp/pgplot/install.html</description>
+    </item>
+    
+    <item>
+      <title>LitMod3D: 3‐D model of lithosphere</title>
+      <link>https://www.xiaoledeng.cn/2020/11/26/litmod3d/</link>
+      <pubDate>Thu, 26 Nov 2020 18:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/26/litmod3d/</guid>
+      <description>1. Introduction LitMod3D is a software for 3D integrated geophysical-petrological interactive modelling of the lithosphere and underlying upper mantle using a variety of input datasets: potential fields (gravity and magnetic), surface heat flow, elevation (isostasy), seismics, magnetotellurics and geochemical.
+Download:
+ https://github.com/eldarbaykiev/litmod https://github.com/javfurchu/litmod https://www.juanafonso.com/software  2. Reference Fullea, J., Afonso, J. C., Connolly, J. A. D., Fernandez, M., García‐Castellanos, D., &amp;amp; Zeyen, H. (2009). LitMod3D: An interactive 3‐D software to model the thermal, compositional, density, seismological, and rheological structure of the lithosphere and sublithospheric upper mantle.</description>
+    </item>
+    
+    <item>
+      <title>FA2BOUG: Fortran code to determine the Bouguer anomaly</title>
+      <link>https://www.xiaoledeng.cn/2020/11/25/fa2boug/</link>
+      <pubDate>Wed, 25 Nov 2020 15:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/25/fa2boug/</guid>
+      <description>1. Introduction FA2BOUG: determine the Bouguer anomaly from publicly available global gridded free-air anomaly and elevation database sets.
+Download: Appendix A. Supplementary Materials at https://doi.org/10.1016/j.cageo.2008.02.018
+2. Reference Fullea, J., Fernandez, M., &amp;amp; Zeyen, H. (2008). FA2BOUG—A FORTRAN 90 code to compute Bouguer gravity anomalies from gridded free-air anomalies: Application to the Atlantic-Mediterranean transition zone. Computers &amp;amp; Geosciences, 34(12), 1665-1681. https://doi.org/10.1016/j.cageo.2008.02.018</description>
+    </item>
+    
+    <item>
+      <title>SRBF_package: spherical radial basis functions</title>
+      <link>https://www.xiaoledeng.cn/2020/11/12/srbf_package/</link>
+      <pubDate>Thu, 12 Nov 2020 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/12/srbf_package/</guid>
+      <description>1. Introduction SRBF_package is a collection of a few routines for gravity field modelling with band-limited spherical radial basis functions (SRBFs), allowing both analysis and synthesis of the gravitational field. Website:
+ Bucha/#SRBF_package http://edisk.cvt.stuba.sk/~xbuchab/SRBF_package/SRBF_package.zip  2. Reference Bucha, B., Janák, J., Papčo, J., Bezděk, A., 2016. High-resolution regional gravity field modelling in a mountainous area from terrestrial gravity data. Geophysical Journal International. 207, 949-966. http://doi.org/10.1093/gji/ggw311</description>
+    </item>
+    
+    <item>
+      <title>SHA_SHS: spherical harmonic analysis and synthesis</title>
+      <link>https://www.xiaoledeng.cn/2020/11/11/sha_shs/</link>
+      <pubDate>Wed, 11 Nov 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/11/sha_shs/</guid>
+      <description>1. Introduction Download:
+ Bucha/#SHA http://edisk.cvt.stuba.sk/~xbuchab/SHA_code/SHA_SHS.zip  2. Reference Bucha, B., Hirt, C., Kuhn, M., 2019. Cap integration in spectral gravity forward modelling up to the full gravity tensor. Journal of Geodesy. https://doi.org/10.1007/s00190-019-01277-3</description>
+    </item>
+    
+    <item>
+      <title>SHTools &amp; pyshtools: Tools for Working with Spherical Harmonics</title>
+      <link>https://www.xiaoledeng.cn/2020/11/04/shtools/</link>
+      <pubDate>Wed, 04 Nov 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/04/shtools/</guid>
+      <description>1. Introduction SHTOOLS/pyshtools is a Fortran-95/Python library that can be used to perform spherical harmonic transforms, multitaper spectral analyses, expansions of functions into Slepian bases, and standard operations on global gravitational and magnetic field data.
+GitHub: https://github.com/SHTOOLS/SHTOOLS
+Download: https://github.com/SHTOOLS/SHTOOLS/releases
+pyshtools&amp;rsquo;s documentation: https://shtools.github.io/SHTOOLS/
+SHTOOLS documentation: https://shtools.github.io/SHTOOLS/index-fortran.html
+2. Reference Wieczorek, M. A., &amp;amp; Meschede, M. (2018). Shtools: Tools for working with spherical harmonics. Geochemistry, Geophysics, Geosystems, 19(8), 2574-2592. https://doi.org/10.1029/2018GC007529</description>
+    </item>
+    
+    <item>
+      <title>pyGravsoft: python GRAVSOFT gravity field programs</title>
+      <link>https://www.xiaoledeng.cn/2020/11/01/pygravsoft/</link>
+      <pubDate>Sun, 01 Nov 2020 15:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/01/pygravsoft/</guid>
+      <description>1. Introduction pyGravsoft is a Python interface to GRAVSOFT gravity field programs.
+GRAVSOFT is a package of FORTRAN programs for gravity field modelling. The specific use of the programs for the determination of the empirical covariance function and its analytic modelling and geoid determination using least-squares collocation is described. PDF: An overview manual for the GRAVSOFT Geodetic Gravity Field Modelling Programs
+2. Reference Nielsen, J., Tscherning, C. C., Jansson, T. R.</description>
+    </item>
+    
+    <item>
+      <title>PALGrav3.0</title>
+      <link>https://www.xiaoledeng.cn/2020/10/27/palgrav3.0/</link>
+      <pubDate>Tue, 27 Oct 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/27/palgrav3.0/</guid>
+      <description>1.简介  重力场及大地水准面精化系统PALGrav3.0，主要用于地面、海洋及近地空间重力场数据处理，地面及地球外部各类场元多种性质地形影响的精密计算，复杂多源重力场数据融合，各类重力场积分正反算，稳态重力场与大地水准面精化，以及区域高程基准优化、质量评估与应用计算等工作。
+为满足复杂多源重力场数据深度融合与1cm精度水平大地水准面精化的技术要求，PALGrav3.0通过统一地面、海洋及地球外部各类场元多种性质地形影响算法，全面提升不同高度处、多种类型、多源异质重力场数据处理与集成能力；严格依据边值条件构造各种扰动场元严密积分算法，精细处理奇异积分核函数，大幅提高重力场逼近性能与精度水平；采用重力场积分运算代替微分运算，有效提升重力场数据处理的算法稳定性与误差抑制能力；在统一的重力场框架中，设计大地水准面逐级控制方案，精化区域高程基准，全面提升其可靠性、精度水平与应用服能力。
+ 主页：大地水准面精化系统，重力场数据处理
+下载：大地水准面精化，固体潮与负荷形变计算分析</description>
+    </item>
+    
+    <item>
+      <title>ETideLoad3.0</title>
+      <link>https://www.xiaoledeng.cn/2020/10/27/etideload3.0/</link>
+      <pubDate>Tue, 27 Oct 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/27/etideload3.0/</guid>
+      <description>1.简介  固体潮与负荷形变场精化系统ETideLoad3.0，面向多源数据融合与多种技术协同（全球大地测量观测系统GGOS）的大地测量发展需要，采用相同的动力学模型、数值标准和相容的算法体系，统一处理分析地面、海洋、近地空间和地球卫星的各种潮汐和非潮汐影响；综合区域CORS网、固体潮站、多种大地控制网或InSAR等监测数据，确定或精化全球/区域负荷形变场及其随时间变化，以满足1cm精度水平动态大地测量框架（坐标/垂直/重力）的同步实现与协同维持，全球或区域地球变化、时变重力场、陆地水与地表动力环境以及地面稳定性变化高精度定量监测的技术要求。
+  ETideLoad3.0采用积木式模块构架，用户可根据工程和研究需要，设计个性化作业流程，灵活组织有关功能模块，完成地面、海洋、近地空间或地球卫星上各种潮汐/非潮汐影响分析计算，全球或区域地面形变场/时变重力场/地面稳定性/陆地水/地表动力环境变化监测，以及多源多种大地测量深度融合及分析等工作。
+ 主页：负荷形变场精化，固体潮计算
+下载：大地水准面精化，固体潮与负荷形变计算分析</description>
+    </item>
+    
+    <item>
+      <title>Mac安装Intel Parallel Studio XE Composer Edition for Fortran</title>
+      <link>https://www.xiaoledeng.cn/2020/10/16/mac-install-ifort/</link>
+      <pubDate>Fri, 16 Oct 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/16/mac-install-ifort/</guid>
+      <description>1.注册和下载 在Choose &amp;amp; Download Intel® Parallel Studio XE页面，选择教育用户注册【需要有教育网邮箱】，并下载对应版本m_fcompxe_2020.2.899.dmg。
+2.安装 点击dmg文件，以root安装：By default, &amp;lt;install_dir&amp;gt; is:
+ For root installations: /opt/intel For non-root installations: $HOME/intel  输入Serial number，而后至安装成功。
+3.调用 在file:///opt/intel/documentation_2020/en/ps2020/getstart_comp.htm页面，有相关初始化的说明：
+source /opt/intel/bin/compilervars.sh intel64 验证是否调用成功：
+$ ifort -V Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.1.2.258 Build 20200623 Copyright (C) 1985-2020 Intel Corporation. All rights reserved. </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装Intel® Parallel Studio XE</title>
+      <link>https://www.xiaoledeng.cn/2020/10/16/ubuntu-install-intel/</link>
+      <pubDate>Fri, 16 Oct 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/16/ubuntu-install-intel/</guid>
+      <description>1. 注册和下载 在Choose &amp;amp; Download Intel® Parallel Studio XE页面，选择教育用户注册【需要有教育网邮箱】，并下载对应版本parallel_studio_xe_2020_update2_cluster_edition.tgz，包括：
+ The Intel® C++ Compiler and Intel® Fortran Compiler Intel® Distribution for Python* Enhanced GNU Project Debugger (GDB) Software libraries (Intel® MKL, Intel® DAAL, Intel® TBB, Intel® IPP) Intel® Advisor Intel® Inspector Intel® VTune™ Profiler Intel® MPI Library Intel® Trace Analyzer and Collector Intel® Cluster Checker (Linux* only)  2. 安装 解压tgz文件，cd进入，ls查看，而后安装：
+./install_GUI.sh 选择合适的安装路：By default, &amp;lt;install_dir&amp;gt; is:
+ For root installations: /opt/intel For non-root installations: $HOME/intel  输入Serial number，而后至安装成功。</description>
+    </item>
+    
+  </channel>
+</rss>

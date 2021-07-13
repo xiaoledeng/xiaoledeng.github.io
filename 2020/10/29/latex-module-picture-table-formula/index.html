@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>LaTeX三剑客（图、表、公式）的通用模块 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>LaTeX三剑客（图、表、公式）的通用模块</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-10-29 09:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/latex/">#LaTeX</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-图">1. 图</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-LaTeX" data-lang="LaTeX"><span style="color:#66d9ef">\begin</span>{figure}[!htbp]
+	<span style="color:#66d9ef">\centering</span>
+	<span style="color:#66d9ef">\includegraphics</span><span style="color:#a6e22e">[width=4.0in]</span>{name.pdf}
+	<span style="color:#66d9ef">\caption</span>{Descriptions of the picture}
+	<span style="color:#66d9ef">\label</span>{label of the picture}
+<span style="color:#66d9ef">\end</span>{figure}
+</code></pre></div><h1 id="2-表">2. 表</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-LaTeX" data-lang="LaTeX"><span style="color:#66d9ef">\begin</span>{table}[!htbp]
+	<span style="color:#66d9ef">\caption</span>{Descriptions of the table}
+	<span style="color:#66d9ef">\centering</span>
+	<span style="color:#66d9ef">\begin</span>{tabular}{l l l l}
+		<span style="color:#66d9ef">\hline</span>
+		A  &amp; B &amp; C &amp; D <span style="color:#66d9ef">\\</span>
+		<span style="color:#66d9ef">\hline</span>
+		x &amp; y &amp; z &amp; a <span style="color:#66d9ef">\\</span>
+		<span style="color:#66d9ef">\hline</span>
+	<span style="color:#66d9ef">\end</span>{tabular} <span style="color:#66d9ef">\label</span>{label of the table}
+<span style="color:#66d9ef">\end</span>{table}
+</code></pre></div><h1 id="3-公式">3. 公式</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-LaTeX" data-lang="LaTeX"><span style="color:#66d9ef">\begin</span>{equation} <span style="color:#66d9ef">\label</span>{label of the equation}
+content of the equation
+<span style="color:#66d9ef">\end</span>{equation}
+</code></pre></div></div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e5%9b%be">
+                            1. 图
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-%e8%a1%a8">
+                            2. 表
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3-%e5%85%ac%e5%bc%8f">
+                            3. 公式
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

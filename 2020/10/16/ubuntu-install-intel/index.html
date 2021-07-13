@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Ubuntu安装Intel® Parallel Studio XE - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Ubuntu安装Intel® Parallel Studio XE</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-10-16 12:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/linux/">#Linux</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/fortran/">#Fortran</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-注册和下载">1. 注册和下载</h1>
+<p>在<a href="https://software.intel.com/content/www/us/en/develop/tools/parallel-studio-xe/choose-download.html">Choose &amp; Download Intel® Parallel Studio XE</a>页面，选择教育用户注册【需要有教育网邮箱】，并下载对应版本<code>parallel_studio_xe_2020_update2_cluster_edition.tgz</code>，包括：</p>
+<ul>
+<li>The Intel® C++ Compiler and Intel® Fortran Compiler</li>
+<li>Intel® Distribution for Python*</li>
+<li>Enhanced GNU Project Debugger (GDB)</li>
+<li>Software libraries (Intel® MKL, Intel® DAAL, Intel® TBB, Intel® IPP)</li>
+<li>Intel® Advisor</li>
+<li>Intel® Inspector</li>
+<li>Intel® VTune™ Profiler</li>
+<li>Intel® MPI Library</li>
+<li>Intel® Trace Analyzer and Collector</li>
+<li>Intel® Cluster Checker (Linux* only)</li>
+</ul>
+<h1 id="2-安装">2. 安装</h1>
+<p>解压tgz文件，cd进入，ls查看，而后安装：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./install_GUI.sh
+</code></pre></div><p>选择合适的安装路：By default, &lt;install_dir&gt; is:</p>
+<ul>
+<li>For root installations: /opt/intel</li>
+<li>For non-root installations: $HOME/intel</li>
+</ul>
+<p>输入Serial number，而后至安装成功。</p>
+<h1 id="3-调用">3. 调用</h1>
+<p>cd to &lt;install_dir&gt;/parallel_studio_xe_2020.<update number>.<package number>/bin</p>
+<p>我安装的路径为：<code>/home/shalom/intel/parallel_studio_xe_2020.2.108/bin</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /home/shalom/intel/parallel_studio_xe_2020.2.108/bin
+</code></pre></div><p>Enter <code>source psxevars.sh</code> or <code>source psxevars.csh</code>. 这一步要在<strong>bash模式</strong>下进行:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ source psxevars.sh
+Intel<span style="color:#f92672">(</span>R<span style="color:#f92672">)</span> Parallel Studio XE <span style="color:#ae81ff">2020</span> Update <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">for</span> Linux*
+Copyright 2009-2020 Intel Corporation.
+</code></pre></div><p>验证是否调用成功：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ifort --version
+ifort <span style="color:#f92672">(</span>IFORT<span style="color:#f92672">)</span> 19.1.2.254 <span style="color:#ae81ff">20200623</span>
+Copyright <span style="color:#f92672">(</span>C<span style="color:#f92672">)</span> 1985-2020 Intel Corporation.  All rights reserved.
+</code></pre></div><p>至此，安装成功。</p>
+<h1 id="4-环境变量">4. 环境变量</h1>
+<p>如果输入<code>ifort</code>没有反应，则需要设置环境变量，在<code>~/.bahrc</code>文件里面加入：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">source /home/shalom/intel/parallel_studio_xe_2020.2.108/bin/psxevars.sh
+</code></pre></div><p>需要切换到<code>bash</code>的shell下运行<code>ifort</code>即可。</p>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e6%b3%a8%e5%86%8c%e5%92%8c%e4%b8%8b%e8%bd%bd">
+                            1. 注册和下载
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-%e5%ae%89%e8%a3%85">
+                            2. 安装
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3-%e8%b0%83%e7%94%a8">
+                            3. 调用
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#4-%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f">
+                            4. 环境变量
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

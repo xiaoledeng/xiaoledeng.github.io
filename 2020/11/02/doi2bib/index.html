@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Python实现从doi号到bib文件 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Python实现从doi号到bib文件</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-11-02 15:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/latex/">#LaTeX</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/python/">#Python</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-简介">1. 简介</h1>
+<p>在<code>LaTeX</code>的文献管理技能中，有个技能是：知道了doi号，如何得到bib文件。</p>
+<h1 id="2-在线网站">2. 在线网站</h1>
+<ul>
+<li>ZoteroBib: <a href="https://zbib.org/">https://zbib.org/</a></li>
+<li>doi2bib: <a href="https://doi2bib.org/">https://doi2bib.org/</a></li>
+</ul>
+<h1 id="3-python代码实现">3. Python代码实现</h1>
+<p>来自<a href="https://scipython.com/blog/doi-to-bibtex/">DOI to BibTeX</a>的Python3代码<code>doi2bib.py</code>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sys
+<span style="color:#f92672">import</span> urllib.request
+<span style="color:#f92672">from</span> urllib.error <span style="color:#f92672">import</span> HTTPError
+
+BASE_URL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;http://dx.doi.org/&#39;</span>
+
+<span style="color:#66d9ef">try</span>:
+    doi <span style="color:#f92672">=</span> sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">1</span>]
+<span style="color:#66d9ef">except</span> <span style="color:#a6e22e">IndexError</span>:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Usage:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">{} &lt;doi&gt;&#39;</span><span style="color:#f92672">.</span>format(sys<span style="color:#f92672">.</span>argv[<span style="color:#ae81ff">0</span>]))
+    sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)
+
+url <span style="color:#f92672">=</span> BASE_URL <span style="color:#f92672">+</span> doi
+req <span style="color:#f92672">=</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>Request(url)
+req<span style="color:#f92672">.</span>add_header(<span style="color:#e6db74">&#39;Accept&#39;</span>, <span style="color:#e6db74">&#39;application/x-bibtex&#39;</span>)
+<span style="color:#66d9ef">try</span>:
+    <span style="color:#66d9ef">with</span> urllib<span style="color:#f92672">.</span>request<span style="color:#f92672">.</span>urlopen(req) <span style="color:#66d9ef">as</span> f:
+        bibtex <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>read()<span style="color:#f92672">.</span>decode()
+    <span style="color:#66d9ef">print</span>(bibtex)
+<span style="color:#66d9ef">except</span> HTTPError <span style="color:#66d9ef">as</span> e:
+    <span style="color:#66d9ef">if</span> e<span style="color:#f92672">.</span>code <span style="color:#f92672">==</span> <span style="color:#ae81ff">404</span>:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;DOI not found.&#39;</span>)
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;Service unavailable.&#39;</span>)
+    sys<span style="color:#f92672">.</span>exit(<span style="color:#ae81ff">1</span>)
+</code></pre></div><p>示例：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ python doi2bib.py 10.1007/s10712-020-09595-4
+
+@article<span style="color:#f92672">{</span>Deng_2020,
+	doi <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>10.1007/s10712-020-09595-4<span style="color:#f92672">}</span>,
+	url <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>https://doi.org/10.1007%2Fs10712-020-09595-4<span style="color:#f92672">}</span>,
+	year <span style="color:#f92672">=</span> 2020,
+	month <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>jul<span style="color:#f92672">}</span>,
+	publisher <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>Springer Science and Business Media <span style="color:#f92672">{</span>LLC<span style="color:#f92672">}}</span>,
+	volume <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>41<span style="color:#f92672">}</span>,
+	number <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>5<span style="color:#f92672">}</span>,
+	pages <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>1075--1099<span style="color:#f92672">}</span>,
+	author <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>Xiao-Le Deng and Wen-Bin Shen and Michael Kuhn and Christian Hirt and Roland Pail<span style="color:#f92672">}</span>,
+	title <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>Magnetic Curvatures of a Uniformly Magnetized Tesseroid Using the Cartesian Kernels<span style="color:#f92672">}</span>,
+	journal <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>Surveys in Geophysics<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h1 id="4-bash命令实现自动化">4. bash命令实现自动化</h1>
+<p>来自<a href="https://users.aalto.fi/~mkouhia/2016/bibtex-from-dx-doi-org/">Automatic citation data retrieval from dx.doi.org</a>的建议：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ curl -LH <span style="color:#e6db74">&#34;Accept: application/x-bibtex&#34;</span> http://dx.doi.org/10.1007/s10712-020-09595-4
+
+@article<span style="color:#f92672">{</span>Deng_2020,
+	doi <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>10.1007/s10712-020-09595-4<span style="color:#f92672">}</span>,
+	url <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>https://doi.org/10.1007%2Fs10712-020-09595-4<span style="color:#f92672">}</span>,
+	year <span style="color:#f92672">=</span> 2020,
+	month <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>jul<span style="color:#f92672">}</span>,
+	publisher <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>Springer Science and Business Media <span style="color:#f92672">{</span>LLC<span style="color:#f92672">}}</span>,
+	volume <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>41<span style="color:#f92672">}</span>,
+	number <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>5<span style="color:#f92672">}</span>,
+	pages <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>1075--1099<span style="color:#f92672">}</span>,
+	author <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>Xiao-Le Deng and Wen-Bin Shen and Michael Kuhn and Christian Hirt and Roland Pail<span style="color:#f92672">}</span>,
+	title <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>Magnetic Curvatures of a Uniformly Magnetized Tesseroid Using the Cartesian Kernels<span style="color:#f92672">}</span>,
+	journal <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>Surveys in Geophysics<span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>a text file dois.txt with one DOI identifier on a line:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>cat dois.txt<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> curl -LH <span style="color:#e6db74">&#34;Accept: application/x-bibtex&#34;</span> http://dx.doi.org/$i &gt;&gt; output.bib; <span style="color:#66d9ef">done</span>
+</code></pre></div><h1 id="5-alfred实现">5. Alfred实现</h1>
+<p><a href="https://bloch.ece.gatech.edu/2020/04/08/bibtex-from-doi.html">Fetching BibTeX entry from DOI - Information Bytes</a>, Installing the Zotero translate server is pretty straightforward</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone --recurse-submodules https://github.com/zotero/translation-server
+cd translation-server
+npm install
+npm start
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">JsonOutput<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>curl -d $1 -H <span style="color:#e6db74">&#39;Content-Type: text/plain&#39;</span> http://127.0.0.1:1969/search<span style="color:#e6db74">`</span>
+BibTeXOutput<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>curl -d <span style="color:#e6db74">&#34;</span>$JsonOutput<span style="color:#e6db74">&#34;</span> -H <span style="color:#e6db74">&#39;Content-Type: application/json&#39;</span> <span style="color:#e6db74">&#39;http://127.0.0.1:1969/export?format=bibtex&#39;</span><span style="color:#e6db74">`</span>
+echo -n $BibTeXOutput
+</code></pre></div><h1 id="6-reference">6. Reference</h1>
+<ul>
+<li><a href="https://scipython.com/blog/doi-to-bibtex/">DOI to BibTeX</a></li>
+<li><a href="https://users.aalto.fi/~mkouhia/2016/bibtex-from-dx-doi-org/">Automatic citation data retrieval from dx.doi.org</a></li>
+<li><a href="https://bloch.ece.gatech.edu/2020/04/08/bibtex-from-doi.html">Fetching BibTeX entry from DOI - Information Bytes</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e7%ae%80%e4%bb%8b">
+                            1. 简介
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-%e5%9c%a8%e7%ba%bf%e7%bd%91%e7%ab%99">
+                            2. 在线网站
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3-python%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0">
+                            3. Python代码实现
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#4-bash%e5%91%bd%e4%bb%a4%e5%ae%9e%e7%8e%b0%e8%87%aa%e5%8a%a8%e5%8c%96">
+                            4. bash命令实现自动化
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#5-alfred%e5%ae%9e%e7%8e%b0">
+                            5. Alfred实现
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#6-reference">
+                            6. Reference
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

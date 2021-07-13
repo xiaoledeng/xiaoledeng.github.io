@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Python函数【001】——提取doi号 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Python函数【001】——提取doi号</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-11-10 12:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/python/">#Python</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-函数">1. 函数</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/local/bin/python3</span>
+<span style="color:#75715e"># -*- coding: utf-8 -*-  </span>
+<span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">Date: Nov.10.2020
+</span><span style="color:#e6db74">Author: Xiao-Le Deng
+</span><span style="color:#e6db74">Email: xiaoledeng@gmail.com
+</span><span style="color:#e6db74">Function: find out doi from the input text
+</span><span style="color:#e6db74">Input:  text
+</span><span style="color:#e6db74">Output:  dois
+</span><span style="color:#e6db74">&#39;&#39;&#39;</span>
+<span style="color:#f92672">import</span> re
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">extract_doi</span>(text):
+    DOI_REGEX <span style="color:#f92672">=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#34;&#34;&#34;\b(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![&#34;&amp;\&#39;&lt;&gt;])\S)+)\b&#34;&#34;&#34;</span>
+    res <span style="color:#f92672">=</span> re<span style="color:#f92672">.</span>findall(DOI_REGEX, text, re<span style="color:#f92672">.</span>IGNORECASE)
+    <span style="color:#66d9ef">return</span> res
+</code></pre></div><h1 id="2-doi正则化通配符">2. doi正则化通配符</h1>
+<pre><code>\b(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![&quot;&amp;\'&lt;&gt;])\S)+)\b
+
+\b(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![&quot;&amp;\'&lt;&gt;])[[:graph:]])+)\b
+
+/^10.\d{4,9}/[-._;()/:A-Z0-9]+$/i
+
+(10.(\d)+/([^(\s\&gt;\&quot;\&lt;)])+)
+
+(10[.][0-9]{4,}[^\s&quot;/&lt;&gt;]*/[^\s&quot;&lt;&gt;]+)
+
+\b10\.(\d+\.*)+[\/](([^\s\.])+\.*)+\b
+</code></pre><h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://www.itranslater.com/qa/details/2583588325344936960">正则表达式-在文档或分页中查找DOI - ITranslater</a></li>
+<li><a href="https://stackoverflow.com/questions/27910/finding-a-doi-in-a-document-or-page">regex - Finding a DOI in a document or page - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/27910/finding-a-doi-in-a-document-or-page">regex - Finding a DOI in a document or page - Stack Overflow</a></li>
+<li><a href="https://www.crossref.org/blog/dois-and-matching-regular-expressions/">DOIs and matching regular expressions - Crossref</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e5%87%bd%e6%95%b0">
+                            1. 函数
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-doi%e6%ad%a3%e5%88%99%e5%8c%96%e9%80%9a%e9%85%8d%e7%ac%a6">
+                            2. doi正则化通配符
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3-%e5%8f%82%e8%80%83">
+                            3. 参考
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>latexify: Python生成LaTeX公式 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>latexify: Python生成LaTeX公式</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-09-05 12:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/python/">#Python</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1简介">1.简介</h1>
+<p><a href="https://github.com/google/latexify_py">latexify_py</a>: Generates LaTeX math description from Python functions。在Python编程中，将Python函数公式生成为LaTeX代码。</p>
+<p>Github地址为：<a href="https://github.com/google/latexify_py">latexify_py</a>。</p>
+<h1 id="2示例代码">2.示例代码</h1>
+<p>安装：pip install latexify-py</p>
+<p>以下示例代码下载地址为：<a href="/codes/latexify_example.ipynb">latexify_example.ipynb</a></p>
+<pre><code>pip uninstall -y latexify-py 	# 卸载latexify-py
+pip install latexify-py 		# 安装latexify-py
+</code></pre><pre><code>import math 		# 导入math模块
+import latexify 	# 导入latexify模块
+</code></pre><pre><code># 示例一
+# 定义函数
+@latexify.with_latex
+def solve(a, b, c):
+  return (-b + math.sqrt(b**2 - 4*a*c)) / (2*a)
+
+print(solve(1, 4, 3)) 	# 计算函数值
+print(solve)			# 得到函数的LaTeX公式代码
+solve					# 在jupyter notebook中直接展示函数公式
+</code></pre><pre><code># 示例二
+# 定义函数
+@latexify.with_latex
+def sinc(x):
+  if x == 0:
+    return 1
+  else:
+    return math.sin(x) / x
+
+print(sinc)				# 得到函数的LaTeX公式代码
+sinc					# 在jupyter notebook中直接展示函数公式
+</code></pre><pre><code># 示例三
+# 定义函数
+# Elif or nested else-if are unrolled.
+@latexify.with_latex
+def fib(x):
+  if x == 0:
+    return 1
+  elif x == 1:
+    return 1
+  else:
+    return fib(x-1) + fib(x-2)
+
+print(fib)				# 得到函数的LaTeX公式代码
+fib						# 在jupyter notebook中直接展示函数公式
+</code></pre><pre><code># 示例四
+# Some math symbols are converted automatically.
+@latexify.with_latex
+def greek(alpha, beta, gamma, Omega):
+  return alpha * beta + math.gamma(gamma) + Omega
+
+print(greek)			# 得到函数的LaTeX公式代码
+greek					# 在jupyter notebook中直接展示函数公式
+</code></pre><h1 id="3参考">3.参考</h1>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/-goocVg_Ek-KJvy4_PIUbw">分分钟甩 Word 几条街，Python 编辑公式竟可以如此简单</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1%e7%ae%80%e4%bb%8b">
+                            1.简介
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2%e7%a4%ba%e4%be%8b%e4%bb%a3%e7%a0%81">
+                            2.示例代码
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3%e5%8f%82%e8%80%83">
+                            3.参考
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

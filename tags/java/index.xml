@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Xiao-Le Deng</title>
+    <link>https://www.xiaoledeng.cn/tags/java/</link>
+    <description>Recent content in Java on Xiao-Le Deng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2012 – 2021 · [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style) for [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Fri, 04 Dec 2020 10:00:00 +0800</lastBuildDate><atom:link href="https://www.xiaoledeng.cn/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GeoTess</title>
+      <link>https://www.xiaoledeng.cn/2020/12/04/geotess/</link>
+      <pubDate>Fri, 04 Dec 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/12/04/geotess/</guid>
+      <description>1. Introduction Home: https://www.sandia.gov/geotess/
+Documentation: https://www.sandia.gov/geotess/geotess-documentation.html
+2. Reference Ballard, S., J. R. Hipp and C. J. Young. (2009). Efficient and Accurate Calculation of Ray Theory Seismic Travel Time through Variable Resolution 3D Earth Models. Seismological Research Letters. 80. 989-999. https://doi.org/10.1785/gssrl.80.6.989</description>
+    </item>
+    
+  </channel>
+</rss>

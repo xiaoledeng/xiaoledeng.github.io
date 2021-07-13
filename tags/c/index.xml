@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C on Xiao-Le Deng</title>
+    <link>https://www.xiaoledeng.cn/tags/c/</link>
+    <description>Recent content in C on Xiao-Le Deng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2012 – 2021 · [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style) for [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Sun, 27 Dec 2020 11:00:00 +0800</lastBuildDate><atom:link href="https://www.xiaoledeng.cn/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PPPLib</title>
+      <link>https://www.xiaoledeng.cn/2020/12/27/ppplib/</link>
+      <pubDate>Sun, 27 Dec 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/12/27/ppplib/</guid>
+      <description>1. Introduction Precise Point Positioning Library (PPPLib) is a multi-GNSS data processing software designed to process multi-frequency data from GPS, BeiDou, Galileo, GLONASS and QZSS.
+Github: https://github.com/heiwa0519/PPPLib
+2. Reference Chen, C., &amp;amp; Chang, G. (2020). PPPLib: An open-source software for precise point positioning using GPS, BeiDou, Galileo, GLONASS, and QZSS with multi-frequency observations. GPS Solutions, 25(1), 1-7. https://doi.org/10.1007/s10291-020-01052-4</description>
+    </item>
+    
+    <item>
+      <title>GROOPS: Gravity Recovery Object Oriented Programming System</title>
+      <link>https://www.xiaoledeng.cn/2020/12/11/groops/</link>
+      <pubDate>Fri, 11 Dec 2020 08:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/12/11/groops/</guid>
+      <description>1. Introduction Github: https://github.com/groops-devs/groops
+2. Reference Mayer-Gürr, T., Behzadpour, S., Eicker, A., Ellmer, M., Koch, B., Krauss, S., Pock, C., Rieser, D., Strasser, S., Suesser-Rechberger, B., Zehentner, N., Kvas, A. (2020). GROOPS: A software toolkit for gravity field recovery and GNSS processing. Earth and Space Science Open Archive, 8. https://doi.org/10.1002/essoar.10505041.1</description>
+    </item>
+    
+    <item>
+      <title>GeoTess</title>
+      <link>https://www.xiaoledeng.cn/2020/12/04/geotess/</link>
+      <pubDate>Fri, 04 Dec 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/12/04/geotess/</guid>
+      <description>1. Introduction Home: https://www.sandia.gov/geotess/
+Documentation: https://www.sandia.gov/geotess/geotess-documentation.html
+2. Reference Ballard, S., J. R. Hipp and C. J. Young. (2009). Efficient and Accurate Calculation of Ray Theory Seismic Travel Time through Variable Resolution 3D Earth Models. Seismological Research Letters. 80. 989-999. https://doi.org/10.1785/gssrl.80.6.989</description>
+    </item>
+    
+    <item>
+      <title>PGPLOT Graphics Subroutine Library</title>
+      <link>https://www.xiaoledeng.cn/2020/11/27/pgplot/</link>
+      <pubDate>Fri, 27 Nov 2020 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/27/pgplot/</guid>
+      <description>Introduction The PGPLOT Graphics Subroutine Library is a Fortran- or C-callable, device-independent graphics package for making simple scientific graphs.
+Main Page: https://sites.astro.caltech.edu/~tjp/pgplot/
+Installation Instructions: https://sites.astro.caltech.edu/~tjp/pgplot/install.html</description>
+    </item>
+    
+    <item>
+      <title>SHA_SHS: spherical harmonic analysis and synthesis</title>
+      <link>https://www.xiaoledeng.cn/2020/11/11/sha_shs/</link>
+      <pubDate>Wed, 11 Nov 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/11/sha_shs/</guid>
+      <description>1. Introduction Download:
+ Bucha/#SHA http://edisk.cvt.stuba.sk/~xbuchab/SHA_code/SHA_SHS.zip  2. Reference Bucha, B., Hirt, C., Kuhn, M., 2019. Cap integration in spectral gravity forward modelling up to the full gravity tensor. Journal of Geodesy. https://doi.org/10.1007/s00190-019-01277-3</description>
+    </item>
+    
+    <item>
+      <title>GravPSO2D: 2D gravity inversion using the Particle Swarm Optimization</title>
+      <link>https://www.xiaoledeng.cn/2020/11/06/gravpso2d/</link>
+      <pubDate>Fri, 06 Nov 2020 12:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/06/gravpso2d/</guid>
+      <description>1. Introduction A Matlab Package for the 2D gravity inversion in sedimentary basins is presented.
+GitHub: https://github.com/jgpallero/grav-pso-2d
+2. Reference Palleroa J.L.G., Fernández-Martínezb J.L., Fernández-Muñizb Z., Bonvalotc S., Gabaldac G., Nalpasd T. (2020). GravPSO2D: A Matlab package for 2D gravity inversion in sedimentary basins using the Particle Swarm Optimization algorithm. Computers &amp;amp; Geosciences. https://doi.org/10.1016/j.cageo.2020.104653</description>
+    </item>
+    
+    <item>
+      <title>Tesseroids: Forward modeling of gravity fields in spherical coordinates</title>
+      <link>https://www.xiaoledeng.cn/2020/11/03/tesseroids/</link>
+      <pubDate>Tue, 03 Nov 2020 19:50:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/03/tesseroids/</guid>
+      <description>1. Introduction Tesseroids is a collection of command-line tools for modeling the gravitational potential, acceleration, and gradient (Marussi) tensor.
+The mass models can be made of right rectangular prisms or tesseroids (spherical prisms). Computation for rectangular prisms can be made in Cartesian or spherical (geocentric) coordinates.
+GitHub: https://github.com/leouieda/tesseroids
+Documentation: http://tesseroids.leouieda.com/en/latest/
+2. Reference Uieda L, Barbosa V, Braitenberg C. (2016). Tesseroids: Forward-modeling gravitational fields in spherical coordinates. Geophysics, 81(5), F41-F48. http://doi.org/10.1190/geo2015-0204.1</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Essay on Xiao-Le Deng</title>
+    <link>https://www.xiaoledeng.cn/tags/essay/</link>
+    <description>Recent content in Essay on Xiao-Le Deng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2012 – 2021 · [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style) for [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Mon, 28 Jun 2021 21:00:00 +0800</lastBuildDate><atom:link href="https://www.xiaoledeng.cn/tags/essay/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>随笔—基础理论研究</title>
+      <link>https://www.xiaoledeng.cn/2021/06/28/essay-basic-theoretical-research/</link>
+      <pubDate>Mon, 28 Jun 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/28/essay-basic-theoretical-research/</guid>
+      <description>今天是2021年北京IAG会议的开始，是国际大地测量学领域的一大盛事: IAG 2021 — Scientific Assembly of the International Association of Geodesy。
+今天听了李建成院士的分享，勉励青年科学工作者在基础理论研究方面做突破和创新。
+大地测量学的鼻祖是德国的高斯，发展至今，很多方面已经技术领先于理论。
+聚焦基础理论研究，新的理论可以带来方法和应用的更新。
+一个新的idea，必定需要厚积薄发，甚至也需要交叉学科的创新。
+一直秉承着：写的每一篇论文，都必须要有至少一个核心创新点，即在前人的基础上做了什么新的东西。
+以上自勉。</description>
+    </item>
+    
+    <item>
+      <title>随笔—坦然面对和技术改变生活</title>
+      <link>https://www.xiaoledeng.cn/2021/06/24/essay-technology-change-life/</link>
+      <pubDate>Thu, 24 Jun 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/24/essay-technology-change-life/</guid>
+      <description>1. 坦然面对 今天有个好消息，一篇文章在从投稿到现在经历9个月后被录用。
+最开始是想发个微信朋友圈，因为很久没有发朋友圈了。但是，那阵劲过去之后，就没有发了。
+生活还是要继续向前走，不会因为一篇文章的录用与否而发生改变。
+热闹过后，还是要面对自己每个人不同的生活，毕竟科研工作只是生活或生命的一个部分，不是全部。
+坦然面对生活中的起起伏伏，这也算是生活本身的一部分。
+除了课题组和家人已经知道外，后面知道的人会慢慢的变多，当然大多都是专业内的人。
+2. 技术改变生活  网络改变了投稿的过程，从过去发纸质信件去投稿，到后面用电子邮件投稿，再到现在用投稿网络系统进行投稿。 论文的纸质版到电子版，让我们获取论文越来越方便。 现在利用电子邮箱去订阅最新的期刊更新，获得前沿科研进展也变得更迅速。  技术不仅仅改变了行业，也改变了我们交流的方式。
+从前的纸质信件、电报和电子邮件，到现在的电话、视频通话和即时交流软件，这都极大地加速了沟通的便捷。
+但是，我倾向于保留书写电子邮件，更倾向于用文字去记录——见字如面。</description>
+    </item>
+    
+    <item>
+      <title>随笔—写文章用LaTeX</title>
+      <link>https://www.xiaoledeng.cn/2021/06/22/essay-write-with-latex/</link>
+      <pubDate>Tue, 22 Jun 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/22/essay-write-with-latex/</guid>
+      <description>最近，看到师弟在写文章，用的是Word，其中跟Grammarly搭配，适合检查英语语法的对错。
+不过，个人认为：进行英文学术写作，LaTeX比Word效率高。
+自从在2016年用Word修改论文时，全篇公式变成图片之后，下定决心用LaTeX写和修改论文。至此，从2017年1月开始就用LaTeX写英文论文。
+一般而言，国外的学术期刊都会有固定的LaTeX投稿模版，比如，Nature、Springer、Elsevier和Wiley等平台。这样做的目的，是让作者把精力放在论文的质量上，而不是过多把时间和精力放在论文的排版上，毕竟后期的接收文章后有专门的杂志团队来排版。
+LaTeX有一些优点，其中，重要的是文章的格式已固定，填充关键的内容即可。再者，还有固定的模块代码——图片、公式和表格等。
+投稿的时候，只需要提交tex源码、相关配置文件和图片等即可。在投稿系统上，从tex源码生成的PDF文件仔细检查后，即可提交。</description>
+    </item>
+    
+    <item>
+      <title>随笔—引用参考文献的必要性</title>
+      <link>https://www.xiaoledeng.cn/2021/06/21/essay-essential-cite-reference/</link>
+      <pubDate>Mon, 21 Jun 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/21/essay-essential-cite-reference/</guid>
+      <description>最近，参加了几次组会的科研汇报，发现一个通用的问题——PPT里面几乎没有引用参考文献。个人觉得这是一个容易忽视的问题，但却比较重要。
+记得最开始做科研的PPT汇报时，导师曾经说过：“PPT中出现的图片、公式、理论和方法等，如果不是自己原创的，都需要标明出处，或参考文献，或链接地址，甚至模仿别人画的图，都需要标注出处。”
+这是做科研的基本功，也是科研严谨的具体表现，是衡量一个科研工作者是否专业的基本要求。
+我们做科研，一般都是站在前人的肩膀上继续进行推进。所以，正确和恰当地引用文献，既是对前人工作的基本尊重，也是让自己的工作给后人以合适的参考和引用。
+所以，科研PPT汇报中，引用参考文献是必要且重要的。</description>
+    </item>
+    
+    <item>
+      <title>随笔—科研要主动</title>
+      <link>https://www.xiaoledeng.cn/2021/06/20/essay-be-positive-in-science/</link>
+      <pubDate>Sun, 20 Jun 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/20/essay-be-positive-in-science/</guid>
+      <description>科研需要主动去推动，这是博士能够顺利完成的秘诀之一。
+具体而言，在学生时代（硕士或博士）要主动去推导师，而不是让老师去推你。
+独立完成学位论文，是科研训练的基本要求。即，需要对自己的研究进展负责，除此之外，没有别人会比你更了解你的科研。
+越早明白这个道理，科学研究就越能够上道，走入正确的发展方向。
+从遇到问题、读文献、思考问题、解决问题、编程测试和实验验证，到得到自己和导师都认可的结果，这只是科研训练的第一步。
+在此期间，自己需要一次次地去跟导师汇报进展，而导师会一次次地听取报告、把握进展和引导方向等。这些步骤中，自己越主动，科研基本训练也就越快，得到导师的指导也就越多，成长越多，进步也就越快。故此，形成良性循环，也就越容易得到彼此都认可的结果。
+之后，写作初稿、修改论文和投稿返修，后续的每一步也还是需要主动去推动，越主动越快。
+主动是进行科研的重要品质之一，越主动越好。</description>
+    </item>
+    
+    <item>
+      <title>随笔—工作原则</title>
+      <link>https://www.xiaoledeng.cn/2021/06/18/essay-work-principle/</link>
+      <pubDate>Fri, 18 Jun 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/18/essay-work-principle/</guid>
+      <description>最近，看到一些学者在两个单位的冲突，以下信息供参考和自勉：
+ 我的原则是，不能拿两份工资，即使是外出做报告的劳务费，按规定也不能收取；去中国，我都会跟相关人士报告我的行程，包括PPT我都要给他们看一下；发表文章的时候，我从来不会写两个单位。
+应该更加谨慎的规避一些可能导致利益冲突的国内兼职。
+ 参考  美国华人学者被毁掉的职业生涯：从人生顶峰跌落至谷底  </description>
+    </item>
+    
+    <item>
+      <title>随笔—核酸检测和空间站</title>
+      <link>https://www.xiaoledeng.cn/2021/06/17/essay-things/</link>
+      <pubDate>Thu, 17 Jun 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/17/essay-things/</guid>
+      <description>核酸检测 作为国外入境的首站，这边时不时会有境外输入的病例；稍有不慎，就会有全员核酸检测。
+从六月开始，到现在已经有两轮核酸检测了。
+空间站 今天是一个特别的日子，中国航天史上的一个重要日子，载人航天飞船有三个中国人（聂海胜、刘伯明和汤洪波）到中国空间站。
+星辰大海，仰望星空，探索不息。</description>
+    </item>
+    
+    <item>
+      <title>随笔—学以致用和温故知新</title>
+      <link>https://www.xiaoledeng.cn/2021/06/16/essay-apply-what-you-have-learned-and-review-the-past-to-learn-the-new/</link>
+      <pubDate>Wed, 16 Jun 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/16/essay-apply-what-you-have-learned-and-review-the-past-to-learn-the-new/</guid>
+      <description>学以致用 今天看了一本关于PPT设计的书，算是初窥设计的门，不过毕竟不是专门用于学术展示的，所以有些内容仅可借鉴，而不能照搬。
+写到这里，其中有一点很有意思：学以致用的用，需要知道用在哪里，这是很关键的，也是很基础的。
+温故知新 看之前写的文字，随着现在的不同阅历积累，针对同一个问题或主题，可能有不同的感悟和想法。这算是温故知新的一种。
+同时，慢慢地把之前写的内容形成一个体系，即提炼出关键词，而后串成线，很多条线后就成体系了；而后让以后的文字和主题也属于这个体系下的内容。这也算是温故知新的另一种。</description>
+    </item>
+    
+    <item>
+      <title>随笔—创新如何来？</title>
+      <link>https://www.xiaoledeng.cn/2021/06/15/essay-how-does-innovation-come/</link>
+      <pubDate>Tue, 15 Jun 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/15/essay-how-does-innovation-come/</guid>
+      <description>创新如何来？换句话说，一个科研的idea如何来？
+首先，需要前期的积累，即准备期。在一个研究方向，有一定的问题解决经验和文献阅读积累，对于一个方面的某个问题有一定的实际动手的处理经验，即编程测试运算，得到数值的结果。
+其次，需要持续的专注思考，即酝酿期。对于问题的专注思考，是激发灵感的必备步骤。持续的专注，能够为创新的idea孕育提供时间的预备。
+最后，就是获得灵感，有创新的idea，即爆发期。灵感稍纵即逝，得之不易，故而有及时记录下来。
+以上就是创新如何来的三个时期——准备期、酝酿期和爆发期。</description>
+    </item>
+    
+    <item>
+      <title>随笔—负责任</title>
+      <link>https://www.xiaoledeng.cn/2021/06/12/essay-responsible/</link>
+      <pubDate>Sat, 12 Jun 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/12/essay-responsible/</guid>
+      <description>一个人要对自己的选择负责任，这是很重要的成长标志之一。
+他人的经历、经验和建议，仅供参考；因为，每个人都是独特且有个性的个体。差异化是接纳和吸收他人的建议时，必须要去考虑的问题。
+故此，非常有必要在参考他人的建议后，结合自己当前实际情况，再去做出决定和选择。
+当过了18岁之后，就有必要对自己的每一次选择去负完全的责任。要做到——当你再次回想起做当时的那个决定时，不后悔；如果后悔，就从中吸取经验和教训。
+每个人在内心深处都有对未来生活的美好憧憬和向往；而且在日常生活中，会慢慢地往这个憧憬和向往去努力。所以，学会对每一个选择负责任。</description>
+    </item>
+    
+    <item>
+      <title>随笔—科研的独立</title>
+      <link>https://www.xiaoledeng.cn/2021/06/09/essay-independent-science/</link>
+      <pubDate>Wed, 09 Jun 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/09/essay-independent-science/</guid>
+      <description>科学研究讲究原创，简言之做别人没有做过的东西；新的概念、新的理论、新的方法和新的应用，都是可以去突破的点。
+独立的科研，从最开始接受科研训练时，就应该努力去追求。一方面，个人专研一个科研方向，慢慢地就成了该领域的“小专家”；另一方面，导师的作用就是——师傅领进门，修行靠个人。所以，科研也是一门手艺，手艺的品质和精进，很大一定程度上是靠导师的学术水平、个人品德修养和指导方式。
+独立是必须的，从拿到博士学位的那一刻，如果你继续走学术的道路，你就是一个独立的科研工作者。
+当然，独立和合作，并不是矛盾的。先做到独立，才有了合作的基础，而后才有与他人合作的可能性。
+从进入科研开始，就需要明确：科研的独立是需要去追求和实现的。
+以上内容需自勉。</description>
+    </item>
+    
+    <item>
+      <title>随笔—上一代科学家的榜样</title>
+      <link>https://www.xiaoledeng.cn/2021/06/04/essay-last-generation-scientist/</link>
+      <pubDate>Fri, 04 Jun 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/04/essay-last-generation-scientist/</guid>
+      <description>最近，看了几位科学家的传记（丘成桐、钱学森和邓稼先），很被其中纯粹专心科研所打动，几乎每一位都是专心致志的人，勤奋刻苦是基本的品格。
+在这个浮躁和分散注意力的时代，潜心专注是非常宝贵的品格，也是需要不断去练习。同时，深度思考也是需要去操练的。微信朋友圈、新消息和邮件提醒，不断地打断注意力，甚至每天手机频繁刷朋友圈已经成为一种潜意识的习惯。我们仿佛很近，其实很远。
+心远地自偏的境界，也是做学问必备的品质。
+创新，需要原始创新。从新概念和新理论为基本的关注点，站在前人的肩膀上，进行基础理论的突破。
+上一代科学家们用一生践行了踏实做学问的榜样，值得我们去深入学习和实践。
+自勉。</description>
+    </item>
+    
+    <item>
+      <title>随笔—月末、内卷和躺平、仅为借鉴</title>
+      <link>https://www.xiaoledeng.cn/2021/05/31/essay-end-5-month/</link>
+      <pubDate>Mon, 31 May 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/31/essay-end-5-month/</guid>
+      <description>1. 月末 每当月末，已经形成了月总结的习惯。
+赶在下班前，把手头的事情做一个总结，也算是对5月的回顾。
+2. 内卷和躺平 最近，有两个词：内卷和躺平。
+不管是内卷还是躺平，只管把自己的手头的事情做好，进展持续地向前推进，该工作的时候工作，该休息的时候休息，做点自己热爱的事情，船到桥头自然直。
+3. 仅为借鉴 自己用的好的东西和物品，不一定别人也用的好。
+尊重他人的选择和使用习惯，自己的经验仅为他人的借鉴。</description>
+    </item>
+    
+    <item>
+      <title>随笔—macOS系统用于科研的优势</title>
+      <link>https://www.xiaoledeng.cn/2021/05/29/essay-benefit-macos/</link>
+      <pubDate>Sat, 29 May 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/29/essay-benefit-macos/</guid>
+      <description>1. 前言 从用电子计算机做科学研究开始，选择一个优秀的操作系统是非常有必要的。
+毕竟，谁也不想以下的情况发生：
+ 在写论文的时候，软件突然闪退； 在处理大量数据时，电脑突然死机或蓝屏，必须重启； 长时间运行程序跑数据，结果关键时刻电脑强制自动更新后重启； 专注写作时，时不时有广告弹窗分散注意力； …  2. macOS系统的特点 经过本人5年左右的测试，macOS系统是一款适合科研的操作系统，具体有以下特点：
+  专注：一般简单设置后，可以达到无广告、无弹窗的状态，不需要清理内存，不需要加速，不需要安装杀毒软件，从而达到让人专注的状态，长此以往，科研的工作效率可以大大提升。
+  稳定：首先是系统稳定，在5年的时间里，基本上很少死机或突然蓝屏，也不会强制自动更新后重启，再也不用操心重装系统；其次是软件稳定，写论文用vscode编辑器+LaTeX，再无闪退，内容也能自动保存，PS：注意用word偶尔会闪退。
+  便携：在5年的时间里，东奔西走，走南闯北，国内国外，基本都是随身携带的。
+  精益求精：显示屏分辨率高清，外观有质感，很符合科研精益求精的态度。
+  编程方便：基本配置后，适合各种科学计算的编程环境：Fortran、C或C++、Python和Julia等，结合bash命令行，可以实现批量自动化运算。
+  3. 末了的话 工具的选择，因人而异，不用去过多地争辩，适合自己的才是最好的。
+对我使用5年的经历来说，macOS系统是适合的，是有一些优势的。
+最后，内容比工具更重要，内容是关键。</description>
+    </item>
+    
+    <item>
+      <title>随笔—参考文献管理的思考</title>
+      <link>https://www.xiaoledeng.cn/2021/05/28/essay-reference-manage-think/</link>
+      <pubDate>Fri, 28 May 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/28/essay-reference-manage-think/</guid>
+      <description>1. 参考文献管理的思考 从最开始进入科研领域，参考文献（一个个PDF文件）成了研究的基础。
+从2013年至今，在NoteExpress、Endnote、Mendeley、Zoter和Paper等众多参考文献管理软件中，每一个都没有坚持用下来。反而是最简单的管理方式——文件夹+PDF文献一直在坚持使用，而且效果还不错，是挺适合自己的一种方式。
+博士阶段的主要创新点是在硕士毕业2016年的那个暑假，将所有的参考文献整理一遍之后，突然有亮光。我称之为All in one文献管理法。
+All in one文献管理法的步骤  拷贝：复制所有的电子文献的PDF文件，并黏贴到一个文件夹目录下； 重命名：对每个PDF文件进行规范化重命名，格式为：作者.年.期刊缩写或book或phd或master； 检索：利用Linux的ls或ll命令操作； 阅读：定位到要看的文献，用PDF阅读器看；  粗略估算，参考文献的PDF文件有3000左右。
+后续还要花费大量时间对PDF文件进行规范化的重命名操作，这是一个大工程，同时也是一个机遇——新的创新点酝酿和出现。</description>
+    </item>
+    
+    <item>
+      <title>随笔—科研工作的各按其时</title>
+      <link>https://www.xiaoledeng.cn/2021/05/27/essay-research-work-time/</link>
+      <pubDate>Thu, 27 May 2021 22:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/27/essay-research-work-time/</guid>
+      <description>等待和静默的日子，是向下扎根从而向上结果的酝酿和准备。
+万物各按其时，都有自己的时间点。春种秋收，二十四节气，农事有固定的时间点。
+科学研究也是有其时间点。在每一个平凡的日子里，默默地持续推进研究进展，才是科研最日常的状态。
+如何写一篇高水平的学术论文？提到：一篇学术论文的产生，要经历学术思想的形成、实验、数据分析、论文写作、投稿、修改、校对、发表这样一个漫长的过程。往往从做实验到论文发表出来需要1年甚至更长的时间。
+我的经历是，一篇论文需要经历以下过程：创新点酝酿期、创新点形成期、数值编程运算、数据成图分析、论文写作（理论、数值实验描述和分析、结论和讨论、引言、摘要、题目）、论文修改、论文投稿、论文返修、论文接收、论文校对、论文发表。
+不急不躁，是科研工作的心态。稳定而持续，是科研工作的状态。
+参考  如何写一篇高水平的学术论文？  </description>
+    </item>
+    
+    <item>
+      <title>随笔—服务器管理工具和软硬件思考</title>
+      <link>https://www.xiaoledeng.cn/2021/05/26/essay-sever-tools-think/</link>
+      <pubDate>Wed, 26 May 2021 21:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/26/essay-sever-tools-think/</guid>
+      <description>1. 服务器管理工具 Xshell软件在Windows系统下非常好用，是一款服务器管理工具。
+在macOS系统下，一直用的是iTerm（ssh命令行） + Transmit（文件上传和下载），现在更新为Royal TSX，即可实现服务器管理的这两种功能。具体见： Royal TSX：macOS系统的服务器管理软件。
+2. 软硬件思考 2016年6月，开始使用macOS系统。随着5年时间的流逝，到2021年6月，软件开始有点卡了。
+随着软件和系统的更新，硬件是不变的。可以推断：当硬件最开始出来时，当时的软件系统的大版本应该是最流畅的。理论上，为了保持稳定和体验最佳，需要一直保持硬件出来时的那个大版本系统。
+对于科研来说，电脑系统和软件的稳定性和流畅度，应该是最重要的。购买电脑硬件后的系统和软件理应一直保持最开始的大版本，而不更新。
+不追求新，而追求稳，是保持电脑系统和软件体验最佳的秘诀。
+以上内容对iPhone和iPad的系统也适用，切记：稳定保持购买时的大版本系统。
+最后，硬件设备也有一定的使用周期（比如，5年-7年），到了这个周期，即使硬件没坏，软件系统就卡在某个版本了。比如，2012年10月发布的iPad 4，现在系统版本就卡在了iOS 10.3.3，无法升级。所以，一旦使用周期到了，就可以根据自己的需求考虑是否要换最新的硬件设备。</description>
+    </item>
+    
+    <item>
+      <title>随笔—组会方式</title>
+      <link>https://www.xiaoledeng.cn/2021/05/25/essay-meeting-form/</link>
+      <pubDate>Tue, 25 May 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/25/essay-meeting-form/</guid>
+      <description>1. 前言 每个课题组都有自己独特的组会方式。
+2. 硕博经历 硕博期间，在导师的课题组中，每周四下午是组会时间。课题组所有人都参加，并讲解自己的PPT。
+人数适当的时候，频率可以一周一次，每次要做PPT汇报自己的研究进展，或者是遇到的难题，或者是研究的思路。导师听完之后，给出针对的指导，或者给出解决难题的思路和措施，或者指出研究下一步需要推进的方向。其余同门也可给出建议。
+总体而言，导师带学生的方式属于自由引导型。这就形成了课题组比较独特的科研氛围——自由探索自己感兴趣的研究方向。
+时至今日，我觉得这样的组会方式是比较好的。
+3. 现在经历 现在的课题组，组会方式更加细致。
+ 每个月一次大组会，由一人主讲，其余人发表建议。 每周一次与导师面对面交流，每周都有持续的推进。  4. 末了的话 以上组会形式虽然不同，但内涵是一样的——持续地推进研究进展。
+带学生进行科研是门艺术，需要理论和实践相结合，激发学生科研热情和创造力。</description>
+    </item>
+    
+    <item>
+      <title>随笔—博客益处和便携键盘</title>
+      <link>https://www.xiaoledeng.cn/2021/05/24/essay-blog-keyboard/</link>
+      <pubDate>Mon, 24 May 2021 20:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/24/essay-blog-keyboard/</guid>
+      <description>1. 前言 今天入手了一个便携式折叠蓝牙键盘，晚上的时间可以随思想的外放，写一点文字，记录下一些感悟。
+2. 博客的益处 今天有同行加我QQ，里面提到了博客的益处，这鼓舞了我，让我继续写博客的动力。
+一直以来，自己的博客历经时间的洗礼，从2014年硕一，经历了硕士、博士和工作至今的记录，坚持记录点什么，督促着我在文字方面记录着自己的感悟，算是对学习和工作轨迹的系统记录。
+期间，虽然经历了不同博客排版工具的更新，后面慢慢的变成现在最简单的模式——聚焦内容，简单形式。
+个人学术主页不管是在谷歌学术、ResearchGate，还是在大学系网站，都会有记录。
+唯独博客，记录着自己遇到的各种问题解决详细步骤，不仅让自己下次遇到同类型问题能够快速地解决，而且能够帮助同样遇到类似问题的人。
+3. 便携式折叠蓝牙键盘 一直在寻找便携式的iPad，可在2013年买的iPad 4成为了——买前生产力，买后爱奇艺。
+直到现在，经历深入的思考后，才发现手机 + 便携式折叠蓝牙键盘（航世 BOW HB066），这样的配置足够用了。
+配搭QQ邮箱的记事本的笔记功能，保存文本在云空间里面，而后选择性的放在博客上。这样的输出方式，目前看来还是非常好的。
+4. 末了的话 絮絮叨叨，今天结束了，点点滴滴都是生活。</description>
+    </item>
+    
+    <item>
+      <title>随笔—反思标准化流程</title>
+      <link>https://www.xiaoledeng.cn/2021/04/19/essay-think-sop/</link>
+      <pubDate>Mon, 19 Apr 2021 20:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/04/19/essay-think-sop/</guid>
+      <description>1. 反思专注投入和持续推进研究进展 在飞机上，看了电影钱学森，很被其中的专注投入和持续推进研究进展的细节所感动。
+在上个世纪还没有电子设备，比如个人笔记本电脑和智能手机等科技产品的条件下，仅凭钢笔和纸就能推导学科相关的理论框架，并撰写一个领域的系统书籍，比如：《工程系统论》(Engineering Cybernetics)。
+由此，反思自己的工作状态，特别是工作时间的管理，非常有必要保持高质量和系统化的学术输入、反刍思考和持续地学术输出。
+具体而言，实践的步骤包括：
+1.学术输入：高质量和系统化的学术输入，阅读、批注和管理书籍和文献
+  a）阅读和批注：
+ ①电子版：书籍和文献的阅读和批注——利用电脑和iPad的PDF软件阅读和批注； ②纸质版：重要书籍和文献的阅读和批注——打印和用笔进行批注。    b）管理：
+ ①电子版：书籍和文献的管理——利用电脑和iPad的Syncthing软件进行同步； ②纸质版：利用文件夹进行管理。    2.反刍思考：更新研究方向和创新点的内容
+ 定期总结：每个月一次，根据本月新的认知，总结和更新已有研究方向和创新点的内容；  3.工作时间：持续地学术输出
+ 在工作时间内，特别是工作日上午的时间，保持足够的时间投入和旺盛的精力，进行学术写作； 坚持：养成日积月累的习惯；  最后，是志向。学成报国，这是上一代大部分科研工作者的理想。对真理的探索和揭示，是驱动内在探索的不懈动力。
+2. 电子标准化流程 关于用笔和纸书写，现在是电子计算机的时代，已经形成了适用于自己的一套标准化流程：
+ 阅读：电子版文献打印或PDF进行阅读，公式用Mathpix软件识别并形成LaTeX的代码； 理论：理论公式用Mathematica软件进行推导，并复制出LaTeX的公式代码； 编程：有理论基础之后，利用编程语言（比如，Fortran、Python和Mathematica等）进行数值编程的运算，并利用GMT和TikZ语言进行编程画图； 写作：每天持续地推动，日积月累，利用Vscode编辑器进行LaTeX式科研写作。  虽然，外在的形式变了，以前是纸和笔的时代，现在是电子计算机的时代，但是核心并没有变化——对真理进行孜孜不倦地探索，专注投入时间和精力，为自由探索世界的客观规律尽一份力。</description>
+    </item>
+    
+  </channel>
+</rss>

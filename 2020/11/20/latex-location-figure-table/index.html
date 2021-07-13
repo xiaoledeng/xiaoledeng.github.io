@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>LaTeX图表位置操作 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>LaTeX图表位置操作</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-11-20 16:30</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-代码及说明">1. 代码及说明</h1>
+<p>固定表格的位置：</p>
+<pre><code>\usepackage{float}
+\restylefloat{table}
+
+\begin{table}
+...
+\end{table}
+</code></pre><p>固定图片的位置：</p>
+<pre><code>\usepackage{float}
+
+
+\restylefloat{figure}
+
+\begin{figure}
+...
+\end{figure}
+</code></pre><p>其他：</p>
+<pre><code>\usepackage{placeins}
+
+\FloatBarrier
+\begin{table}[H]
+    \begin{tabular}{llll}
+      .... 
+    \end{tabular}
+\end{table}
+\FloatBarrier
+</code></pre><pre><code>\begin{table}[!htbp]
+
+!-忽略“美学”标准
+
+h-here
+
+t-top
+
+b-bottom
+
+p-page-of-its-own
+</code></pre><ul>
+<li>h Place the float here, i.e., approximately at the same point it occurs in the source text (however, not exactly at the spot)</li>
+<li>t Position at the top of the page.</li>
+<li>b Position at the bottom of the page.</li>
+<li>p Put on a special page for floats only.</li>
+<li>! Override internal parameters LaTeX uses for determining &ldquo;good&rdquo; float positions.</li>
+<li>H Places the float at precisely the location in the LATEX code. Requires the float package. This is somewhat equivalent to h!.</li>
+</ul>
+<h1 id="2-参考">2. 参考</h1>
+<ul>
+<li><a href="https://www.cnblogs.com/huangshiyu13/p/6858254.html">latex之图表位置控制 - Shiyu_Huang - 博客园</a></li>
+<li><a href="https://blog.csdn.net/OOFFrankDura/article/details/88032213">Latex固定表格图片位置_FrankDura的博客-CSDN博客_latex表格位置</a></li>
+<li><a href="https://stackoverflow.com/questions/1673942/latex-table-positioning">LaTeX table positioning - Stack Overflow</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e4%bb%a3%e7%a0%81%e5%8f%8a%e8%af%b4%e6%98%8e">
+                            1. 代码及说明
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-%e5%8f%82%e8%80%83">
+                            2. 参考
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

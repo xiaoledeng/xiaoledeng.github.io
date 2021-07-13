@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Ubuntu安装overleaf的sharelatex - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Ubuntu安装overleaf的sharelatex</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2021-06-03 17:30</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/linux/">#Linux</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-安装docker">1. 安装docker</h1>
+<p>打开 <code>/etc/apt/sources.list.d/docker.list</code>：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo vi /etc/apt/sources.list.d/docker.list
+</code></pre></div><p>添加下面内容：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">deb <span style="color:#f92672">[</span>arch<span style="color:#f92672">=</span>amd64<span style="color:#f92672">]</span> https://download.docker.com/linux/ubuntu bionic stable
+</code></pre></div><p>更新并安装：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get update
+sudo apt-get install docker-ce
+</code></pre></div><p>查看是否安装成功：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker --version
+</code></pre></div><p>Docker version 20.10.7, build f0df350</p>
+<h1 id="2-安装-docker-compose">2. 安装 docker-Compose</h1>
+<p>进入 <code>https://github.com/docker/compose/releases</code> 查看最新版本，当前版本为1.29.2</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-<span style="color:#e6db74">`</span>uname -s<span style="color:#e6db74">`</span>-<span style="color:#e6db74">`</span>uname -m<span style="color:#e6db74">`</span> -o /usr/local/bin/docker-compose
+</code></pre></div><p>设置权限:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo chmod +x /usr/local/bin/docker-compose
+</code></pre></div><p>查看是否安装成功:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose --version
+</code></pre></div><p>docker-compose version 1.29.2, build 5becea4c</p>
+<h1 id="3-安装overleaf的开源版本sharelatex">3. 安装Overleaf的开源版本sharelatex</h1>
+<p>docker权限问题，添加docker用户组：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#添加docker用户组</span>
+sudo groupadd docker
+
+<span style="color:#75715e">#将登陆用户加入到docker用户组中</span>
+sudo gpasswd -a $USER docker 
+
+<span style="color:#75715e">#更新用户组</span>
+newgrp docker 
+</code></pre></div><p>通过docker安装Overleaf的开源版本sharelatex：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull sharelatex/sharelatex
+</code></pre></div><h1 id="4-配置overleaf">4. 配置Overleaf</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://raw.githubusercontent.com/sharelatex/sharelatex/master/docker-compose.yml
+
+vi docker-compose.yml
+</code></pre></div><p>需要修改的就是<code>ports: - 80:80</code>，一般80端口都被apache或nginx占用了，改用其他端口如：<code>ports: - 5000:80</code>。</p>
+<p>其他可根据需要修改，如挂载位置等。</p>
+<h1 id="5-启动overleaf">5. 启动Overleaf</h1>
+<p>在<code>docker-compose.yml</code>所在路径下执行</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker-compose up -d
+</code></pre></div><h1 id="6-安装完整texlive">6. 安装完整texlive</h1>
+<p>先进入docker容器，在docker中安装编译所需的完整的texlive:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -it sharelatex bash
+tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/
+tlmgr update --self --all
+tlmgr install scheme-full &amp;
+</code></pre></div><p>安装过程，十分漫长，总共需要安装近4000个包，应该就是要装一晚上的节奏，为了避免shell断掉加上 &amp;，回车后可以看到安装过程。可重复再执行update和install。</p>
+<h1 id="7-使用overleaf">7. 使用Overleaf</h1>
+<p>打开浏览器访问 <code>http://hostname:5000/launchpad</code> ，创建Admin账户，即可。</p>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/qq_19154605/article/details/105023891">Ubuntu 安装 docker-ce 提示 Package docker-ce is not available, but is referred to by another package._右手的鼠标-CSDN博客</a></li>
+<li><a href="https://www.cnblogs.com/kaishirenshi/p/10484278.html">ubuntu上安装docker和docker-Compose - 开始认识 - 博客园</a></li>
+<li><a href="https://blog.csdn.net/u011337602/article/details/104541261">docker 权限问题 Got permission denied while trying to connect to the Docker daemon socket at _u011337602的博客-CSDN博客</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/150827584?ivk_sa=1024320u">Overleaf-在线Latex编辑器部署 - 知乎</a></li>
+<li><a href="https://github.com/overleaf/overleaf/wiki/Quick-Start-Guide">Quick Start Guide · overleaf/overleaf Wiki</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e5%ae%89%e8%a3%85docker">
+                            1. 安装docker
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-%e5%ae%89%e8%a3%85-docker-compose">
+                            2. 安装 docker-Compose
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3-%e5%ae%89%e8%a3%85overleaf%e7%9a%84%e5%bc%80%e6%ba%90%e7%89%88%e6%9c%acsharelatex">
+                            3. 安装Overleaf的开源版本sharelatex
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#4-%e9%85%8d%e7%bd%aeoverleaf">
+                            4. 配置Overleaf
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#5-%e5%90%af%e5%8a%a8overleaf">
+                            5. 启动Overleaf
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#6-%e5%ae%89%e8%a3%85%e5%ae%8c%e6%95%b4texlive">
+                            6. 安装完整texlive
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#7-%e4%bd%bf%e7%94%a8overleaf">
+                            7. 使用Overleaf
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#%e5%8f%82%e8%80%83">
+                            参考
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

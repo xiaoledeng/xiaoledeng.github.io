@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>科学计算最佳实践 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>科学计算最佳实践</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2021-06-07 17:30</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/notes/">#Notes</a></span>
+      </div>
+  </div>
+<div class="content">
+  <p>本文内容来自于：</p>
+<p>Wilson G, Aruliah DA, Brown CT, Chue Hong NP, Davis M, et al. (2014) Best Practices for Scientific Computing. PLoS Biol 12(1): e1001745. <a href="http://doi.org/10.1371/journal.pbio.1001745">http://doi.org/10.1371/journal.pbio.1001745</a></p>
+<p>Software Carpentry (<a href="http://software-carpentry.org">http://software-carpentry.org</a>)</p>
+<h1 id="1-为人编写程序而不是为计算机">1. 为人编写程序，而不是为计算机</h1>
+<p>(a) 一个程序不应该要求它的读者一次在内存中保存多个事实。</p>
+<p>(b) 使名称一致、独特且有意义。</p>
+<p>(c) 使代码风格和格式一致。</p>
+<h1 id="2-让电脑做事">2. 让电脑做事</h1>
+<p>(a) 使计算机重复任务。</p>
+<ul>
+<li>Make (<a href="http://www.gnu.org/software/make">http://www.gnu.org/software/make</a>)</li>
+</ul>
+<p>(b) 将最近的命令保存在文件中以供重复使用。</p>
+<p>(c) 使用构建工具来自动化工作流程。</p>
+<h1 id="3-进行增量更改">3. 进行增量更改</h1>
+<p>(a) 小步工作，经常反馈和修正路线。</p>
+<ul>
+<li>Dropbox (<a href="http://www.dropbox.com">http://www.dropbox.com</a>)</li>
+</ul>
+<p>(b) 使用版本控制系统。</p>
+<ul>
+<li>Git (<a href="http://git-scm.com">http://git-scm.com</a>)</li>
+<li>Subversion (<a href="http://subversion.apache.org">http://subversion.apache.org</a>)</li>
+<li>Mercurial (<a href="http://mercurial.selenic.com">http://mercurial.selenic.com</a>)</li>
+<li>GitHub (https:// github.com)</li>
+<li>BitBucket (<a href="https://bitbucket.org">https://bitbucket.org</a>)</li>
+<li>SourceForge (<a href="http://sourceforge.net">http://sourceforge.net</a>)</li>
+<li>Google Code (<a href="http://code.google.com">http://code.google.com</a>)</li>
+</ul>
+<p>(c) 将手动创建的所有内容放入版本控制。</p>
+<h1 id="4-不要重复自己或他人">4. 不要重复自己（或他人）</h1>
+<p>(a) 每条数据在系统中都必须有一个单一的权威表示。</p>
+<p>(b) 模块化代码而不是复制和粘贴。</p>
+<p>(c) 重用代码而不是重写它。</p>
+<h1 id="5-为错误做好计划">5. 为错误做好计划</h1>
+<p>(a) 向程序添加断言以检查其操作。</p>
+<p>(b) 使用现成的单元测试库。</p>
+<p>(c) 将错误转化为测试用例。</p>
+<p>(d) 使用符号调试器。</p>
+<h1 id="6-软件运行正常后才能进行优化">6. 软件运行正常后才能进行优化</h1>
+<p>(a) 使用分析器来识别瓶颈。</p>
+<p>(b) 用尽可能高级的语言编写代码。</p>
+<h1 id="7-记录设计和目的而不是机制">7. 记录设计和目的，而不是机制</h1>
+<p>(a) 记录接口和原因，而不是实现。</p>
+<p>(b) 重构代码而不是解释它是如何工作的。</p>
+<p>(c) 在该软件中嵌入某个软件的文档。</p>
+<ul>
+<li>Javadoc</li>
+<li>Doxygen</li>
+<li>Sphinx</li>
+<li>knitr</li>
+<li>IPython Notebooks</li>
+</ul>
+<h1 id="8-合作">8. 合作</h1>
+<p>(a) 使用合并前的代码审查。</p>
+<p>(b) 在让新人跟上进度和处理特别棘手的问题时使用结对编程。</p>
+<p>(c) 使用问题跟踪工具。</p>
+<ul>
+<li>GitHub include issue tracking tools</li>
+<li>Trac (<a href="http://trac.edgewall.org">http://trac.edgewall.org</a>)</li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e4%b8%ba%e4%ba%ba%e7%bc%96%e5%86%99%e7%a8%8b%e5%ba%8f%e8%80%8c%e4%b8%8d%e6%98%af%e4%b8%ba%e8%ae%a1%e7%ae%97%e6%9c%ba">
+                            1. 为人编写程序，而不是为计算机
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-%e8%ae%a9%e7%94%b5%e8%84%91%e5%81%9a%e4%ba%8b">
+                            2. 让电脑做事
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3-%e8%bf%9b%e8%a1%8c%e5%a2%9e%e9%87%8f%e6%9b%b4%e6%94%b9">
+                            3. 进行增量更改
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#4-%e4%b8%8d%e8%a6%81%e9%87%8d%e5%a4%8d%e8%87%aa%e5%b7%b1%e6%88%96%e4%bb%96%e4%ba%ba">
+                            4. 不要重复自己（或他人）
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#5-%e4%b8%ba%e9%94%99%e8%af%af%e5%81%9a%e5%a5%bd%e8%ae%a1%e5%88%92">
+                            5. 为错误做好计划
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#6-%e8%bd%af%e4%bb%b6%e8%bf%90%e8%a1%8c%e6%ad%a3%e5%b8%b8%e5%90%8e%e6%89%8d%e8%83%bd%e8%bf%9b%e8%a1%8c%e4%bc%98%e5%8c%96">
+                            6. 软件运行正常后才能进行优化
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#7-%e8%ae%b0%e5%bd%95%e8%ae%be%e8%ae%a1%e5%92%8c%e7%9b%ae%e7%9a%84%e8%80%8c%e4%b8%8d%e6%98%af%e6%9c%ba%e5%88%b6">
+                            7. 记录设计和目的，而不是机制
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#8-%e5%90%88%e4%bd%9c">
+                            8. 合作
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

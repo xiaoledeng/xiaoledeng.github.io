@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberrypi on Xiao-Le Deng</title>
+    <link>https://www.xiaoledeng.cn/categories/raspberrypi/</link>
+    <description>Recent content in Raspberrypi on Xiao-Le Deng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2012 – 2021 · [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style) for [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Mon, 29 Mar 2021 13:20:00 +0800</lastBuildDate><atom:link href="https://www.xiaoledeng.cn/categories/raspberrypi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Raspberry Pi【5】系统更新</title>
+      <link>https://www.xiaoledeng.cn/2021/03/29/raspberry-pi-5/</link>
+      <pubDate>Mon, 29 Mar 2021 13:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/29/raspberry-pi-5/</guid>
+      <description>sudo apt-get update sudo apt-get upgrade </description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi【4】常用软件源</title>
+      <link>https://www.xiaoledeng.cn/2020/11/14/raspberry-pi-4/</link>
+      <pubDate>Sat, 14 Nov 2020 13:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/14/raspberry-pi-4/</guid>
+      <description>1. USTC 中国科学技术大学 Raspbian https://mirrors.ustc.edu.cn/raspbian/raspbian/
+Raspberrypi https://mirrors.ustc.edu.cn/raspberrypi/
+2. Aliyun 阿里云 Raspbian http://mirrors.aliyun.com/raspbian/raspbian/
+3. 清华大学 Raspbian http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/
+Raspberrypi https://mirrors.tuna.tsinghua.edu.cn/raspberrypi/
+4. 华南农业大学（华南用户） Raspbian http://mirrors.scau.edu.cn/raspbian/
+Raspberrypi https://mirrors.scau.edu.cn/raspberrypi/
+5. 大连东软信息学院源（北方用户） Raspbian http://mirrors.neusoft.edu.cn/raspbian/raspbian/
+6. 重庆大学源（中西部用户） Raspbian https://mirrors.cqu.edu.cn/raspbian/raspbian/
+7. 新加坡国立大学 Raspbian http://mirror.nus.edu.sg/raspbian/raspbian
+8. 牛津大学 Raspbian http://mirror.ox.ac.uk/sites/archive.raspbian.org/archive/raspbian/
+9. 韩国KAIST大学 Raspbian http://ftp.kaist.ac.kr/raspbian/raspbian/
+10. 参考  Raspbian 中国软件源 | 树莓派实验室 Raspbian 源使用帮助 — USTC Mirror Help 文档 Raspberrypi 源使用帮助 — USTC Mirror Help 文档 raspbian镜像-raspbian下载地址-raspbian安装教程-阿里巴巴开源镜像站 raspbian | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror Raspbian 源使用帮助 — SCAU Mirrors Help 文档  </description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi【3】操作系统清单</title>
+      <link>https://www.xiaoledeng.cn/2020/11/14/raspberry-pi-3/</link>
+      <pubDate>Sat, 14 Nov 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/14/raspberry-pi-3/</guid>
+      <description>1. 整理版  Raspberry Pi OS : 默认的最常用于Raspberry Pi的免费操作系统 Pidora : 专为树莓派优化的 Fedora Linux 系统 Arch Linux ARM Ubuntu MATE : 是 Ubuntu Linux 官方的一个派生版，基于桌面环境 MATE Ubuntu Desktop Ubuntu Server : Ubuntu 专门用作服务器的版本 Ubuntu Core : 流行的 Ubuntu Linux 操作系统的精简版，旨在安装在各种嵌入式设备上 LibreELEC : 免费开源的轻量级“Just enough OS”Linux 发行版，它属于 KODI 的一个分支版本，功能类似于 Emby 和 PLEX 的多媒体服务平台。不同之处在于专为嵌入式设备而设计，支持各种 TV-BOX HTPC 和 RaspberryPi Windows 10 OSMC : 使得树莓派更适合做个xbmc播放器，是 Openelec 的升级版，同样是基于 Kodi 的开源项目 Openelec : Open Embedded Linux Entertainment Center，开源嵌入式Linux 娱乐中心 PiNet : 帮助学校建立和管理一个Raspberry Pi的课堂 Mozilla WebThings : Mozilla 的物联网平台项目 weather_station-2018-01-14 : 基于树莓派全自动气象站，可应用多种传感器 RISC OS : 第一款ARM计算机的操作系统 Kali Linux : 高级渗透测试和安全审计Linux发行版 NOOBS : 从安装的多个树莓派系统中选择你要启动的系统 Sabayon : 在5分钟以内使一台电脑进入强大的Gentoo Linux系统 Recalbox : 复古模拟平台 CentOS DietPi : 基于 Raspbian 的精简版本系统，其特点就是小和快 SUSE Linux Lakka : RetroArch 官方的 Linux 发行版，以多机种游戏模拟器 libretro 为核心 RetroPie : 将复古游戏机集成到Raspberry pi 树莓派上使之成为一个专用的游戏机模拟器平台 Kano : 专门面向儿童编程量身定做的树莓派镜像，让儿童在游戏中学习编程 RTandroid : 定制版的安卓系统，可以正常安装安卓软件，wifi蓝牙工作正常 Flintos : 一款更快速，更简单，更高效的云驱动操作系统  2.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi【2】创意项目清单</title>
+      <link>https://www.xiaoledeng.cn/2020/11/14/raspberry-pi-2/</link>
+      <pubDate>Sat, 14 Nov 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/14/raspberry-pi-2/</guid>
+      <description>1. 34 个使用 Raspberry Pi 的酷创意 · LinuxTOY https://linuxtoy.org/archives/cool-ideas-for-raspberry-pi.html
+ Web 服务器 家庭自动化 BitTorrent 服务器 Web Cam 服务器 天气预报站 BitCoin Wallet QuadCopter VoIP PBX XMBC 多媒体中心 有声书籍播放器 Arduino Shields NAS 服务器 Apple Time Machine 支持 Tor 中继 家用 VPN 服务器 GPS 跟踪器（带 3G 支持） Advice Machine（无用但很酷） 模拟输入 超级电脑 Kindle 作为显示屏 PIC Programmer PenTesting/Hacking Android 系统 检查网络状态 Solar 数据记录器 把我发到太空 咖啡 制作一个酷坦克 电子相框 添加 WiFi OpenSource Kiosk Node JS 流量监视 超频  2.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi【1】树莓派 (Raspberry Pi, RPi)</title>
+      <link>https://www.xiaoledeng.cn/2020/11/11/raspberry-pi-1/</link>
+      <pubDate>Wed, 11 Nov 2020 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/11/raspberry-pi-1/</guid>
+      <description>Raspberry Pi (中文名为“树莓派”，简写为RPi，是为学习计算机编程教育而设计)，只有信用卡大小的微型电脑，其系统基于Linux。
+ The Raspberry Pi is a tiny and affordable computer that you can use to learn programming through fun, practical projects.
+官网： https://www.raspberrypi.org/
+Documentation: https://www.raspberrypi.org/documentation/
+Download: https://www.raspberrypi.org/downloads/</description>
+    </item>
+    
+  </channel>
+</rss>

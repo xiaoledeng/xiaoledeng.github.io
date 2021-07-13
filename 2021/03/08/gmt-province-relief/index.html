@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>GMT绘制各省的地形图 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>GMT绘制各省的地形图</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2021-03-08 16:30</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/gmt/">#GMT</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-下载地形grd数据">1. 下载地形grd数据</h1>
+<p>下载地址： <a href="https://mirrors.ustc.edu.cn/gmt/data/">https://mirrors.ustc.edu.cn/gmt/data/</a></p>
+<p>上述数据中，最高分辨率为<code>15s</code>（即：<code>earth_relief_15s.grd</code>，约 <code>2.77G</code>）。</p>
+<p>如果需要 <code>1s</code> 分辨率，可从SRTM内插数据下载：</p>
+<ul>
+<li><a href="https://topex.ucsd.edu/WWW_html/srtm30_plus.html">https://topex.ucsd.edu/WWW_html/srtm30_plus.html</a></li>
+</ul>
+<h1 id="2-绘图代码">2. 绘图代码</h1>
+<pre><code>#!/bin/bash
+# gmt version: Version 5.4.5 [64-bit] [4 cores]
+ps=province.ps
+gmt gmtset FORMAT_GEO_MAP = dddF MAP_FRAME_WIDTH=2p
+gmt gmtset FONT_ANNOT_PRIMARY 7p,Helvetica,black FONT_LABEL 7p,Helvetica,black 
+# 根据需要选择省界，CN.42为湖北
+gmt pscoast -ECN.42 -M -Df &gt; sd.txt
+# psclip 使用省界裁切地图 Begin of the clip
+gmt psclip sd.txt `gmt gmtinfo sd.txt -I0.000001` -JM2i -K &gt; $ps
+gmt makecpt -Cdem2 -T0/2000/1 &gt; mss.cpt
+# 数据的绝对路径为：/Users/shalom/gmt/earth_relief_15s.grd
+# grdimage 添加DEM绘图，并添加方位光照效果。
+gmt grdimage -J -R /Users/shalom/gmt/earth_relief_15s.grd -Cmss.cpt  -O -K  -I+a0 -Q &gt;&gt; $ps
+# End of the clip
+gmt psclip -C -O  -R -J &gt;&gt; $ps
+# 转换成pdf
+gmt psconvert $ps -A -P -Tf
+# 删除多余的文件
+rm sd.txt mss.cpt *.ps
+</code></pre><p>说明：</p>
+<ul>
+<li>
+<p><code>pscoast</code> 导出省界，省界代码如<code>-ECN.42</code>（湖北），可从GMT目录下<code>dcw-states.txt</code>文件中找到，也可使用命令 <code>gmt coast -E+L</code> 查看省代码（来自<a href="https://docs.gmt-china.org/latest/dataset/dcw/">DCW: 世界数字图表 — GMT中文手册</a>）。</p>
+</li>
+<li>
+<p>以中国的数据为例，其包括全部 34 个省级行政区域：23 个省（包括台湾省）， 5 个自治区，4 个直辖市，以及香港，澳门 2 个特别行政区。 中国的省代码是数字，和中国居民身份证号码相同:</p>
+<ul>
+<li>CN 11 Beijing 北京</li>
+<li>CN 50 Chongqing 重庆</li>
+<li>CN 31 Shanghai 上海</li>
+<li>CN 12 Tianjin 天津</li>
+<li>CN 34 Anhui 安徽</li>
+<li>CN 35 Fujian 福建</li>
+<li>CN 62 Gansu 甘肃</li>
+<li>CN 44 Guangdong 广东</li>
+<li>CN 52 Guizhou 贵州</li>
+<li>CN 46 Hainan 海南</li>
+<li>CN 13 Hebei 河北</li>
+<li>CN 23 Heilongjiang 黑龙江</li>
+<li>CN 41 Henan 河南</li>
+<li>CN 42 Hubei 湖北</li>
+<li>CN 43 Hunan 湖南</li>
+<li>CN 32 Jiangsu 江苏</li>
+<li>CN 36 Jiangxi 江西</li>
+<li>CN 22 Jilin 吉林</li>
+<li>CN 21 Liaoning 辽宁</li>
+<li>CN 63 Qinghai 青海</li>
+<li>CN 61 Shaanxi 陕西，注意与山西区分</li>
+<li>CN 37 Shandong 山东</li>
+<li>CN 14 Shanxi 山西，注意与陕西区分</li>
+<li>CN 51 Sichuan 四川</li>
+<li>CN 71 Taiwan 台湾</li>
+<li>CN 53 Yunnan 云南</li>
+<li>CN 33 Zhejiang 浙江</li>
+<li>CN 45 Guangxi 广西</li>
+<li>CN 15 Nei Monggu 内蒙古</li>
+<li>CN 64 Ningxia 宁夏</li>
+<li>CN 65 Xinjiang 新疆</li>
+<li>CN 54 Xizang 西藏</li>
+<li>CN 91 Xianggang (Hong Kong) 香港</li>
+<li>CN 92 Aomen (Macao) 澳门</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/omdtmtzDNJ-jQhsgY_iDqA">GMT绘制中国各省DEM地图</a>\</li>
+<li><a href="https://docs.gmt-china.org/latest/dataset/dcw/">DCW: 世界数字图表 — GMT中文手册</a></li>
+<li><a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/dataset/dcw/index.rst">GMT_docs/index.rst at master · gmt-china/GMT_docs</a></li>
+<li><a href="https://github.com/GenericMappingTools/dcw-gmt">GenericMappingTools/dcw-gmt: Data and scripts that maintain and build the DCW data used in GMT</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e4%b8%8b%e8%bd%bd%e5%9c%b0%e5%bd%a2grd%e6%95%b0%e6%8d%ae">
+                            1. 下载地形grd数据
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-%e7%bb%98%e5%9b%be%e4%bb%a3%e7%a0%81">
+                            2. 绘图代码
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3-%e5%8f%82%e8%80%83">
+                            3. 参考
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Nature期刊的LaTeX模版 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Nature期刊的LaTeX模版</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-11-03 14:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/latex/">#LaTeX</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-下载nature的latex模版">1. 下载Nature的LaTeX模版</h1>
+<p>在<a href="https://ctan.org/tex-archive/macros/latex/contrib/nature/">CTAN: /tex-archive/macros/latex/contrib/nature</a>下载模版，基本信息如下：</p>
+<pre><code>Nature package
+Version: 1.0, 24 Feb. 2004
+by Peter Czoschke
+</code></pre><h1 id="2-添加图片模块">2. 添加图片模块</h1>
+<p>默认Nature模版是不加入图片模块的，可通过<a href="https://tex.stackexchange.com/questions/362195/nature-include-graphics">templates - Nature include graphics - TeX - LaTeX Stack Exchange</a>给出的解决方案：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-LaTeX" data-lang="LaTeX"><span style="color:#66d9ef">\documentclass</span>{nature}
+<span style="color:#66d9ef">\usepackage</span>{graphicx}
+<span style="color:#66d9ef">\makeatletter</span>
+<span style="color:#66d9ef">\let\saved</span>@includegraphics<span style="color:#66d9ef">\includegraphics</span>
+<span style="color:#66d9ef">\AtBeginDocument</span>{<span style="color:#66d9ef">\let\includegraphics\saved</span>@includegraphics}
+<span style="color:#66d9ef">\renewenvironment*</span>{figure}{<span style="color:#66d9ef">\@</span>float{figure}}{<span style="color:#66d9ef">\end</span>@float}
+<span style="color:#66d9ef">\makeatother</span>
+<span style="color:#66d9ef">\begin</span>{document}
+
+<span style="color:#66d9ef">\begin</span>{figure}[!htbp]
+	<span style="color:#66d9ef">\centering</span>
+	<span style="color:#66d9ef">\includegraphics</span><span style="color:#a6e22e">[width=4.0in]</span>{name.pdf}
+	<span style="color:#66d9ef">\caption</span>{Descriptions of the picture}
+	<span style="color:#66d9ef">\label</span>{label of the picture}
+<span style="color:#66d9ef">\end</span>{figure}
+
+<span style="color:#66d9ef">\end</span>{document}
+</code></pre></div></div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e4%b8%8b%e8%bd%bdnature%e7%9a%84latex%e6%a8%a1%e7%89%88">
+                            1. 下载Nature的LaTeX模版
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-%e6%b7%bb%e5%8a%a0%e5%9b%be%e7%89%87%e6%a8%a1%e5%9d%97">
+                            2. 添加图片模块
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

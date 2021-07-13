@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Ubuntu连接服务器的账号登录和上传下载文件 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Ubuntu连接服务器的账号登录和上传下载文件</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-09-21 12:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/linux/">#Linux</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1账号登录">1.账号登录</h1>
+<p>Ubuntu打开终端，输入：</p>
+<pre><code>ssh user_name@ip_address
+</code></pre><p>注释：</p>
+<ul>
+<li>user_name为用户名</li>
+<li>ip_address为服务器的ip地址</li>
+<li>如果有端口设置，加入 -p xx，xx为端口号。</li>
+</ul>
+<h1 id="2上传下载文件">2.上传下载文件</h1>
+<p>本地上传到服务器：</p>
+<pre><code>scp /path_local_file user_name@ip_address:/path_server_folder
+</code></pre><p>例如：</p>
+<pre><code>scp /home/shalom/a.txt deng@127.168.1.1:/home/deng/data/
+</code></pre><p>解释：</p>
+<ul>
+<li>path_local_file为本地文件的地址</li>
+<li>/path_server_folder为服务器上路径</li>
+<li>如果有端口设置，加入 -p xx，xx为端口号。</li>
+<li>如果是本地文件夹，加 -r</li>
+</ul>
+<p>服务器下载到本地：</p>
+<pre><code>scp user_name@ip_address:/path_server_file /path_local_folder
+</code></pre><h1 id="3参考">3.参考</h1>
+<ul>
+<li><a href="https://www.cnblogs.com/phillee/p/12029625.html">Ubuntu服务器登录与使用 - coffee_tea_or_me - 博客园</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1%e8%b4%a6%e5%8f%b7%e7%99%bb%e5%bd%95">
+                            1.账号登录
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2%e4%b8%8a%e4%bc%a0%e4%b8%8b%e8%bd%bd%e6%96%87%e4%bb%b6">
+                            2.上传下载文件
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3%e5%8f%82%e8%80%83">
+                            3.参考
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

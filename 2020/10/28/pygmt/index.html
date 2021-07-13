@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>PyGMT: Pythonic Generic Mapping Tools - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>PyGMT: Pythonic Generic Mapping Tools</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-10-28 17:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/researchsoftware/">#Researchsoftware</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/python/">#Python</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-introduction">1. Introduction</h1>
+<p style="text-align:justify; text-justify:inter-ideograph;">PyGMT is a library for processing geospatial and geophysical data and making publication quality maps and figures. It provides a Pythonic interface for the [Generic Mapping Tools (GMT)](https://github.com/GenericMappingTools/gmt), a command-line program widely used in the Earth Sciences.</p>
+<p>Documentation: <a href="https://www.pygmt.org/dev/">https://www.pygmt.org/dev/</a></p>
+<p>GitHub: <a href="https://github.com/GenericMappingTools/pygmt">https://github.com/GenericMappingTools/pygmt</a></p>
+<p>Install: <a href="https://www.pygmt.org/dev/install.html">https://www.pygmt.org/dev/install.html</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># install pygmt environment</span>
+conda config --prepend channels conda-forge
+conda create --name pygmt python<span style="color:#f92672">=</span>3.8 pip numpy pandas xarray netcdf4 packaging gmt
+<span style="color:#75715e"># open pygmt environment</span>
+conda activate pygmt
+<span style="color:#75715e"># install pygmt</span>
+conda install pygmt
+<span style="color:#75715e"># test</span>
+conda install pytest pytest-mpl ipython
+import pygmt
+pygmt.show_versions<span style="color:#f92672">()</span>
+pygmt.test<span style="color:#f92672">()</span>
+</code></pre></div><h1 id="2-finding-the-gmt-shared-library">2. Finding the GMT shared library</h1>
+<p>Sometimes, PyGMT will be unable to find the correct version of the GMT shared library. This can happen if you have multiple versions of GMT installed.</p>
+<p>You can tell PyGMT exactly where to look for libgmt by setting the GMT_LIBRARY_PATH environment variable. This should be set to the directory where libgmt.so, libgmt.dylib or gmt.dll can be found for Linux, macOS and Windows respectively. e.g. in a terminal run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Linux/macOS</span>
+export GMT_LIBRARY_PATH<span style="color:#f92672">=</span>$HOME/anaconda3/envs/pygmt/lib
+<span style="color:#75715e"># Windows</span>
+set <span style="color:#e6db74">&#34;GMT_LIBRARY_PATH=C:\Users\USERNAME\Anaconda3\envs\pygmt\Library\bin\&#34;
+</span></code></pre></div></div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-introduction">
+                            1. Introduction
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-finding-the-gmt-shared-library">
+                            2. Finding the GMT shared library
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

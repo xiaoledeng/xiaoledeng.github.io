@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Ubuntu虚拟显示器且远程控制（无显示器接入） - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Ubuntu虚拟显示器且远程控制（无显示器接入）</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-09-19 17:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/linux/">#Linux</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1问题说明">1.问题说明</h1>
+<p>当连接Ubuntu的显示器关闭时，即无显示器接入，通过Teamviewer和Anydesk等远程控制软件无法正常访问该Ubuntu系统。</p>
+<h1 id="2解决方案">2.解决方案</h1>
+<p>使用虚拟显示器，而后就能正常访问。</p>
+<p>1.安装Ubuntu虚拟显示器的软件(xserver-xorg-video-dummy)：</p>
+<pre><code>sudo apt-get install xserver-xorg-core
+
+sudo apt-get install xserver-xorg-video-dummy
+</code></pre><p>or</p>
+<pre><code>sudo apt-get install xserver-xorg-video-dummy  --fix-missing
+</code></pre><p>2.修改/创建配置文件（慎用，默认就会使用虚拟显示器，而不是显示连接好的外接屏幕)：</p>
+<pre><code>sudo gedit /etc/X11/xorg.conf
+</code></pre><p>or</p>
+<pre><code>sudo gedit /usr/share/X11/xorg.conf.d/xorg.conf
+</code></pre><pre><code>Section &quot;Device&quot;
+    Identifier  &quot;Configured Video Device&quot;
+    Driver      &quot;dummy&quot;
+EndSection
+
+Section &quot;Monitor&quot;
+    Identifier  &quot;Configured Monitor&quot;
+    HorizSync 31.5-48.5
+    VertRefresh 50-70
+EndSection
+
+Section &quot;Screen&quot;
+    Identifier  &quot;Default Screen&quot;
+    Monitor     &quot;Configured Monitor&quot;
+    Device      &quot;Configured Video Device&quot;
+    DefaultDepth 24
+    SubSection &quot;Display&quot;
+        Depth 24
+        Modes &quot;1920x1080&quot;
+    EndSubSection
+EndSection
+</code></pre><p>注释：</p>
+<ul>
+<li>Section &ldquo;Device&rdquo;  # 显卡信息</li>
+<li>Section &ldquo;Monitor&rdquo; # 显示器的信息</li>
+<li>Section &ldquo;Screen&rdquo;  # 显卡和显示器</li>
+</ul>
+<p>3.重启电脑即可。<strong>注意：重启之后，即使接入了显示器，也不会输出信号到显示器上。</strong></p>
+<p>解决思路：</p>
+<ul>
+<li>1）不需要虚拟显示器时，把/etc/X11/xorg.conf移动到桌面；</li>
+<li>2）需要虚拟显示器时，从桌面移动到/etc/X11/xorg.conf；</li>
+</ul>
+<p>命令：</p>
+<pre><code>sudo mv /etc/X11/xorg.conf /home/shalom/Desktop/xorg.conf
+
+sudo mv /home/shalom/Desktop/xorg.conf /etc/X11/xorg.conf
+</code></pre><p>4.xrandr: 在使用虚拟显示器之后，使用 xrandr 命令查看显示器信息。</p>
+<pre><code>xrandr -q
+</code></pre><p>调整屏幕的分辨率：</p>
+<pre><code>xrandr --fb 1280x1024
+</code></pre><h1 id="3参考">3.参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/qq_29757283/article/details/102604431">【LINUX】（Ubuntu）无显示器接入，使用虚拟显示器且远程控制_RDpWTeHM的博客-CSDN博客</a></li>
+<li><a href="https://askubuntu.com/questions/1033436/how-to-use-ubuntu-18-04-on-vnc-without-display-attached">remote desktop - How to use Ubuntu 18.04 on VNC without display attached? - Ask Ubuntu</a></li>
+<li><a href="https://askubuntu.com/questions/453109/add-fake-display-when-no-monitor-is-plugged-in">14.04 - Add Fake Display when No Monitor is Plugged In - Ask Ubuntu</a></li>
+<li><a href="https://blog.csdn.net/saturnbj/article/details/5442056">xorg.conf配置_Penglunyan-CSDN博客</a></li>
+<li><a href="https://www.cnblogs.com/dlvguo/p/10486640.html">Ubuntu 18.04设置1920*1080 - 国-哥 - 博客园</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1%e9%97%ae%e9%a2%98%e8%af%b4%e6%98%8e">
+                            1.问题说明
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88">
+                            2.解决方案
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3%e5%8f%82%e8%80%83">
+                            3.参考
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

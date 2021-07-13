@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>SciencePlots: Python高质量科学绘图 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>SciencePlots: Python高质量科学绘图</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-09-08 12:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/python/">#Python</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1简介">1.简介</h1>
+<blockquote>
+<p>SciencePlots: Matplotlib styles for scientific plotting. This repo has Matplotlib styles to format your plots for scientific papers, presentations and theses.</p>
+</blockquote>
+<p>Python中的Matplotlib来绘制高质量的科学绘图，可用于科学论文，演讲和学位论文的制图。</p>
+<p>Github地址为：<a href="https://github.com/garrettj403/SciencePlots">garrettj403/SciencePlots: Matplotlib styles for scientific plotting</a>。</p>
+<h1 id="2代码">2.代码</h1>
+<p>安装：</p>
+<pre><code>pip install SciencePlots
+</code></pre><pre><code>&quot;&quot;&quot; An example of the 'science' theme. &quot;&quot;&quot;
+
+import numpy as np 
+import matplotlib.pyplot as plt 
+
+def model(x, p):
+    return x ** (2 * p + 1) / (1 + x ** (2 * p))
+
+x = np.linspace(0.75, 1.25, 201)
+</code></pre><h2 id="21science">2.1science</h2>
+<center><embed src="/python-scientific-plotting/fig1.pdf" width="400" height="350"></center>
+<pre><code>with plt.style.context(['science']):
+    fig, ax = plt.subplots()
+    for p in [10, 15, 20, 30, 50, 100]:
+        ax.plot(x, model(x, p), label=p)
+    ax.legend(title='Order')
+    ax.set(xlabel='Voltage (mV)')
+    ax.set(ylabel='Current ($\mu$A)')
+    ax.autoscale(tight=True)
+    fig.savefig('figures/fig1.pdf')
+    fig.savefig('figures/fig1.jpg', dpi=300)
+</code></pre><h2 id="22science--ieee">2.2science + ieee</h2>
+<center><embed src="/python-scientific-plotting/fig2.pdf" width="400" height="350"></center>
+<pre><code>with plt.style.context(['science', 'ieee']):
+    fig, ax = plt.subplots()
+    for p in [10, 20, 50]:
+        ax.plot(x, model(x, p), label=p)
+    ax.legend(title='Order')
+    ax.set(xlabel='Voltage (mV)')
+    ax.set(ylabel='Current ($\mu$A)')
+    ax.autoscale(tight=True)
+    fig.savefig('figures/fig2.pdf')
+    fig.savefig('figures/fig2.jpg', dpi=300)
+</code></pre><h2 id="23science--scatter">2.3science + scatter</h2>
+<center><embed src="/python-scientific-plotting/fig3.pdf" width="500" height="500"></center>
+<pre><code>with plt.style.context(['science', 'scatter']):
+    fig, ax = plt.subplots(figsize=(4,4))
+    ax.plot([-2, 2], [-2, 2], 'k--')
+    ax.fill_between([-2, 2], [-2.2, 1.8], [-1.8, 2.2], color='dodgerblue', alpha=0.2, lw=0)
+    for i in range(7):
+        x1 = np.random.normal(0, 0.5, 10)
+        y1 = x1 + np.random.normal(0, 0.2, 10)
+        ax.plot(x1, y1, label=r&quot;$^\#${}&quot;.format(i+1))
+    ax.legend(title='Sample', loc=2)
+    ax.set_xlabel(r&quot;$\log_{10}\left(\frac{L_\mathrm{IR}}{\mathrm{L}_\odot}\right)$&quot;)
+    ax.set_ylabel(r&quot;$\log_{10}\left(\frac{L_\mathrm{6.2}}{\mathrm{L}_\odot}\right)$&quot;)
+    ax.set_xlim([-2, 2])
+    ax.set_ylim([-2, 2])
+    fig.savefig('figures/fig3.pdf')
+    fig.savefig('figures/fig3.jpg', dpi=300)
+</code></pre><h2 id="24science--high-vis">2.4science + high-vis</h2>
+<center><embed src="/python-scientific-plotting/fig4.pdf" width="400" height="350"></center>
+<pre><code>with plt.style.context(['science', 'high-vis']):
+    fig, ax = plt.subplots()
+    for p in [10, 15, 20, 30, 50, 100]:
+        ax.plot(x, model(x, p), label=p)
+    ax.legend(title='Order')
+    ax.set(xlabel='Voltage (mV)')
+    ax.set(ylabel='Current ($\mu$A)')
+    ax.autoscale(tight=True)
+    fig.savefig('figures/fig4.pdf')
+    fig.savefig('figures/fig4.jpg', dpi=300)
+</code></pre><h2 id="25dark_background--science--high-vis">2.5dark_background + science + high-vis:</h2>
+<center><embed src="/python-scientific-plotting/fig5.pdf" width="400" height="350"></center>
+<pre><code>with plt.style.context(['dark_background', 'science', 'high-vis']):
+    fig, ax = plt.subplots()
+    for p in [10, 15, 20, 30, 50, 100]:
+        ax.plot(x, model(x, p), label=p)
+    ax.legend(title='Order')
+    ax.set(xlabel='Voltage (mV)')
+    ax.set(ylabel='Current ($\mu$A)')
+    ax.autoscale(tight=True)
+    fig.savefig('figures/fig5.pdf')
+    fig.savefig('figures/fig5.jpg', dpi=300)
+</code></pre><h2 id="26science--notebook">2.6science + notebook</h2>
+<center><embed src="/python-scientific-plotting/fig6.pdf" width="400" height="350"></center>
+<pre><code>with plt.style.context(['science', 'notebook']):
+    fig, ax = plt.subplots()
+    for p in [10, 15, 20, 30, 50, 100]:
+        ax.plot(x, model(x, p), label=p)
+    ax.legend(title='Order')
+    ax.set(xlabel='Voltage (mV)')
+    ax.set(ylabel='Current ($\mu$A)')
+    ax.autoscale(tight=True)
+    fig.savefig('figures/fig10.pdf')
+    fig.savefig('figures/fig10.jpg', dpi=300)
+</code></pre><h2 id="27science--bright">2.7science + bright</h2>
+<center><embed src="/python-scientific-plotting/fig7.pdf" width="400" height="350"></center>
+<pre><code># Plot different color cycles 
+with plt.style.context(['science', 'bright']):
+    fig, ax = plt.subplots()
+    for p in [5, 10, 15, 20, 30, 50, 100]:
+        ax.plot(x, model(x, p), label=p)
+    ax.legend(title='Order')
+    ax.set(xlabel='Voltage (mV)')
+    ax.set(ylabel='Current ($\mu$A)')
+    ax.autoscale(tight=True)
+    fig.savefig('figures/fig6.pdf')
+    fig.savefig('figures/fig6.jpg', dpi=300)
+</code></pre><h2 id="28science--vibrant">2.8science + vibrant:</h2>
+<center><embed src="/python-scientific-plotting/fig8.pdf" width="400" height="350"></center>
+<pre><code>with plt.style.context(['science', 'vibrant']):
+    fig, ax = plt.subplots()
+    for p in [5, 10, 15, 20, 30, 50, 100]:
+        ax.plot(x, model(x, p), label=p)
+    ax.legend(title='Order')
+    ax.set(xlabel='Voltage (mV)')
+    ax.set(ylabel='Current ($\mu$A)')
+    ax.autoscale(tight=True)
+    fig.savefig('figures/fig7.pdf')
+    fig.savefig('figures/fig7.jpg', dpi=300)
+</code></pre><h2 id="29science--muted">2.9science + muted</h2>
+<center><embed src="/python-scientific-plotting/fig9.pdf" width="400" height="350"></center>
+<pre><code>with plt.style.context(['science', 'muted']):
+    fig, ax = plt.subplots()
+    for p in [5, 7, 10, 15, 20, 30, 38, 50, 100, 500]:
+        ax.plot(x, model(x, p), label=p)
+    ax.legend(title='Order', fontsize=7)
+    ax.set(xlabel='Voltage (mV)')
+    ax.set(ylabel='Current ($\mu$A)')
+    ax.autoscale(tight=True)
+    fig.savefig('figures/fig8.pdf')
+    fig.savefig('figures/fig8.jpg', dpi=300)
+</code></pre><h2 id="210science--retro">2.10science + retro</h2>
+<center><embed src="/python-scientific-plotting/fig10.pdf" width="400" height="350"></center>
+<pre><code>with plt.style.context(['science', 'retro']):
+    fig, ax = plt.subplots()
+    for p in [10, 15, 20, 30, 50, 100]:
+        ax.plot(x, model(x, p), label=p)
+    ax.legend(title='Order')
+    ax.set(xlabel='Voltage (mV)')
+    ax.set(ylabel='Current ($\mu$A)')
+    ax.autoscale(tight=True)
+    fig.savefig('figures/fig9.pdf')
+    fig.savefig('figures/fig9.jpg', dpi=300)
+</code></pre><h2 id="211science--grid">2.11science + grid</h2>
+<center><embed src="/python-scientific-plotting/fig11.pdf" width="400" height="350"></center>
+<pre><code>with plt.style.context(['science', 'grid']):
+    fig, ax = plt.subplots()
+    for p in [10, 15, 20, 30, 50, 100]:
+        ax.plot(x, model(x, p), label=p)
+    ax.legend(title='Order')
+    ax.set(xlabel='Voltage (mV)')
+    ax.set(ylabel='Current ($\mu$A)')
+    ax.autoscale(tight=True)
+    fig.savefig('figures/fig11.pdf')
+    fig.savefig('figures/fig11.jpg', dpi=300)
+</code></pre><h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/Go5hGq_OpopqdsRO4YRU0g">使用基于matplotlib的SciencePlots绘制精美图表</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1%e7%ae%80%e4%bb%8b">
+                            1.简介
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2%e4%bb%a3%e7%a0%81">
+                            2.代码
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#21science">
+                            2.1science
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#22science--ieee">
+                            2.2science &#43; ieee
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#23science--scatter">
+                            2.3science &#43; scatter
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#24science--high-vis">
+                            2.4science &#43; high-vis
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#25dark_background--science--high-vis">
+                            2.5dark_background &#43; science &#43; high-vis:
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#26science--notebook">
+                            2.6science &#43; notebook
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#27science--bright">
+                            2.7science &#43; bright
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#28science--vibrant">
+                            2.8science &#43; vibrant:
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#29science--muted">
+                            2.9science &#43; muted
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#210science--retro">
+                            2.10science &#43; retro
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#211science--grid">
+                            2.11science &#43; grid
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#%e5%8f%82%e8%80%83">
+                            参考
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

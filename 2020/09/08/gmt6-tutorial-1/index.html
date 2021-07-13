@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>GMT6入门教程（1）版本迁移 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>GMT6入门教程（1）版本迁移</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-09-08 21:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/gmt/">#GMT</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="版本迁移经典模式--现代模式">版本迁移（经典模式 → 现代模式）</h1>
+<p>原地址：<a href="https://docs.gmt-china.org/latest/migrating/classic2modern/">经典模式 → 现代模式 — GMT中文手册</a></p>
+<p>将经典模式的脚本改成现代模式的脚本，基本可以遵循如下几点：</p>
+<ul>
+<li>绘图脚本以 gmt begin figure 开头，以 gmt end show 结束</li>
+<li>去掉 -K, -O, -P, 重定向符号以及PS文件名</li>
+<li>去掉多余的 -J, -R 选项</li>
+<li>某些模块重新命名。经典模式下以 ps 开头的模块省略 ps，比如 pscoast → coast、psbasemap → basemap。个别几个模块是例外，psxy → plot, psxyz → plot3d, psscale → colorbar</li>
+<li>在需要绘制多子图、图中图时，考虑使用 inset 和 subplot 改写</li>
+<li>现代模式下 makecpt 和 grd2cpt 默认将生成的CPT作为当前CPT，而不输出到文件中。这一特性在后面会具体介绍。如果需要生成CPT到文件中，需要额外使用 -H 选项。</li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#%e7%89%88%e6%9c%ac%e8%bf%81%e7%a7%bb%e7%bb%8f%e5%85%b8%e6%a8%a1%e5%bc%8f--%e7%8e%b0%e4%bb%a3%e6%a8%a1%e5%bc%8f">
+                            版本迁移（经典模式 → 现代模式）
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

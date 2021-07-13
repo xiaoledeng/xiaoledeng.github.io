@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Mac下brew换源和终止 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Mac下brew换源和终止</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-09-08 17:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/linux/">#Linux</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-换源">1. 换源</h1>
+<p>Homebrew更改为教育源：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --repo<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+
+cd <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --repo<span style="color:#66d9ef">)</span><span style="color:#e6db74">/Library/Taps/homebrew/homebrew-core&#34;</span>
+git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
+
+cd <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --repo<span style="color:#66d9ef">)</span><span style="color:#e6db74">/Library/Taps/homebrew/homebrew-cask&#34;</span>
+git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git
+
+brew update
+</code></pre></div><p>重置为官方地址：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --repo<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+git remote set-url origin https://github.com/Homebrew/brew.git
+
+cd <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --repo<span style="color:#66d9ef">)</span><span style="color:#e6db74">/Library/Taps/homebrew/homebrew-core&#34;</span>
+git remote set-url origin https://github.com/Homebrew/homebrew-core
+
+cd <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>brew --repo<span style="color:#66d9ef">)</span><span style="color:#e6db74">/Library/Taps/homebrew/homebrew-cask&#34;</span>
+git remote set-url origin https://github.com/Homebrew/homebrew-cask
+
+brew update
+</code></pre></div><p>替换Bottle源：</p>
+<p>bash用户（shell用户）：</p>
+<pre><code>echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' &gt;&gt; ~/.bash_profile
+source ~/.bash_profile
+</code></pre><p>zsh用户：</p>
+<pre><code>echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' &gt;&gt; ~/.zshrc
+source ~/.zshrc
+</code></pre><h1 id="2-终止">2. 终止</h1>
+<pre><code>rm -rf /usr/local/var/homebrew/locks
+</code></pre><p>解决错误类型：Error: Another active Homebrew update process is already in progress. Please wait for it to finish or terminate it to continue.</p>
+<h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="http://mirrors.ustc.edu.cn/help/brew.git.html">Homebrew 源使用帮助 — USTC Mirror Help 文档</a></li>
+<li><a href="http://mirrors.ustc.edu.cn/help/homebrew-cask.git.html">Homebrew Cask 源使用帮助 — USTC Mirror Help 文档</a></li>
+<li><a href="http://mirrors.ustc.edu.cn/help/homebrew-core.git.html">Homebrew Core 源使用帮助 — USTC Mirror Help 文档</a></li>
+<li><a href="https://www.cnblogs.com/dfsxh/p/10640611.html">解决brew报错：Another active Homebrew update process is already in progress - 林台山人 - 博客园</a></li>
+<li><a href="https://blog.csdn.net/qinyibut/article/details/89157014">解决：Another active Homebrew update process is already in progress._KANEKI的博客-CSDN博客</a></li>
+<li><a href="https://www.it610.com/article/1281318389939191808.htm">Mac的brew修改源 - it610.com</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e6%8d%a2%e6%ba%90">
+                            1. 换源
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-%e7%bb%88%e6%ad%a2">
+                            2. 终止
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3-%e5%8f%82%e8%80%83">
+                            3. 参考
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

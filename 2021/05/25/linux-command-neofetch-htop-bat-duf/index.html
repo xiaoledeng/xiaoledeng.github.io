@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Linux命令—neofetch、htop、bat和duf - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Linux命令—neofetch、htop、bat和duf</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2021-05-25 17:10</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/linux/">#Linux</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-neofetch">1. neofetch</h1>
+<blockquote>
+<p>展示操作系统信息的命令行工具，展示的信息包含：发行版本、内核、CPU、GPU 等。</p>
+</blockquote>
+<ul>
+<li>安装： <a href="https://github.com/dylanaraps/neofetch/wiki/Installation">https://github.com/dylanaraps/neofetch/wiki/Installation</a></li>
+<li>命令： neofetch</li>
+<li>地址： <a href="https://github.com/dylanaraps/neofetch">https://github.com/dylanaraps/neofetch</a></li>
+</ul>
+<p>macOS系统下直接用Homebrew安装：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install neofetch
+</code></pre></div><p>Ubuntu系统安装：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install neofetch
+</code></pre></div><h1 id="2-htop">2. htop</h1>
+<blockquote>
+<p>This is htop, a cross-platform interactive process viewer. It is a text-mode application (for console or X terminals) and requires ncurses.</p>
+<p>代替 top 的交互式管理进程的命令行工具，h 代表 for human。</p>
+</blockquote>
+<ul>
+<li>安装： <a href="https://htop.dev/downloads.html">https://htop.dev/downloads.html</a></li>
+<li>命令： htop</li>
+<li>地址： <a href="https://github.com/htop-dev/htop">https://github.com/htop-dev/htop</a></li>
+</ul>
+<p>macOS系统下直接用Homebrew安装：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install htop
+</code></pre></div><p>Ubuntu系统安装：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install htop
+</code></pre></div><h1 id="3-bat">3. bat</h1>
+<blockquote>
+<p>替代 cat 的命令行工具。</p>
+</blockquote>
+<ul>
+<li>安装： <a href="https://github.com/sharkdp/bat#installation">https://github.com/sharkdp/bat#installation</a></li>
+<li>命令： bat README.md</li>
+<li>项目地址： <a href="https://github.com/sharkdp/bat">https://github.com/sharkdp/bat</a></li>
+</ul>
+<p>macOS系统下直接用Homebrew安装：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install bat
+</code></pre></div><p>Ubuntu系统安装：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install bat
+</code></pre></div><h1 id="4-duf">4. duf</h1>
+<blockquote>
+<p>查看磁盘空间情况的命令行工具，足以代替 df 命令</p>
+</blockquote>
+<ul>
+<li>项目地址： <a href="https://github.com/muesli/duf">https://github.com/muesli/duf</a></li>
+</ul>
+<p>macOS系统下直接用Homebrew安装：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install duf
+</code></pre></div><h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/1ucpkx9Pz0myDJLqAV89pQ">如闪电划破雨夜，这些开源项目瞬间点亮了命令行</a></li>
+<li><a href="https://mp.weixin.qq.com/s/MlHes1ZYKACOM4GVEYBaJg">开源月刊《HelloGitHub》第 62 期</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-neofetch">
+                            1. neofetch
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-htop">
+                            2. htop
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3-bat">
+                            3. bat
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#4-duf">
+                            4. duf
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#%e5%8f%82%e8%80%83">
+                            参考
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

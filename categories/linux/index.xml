@@ -1,0 +1,854 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on Xiao-Le Deng</title>
+    <link>https://www.xiaoledeng.cn/categories/linux/</link>
+    <description>Recent content in Linux on Xiao-Le Deng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2012 – 2021 · [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style) for [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Fri, 04 Jun 2021 14:00:00 +0800</lastBuildDate><atom:link href="https://www.xiaoledeng.cn/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macOS系统Python画图的Matplotlib问题</title>
+      <link>https://www.xiaoledeng.cn/2021/06/04/macos-matplotlib-problem/</link>
+      <pubDate>Fri, 04 Jun 2021 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/04/macos-matplotlib-problem/</guid>
+      <description>1. 说明 import matplotlib.pyplot as plt
+RuntimeError: Python is not installed as a framework. The Mac OS X backend will not be able to function correctly if Python is not installed as a framework. See the Python documentation for more information on installing Python as a framework on Mac OS X. Please either reinstall Python as a framework, or try one of the other backends. If you are using (Ana)Conda please install python.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装overleaf的sharelatex</title>
+      <link>https://www.xiaoledeng.cn/2021/06/03/ubuntu-install-overleaf-sharelatex/</link>
+      <pubDate>Thu, 03 Jun 2021 17:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/03/ubuntu-install-overleaf-sharelatex/</guid>
+      <description>1. 安装docker 打开 /etc/apt/sources.list.d/docker.list：
+sudo vi /etc/apt/sources.list.d/docker.list 添加下面内容：
+deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable 更新并安装：
+sudo apt-get update sudo apt-get install docker-ce 查看是否安装成功：
+docker --version Docker version 20.10.7, build f0df350
+2. 安装 docker-Compose 进入 https://github.com/docker/compose/releases 查看最新版本，当前版本为1.29.2
+sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose 设置权限:
+sudo chmod +x /usr/local/bin/docker-compose 查看是否安装成功:
+docker-compose --version docker-compose version 1.29.2, build 5becea4c
+3. 安装Overleaf的开源版本sharelatex docker权限问题，添加docker用户组：
+#添加docker用户组 sudo groupadd docker #将登陆用户加入到docker用户组中 sudo gpasswd -a $USER docker #更新用户组 newgrp docker 通过docker安装Overleaf的开源版本sharelatex：</description>
+    </item>
+    
+    <item>
+      <title>macOS系统降级</title>
+      <link>https://www.xiaoledeng.cn/2021/05/27/macos-version-down/</link>
+      <pubDate>Thu, 27 May 2021 15:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/27/macos-version-down/</guid>
+      <description>1. macOS系统    macOS Latest version     macOS Big Sur 11.4   macOS Catalina 10.15.7   macOS Mojave 10.14.6   macOS High Sierra 10.13.6   macOS Sierra 10.12.6   OS X El Capitan 10.11.6   OS X Yosemite 10.10.5   OS X Mavericks 10.9.5   OS X Mountain Lion 10.8.5   OS X Lion 10.7.5   Mac OS X Snow Leopard 10.</description>
+    </item>
+    
+    <item>
+      <title>Royal TSX：macOS系统的服务器管理软件</title>
+      <link>https://www.xiaoledeng.cn/2021/05/27/royal-tsx/</link>
+      <pubDate>Thu, 27 May 2021 08:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/27/royal-tsx/</guid>
+      <description>1. 前言 Royal TSX是一个强大的全面的远程连接管理软件，兼容多种连接类型。免费版本的Royal TSX最多可以连接10个连接。它支持macOS、Windows、Android、iOS系统。可通过SSH、SFTP来登陆和管理服务器。
+下载地址： https://www.royalapps.com/ts/mac/download
+2. 终端和文件管理 2.1 终端管理 通过Terminal插件的SSH登录服务器：
+ 新建一个Terminal窗口 输入对应的服务器的信息，关键内容为：服务器IP、SSH连接和22端口 进入Credentials，选择指定用户名和密码  2.2 文件管理 通过File Transfer插件的SFTP登录服务器：
+ 新建一个File Transfer窗口 输入对应的服务器信息，关键内容为：服务器IP、SFTP连接和22端口 进入Credentials，选择指定用户名和密码  File Transfer插件可替代Transmit软件。
+3. 参考  Mac上使用Royal TSX链接服务器 Mac下好用的Xshell软件 | Royal TSX  </description>
+    </item>
+    
+    <item>
+      <title>Linux命令—neofetch、htop、bat和duf</title>
+      <link>https://www.xiaoledeng.cn/2021/05/25/linux-command-neofetch-htop-bat-duf/</link>
+      <pubDate>Tue, 25 May 2021 17:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/25/linux-command-neofetch-htop-bat-duf/</guid>
+      <description>1. neofetch  展示操作系统信息的命令行工具，展示的信息包含：发行版本、内核、CPU、GPU 等。
+  安装： https://github.com/dylanaraps/neofetch/wiki/Installation 命令： neofetch 地址： https://github.com/dylanaraps/neofetch  macOS系统下直接用Homebrew安装：
+brew install neofetch Ubuntu系统安装：
+sudo apt install neofetch 2. htop  This is htop, a cross-platform interactive process viewer. It is a text-mode application (for console or X terminals) and requires ncurses.
+代替 top 的交互式管理进程的命令行工具，h 代表 for human。
+  安装： https://htop.dev/downloads.html 命令： htop 地址： https://github.com/htop-dev/htop  macOS系统下直接用Homebrew安装：
+brew install htop Ubuntu系统安装：
+sudo apt install htop 3.</description>
+    </item>
+    
+    <item>
+      <title>vs code设置自动换行</title>
+      <link>https://www.xiaoledeng.cn/2021/05/20/vscode-word-wrap/</link>
+      <pubDate>Thu, 20 May 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/20/vscode-word-wrap/</guid>
+      <description>1. 描述 vs code打开文本超出当前显示时，会溢出，所以需要自动换行。
+2. 步骤  打开首选项-设置 搜索editor word 把Diff Editor: Word Wrap改为on，保存即可。  3. 参考  VScode如何自动换行设置  </description>
+    </item>
+    
+    <item>
+      <title>macOS系统无法被远程访问</title>
+      <link>https://www.xiaoledeng.cn/2021/05/20/mac-fail-remote-access/</link>
+      <pubDate>Thu, 20 May 2021 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/20/mac-fail-remote-access/</guid>
+      <description>1. 说明 利用远程访问软件（Anydesk/ ToDesk/ Teamviewer等）访问macOS系统时，需要额外开放隐私权限。
+2. 具体设置 依次按以下次序进入并设置：
+ 在系统配置（System Preferences） 安全性与隐私（Security &amp;amp; Privacy）的隐私（Privacy） 将辅助功能（Accessibility）、屏幕录制（Screen Recording）、文件和文件夹（Files and Folders）和完全的磁盘访问权限（Full Disk Access）全部添入远程访问软件（Anydesk/ ToDesk / Teamviewer），即可。  3. 参考  解决macOS系统向日葵远控无法被远程控制问题  </description>
+    </item>
+    
+    <item>
+      <title>macOS科研软件清单</title>
+      <link>https://www.xiaoledeng.cn/2021/05/16/list-of-scientific-softwares/</link>
+      <pubDate>Sun, 16 May 2021 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/16/list-of-scientific-softwares/</guid>
+      <description>1. 前言 本人的专业是理工科，科研方面会用到一些常用的软件，有必要撰写macOS系统的科研软件清单，以供自己总结，也可给看到的人参考。
+2. 软件清单 科研写作  Texpad：macOS系统下的LaTeX编译器 MacTeX：整套macOS下的LaTeX的环境配置 公式利器Mathpix Snipping Tool：可把截图公式转变为LaTeX代码 Visual Studio Code：稳定的文本编辑器，可替换Sublime 3、Typora、Github Desktop、GMT、draw.io、Python和Fortran Word、PPT和Excel：Office和WPS Grammarly：英文语法检查工具 搜狗输入法：输入法  画图  GMT：用于绘制论文图片，编程代码可重复 Ximd Zen：思维导图 draw.io：流程图  科学计算和编程  Mathematica：用于公式推导 Matlab：用于数值运算 Anaconda：Python软件包 ifort：Fortran编译器  上网和服务器  ClashX：macOS系统下的上网工具1 V2RayX：macOS系统下的上网工具2 Tunnelblick：教育网网络访问服务器 Royal TSX：服务器上传和下载文件  远程访问  TeamViewer Anydesk Todesk ZeroTier one  线上会议  Zoom TencentMeeting Skype  备份  OneDrive：教育用户有1T容量的网盘 Syncthing：资料备份工具 Paragon NTFS for Mac：硬盘管理工具  其他软件  Keka：解压和压缩文件 iTerm：命令行工具 Homebrew：命令行工具 Google Chrome：浏览器 PDF Expert：PDF阅读器 Parallels Desktop：虚拟机，安装Windows系统  3.</description>
+    </item>
+    
+    <item>
+      <title>一次“修复移动硬盘无法读取”的经历</title>
+      <link>https://www.xiaoledeng.cn/2021/05/14/repair-hard-disk-cannot-be-read/</link>
+      <pubDate>Fri, 14 May 2021 16:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/14/repair-hard-disk-cannot-be-read/</guid>
+      <description>1. 背景 希捷4T移动硬盘，拷贝资料的过程中，直接拔了数据线，没有正确地弹出。
+首先，连接移动硬盘到Ubuntu系统上，显示错误，没办法读取。
+其次，连接移动硬盘到macOS系统上，
+ 利用磁盘操作工作Disk Utility的First Aid急救功能（见：Mac 下移动硬盘异常退出修复 - 知乎），没有成功，移动硬盘没办法读取； 继续利用Paragon NTFS for Mac的Verify修复（见：如何在Mac上修复问题硬盘-Paragon NTFS for Mac中文官网），依然没有成功，移动硬盘还是没办法读取。  最后，连接移动硬盘到Windows系统上，特征为：
+ 能够看到有G盘，看不到容量，读取不了； 完全点不开，强行打开硬盘，双击后电脑就死机了，一直在转圈圈，拔掉移动硬盘后，电脑恢复正常。  以上在Windows下的特征与移动硬盘无法读取如何修复 - 知乎描述的一样。
+2. 正确的修复过程 首先，在Windows系统下，打开cmd （系统键+R调出运行窗口（系统键就是键盘左下角ctrl和alt中间那个），输入cmd）； 其次，在cmd中输入命令：
+chkdsk g: /f 这里，g:为盘符，即移动硬盘的编号，为G盘，其他可能为E盘(e:)，F盘(f:)和H盘(h:)等。具体修复过程如下：
+总共花了1.15小时，终于修复了问题，移动硬盘能够正常在Windows系统、Ubuntu系统和macOS系统下正确地识别。
+3. 分析原因 为什么在macOS系统下不能修复，而在Windows系统下可以修复？
+很可能是因为：希捷4T移动硬盘的文件系统类型是NTFS。
+根据ntfs-百度百科显示：
+ NTFS（New Technology File System）是Windows NT内核的系列操作系统支持的、一个特别为网络和磁盘配额、文件加密等管理安全特性设计的磁盘格式。
+NTFS是一个日志文件系统，这意味着除了向磁盘中写入信息，该文件系统还会为所发生的所有改变保留一份日志。这一功能让NTFS文件系统在发生错误的时候（比如系统崩溃或电源供应中断）更容易恢复，也让这一系统更加强壮。在这些情况下，NTFS能够很快恢复正常，而且不会丢失任何数据。
+磁盘自我修复功能：NTFS可以对硬盘上的逻辑错误和物理错误进行自动侦测和修复。
+ 4. 参考资料  Mac 下移动硬盘异常退出修复 - 知乎 如何在Mac上修复问题硬盘-Paragon NTFS for Mac中文官网 移动硬盘无法读取如何修复 - 知乎 ntfs-百度百科  </description>
+    </item>
+    
+    <item>
+      <title>Visual Studio Code编辑器</title>
+      <link>https://www.xiaoledeng.cn/2021/04/12/vscode/</link>
+      <pubDate>Mon, 12 Apr 2021 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/04/12/vscode/</guid>
+      <description>1. 简介 Visual Studio Code是一款编辑器，官网为：Visual Studio Code - Code Editing. Redefined。
+特色是，可以把常用的编程环境都能设置，即All in one。
+2. 常用插件清单  Auto Rename Tag：自动写好tag Better Comments：设置注释的各种格式 Bracket Pair Colorizer：设置不同颜色的括号 Browser Preview：打开网页链接 Code Runner：运行各种语言，包括：C、C++、Python、Julia等 Code Spell Checker：语法检查 Draw.io Integration：流程图 fortran：Fortran支持 LaTeX Workshop：LaTeX支持 Markdown All in One：Markdown支持 &amp;hellip;  3. Mac设置命令行缩写code 首先，打开~/.zshrc或~/.bashrc；
+而后，添加以下命令：
+alias code=\&#39;&#39;/Applications/Visual Studio Code.app/Contents/MacOS/Electron&#39;\&#39; 在终端输入source ~/.zshrc或source ~/.bashrc，而后输入code即可打开vscode编辑器。</description>
+    </item>
+    
+    <item>
+      <title>Mac下Syncthing的完全卸载</title>
+      <link>https://www.xiaoledeng.cn/2021/03/30/mac-syncthing-problem/</link>
+      <pubDate>Tue, 30 Mar 2021 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/30/mac-syncthing-problem/</guid>
+      <description>1. 问题说明和网上检索 Mac下syncthing意外关闭，且启动后报Error opening database: resource temporarily unavailable (is another instance of Syncthing running?)。
+网上搜索了一下，u010207995的博客-CSDN博客给出的建议，删除以下文件：
+rm -rf /var/syncthing/config/index-v0.14.0.db/LOCK rm -rf /var/syncthing/config/index-v0.14.0.db/CURRENT 以上结果并没有用。
+2. 解决方案 解决方案是：完全卸载Syncthing后，再重新安装。
+首先，在Application里面删除syncthing，且在回收站彻底删除。
+而后，直接卸载syncthing之后，删除系统残留文件：
+cd Library/Application\ Support/ rm -rf Syncthing/ 最后，重新安装Syncthing，即可。
+3. 参考  How to install and configure Syncthing on the Mac · GeekBitZone - Your Tech Resource for Geeks syncthing 意外关闭，启动报 Error opening database: resource temporarily unavailable_u010207995的博客-CSDN博客  </description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi【5】系统更新</title>
+      <link>https://www.xiaoledeng.cn/2021/03/29/raspberry-pi-5/</link>
+      <pubDate>Mon, 29 Mar 2021 13:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/29/raspberry-pi-5/</guid>
+      <description>sudo apt-get update sudo apt-get upgrade </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装开源文件同步软件Syncthing</title>
+      <link>https://www.xiaoledeng.cn/2021/03/28/ubuntu-install-syncthing/</link>
+      <pubDate>Sun, 28 Mar 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/28/ubuntu-install-syncthing/</guid>
+      <description>1. 安装步骤 # Add the &amp;#34;stable&amp;#34; channel to your APT sources: echo &amp;#34;deb https://apt.syncthing.net/ syncthing stable&amp;#34; | sudo tee /etc/apt/sources.list.d/syncthing.list # Add the release PGP keys: curl -s https://syncthing.net/release-key.txt | sudo apt-key add - # Update and install syncthing: sudo apt-get update sudo apt-get install syncthing # open syncthing syncthing 2. 参考  Syncthing | Downloads  </description>
+    </item>
+    
+    <item>
+      <title>Mac下开源文件同步软件Syncthing忘记用户名和密码</title>
+      <link>https://www.xiaoledeng.cn/2021/03/28/mac-syncthing-forget-passwd/</link>
+      <pubDate>Sun, 28 Mar 2021 16:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/28/mac-syncthing-forget-passwd/</guid>
+      <description>1. 解决方案 在/Users/shalom/Library/Application Support/Syncthing的config.xml里面删除&amp;lt;user&amp;gt;和&amp;lt;password&amp;gt;两行：
+&amp;lt;gui enabled=&amp;#34;true&amp;#34; tls=&amp;#34;false&amp;#34; debugging=&amp;#34;false&amp;#34;&amp;gt; &amp;lt;address&amp;gt;127.0.0.1:8384&amp;lt;/address&amp;gt; &amp;lt;user&amp;gt;syncguy&amp;lt;/user&amp;gt; &amp;lt;password&amp;gt;$2a$10$s9wWHOQe...Cq7GPye69&amp;lt;/password&amp;gt; &amp;lt;apikey&amp;gt;9RCKohqCAyrj5RjpyZdR2wXmQ9PyQFeN&amp;lt;/apikey&amp;gt; &amp;lt;theme&amp;gt;default&amp;lt;/theme&amp;gt; &amp;lt;/gui&amp;gt; 这样，就不用用户名和密码直接就可以登录127.0.0.1:8384。
+2. 参考  FAQ — Syncthing v1 documentation  </description>
+    </item>
+    
+    <item>
+      <title>Mac下Word删除Zotero、EndNote和Mendeley插件</title>
+      <link>https://www.xiaoledeng.cn/2021/03/24/mac-word-delete-zotero-endnote-mendeley/</link>
+      <pubDate>Wed, 24 Mar 2021 09:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/24/mac-word-delete-zotero-endnote-mendeley/</guid>
+      <description>1. 解决方案 Zotero插件的路径：
+ /Users/rootname//Library/Group Containers/UBF8T346G9.Office/User Content.localized/Startup.localized/Word/Zotero.dotm  Mendeley插件的路径：
+ /Users/rootname//Library/Group Containers/UBF8T346G9.Office/User Content.localized/Startup.localized/Word/Mendeley-word2016-1.19.4.dotm  EndNote插件的路径：
+ /Library/Application Support/Microsoft/Office365/User Content.localized/Startup.localized/Word/EndNote CWYW Word 16.bundle  注意：
+ rootname为用户名。 最后EndNote插件路径的/Library/……是电脑磁盘，而不是用户文件夹。  2. 参考  zotero的word插件如何删掉？ - 知乎 mac word endnote插件彻底删除干净-百度经验  </description>
+    </item>
+    
+    <item>
+      <title>流程图工具——draw.io</title>
+      <link>https://www.xiaoledeng.cn/2021/03/19/draw-io/</link>
+      <pubDate>Fri, 19 Mar 2021 15:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/19/draw-io/</guid>
+      <description>官网 https://drawio-app.com/
+在线版 https://app.diagrams.net/
+下载地址 https://github.com/jgraph/drawio-desktop/releases
+ Windows macOS Linux Chrome OS  </description>
+    </item>
+    
+    <item>
+      <title>Mac Rust 环境搭建</title>
+      <link>https://www.xiaoledeng.cn/2021/03/18/rust/</link>
+      <pubDate>Thu, 18 Mar 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/18/rust/</guid>
+      <description>1. 安装 curl https://sh.rustup.rs -sSf | sh
+2. 确认 source $HOME/.cargo/env
+3. 检验安装 rustc --version
+cargo --version
+4. 参考  Mac Rust 安装和开发环境搭建 - 简书  </description>
+    </item>
+    
+    <item>
+      <title>远程访问工具——ToDesk</title>
+      <link>https://www.xiaoledeng.cn/2021/03/09/todesk/</link>
+      <pubDate>Tue, 09 Mar 2021 16:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/09/todesk/</guid>
+      <description>1. 基本情况 远程访问工具多多益善，目前使用的远程访问软件包括：
+ TeamViewer https://www.teamviewer.cn/cn/ AnyDesk https://anydesk.com/zhs ZeroTier https://www.zerotier.com/ ToDesk https://www.todesk.com/  2. ToDesk 下载地址： https://www.todesk.com/download.html
+版本包括：
+ Windows iOS Android macOS Linux  评价：国产一款不错的远程控制软件。</description>
+    </item>
+    
+    <item>
+      <title>Mac下ifort出现ld: library not found for -lSystem问题</title>
+      <link>https://www.xiaoledeng.cn/2021/01/11/mac-ifort-ld-problem/</link>
+      <pubDate>Mon, 11 Jan 2021 13:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/01/11/mac-ifort-ld-problem/</guid>
+      <description>1. 前言 在Mac安装Intel Parallel Studio XE Composer Edition for Fortran中，简介了Mac下安装ifort的过程。
+使用ifort时，出现如下错误：
+&amp;quot;ld: library not found for -lSystem&amp;quot;  2. 解决方案 系统信息为：
+macOS Big Sur 11.0.1  ifort版本为：
+$ ifort -V Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.1.2.258 Build 20200623 Copyright (C) 1985-2020 Intel Corporation. All rights reserved.  短期解决措施：在ifort编译时加上lib的路径：
+ifort -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib  长期解决措施：在~/.zshrc或~/.bashrc写入：
+alias ifort=&#39;ifort -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib&#39;  说明：更新后的macOS系统的lib不在默认路径下面，即the lib is now not under the default path.</description>
+    </item>
+    
+    <item>
+      <title>SLURM任务系统简要说明</title>
+      <link>https://www.xiaoledeng.cn/2020/11/16/slurm-system/</link>
+      <pubDate>Mon, 16 Nov 2020 15:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/16/slurm-system/</guid>
+      <description>1. 基本命令 1.1 显示队列 # 显示队列 sinfo # 显示队列详细信息 scontrol show partition &amp;lt;partition name&amp;gt; 1.2 作业状态 squeue # 查询指定用户名的作业状态 squeue -u &amp;lt;user_name&amp;gt; 1.3 显示节点 scontrol show node 1.4 取消任务 scancel jobid 2. 参考  SLURM使用基础教程 - 帮助与支持中心  </description>
+    </item>
+    
+    <item>
+      <title>远程桌面访问RealVNC</title>
+      <link>https://www.xiaoledeng.cn/2020/11/15/real-vnc/</link>
+      <pubDate>Sun, 15 Nov 2020 19:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/15/real-vnc/</guid>
+      <description>1. linux服务器设置 sudo apt-get install tightvncserver tightvncserver :1 即安装tighvncserver，并启动一个VNC流。
+2. 下载VNC软件  Download VNC Viewer | VNC® Connect  3. 远程VNC登录 知道linux服务器的ip地址，VNC流的代号，即：
+ip_address:1 </description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi【4】常用软件源</title>
+      <link>https://www.xiaoledeng.cn/2020/11/14/raspberry-pi-4/</link>
+      <pubDate>Sat, 14 Nov 2020 13:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/14/raspberry-pi-4/</guid>
+      <description>1. USTC 中国科学技术大学 Raspbian https://mirrors.ustc.edu.cn/raspbian/raspbian/
+Raspberrypi https://mirrors.ustc.edu.cn/raspberrypi/
+2. Aliyun 阿里云 Raspbian http://mirrors.aliyun.com/raspbian/raspbian/
+3. 清华大学 Raspbian http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/
+Raspberrypi https://mirrors.tuna.tsinghua.edu.cn/raspberrypi/
+4. 华南农业大学（华南用户） Raspbian http://mirrors.scau.edu.cn/raspbian/
+Raspberrypi https://mirrors.scau.edu.cn/raspberrypi/
+5. 大连东软信息学院源（北方用户） Raspbian http://mirrors.neusoft.edu.cn/raspbian/raspbian/
+6. 重庆大学源（中西部用户） Raspbian https://mirrors.cqu.edu.cn/raspbian/raspbian/
+7. 新加坡国立大学 Raspbian http://mirror.nus.edu.sg/raspbian/raspbian
+8. 牛津大学 Raspbian http://mirror.ox.ac.uk/sites/archive.raspbian.org/archive/raspbian/
+9. 韩国KAIST大学 Raspbian http://ftp.kaist.ac.kr/raspbian/raspbian/
+10. 参考  Raspbian 中国软件源 | 树莓派实验室 Raspbian 源使用帮助 — USTC Mirror Help 文档 Raspberrypi 源使用帮助 — USTC Mirror Help 文档 raspbian镜像-raspbian下载地址-raspbian安装教程-阿里巴巴开源镜像站 raspbian | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror Raspbian 源使用帮助 — SCAU Mirrors Help 文档  </description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi【3】操作系统清单</title>
+      <link>https://www.xiaoledeng.cn/2020/11/14/raspberry-pi-3/</link>
+      <pubDate>Sat, 14 Nov 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/14/raspberry-pi-3/</guid>
+      <description>1. 整理版  Raspberry Pi OS : 默认的最常用于Raspberry Pi的免费操作系统 Pidora : 专为树莓派优化的 Fedora Linux 系统 Arch Linux ARM Ubuntu MATE : 是 Ubuntu Linux 官方的一个派生版，基于桌面环境 MATE Ubuntu Desktop Ubuntu Server : Ubuntu 专门用作服务器的版本 Ubuntu Core : 流行的 Ubuntu Linux 操作系统的精简版，旨在安装在各种嵌入式设备上 LibreELEC : 免费开源的轻量级“Just enough OS”Linux 发行版，它属于 KODI 的一个分支版本，功能类似于 Emby 和 PLEX 的多媒体服务平台。不同之处在于专为嵌入式设备而设计，支持各种 TV-BOX HTPC 和 RaspberryPi Windows 10 OSMC : 使得树莓派更适合做个xbmc播放器，是 Openelec 的升级版，同样是基于 Kodi 的开源项目 Openelec : Open Embedded Linux Entertainment Center，开源嵌入式Linux 娱乐中心 PiNet : 帮助学校建立和管理一个Raspberry Pi的课堂 Mozilla WebThings : Mozilla 的物联网平台项目 weather_station-2018-01-14 : 基于树莓派全自动气象站，可应用多种传感器 RISC OS : 第一款ARM计算机的操作系统 Kali Linux : 高级渗透测试和安全审计Linux发行版 NOOBS : 从安装的多个树莓派系统中选择你要启动的系统 Sabayon : 在5分钟以内使一台电脑进入强大的Gentoo Linux系统 Recalbox : 复古模拟平台 CentOS DietPi : 基于 Raspbian 的精简版本系统，其特点就是小和快 SUSE Linux Lakka : RetroArch 官方的 Linux 发行版，以多机种游戏模拟器 libretro 为核心 RetroPie : 将复古游戏机集成到Raspberry pi 树莓派上使之成为一个专用的游戏机模拟器平台 Kano : 专门面向儿童编程量身定做的树莓派镜像，让儿童在游戏中学习编程 RTandroid : 定制版的安卓系统，可以正常安装安卓软件，wifi蓝牙工作正常 Flintos : 一款更快速，更简单，更高效的云驱动操作系统  2.</description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi【2】创意项目清单</title>
+      <link>https://www.xiaoledeng.cn/2020/11/14/raspberry-pi-2/</link>
+      <pubDate>Sat, 14 Nov 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/14/raspberry-pi-2/</guid>
+      <description>1. 34 个使用 Raspberry Pi 的酷创意 · LinuxTOY https://linuxtoy.org/archives/cool-ideas-for-raspberry-pi.html
+ Web 服务器 家庭自动化 BitTorrent 服务器 Web Cam 服务器 天气预报站 BitCoin Wallet QuadCopter VoIP PBX XMBC 多媒体中心 有声书籍播放器 Arduino Shields NAS 服务器 Apple Time Machine 支持 Tor 中继 家用 VPN 服务器 GPS 跟踪器（带 3G 支持） Advice Machine（无用但很酷） 模拟输入 超级电脑 Kindle 作为显示屏 PIC Programmer PenTesting/Hacking Android 系统 检查网络状态 Solar 数据记录器 把我发到太空 咖啡 制作一个酷坦克 电子相框 添加 WiFi OpenSource Kiosk Node JS 流量监视 超频  2.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu配置ZeroTier</title>
+      <link>https://www.xiaoledeng.cn/2020/11/13/ubuntu-zerotier/</link>
+      <pubDate>Fri, 13 Nov 2020 17:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/13/ubuntu-zerotier/</guid>
+      <description>1. 简介 ZeroTier的思路是：建立自己的局域网，到哪里都是局域网。
+2. 步骤 1.官网注册账户： https://www.zerotier.com/ ，免费的账户允许接入100台设备，足够组网。
+2.官网上配置ZeroTier，关键是记住NetworkID号。
+3.Ubuntu安装ZeroTier
+curl -s https://install.zerotier.com | sudo bash 4.加入到组建的局域网
+sudo zerotier-cli join &amp;lt;NetworkID&amp;gt; 5.回到ZeroTier网站的管理界面给设备auth并找到对应设备的ManagedIPs，并查阅Ubuntu的Address命令
+sudo zerotier-cli status 6.其他在局域网的设备进入此Ubuntu系统：
+ssh name@ManagedIPs 3. Mac的常用命令 # Get your ZeroTier address and check the service status sudo zerotier-cli status # Join, leave, and list networks sudo zerotier-cli join &amp;lt;NetworkID&amp;gt; sudo zerotier-cli leave &amp;lt;NetworkID&amp;gt; sudo zerotier-cli listnetworks # Stop and start the service with launchctl sudo launchctl unload /Library/LaunchDaemons/com.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装向日葵远程控制</title>
+      <link>https://www.xiaoledeng.cn/2020/11/13/ubuntu-install-sunloginclient/</link>
+      <pubDate>Fri, 13 Nov 2020 16:40:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/13/ubuntu-install-sunloginclient/</guid>
+      <description>1. 下载 下载页面： https://sunlogin.oray.com/download/
+分为命令行和图像版。
+2. 安装命令 sudo dpkg -i sunloginclientshell-10.1.1.28779-amd64.deb 3. 安装问题解决 报错libwebkitgtk-3.0-0 is not installed，缺少依赖问题。
+sudo gedit /etc/apt/source.list #然后复制 deb http://cz.archive.ubuntu.com/ubuntu bionic main universe 到文件 sudo apt-get update sudo apt-get install -f 4. 打开和绑定向日葵 通过命令行开启向日葵:
+sudo /usr/local/sunlogin/bin/sunloginclient  开启程序后的初始状态为未绑定，可见界面左上角的提示“Sunlogin （F12）”为进入菜单选项 敲击F12进入菜单并通过键盘↑↓键选择Bind进行绑定账号 入账号和密码，通过↓键移至ok处后敲击回车进行登录 获得Linux主机的识别码(Code)和验证码(Access)  5. 卸载命令 sudo dpkg -l | grep sunlogin sudo dpkg -r sunloginclient 6. 参考  向日葵X for Linux Terminal 使用教程（命令行版本） - 客服中心 - Oray 向日葵Linux X因安装依赖问题无法安装成功解决方案 - 客服中心 - Oray Ubuntu20.</description>
+    </item>
+    
+    <item>
+      <title>外网远程访问Ubuntu系统</title>
+      <link>https://www.xiaoledeng.cn/2020/11/13/outside-login-ubuntu/</link>
+      <pubDate>Fri, 13 Nov 2020 15:50:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/13/outside-login-ubuntu/</guid>
+      <description>1. 常用远程访问软件  AnyDesk https://anydesk.com/zhs 向日葵远程控制 https://sunlogin.oray.com/ Teamviewer https://www.teamviewer.cn/cn/ Splashtop https://www.splashtop.com/cn/ ZeroTier https://www.zerotier.com/ &amp;hellip;  2. Linux 查看外网IP curl ifconfig.me 3. 参考  如何远程登录家里的Ubuntu电脑(命令行模式)？ - 知乎  </description>
+    </item>
+    
+    <item>
+      <title>局域网ssh远程访问Ubuntu系统</title>
+      <link>https://www.xiaoledeng.cn/2020/11/13/inside-login-ubuntu/</link>
+      <pubDate>Fri, 13 Nov 2020 11:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/13/inside-login-ubuntu/</guid>
+      <description>1. 具体步骤  查看ubuntu是否安装了ssh-server服务  dpkg -l | grep ssh 安装ssh-server服务  sudo apt-get install openssh-server 查看ssh-server是否启动  ps -e | grep ssh 若有sshd，说明ssh-server已启动。
+如果没有则可以这样启动：
+sudo /etc/init.d/ssh start sudo service ssh start 配置相关：ssh-server配置文件位于/etc/ssh/sshd_config，在这里可以定义SSH的服务端口，默认端口是22，你可以自己定义成其他端口号，如222。（或把配置文件中的”PermitRootLogin without-password”加一个”#”号,把它注释掉，再增加一句”PermitRootLogin yes”）
+然后重启SSH服务：
+sudo /etc/init.d/ssh stop sudo /etc/init.d/ssh start 安装ifconfig工具  sudo apt install net-tools 利用ifconfig查看本机的ip地址，即inet：
+ifconfig 远程机器登录  ssh username@ip_address 2. 参考  ubuntu开启SSH服务远程登录_jackghq的博客-CSDN博客  </description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi【1】树莓派 (Raspberry Pi, RPi)</title>
+      <link>https://www.xiaoledeng.cn/2020/11/11/raspberry-pi-1/</link>
+      <pubDate>Wed, 11 Nov 2020 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/11/raspberry-pi-1/</guid>
+      <description>Raspberry Pi (中文名为“树莓派”，简写为RPi，是为学习计算机编程教育而设计)，只有信用卡大小的微型电脑，其系统基于Linux。
+ The Raspberry Pi is a tiny and affordable computer that you can use to learn programming through fun, practical projects.
+官网： https://www.raspberrypi.org/
+Documentation: https://www.raspberrypi.org/documentation/
+Download: https://www.raspberrypi.org/downloads/</description>
+    </item>
+    
+    <item>
+      <title>Mac curl下载说明</title>
+      <link>https://www.xiaoledeng.cn/2020/11/08/mac-curl/</link>
+      <pubDate>Sun, 08 Nov 2020 14:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/08/mac-curl/</guid>
+      <description>1. 帮助手册 curl -h Usage: curl [options...] &amp;lt;url&amp;gt; --abstract-unix-socket &amp;lt;path&amp;gt; Connect via abstract Unix domain socket --alt-svc &amp;lt;file name&amp;gt; Enable alt-svc with this cache file --anyauth Pick any authentication method -a, --append Append to target file when uploading --basic Use HTTP Basic Authentication --cacert &amp;lt;file&amp;gt; CA certificate to verify peer against --capath &amp;lt;dir&amp;gt; CA directory to verify peer against -E, --cert &amp;lt;certificate[:password]&amp;gt; Client certificate file and password --cert-status Verify the status of the server certificate --cert-type &amp;lt;type&amp;gt; Certificate file type (DER/PEM/ENG) --ciphers &amp;lt;list of ciphers&amp;gt; SSL ciphers to use --compressed Request compressed response --compressed-ssh Enable SSH compression -K, --config &amp;lt;file&amp;gt; Read config from a file --connect-timeout &amp;lt;seconds&amp;gt; Maximum time allowed for connection --connect-to &amp;lt;HOST1:PORT1:HOST2:PORT2&amp;gt; Connect to host -C, --continue-at &amp;lt;offset&amp;gt; Resumed transfer offset -b, --cookie &amp;lt;data|filename&amp;gt; Send cookies from string/file -c, --cookie-jar &amp;lt;filename&amp;gt; Write cookies to &amp;lt;filename&amp;gt; after operation --create-dirs Create necessary local directory hierarchy --crlf Convert LF to CRLF in upload --crlfile &amp;lt;file&amp;gt; Get a CRL list in PEM format from the given file -d, --data &amp;lt;data&amp;gt; HTTP POST data --data-ascii &amp;lt;data&amp;gt; HTTP POST ASCII data --data-binary &amp;lt;data&amp;gt; HTTP POST binary data --data-raw &amp;lt;data&amp;gt; HTTP POST data, &amp;#39;@&amp;#39; allowed --data-urlencode &amp;lt;data&amp;gt; HTTP POST data url encoded --delegation &amp;lt;LEVEL&amp;gt; GSS-API delegation permission --digest Use HTTP Digest Authentication -q, --disable Disable .</description>
+    </item>
+    
+    <item>
+      <title>Mac axel下载说明</title>
+      <link>https://www.xiaoledeng.cn/2020/11/08/mac-axel/</link>
+      <pubDate>Sun, 08 Nov 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/08/mac-axel/</guid>
+      <description>1. 简介 Mac安装axel：
+brew install axel 2. 帮助手册 axel -h Axel 2.17.9 (darwin19.4.0) Usage: axel [options] url1 [url2] [url...] --max-speed=x	-s x	Specify maximum speed (bytes per second) --num-connections=x	-n x	Specify maximum number of connections --max-redirect=x	Specify maximum number of redirections --output=f	-o f	Specify local output file --search[=n]	-S[n]	Search for mirrors and download from n servers --ipv4	-4	Use the IPv4 protocol --ipv6	-6	Use the IPv6 protocol --header=x	-H x	Add HTTP header string --user-agent=x	-U x	Set user agent --no-proxy	-N	Just don&amp;#39;t use any proxy server --insecure	-k	Don&amp;#39;t verify the SSL certificate --no-clobber	-c	Skip download if file already exists --quiet	-q	Leave stdout alone --verbose	-v	More status information --alternate	-a	Alternate progress indicator --help	-h	This information --timeout=x	-T x	Set I/O and connection timeout --version	-V	Version information Visit https://github.</description>
+    </item>
+    
+    <item>
+      <title>Mac图片处理工具sips</title>
+      <link>https://www.xiaoledeng.cn/2020/10/26/mac-sips/</link>
+      <pubDate>Mon, 26 Oct 2020 22:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/26/mac-sips/</guid>
+      <description>1.简介 Mac终端下，输入sips:
+sips -Z 1400 input.jpeg -o output.jpg 2. 帮助手册 sips - scriptable image processing system. This tool is used to query or modify raster image files and ColorSync ICC profiles. Its functionality can also be used through the &amp;#34;Image Events&amp;#34; AppleScript suite. Usages: sips [image-functions] imagefile ... sips [profile-functions] profile ... Profile query functions: -g, --getProperty key -X, --extractTag tag tagFile --verify -1, --oneLine Image query functions: -g, --getProperty key -x, --extractProfile profile -1, --oneLine Profile modification functions: -s, --setProperty key value -d, --deleteProperty key --deleteTag tag --copyTag srcTag dstTag --loadTag tag tagFile --repair -o, --out file-or-directory Image modification functions: -s, --setProperty key value -d, --deleteProperty key -e, --embedProfile profile -E, --embedProfileIfNone profile -m, --matchTo profile -M, --matchToWithIntent profile intent --deleteColorManagementProperties -r, --rotate degreesCW -f, --flip horizontal|vertical -c, --cropToHeightWidth pixelsH pixelsW --cropOffset offsetY offsetH -p, --padToHeightWidth pixelsH pixelsW --padColor hexcolor -z, --resampleHeightWidth pixelsH pixelsW --resampleWidth pixelsW --resampleHeight pixelsH -Z, --resampleHeightWidthMax pixelsWH -i, --addIcon --optimizeColorForSharing -o, --out file-or-directory -j, --js file Other functions: --debug Enable debugging output -h, --help Show help -H, --helpProperties Show help for properties --man Generate man pages -v, --version Show the version --formats Show the read/write formats </description>
+    </item>
+    
+    <item>
+      <title>Mac安装Intel Parallel Studio XE Composer Edition for Fortran</title>
+      <link>https://www.xiaoledeng.cn/2020/10/16/mac-install-ifort/</link>
+      <pubDate>Fri, 16 Oct 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/16/mac-install-ifort/</guid>
+      <description>1.注册和下载 在Choose &amp;amp; Download Intel® Parallel Studio XE页面，选择教育用户注册【需要有教育网邮箱】，并下载对应版本m_fcompxe_2020.2.899.dmg。
+2.安装 点击dmg文件，以root安装：By default, &amp;lt;install_dir&amp;gt; is:
+ For root installations: /opt/intel For non-root installations: $HOME/intel  输入Serial number，而后至安装成功。
+3.调用 在file:///opt/intel/documentation_2020/en/ps2020/getstart_comp.htm页面，有相关初始化的说明：
+source /opt/intel/bin/compilervars.sh intel64 验证是否调用成功：
+$ ifort -V Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.1.2.258 Build 20200623 Copyright (C) 1985-2020 Intel Corporation. All rights reserved. </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装Intel® Parallel Studio XE</title>
+      <link>https://www.xiaoledeng.cn/2020/10/16/ubuntu-install-intel/</link>
+      <pubDate>Fri, 16 Oct 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/16/ubuntu-install-intel/</guid>
+      <description>1. 注册和下载 在Choose &amp;amp; Download Intel® Parallel Studio XE页面，选择教育用户注册【需要有教育网邮箱】，并下载对应版本parallel_studio_xe_2020_update2_cluster_edition.tgz，包括：
+ The Intel® C++ Compiler and Intel® Fortran Compiler Intel® Distribution for Python* Enhanced GNU Project Debugger (GDB) Software libraries (Intel® MKL, Intel® DAAL, Intel® TBB, Intel® IPP) Intel® Advisor Intel® Inspector Intel® VTune™ Profiler Intel® MPI Library Intel® Trace Analyzer and Collector Intel® Cluster Checker (Linux* only)  2. 安装 解压tgz文件，cd进入，ls查看，而后安装：
+./install_GUI.sh 选择合适的安装路：By default, &amp;lt;install_dir&amp;gt; is:
+ For root installations: /opt/intel For non-root installations: $HOME/intel  输入Serial number，而后至安装成功。</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu终端copy paste</title>
+      <link>https://www.xiaoledeng.cn/2020/10/15/ubuntu-copy-paste/</link>
+      <pubDate>Thu, 15 Oct 2020 10:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/15/ubuntu-copy-paste/</guid>
+      <description>Ubuntu的终端(terminal)中，“鼠标选中，鼠标中键”，完成“复制黏贴”，这是linux系统的标配。即，Linux 下标准的终端都是 「选中复制，中键粘贴」。</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装zsh和oh my zsh</title>
+      <link>https://www.xiaoledeng.cn/2020/10/15/ubuntu-zsh/</link>
+      <pubDate>Thu, 15 Oct 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/15/ubuntu-zsh/</guid>
+      <description>1.安装zsh sudo apt install zsh 2.安装 oh my zsh git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 3.创建配置文件 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc 4.设置默认的shell chsh -s /bin/zsh 重启Ubuntu。
+5.复制 把原来的bashrc的路径内容复制到zshrc里面。
+gedit ~/.zshrc gedit ~/.bashrc source ~/.zshrc 6.参考  ubuntu安装zsh终端 - 云+社区 - 腾讯云  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装Tesseroid1.2.1和Gravitational Curvatures of Tesseroids</title>
+      <link>https://www.xiaoledeng.cn/2020/09/29/ubuntu-install-tesseroid-and-gc/</link>
+      <pubDate>Tue, 29 Sep 2020 13:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/29/ubuntu-install-tesseroid-and-gc/</guid>
+      <description>1.下载 在以下页面下载：
+ Release v1.2.1 · leouieda/tesseroids xiaoledeng/Gravitational_Curvatures_of_Tesseroids  两篇文献的引用格式为：
+ Uieda, L., V. Barbosa, and C. Braitenberg (2016), Tesseroids: Forward-modeling gravitational fields in spherical coordinates, GEOPHYSICS, F41-F48, doi:10.1190/geo2015-0204.1.
+Deng, X.L., Shen, W.B (2019), Topographic effects up to Gravitational Curvatures of tesseroids: A case study in China, Studia Geophysica et Geodaetica, 63(3), 345-366, doi:10.1007/s11200-018-0772-4.
+ 2.文件操作 包括：解压和文件复制。
+unzip tesseroids-1.2.1.zip unzip Gravitational_Curvatures_of_Tesseroids-master.zip cd Gravitational_Curvatures_of_Tesseroids-master/ cp -r src/ ../tesseroids-1.2.1 cp SConstruct ../tesseroids-1.2.1 3.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu卸载和安装MATLAB</title>
+      <link>https://www.xiaoledeng.cn/2020/09/25/ubuntu-uninstall-install-matlab/</link>
+      <pubDate>Fri, 25 Sep 2020 13:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/25/ubuntu-uninstall-install-matlab/</guid>
+      <description>1.Ubuntu卸载matlab 查看MATLAB安装路径：
+$ whereis matlab matlab: /usr/local/bin/matlab 卸载MATLAB：
+sudo rm -rf /usr/local/MATLAB/R2020b/ sudo rm /usr/local/bin/matlab 清理配置残留：
+sudo apt-get autoremove sudo apt-get clean 2.安装 sudo ./install 第一次启动需要执行命令:
+sudo matlab 添加MATLAB的支持：
+sudo apt install matlab-support 参考  Ubuntu 卸载matlab_sdaubaby的专栏-CSDN博客 How to install MATLAB on Ubuntu 20.04 Focal Fossa Linux - LinuxConfig.org Ubuntu 18.04 MATLAB 安装及配置 - MingruiYu - 博客园  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu打开系统监视器</title>
+      <link>https://www.xiaoledeng.cn/2020/09/24/ubuntu-open-system-monitor/</link>
+      <pubDate>Thu, 24 Sep 2020 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/24/ubuntu-open-system-monitor/</guid>
+      <description>终端中输入：
+gnome-system-monitor </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装git及Github命令行操作</title>
+      <link>https://www.xiaoledeng.cn/2020/09/23/ubuntu-install-git/</link>
+      <pubDate>Wed, 23 Sep 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/23/ubuntu-install-git/</guid>
+      <description>1.安装git和hugo sudo apt-get install git sudo apt install hugo sudo snap install hugo 2.git全局环境 git config --global user.name &amp;quot;用户名&amp;quot; git config --global user.email &amp;quot;邮箱地址&amp;quot; 3.ssh密钥 ssh-keygen -C &#39;youremail@gmail.com&#39; -t rsa 此命令会在用户目录/home/shalom/.ssh/下建立相应的密钥文件。
+4.创建和上传公钥 cat ~/.ssh/id_rsa.pub 复制id_rsa.pub文件内容，访问GitHub网页，点击设置，SSH and GPG keys的SSH keys 建立一个SSH公钥。
+5.测试连接 ssh -T git@github.com 连接成功：
+ Hi xiaoledeng! You&amp;rsquo;ve successfully authenticated, but GitHub does not provide shell access.
+ 6.其他命令 git clone 项目地址 拉项目 git pull 拉代码 git push 提交到仓库 git init	指令初始化一个git仓库 git add .</description>
+    </item>
+    
+    <item>
+      <title>Linux查看运行时间和最后重启时间</title>
+      <link>https://www.xiaoledeng.cn/2020/09/22/linux-see-the-running-time/</link>
+      <pubDate>Tue, 22 Sep 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/22/linux-see-the-running-time/</guid>
+      <description>1、uptime：显示系统运行时间和系统最后重启时间 $ uptime 15:53:21 up 1 day, 6:07, 1 user, load average: 0.93, 0.68, 0.50 $ uptime -s 2020-09-21 09:45:24 2、w：已登录账号和在干什么 $ w 15:54:06 up 1 day, 6:08, 1 user, load average: 0.72, 0.66, 0.50 USER TTY FROM LOGIN@ IDLE JCPU PCPU WHAT shalom :0 :0 Mon12 ?xdm? 4:16m 0.01s /usr/lib/gdm3/gdm-x-session 3、who -a：查看系统上传重启时间、LOGIN进程运行的信息、运行级别已经用户信息 $ who -a system boot 2020-09-21 09:45 shalom ? :0 2020-09-21 12:19 ? 9511 (:0) run-level 5 2020-09-21 09:46 who -b 可以查到最后重启的时间</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu修改TeXstudio的背景色为黑色</title>
+      <link>https://www.xiaoledeng.cn/2020/09/22/ubuntu-texstudio-black/</link>
+      <pubDate>Tue, 22 Sep 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/22/ubuntu-texstudio-black/</guid>
+      <description>1.编辑器配色方案修改 【选项】–【设置TexStudio】–【常规】–【配色方案】中选择“现代”
+2.修改 texstudio.ini 文件  定位到TeXStudio的配置文件: texstudio.init, 一般位于: ~\AppData\Roaming\texstudio\texstudio.ini, 如果找不到的话, 可以在主界面→Help→Check LaTeX Installation→在弹出的System Report文件中查找Setting file对应的路径即可。 然后在texstudio.ini文件中查找[formats]标签, 并用配置文件替换即可。  Ubuntu下的路径地址为：/home/shalom/.config/texstudio/texstudio.ini
+[formats] version=1.0 data\normal\priority=-1 data\normal\bold=false data\normal\italic=false data\normal\overline=false data\normal\underline=false data\normal\strikeout=false data\normal\waveUnderline=false data\normal\foreground=#f3f3f3 data\normal\background=#272727 data\normal\linescolor=#55ffff data\normal\fontFamily= data\normal\pointSize=0 data\normal\wrapAround=false data\background\priority=-1 data\background\bold=false data\background\italic=false data\background\overline=false data\background\underline=false data\background\strikeout=false data\background\waveUnderline=false data\background\background=#272727 data\background\fontFamily= data\background\pointSize=0 data\background\wrapAround=false data\line%3Awarning\priority=-1 data\line%3Awarning\bold=false data\line%3Awarning\italic=false data\line%3Awarning\overline=false data\line%3Awarning\underline=false data\line%3Awarning\strikeout=false data\line%3Awarning\waveUnderline=false data\line%3Awarning\background=#b9622f data\line%3Awarning\fontFamily= data\line%3Awarning\pointSize=0 data\line%3Awarning\wrapAround=false data\commentTodo\priority=-1 data\commentTodo\bold=false data\commentTodo\italic=false data\commentTodo\overline=false data\commentTodo\underline=false data\commentTodo\strikeout=false data\commentTodo\waveUnderline=false data\commentTodo\background=#728b58 data\commentTodo\fontFamily= data\commentTodo\pointSize=0 data\commentTodo\wrapAround=false data\comment\priority=-1 data\comment\bold=false data\comment\italic=false data\comment\overline=false data\comment\underline=false data\comment\strikeout=false data\comment\waveUnderline=false data\comment\foreground=#989898 data\comment\background=#272727 data\comment\fontFamily= data\comment\pointSize=0 data\comment\wrapAround=false data\keyword\priority=-1 data\keyword\bold=false data\keyword\italic=false data\keyword\overline=false data\keyword\underline=false data\keyword\strikeout=false data\keyword\waveUnderline=false data\keyword\foreground=#fa9999 data\keyword\fontFamily= data\keyword\pointSize=0 data\keyword\wrapAround=false data\extra-keyword\priority=-1 data\extra-keyword\bold=true data\extra-keyword\italic=false data\extra-keyword\overline=false data\extra-keyword\underline=false data\extra-keyword\strikeout=false data\extra-keyword\waveUnderline=false data\extra-keyword\foreground=#37c0ff data\extra-keyword\fontFamily= data\extra-keyword\pointSize=0 data\extra-keyword\wrapAround=false data\math-keyword\priority=-1 data\math-keyword\bold=false data\math-keyword\italic=false data\math-keyword\overline=false data\math-keyword\underline=false data\math-keyword\strikeout=false data\math-keyword\waveUnderline=false data\math-keyword\foreground=#ffff7f data\math-keyword\fontFamily= data\math-keyword\pointSize=0 data\math-keyword\wrapAround=false data\link\priority=-1 data\link\bold=false data\link\italic=false data\link\overline=false data\link\underline=true data\link\strikeout=false data\link\waveUnderline=false data\link\foreground=#00aaff data\link\fontFamily= data\link\pointSize=0 data\link\wrapAround=false data\align-ampersand\priority=-1 data\align-ampersand\bold=true data\align-ampersand\italic=false data\align-ampersand\overline=false data\align-ampersand\underline=false data\align-ampersand\strikeout=false data\align-ampersand\waveUnderline=false data\align-ampersand\foreground=#37c0ff data\align-ampersand\fontFamily= data\align-ampersand\pointSize=0 data\align-ampersand\wrapAround=false data\verbatim\priority=-1 data\verbatim\bold=false data\verbatim\italic=false data\verbatim\overline=false data\verbatim\underline=false data\verbatim\strikeout=false data\verbatim\waveUnderline=false data\verbatim\foreground=#00b8b8 data\verbatim\fontFamily= data\verbatim\pointSize=0 data\verbatim\wrapAround=false data\sweave-block\priority=-1 data\sweave-block\bold=false data\sweave-block\italic=false data\sweave-block\overline=false data\sweave-block\underline=false data\sweave-block\strikeout=false data\sweave-block\waveUnderline=false data\sweave-block\foreground=#ff0000 data\sweave-block\fontFamily= data\sweave-block\pointSize=0 data\sweave-block\wrapAround=false data\pweave-block\priority=-1 data\pweave-block\bold=false data\pweave-block\italic=false data\pweave-block\overline=false data\pweave-block\underline=false data\pweave-block\strikeout=false data\pweave-block\waveUnderline=false data\pweave-block\foreground=#ff0000 data\pweave-block\fontFamily= data\pweave-block\pointSize=0 data\pweave-block\wrapAround=false data\picture\priority=-1 data\picture\bold=false data\picture\italic=false data\picture\overline=false data\picture\underline=false data\picture\strikeout=false data\picture\waveUnderline=false data\picture\foreground=#ffaa00 data\picture\fontFamily= data\picture\pointSize=0 data\picture\wrapAround=false data\braceMatch\priority=-1 data\braceMatch\bold=true data\braceMatch\italic=false data\braceMatch\overline=false data\braceMatch\underline=false data\braceMatch\strikeout=false data\braceMatch\waveUnderline=false data\braceMatch\foreground=#c00000 data\braceMatch\background=#ffb5b0 data\braceMatch\fontFamily= data\braceMatch\pointSize=0 data\braceMatch\wrapAround=false data\braceMismatch\priority=-1 data\braceMismatch\bold=true data\braceMismatch\italic=false data\braceMismatch\overline=false data\braceMismatch\underline=false data\braceMismatch\strikeout=false data\braceMismatch\waveUnderline=false data\braceMismatch\foreground=#ffb5b0 data\braceMismatch\background=#ff0000 data\braceMismatch\fontFamily= data\braceMismatch\pointSize=0 data\braceMismatch\wrapAround=false data\numbers\priority=1 data\numbers\bold=false data\numbers\italic=false data\numbers\overline=false data\numbers\underline=false data\numbers\strikeout=false data\numbers\waveUnderline=false data\numbers\foreground=#61e15f data\numbers\fontFamily= data\numbers\pointSize=0 data\numbers\wrapAround=false data\math-delimiter\priority=-1 data\math-delimiter\bold=false data\math-delimiter\italic=false data\math-delimiter\overline=false data\math-delimiter\underline=false data\math-delimiter\strikeout=false data\math-delimiter\waveUnderline=false data\math-delimiter\foreground=#7be279 data\math-delimiter\fontFamily= data\math-delimiter\pointSize=0 data\math-delimiter\wrapAround=false data\text\priority=-1 data\text\bold=false data\text\italic=false data\text\overline=false data\text\underline=false data\text\strikeout=false data\text\waveUnderline=false data\text\foreground=#e1bf95 data\text\fontFamily= data\text\pointSize=0 data\text\wrapAround=false data\escapeseq\priority=-1 data\escapeseq\bold=false data\escapeseq\italic=false data\escapeseq\overline=false data\escapeseq\underline=false data\escapeseq\strikeout=false data\escapeseq\waveUnderline=false data\escapeseq\foreground=#ff30f5 data\escapeseq\fontFamily= data\escapeseq\pointSize=0 data\escapeseq\wrapAround=false data\spellingMistake\priority=-1 data\spellingMistake\bold=false data\spellingMistake\italic=false data\spellingMistake\overline=false data\spellingMistake\underline=false data\spellingMistake\strikeout=false data\spellingMistake\waveUnderline=true data\spellingMistake\linescolor=#ff684a data\spellingMistake\fontFamily= data\spellingMistake\pointSize=0 data\spellingMistake\wrapAround=false data\badWord\priority=-1 data\badWord\bold=false data\badWord\italic=false data\badWord\overline=false data\badWord\underline=false data\badWord\strikeout=true data\badWord\waveUnderline=false data\badWord\linescolor=#d63f55 data\badWord\fontFamily= data\badWord\pointSize=0 data\badWord\wrapAround=false data\grammarMistake\priority=-1 data\grammarMistake\bold=false data\grammarMistake\italic=false data\grammarMistake\overline=false data\grammarMistake\underline=false data\grammarMistake\strikeout=false data\grammarMistake\waveUnderline=true data\grammarMistake\linescolor=#55aaff data\grammarMistake\fontFamily= data\grammarMistake\pointSize=0 data\grammarMistake\wrapAround=false data\latexSyntaxMistake\priority=-1 data\latexSyntaxMistake\bold=false data\latexSyntaxMistake\italic=false data\latexSyntaxMistake\overline=false data\latexSyntaxMistake\underline=false data\latexSyntaxMistake\strikeout=false data\latexSyntaxMistake\waveUnderline=false data\latexSyntaxMistake\foreground=#ffaa00 data\latexSyntaxMistake\background=#272727 data\latexSyntaxMistake\fontFamily= data\latexSyntaxMistake\pointSize=0 data\latexSyntaxMistake\wrapAround=false data\temporaryCodeCompletion\priority=-1 data\temporaryCodeCompletion\bold=false data\temporaryCodeCompletion\italic=true data\temporaryCodeCompletion\overline=false data\temporaryCodeCompletion\underline=false data\temporaryCodeCompletion\strikeout=false data\temporaryCodeCompletion\waveUnderline=false data\temporaryCodeCompletion\foreground=#55aaff data\temporaryCodeCompletion\fontFamily= data\temporaryCodeCompletion\pointSize=0 data\temporaryCodeCompletion\wrapAround=false data\environment\priority=-1 data\environment\bold=false data\environment\italic=false data\environment\overline=false data\environment\underline=false data\environment\strikeout=false data\environment\waveUnderline=false data\environment\foreground=#45dcd2 data\environment\fontFamily= data\environment\pointSize=0 data\environment\wrapAround=false data\referencePresent\priority=-1 data\referencePresent\bold=false data\referencePresent\italic=false data\referencePresent\overline=false data\referencePresent\underline=false data\referencePresent\strikeout=false data\referencePresent\waveUnderline=false data\referencePresent\foreground=#74c37d data\referencePresent\fontFamily= data\referencePresent\pointSize=0 data\referencePresent\wrapAround=false data\referenceMissing\priority=-1 data\referenceMissing\bold=false data\referenceMissing\italic=false data\referenceMissing\overline=false data\referenceMissing\underline=false data\referenceMissing\strikeout=false data\referenceMissing\waveUnderline=true data\referenceMissing\foreground=#ffaaff data\referenceMissing\fontFamily= data\referenceMissing\pointSize=0 data\referenceMissing\wrapAround=false data\referenceMultiple\priority=-1 data\referenceMultiple\bold=false data\referenceMultiple\italic=false data\referenceMultiple\overline=false data\referenceMultiple\underline=false data\referenceMultiple\strikeout=false data\referenceMultiple\waveUnderline=true data\referenceMultiple\foreground=#af5fa5 data\referenceMultiple\fontFamily= data\referenceMultiple\pointSize=0 data\referenceMultiple\wrapAround=false data\citationPresent\priority=-1 data\citationPresent\bold=false data\citationPresent\italic=false data\citationPresent\overline=false data\citationPresent\underline=false data\citationPresent\strikeout=false data\citationPresent\waveUnderline=false data\citationPresent\foreground=#74c37d data\citationPresent\fontFamily= data\citationPresent\pointSize=0 data\citationPresent\wrapAround=false data\citationMissing\priority=-1 data\citationMissing\bold=false data\citationMissing\italic=false data\citationMissing\overline=false data\citationMissing\underline=false data\citationMissing\strikeout=false data\citationMissing\waveUnderline=true data\citationMissing\foreground=#ffaaff data\citationMissing\fontFamily= data\citationMissing\pointSize=0 data\citationMissing\wrapAround=false data\structure\priority=-1 data\structure\bold=true data\structure\italic=false data\structure\overline=false data\structure\underline=false data\structure\strikeout=false data\structure\waveUnderline=false data\structure\foreground=#f5e827 data\structure\fontFamily= data\structure\pointSize=0 data\structure\wrapAround=false data\current\priority=-1 data\current\bold=false data\current\italic=false data\current\overline=false data\current\underline=false data\current\strikeout=false data\current\waveUnderline=false data\current\background=#3c3c3c data\current\fontFamily= data\current\pointSize=0 data\current\wrapAround=false data\diffDelete\priority=-1 data\diffDelete\bold=false data\diffDelete\italic=false data\diffDelete\overline=false data\diffDelete\underline=false data\diffDelete\strikeout=true data\diffDelete\waveUnderline=false data\diffDelete\foreground=#ffb5b0 data\diffDelete\background=#272727 data\diffDelete\fontFamily= data\diffDelete\pointSize=0 data\diffDelete\wrapAround=false data\diffAdd\priority=-1 data\diffAdd\bold=false data\diffAdd\italic=false data\diffAdd\overline=false data\diffAdd\underline=false data\diffAdd\strikeout=false data\diffAdd\waveUnderline=false data\diffAdd\foreground=#31beff data\diffAdd\background=#272727 data\diffAdd\fontFamily= data\diffAdd\pointSize=0 data\diffAdd\wrapAround=false data\diffReplace\priority=-1 data\diffReplace\bold=false data\diffReplace\italic=false data\diffReplace\overline=false data\diffReplace\underline=false data\diffReplace\strikeout=false data\diffReplace\waveUnderline=false data\diffReplace\foreground=#ffaa7f data\diffReplace\background=#272727 data\diffReplace\fontFamily= data\diffReplace\pointSize=0 data\diffReplace\wrapAround=false data\lua%3Akeyword\priority=-1 data\lua%3Akeyword\bold=false data\lua%3Akeyword\italic=false data\lua%3Akeyword\overline=false data\lua%3Akeyword\underline=false data\lua%3Akeyword\strikeout=false data\lua%3Akeyword\waveUnderline=false data\lua%3Akeyword\foreground=#ffaaff data\lua%3Akeyword\fontFamily= data\lua%3Akeyword\pointSize=0 data\lua%3Akeyword\wrapAround=false 参考  Windows 10 下 TeXstudio 深色背景主题的设置方法_sdnuwjw的博客-CSDN博客 TeXStudio配置 - 知乎  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu连接服务器的账号登录和上传下载文件</title>
+      <link>https://www.xiaoledeng.cn/2020/09/21/ubuntu-link-server/</link>
+      <pubDate>Mon, 21 Sep 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/21/ubuntu-link-server/</guid>
+      <description>1.账号登录 Ubuntu打开终端，输入：
+ssh user_name@ip_address 注释：
+ user_name为用户名 ip_address为服务器的ip地址 如果有端口设置，加入 -p xx，xx为端口号。  2.上传下载文件 本地上传到服务器：
+scp /path_local_file user_name@ip_address:/path_server_folder 例如：
+scp /home/shalom/a.txt deng@127.168.1.1:/home/deng/data/ 解释：
+ path_local_file为本地文件的地址 /path_server_folder为服务器上路径 如果有端口设置，加入 -p xx，xx为端口号。 如果是本地文件夹，加 -r  服务器下载到本地：
+scp user_name@ip_address:/path_server_file /path_local_folder 3.参考  Ubuntu服务器登录与使用 - coffee_tea_or_me - 博客园  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu20.04LTS作为科研主系统</title>
+      <link>https://www.xiaoledeng.cn/2020/09/20/ubuntu-research-system/</link>
+      <pubDate>Sun, 20 Sep 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/20/ubuntu-research-system/</guid>
+      <description>1. 简介 新台式机电脑是dell，默认安装的是Windows10，可是运行速度堪忧，完全跟不上鼠标和键盘操作的节奏。
+是故，决定安装Ubuntu 20.4 LTS系统作为科研的主系统。
+台式机的基本配置：
+ 内存：16G+16G=32G 处理器：Intel® Core™ i7-8700 CPU @ 3.20GHz × 12 图形：llvmpipe (LLVM 10.0.0, 256 bits) / llvmpipe (LLVM 10.0.0, 256 bits) 磁盘空间：1.0TB  Ubuntu系统的基本配置：
+ OS name：Ubuntu 20.04.1 LTS OS Type：64位 GNOME Version：3.36.3 Windowing System：X11  2. 录制U盘启动盘 在USTC Open Source Software Mirror下载Ubuntu 20.4 LTS的镜像文件，而后刻录到U盘里面，作为系统系统盘。
+插上U盘，重启电脑，按F12，从U盘启动，依次按照步骤安装Ubuntu20.04LTS。
+3. 基本软件 首先，更改软件源：Ubuntu更换中科大教育网的软件源，以加快软件的下载速度。
+其次，依次安装常用软件：
+ Mathematica12.1.1，通过Mathematica 激活指南下载和安装 谷歌浏览器，在Google Chrome 网络浏览器-其他平台-linux下载最新的Google Chrome .deb软件包，而后安装即可 Ubuntu安装和配置Qv2ray sublime编辑器，见Ubuntu安装Sublime和latex-tools texlive2020，见Ubuntu安装Texlive2020 texstudio，见TeXstudio- Download - Linux - Ubuntu 20.</description>
+    </item>
+    
+    <item>
+      <title>Linux管理软件Snap</title>
+      <link>https://www.xiaoledeng.cn/2020/09/20/linux-software-snap/</link>
+      <pubDate>Sun, 20 Sep 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/20/linux-software-snap/</guid>
+      <description>简介  Snaps are universal Linux packages. A snap is a bundle of an app and its dependencies that works without modification across Linux distributions.
+  官网：Snap: The app store for Linux  软件库：Software Store  Ubuntu下安装方式：
+sudo apt update sudo apt install snapd sudo snap install xxx 其他Linux安装方式参考：Installing snapd on all major Linux distributions。</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装JabRef</title>
+      <link>https://www.xiaoledeng.cn/2020/09/20/ubuntu-install-jabref/</link>
+      <pubDate>Sun, 20 Sep 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/20/ubuntu-install-jabref/</guid>
+      <description>1.简介 Ubuntu下，对于Bib文件格式，需要用JabRef进行打开，即进行文献管理操作。
+2.下载安装 第一种方法：
+sudo snap install jabref 第二种方法：在Download JabRef latest release页面，下载JabRef Debian and Ubuntu版本，并安装。
+3.使用资料  JabRef User Documentation Jabref安装及使用教程  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu虚拟显示器且远程控制（无显示器接入）</title>
+      <link>https://www.xiaoledeng.cn/2020/09/19/ubuntu-screen-remote-control/</link>
+      <pubDate>Sat, 19 Sep 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/19/ubuntu-screen-remote-control/</guid>
+      <description>1.问题说明 当连接Ubuntu的显示器关闭时，即无显示器接入，通过Teamviewer和Anydesk等远程控制软件无法正常访问该Ubuntu系统。
+2.解决方案 使用虚拟显示器，而后就能正常访问。
+1.安装Ubuntu虚拟显示器的软件(xserver-xorg-video-dummy)：
+sudo apt-get install xserver-xorg-core sudo apt-get install xserver-xorg-video-dummy or
+sudo apt-get install xserver-xorg-video-dummy --fix-missing 2.修改/创建配置文件（慎用，默认就会使用虚拟显示器，而不是显示连接好的外接屏幕)：
+sudo gedit /etc/X11/xorg.conf or
+sudo gedit /usr/share/X11/xorg.conf.d/xorg.conf Section &amp;quot;Device&amp;quot; Identifier &amp;quot;Configured Video Device&amp;quot; Driver &amp;quot;dummy&amp;quot; EndSection Section &amp;quot;Monitor&amp;quot; Identifier &amp;quot;Configured Monitor&amp;quot; HorizSync 31.5-48.5 VertRefresh 50-70 EndSection Section &amp;quot;Screen&amp;quot; Identifier &amp;quot;Default Screen&amp;quot; Monitor &amp;quot;Configured Monitor&amp;quot; Device &amp;quot;Configured Video Device&amp;quot; DefaultDepth 24 SubSection &amp;quot;Display&amp;quot; Depth 24 Modes &amp;quot;1920x1080&amp;quot; EndSubSection EndSection 注释：
+ Section &amp;ldquo;Device&amp;rdquo; # 显卡信息 Section &amp;ldquo;Monitor&amp;rdquo; # 显示器的信息 Section &amp;ldquo;Screen&amp;rdquo; # 显卡和显示器  3.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu时钟显示秒</title>
+      <link>https://www.xiaoledeng.cn/2020/09/18/ubuntu-show-second/</link>
+      <pubDate>Fri, 18 Sep 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/18/ubuntu-show-second/</guid>
+      <description>步骤 1.终端输入：
+sudo apt install gnome-tweak-tool 2.打开tweaks（优化），点击Top Bar（顶栏），Date就是日期，seconds就是秒数，选中。
+参考  Ubuntu17.10顶栏怎么显示日期与计秒?Ubuntu/Debian_操作系统_脚本之家  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装和配置Qv2ray</title>
+      <link>https://www.xiaoledeng.cn/2020/09/17/ubuntu-install-qv2ray/</link>
+      <pubDate>Thu, 17 Sep 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/17/ubuntu-install-qv2ray/</guid>
+      <description>1.说明 建议参考官网的配置：
+ Qv2ray手册  2.步骤 1.下载 Qv2ray 最新版本: https://github.com/Qv2ray/Qv2ray/releases
+Ubuntu下直接下载 Qv2ray.v2.5.0.linux-x64.AppImage文件即可
+给权限
+sudo chmod 777 -R Qv2ray.v2.5.0.linux-x64.AppImage 此时先不用打开运行，等待第二步完成
+2.下载v2ray-Core
+https://github.com/v2ray/v2ray-core/releases
+选择v2ray-linux-64.zip
+3.在~/.config/目录下创建一个新目录,名称为qv2ray/vcore(如果qv2ray不存在就手动创建)，把2步骤下载的压缩包直接解压缩到~/.config/qv2ray/vcore下
+请确保这些文件直接存在于 vcore 目录中:
+ v2ray 或 v2ray.exe：核心可执行文件 v2ctl 或 v2ctl.exe：核心控制程序 geoip.dat：IP 规则数据库 geosite.dat：域名规则数据库  4.给v2ray和v2ctl可执行权限
+chmod +x v2ray v2ctl 5.双击第1步下载的appimage文件,进入首选项-&amp;gt;内核设置
+核心可执行文件路径：将此设置为步骤3中的v2ray 可执行文件的完整路径。
+V2ray 资源目录：将其设置为 步骤3中的geoip.dat 和 geosite.dat 所在的位置。
+完成后，可以点击检查 V2Ray 核心设置按钮来验证 V2Ray 核心设置。重复尝试，直到通过了检查。
+6.按照官网地址手册去添加订阅：
+ 向 Qv2ray 中导入节点 | Qv2ray  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装Sublime和latex-tools</title>
+      <link>https://www.xiaoledeng.cn/2020/09/17/ubuntu-install-sublime-latex-tools/</link>
+      <pubDate>Thu, 17 Sep 2020 13:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/17/ubuntu-install-sublime-latex-tools/</guid>
+      <description>1.安装Sublime text  Sublime Text中文文档之 Linux Package Manager仓库 - Sublime Text 中文官网  安装GPG密钥：
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - 确保apt已设置为使用https源：
+sudo apt-get install apt-transport-https 选择要使用的频道：
+ Stable  echo &amp;quot;deb https://download.sublimetext.com/ apt/stable/&amp;quot; | sudo tee /etc/apt/sources.list.d/sublime-text.list  Dev  echo &amp;quot;deb https://download.sublimetext.com/ apt/dev/&amp;quot; | sudo tee /etc/apt/sources.list.d/sublime-text.list 更新apt源并安装Sublime Text
+sudo apt-get update sudo apt-get install sublime-text 2.安装Sublime Text3插件latex-tools  在终端输入sublime 启动sublime text3 按快捷键Ctrl+Shift+P启动在对话框输入Install Package回车，然后在插件安装对话框输入latex tools就能看到，选中安装。 打开Perference-&amp;gt;Package Settings-&amp;gt;LaTexTools-&amp;gt;Settings-User 在打开文件的227行&amp;quot;linux&amp;quot;中配置你的TexLive路径 “texpath” : “$PATH:/usr/local/texlive/2020/bin/x86_64-linux” 设置487中 “viewer”: “evince”（不设置空着应该也可以，系统默认用自己的evince）。 安装dbus及依赖  sudo apt-get install dbus libdbus-glib-1-dev gcc </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装Texlive2020</title>
+      <link>https://www.xiaoledeng.cn/2020/09/17/ubuntu-install-texlive2020/</link>
+      <pubDate>Thu, 17 Sep 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/17/ubuntu-install-texlive2020/</guid>
+      <description>1.步骤 从中科大开源地址：Index of /CTAN/systems/texlive/Images/下载 texlive2020.iso 镜像。
+安装图形化用户界面:
+sudo apt-get install perl-tk 加载 .iso 镜像文件:
+sudo mount -o loop texlive2020.iso /mnt 启动图形化安装配置:
+cd /mnt/ sudo ./install-tl -gui 安装完成后，卸载镜像文件:
+cd / sudo umount /mnt 字体配置:
+sudo cp /usr/local/texlive/2020/texmf-var/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf sudo fc-cache -fsv 添加环境变量，在 ~/.bashrc 和 ~/.profile 中均添加如下变量：
+export MANPATH=${MANPATH}:/usr/local/texlive/2020/texmf-dist/doc/man export INFOPATH=${INFOPATH}:/usr/local/texlive/2020/texmf-dist/doc/info export PATH=${PATH}:/usr/local/texlive/2020/bin/x86_64-linux 使添加变量立即生效:
+source ~/.bashrc source ~/.profile 全局变量配置 /etc/manpath.config 下添加：
+sudo gedit /etc/manpath.config MANPATH_MAP /usr/local/texlive/2020/bin/x86_64-linux /usr/local/texlive/2020/texmf-dist/doc/man 安装成功测试：
+tex --version 显示：
+TeX 3.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu20.04LTS更换中科大教育网的软件源</title>
+      <link>https://www.xiaoledeng.cn/2020/09/17/ubuntu-change-source/</link>
+      <pubDate>Thu, 17 Sep 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/17/ubuntu-change-source/</guid>
+      <description>原文地址：Ubuntu 源使用帮助 — USTC Mirror Help 文档
+系统：Ubuntu 20.04.1 LTS
+其图形界面配置的步骤为：
+Settings，About，Software Updates，Ubuntu Software，Download from:
+ http://mirrors.ustc.edu.cn/ubuntu
+ </description>
+    </item>
+    
+    <item>
+      <title>Mac下brew操作指南</title>
+      <link>https://www.xiaoledeng.cn/2020/09/15/brew-functional-list/</link>
+      <pubDate>Tue, 15 Sep 2020 13:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/15/brew-functional-list/</guid>
+      <description>1.官方安装 地址：The Missing Package Manager for macOS (or Linux) — Homebrew
+2.基本操作  搜索：brew search xxx 安装：brew install xxx 查询：brew info xxx 更新：brew update 检查是否有新版本：brew outdated 升级：brew upgrade xxx 清理：brew cleanup xxx 删除：brew uninstall xxx 安装列表：brew list  </description>
+    </item>
+    
+    <item>
+      <title>Mac下brew换源和终止</title>
+      <link>https://www.xiaoledeng.cn/2020/09/08/mac-brew-huanyuan-close/</link>
+      <pubDate>Tue, 08 Sep 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/08/mac-brew-huanyuan-close/</guid>
+      <description>1. 换源 Homebrew更改为教育源：
+cd &amp;#34;$(brew --repo)&amp;#34; git remote set-url origin https://mirrors.ustc.edu.cn/brew.git cd &amp;#34;$(brew --repo)/Library/Taps/homebrew/homebrew-core&amp;#34; git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git cd &amp;#34;$(brew --repo)/Library/Taps/homebrew/homebrew-cask&amp;#34; git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git brew update 重置为官方地址：
+cd &amp;#34;$(brew --repo)&amp;#34; git remote set-url origin https://github.com/Homebrew/brew.git cd &amp;#34;$(brew --repo)/Library/Taps/homebrew/homebrew-core&amp;#34; git remote set-url origin https://github.com/Homebrew/homebrew-core cd &amp;#34;$(brew --repo)/Library/Taps/homebrew/homebrew-cask&amp;#34; git remote set-url origin https://github.com/Homebrew/homebrew-cask brew update 替换Bottle源：
+bash用户（shell用户）：
+echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile zsh用户：
+echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&#39; &amp;gt;&amp;gt; ~/.</description>
+    </item>
+    
+    <item>
+      <title>Mac下设置sublime的命令行打开文档</title>
+      <link>https://www.xiaoledeng.cn/2020/07/31/mac-sublime-terminal-open/</link>
+      <pubDate>Fri, 31 Jul 2020 17:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/07/31/mac-sublime-terminal-open/</guid>
+      <description>1.简介 在选用sublime作为主要编辑器后，如何在命令行下打开sublime？
+本文在Mac下，简介其设置过程。
+2.步骤 1.在zsh下，进入zshrc环境变量：
+vi ~/.zshrc 2.用alias加入安装后sublime的路径，缩写为sl
+alias sl=\&#39;&#39;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&#39;\&#39; 3.退出vi模式，并激活zshrc环境变量的设置：
+source ~/.zshrc 4.命令行模式下，创建新的文档example.txt：
+sl example.txt </description>
+    </item>
+    
+    <item>
+      <title>CentOS下同步日期和时间date</title>
+      <link>https://www.xiaoledeng.cn/2018/03/10/centos-date/</link>
+      <pubDate>Sat, 10 Mar 2018 10:58:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2018/03/10/centos-date/</guid>
+      <description>问题 在CentOS系统下面，发现命令行使用date之后，显示的时间不对。
+解决方法  Linux的时间分为System Clock（系统时间）和Real Time Clock （硬件时间，简称RTC）。
+系统时间：指当前Linux Kernel中的时间。
+硬件时间：主板上有电池供电的时间。
+   查看系统时间的命令：
+date   设置系统时间的命令：
+date –set（月/日/年 时：分：秒） date –set “10/11/10 10:15”   查看硬件时间的命令：
+hwclock   设置硬件时间的命令：
+hwclock –set –date = （月/日/年 时：分：秒）   安装ntpdate工具
+yum -y install ntp ntpdate   设置系统时间与网络时间同步
+ntpdate cn.pool.ntp.org   将系统时间写入硬件时间
+hwclock &amp;ndash;systohc   强制系统时间写入CMOS中防止重启失效
+hwclock -w clock -w   参考资料  CentOS设置系统时间与网络时间同步 - CSDN博客  </description>
+    </item>
+    
+    <item>
+      <title>Mac下音频下载工具You-Get</title>
+      <link>https://www.xiaoledeng.cn/2017/03/30/mac-you-get/</link>
+      <pubDate>Thu, 30 Mar 2017 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2017/03/30/mac-you-get/</guid>
+      <description>本文对于Mac下，音频下载工具You-Get的介绍。
+1. 安装 请确保已经安装了python3和FFmpeg。之后，命令行输入：
+pip3 install you-get  或者输入：
+brew install you-get  之后就安装好了。
+2. 视频列表 据You-Get官网介绍，You-Get支持下载包括YouTube, Youku, Niconico在内的70余家视频网站，其中还有有丰富技术视频教程的Khan Academy、InfoQ。具体见列表：supported-sites。
+3. 使用   查看所有可以下载的格式：
+$ you-get -i &amp;lsquo;https://www.youtube.com/watch?v=jNQXAC9IVRw&#39;
+  下载mp4格式（&amp;ndash;itag=18）：
+$ you-get &amp;ndash;itag=18 &amp;lsquo;https://www.youtube.com/watch?v=jNQXAC9IVRw&#39;
+  4. 修改历史  2017.3.30 创建此文；  </description>
+    </item>
+    
+    <item>
+      <title>Mac下音频格式转换工具FFmpeg</title>
+      <link>https://www.xiaoledeng.cn/2017/03/29/mac-ffmpeg/</link>
+      <pubDate>Wed, 29 Mar 2017 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2017/03/29/mac-ffmpeg/</guid>
+      <description>Mac命令行的FFmpeg命令可以用来转换视频格式。
+1. 安装FFmpeg 通过以下命令来安装：
+brew install ffmpeg  2. 常用命令   获取媒体信息命令：
+ffmpeg -i video.avi
+  从视频文件中提取声音信息，并存为Mp3格式
+ffmpeg -i source_video.avi -vn -ar 44100 -ac 2 -ab 192k -f mp3 sound.mp3
+  参数解释 :
+Source video : source_video.avi
+Audio bitrate : 192kb/s
+output format : mp3
+Generated sound : sound.mp3
+3. 参考  20几个常用的FFmpeg命令 - 简书  </description>
+    </item>
+    
+    <item>
+      <title>Mac下与Windows文本转换工具tofrodos</title>
+      <link>https://www.xiaoledeng.cn/2017/03/16/mac-tofrodos/</link>
+      <pubDate>Thu, 16 Mar 2017 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2017/03/16/mac-tofrodos/</guid>
+      <description>一般而言，Linux和Windows下，文本文件的行结束标志是不同的。二者互相转换需要dos2unix工具。
+而对于Mac下，dos2unix工具为：tofrodos，即为to-from-dos的解释。
+1. 安装tofrodos 命令行下面输入：
+brew install tofrodos  2. 二者转换   unix2dos 格式为：
+ todos *.txt    dos2unix 格式为：
+ fromdos *.txt    解释为：从Mac(unix)到Windows下，用todos，即为to-dos。
+而从Window到Mac(unix)上，用fromdos，即为from-dos.。</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu14.04LTS安装Pelican elegant主题</title>
+      <link>https://www.xiaoledeng.cn/2014/05/02/ubuntu-install-pelican/</link>
+      <pubDate>Fri, 02 May 2014 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2014/05/02/ubuntu-install-pelican/</guid>
+      <description>一. 安装软件及环境准备: 1.软件安装: $ sudo apt-get install python-pip $ sudo apt-get install python-virtualenv $ virtualenv ~/virtualenvs/pelican $ cd ~/virtualenvs/pelican $ . bin/activate $ pip install -e git://github.com/getpelican/pelican#egg=pelican $ pip install Markdown $ mkdir blog $ cd blog $ pelican-quikstart blog/ |--content #存储所写的blog文件目录， | └──（blog pages) #博客文件，如*.md后缀的文件 |--output #执行make publish之后，会将博客文件转换成相应的html文件及相应的存储目录 | └──.git #执行git init之后，产生的远程仓库目录 | └──author #作者目录，存放pelicanconf.py中指定的Author文件 | └──category #分类目录，默认目录文件为misc，在编辑器中指定 | └──feeds #目录，pelicanconf.py中FEED_RSS指定的XML文件 | └──pages #目录，pelicanconf.py中ARTICLE_URL指定格式分类文件 | └──tag #目录，存放编辑器开头所指定的Tag | └──theme #目录，存放博客模板文件 | └──archives.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu14.04LTS新安装的系列软件（步骤）</title>
+      <link>https://www.xiaoledeng.cn/2014/05/02/ubuntu-install-software/</link>
+      <pubDate>Fri, 02 May 2014 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2014/05/02/ubuntu-install-software/</guid>
+      <description>从Ubuntu13.10更新到Ubuntu14.04LTS：
+$ sudo apt-get install update-manager-core $ sudo do-release-upgrade -d 注意：调换到源为主服务器并且设置源的一些基本信息；
+具体参照官网：http://www.ubuntu.com/download/desktop/upgrade
+一. 更换源，使得下载和更新速度达到最快 打开“软件更新器(software updater)”或者“软件和更新”,根据自己网络选择。
+二. 安装博客工具Octopress 参看Ubuntu13.10下使用Github和Octopress搭建个人博客的简要做法
+期间错误解决
+$ gem install bundler 出现：
+Fetching: bundler-1.6.2.gem (100%) ERROR: While executing gem ... (Errno::EACCES) Permission denied - /var/lib/gems  输入：
+$ sudo gem install bundler 提示需要安装：
+$ sudo apt-get install rbenv 第二步与之前不一样，即为把已经上传的文档download到本地：
+本地同步:
+$ git clone git@github.com:xiaoledeng/xiaoledeng.github.io.git 提示：Permission denied (publickey).
+解决办法： 用下面的命令生成public key
+$ ssh-keygen -t rsa $ cd .ssh $ gedit id_rsa.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu13.10下使用Github和Octopress搭建个人博客</title>
+      <link>https://www.xiaoledeng.cn/2014/05/01/ubuntu-blog-octopress/</link>
+      <pubDate>Thu, 01 May 2014 08:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2014/05/01/ubuntu-blog-octopress/</guid>
+      <description>1.[环境准备]  安装git、ruby和octopress  $ sudo apt-get install git ruby ruby-dev $ git clone git://github.com/imathis/octopress.git octopress $ cd octopress $ sudo gem install bundler $ rbenv rehash $ bundle install $ rake install 2.注册[github] 注意：
+  用户名和自己建的网址要相同；
+  格式：用户名/用户名.github.io
+  另外，[用户名.github.com格式正慢慢替换]
+  3.连接github和octopress $ rake setup_github_pages $ rake generate $ rake deploy 可能出现问题：解决方案： $ cd _deploy $ git pull origin master $ git push --force origin master $ cd .</description>
+    </item>
+    
+    <item>
+      <title>日结—科研、程序员、乱码和高性能程序库</title>
+      <link>https://www.xiaoledeng.cn/2013/11/02/summary-research-programmers-garbled-and-high-performance-libraries/</link>
+      <pubDate>Sat, 02 Nov 2013 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2013/11/02/summary-research-programmers-garbled-and-high-performance-libraries/</guid>
+      <description>1. 科研 进行引力位计算的浅层模型的公式推导，以及相应的算法改进。
+仔细阅读推导2010年韩师兄的《Comparative Study on Two Methods for Calculating the Gravitational Potential of a Prism》，并寻找相应的改进算法。
+2. 如何成为一名优秀的程序员 PS: 找东西的时候发现的：
+Q:如何成为一名优秀的程序员？
+A（Cleve Moler）：要成为一名优秀的程序员，首先要去看别人写的优秀的程序，你也可以去看我写的程序。就像当你要学习写作时，你首先是去读别人的作品，尤其是那些大作家的作品，莎士比亚，海明威等，而不是直接就坐下来直接写自己的作品。当然也要看一下那些不好的程序，要明白他们为什么不好。
+3. Ubuntu下打开txt文件乱码的解决方法 1、终端输入 sudo apt-get install dconf-tools 安装，然后输入sudo dconf-editor调出dconf-editor
+2、依次打开org-&amp;gt;gnome-&amp;gt;gedit-&amp;gt;preferences-&amp;gt;encodings中的auto-detected的value改为:[&#39;GB18030&#39;, &#39;GB2312&#39;, &#39;GBK&#39;, &#39;UTF-8&#39;, &#39;CURRENT&#39;, &#39;ISO-8859-15&#39;, &#39;UTF-16&#39;],直接回车保存就好。前提是中文系统。
+4. 高性能程序库  BLAS — Basic Linear Algebra Subroutines LAPACK — Linear Algebra PACKage IMSL — 国际数学和统计链接库 MKL — Intel 数学核心库  </description>
+    </item>
+    
+  </channel>
+</rss>

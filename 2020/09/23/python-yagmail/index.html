@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>yagmail: Python发送邮件 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>yagmail: Python发送邮件</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-09-23 13:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/python/">#Python</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1安装">1.安装</h1>
+<pre><code>pip install yagmail
+</code></pre><h1 id="2设置账号和密码">2.设置账号和密码</h1>
+<p>在python端口输入：</p>
+<pre><code>keyring.set_password('yagmail', 'mygmailusername', 'mygmailpassword')
+</code></pre><p>解释：</p>
+<ul>
+<li>mygmailusername为邮箱账号</li>
+<li>mygmailpassword为邮箱密码</li>
+</ul>
+<h1 id="3测试">3.测试</h1>
+<p>保存以下代码为mail.py，并运行。</p>
+<pre><code># import yagmail module.
+import yagmail
+
+# connect to smtp server.
+# yagmail.register('emailaddress', 'passwd')
+
+yag_smtp_connection = yagmail.SMTP(
+	user=&quot;user@sustech.edu.cn&quot;,  	# 发件人邮箱
+	host='smtp.exmail.qq.com'  		# 邮箱的smtp地址
+)
+
+# email to 收件人
+to = 'gmailusername@qq.com'
+ 
+#  抄送 收件人
+# cc = 'gmailusername@icloud.com'
+
+#  密送
+bcc = 'gmailusername@foxmail.com'
+
+# email subject 邮件标题
+subject = 'Test'
+
+body = 'This is the test from yagmail.'
+
+# email contents 邮件的主要内容
+contents = ['你好，\n\n', body, '\n祝好', 'Xiao-Le Deng']
+
+# email with attached file path. 邮件的附件内容
+# attachments = [
+# '/Users/deng/Documents/a.txt',
+# '/Users/deng/Documents/b.txt']
+
+# send the email
+yag_smtp_connection.send(
+	to = to, 
+	subject = subject, 
+	contents = contents, 
+#	attachments = attachments,
+#	cc = cc,
+	bcc = bcc
+)
+</code></pre><h1 id="4参考">4.参考</h1>
+<ul>
+<li><a href="https://github.com/kootenpv/yagmail">kootenpv/yagmail: Send email in Python conveniently for gmail using yagmail</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1%e5%ae%89%e8%a3%85">
+                            1.安装
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2%e8%ae%be%e7%bd%ae%e8%b4%a6%e5%8f%b7%e5%92%8c%e5%af%86%e7%a0%81">
+                            2.设置账号和密码
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3%e6%b5%8b%e8%af%95">
+                            3.测试
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#4%e5%8f%82%e8%80%83">
+                            4.参考
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

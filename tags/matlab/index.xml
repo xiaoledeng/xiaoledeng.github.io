@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Matlab on Xiao-Le Deng</title>
+    <link>https://www.xiaoledeng.cn/tags/matlab/</link>
+    <description>Recent content in Matlab on Xiao-Le Deng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2012 – 2021 · [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style) for [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Fri, 22 Jan 2021 17:00:00 +0800</lastBuildDate><atom:link href="https://www.xiaoledeng.cn/tags/matlab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Parameter Estimation and Inverse Problems</title>
+      <link>https://www.xiaoledeng.cn/2021/01/22/peip/</link>
+      <pubDate>Fri, 22 Jan 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/01/22/peip/</guid>
+      <description>1. Basic Information  ISBN: 978-0-12-804651-7 Language: English Published: 2018 Copyright: Copyright © 2019 Elsevier Inc. All rights reserved. Imprint: Elsevier No. of pages: 404  2. Table of Contents  Preface to the Third Edition Chapter One - Introduction Chapter Two - Linear Regression Chapter Three - Rank Deficiency and Ill-Conditioning Chapter Four - Tikhonov Regularization Chapter Five - Discretizing Inverse Problems Using Basis Functions Chapter Six - Iterative Methods Chapter Seven - Sparsity Regularization and Total Variation Techniques Chapter Eight - Fourier Techniques Chapter Nine - Nonlinear Regression Chapter Ten - Nonlinear Inverse Problems Chapter Eleven - Bayesian Methods Chapter Twelve - Epilogue Appendix A - Review of Linear Algebra Appendix B - Review of Probability and Statistics Appendix C - Review of Vector Calculus Appendix D - Glossary of Notation Bibliography Index  3.</description>
+    </item>
+    
+    <item>
+      <title>Geophysical Data Analysis - Discrete Inverse Theory</title>
+      <link>https://www.xiaoledeng.cn/2021/01/22/gda/</link>
+      <pubDate>Fri, 22 Jan 2021 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/01/22/gda/</guid>
+      <description>1. Basic Information  Title: Geophysical Data Analysis - Discrete Inverse Theory 4th Edition Authors: William Menke ISBN - Paperback: 978-0-12-813555-6 ISBN - eBook: 978-0-12-813556-3 Imprint: Academic Press Published Date: 12th April 2018 Page Count: 352  2. Table of Contents  Describing Inverse Problems Some Comments on Probability Theory Solution of the Linear, Gaussian Inverse Problem, Viewpoint 1: The Length Method Solution of the Linear, Gaussian Inverse Problem, Viewpoint 2: Generalized Inverses Solution of the Linear, Gaussian Inverse Problem, Viewpoint 3: Maximum Likelihood Methods Nonuniqueness and Localized Averages Applications of Vector Spaces Linear Inverse Problems and Non-Gaussian Statistics Nonlinear Inverse Problems Factor Analysis Continuous Inverse Theory and Tomography Sample Inverse Problems Applications of Inverse Theory to Solid Earth Geophysics  3.</description>
+    </item>
+    
+    <item>
+      <title>GNSS-IR tools using Fortran and Matlab</title>
+      <link>https://www.xiaoledeng.cn/2020/12/26/gnss-ir/</link>
+      <pubDate>Sat, 26 Dec 2020 18:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/12/26/gnss-ir/</guid>
+      <description>1. Introduction Download: https://geodesy.noaa.gov/gps-toolbox/exist.htm
+2. References Roesler, C., Larson, K.M. Software tools for GNSS interferometric reflectometry (GNSS-IR). GPS Solution, 22, 80 (2018). https://doi.org/10.1007/s10291-018-0744-8</description>
+    </item>
+    
+    <item>
+      <title>GTeC: Gravity Terrain Correction</title>
+      <link>https://www.xiaoledeng.cn/2020/11/24/gtec/</link>
+      <pubDate>Tue, 24 Nov 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/24/gtec/</guid>
+      <description>1. Introduction A versatile MATLAB® tool for a detailed computation of the terrain correction and Bouguer gravity anomalies.
+2. Reference Cella, F. (2015). GTeC—A versatile MATLAB® tool for a detailed computation of the terrain correction and Bouguer gravity anomalies. Computers &amp;amp; geosciences, 84, 72-85. https://doi.org/10.1016/j.cageo.2015.07.015</description>
+    </item>
+    
+    <item>
+      <title>SHADE: Spherical HArmonic coefficient empirical DE-correlation</title>
+      <link>https://www.xiaoledeng.cn/2020/11/23/shade/</link>
+      <pubDate>Mon, 23 Nov 2020 13:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/23/shade/</guid>
+      <description>1. Introduction Download: SHADE
+2. References Piretzidis, D., &amp;amp; Sideris, M. G. (2018). SHADE: A MATLAB toolbox and graphical user interface for the empirical de-correlation of GRACE monthly solutions. Computers &amp;amp; Geosciences, 119, 137-150. https://doi.org/10.1016/j.cageo.2018.06.012</description>
+    </item>
+    
+    <item>
+      <title>SRBF_package: spherical radial basis functions</title>
+      <link>https://www.xiaoledeng.cn/2020/11/12/srbf_package/</link>
+      <pubDate>Thu, 12 Nov 2020 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/12/srbf_package/</guid>
+      <description>1. Introduction SRBF_package is a collection of a few routines for gravity field modelling with band-limited spherical radial basis functions (SRBFs), allowing both analysis and synthesis of the gravitational field. Website:
+ Bucha/#SRBF_package http://edisk.cvt.stuba.sk/~xbuchab/SRBF_package/SRBF_package.zip  2. Reference Bucha, B., Janák, J., Papčo, J., Bezděk, A., 2016. High-resolution regional gravity field modelling in a mountainous area from terrestrial gravity data. Geophysical Journal International. 207, 949-966. http://doi.org/10.1093/gji/ggw311</description>
+    </item>
+    
+    <item>
+      <title>SHA_SHS: spherical harmonic analysis and synthesis</title>
+      <link>https://www.xiaoledeng.cn/2020/11/11/sha_shs/</link>
+      <pubDate>Wed, 11 Nov 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/11/sha_shs/</guid>
+      <description>1. Introduction Download:
+ Bucha/#SHA http://edisk.cvt.stuba.sk/~xbuchab/SHA_code/SHA_SHS.zip  2. Reference Bucha, B., Hirt, C., Kuhn, M., 2019. Cap integration in spectral gravity forward modelling up to the full gravity tensor. Journal of Geodesy. https://doi.org/10.1007/s00190-019-01277-3</description>
+    </item>
+    
+    <item>
+      <title>isGrafLab: Irregular Surface GRAvity Field LABoratory</title>
+      <link>https://www.xiaoledeng.cn/2020/11/10/isgraflab/</link>
+      <pubDate>Tue, 10 Nov 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/10/isgraflab/</guid>
+      <description>1. Introduction isGrafLab (Irregular Surface GRAvity Field LABoratory) is a modified version of GrafLab that allows accurate and fast computation of functionals of the geopotential at dense grids on irregular surfaces such as the Earth&#39;s surface.
+Download: Downloads - Faculty of Civil Engineering in Bratislava
+Others:
+ Bucha/#isGrafLab Definition of functionals of the geopotential used in GrafLab software  2. Reference Bucha, B., Janák, J. (2014). A MATLAB-based graphical user interface program for computing functionals of the geopotential up to ultra-high degrees and orders: Efficient computation at irregular surfaces.</description>
+    </item>
+    
+    <item>
+      <title>GrafLab: GRAvity Field LABoratory</title>
+      <link>https://www.xiaoledeng.cn/2020/11/09/graflab/</link>
+      <pubDate>Mon, 09 Nov 2020 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/09/graflab/</guid>
+      <description>1. Introduction GrafLab (GRAvity Field LABoratory) is a MATLAB-based routine for computing functionals of the geopotential up to ultra-high degrees and orders (tens of thousands and beyond). Download: Downloads - Faculty of Civil Engineering in Bratislava
+Others:
+ Bucha/#GrafLab Definition of functionals of the geopotential used in GrafLab software  2. Reference Bucha, B., Janák, J. (2013). A MATLAB-based graphical user interface program for computing functionals of the geopotential up to ultra-high degrees and orders.</description>
+    </item>
+    
+    <item>
+      <title>GravPSO2D: 2D gravity inversion using the Particle Swarm Optimization</title>
+      <link>https://www.xiaoledeng.cn/2020/11/06/gravpso2d/</link>
+      <pubDate>Fri, 06 Nov 2020 12:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/06/gravpso2d/</guid>
+      <description>1. Introduction A Matlab Package for the 2D gravity inversion in sedimentary basins is presented.
+GitHub: https://github.com/jgpallero/grav-pso-2d
+2. Reference Palleroa J.L.G., Fernández-Martínezb J.L., Fernández-Muñizb Z., Bonvalotc S., Gabaldac G., Nalpasd T. (2020). GravPSO2D: A Matlab package for 2D gravity inversion in sedimentary basins using the Particle Swarm Optimization algorithm. Computers &amp;amp; Geosciences. https://doi.org/10.1016/j.cageo.2020.104653</description>
+    </item>
+    
+    <item>
+      <title>TGF: Terrain-related Gravity Field</title>
+      <link>https://www.xiaoledeng.cn/2020/11/02/tgf/</link>
+      <pubDate>Mon, 02 Nov 2020 11:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/02/tgf/</guid>
+      <description>1. Introduction Download: TGF - Astronomische und Physikalische Geodäsie
+2. Reference Yang, M., Hirt, C., &amp;amp; Pail, R. (2020). TGF: A New MATLAB-based Software for Terrain-related Gravity Field Calculations. Remote Sensing, 12(7), 1063. https://doi.org/10.3390/rs12071063</description>
+    </item>
+    
+    <item>
+      <title>BTTB: Fast multiplications for matrices with Block Toeplitz Toeplitz Block</title>
+      <link>https://www.xiaoledeng.cn/2020/10/30/bttb/</link>
+      <pubDate>Fri, 30 Oct 2020 13:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/30/bttb/</guid>
+      <description>1. Introduction GitHub: renautra/FastBTTB
+Website: BTTB software/ Dr.Rosemary Renaut
+2. Reference Hogue, J. D., Renaut, R. A., &amp;amp; Vatankhah, S. (2020). A tutorial and open source software for the efficient evaluation of gravity and magnetic kernels. Computers &amp;amp; Geosciences, 144, 104575. https://doi.org/10.1016/j.cageo.2020.104575</description>
+    </item>
+    
+    <item>
+      <title>Matlab命名注意事项</title>
+      <link>https://www.xiaoledeng.cn/2014/05/26/matlab-rename/</link>
+      <pubDate>Mon, 26 May 2014 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2014/05/26/matlab-rename/</guid>
+      <description>Matlab命名有一定的技巧，以后应多多注意。
+ Matlab的命名对字母的大小写敏感，如myname和MyName为两个变量； 变量名的第一个字符必须是英文名，最多63个字符； 变量名不得包含空格、标点、运算符，但可以包含下划线，如 My_Name_213； 用户自定义变量名：不与关键字同名，检验命令为iskeyword UserName或exist UserName  Reference  精通MATLAB R2011a  </description>
+    </item>
+    
+    <item>
+      <title>日结—MATLAB算法</title>
+      <link>https://www.xiaoledeng.cn/2013/11/13/summary-matlab-algorithm/</link>
+      <pubDate>Wed, 13 Nov 2013 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2013/11/13/summary-matlab-algorithm/</guid>
+      <description>今天，借了一本书：《Matlab智能算法30个案例分析》。
+正如同书的扉页所说的：对于这些算法我们的学习态度应该是怎么样的？如果我们只是用这些算法来解决实际问题，只是想用这些算法尝试下常规算法难以准确求解的问题，对于这些复杂的理论，我们可以简单研究，了解算法中最精髓的几个概念，以及算法模型的抽象方法皆可。
+更应该把时间放在如何从实际待求解问题中抽象出适合算法求解的模型上，甚至是如何利用与借鉴别人的方法和经验来解决自己的问题。</description>
+    </item>
+    
+  </channel>
+</rss>

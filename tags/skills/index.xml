@@ -1,0 +1,1790 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Skills on Xiao-Le Deng</title>
+    <link>https://www.xiaoledeng.cn/tags/skills/</link>
+    <description>Recent content in Skills on Xiao-Le Deng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2012 – 2021 · [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style) for [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Fri, 02 Jul 2021 17:20:00 +0800</lastBuildDate><atom:link href="https://www.xiaoledeng.cn/tags/skills/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LaTeX大括号的多行公式</title>
+      <link>https://www.xiaoledeng.cn/2021/07/02/latex-big-brackets-for-formulae/</link>
+      <pubDate>Fri, 02 Jul 2021 17:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/07/02/latex-big-brackets-for-formulae/</guid>
+      <description>1. 方法一 aligned \begin{equation} \label{eq_a} x= \left\{ \begin{aligned} a &amp;amp;, &amp;amp; &amp;amp; x=0 \\ b &amp;amp;, &amp;amp; &amp;amp; x=1 \\ c &amp;amp;, &amp;amp; &amp;amp; x=2 \end{aligned} \right. \end{equation} 2. 方法二 array \begin{equation} \label{eq_b} x= \left\{ \begin{array}{c c} a &amp;amp;, &amp;amp; &amp;amp; x=0 \\ b &amp;amp;, &amp;amp; &amp;amp; x=1 \\ c &amp;amp;, &amp;amp; &amp;amp; x=2 \end{array} \right. \end{equation} 3. 参考  LaTex中插入大括号的多行公式 - 云+社区 - 腾讯云  </description>
+    </item>
+    
+    <item>
+      <title>Windows下Visio对区域进行颜色填充</title>
+      <link>https://www.xiaoledeng.cn/2021/07/01/windows-visio-color/</link>
+      <pubDate>Thu, 01 Jul 2021 10:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/07/01/windows-visio-color/</guid>
+      <description>1. 步骤 核心技能是，利用Visio的开发人员的工具，进行操作（包括，联合、组合、拆分、相交和剪除等）。
+ 打开文件——高级——常规——勾选以开发人员模式运行——确定； 选中需要操作的图形——开发工具选型——操作——联合、组合、拆分、相交和剪除等； 对选中的图形任意位置进行颜色填充。  2. 参考  Visio中图进行任意区域进行颜色填充 Polaris luo的博客-CSDN博客 visio将某一区域填充颜色  </description>
+    </item>
+    
+    <item>
+      <title>《PPT设计的艺术：人人都用得上的PPT设计书》的读书笔记</title>
+      <link>https://www.xiaoledeng.cn/2021/06/17/note-the-art-of-ppt-design/</link>
+      <pubDate>Thu, 17 Jun 2021 07:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/17/note-the-art-of-ppt-design/</guid>
+      <description>前言 看书的目的就是希望获取知识，更进一步是把书上的知识转化成自己的内在能力，这就需要思考吸收：翻阅方便、书写方便的纸质书能帮你更好地厘清思路，收获属于自己的知识；在读书思考的同时也在与作者进行思想交流，正所谓与人学习效率更高；而否定以往也并非坏事，所谓学习不就是为了改变我们囿于的先有概念吗？
+第2章 留白：“少就是多”的智慧 西餐的特点不在于分量，而讲究精致。
+留白就是在作品中留下相应的空白。其目的就是以留取空白构造空灵韵味，给人以美的享受。
+留白是一种智慧，也是一种境界。
+留白是PPT设计中一个基本的要求，页面简洁不是浪费，更要切忌“顶天立地”——无论是在PPT中插入表格还是图画，主体的内容上不能及顶、下不能到底，无论上下左右都需要留出空间给读者、给观众。
+第3章 排版：隐藏线条的秘密 排版就是在一个版面之中将各元素合理排列的学问。
+通过对齐分布使排版合理，让观众把注意力集中到内容本身，目的是让内容变得容易阅读，同时能区分出内容的层次关系——无论是只有一句话的页面，还是内容丰富的页面。
+ 第1步：看成形状 第2步：边缘对齐 第3步：等距分布 第4步：总体兼顾  第4章 颜色：PPT也是“好色之徒” 美观的PPT=颜色数量×颜色饱和度
+建议：在一张幻灯片中，颜色的使用最好不超过两种。
+什么是颜色饱和度呢？就是指颜色的鲜艳程度，比如红色包含深红、浅红等。饱和度低到一定程度，颜色就会变成灰色。
+丑的PPT往往都是五颜六色的，还配以高饱和度，就显得特别刺眼；而在优秀的PPT中，颜色饱和度普遍不高，这样看上去显得更沉稳、专业。
+建议：一份美观的PPT，应该选取那些饱和度适中、看上去柔和、不刺眼的颜色作为同一章节甚至整个PPT的主色调。
+3种实用的PPT配色法：
+ 方法1：Logo取色 方法3：拿来主义——使用配色网站  1)color hunter： http://www.colorhunter.com/
+2）网页设计常用色彩搭配表： http://tool.c7sky.com/webcolor/
+3）中国传统色彩： http://color.uisdc.com/
+谨记：PPT是以内容为王的，目的是传递信息，配色方案不可花哨、扰乱视觉。
+第5章 细节：也许你和设计师只差7个细节 这7个细节分别是：统一、对齐、层次、亲密、均衡、尺寸、焦点。
+统一，是指在一份PPT的每个页面中的各个元素能够保持协调、一致。这些元素包括文字、风格、版式、配色、样式等。
+对齐是指页面上所有的元素都应该有某种视觉联系，而不是随意摆放的，这样才能建立起更加清晰和美观的视觉效果。
+层次是指页面上的各个元素之间不要太过相似，要有主次之分，以便观众可以迅速发现页面内容的逻辑关系并寻找到自己所感兴趣的内容。简而言之，就是让不同的更不同。
+亲密就是说要把相近的元素组合在一起形成视觉单元。简而言之，就是分组，即同类相聚。
+均衡，是指在版面中要做到平衡，在视觉上倾向于保持稳定的情况，不会出现一方偏重的现象。
+“留白”可以让画面保持空间感，不显得压迫、紧凑；“砝码”则可以调节画面的权重，保持画面的平衡。
+一般来说，4：3和16：9的幻灯片页面比例能满足绝大多数需求
+焦点就是一页中所有内容的关注集中点，主要起到聚焦视线、突出主题的作用。
+一种简单、实用的焦点法——三分法，也称作“井”字构图法，是一种在摄影、绘画、设计等艺术中经常使用的构图手法。在PPT中就是把页面横、纵都均分成3份，就如同书写中文的“井”字。这样就可以得到4个交叉点，然后将需要表现的重点放置在4个交叉点中的一个上面即可，这样重点就会显得格外突出。
+第6章 结构：清爽人生必备的结构化思维 PPT制作中底层最重要的思维方法——结构化思维——一种用科学方法训练大脑清晰思考的技术与艺术。它不仅能够让我们在表达观点的时候有理有据、条理清晰，还能让我们在面对具体问题的时候，把所有和寻求解决方法无关的信息删除，把问题化繁为简，把握本质。
+“结构化思维”（Structured Thinking）是指一个人在面对工作任务或者难题时能从多个侧面进行思考，深刻分析导致问题出现的原因，系统制定行动方案，并采取恰当的手段使工作得以高效率开展，取得高绩效。简单来说，就是在面对问题的时候，可以通过某种结构把它拆解成一个个你能解决的部分，这一招在武学上叫“各个击破”。同样的内容，通过结构化思维，有结构、有规律地整理，将大大提高你的思考效率，让复杂的问题瞬间变得非常容易解决。
+金字塔结构图是用结构化思维将无序变为有序的结构化思考过程，可以说，金字塔结构图正是结构化思维过程的核心。
+建议：每次在制作PPT前进行逻辑推演的时候，可以尝试把你的思维过程画成一张金字塔结构图。
+如何才能从大量复杂的信息中提取出其中的结论、支撑结论的理由，以及支撑理由的事实呢？分以下三步走。
+ Step 1：找到信息中的结论。结论就是中心思想，它首先是一个观点，也就是从一定的立场或角度出发，表达对事物和问题的看法。作为信息的输出者，一定要明确想要表达的结论，知道自己最想说什么。 Step 2：归纳支撑这个结论的各种理由。有很多科学的归纳方法和工具，在7.3和7.4节中会有详细的介绍，这里就不再赘述了。 Step 3：找出信息中支撑理由的事实。事实是通过金字塔结构拆解到最后支撑结论和理由的东西。如果说结论、理由可以是主观的，那么事实一定是客观的——数据和不带感情色彩的事例就是客观的。  SCQA架构是指情境（Situation）、冲突（Complication）、问题（Question）、答案（Answer），同样也是由麦肯锡咨询顾问芭芭拉·明托在《金字塔原理》一书中提出的，这是一个拿来就用的成熟“套路”，是结构化思维的逻辑化表达工具。
+ 1.标准式（SCA：情境-冲突-答案） 2.开门见山式（ASC：答案-情境-冲突） 3.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装overleaf的sharelatex</title>
+      <link>https://www.xiaoledeng.cn/2021/06/03/ubuntu-install-overleaf-sharelatex/</link>
+      <pubDate>Thu, 03 Jun 2021 17:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/06/03/ubuntu-install-overleaf-sharelatex/</guid>
+      <description>1. 安装docker 打开 /etc/apt/sources.list.d/docker.list：
+sudo vi /etc/apt/sources.list.d/docker.list 添加下面内容：
+deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable 更新并安装：
+sudo apt-get update sudo apt-get install docker-ce 查看是否安装成功：
+docker --version Docker version 20.10.7, build f0df350
+2. 安装 docker-Compose 进入 https://github.com/docker/compose/releases 查看最新版本，当前版本为1.29.2
+sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose 设置权限:
+sudo chmod +x /usr/local/bin/docker-compose 查看是否安装成功:
+docker-compose --version docker-compose version 1.29.2, build 5becea4c
+3. 安装Overleaf的开源版本sharelatex docker权限问题，添加docker用户组：
+#添加docker用户组 sudo groupadd docker #将登陆用户加入到docker用户组中 sudo gpasswd -a $USER docker #更新用户组 newgrp docker 通过docker安装Overleaf的开源版本sharelatex：</description>
+    </item>
+    
+    <item>
+      <title>macOS系统降级</title>
+      <link>https://www.xiaoledeng.cn/2021/05/27/macos-version-down/</link>
+      <pubDate>Thu, 27 May 2021 15:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/27/macos-version-down/</guid>
+      <description>1. macOS系统    macOS Latest version     macOS Big Sur 11.4   macOS Catalina 10.15.7   macOS Mojave 10.14.6   macOS High Sierra 10.13.6   macOS Sierra 10.12.6   OS X El Capitan 10.11.6   OS X Yosemite 10.10.5   OS X Mavericks 10.9.5   OS X Mountain Lion 10.8.5   OS X Lion 10.7.5   Mac OS X Snow Leopard 10.</description>
+    </item>
+    
+    <item>
+      <title>如何表达认可？</title>
+      <link>https://www.xiaoledeng.cn/2021/05/27/how-to-express-approval/</link>
+      <pubDate>Thu, 27 May 2021 15:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/27/how-to-express-approval/</guid>
+      <description>本页内容来自于：
+ 《专注力 : 化繁为简的惊人力量》 (英) 于尔根·沃尔夫； 《Focus : use the power of targeted thinking to get more done》Jurgen Wolff ; 朱曼译。  如何表达认可？  更仔细地倾听； 增加目光交流； 多提到他人的姓名； 多赞美他人； 强化理想行为； 要求建议； 多说谢谢； 使用手写消息；  </description>
+    </item>
+    
+    <item>
+      <title>Royal TSX：macOS系统的服务器管理软件</title>
+      <link>https://www.xiaoledeng.cn/2021/05/27/royal-tsx/</link>
+      <pubDate>Thu, 27 May 2021 08:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/27/royal-tsx/</guid>
+      <description>1. 前言 Royal TSX是一个强大的全面的远程连接管理软件，兼容多种连接类型。免费版本的Royal TSX最多可以连接10个连接。它支持macOS、Windows、Android、iOS系统。可通过SSH、SFTP来登陆和管理服务器。
+下载地址： https://www.royalapps.com/ts/mac/download
+2. 终端和文件管理 2.1 终端管理 通过Terminal插件的SSH登录服务器：
+ 新建一个Terminal窗口 输入对应的服务器的信息，关键内容为：服务器IP、SSH连接和22端口 进入Credentials，选择指定用户名和密码  2.2 文件管理 通过File Transfer插件的SFTP登录服务器：
+ 新建一个File Transfer窗口 输入对应的服务器信息，关键内容为：服务器IP、SFTP连接和22端口 进入Credentials，选择指定用户名和密码  File Transfer插件可替代Transmit软件。
+3. 参考  Mac上使用Royal TSX链接服务器 Mac下好用的Xshell软件 | Royal TSX  </description>
+    </item>
+    
+    <item>
+      <title>单面打印机实现双面打印的技巧</title>
+      <link>https://www.xiaoledeng.cn/2021/05/26/skills-double-print/</link>
+      <pubDate>Wed, 26 May 2021 10:50:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/26/skills-double-print/</guid>
+      <description>打印机只能单面打印，实现双面打印的技巧：
+  先偶数页打印，手动将所有页面翻一次面，至白面朝上；
+  再打印奇数页，即可。
+  </description>
+    </item>
+    
+    <item>
+      <title>Linux命令—neofetch、htop、bat和duf</title>
+      <link>https://www.xiaoledeng.cn/2021/05/25/linux-command-neofetch-htop-bat-duf/</link>
+      <pubDate>Tue, 25 May 2021 17:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/25/linux-command-neofetch-htop-bat-duf/</guid>
+      <description>1. neofetch  展示操作系统信息的命令行工具，展示的信息包含：发行版本、内核、CPU、GPU 等。
+  安装： https://github.com/dylanaraps/neofetch/wiki/Installation 命令： neofetch 地址： https://github.com/dylanaraps/neofetch  macOS系统下直接用Homebrew安装：
+brew install neofetch Ubuntu系统安装：
+sudo apt install neofetch 2. htop  This is htop, a cross-platform interactive process viewer. It is a text-mode application (for console or X terminals) and requires ncurses.
+代替 top 的交互式管理进程的命令行工具，h 代表 for human。
+  安装： https://htop.dev/downloads.html 命令： htop 地址： https://github.com/htop-dev/htop  macOS系统下直接用Homebrew安装：
+brew install htop Ubuntu系统安装：
+sudo apt install htop 3.</description>
+    </item>
+    
+    <item>
+      <title>vs code设置自动换行</title>
+      <link>https://www.xiaoledeng.cn/2021/05/20/vscode-word-wrap/</link>
+      <pubDate>Thu, 20 May 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/20/vscode-word-wrap/</guid>
+      <description>1. 描述 vs code打开文本超出当前显示时，会溢出，所以需要自动换行。
+2. 步骤  打开首选项-设置 搜索editor word 把Diff Editor: Word Wrap改为on，保存即可。  3. 参考  VScode如何自动换行设置  </description>
+    </item>
+    
+    <item>
+      <title>macOS系统无法被远程访问</title>
+      <link>https://www.xiaoledeng.cn/2021/05/20/mac-fail-remote-access/</link>
+      <pubDate>Thu, 20 May 2021 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/20/mac-fail-remote-access/</guid>
+      <description>1. 说明 利用远程访问软件（Anydesk/ ToDesk/ Teamviewer等）访问macOS系统时，需要额外开放隐私权限。
+2. 具体设置 依次按以下次序进入并设置：
+ 在系统配置（System Preferences） 安全性与隐私（Security &amp;amp; Privacy）的隐私（Privacy） 将辅助功能（Accessibility）、屏幕录制（Screen Recording）、文件和文件夹（Files and Folders）和完全的磁盘访问权限（Full Disk Access）全部添入远程访问软件（Anydesk/ ToDesk / Teamviewer），即可。  3. 参考  解决macOS系统向日葵远控无法被远程控制问题  </description>
+    </item>
+    
+    <item>
+      <title>一次“修复移动硬盘无法读取”的经历</title>
+      <link>https://www.xiaoledeng.cn/2021/05/14/repair-hard-disk-cannot-be-read/</link>
+      <pubDate>Fri, 14 May 2021 16:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/05/14/repair-hard-disk-cannot-be-read/</guid>
+      <description>1. 背景 希捷4T移动硬盘，拷贝资料的过程中，直接拔了数据线，没有正确地弹出。
+首先，连接移动硬盘到Ubuntu系统上，显示错误，没办法读取。
+其次，连接移动硬盘到macOS系统上，
+ 利用磁盘操作工作Disk Utility的First Aid急救功能（见：Mac 下移动硬盘异常退出修复 - 知乎），没有成功，移动硬盘没办法读取； 继续利用Paragon NTFS for Mac的Verify修复（见：如何在Mac上修复问题硬盘-Paragon NTFS for Mac中文官网），依然没有成功，移动硬盘还是没办法读取。  最后，连接移动硬盘到Windows系统上，特征为：
+ 能够看到有G盘，看不到容量，读取不了； 完全点不开，强行打开硬盘，双击后电脑就死机了，一直在转圈圈，拔掉移动硬盘后，电脑恢复正常。  以上在Windows下的特征与移动硬盘无法读取如何修复 - 知乎描述的一样。
+2. 正确的修复过程 首先，在Windows系统下，打开cmd （系统键+R调出运行窗口（系统键就是键盘左下角ctrl和alt中间那个），输入cmd）； 其次，在cmd中输入命令：
+chkdsk g: /f 这里，g:为盘符，即移动硬盘的编号，为G盘，其他可能为E盘(e:)，F盘(f:)和H盘(h:)等。具体修复过程如下：
+总共花了1.15小时，终于修复了问题，移动硬盘能够正常在Windows系统、Ubuntu系统和macOS系统下正确地识别。
+3. 分析原因 为什么在macOS系统下不能修复，而在Windows系统下可以修复？
+很可能是因为：希捷4T移动硬盘的文件系统类型是NTFS。
+根据ntfs-百度百科显示：
+ NTFS（New Technology File System）是Windows NT内核的系列操作系统支持的、一个特别为网络和磁盘配额、文件加密等管理安全特性设计的磁盘格式。
+NTFS是一个日志文件系统，这意味着除了向磁盘中写入信息，该文件系统还会为所发生的所有改变保留一份日志。这一功能让NTFS文件系统在发生错误的时候（比如系统崩溃或电源供应中断）更容易恢复，也让这一系统更加强壮。在这些情况下，NTFS能够很快恢复正常，而且不会丢失任何数据。
+磁盘自我修复功能：NTFS可以对硬盘上的逻辑错误和物理错误进行自动侦测和修复。
+ 4. 参考资料  Mac 下移动硬盘异常退出修复 - 知乎 如何在Mac上修复问题硬盘-Paragon NTFS for Mac中文官网 移动硬盘无法读取如何修复 - 知乎 ntfs-百度百科  </description>
+    </item>
+    
+    <item>
+      <title>双拼方案——小鹤双拼</title>
+      <link>https://www.xiaoledeng.cn/2021/04/28/shuangpin/</link>
+      <pubDate>Wed, 28 Apr 2021 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/04/28/shuangpin/</guid>
+      <description>1. 引言 从我用电脑到现在，输入法的选择如下：
+ 2009年夏天，买了一本五笔输入法学习； 2010年，开始有自己的电脑后，后面用的是搜狗输入法、QQ输入法和讯飞输入法的全拼。  期间，也接触过一点双拼，知道按键两次可以打出一个字，缩短全拼敲击键盘的次数，提高输入效率。
+ 学会双拼是一项成本不高但是长期回报非常丰厚的投资。——小鹤双拼学习 - 简书
+ 这次，看到小鹤双拼的官网，突然发现双拼并不是很难，只不过需要时间去适应和练习。
+而且，有意思的是：macOS系统12.1.1后包括了双拼方案，包括：搜狗双拼、拼音加加双拼、微软双拼和小鹤双拼。
+2. 小鹤双拼 官网： https://flypy.com/pin.html
+学习过程：一小时记忆键位，一周习惯双拼节奏，一月恢复全拼时速度
+双拼方案：主要是韵母键位的设计方案，单声母键位不变；即把三个双声母 zh ch sh 和35个韵母安排到键盘的26个字母键位上的设计方案
+零声母方案：指全拼中无声的母韵母音节在双拼中的处理方案，以韵母首字母为零声母，即把韵母的首字母当作声母
+ 单字母韵母，零声母 + 韵母所在键，如： 啊＝aa 哦=oo 额=ee 双字母韵母，零声母 + 韵母末字母，如： 爱＝ai 恩=en 欧=ou 三字母韵母，零声母 + 韵母所在键，如： 昂＝ah  简单说：双字母音节保持全拼方式，一三字母音节为首字母加韵母所在键
+3. 练习方法  用一个键盘膜 打印出来，下载地址为：打印版 练习网站：双拼练习 @ BlueSky  4. 参考  小鹤音形 - 双拼 小鹤音形双拼双形相关图片 - 简书 做少数派中的少数派：双拼输入快速入门 - 少数派 选择输入法的哲学：兼论双拼的优缺点 - 少数派 快速上手双拼，可以尝试这个练习平台 - 少数派 让双拼不再是只属于少数人的输入方式 - 少数派  </description>
+    </item>
+    
+    <item>
+      <title>Visual Studio Code编辑器</title>
+      <link>https://www.xiaoledeng.cn/2021/04/12/vscode/</link>
+      <pubDate>Mon, 12 Apr 2021 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/04/12/vscode/</guid>
+      <description>1. 简介 Visual Studio Code是一款编辑器，官网为：Visual Studio Code - Code Editing. Redefined。
+特色是，可以把常用的编程环境都能设置，即All in one。
+2. 常用插件清单  Auto Rename Tag：自动写好tag Better Comments：设置注释的各种格式 Bracket Pair Colorizer：设置不同颜色的括号 Browser Preview：打开网页链接 Code Runner：运行各种语言，包括：C、C++、Python、Julia等 Code Spell Checker：语法检查 Draw.io Integration：流程图 fortran：Fortran支持 LaTeX Workshop：LaTeX支持 Markdown All in One：Markdown支持 &amp;hellip;  3. Mac设置命令行缩写code 首先，打开~/.zshrc或~/.bashrc；
+而后，添加以下命令：
+alias code=\&#39;&#39;/Applications/Visual Studio Code.app/Contents/MacOS/Electron&#39;\&#39; 在终端输入source ~/.zshrc或source ~/.bashrc，而后输入code即可打开vscode编辑器。</description>
+    </item>
+    
+    <item>
+      <title>Mac下Syncthing的完全卸载</title>
+      <link>https://www.xiaoledeng.cn/2021/03/30/mac-syncthing-problem/</link>
+      <pubDate>Tue, 30 Mar 2021 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/30/mac-syncthing-problem/</guid>
+      <description>1. 问题说明和网上检索 Mac下syncthing意外关闭，且启动后报Error opening database: resource temporarily unavailable (is another instance of Syncthing running?)。
+网上搜索了一下，u010207995的博客-CSDN博客给出的建议，删除以下文件：
+rm -rf /var/syncthing/config/index-v0.14.0.db/LOCK rm -rf /var/syncthing/config/index-v0.14.0.db/CURRENT 以上结果并没有用。
+2. 解决方案 解决方案是：完全卸载Syncthing后，再重新安装。
+首先，在Application里面删除syncthing，且在回收站彻底删除。
+而后，直接卸载syncthing之后，删除系统残留文件：
+cd Library/Application\ Support/ rm -rf Syncthing/ 最后，重新安装Syncthing，即可。
+3. 参考  How to install and configure Syncthing on the Mac · GeekBitZone - Your Tech Resource for Geeks syncthing 意外关闭，启动报 Error opening database: resource temporarily unavailable_u010207995的博客-CSDN博客  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装开源文件同步软件Syncthing</title>
+      <link>https://www.xiaoledeng.cn/2021/03/28/ubuntu-install-syncthing/</link>
+      <pubDate>Sun, 28 Mar 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/28/ubuntu-install-syncthing/</guid>
+      <description>1. 安装步骤 # Add the &amp;#34;stable&amp;#34; channel to your APT sources: echo &amp;#34;deb https://apt.syncthing.net/ syncthing stable&amp;#34; | sudo tee /etc/apt/sources.list.d/syncthing.list # Add the release PGP keys: curl -s https://syncthing.net/release-key.txt | sudo apt-key add - # Update and install syncthing: sudo apt-get update sudo apt-get install syncthing # open syncthing syncthing 2. 参考  Syncthing | Downloads  </description>
+    </item>
+    
+    <item>
+      <title>Mac下开源文件同步软件Syncthing忘记用户名和密码</title>
+      <link>https://www.xiaoledeng.cn/2021/03/28/mac-syncthing-forget-passwd/</link>
+      <pubDate>Sun, 28 Mar 2021 16:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/28/mac-syncthing-forget-passwd/</guid>
+      <description>1. 解决方案 在/Users/shalom/Library/Application Support/Syncthing的config.xml里面删除&amp;lt;user&amp;gt;和&amp;lt;password&amp;gt;两行：
+&amp;lt;gui enabled=&amp;#34;true&amp;#34; tls=&amp;#34;false&amp;#34; debugging=&amp;#34;false&amp;#34;&amp;gt; &amp;lt;address&amp;gt;127.0.0.1:8384&amp;lt;/address&amp;gt; &amp;lt;user&amp;gt;syncguy&amp;lt;/user&amp;gt; &amp;lt;password&amp;gt;$2a$10$s9wWHOQe...Cq7GPye69&amp;lt;/password&amp;gt; &amp;lt;apikey&amp;gt;9RCKohqCAyrj5RjpyZdR2wXmQ9PyQFeN&amp;lt;/apikey&amp;gt; &amp;lt;theme&amp;gt;default&amp;lt;/theme&amp;gt; &amp;lt;/gui&amp;gt; 这样，就不用用户名和密码直接就可以登录127.0.0.1:8384。
+2. 参考  FAQ — Syncthing v1 documentation  </description>
+    </item>
+    
+    <item>
+      <title>Mac下Word删除Zotero、EndNote和Mendeley插件</title>
+      <link>https://www.xiaoledeng.cn/2021/03/24/mac-word-delete-zotero-endnote-mendeley/</link>
+      <pubDate>Wed, 24 Mar 2021 09:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/24/mac-word-delete-zotero-endnote-mendeley/</guid>
+      <description>1. 解决方案 Zotero插件的路径：
+ /Users/rootname//Library/Group Containers/UBF8T346G9.Office/User Content.localized/Startup.localized/Word/Zotero.dotm  Mendeley插件的路径：
+ /Users/rootname//Library/Group Containers/UBF8T346G9.Office/User Content.localized/Startup.localized/Word/Mendeley-word2016-1.19.4.dotm  EndNote插件的路径：
+ /Library/Application Support/Microsoft/Office365/User Content.localized/Startup.localized/Word/EndNote CWYW Word 16.bundle  注意：
+ rootname为用户名。 最后EndNote插件路径的/Library/……是电脑磁盘，而不是用户文件夹。  2. 参考  zotero的word插件如何删掉？ - 知乎 mac word endnote插件彻底删除干净-百度经验  </description>
+    </item>
+    
+    <item>
+      <title>流程图工具——draw.io</title>
+      <link>https://www.xiaoledeng.cn/2021/03/19/draw-io/</link>
+      <pubDate>Fri, 19 Mar 2021 15:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/19/draw-io/</guid>
+      <description>官网 https://drawio-app.com/
+在线版 https://app.diagrams.net/
+下载地址 https://github.com/jgraph/drawio-desktop/releases
+ Windows macOS Linux Chrome OS  </description>
+    </item>
+    
+    <item>
+      <title>Mac Rust 环境搭建</title>
+      <link>https://www.xiaoledeng.cn/2021/03/18/rust/</link>
+      <pubDate>Thu, 18 Mar 2021 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/18/rust/</guid>
+      <description>1. 安装 curl https://sh.rustup.rs -sSf | sh
+2. 确认 source $HOME/.cargo/env
+3. 检验安装 rustc --version
+cargo --version
+4. 参考  Mac Rust 安装和开发环境搭建 - 简书  </description>
+    </item>
+    
+    <item>
+      <title>远程访问工具——ToDesk</title>
+      <link>https://www.xiaoledeng.cn/2021/03/09/todesk/</link>
+      <pubDate>Tue, 09 Mar 2021 16:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/09/todesk/</guid>
+      <description>1. 基本情况 远程访问工具多多益善，目前使用的远程访问软件包括：
+ TeamViewer https://www.teamviewer.cn/cn/ AnyDesk https://anydesk.com/zhs ZeroTier https://www.zerotier.com/ ToDesk https://www.todesk.com/  2. ToDesk 下载地址： https://www.todesk.com/download.html
+版本包括：
+ Windows iOS Android macOS Linux  评价：国产一款不错的远程控制软件。</description>
+    </item>
+    
+    <item>
+      <title>GMT绘制各省的地形图</title>
+      <link>https://www.xiaoledeng.cn/2021/03/08/gmt-province-relief/</link>
+      <pubDate>Mon, 08 Mar 2021 16:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/03/08/gmt-province-relief/</guid>
+      <description>1. 下载地形grd数据 下载地址： https://mirrors.ustc.edu.cn/gmt/data/
+上述数据中，最高分辨率为15s（即：earth_relief_15s.grd，约 2.77G）。
+如果需要 1s 分辨率，可从SRTM内插数据下载：
+ https://topex.ucsd.edu/WWW_html/srtm30_plus.html  2. 绘图代码 #!/bin/bash # gmt version: Version 5.4.5 [64-bit] [4 cores] ps=province.ps gmt gmtset FORMAT_GEO_MAP = dddF MAP_FRAME_WIDTH=2p gmt gmtset FONT_ANNOT_PRIMARY 7p,Helvetica,black FONT_LABEL 7p,Helvetica,black # 根据需要选择省界，CN.42为湖北 gmt pscoast -ECN.42 -M -Df &amp;gt; sd.txt # psclip 使用省界裁切地图 Begin of the clip gmt psclip sd.txt `gmt gmtinfo sd.txt -I0.000001` -JM2i -K &amp;gt; $ps gmt makecpt -Cdem2 -T0/2000/1 &amp;gt; mss.cpt # 数据的绝对路径为：/Users/shalom/gmt/earth_relief_15s.</description>
+    </item>
+    
+    <item>
+      <title>Mac下ifort出现ld: library not found for -lSystem问题</title>
+      <link>https://www.xiaoledeng.cn/2021/01/11/mac-ifort-ld-problem/</link>
+      <pubDate>Mon, 11 Jan 2021 13:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/01/11/mac-ifort-ld-problem/</guid>
+      <description>1. 前言 在Mac安装Intel Parallel Studio XE Composer Edition for Fortran中，简介了Mac下安装ifort的过程。
+使用ifort时，出现如下错误：
+&amp;quot;ld: library not found for -lSystem&amp;quot;  2. 解决方案 系统信息为：
+macOS Big Sur 11.0.1  ifort版本为：
+$ ifort -V Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.1.2.258 Build 20200623 Copyright (C) 1985-2020 Intel Corporation. All rights reserved.  短期解决措施：在ifort编译时加上lib的路径：
+ifort -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib  长期解决措施：在~/.zshrc或~/.bashrc写入：
+alias ifort=&#39;ifort -L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib&#39;  说明：更新后的macOS系统的lib不在默认路径下面，即the lib is now not under the default path.</description>
+    </item>
+    
+    <item>
+      <title>SLURM任务系统简要说明</title>
+      <link>https://www.xiaoledeng.cn/2020/11/16/slurm-system/</link>
+      <pubDate>Mon, 16 Nov 2020 15:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/16/slurm-system/</guid>
+      <description>1. 基本命令 1.1 显示队列 # 显示队列 sinfo # 显示队列详细信息 scontrol show partition &amp;lt;partition name&amp;gt; 1.2 作业状态 squeue # 查询指定用户名的作业状态 squeue -u &amp;lt;user_name&amp;gt; 1.3 显示节点 scontrol show node 1.4 取消任务 scancel jobid 2. 参考  SLURM使用基础教程 - 帮助与支持中心  </description>
+    </item>
+    
+    <item>
+      <title>远程桌面访问RealVNC</title>
+      <link>https://www.xiaoledeng.cn/2020/11/15/real-vnc/</link>
+      <pubDate>Sun, 15 Nov 2020 19:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/15/real-vnc/</guid>
+      <description>1. linux服务器设置 sudo apt-get install tightvncserver tightvncserver :1 即安装tighvncserver，并启动一个VNC流。
+2. 下载VNC软件  Download VNC Viewer | VNC® Connect  3. 远程VNC登录 知道linux服务器的ip地址，VNC流的代号，即：
+ip_address:1 </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu配置ZeroTier</title>
+      <link>https://www.xiaoledeng.cn/2020/11/13/ubuntu-zerotier/</link>
+      <pubDate>Fri, 13 Nov 2020 17:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/13/ubuntu-zerotier/</guid>
+      <description>1. 简介 ZeroTier的思路是：建立自己的局域网，到哪里都是局域网。
+2. 步骤 1.官网注册账户： https://www.zerotier.com/ ，免费的账户允许接入100台设备，足够组网。
+2.官网上配置ZeroTier，关键是记住NetworkID号。
+3.Ubuntu安装ZeroTier
+curl -s https://install.zerotier.com | sudo bash 4.加入到组建的局域网
+sudo zerotier-cli join &amp;lt;NetworkID&amp;gt; 5.回到ZeroTier网站的管理界面给设备auth并找到对应设备的ManagedIPs，并查阅Ubuntu的Address命令
+sudo zerotier-cli status 6.其他在局域网的设备进入此Ubuntu系统：
+ssh name@ManagedIPs 3. Mac的常用命令 # Get your ZeroTier address and check the service status sudo zerotier-cli status # Join, leave, and list networks sudo zerotier-cli join &amp;lt;NetworkID&amp;gt; sudo zerotier-cli leave &amp;lt;NetworkID&amp;gt; sudo zerotier-cli listnetworks # Stop and start the service with launchctl sudo launchctl unload /Library/LaunchDaemons/com.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装向日葵远程控制</title>
+      <link>https://www.xiaoledeng.cn/2020/11/13/ubuntu-install-sunloginclient/</link>
+      <pubDate>Fri, 13 Nov 2020 16:40:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/13/ubuntu-install-sunloginclient/</guid>
+      <description>1. 下载 下载页面： https://sunlogin.oray.com/download/
+分为命令行和图像版。
+2. 安装命令 sudo dpkg -i sunloginclientshell-10.1.1.28779-amd64.deb 3. 安装问题解决 报错libwebkitgtk-3.0-0 is not installed，缺少依赖问题。
+sudo gedit /etc/apt/source.list #然后复制 deb http://cz.archive.ubuntu.com/ubuntu bionic main universe 到文件 sudo apt-get update sudo apt-get install -f 4. 打开和绑定向日葵 通过命令行开启向日葵:
+sudo /usr/local/sunlogin/bin/sunloginclient  开启程序后的初始状态为未绑定，可见界面左上角的提示“Sunlogin （F12）”为进入菜单选项 敲击F12进入菜单并通过键盘↑↓键选择Bind进行绑定账号 入账号和密码，通过↓键移至ok处后敲击回车进行登录 获得Linux主机的识别码(Code)和验证码(Access)  5. 卸载命令 sudo dpkg -l | grep sunlogin sudo dpkg -r sunloginclient 6. 参考  向日葵X for Linux Terminal 使用教程（命令行版本） - 客服中心 - Oray 向日葵Linux X因安装依赖问题无法安装成功解决方案 - 客服中心 - Oray Ubuntu20.</description>
+    </item>
+    
+    <item>
+      <title>外网远程访问Ubuntu系统</title>
+      <link>https://www.xiaoledeng.cn/2020/11/13/outside-login-ubuntu/</link>
+      <pubDate>Fri, 13 Nov 2020 15:50:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/13/outside-login-ubuntu/</guid>
+      <description>1. 常用远程访问软件  AnyDesk https://anydesk.com/zhs 向日葵远程控制 https://sunlogin.oray.com/ Teamviewer https://www.teamviewer.cn/cn/ Splashtop https://www.splashtop.com/cn/ ZeroTier https://www.zerotier.com/ &amp;hellip;  2. Linux 查看外网IP curl ifconfig.me 3. 参考  如何远程登录家里的Ubuntu电脑(命令行模式)？ - 知乎  </description>
+    </item>
+    
+    <item>
+      <title>局域网ssh远程访问Ubuntu系统</title>
+      <link>https://www.xiaoledeng.cn/2020/11/13/inside-login-ubuntu/</link>
+      <pubDate>Fri, 13 Nov 2020 11:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/13/inside-login-ubuntu/</guid>
+      <description>1. 具体步骤  查看ubuntu是否安装了ssh-server服务  dpkg -l | grep ssh 安装ssh-server服务  sudo apt-get install openssh-server 查看ssh-server是否启动  ps -e | grep ssh 若有sshd，说明ssh-server已启动。
+如果没有则可以这样启动：
+sudo /etc/init.d/ssh start sudo service ssh start 配置相关：ssh-server配置文件位于/etc/ssh/sshd_config，在这里可以定义SSH的服务端口，默认端口是22，你可以自己定义成其他端口号，如222。（或把配置文件中的”PermitRootLogin without-password”加一个”#”号,把它注释掉，再增加一句”PermitRootLogin yes”）
+然后重启SSH服务：
+sudo /etc/init.d/ssh stop sudo /etc/init.d/ssh start 安装ifconfig工具  sudo apt install net-tools 利用ifconfig查看本机的ip地址，即inet：
+ifconfig 远程机器登录  ssh username@ip_address 2. 参考  ubuntu开启SSH服务远程登录_jackghq的博客-CSDN博客  </description>
+    </item>
+    
+    <item>
+      <title>LaTeX表格长公式换行</title>
+      <link>https://www.xiaoledeng.cn/2020/11/10/latex-table-long-formula/</link>
+      <pubDate>Tue, 10 Nov 2020 09:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/10/latex-table-long-formula/</guid>
+      <description>在LaTeX的表格环境中，如果有长公式需要换行，需要以下命令：
+$\begin{array}{l} ... \\ ... \end{array}$ 说明：
+ \\表示要换行的部分； ...和...分别为前半公式和后半公式。  </description>
+    </item>
+    
+    <item>
+      <title>Mac curl下载说明</title>
+      <link>https://www.xiaoledeng.cn/2020/11/08/mac-curl/</link>
+      <pubDate>Sun, 08 Nov 2020 14:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/08/mac-curl/</guid>
+      <description>1. 帮助手册 curl -h Usage: curl [options...] &amp;lt;url&amp;gt; --abstract-unix-socket &amp;lt;path&amp;gt; Connect via abstract Unix domain socket --alt-svc &amp;lt;file name&amp;gt; Enable alt-svc with this cache file --anyauth Pick any authentication method -a, --append Append to target file when uploading --basic Use HTTP Basic Authentication --cacert &amp;lt;file&amp;gt; CA certificate to verify peer against --capath &amp;lt;dir&amp;gt; CA directory to verify peer against -E, --cert &amp;lt;certificate[:password]&amp;gt; Client certificate file and password --cert-status Verify the status of the server certificate --cert-type &amp;lt;type&amp;gt; Certificate file type (DER/PEM/ENG) --ciphers &amp;lt;list of ciphers&amp;gt; SSL ciphers to use --compressed Request compressed response --compressed-ssh Enable SSH compression -K, --config &amp;lt;file&amp;gt; Read config from a file --connect-timeout &amp;lt;seconds&amp;gt; Maximum time allowed for connection --connect-to &amp;lt;HOST1:PORT1:HOST2:PORT2&amp;gt; Connect to host -C, --continue-at &amp;lt;offset&amp;gt; Resumed transfer offset -b, --cookie &amp;lt;data|filename&amp;gt; Send cookies from string/file -c, --cookie-jar &amp;lt;filename&amp;gt; Write cookies to &amp;lt;filename&amp;gt; after operation --create-dirs Create necessary local directory hierarchy --crlf Convert LF to CRLF in upload --crlfile &amp;lt;file&amp;gt; Get a CRL list in PEM format from the given file -d, --data &amp;lt;data&amp;gt; HTTP POST data --data-ascii &amp;lt;data&amp;gt; HTTP POST ASCII data --data-binary &amp;lt;data&amp;gt; HTTP POST binary data --data-raw &amp;lt;data&amp;gt; HTTP POST data, &amp;#39;@&amp;#39; allowed --data-urlencode &amp;lt;data&amp;gt; HTTP POST data url encoded --delegation &amp;lt;LEVEL&amp;gt; GSS-API delegation permission --digest Use HTTP Digest Authentication -q, --disable Disable .</description>
+    </item>
+    
+    <item>
+      <title>Mac axel下载说明</title>
+      <link>https://www.xiaoledeng.cn/2020/11/08/mac-axel/</link>
+      <pubDate>Sun, 08 Nov 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/08/mac-axel/</guid>
+      <description>1. 简介 Mac安装axel：
+brew install axel 2. 帮助手册 axel -h Axel 2.17.9 (darwin19.4.0) Usage: axel [options] url1 [url2] [url...] --max-speed=x	-s x	Specify maximum speed (bytes per second) --num-connections=x	-n x	Specify maximum number of connections --max-redirect=x	Specify maximum number of redirections --output=f	-o f	Specify local output file --search[=n]	-S[n]	Search for mirrors and download from n servers --ipv4	-4	Use the IPv4 protocol --ipv6	-6	Use the IPv6 protocol --header=x	-H x	Add HTTP header string --user-agent=x	-U x	Set user agent --no-proxy	-N	Just don&amp;#39;t use any proxy server --insecure	-k	Don&amp;#39;t verify the SSL certificate --no-clobber	-c	Skip download if file already exists --quiet	-q	Leave stdout alone --verbose	-v	More status information --alternate	-a	Alternate progress indicator --help	-h	This information --timeout=x	-T x	Set I/O and connection timeout --version	-V	Version information Visit https://github.</description>
+    </item>
+    
+    <item>
+      <title>LaTeX表格横置</title>
+      <link>https://www.xiaoledeng.cn/2020/11/05/latex-horizontal-table/</link>
+      <pubDate>Thu, 05 Nov 2020 08:40:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/05/latex-horizontal-table/</guid>
+      <description>1. 说明 长表格超出页面的右边界，而不显示，需将长表格旋转90度横放。
+2. 解决方案   在导言区添加rotating宏包：\usepackage[figuresright]{rotating} 
+  将table环境改为sidewaystable环境：
+  \begin{table}[thp] \caption{This is the caption} \centering \begin{tabular}{|c|c|c|c|} \hline ....... \end{tabular} \end{table} \begin{sidewaystable}[thp] \caption{This is the caption} \centering \begin{tabular}{|c|c|c|c|} \hline ....... \end{tabular} \end{sidewaystable} 3. 参考  Latex如何将长表格Table横置(旋转90度) Haifeng的博客-CSDN博客  </description>
+    </item>
+    
+    <item>
+      <title>Nature期刊的LaTeX模版</title>
+      <link>https://www.xiaoledeng.cn/2020/11/03/nature-latex-templates/</link>
+      <pubDate>Tue, 03 Nov 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/03/nature-latex-templates/</guid>
+      <description>1. 下载Nature的LaTeX模版 在CTAN: /tex-archive/macros/latex/contrib/nature下载模版，基本信息如下：
+Nature package Version: 1.0, 24 Feb. 2004 by Peter Czoschke 2. 添加图片模块 默认Nature模版是不加入图片模块的，可通过templates - Nature include graphics - TeX - LaTeX Stack Exchange给出的解决方案：
+\documentclass{nature} \usepackage{graphicx} \makeatletter \let\saved@includegraphics\includegraphics \AtBeginDocument{\let\includegraphics\saved@includegraphics} \renewenvironment*{figure}{\@float{figure}}{\end@float} \makeatother \begin{document} \begin{figure}[!htbp] \centering \includegraphics[width=4.0in]{name.pdf} \caption{Descriptions of the picture} \label{label of the picture} \end{figure} \end{document} </description>
+    </item>
+    
+    <item>
+      <title>Python实现从doi号到bib文件</title>
+      <link>https://www.xiaoledeng.cn/2020/11/02/doi2bib/</link>
+      <pubDate>Mon, 02 Nov 2020 15:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/02/doi2bib/</guid>
+      <description>1. 简介 在LaTeX的文献管理技能中，有个技能是：知道了doi号，如何得到bib文件。
+2. 在线网站  ZoteroBib: https://zbib.org/ doi2bib: https://doi2bib.org/  3. Python代码实现 来自DOI to BibTeX的Python3代码doi2bib.py：
+import sys import urllib.request from urllib.error import HTTPError BASE_URL = &amp;#39;http://dx.doi.org/&amp;#39; try: doi = sys.argv[1] except IndexError: print(&amp;#39;Usage:\n{} &amp;lt;doi&amp;gt;&amp;#39;.format(sys.argv[0])) sys.exit(1) url = BASE_URL + doi req = urllib.request.Request(url) req.add_header(&amp;#39;Accept&amp;#39;, &amp;#39;application/x-bibtex&amp;#39;) try: with urllib.request.urlopen(req) as f: bibtex = f.read().decode() print(bibtex) except HTTPError as e: if e.code == 404: print(&amp;#39;DOI not found.&amp;#39;) else: print(&amp;#39;Service unavailable.&amp;#39;) sys.exit(1) 示例：</description>
+    </item>
+    
+    <item>
+      <title>LaTeX三剑客（图、表、公式）的通用模块</title>
+      <link>https://www.xiaoledeng.cn/2020/10/29/latex-module-picture-table-formula/</link>
+      <pubDate>Thu, 29 Oct 2020 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/29/latex-module-picture-table-formula/</guid>
+      <description>1. 图 \begin{figure}[!htbp] \centering \includegraphics[width=4.0in]{name.pdf} \caption{Descriptions of the picture} \label{label of the picture} \end{figure} 2. 表 \begin{table}[!htbp] \caption{Descriptions of the table} \centering \begin{tabular}{l l l l} \hline A &amp;amp; B &amp;amp; C &amp;amp; D \\ \hline x &amp;amp; y &amp;amp; z &amp;amp; a \\ \hline \end{tabular} \label{label of the table} \end{table} 3. 公式 \begin{equation} \label{label of the equation} content of the equation \end{equation} </description>
+    </item>
+    
+    <item>
+      <title>Mac安装Intel Parallel Studio XE Composer Edition for Fortran</title>
+      <link>https://www.xiaoledeng.cn/2020/10/16/mac-install-ifort/</link>
+      <pubDate>Fri, 16 Oct 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/16/mac-install-ifort/</guid>
+      <description>1.注册和下载 在Choose &amp;amp; Download Intel® Parallel Studio XE页面，选择教育用户注册【需要有教育网邮箱】，并下载对应版本m_fcompxe_2020.2.899.dmg。
+2.安装 点击dmg文件，以root安装：By default, &amp;lt;install_dir&amp;gt; is:
+ For root installations: /opt/intel For non-root installations: $HOME/intel  输入Serial number，而后至安装成功。
+3.调用 在file:///opt/intel/documentation_2020/en/ps2020/getstart_comp.htm页面，有相关初始化的说明：
+source /opt/intel/bin/compilervars.sh intel64 验证是否调用成功：
+$ ifort -V Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 19.1.2.258 Build 20200623 Copyright (C) 1985-2020 Intel Corporation. All rights reserved. </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装Intel® Parallel Studio XE</title>
+      <link>https://www.xiaoledeng.cn/2020/10/16/ubuntu-install-intel/</link>
+      <pubDate>Fri, 16 Oct 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/16/ubuntu-install-intel/</guid>
+      <description>1. 注册和下载 在Choose &amp;amp; Download Intel® Parallel Studio XE页面，选择教育用户注册【需要有教育网邮箱】，并下载对应版本parallel_studio_xe_2020_update2_cluster_edition.tgz，包括：
+ The Intel® C++ Compiler and Intel® Fortran Compiler Intel® Distribution for Python* Enhanced GNU Project Debugger (GDB) Software libraries (Intel® MKL, Intel® DAAL, Intel® TBB, Intel® IPP) Intel® Advisor Intel® Inspector Intel® VTune™ Profiler Intel® MPI Library Intel® Trace Analyzer and Collector Intel® Cluster Checker (Linux* only)  2. 安装 解压tgz文件，cd进入，ls查看，而后安装：
+./install_GUI.sh 选择合适的安装路：By default, &amp;lt;install_dir&amp;gt; is:
+ For root installations: /opt/intel For non-root installations: $HOME/intel  输入Serial number，而后至安装成功。</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu终端copy paste</title>
+      <link>https://www.xiaoledeng.cn/2020/10/15/ubuntu-copy-paste/</link>
+      <pubDate>Thu, 15 Oct 2020 10:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/15/ubuntu-copy-paste/</guid>
+      <description>Ubuntu的终端(terminal)中，“鼠标选中，鼠标中键”，完成“复制黏贴”，这是linux系统的标配。即，Linux 下标准的终端都是 「选中复制，中键粘贴」。</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装zsh和oh my zsh</title>
+      <link>https://www.xiaoledeng.cn/2020/10/15/ubuntu-zsh/</link>
+      <pubDate>Thu, 15 Oct 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/15/ubuntu-zsh/</guid>
+      <description>1.安装zsh sudo apt install zsh 2.安装 oh my zsh git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh 3.创建配置文件 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc 4.设置默认的shell chsh -s /bin/zsh 重启Ubuntu。
+5.复制 把原来的bashrc的路径内容复制到zshrc里面。
+gedit ~/.zshrc gedit ~/.bashrc source ~/.zshrc 6.参考  ubuntu安装zsh终端 - 云+社区 - 腾讯云  </description>
+    </item>
+    
+    <item>
+      <title>GMT6数据（1）earth_relief: 全球地形起伏数据</title>
+      <link>https://www.xiaoledeng.cn/2020/10/12/gmt6-data-1-earth-relief/</link>
+      <pubDate>Mon, 12 Oct 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/10/12/gmt6-data-1-earth-relief/</guid>
+      <description>1.数据简介 earth_relief 数据是GMT提供的全球地形起伏数据，其包含了全球陆地和洋底的高程数据。 原始数据来源于公开数据，GMT经过了一些预处理，提供了不同分辨率和不同配准方式的网格数据， 以满足用户的不同需求。earth_relief 数据默认使用GMT内置的 geo CPT文件。
+下表列出了GMT提供的 earth_relief 数据的代码、配准方式、分辨率、球面距离(fullwidth)以及文件大小。
+   代码 配准方式 分辨率 球面距离 大小     01d g,p 1 弧度 ~111 km 112 KB   30m g,p 30 弧分 ~55 km 377 KB   20m g,p 20 弧分 ~37 km 783 KB   15m g,p 15 弧分 ~28 km 1.4 MB   10m g,p 10 弧分 ~18 km 2.9 MB   06m g,p 6 弧分 ~10 km 7.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu卸载和安装MATLAB</title>
+      <link>https://www.xiaoledeng.cn/2020/09/25/ubuntu-uninstall-install-matlab/</link>
+      <pubDate>Fri, 25 Sep 2020 13:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/25/ubuntu-uninstall-install-matlab/</guid>
+      <description>1.Ubuntu卸载matlab 查看MATLAB安装路径：
+$ whereis matlab matlab: /usr/local/bin/matlab 卸载MATLAB：
+sudo rm -rf /usr/local/MATLAB/R2020b/ sudo rm /usr/local/bin/matlab 清理配置残留：
+sudo apt-get autoremove sudo apt-get clean 2.安装 sudo ./install 第一次启动需要执行命令:
+sudo matlab 添加MATLAB的支持：
+sudo apt install matlab-support 参考  Ubuntu 卸载matlab_sdaubaby的专栏-CSDN博客 How to install MATLAB on Ubuntu 20.04 Focal Fossa Linux - LinuxConfig.org Ubuntu 18.04 MATLAB 安装及配置 - MingruiYu - 博客园  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu打开系统监视器</title>
+      <link>https://www.xiaoledeng.cn/2020/09/24/ubuntu-open-system-monitor/</link>
+      <pubDate>Thu, 24 Sep 2020 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/24/ubuntu-open-system-monitor/</guid>
+      <description>终端中输入：
+gnome-system-monitor </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装git及Github命令行操作</title>
+      <link>https://www.xiaoledeng.cn/2020/09/23/ubuntu-install-git/</link>
+      <pubDate>Wed, 23 Sep 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/23/ubuntu-install-git/</guid>
+      <description>1.安装git和hugo sudo apt-get install git sudo apt install hugo sudo snap install hugo 2.git全局环境 git config --global user.name &amp;quot;用户名&amp;quot; git config --global user.email &amp;quot;邮箱地址&amp;quot; 3.ssh密钥 ssh-keygen -C &#39;youremail@gmail.com&#39; -t rsa 此命令会在用户目录/home/shalom/.ssh/下建立相应的密钥文件。
+4.创建和上传公钥 cat ~/.ssh/id_rsa.pub 复制id_rsa.pub文件内容，访问GitHub网页，点击设置，SSH and GPG keys的SSH keys 建立一个SSH公钥。
+5.测试连接 ssh -T git@github.com 连接成功：
+ Hi xiaoledeng! You&amp;rsquo;ve successfully authenticated, but GitHub does not provide shell access.
+ 6.其他命令 git clone 项目地址 拉项目 git pull 拉代码 git push 提交到仓库 git init	指令初始化一个git仓库 git add .</description>
+    </item>
+    
+    <item>
+      <title>Linux查看运行时间和最后重启时间</title>
+      <link>https://www.xiaoledeng.cn/2020/09/22/linux-see-the-running-time/</link>
+      <pubDate>Tue, 22 Sep 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/22/linux-see-the-running-time/</guid>
+      <description>1、uptime：显示系统运行时间和系统最后重启时间 $ uptime 15:53:21 up 1 day, 6:07, 1 user, load average: 0.93, 0.68, 0.50 $ uptime -s 2020-09-21 09:45:24 2、w：已登录账号和在干什么 $ w 15:54:06 up 1 day, 6:08, 1 user, load average: 0.72, 0.66, 0.50 USER TTY FROM LOGIN@ IDLE JCPU PCPU WHAT shalom :0 :0 Mon12 ?xdm? 4:16m 0.01s /usr/lib/gdm3/gdm-x-session 3、who -a：查看系统上传重启时间、LOGIN进程运行的信息、运行级别已经用户信息 $ who -a system boot 2020-09-21 09:45 shalom ? :0 2020-09-21 12:19 ? 9511 (:0) run-level 5 2020-09-21 09:46 who -b 可以查到最后重启的时间</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu修改TeXstudio的背景色为黑色</title>
+      <link>https://www.xiaoledeng.cn/2020/09/22/ubuntu-texstudio-black/</link>
+      <pubDate>Tue, 22 Sep 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/22/ubuntu-texstudio-black/</guid>
+      <description>1.编辑器配色方案修改 【选项】–【设置TexStudio】–【常规】–【配色方案】中选择“现代”
+2.修改 texstudio.ini 文件  定位到TeXStudio的配置文件: texstudio.init, 一般位于: ~\AppData\Roaming\texstudio\texstudio.ini, 如果找不到的话, 可以在主界面→Help→Check LaTeX Installation→在弹出的System Report文件中查找Setting file对应的路径即可。 然后在texstudio.ini文件中查找[formats]标签, 并用配置文件替换即可。  Ubuntu下的路径地址为：/home/shalom/.config/texstudio/texstudio.ini
+[formats] version=1.0 data\normal\priority=-1 data\normal\bold=false data\normal\italic=false data\normal\overline=false data\normal\underline=false data\normal\strikeout=false data\normal\waveUnderline=false data\normal\foreground=#f3f3f3 data\normal\background=#272727 data\normal\linescolor=#55ffff data\normal\fontFamily= data\normal\pointSize=0 data\normal\wrapAround=false data\background\priority=-1 data\background\bold=false data\background\italic=false data\background\overline=false data\background\underline=false data\background\strikeout=false data\background\waveUnderline=false data\background\background=#272727 data\background\fontFamily= data\background\pointSize=0 data\background\wrapAround=false data\line%3Awarning\priority=-1 data\line%3Awarning\bold=false data\line%3Awarning\italic=false data\line%3Awarning\overline=false data\line%3Awarning\underline=false data\line%3Awarning\strikeout=false data\line%3Awarning\waveUnderline=false data\line%3Awarning\background=#b9622f data\line%3Awarning\fontFamily= data\line%3Awarning\pointSize=0 data\line%3Awarning\wrapAround=false data\commentTodo\priority=-1 data\commentTodo\bold=false data\commentTodo\italic=false data\commentTodo\overline=false data\commentTodo\underline=false data\commentTodo\strikeout=false data\commentTodo\waveUnderline=false data\commentTodo\background=#728b58 data\commentTodo\fontFamily= data\commentTodo\pointSize=0 data\commentTodo\wrapAround=false data\comment\priority=-1 data\comment\bold=false data\comment\italic=false data\comment\overline=false data\comment\underline=false data\comment\strikeout=false data\comment\waveUnderline=false data\comment\foreground=#989898 data\comment\background=#272727 data\comment\fontFamily= data\comment\pointSize=0 data\comment\wrapAround=false data\keyword\priority=-1 data\keyword\bold=false data\keyword\italic=false data\keyword\overline=false data\keyword\underline=false data\keyword\strikeout=false data\keyword\waveUnderline=false data\keyword\foreground=#fa9999 data\keyword\fontFamily= data\keyword\pointSize=0 data\keyword\wrapAround=false data\extra-keyword\priority=-1 data\extra-keyword\bold=true data\extra-keyword\italic=false data\extra-keyword\overline=false data\extra-keyword\underline=false data\extra-keyword\strikeout=false data\extra-keyword\waveUnderline=false data\extra-keyword\foreground=#37c0ff data\extra-keyword\fontFamily= data\extra-keyword\pointSize=0 data\extra-keyword\wrapAround=false data\math-keyword\priority=-1 data\math-keyword\bold=false data\math-keyword\italic=false data\math-keyword\overline=false data\math-keyword\underline=false data\math-keyword\strikeout=false data\math-keyword\waveUnderline=false data\math-keyword\foreground=#ffff7f data\math-keyword\fontFamily= data\math-keyword\pointSize=0 data\math-keyword\wrapAround=false data\link\priority=-1 data\link\bold=false data\link\italic=false data\link\overline=false data\link\underline=true data\link\strikeout=false data\link\waveUnderline=false data\link\foreground=#00aaff data\link\fontFamily= data\link\pointSize=0 data\link\wrapAround=false data\align-ampersand\priority=-1 data\align-ampersand\bold=true data\align-ampersand\italic=false data\align-ampersand\overline=false data\align-ampersand\underline=false data\align-ampersand\strikeout=false data\align-ampersand\waveUnderline=false data\align-ampersand\foreground=#37c0ff data\align-ampersand\fontFamily= data\align-ampersand\pointSize=0 data\align-ampersand\wrapAround=false data\verbatim\priority=-1 data\verbatim\bold=false data\verbatim\italic=false data\verbatim\overline=false data\verbatim\underline=false data\verbatim\strikeout=false data\verbatim\waveUnderline=false data\verbatim\foreground=#00b8b8 data\verbatim\fontFamily= data\verbatim\pointSize=0 data\verbatim\wrapAround=false data\sweave-block\priority=-1 data\sweave-block\bold=false data\sweave-block\italic=false data\sweave-block\overline=false data\sweave-block\underline=false data\sweave-block\strikeout=false data\sweave-block\waveUnderline=false data\sweave-block\foreground=#ff0000 data\sweave-block\fontFamily= data\sweave-block\pointSize=0 data\sweave-block\wrapAround=false data\pweave-block\priority=-1 data\pweave-block\bold=false data\pweave-block\italic=false data\pweave-block\overline=false data\pweave-block\underline=false data\pweave-block\strikeout=false data\pweave-block\waveUnderline=false data\pweave-block\foreground=#ff0000 data\pweave-block\fontFamily= data\pweave-block\pointSize=0 data\pweave-block\wrapAround=false data\picture\priority=-1 data\picture\bold=false data\picture\italic=false data\picture\overline=false data\picture\underline=false data\picture\strikeout=false data\picture\waveUnderline=false data\picture\foreground=#ffaa00 data\picture\fontFamily= data\picture\pointSize=0 data\picture\wrapAround=false data\braceMatch\priority=-1 data\braceMatch\bold=true data\braceMatch\italic=false data\braceMatch\overline=false data\braceMatch\underline=false data\braceMatch\strikeout=false data\braceMatch\waveUnderline=false data\braceMatch\foreground=#c00000 data\braceMatch\background=#ffb5b0 data\braceMatch\fontFamily= data\braceMatch\pointSize=0 data\braceMatch\wrapAround=false data\braceMismatch\priority=-1 data\braceMismatch\bold=true data\braceMismatch\italic=false data\braceMismatch\overline=false data\braceMismatch\underline=false data\braceMismatch\strikeout=false data\braceMismatch\waveUnderline=false data\braceMismatch\foreground=#ffb5b0 data\braceMismatch\background=#ff0000 data\braceMismatch\fontFamily= data\braceMismatch\pointSize=0 data\braceMismatch\wrapAround=false data\numbers\priority=1 data\numbers\bold=false data\numbers\italic=false data\numbers\overline=false data\numbers\underline=false data\numbers\strikeout=false data\numbers\waveUnderline=false data\numbers\foreground=#61e15f data\numbers\fontFamily= data\numbers\pointSize=0 data\numbers\wrapAround=false data\math-delimiter\priority=-1 data\math-delimiter\bold=false data\math-delimiter\italic=false data\math-delimiter\overline=false data\math-delimiter\underline=false data\math-delimiter\strikeout=false data\math-delimiter\waveUnderline=false data\math-delimiter\foreground=#7be279 data\math-delimiter\fontFamily= data\math-delimiter\pointSize=0 data\math-delimiter\wrapAround=false data\text\priority=-1 data\text\bold=false data\text\italic=false data\text\overline=false data\text\underline=false data\text\strikeout=false data\text\waveUnderline=false data\text\foreground=#e1bf95 data\text\fontFamily= data\text\pointSize=0 data\text\wrapAround=false data\escapeseq\priority=-1 data\escapeseq\bold=false data\escapeseq\italic=false data\escapeseq\overline=false data\escapeseq\underline=false data\escapeseq\strikeout=false data\escapeseq\waveUnderline=false data\escapeseq\foreground=#ff30f5 data\escapeseq\fontFamily= data\escapeseq\pointSize=0 data\escapeseq\wrapAround=false data\spellingMistake\priority=-1 data\spellingMistake\bold=false data\spellingMistake\italic=false data\spellingMistake\overline=false data\spellingMistake\underline=false data\spellingMistake\strikeout=false data\spellingMistake\waveUnderline=true data\spellingMistake\linescolor=#ff684a data\spellingMistake\fontFamily= data\spellingMistake\pointSize=0 data\spellingMistake\wrapAround=false data\badWord\priority=-1 data\badWord\bold=false data\badWord\italic=false data\badWord\overline=false data\badWord\underline=false data\badWord\strikeout=true data\badWord\waveUnderline=false data\badWord\linescolor=#d63f55 data\badWord\fontFamily= data\badWord\pointSize=0 data\badWord\wrapAround=false data\grammarMistake\priority=-1 data\grammarMistake\bold=false data\grammarMistake\italic=false data\grammarMistake\overline=false data\grammarMistake\underline=false data\grammarMistake\strikeout=false data\grammarMistake\waveUnderline=true data\grammarMistake\linescolor=#55aaff data\grammarMistake\fontFamily= data\grammarMistake\pointSize=0 data\grammarMistake\wrapAround=false data\latexSyntaxMistake\priority=-1 data\latexSyntaxMistake\bold=false data\latexSyntaxMistake\italic=false data\latexSyntaxMistake\overline=false data\latexSyntaxMistake\underline=false data\latexSyntaxMistake\strikeout=false data\latexSyntaxMistake\waveUnderline=false data\latexSyntaxMistake\foreground=#ffaa00 data\latexSyntaxMistake\background=#272727 data\latexSyntaxMistake\fontFamily= data\latexSyntaxMistake\pointSize=0 data\latexSyntaxMistake\wrapAround=false data\temporaryCodeCompletion\priority=-1 data\temporaryCodeCompletion\bold=false data\temporaryCodeCompletion\italic=true data\temporaryCodeCompletion\overline=false data\temporaryCodeCompletion\underline=false data\temporaryCodeCompletion\strikeout=false data\temporaryCodeCompletion\waveUnderline=false data\temporaryCodeCompletion\foreground=#55aaff data\temporaryCodeCompletion\fontFamily= data\temporaryCodeCompletion\pointSize=0 data\temporaryCodeCompletion\wrapAround=false data\environment\priority=-1 data\environment\bold=false data\environment\italic=false data\environment\overline=false data\environment\underline=false data\environment\strikeout=false data\environment\waveUnderline=false data\environment\foreground=#45dcd2 data\environment\fontFamily= data\environment\pointSize=0 data\environment\wrapAround=false data\referencePresent\priority=-1 data\referencePresent\bold=false data\referencePresent\italic=false data\referencePresent\overline=false data\referencePresent\underline=false data\referencePresent\strikeout=false data\referencePresent\waveUnderline=false data\referencePresent\foreground=#74c37d data\referencePresent\fontFamily= data\referencePresent\pointSize=0 data\referencePresent\wrapAround=false data\referenceMissing\priority=-1 data\referenceMissing\bold=false data\referenceMissing\italic=false data\referenceMissing\overline=false data\referenceMissing\underline=false data\referenceMissing\strikeout=false data\referenceMissing\waveUnderline=true data\referenceMissing\foreground=#ffaaff data\referenceMissing\fontFamily= data\referenceMissing\pointSize=0 data\referenceMissing\wrapAround=false data\referenceMultiple\priority=-1 data\referenceMultiple\bold=false data\referenceMultiple\italic=false data\referenceMultiple\overline=false data\referenceMultiple\underline=false data\referenceMultiple\strikeout=false data\referenceMultiple\waveUnderline=true data\referenceMultiple\foreground=#af5fa5 data\referenceMultiple\fontFamily= data\referenceMultiple\pointSize=0 data\referenceMultiple\wrapAround=false data\citationPresent\priority=-1 data\citationPresent\bold=false data\citationPresent\italic=false data\citationPresent\overline=false data\citationPresent\underline=false data\citationPresent\strikeout=false data\citationPresent\waveUnderline=false data\citationPresent\foreground=#74c37d data\citationPresent\fontFamily= data\citationPresent\pointSize=0 data\citationPresent\wrapAround=false data\citationMissing\priority=-1 data\citationMissing\bold=false data\citationMissing\italic=false data\citationMissing\overline=false data\citationMissing\underline=false data\citationMissing\strikeout=false data\citationMissing\waveUnderline=true data\citationMissing\foreground=#ffaaff data\citationMissing\fontFamily= data\citationMissing\pointSize=0 data\citationMissing\wrapAround=false data\structure\priority=-1 data\structure\bold=true data\structure\italic=false data\structure\overline=false data\structure\underline=false data\structure\strikeout=false data\structure\waveUnderline=false data\structure\foreground=#f5e827 data\structure\fontFamily= data\structure\pointSize=0 data\structure\wrapAround=false data\current\priority=-1 data\current\bold=false data\current\italic=false data\current\overline=false data\current\underline=false data\current\strikeout=false data\current\waveUnderline=false data\current\background=#3c3c3c data\current\fontFamily= data\current\pointSize=0 data\current\wrapAround=false data\diffDelete\priority=-1 data\diffDelete\bold=false data\diffDelete\italic=false data\diffDelete\overline=false data\diffDelete\underline=false data\diffDelete\strikeout=true data\diffDelete\waveUnderline=false data\diffDelete\foreground=#ffb5b0 data\diffDelete\background=#272727 data\diffDelete\fontFamily= data\diffDelete\pointSize=0 data\diffDelete\wrapAround=false data\diffAdd\priority=-1 data\diffAdd\bold=false data\diffAdd\italic=false data\diffAdd\overline=false data\diffAdd\underline=false data\diffAdd\strikeout=false data\diffAdd\waveUnderline=false data\diffAdd\foreground=#31beff data\diffAdd\background=#272727 data\diffAdd\fontFamily= data\diffAdd\pointSize=0 data\diffAdd\wrapAround=false data\diffReplace\priority=-1 data\diffReplace\bold=false data\diffReplace\italic=false data\diffReplace\overline=false data\diffReplace\underline=false data\diffReplace\strikeout=false data\diffReplace\waveUnderline=false data\diffReplace\foreground=#ffaa7f data\diffReplace\background=#272727 data\diffReplace\fontFamily= data\diffReplace\pointSize=0 data\diffReplace\wrapAround=false data\lua%3Akeyword\priority=-1 data\lua%3Akeyword\bold=false data\lua%3Akeyword\italic=false data\lua%3Akeyword\overline=false data\lua%3Akeyword\underline=false data\lua%3Akeyword\strikeout=false data\lua%3Akeyword\waveUnderline=false data\lua%3Akeyword\foreground=#ffaaff data\lua%3Akeyword\fontFamily= data\lua%3Akeyword\pointSize=0 data\lua%3Akeyword\wrapAround=false 参考  Windows 10 下 TeXstudio 深色背景主题的设置方法_sdnuwjw的博客-CSDN博客 TeXStudio配置 - 知乎  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu连接服务器的账号登录和上传下载文件</title>
+      <link>https://www.xiaoledeng.cn/2020/09/21/ubuntu-link-server/</link>
+      <pubDate>Mon, 21 Sep 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/21/ubuntu-link-server/</guid>
+      <description>1.账号登录 Ubuntu打开终端，输入：
+ssh user_name@ip_address 注释：
+ user_name为用户名 ip_address为服务器的ip地址 如果有端口设置，加入 -p xx，xx为端口号。  2.上传下载文件 本地上传到服务器：
+scp /path_local_file user_name@ip_address:/path_server_folder 例如：
+scp /home/shalom/a.txt deng@127.168.1.1:/home/deng/data/ 解释：
+ path_local_file为本地文件的地址 /path_server_folder为服务器上路径 如果有端口设置，加入 -p xx，xx为端口号。 如果是本地文件夹，加 -r  服务器下载到本地：
+scp user_name@ip_address:/path_server_file /path_local_folder 3.参考  Ubuntu服务器登录与使用 - coffee_tea_or_me - 博客园  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu20.04LTS作为科研主系统</title>
+      <link>https://www.xiaoledeng.cn/2020/09/20/ubuntu-research-system/</link>
+      <pubDate>Sun, 20 Sep 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/20/ubuntu-research-system/</guid>
+      <description>1. 简介 新台式机电脑是dell，默认安装的是Windows10，可是运行速度堪忧，完全跟不上鼠标和键盘操作的节奏。
+是故，决定安装Ubuntu 20.4 LTS系统作为科研的主系统。
+台式机的基本配置：
+ 内存：16G+16G=32G 处理器：Intel® Core™ i7-8700 CPU @ 3.20GHz × 12 图形：llvmpipe (LLVM 10.0.0, 256 bits) / llvmpipe (LLVM 10.0.0, 256 bits) 磁盘空间：1.0TB  Ubuntu系统的基本配置：
+ OS name：Ubuntu 20.04.1 LTS OS Type：64位 GNOME Version：3.36.3 Windowing System：X11  2. 录制U盘启动盘 在USTC Open Source Software Mirror下载Ubuntu 20.4 LTS的镜像文件，而后刻录到U盘里面，作为系统系统盘。
+插上U盘，重启电脑，按F12，从U盘启动，依次按照步骤安装Ubuntu20.04LTS。
+3. 基本软件 首先，更改软件源：Ubuntu更换中科大教育网的软件源，以加快软件的下载速度。
+其次，依次安装常用软件：
+ Mathematica12.1.1，通过Mathematica 激活指南下载和安装 谷歌浏览器，在Google Chrome 网络浏览器-其他平台-linux下载最新的Google Chrome .deb软件包，而后安装即可 Ubuntu安装和配置Qv2ray sublime编辑器，见Ubuntu安装Sublime和latex-tools texlive2020，见Ubuntu安装Texlive2020 texstudio，见TeXstudio- Download - Linux - Ubuntu 20.</description>
+    </item>
+    
+    <item>
+      <title>Linux管理软件Snap</title>
+      <link>https://www.xiaoledeng.cn/2020/09/20/linux-software-snap/</link>
+      <pubDate>Sun, 20 Sep 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/20/linux-software-snap/</guid>
+      <description>简介  Snaps are universal Linux packages. A snap is a bundle of an app and its dependencies that works without modification across Linux distributions.
+  官网：Snap: The app store for Linux  软件库：Software Store  Ubuntu下安装方式：
+sudo apt update sudo apt install snapd sudo snap install xxx 其他Linux安装方式参考：Installing snapd on all major Linux distributions。</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装JabRef</title>
+      <link>https://www.xiaoledeng.cn/2020/09/20/ubuntu-install-jabref/</link>
+      <pubDate>Sun, 20 Sep 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/20/ubuntu-install-jabref/</guid>
+      <description>1.简介 Ubuntu下，对于Bib文件格式，需要用JabRef进行打开，即进行文献管理操作。
+2.下载安装 第一种方法：
+sudo snap install jabref 第二种方法：在Download JabRef latest release页面，下载JabRef Debian and Ubuntu版本，并安装。
+3.使用资料  JabRef User Documentation Jabref安装及使用教程  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu虚拟显示器且远程控制（无显示器接入）</title>
+      <link>https://www.xiaoledeng.cn/2020/09/19/ubuntu-screen-remote-control/</link>
+      <pubDate>Sat, 19 Sep 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/19/ubuntu-screen-remote-control/</guid>
+      <description>1.问题说明 当连接Ubuntu的显示器关闭时，即无显示器接入，通过Teamviewer和Anydesk等远程控制软件无法正常访问该Ubuntu系统。
+2.解决方案 使用虚拟显示器，而后就能正常访问。
+1.安装Ubuntu虚拟显示器的软件(xserver-xorg-video-dummy)：
+sudo apt-get install xserver-xorg-core sudo apt-get install xserver-xorg-video-dummy or
+sudo apt-get install xserver-xorg-video-dummy --fix-missing 2.修改/创建配置文件（慎用，默认就会使用虚拟显示器，而不是显示连接好的外接屏幕)：
+sudo gedit /etc/X11/xorg.conf or
+sudo gedit /usr/share/X11/xorg.conf.d/xorg.conf Section &amp;quot;Device&amp;quot; Identifier &amp;quot;Configured Video Device&amp;quot; Driver &amp;quot;dummy&amp;quot; EndSection Section &amp;quot;Monitor&amp;quot; Identifier &amp;quot;Configured Monitor&amp;quot; HorizSync 31.5-48.5 VertRefresh 50-70 EndSection Section &amp;quot;Screen&amp;quot; Identifier &amp;quot;Default Screen&amp;quot; Monitor &amp;quot;Configured Monitor&amp;quot; Device &amp;quot;Configured Video Device&amp;quot; DefaultDepth 24 SubSection &amp;quot;Display&amp;quot; Depth 24 Modes &amp;quot;1920x1080&amp;quot; EndSubSection EndSection 注释：
+ Section &amp;ldquo;Device&amp;rdquo; # 显卡信息 Section &amp;ldquo;Monitor&amp;rdquo; # 显示器的信息 Section &amp;ldquo;Screen&amp;rdquo; # 显卡和显示器  3.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu时钟显示秒</title>
+      <link>https://www.xiaoledeng.cn/2020/09/18/ubuntu-show-second/</link>
+      <pubDate>Fri, 18 Sep 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/18/ubuntu-show-second/</guid>
+      <description>步骤 1.终端输入：
+sudo apt install gnome-tweak-tool 2.打开tweaks（优化），点击Top Bar（顶栏），Date就是日期，seconds就是秒数，选中。
+参考  Ubuntu17.10顶栏怎么显示日期与计秒?Ubuntu/Debian_操作系统_脚本之家  </description>
+    </item>
+    
+    <item>
+      <title>LaTeX引用一段话</title>
+      <link>https://www.xiaoledeng.cn/2020/09/18/latex-cite-notes/</link>
+      <pubDate>Fri, 18 Sep 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/18/latex-cite-notes/</guid>
+      <description>\begin{quotation} ``一段话内容&amp;#39;&amp;#39; \end{quotation} </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装和配置Qv2ray</title>
+      <link>https://www.xiaoledeng.cn/2020/09/17/ubuntu-install-qv2ray/</link>
+      <pubDate>Thu, 17 Sep 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/17/ubuntu-install-qv2ray/</guid>
+      <description>1.说明 建议参考官网的配置：
+ Qv2ray手册  2.步骤 1.下载 Qv2ray 最新版本: https://github.com/Qv2ray/Qv2ray/releases
+Ubuntu下直接下载 Qv2ray.v2.5.0.linux-x64.AppImage文件即可
+给权限
+sudo chmod 777 -R Qv2ray.v2.5.0.linux-x64.AppImage 此时先不用打开运行，等待第二步完成
+2.下载v2ray-Core
+https://github.com/v2ray/v2ray-core/releases
+选择v2ray-linux-64.zip
+3.在~/.config/目录下创建一个新目录,名称为qv2ray/vcore(如果qv2ray不存在就手动创建)，把2步骤下载的压缩包直接解压缩到~/.config/qv2ray/vcore下
+请确保这些文件直接存在于 vcore 目录中:
+ v2ray 或 v2ray.exe：核心可执行文件 v2ctl 或 v2ctl.exe：核心控制程序 geoip.dat：IP 规则数据库 geosite.dat：域名规则数据库  4.给v2ray和v2ctl可执行权限
+chmod +x v2ray v2ctl 5.双击第1步下载的appimage文件,进入首选项-&amp;gt;内核设置
+核心可执行文件路径：将此设置为步骤3中的v2ray 可执行文件的完整路径。
+V2ray 资源目录：将其设置为 步骤3中的geoip.dat 和 geosite.dat 所在的位置。
+完成后，可以点击检查 V2Ray 核心设置按钮来验证 V2Ray 核心设置。重复尝试，直到通过了检查。
+6.按照官网地址手册去添加订阅：
+ 向 Qv2ray 中导入节点 | Qv2ray  </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装Sublime和latex-tools</title>
+      <link>https://www.xiaoledeng.cn/2020/09/17/ubuntu-install-sublime-latex-tools/</link>
+      <pubDate>Thu, 17 Sep 2020 13:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/17/ubuntu-install-sublime-latex-tools/</guid>
+      <description>1.安装Sublime text  Sublime Text中文文档之 Linux Package Manager仓库 - Sublime Text 中文官网  安装GPG密钥：
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add - 确保apt已设置为使用https源：
+sudo apt-get install apt-transport-https 选择要使用的频道：
+ Stable  echo &amp;quot;deb https://download.sublimetext.com/ apt/stable/&amp;quot; | sudo tee /etc/apt/sources.list.d/sublime-text.list  Dev  echo &amp;quot;deb https://download.sublimetext.com/ apt/dev/&amp;quot; | sudo tee /etc/apt/sources.list.d/sublime-text.list 更新apt源并安装Sublime Text
+sudo apt-get update sudo apt-get install sublime-text 2.安装Sublime Text3插件latex-tools  在终端输入sublime 启动sublime text3 按快捷键Ctrl+Shift+P启动在对话框输入Install Package回车，然后在插件安装对话框输入latex tools就能看到，选中安装。 打开Perference-&amp;gt;Package Settings-&amp;gt;LaTexTools-&amp;gt;Settings-User 在打开文件的227行&amp;quot;linux&amp;quot;中配置你的TexLive路径 “texpath” : “$PATH:/usr/local/texlive/2020/bin/x86_64-linux” 设置487中 “viewer”: “evince”（不设置空着应该也可以，系统默认用自己的evince）。 安装dbus及依赖  sudo apt-get install dbus libdbus-glib-1-dev gcc </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu安装Texlive2020</title>
+      <link>https://www.xiaoledeng.cn/2020/09/17/ubuntu-install-texlive2020/</link>
+      <pubDate>Thu, 17 Sep 2020 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/17/ubuntu-install-texlive2020/</guid>
+      <description>1.步骤 从中科大开源地址：Index of /CTAN/systems/texlive/Images/下载 texlive2020.iso 镜像。
+安装图形化用户界面:
+sudo apt-get install perl-tk 加载 .iso 镜像文件:
+sudo mount -o loop texlive2020.iso /mnt 启动图形化安装配置:
+cd /mnt/ sudo ./install-tl -gui 安装完成后，卸载镜像文件:
+cd / sudo umount /mnt 字体配置:
+sudo cp /usr/local/texlive/2020/texmf-var/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf sudo fc-cache -fsv 添加环境变量，在 ~/.bashrc 和 ~/.profile 中均添加如下变量：
+export MANPATH=${MANPATH}:/usr/local/texlive/2020/texmf-dist/doc/man export INFOPATH=${INFOPATH}:/usr/local/texlive/2020/texmf-dist/doc/info export PATH=${PATH}:/usr/local/texlive/2020/bin/x86_64-linux 使添加变量立即生效:
+source ~/.bashrc source ~/.profile 全局变量配置 /etc/manpath.config 下添加：
+sudo gedit /etc/manpath.config MANPATH_MAP /usr/local/texlive/2020/bin/x86_64-linux /usr/local/texlive/2020/texmf-dist/doc/man 安装成功测试：
+tex --version 显示：
+TeX 3.</description>
+    </item>
+    
+    <item>
+      <title>Ubuntu20.04LTS更换中科大教育网的软件源</title>
+      <link>https://www.xiaoledeng.cn/2020/09/17/ubuntu-change-source/</link>
+      <pubDate>Thu, 17 Sep 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/17/ubuntu-change-source/</guid>
+      <description>原文地址：Ubuntu 源使用帮助 — USTC Mirror Help 文档
+系统：Ubuntu 20.04.1 LTS
+其图形界面配置的步骤为：
+Settings，About，Software Updates，Ubuntu Software，Download from:
+ http://mirrors.ustc.edu.cn/ubuntu
+ </description>
+    </item>
+    
+    <item>
+      <title>校园无线网连接DNS问题</title>
+      <link>https://www.xiaoledeng.cn/2020/09/16/wifi-connection-dns-problem/</link>
+      <pubDate>Wed, 16 Sep 2020 15:39:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/16/wifi-connection-dns-problem/</guid>
+      <description>1.简介 南方科技大学的无线网络，有5G WiFi，速度还是不错的。
+登录的前提是，需要有学校的CAS(Central Authentication Service)账号。
+2.问题描述 连接南方科技大学无线网络SUSTech-wifi-5G后，弹出选择连接方式，点击CAS登录后，没有反应，弹不出接下来的登录账号的界面。
+3.问题解决 这里介绍macOS系统下面的设置方法，Windows类似。
+ 点击System Preferences—Network—WiFi Advanced—DNS 添加新的DNS号：172.18.1.92和172.18.1.93，注意：原有的192.168.100.1和192.168.1.1继续保持 点击OK—Apply  </description>
+    </item>
+    
+    <item>
+      <title>Mac下brew操作指南</title>
+      <link>https://www.xiaoledeng.cn/2020/09/15/brew-functional-list/</link>
+      <pubDate>Tue, 15 Sep 2020 13:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/15/brew-functional-list/</guid>
+      <description>1.官方安装 地址：The Missing Package Manager for macOS (or Linux) — Homebrew
+2.基本操作  搜索：brew search xxx 安装：brew install xxx 查询：brew info xxx 更新：brew update 检查是否有新版本：brew outdated 升级：brew upgrade xxx 清理：brew cleanup xxx 删除：brew uninstall xxx 安装列表：brew list  </description>
+    </item>
+    
+    <item>
+      <title>租房入住注意事项</title>
+      <link>https://www.xiaoledeng.cn/2020/09/12/notes-for-renting/</link>
+      <pubDate>Sat, 12 Sep 2020 20:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/12/notes-for-renting/</guid>
+      <description>1.入住前签订正规租房合同 合同里面应该尽可能的全面，包括所有租金，押金的明细，以防止退租时引起的押金纠纷。
+2. 房屋设施交接 家电 检查清楚家电的状况，并在房屋设施交接单上登记，比如，空调、洗衣机、冰箱、热水器等。
+重要家电开启检查是否完好，能否正常使用，有无损坏的地方。
+家具 家具及室内装饰状况检查清楚，并在房屋设施交接单上登记。
+床、衣柜、桌子、椅子等物品的数量要登记好。
+木地板、地板砖要看清有无开裂、鼓起、缺损等。
+房屋设施，要一个房间一个房间过，避免遗漏。
+3. 水电燃气等费用的交接 算清欠款或余额，查看清楚费用的缴费单，做好清算和记录。水费、电费、物业费、燃气费、网费等等都需要亲自核实。
+4.钥匙和门禁的交接 钥匙注意几把，记录在案，终止租约后要如实把钥匙还给房东。
+门禁卡，物业办理，几人入住就办理几张，并与钥匙数量一同记录，退租后如实返还。
+5.入住时拍照 如有必要，一些关键信息可拍照。
+6.入住前卫生打扫 除了了要对出租房做基本的清理和打扫以外，要进行消毒，由于家中可能存在有较多的细菌和螨虫，因此有必要对墙壁、床下、洗手池、马桶这些地方进行消毒。</description>
+    </item>
+    
+    <item>
+      <title>GMT6学习体系</title>
+      <link>https://www.xiaoledeng.cn/2020/09/12/gmt6-learning-system/</link>
+      <pubDate>Sat, 12 Sep 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/12/gmt6-learning-system/</guid>
+      <description>英文官网：The Generic Mapping Tools
+中文：GMT中文社区
+1. 简介 GMT简介：GMT是什么、GMT的历史、GMT开发者、GMT的特点、其它制图软件
+GMT版本：版本号、GMT主流版本
+引用
+学习资源
+2. 安装 Linux 下安装 GMT：Fedora、RHEL/CentOS、Ubuntu/Debian用户、ArchLinux用户
+Windows 下安装 GMT：安装GMT、安装其它可选软件
+macOS 下安装 GMT：使用 Homebrew 安装、使用 GMT 安装包、使用 Macports 安装
+跨平台GMT安装方案：通过 conda 安装
+Linux/macOS 下编译GMT源码：编译及运行依赖、安装依赖软件、下载源码及数据、安装GMT、修改环境变量、测试是否安装成功、升级/卸载GMT
+3. 版本迁移 GMT4 → GMT5
+GMT5 → GMT6
+经典模式 → 现代模式：经典模式的问题、现代模式的优点、从经典到现代
+4. 入门教程 GMT初探: Linux篇：启动终端、运行GMT、生成脚本模板、查看并编辑脚本文件、执行脚本以绘图
+GMT初探: macOS篇：启动终端、运行GMT、生成脚本模板、查看并编辑脚本文件、执行脚本以绘图
+GMT初探: Windows篇：启动CMD命令行、运行GMT、生成脚本模板、查看并编辑脚本文件、执行脚本以绘图、
+命令初探：GMT绘图脚本模板、绘制第一张图、GMT命令格式
+脚本编程：Bash编程基础知识、Batch编程基础知识、将Bash脚本转换为Batch脚本、常用Unix小工具
+绘制底图：全球地图、区域地图、线性坐标轴、三维线性坐标轴
+绘制海岸线：绘制海岸线和湖岸线、设置要绘制的对象的最小面积、填充陆地与水体、绘制国界/州界、添加比例尺
+绘制线段和多边形：绘制一条线段、绘制一个多边形、绘制多条线段、绘制多个多边形、大圆弧路径
+绘制符号：符号一览、绘制简单符号、大小变化的符号、颜色变化的符号、绘制不同的符号、大小颜色和符号类型都变化的符号
+添加文字：最简单的示例、文字属性、文本框、对齐方式、文本偏移量、变化的文字属性、
+添加图例：自动图例、设置图例属性、手动设置图例
+绘制地形起伏：全球地形起伏数据、绘制全球地形起伏图、绘图区域地形起伏图、增加光照效果、添加色标、制作CPT文件
+理解图层：图件分析与拆解、绘制底图、绘制震中和台站位置、绘制射线路径、添加台站名、图层的先后顺序
+绘制直方图：垂直直方图、增加修饰、水平直方图、百分比直方图
+GMT单行模式
+GMT图中图模式：用矩形框标记研究区域、用颜色标记研究区域
+GMT子图模式：子图布局、第一张子图、共用X/Y轴、复杂布局
+GMT多图模式
+5. GMT基础 画布：图片格式、画布颜色、画布大小</description>
+    </item>
+    
+    <item>
+      <title>GMT6入门教程（7）单行、图中图、子图和多图模式</title>
+      <link>https://www.xiaoledeng.cn/2020/09/12/gmt6-tutorial-7/</link>
+      <pubDate>Sat, 12 Sep 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/12/gmt6-tutorial-7/</guid>
+      <description>1.单行模式 原文地址：GMT单行模式 — GMT中文手册
+“单行模式”：当绘图只需要一个GMT命令时，可省略 gmt begin 和 gmt end，只需要在绘图命令后加上 -format figname 即可。
+完整模式命令：
+gmt begin GlobalMap png,pdf gmt coast -Rg -JH15c -Gpurple -Baf -B+t&amp;quot;My First Plot&amp;quot; gmt end show 单行模式命令：
+gmt coast -Rg -JH15c -Gpurple -Baf -B+t&amp;quot;My First Plot&amp;quot; -pdf,png GlobalMap 2.图中图模式 原文地址：GMT图中图模式 — GMT中文手册
+模块：inset
+用法：图中图模式以 inset begin 开始，并以 inset end 结束。
+解释：使用 inset begin 进入图中图模式，其作用是在纸张上规划出一个矩形区域，并将绘图原点移动到该矩形区域的左下角。接下来的所有绘图命令均只在该区域内进行操作。当使用 inset end 结束图中图模式时，绘图原点会自动恢复到图中图模式之前的位置，且所有设置参数都将回到之前的状态。
+2.1用矩形框标记研究区域 命令：
+gmt begin inset-map png,pdf gmt coast -R139.2/140.5/34.8/36 -JM12c -Baf -BWSne -W2p -A1000 -Glightbrown -Sazure1 --FORMAT_GEO_MAP=dddF gmt inset begin -DjBL+w3c/3.</description>
+    </item>
+    
+    <item>
+      <title>GMT6入门教程（6）理解图层</title>
+      <link>https://www.xiaoledeng.cn/2020/09/11/gmt6-tutorial-6/</link>
+      <pubDate>Fri, 11 Sep 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/11/gmt6-tutorial-6/</guid>
+      <description>原文地址：理解图层 — GMT中文手册
+GMT的每一个绘图命令都会产生一个图层，后绘制的图层会覆盖在先绘制的图层的上面，即后来者居上。故此，通过组合一系列简单的GMT命令，得到了一个复杂的GMT图件。
+#!/bin/bash gmt begin layers png,pdf # 绘制地形起伏底图 gmt basemap -JH180/15c -Rg -B0 gmt grdimage @earth_relief_10m -Cetopo1 -I+d gmt colorbar -Bxa2000f+l&amp;quot;Elevation (m)&amp;quot; # 绘制大圆射线路径 gmt plot -W1p,red &amp;lt;&amp;lt; EOF &amp;gt; 130.72 32.78 104.39 29.90 &amp;gt; 130.72 32.78 13.14 52.50 &amp;gt; 130.72 32.78 19.99 -34.52 &amp;gt; 130.72 32.78 -77.15 38.89 &amp;gt; 130.72 32.78 -52.47 -31.62 &amp;gt; 130.72 32.78 150.36 -33.79 &amp;gt; 130.72 32.78 76.22 -69.22 EOF # 绘制震中位置 gmt plot -Sa0.</description>
+    </item>
+    
+    <item>
+      <title>GMT6入门教程（5）绘制地形起伏和直方图</title>
+      <link>https://www.xiaoledeng.cn/2020/09/11/gmt6-tutorial-5/</link>
+      <pubDate>Fri, 11 Sep 2020 09:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/11/gmt6-tutorial-5/</guid>
+      <description>1.绘制地形起伏 原文地址：绘制地形起伏 — GMT中文手册
+模块：grdimage
+1.1全球地形起伏数据 要绘制全球或区域地形起伏图，首先需要拥有地形起伏数据，即不同经纬度处的高程或海深数据。
+GMT用户可以通过给定文件名 @earth_relief_xxx 的方式来指定要使用某个精度的地形。xxx 用于指定数据精度，例如：15m、05m、01m和 15s 分别表示数据分辨率为15弧分、5弧分、1弧分和15弧秒。
+全球地形起伏数据的详细介绍见: earth_relief: 全球地形起伏数据。
+1.2绘制全球地形起伏图 命令：gmt grdimage @earth_relief_05m -JH180/10c
+1.3绘图区域地形起伏图 命令：gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen
+1.2增加光照效果 为图幅加上光照效果，是为了让地形起伏图更加立体。可以指定光照的方向、强度等参数，也可以直接使用 -I+d 以使用默认的光照效果。
+ 增加光照效果本质上是计算了每个点沿着某个方位角的方向梯度，然后根据每个点的方向梯度的正负以及振幅调节该点颜色的亮度值。对于向阳处，其方向梯度为正值，则增加该点颜色的亮度；对于背阴处，其方向梯度为负值，则降低该点颜色的亮度。由此达到增加光照效果、增强立体感的目的。
+ 命令：gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d
+1.3添加色标 grdimage 绘制地形起伏数据本质上就是将高程的数值与颜色之间对应起来。二者之间的对应关系由色标文件（即CPT文件）决定。用 colorbar 向图中添加色标。
+模块：colorbar
+初始命令：gmt colorbar
+进一步使用 -B 选项设置色标的标注间隔，并为色标添加一个标签，
+命令: gmt colorbar -Bxaf+l&amp;quot;Elevation (m)&amp;quot;
+也可以使用了 -D 选项将色标放在了地形起伏图的右侧中间（JMR）向右偏移1.5厘米，色标长度为10厘米，并将标签放在了色标左侧（+ml）
+命令：gmt colorbar -DJMR+w10c+o1.5c/0c+ml -Bxa1000f -By+l&amp;quot;m&amp;quot;
+1.4制作CPT文件 模块：makecpt和grd2cpt</description>
+    </item>
+    
+    <item>
+      <title>GMT6入门教程（4）添加图例和文字</title>
+      <link>https://www.xiaoledeng.cn/2020/09/10/gmt6-tutorial-4/</link>
+      <pubDate>Thu, 10 Sep 2020 08:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/10/gmt6-tutorial-4/</guid>
+      <description>1.添加图例（legend） 原文地址：添加图例 — GMT中文手册
+模块：legend
+1.1自动图例 在使用 plot 模块绘制线条或符号时，可以额外加上 -llabel 选项以指定当前线段或符号的图例标签。
+可以为 -l 选项加上其它子选项以控制图例的位置、大小以及其它显示效果
+1.2设置图例属性 调用了 legend 选项，并设置了 -D 和 -F 选项，-DjBR+o0.1c/0.1c -F+p1p+glightblue。
+ jBR 表示将图例放在底图的右下角（BottomRight） +o0.1c/0.1c 表示将图例在右下角的基础上再加上额外的偏移量 -F+p1p+glightblue 则设置了图例框的轮廓和填充色  1.3手动设置图例 针对绘制符号和线条，legend 的输入格式为：
+S dx1 symbol size fill pen dx2 text
+ S 表明这一行用于绘制符号或线段。 dx1 是符号或线段与图例左边框的距离 symbol 是要绘制的符号类型代码；若想要绘制线段，则设置 symbol 为 - size 符号尺寸或线段长度 fill 符号填充色；若不需要填充色，则可设置为 - pen 符号轮廓的画笔颜色；若不需要绘制符号轮廓，则可设置为 - text 符号对应的文字说明 dx2 文字与左边框之间的距离  例子：
+# symbols S 0.25c c 0.</description>
+    </item>
+    
+    <item>
+      <title>GMT6入门教程（3）绘制线段、多边形和符号</title>
+      <link>https://www.xiaoledeng.cn/2020/09/09/gmt6-tutorial-3/</link>
+      <pubDate>Wed, 09 Sep 2020 20:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/09/gmt6-tutorial-3/</guid>
+      <description>1.绘制线段、多边形 原文地址：绘制线段和多边形 — GMT中文手册
+模块：plot
+1.1绘制一条线段 要绘制一条线段，就必须提供线段上数据点的信息，即数据的X坐标和Y坐标。 plot 会自动将输入数据中相邻的两点连接起来。
+使用 plot 模块的 -W 选项设置画笔属性。画笔属性包括三个部分：线宽、颜色以及线型，三者之间用逗号隔开。
+ -W2p,red,- 选项，即设置了画笔属性为 2p 宽的红色虚线。p 是GMT中的一个长度单位。 几种常见的线型包括 -、.、.-和 -.  1.2绘制一个多边形 plot 使用 -L 选项将线段的首尾连接起来，构成了一个闭合多边形。
+使用 -G 选项为闭合多边形填充颜色。
+1.3绘制多条线段 可以将所有线段的数据点都保存到一个输入文件中，每个线段都包含了若干个数据点，在第一个数据点之前有一个 &amp;gt; 用于标记新的一段数据的开始。这种数据称之为多段数据。
+1.4绘制多个多边形 使用相同的输入数据，通过加上 -L 可以构成闭合多边形，加上 -G 为多边形设置填充色。
+1.5大圆弧路径 在笛卡尔坐标系下，绘制线段时，任意两点之间会以直线方式连接；而在地理投影下，任意两点之间则使用大圆弧路径方法会连接。如果想要在地理投影下也是要直线连接两点，则需要使用 -A 选项。
+使用 plot 模块绘制了地球上两点之间的连线（红色，以大圆弧路径方式连接），然后，我们加上了 -A 选项再次绘制了这两点之间的连线（蓝色，以直线方式连接）
+2.绘制符号 原文地址：绘制符号 — GMT中文手册
+模块：plot
+2.1符号一览 plot 模块绘制符号需要使用 -S 选项：
+ - 代表 -形 + 代表 十字形 a 代表 空五角形 c 代表 圆形（circle） d 代表 菱形 e 代表 斜椭圆形 g 代表 八面形 h 代表 六面形 i 代表 下三角形 n 代表 五面形 r 代表 长方形 s 代表 正方形 t 代表 上三角形（triangle） x 代表 X形 y 代表 |  2.</description>
+    </item>
+    
+    <item>
+      <title>GMT6入门教程（2）绘制底图和海岸线</title>
+      <link>https://www.xiaoledeng.cn/2020/09/09/gmt6-tutorial-2/</link>
+      <pubDate>Wed, 09 Sep 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/09/gmt6-tutorial-2/</guid>
+      <description>1.绘制底图 原地址：绘制底图 — GMT中文手册
+GMT用 coast 和 basemap模块绘制不同类型的底图，包括：
+ 全球地图 区域地图 线性坐标轴  使用 -J 选项指定地图投影参数以及地图的尺寸，
+ -JH180/12c 指定地图投影参数，H 表示使用Hammer投影，地图中心位于经度180°处，地图宽度为12厘米（12c，c 表示单位厘米）。 -JM12c 指定了使用墨卡托投影（绘制区域地图最常用的投影方式），地图宽度为12厘米； -JX8c/5c 表明线性坐标轴（笛卡尔坐标投影）的宽度为8厘米，高度为5厘米  使用 -R 选项指定要绘制的区域范围（即经纬度范围），
+ -R0/360/-90/90 指定要绘制的区域范围，即经度0°到360°，纬度-90°到90°，四个数字之间用斜杠 / 分隔。 -Rg 代替了 -R0/360/-90/90。这二者是完全等效的，-Rg 中 g 代表 global。 -R10/70/-4/8 表明X轴范围为10到70，Y轴范围为-4到8  使用 -B 选项为地理底图加上边框并绘制经纬线，
+ -Bg 用于给底图加上边框，其中的 g 则用于向底图中加入网格线（g 代表 grid）。 -Bafg 表示绘制底图边框的标注（annotation）、刻度线（frame，即图中黑白线段的间隔）和网格线（grid） -Bxa4g2 表示设置X轴（x）的标注间隔为4度、网格线间隔为2度（a4g2） -Bya3g3 表示设置X轴（y）的标注间隔为3度、网格间隔为3度（a3g3） -BWSen 中WSEN分别是西南东北四个方向的英文单词首字母，用于控制四条边的属性。大写的 WS 表示给西边和南边添加标注，而小写的 en 则表示对于东边和北边只绘制边框但不显示标注 -BWSen+t”New Zealand” 中 +t 用于给整张图添加标题（title）。由于标题 New Zealand 中含有空格，我们需要使用引号将其括起来 -Bxa10f5g10+l”X Label” 设置了X轴的属性， a10f5g10 分别设置了标注（annotation）间隔为10，刻度（frame）间隔为5，网格线（grid ）间隔为10； +l”X Label” 则为X轴添加了标签；对于Y轴同理；  2.</description>
+    </item>
+    
+    <item>
+      <title>GMT6入门教程（1）版本迁移</title>
+      <link>https://www.xiaoledeng.cn/2020/09/08/gmt6-tutorial-1/</link>
+      <pubDate>Tue, 08 Sep 2020 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/08/gmt6-tutorial-1/</guid>
+      <description>版本迁移（经典模式 → 现代模式） 原地址：经典模式 → 现代模式 — GMT中文手册
+将经典模式的脚本改成现代模式的脚本，基本可以遵循如下几点：
+ 绘图脚本以 gmt begin figure 开头，以 gmt end show 结束 去掉 -K, -O, -P, 重定向符号以及PS文件名 去掉多余的 -J, -R 选项 某些模块重新命名。经典模式下以 ps 开头的模块省略 ps，比如 pscoast → coast、psbasemap → basemap。个别几个模块是例外，psxy → plot, psxyz → plot3d, psscale → colorbar 在需要绘制多子图、图中图时，考虑使用 inset 和 subplot 改写 现代模式下 makecpt 和 grd2cpt 默认将生成的CPT作为当前CPT，而不输出到文件中。这一特性在后面会具体介绍。如果需要生成CPT到文件中，需要额外使用 -H 选项。  </description>
+    </item>
+    
+    <item>
+      <title>Mac下brew换源和终止</title>
+      <link>https://www.xiaoledeng.cn/2020/09/08/mac-brew-huanyuan-close/</link>
+      <pubDate>Tue, 08 Sep 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/08/mac-brew-huanyuan-close/</guid>
+      <description>1. 换源 Homebrew更改为教育源：
+cd &amp;#34;$(brew --repo)&amp;#34; git remote set-url origin https://mirrors.ustc.edu.cn/brew.git cd &amp;#34;$(brew --repo)/Library/Taps/homebrew/homebrew-core&amp;#34; git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git cd &amp;#34;$(brew --repo)/Library/Taps/homebrew/homebrew-cask&amp;#34; git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-cask.git brew update 重置为官方地址：
+cd &amp;#34;$(brew --repo)&amp;#34; git remote set-url origin https://github.com/Homebrew/brew.git cd &amp;#34;$(brew --repo)/Library/Taps/homebrew/homebrew-core&amp;#34; git remote set-url origin https://github.com/Homebrew/homebrew-core cd &amp;#34;$(brew --repo)/Library/Taps/homebrew/homebrew-cask&amp;#34; git remote set-url origin https://github.com/Homebrew/homebrew-cask brew update 替换Bottle源：
+bash用户（shell用户）：
+echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&#39; &amp;gt;&amp;gt; ~/.bash_profile source ~/.bash_profile zsh用户：
+echo &#39;export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles&#39; &amp;gt;&amp;gt; ~/.</description>
+    </item>
+    
+    <item>
+      <title>Mac下如何利用GitBook编写电子书？</title>
+      <link>https://www.xiaoledeng.cn/2020/08/04/mac-gitbook-book/</link>
+      <pubDate>Tue, 04 Aug 2020 20:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/08/04/mac-gitbook-book/</guid>
+      <description>1.安装git 下载地址：https://git-scm.com/downloads
+2.安装Node.js 下载地址：https://nodejs.org/en/download/
+3.安装gitbook npm install -g gitbook-cli 4.初始化gitbook gitbook init README.md —— 书籍的介绍写在这个文件里 SUMMARY.md —— 书籍的目录结构在这里配置  编辑 SUMMARY.md 文件，内容修改为：
+# 目录* [前言](README.md)* [第一章](Chapter1/README.md)* [第1节：衣](Chapter1/衣.md)* [第2节：食](Chapter1/食.md)* [第3节：住](Chapter1/住.md)* [第4节：行](Chapter1/行.md)* [第二章](Chapter2/README.md)* [第三章](Chapter3/README.md)* [第四章](Chapter4/README.md)5.预览电子书 在mybook文件夹中再次执行以下命令：
+gitbook init预览书籍的命令：
+gitbook serve构建书籍的命令，默认将生成的静态网站输出到_book目录：
+gitbook build6.安装calibre和设置ebook-convert 安装calibre地址：calibre - Download calibre
+设置ebook-convert：
+sudo ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin7.转换电子书格式 ebook-convert mybook.epub mybook.mobigitbook pdf .</description>
+    </item>
+    
+    <item>
+      <title>服务器上运行Mathematica命令行代码</title>
+      <link>https://www.xiaoledeng.cn/2020/08/04/run-mathematica-command-line-code-on-the-server/</link>
+      <pubDate>Tue, 04 Aug 2020 20:15:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/08/04/run-mathematica-command-line-code-on-the-server/</guid>
+      <description>标题可以分为两个问题：
+ 如何在服务器上面运行Mathematica命令行代码？ 如何把nb文件转换成txt文件？  1.服务器上运行Mathematica命令行代码 关键命令：
+nohup math &amp;lt;test1.txt&amp;gt; test1.out &amp;amp;解释：
+ nohup和&amp;amp;为服务器后台运行命令； math为Mathematica调用的命令行工具； test1.txt为输入的nb文件的txt格式文件； test1.out为输出的记录文件；  关键点：如何把nb文件转换成txt文件。
+2.nb文件转换为txt文件 关键步骤如下：
+ 在Mathematica中，先选中所有Cell单元——点击一个Cell，键盘输入Ctrl+A选中所有Cell； 执行菜单命令 &amp;ldquo;Cell -&amp;gt; Convert to -&amp;gt; Input Form&amp;rdquo; ，将所有的Cell转换成标准输入形式； 执行菜单命令 &amp;ldquo;File -&amp;gt; Save As &amp;hellip;&amp;rdquo; ，另存为 txt 格式；  3.注意去掉多余的内容 在后续的Mathematica版本中，可能会包含：Ln[]和Out[]格式，注意打开txt文件，进行全文替换删除操作。</description>
+    </item>
+    
+    <item>
+      <title>Python生成LaTeX表格</title>
+      <link>https://www.xiaoledeng.cn/2020/08/04/python-latex-table/</link>
+      <pubDate>Tue, 04 Aug 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/08/04/python-latex-table/</guid>
+      <description>问题: 如何将Python下的表格数据导出为LaTeX表格？
+简言之，Python输出表格结果到LaTeX，这里介绍3个工具：
+ pandas.DataFrame.to_latex PyTex PyLaTeX  1. pandas.DataFrame.to_latex 地址：pandas.DataFrame.to_latex documentation
+&amp;gt;&amp;gt;&amp;gt; df = pandas.DataFrame({&#39;name&#39;: [&#39;Raphael&#39;, &#39;Donatello&#39;],&#39;mask&#39;: [&#39;red&#39;, &#39;purple&#39;],&#39;weapon&#39;: [&#39;sai&#39;, &#39;bo staff&#39;]})&amp;gt;&amp;gt;&amp;gt; print(df.to_latex(index=False))\begin{tabular}{lll}\toprulename &amp;amp; mask &amp;amp; weapon \\\midruleRaphael &amp;amp; red &amp;amp; sai \\Donatello &amp;amp; purple &amp;amp; bo staff \\\bottomrule\end{tabular}2.PyTex 地址：HarryXD2018/PyTex: A python tool that generate latex(e.g. Table, matrix) code.
+ 这是一个可以将Python中的列表、Numpy类型的二元数组，CSV表格文件或是代码转化为Latex代码的Python第三方库。您可以将此第三方库作为脚本运行，或是在命令提示行中将CSV文件或是图片文件拖拽至其中运行，即可得到对应的Tex代码。在脚本运行中，如果有需要，可以将生产的内容复制到剪切板中。
+ 3.PyLaTeX 地址：PyLaTeX documentation
+ PyLaTeX is a Python library for creating and compiling LaTeX files.</description>
+    </item>
+    
+    <item>
+      <title>阅读方法的V3版</title>
+      <link>https://www.xiaoledeng.cn/2020/08/04/read-method-version-3/</link>
+      <pubDate>Tue, 04 Aug 2020 09:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/08/04/read-method-version-3/</guid>
+      <description>阅读方法V1版 个人的阅读方法V1版，时间跨度为：1999年—2011年，即从小学2-3年级开始，而后经历了初中、高中，直到大学大三。
+这一个阶段的特点是：能够读书识字，对阅读有浓厚的兴趣，喜欢涉猎感兴趣的书籍，往往是拿到一本书后从头读到尾，偶尔会用纸质笔记本摘抄关键的句子。
+阅读方法V2版 个人的阅读方法V2版，时间跨度为：2011年—2020年，即从大三在图书馆读书的一个下午，到如今。如今依然能够感受到当时的那种阅读体验，在读书过程中，突然脑袋里面碰的一下，一种量变引起质变的深刻体验强烈而生。我内心知道，从此之后阅读方面得到了大的飞跃。
+这个阶段的特点是：能够快速阅读，从目录中抓住一本书的框架，不再是从头读到尾，而是会选择其中感兴趣的点进行阅读。也会选择同类型的几本书，对其中的一个点开始横向阅读，即应用主题阅读。这一点，在专业方面做科研尤为突出，不管是写英文文章，还是硕士博士论文的撰写，这个过程中都有用到此种阅读方法。
+阅读方法V3版 现在，个人决定从V2版升级到V3版，这个阶段的步骤有以下3点：
+  从真问题出发，选择解决此问题的系列书籍，而后对解决此问题的内容进行主题式阅读，即知识转化为行动的关键——解决当下遇到的问题；
+  在新旧知识间建立联系，加工读到的新知识与之前已有的知识形成联系，从而形成个人的知识体系；
+  回到最开始的真问题，看更新后的知识体系和思维模式能否解决当下的问题，如果不能重复以上步骤，直到能够解决当下的问题。
+  简言之，阅读方法的V3版：问题出发，在新旧知识间建立联系，更新个人的知识体系和思维模式，解决当下问题。
+参考  古典 《跃迁》 成甲 《好好学习》  </description>
+    </item>
+    
+    <item>
+      <title>提问—书单</title>
+      <link>https://www.xiaoledeng.cn/2020/08/03/ask-questions-booklist/</link>
+      <pubDate>Mon, 03 Aug 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/08/03/ask-questions-booklist/</guid>
+      <description>1.国内  提问力：教你学会深度提问（全彩手绘图解版）-速溶综合研究所 提问-杨澜 有逻辑地提问：知道你不知道又想知道的一切-郑小兰 会提问：让人敞开心扉与你聊天的方法-吴琦 有效课堂提问的22条策略-胡庆芳 孙祺斌 李爱军 刘文艳编著 提问的艺术：如何问出你想要的答案-李劲 提问的逻辑：如何让别人特别想跟你聊下去-高飞 提问的秘密-罗朝平 隐藏的教练：提问的道与术-那子纯 从零开始带团队：有效提问的53个策略-于治军  2.国外  学会提问（原书第11版）-尼尔·布朗 斯图尔特·基利 学会提问：麦肯锡工作法-大岛祥誉 改变提问，改变人生：12个改善生活与工作的有力工具（原书第3版）-梅若李·亚当斯 关键提问-詹姆斯·E.瑞安 如何有效提问-斋藤孝 绝佳提问：探询改变商业与生活-沃伦·贝格尔  </description>
+    </item>
+    
+    <item>
+      <title>专注力—书单</title>
+      <link>https://www.xiaoledeng.cn/2020/08/03/focus-booklist/</link>
+      <pubDate>Mon, 03 Aug 2020 08:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/08/03/focus-booklist/</guid>
+      <description>1.国外  专注-丹尼尔·戈尔曼 三重专注力：如何提升互联网一代最稀缺的能力-丹尼尔·戈尔曼等 意志力：关于自控、专注和效率的心理学-罗伊·鲍迈斯特 约翰·蒂尔尼 创造时间：专注于每天最重要的事-杰克·纳普 约翰·泽拉茨基 专注力：心流的惊人力量-克里斯·贝利 深度专注力：管理精力和时间的9种方法-迈克尔·海厄特 专注力训练手册-瑟伦·迪蒙 注意力：专注的科学与训练-让-菲利普·拉夏 练习的心态：如何培养耐心、专注和自律-托马斯 M.斯特纳 为什么精英都有超强专注力-西多昌规  2.国内  层次越高的人，越能专注做自己-洋气杂货店 专注力-丁一编著 专注力：实现自控与自律的惊人力量-刘镇强  3.孩子专注力训练  如何培养孩子的专注力-张小雪 10天塑造孩子专注力：如何让孩子更专心地学习和思考-科恩主编 孩子受益一生的专注力训练-芮彩琴 幼儿专注力阶梯训练·2-3岁-童心 幼儿专注力阶梯训练·3-4岁-童心 幼儿专注力阶梯训练·4-5岁-童心 幼儿专注力阶梯训练·5-6岁-童心  </description>
+    </item>
+    
+    <item>
+      <title>Mac下设置sublime的命令行打开文档</title>
+      <link>https://www.xiaoledeng.cn/2020/07/31/mac-sublime-terminal-open/</link>
+      <pubDate>Fri, 31 Jul 2020 17:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/07/31/mac-sublime-terminal-open/</guid>
+      <description>1.简介 在选用sublime作为主要编辑器后，如何在命令行下打开sublime？
+本文在Mac下，简介其设置过程。
+2.步骤 1.在zsh下，进入zshrc环境变量：
+vi ~/.zshrc 2.用alias加入安装后sublime的路径，缩写为sl
+alias sl=\&#39;&#39;/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl&#39;\&#39; 3.退出vi模式，并激活zshrc环境变量的设置：
+source ~/.zshrc 4.命令行模式下，创建新的文档example.txt：
+sl example.txt </description>
+    </item>
+    
+    <item>
+      <title>科研模块化深度工作流</title>
+      <link>https://www.xiaoledeng.cn/2020/07/31/research-model-deep-work-flow/</link>
+      <pubDate>Fri, 31 Jul 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/07/31/research-model-deep-work-flow/</guid>
+      <description>1.前言 从2016年使用Mac笔记本电脑之后，工作效率开始提升，特别是专注度开始上升，现在需要更进一步地超高效率的来努力写作，积累成果。
+而这些是有章法可循的，也就是在以前的工作流的基础上，明确各个步骤以形成模块化板块，从而高效率地完成整个工作流。
+2.科研工作流的模块   文献模块：收集文献（邮件提醒和杂志官网更新等）、下载文献、阅读文献（要做好阅读笔记和思路）、文献管理；
+  数据模块：公式推导、数值计算、图片绘制；
+  初稿模块：模块化撰写——理论部分、结果展示部分（图、表、公式）、结论部分、绪论部分、摘要部分；
+  投稿模块：修改初稿完善至投稿、等待反馈修改意见、根据反馈意见完善稿件直至文章接收、Proofs、文章Online；
+  3.对应模块的工具   文献模块工具：邮箱、sci-hub网址（sci-hub.se、sci-hub.tw）下载文献、文献管理工具（Endnote、Bibtex等）；
+  数据模块工具：数学软件（Mathematica、MATLAB等）、利用编程语言来实现数值计算（Python、Fortran、C等）、图片绘制（地学GMT、Visio等）；
+  初稿模块工具：LaTeX（Texpad、TeXworks、TeXshop等）、Word（Office、WPS等）；
+  4.末了的话 这篇文章跟之前的《专业必备技能》有点类似，不过模块化的思维更加精简，二者可以结合一起看。</description>
+    </item>
+    
+    <item>
+      <title>深度工作的个人实践计划</title>
+      <link>https://www.xiaoledeng.cn/2020/07/31/my-deep-work-plan/</link>
+      <pubDate>Fri, 31 Jul 2020 13:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/07/31/my-deep-work-plan/</guid>
+      <description>1.优化深度工作的模式 看完《深度工作》这本书，对比发现之前的工作方式还可以继续地提升。
+特别是利用QQ邮箱记事本记录的方式需要改变，往深度工作这个方向来努力，让工作模式变为不被打扰、专注的工作模式。
+2.工作时间内打扰项和其解决措施 对于我个人而言，现有的打扰项包括：即时通讯工具（QQ和微信等）、手机、电子邮箱、QQ邮箱记事本、个人博客+简书+ResearchGate等网页、微信读书、电脑弹窗通知等。
+  即时通讯工具（QQ和微信等）：在工作电脑上卸载即时通讯工具，以提高在固定工作时间内进行深度工作的比例；
+  手机：在固定工作时间内，设置为静音模式；而在休息时间时，进行查阅，这一部分也要注意休息时间该做什么就做什么，不要刷手机，包括微信朋友圈、微信读书等；
+  电子邮箱：固定时间每天1次查阅和回复邮件，时间段暂定为每日下午下班前30分钟前；
+  QQ邮箱记事本：这个功能对于保持长期的文本资料比较有用，不容易因人生各个阶段工作过渡或电脑设备更换而变化，是一个长期保持资料的有益工具。但是，如果每天都刷这个QQ邮箱的网页版，不能达到深度工作的效果，会浪费掉一部分时间和精力。解决方案暂时为：
+ 本地利用markdown文本撰写一些文本资料； 利用Python的邮件自动发送功能进行邮件备份； 能够发表在博客上的，就改为博客发表以备份；不能发表在博客上的，就定期整理到QQ记事本上；    个人博客+简书+ResearchGate等网页、微信读书：避免在固定工作时间内频繁地打开微信读书和浏览器浏览网页；
+  电脑弹窗通知：设置为静默模式，如果强制弹出，则卸载相关软件；另外，把工作的编辑器调为全屏状态，强制进入专注模式；
+  3.末了的话 记得之前写LaTeX式科研方式的关键点：
+ 每天积累一点点 重点是专注内容，而不是工具  好的工具能够创造出良好的深度工作环境，比如，LaTeX式的文档日积月累式的写作方式。
+最后，希望个人在实践深度工作方面能够更上一层楼。</description>
+    </item>
+    
+    <item>
+      <title>Julia</title>
+      <link>https://www.xiaoledeng.cn/2020/07/20/julia-references/</link>
+      <pubDate>Mon, 20 Jul 2020 07:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/07/20/julia-references/</guid>
+      <description>官网  The Julia Programming Language The Julia Language Blog Documents · The Julia Language Learning resources  IDE  Juno  中文  Julia数据科学应用-扎卡赖亚斯·弗格里斯 Julia语言程序设计-魏坤  </description>
+    </item>
+    
+    <item>
+      <title>Hugo博客添加搜索</title>
+      <link>https://www.xiaoledeng.cn/2020/05/28/blog-content-search/</link>
+      <pubDate>Thu, 28 May 2020 08:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/05/28/blog-content-search/</guid>
+      <description>1. 前言 随着博客的数量增多，需要搜索功能，以便及时地搜索到关键信息。这里记录一下设置步骤的关键点。
+2. 设置步骤的关键点  从hogo themes库的monopriv主题文件夹\layouts\partials复制search.html文件。 在主题文件夹\layouts\partials粘贴search.html文件。 在主题文件夹\layouts_default下，修改single.html文件：注意点是修改{{ partial &amp;ldquo;search.html&amp;rdquo; . }}链接到search.html文件。  3. 参考资料  Monopriv | Hugo Themes  </description>
+    </item>
+    
+    <item>
+      <title>微精通&amp;微习惯</title>
+      <link>https://www.xiaoledeng.cn/2020/03/06/micro-mastery-micro-habits/</link>
+      <pubDate>Fri, 06 Mar 2020 16:30:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/03/06/micro-mastery-micro-habits/</guid>
+      <description>  《微精通：轻松到不可能放弃的技能学习手册-罗伯特·特威格尔》
+  《微习惯：简单到不可能失败的自我管理法则-斯蒂芬·盖斯》
+  《精通微习惯（套装共2册）-罗伯特·特威格尔 斯蒂芬·盖斯》
+  </description>
+    </item>
+    
+    <item>
+      <title>《科学学习》—问题索引和思维导图</title>
+      <link>https://www.xiaoledeng.cn/2020/03/04/scientific-learn-problem-index-mindmap/</link>
+      <pubDate>Wed, 04 Mar 2020 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/03/04/scientific-learn-problem-index-mindmap/</guid>
+      <description>书籍请阅读：《科学学习：斯坦福黄金学习法则-丹尼尔 L.施瓦茨等》
+1. 关键内容 Analogy 归纳类比 Alligator 短吻鳄
+从两个或两个以上、外表看似迥异的例子之间找到共通的规律。
+Belonging 归属感 Bear 熊
+归属感让学习者更加投入，减少对行为是否得当、自己是否合群等问题的困扰。
+Contrasting Cases 对比组合 Cow 奶牛
+通过对比两个或多个看似相同的例子来找到其中的细微差别。
+Deliberate Practice精修勤练 Deer 鹿
+针对某个具体的技能或是概念进行专注而努力的练习，从而超越自身的现有水平。
+Elaboration 详细阐述 Elephant 大象
+在新信息与已知事物之间建立明确的关系。详细阐释过的内容在过了一段时间后也更容易被回忆起来。
+Feedback 反馈 Frog 青蛙
+反馈让人们感受到实际结果与理想目标之间的差异，从而帮助调整下一步行动。
+Generation 自我生成 Giraffe &amp;amp; Gorilla 长颈鹿和大猩猩
+将来需要回忆什么，现在就练习回忆什么：利用一部分线索作为提示来生成目标记忆，这种训练可以提升记忆效果，使日后回忆起目标内容变得更加容易。
+Hands on 实践体验 Hippopotamus 河马
+通过运动感知活动来理解抽象的概念。
+Imaginative play 想象玩耍 Iguana 鬣蜥
+想象玩耍是创造与真实世界不一样的故事世界。在充满乐趣的扮演过程中，人们以物喻物，用一种事物代表另一种事物。
+Just-in-time Telling适时讲解 Jaguar 美洲豹
+让学习者先体验问题，再学习知识或提供解决方案。
+Knowledge知识与创新 Kangaroo &amp;amp; Koala 袋鼠和树袋熊
+在学习初期应当着重强调创新的机会，而学习后期则应当专注于效率的提升
+Listening and Sharing倾听与共享 Lion 狮子</description>
+    </item>
+    
+    <item>
+      <title>写作—书单</title>
+      <link>https://www.xiaoledeng.cn/2020/03/02/write-booklist/</link>
+      <pubDate>Mon, 02 Mar 2020 13:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/03/02/write-booklist/</guid>
+      <description>  《写作：打造个人IP，成就企业品牌-陈志红》
+  《学会写作-刘杨》
+  《写作课-叶开》
+  《麦肯锡教我的写作武器：从逻辑思考到文案写作-高杉尚孝》
+  《学会写作：自我进阶的高效方法-粥左罗》
+  《写作的诞生：如何开启你的写作之路-多萝西娅·布兰德》
+  《秋叶特训营 写作7堂课-秋叶》
+  《高效写作：培养终身受用的写作力-刘主编》
+  《写作是最好的自我投资-Spenser》
+  《极速写作-剑飞》
+  《畅销作家写作全技巧-大泽在昌》
+  《精简写作-罗伊·彼得·克拉克》
+  《蔡骏24堂写作课-蔡骏》
+  《写作全技术-斋藤孝》
+  《一本小小的红色写作书-布兰登·罗伊尔》
+  《写出我心：普通人如何通过写作表达自己-娜塔莉·戈德堡》
+  《写作提高一点点-玛丽-凯特·麦基-微信读书》
+  《马上写出好文章：四十余种写作技巧和秘诀一次教给你！-金·兰伯特-微信读书》
+  《完全写作指南：从提笔就怕到什么都能写-劳拉·布朗-微信读书》
+  </description>
+    </item>
+    
+    <item>
+      <title>时间管理—书单</title>
+      <link>https://www.xiaoledeng.cn/2020/02/26/time-management-booklist/</link>
+      <pubDate>Wed, 26 Feb 2020 15:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/26/time-management-booklist/</guid>
+      <description>1. 儿童时间管理 儿童时间管理手册（套装共4册）-李飞 钟思嘉
+儿童时间管理效能手册：30天让孩子的学习更主动-王宏 钟思嘉
+儿童时间管理训练手册-30天让孩子的学习更高效（升级版）-钟思嘉 王宏 李飞 雨露
+儿童时间管理亲子手册：30天让孩子的学习更快乐-李飞 钟思嘉
+5步儿童时间管理法：让孩子彻底告别磨蹭拖拉-刘乙了
+儿童时间管理训练手册-安子
+儿童时间管理全书-甘开全</description>
+    </item>
+    
+    <item>
+      <title>21天养成习惯</title>
+      <link>https://www.xiaoledeng.cn/2020/02/24/21-days-to-develop-a-habit/</link>
+      <pubDate>Mon, 24 Feb 2020 12:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/24/21-days-to-develop-a-habit/</guid>
+      <description>1. 简介 1960年，麦克斯威尔·马尔茨在其《心理控制术》一书中就表达了他有关行为改变的想法：
+ 对于截肢患者来说，手术后的前21天中，他们往往不适应身体已经失去一部分，经常仍然能“感觉到”它的存在。 “这些常见的现象显示一个旧‘幻象’的消失及新形象的形成大概最少需要21天。” 而21天后，他们就不再无意识地要去“使用”它了，已经习惯了截肢后的状态。  马尔茨博士发表了他的这个临床发现，人们渐渐地认同了他的观点。
+2. 形成习惯的四个阶段  第一阶段 反弹期（1～7天左右） 第二阶段 不安定期（8～14天左右） 第三阶段 倦怠期（15～21天左右） 第四阶段 稳定期（21～90天左右）  2.1 反弹期（1～7天左右） 这一阶段你需要十分刻意地提醒自己，否则一不留意，你的坏情绪、坏毛病就会浮出水面，让你再次回到从前。在提醒自己、要求自己的同时，也许会感到很不自然、很不舒服，这种不自然、不舒服是正常的，因为你正在改变。或许你此时也在考虑放弃，因为有50%的人会在这个阶段选择放弃。
+此阶段的特征是“刻意，不自然”。
+本阶段重点：坚持做下去，完成比完美更重要。
+2.2 不安定期（8～14天左右） 这一阶段会受到自身或者外界不可控因素的干扰，极易放弃坚持，或者三天打鱼两天晒网。
+本阶段重点：建立习惯的开关，利用好小小的仪式感和具有弹性的计划很重要；还可以给自己设定奖励机制，帮助自己更好地面对挑战。
+此阶段的特征是“刻意，自然”。
+2.3 倦怠期（15～21天左右） 在重复的改变中，你会产生倦怠的情绪，心想：今天偷一天懒，不做也没有什么关系。此时你可以尝试做出一些改变，让自己获得新的动力。你可以借助思维导图来学习，画出你的旅行计划，或者画出一部电影情节的思维导图，都是很棒的尝试。
+此阶段的特征也是“刻意，自然”。
+2.4 稳定期（21～90天左右） 此阶段的特征是“不经意，自然”，其实这就是习惯。
+一旦跨入此阶段，一个人已经完成了自我改造，这项习惯就已经成为他生命中的一个有机组成部分，它会自然而然地不停地为人们“效劳”。
+3. 总结 行为心理学的研究表明，至少21天的重复会形成习惯；90天的重复会形成稳定的习惯。也就是说，同一个动作或想法，重复21天或者重复验证21次，就会变成习惯性的行为和想法。所以，一个观念如果被自己验证了21次以上，它一定已经成为你的信念了。
+中国青少年研究中心副主任、著名青少年研究专家孙云晓研究发现，培养良好习惯一般需要六个步骤：
+ 认识习惯的重要 制定行为规范 榜样教育 持之以恒的训练 及时评估引导 养成良好的集体风气  其中，最重要的一步就是：持之以恒的训练。可见，好习惯都是训练出来的。
+事实上，培养一个新习惯其实远远不止要21天_生活常识_水葫芦健康网指出：
+ 平均而言，一个新行为自动形成需要2个月以上的时间，确切地数据显示需要66天。 需要适当地设定期望，因为事实上可能需要2个月到8个月的时间才能在生活中建立一种新的行为，而不是21天。  4. 参考资料   21天学会思维导图-尹丽芳-微信读书
+  不吼不叫，穷养男孩的100个细节-宿文渊编著-微信读书
+  戒掉吧!拖延症：21天培养良好的新习惯-邓涵兮-微信读书
+  掌控习惯-詹姆斯·克利尔-微信读书</description>
+    </item>
+    
+    <item>
+      <title>思维导图—书单</title>
+      <link>https://www.xiaoledeng.cn/2020/02/21/mind-map-booklist/</link>
+      <pubDate>Fri, 21 Feb 2020 15:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/21/mind-map-booklist/</guid>
+      <description>1. 五星 (★★★★★)   《思维导图完整手册-东尼·博赞》2018：东尼·博赞是思维导图的原创者，推荐首次阅读。
+  《看完就用的思维导图-刘艳》2019：作者是思维导图原创者东尼·博赞所认可的，有非常详实的实践。
+  《21天学会思维导图-尹丽芳》2019：作者是文科生，手绘能力强，而且是思维导图原创者东尼·博赞所认可的。
+  《思维导图高效记忆古诗词-张维 谢庆平》2019：思维导图适合用来记忆小学的75首诗词。
+  《思维导图宝典：好看又好用的导图大全集-吴帝德》2017：作者的话——我坚信，这应该是一本分量十足的关于思维导图的书，我以自己的亲身经历，将能设想到的大部分构思都通过案例的方式来展现给各位读者，通过文字讲述了我画每一幅思维导图的思考过程，我想，这应该是市面上相关书籍里独一无二的。
+  2. 三星 (★★★)   胡雅茹
+ 《我的第一本思维导图入门书》2014 《思维导图：创意高手的超强思考工具》2016 《思维导图阅读法》2016 《我的第一本思维导图入门书（精装版）》2017：比较适合学生来实践。 《思维导图笔记整理术》2018：比较不错的笔记整理入门和实践。    《零基础入门学习思维导图：提升个人效能-温大阿钱》2019：一个大学辅导员的零基础入门思维导图的指导书。另外，Xmind有详细介绍。
+  《哈佛气质修炼手册（思维导图实战版）-聂凌风》2014：关于独立、自信、大气、智慧、细腻、沉稳、负责、坚强、乐观和淡定十方面的具体训练建议，思维导图凝练的不错！
+  孙易新
+ 《零基础思维导图法》2017 《学一次用一辈子的思维导图》2018 《思维导图应用宝典》2015 《思维导图：快速提升写作力等》2017 《小学生思维导图作文课》2019 《思维导图：提升你的职场核心竞争力》2017    《词汇：新日语能力考试思维导图训练法-管静 吴帝德》2018：日语词汇进行思维导图记忆。
+  《思维导图：职场高效能人士实用工具-贺菊中》2018
+  《别说你懂思维导图-赵国庆》2015：理论比较强，每一章都有参考文献。
+  《七天学会思维导图-石伟华》2019：适合引导小学生动手画思维导图。
+  3. 一星 (★)   白虹：用imindmap绘制的思维导图类大全。</description>
+    </item>
+    
+    <item>
+      <title>思维导图具体步骤</title>
+      <link>https://www.xiaoledeng.cn/2020/02/21/mind-map-complete-manual/</link>
+      <pubDate>Fri, 21 Feb 2020 14:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/21/mind-map-complete-manual/</guid>
+      <description>1. “三招七步”构图法 内容来自于：《思维导图完整手册-东尼·博赞》。
+1.1 入门准备  一大张白纸 一些彩色水笔或铅笔 大脑 开放的思维 想象力 一个想要探究的主题  1.2 合格思维导图的基本特征 （1）一幅中心图，代表你要探究的中心主题。例如，要用思维导图计划一个项目，你可以在图的中心画一个文件夹的图像。画思维导图并不需要专业的绘画技巧。
+（2）由中心图延伸出的若干主干。这些主干分别代表与中心主题相关的一级主题，要用不同的颜色呈现。进而由主干延伸出下一级分支——如果你喜欢，可以将它们叫作枝干，依次为二级、三级分支，代表相关联的二级、三级主题。
+（3）每条分支上有一幅关键图或一个关键词。
+1.3 七步构图法   第一步：将纸横向放在你面前。随后用至少三种不同的颜色在纸的正中心画一幅中心图，代表你要思考的主题，如示例中的主题是“莎士比亚的戏剧”。如果你不想画这位大诗人的头像，可以用一支羽毛笔或其他简单的图像来代替。中心图将会激发你的想象力并触发联想。如果你想用一个词作为中心，就要把它与图像结合起来，并呈现出可多向放射的状态。
+  第二步：选一种颜色，从中心图向外画出一条粗线条的主干，就像树的主枝。你可以从中心图向外画出两条并行的细线，并让它们在末端相接。线条要自然弯曲，因为这样会具有视觉冲击力，更能刺激大脑的兴奋点，使你更容易记住主干上的信息。接着在两条细线之间着色。在你思维导图的分级中，主干的粗细意味着关联性的强弱。
+  第三步：在主干上方标注一个关键词。如示例中的思维导图是关于莎士比亚的戏剧，你可以在一级主干上标注“喜剧”“悲剧”“历史剧”等。或者，你可以选择画一个喜剧面具、一把匕首，抑或是一顶皇冠来代替文字标注。
+  第四步：从主干延伸出二级分支，再从二级分支延伸出三级分支。在所有分支上用关键词、图像或者词与图结合的方式进行标注。将每个标记标注在自己的分支上。没必要着急填写，先在一些分支上保留空白，这样会自然而然地激励你的大脑去填充它们。
+  第五步：选另一种颜色，围绕中心图画下一条主干。（许多初学者感觉围绕中心按顺时针方向画最容易，其实用最适合你的方式就好。）像之前的步骤一样，从这条主干画出二级、三级分支并标注它们。接下来，继续增加主干数量到五六条即可。
+  第六步：现在有了主干，你就可以围绕思维导图在分支间自由地跳跃，填补空白，并随着新想法和关联的产生增加新的子分支了。
+  第七步：如果你愿意，可以在主干之间画出箭头、曲线或连接线来强调它们之间的联系。
+  2. 理解规律，遵循规律 (10个规律) 内容来自于：《思维导图完整手册-东尼·博赞》。
+  一定要用一张空白纸，横向放置。确保纸张足够大，让你可以在上面画二级、三级分支。
+  至少用三种颜色在纸的中心画图像，以此代表你探究的主题。
+  整幅导图中要用图像、符号、代码和多维方式呈现。
+  选择关键词，用大写字母书写。
+  每个词或每幅图要写（画）在各自的分支上，保持独立。
+  主干从中心图如流水般向外延伸。靠近中心图的分支画得越粗越好，靠外的分支画得越细越好。
+  分支的长度要与分支上的词语或图像的长度一样。
+  颜色的使用要贯穿导图，画主干要有你自己的颜色代码。</description>
+    </item>
+    
+    <item>
+      <title>麦肯锡系列—书单</title>
+      <link>https://www.xiaoledeng.cn/2020/02/20/mckinsey-series-booklist/</link>
+      <pubDate>Thu, 20 Feb 2020 18:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/20/mckinsey-series-booklist/</guid>
+      <description>1. 管理   《麦肯锡管理经典（麦肯锡方法、麦肯锡工具）-拉塞尔 弗里嘉》
+  《麦肯锡的团队管理-孙朦编著》
+  《麦肯锡与贝恩的团队管理智慧-维克多·普林斯 迈克·菲廖洛》
+  《麦肯锡商务技巧：管理者创造佳绩的40个习惯-赤羽雄二》
+  《麦肯锡情绪管理课： 学会正向思考，告别职场焦虑-高杉尚孝》
+  《麦肯锡时间分配法-李志洪》
+  2. 思维、逻辑   《金字塔原理（麦肯锡40年经典培训教材）-芭芭拉·明托》
+  《麦肯锡教我的写作武器：从逻辑思考到文案写作-高杉尚孝》
+  《麦肯锡问题分析与解决技巧-高杉尚孝》
+  《麦肯锡问题分析与解决技巧·精装版-高杉尚孝》
+  《麦肯锡笔记思考法-大岛祥誉》
+  《麦肯锡精英的思考习惯-高杉尚孝》
+  《麦肯锡逻辑思考力-西村克己》
+  《麦肯锡教我的逻辑思维-高杉尚伊》
+  《麦肯锡教我的思考武器：从逻辑思考到真正解决问题-安宅和人》
+  《麦肯锡入职培训第一课：让职场新人一生受用的逻辑思考力-大岛祥誉》
+  《麦肯锡战略思考力：50个真实战略问题，从容应对各种状况-西村克己》
+  《麦肯锡12堂工作思维课-乔安娜·巴斯》
+  《麦肯锡问题思考力-西村克己》
+  《麦肯锡效率手册-伊贺泰代》
+  3.</description>
+    </item>
+    
+    <item>
+      <title>自我调节—书单</title>
+      <link>https://www.xiaoledeng.cn/2020/02/19/self-regulation-booklist/</link>
+      <pubDate>Wed, 19 Feb 2020 21:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/19/self-regulation-booklist/</guid>
+      <description>1. 调节   《心理学与心理调节术（畅销5版）》-姚尧
+  《心理学与心理调节》-王利利
+  《心理调节速查速用大全集（案例实用版）》-鲁芳
+  《心理调节学》-叶舟
+  《无师自通心理调节》-磨剑
+  《三天学会心理调节》-陈国强
+  《别让坏情绪，赶走好运气：超图解心情调节术》-和田秀树
+  《我不是坏孩子，我只是压力大：帮助孩子学会调节压力、管理情绪》-斯图尔特·尚卡尔 特雷莎·巴克尔
+  《年轻人必知的心理调节书》-王志刚
+  2. 调节的其他方面  《应对焦虑：九种消除焦虑、恐惧和忧虑的简单方法（原书第2版）》-埃德蒙·伯恩 洛娜·加拉诺  </description>
+    </item>
+    
+    <item>
+      <title>学习力—书单</title>
+      <link>https://www.xiaoledeng.cn/2020/02/19/learning-ability-booklist/</link>
+      <pubDate>Wed, 19 Feb 2020 20:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/19/learning-ability-booklist/</guid>
+      <description>1. 儿童  英童书坊编纂中心主编：  《儿童学习力培养大书：繁忙的街道》 《儿童学习力培养大书：我爱大自然》 《儿童学习力培养大书：节日真快乐》   《玩出学习力：238个小游戏让孩子对学习上瘾》-耿晓宁 《10天塑造孩子学习力：如何让孩子爱上学习、学得更好》-科恩主编 《如何培养孩子的学习力》-张小雪 玩出学习力系列：  《玩出学习力：提升孩子注意力的50个超级训练》 《玩出学习力：提升孩子自制力的50个超级训练》 《玩出学习力：提升孩子表达力的50个超级训练》 《玩出学习力：提升孩子记忆力的50个超级训练》 《玩出学习力：提升孩子想象力的50个超级训练》 《玩出学习力：提升孩子逻辑力的50个超级训练》    2. 青少年   《杰出青少年的学习力训练》-吴光远编著
+  《学习力：我是这样考上清华的》-陈陆淼
+  《学霸养成记：开启学习力的10把金钥匙》-林宗霖
+  3. 职场   《数字学习力：网络时代伴学工具使用手册》-杨杰 梁晓睿
+  《学习力：颠覆职场学习的高效方法》-王世民 缪志聪
+  《学习力就是竞争力》-郑玉宝
+  《提高你的学习力（《哈佛商业评论》增刊）-哈佛商业评论》
+  </description>
+    </item>
+    
+    <item>
+      <title>压力管理—书单</title>
+      <link>https://www.xiaoledeng.cn/2020/02/17/stress-management-booklist/</link>
+      <pubDate>Mon, 17 Feb 2020 12:40:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/17/stress-management-booklist/</guid>
+      <description>1. 压力管理  《压力管理实务第2版》-李焰 《情商与压力管理》-周矩  2. 抗压  《高效抗压行动法》-亨德利·韦辛格等 《抗压力：逆境重生法则》-久世浩司 《如何成为一个抗压的人》-道格·亨施 《抗压有术：从逆境与挫折中恢复的心理学技巧（谷臻小简·AI导读版）》-格伦·希尔奥尔  3. 压力  《挑战：压力如何塑造我们》-伊恩·罗伯森 《自控力：和压力做朋友（斯坦福大学最实用的心理学课程）（精装）》-凯利·麦格尼格尔 《自控力（经典套装三册）》-凯利·麦格尼格尔 《我不是坏孩子，我只是压力大：帮助孩子学会调节压力、管理情绪》-斯图尔特·尚卡尔 特雷莎·巴克尔 《共情力：你压力大是因为没有共情能力》-亚瑟·乔拉米卡利 《克服压力》-李·布萝珊 吉莉安·托德 《超级解压：快乐一生的31条压力解码》-紫合 《跟压力做朋友》-荣丹 《跟我学减轻压力》-吕叔春  4. 认识压力  《压力是成功的跳板》-博恩.崔西  </description>
+    </item>
+    
+    <item>
+      <title>阅读—书单</title>
+      <link>https://www.xiaoledeng.cn/2020/02/16/reading-booklist/</link>
+      <pubDate>Sun, 16 Feb 2020 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/16/reading-booklist/</guid>
+      <description>工欲善其事，必先利其器。
+1. 如何阅读   《如何阅读一本书》-莫提默·艾德勒 查尔斯·范多伦，经典理论的读书方法。
+  《如何阅读一本书》-轻阅读编写组，是经典书《如何阅读一本书》的升级版。
+  《洋葱阅读法》-彭小六，提供具体的可操作的步骤。
+  《思维导图阅读法》-胡雅茹，利用思维导图来读书的具体步骤，并配有详细的示例。
+  《读懂一本书：樊登读书法》-樊登，阐述了如何把一本书讲出来，有思维导图复盘。
+  《这样读书就够了》-赵周，拆书法——学以致用的具体实践。
+  《如何有效阅读一本书：超实用笔记读书法》-奥野宣之，一个日本学者关于笔记读书法的具体实践。
+  2. 快速阅读   《麦肯锡精英高效阅读法》-赤羽雄二
+  《超级快速阅读》-克里斯蒂安·格吕宁
+  《快速阅读》-克里斯蒂安·格吕宁
+  《快速阅读：如何训练大脑百倍速读书》-黄伟
+  《快速阅读力训练手册》-沃尔特·皮特金
+  《如何有效阅读》-藤原和博
+  《高效阅读》-渡边康弘
+  《如何高效阅读（纪念版）》-彼得·孔普
+  《如何高效阅读》-孔普
+  《快速阅读训练法（畅销升级版）》-刘志华
+  《快速阅读训练法》-刘志华
+  《快速阅读术》-印南敦史
+  《快速阅读：速读是人生最好的投资》-龚华钢
+  3.</description>
+    </item>
+    
+    <item>
+      <title>思考的5W2H法</title>
+      <link>https://www.xiaoledeng.cn/2020/02/13/think-5w2h/</link>
+      <pubDate>Thu, 13 Feb 2020 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/13/think-5w2h/</guid>
+      <description>1. 简介 5W2H分析法又叫七何分析法，是二战中美国陆军兵器修理部首创。简单、方便，易于理解、使用，富有启发意义，广泛用于企业管理和技术活动，对于决策和执行性的活动措施也非常有帮助，也有助于弥补考虑问题的疏漏。
+2. 具体内容   What——是什么？做什么事情？目的是什么？
+  Why——为什么？为什么要这么做？理由何在？原因是什么？
+  Where——何处？在哪里做？从哪里入手？
+  When——何时？什么时间完成？什么时机最适宜？
+  Who——谁？由谁来承担？谁来完成？谁负责？与谁一起做？谁来协助？
+  How——怎么做？如何提高效率？如何实施？方法、步骤怎样？
+  How Much——多少？做到什么程度？达到什么样的数量、质量、效率、成本标准？
+  3. 应用范围 “5W2H”法，可以应用在生活的方方面面，关键是思维或思考的模式：
+ 父母可以活用在给孩子布置任务上。 管理者在决策和方案制定上。 &amp;hellip;  运用5W2H可以准确的界定，清晰的表达问题，提高工作效率，有助于思路的条理性，杜绝盲目性。
+4. 延伸阅读  5W2H分析法 - MBA智库百科  </description>
+    </item>
+    
+    <item>
+      <title>制定目标的SMART原则</title>
+      <link>https://www.xiaoledeng.cn/2020/02/07/smart-five-principles/</link>
+      <pubDate>Fri, 07 Feb 2020 17:58:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/07/smart-five-principles/</guid>
+      <description>1. 简介 SMART原则是首字母缩写词，是目标管理中的一种方法，其中目标可包括：项目管理、员工绩效管理和个人发展等。
+2. 细节   明确性（Specific）——明确描述你的目标
+  可衡量性（Measurable）——写下你打算如何跟踪过程，向目标挺进
+  可操作性（Actionable）——写下你为达到目标需采取的具体步骤
+  现实性（Realistic）——写下你为实现目标所需的资源与支持
+  时限性（Time-Bound）——写下实现目标的最终日期
+  3. 延伸阅读 1981年11月发行的《管理评论(Management Review)》包含了乔治·T·多兰（George T. Doran）发表的一篇论文《There&amp;rsquo;s a S.M.A.R.T. way to write management&amp;rsquo;s goals and objectives》，讨论了目标的重要性以及设定目标的难度。
+目标管理的任务是有效地进行成员的组织与目标的制定和控制以达到更好的工作绩效，由管理学大师彼得·德鲁克于1954年首先提出。
+ SMART原则 - 维基百科，自由的百科全书 SMART原則 - MBA智库百科  </description>
+    </item>
+    
+    <item>
+      <title>记武汉封城的日子(16)—GMT的特殊字符</title>
+      <link>https://www.xiaoledeng.cn/2020/02/07/wuhan-life-16-gmt-special-characters/</link>
+      <pubDate>Fri, 07 Feb 2020 13:13:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/07/wuhan-life-16-gmt-special-characters/</guid>
+      <description>说明 GMT作图时，在转义序列 — GMT中文手册中，通过@~ 来打开/关闭Symbol（12号）字体。比如：@~\131@~ 是大写的Ψ。
+具体的12号字体输入的编码数字参考特殊字符 — GMT中文手册中的Symbol表。
+参考资料  特殊字符 — GMT中文手册 转义序列 — GMT中文手册  </description>
+    </item>
+    
+    <item>
+      <title>记武汉封城的日子(14)—如何分辨网络信息的真伪</title>
+      <link>https://www.xiaoledeng.cn/2020/02/05/wuhan-life-14-distinguish/</link>
+      <pubDate>Wed, 05 Feb 2020 17:46:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/05/wuhan-life-14-distinguish/</guid>
+      <description>1. 前言 武汉封城已经14天，武汉解封的具体时间还没有明确。
+目前，网络信息繁杂不齐，各种信息蜂拥而至，在此过程中个人应该如何分辨网络信息的真伪呢？
+2. 一点建议  如果是知识方面的信息，可以参考：维基百科等。 如果是国际方面的报道，可以溯源到英文信息的原页面。 如果引用了科学期刊文章，可以溯源到原始文章，查阅摘要，必要时可以全文下载阅读。 如果标题特别夸张或夸大，要慎重对待文稿信息，尽量保持理性、客观和严谨的态度。  3.一二三四手知识 一手知识 知识的源头是站在人类认知边缘，研究、思考和验证的人。他们的一些新鲜的思考，在脑子里、笔记本上，还未进行详细加工，但是新鲜热辣。一些知识经过系统化，成为专业期刊上发表的论文，或者圈内人互相讨论的内容。
+ 一手研究论文，行业的学术期刊，行业最新数据报告； 行业大牛的最新沟通和思考，通过谈话获得。  二手知识 二手知识含金量很高，忠实转述，但是有清晰的论据和出处。
+ 名校的教科书，MOOC（慕课）里推荐的一手材料，维基百科； 中立第三方的行业调查报告； 讲述底层逻辑、思考质量比较高、略微难懂的书和文章，比如《国富论》、《穷查理宝典》、《决策与判断》等； 各行业领军人物、行业大牛推荐的书单、豆列，以及在自己公众号发的文章。  三手知识 三手知识是畅销书，这些文字已经被改成公众可以理解、方便传播的文字，但是因为大众的认知能力较低，所以加入了大量的案例、故事以及不精确的概念。
+四手知识 四手知识是你常看到的：根据这些畅销书和理论，大部分人写了很多基于个人体验的鸡汤，加入了太多个人故事（比如，《我是如何一个小时挣到200万的》）或者情绪因素（比如，《看懂这个不转就不是中国人》）。
+讲一个观点，灌你无数“鸡精”。大部分公众号、头条都属于此类。
+所以在知识爆炸的年代，最好的方式是辨别一二三四手信息，走向知识的源头，并与那些人站在一起。总有一天，你也会成为创造知识的人。
+参考  古典 《跃迁》  修改历史  2020.02.05 撰写此文； 2020.08.04 添加古典《跃迁》的“一二三四手知识”；  </description>
+    </item>
+    
+    <item>
+      <title>记武汉封城的日子(12)—GMT安装版本问题</title>
+      <link>https://www.xiaoledeng.cn/2020/02/03/wuhan-life-12-gmt-version/</link>
+      <pubDate>Mon, 03 Feb 2020 17:33:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/03/wuhan-life-12-gmt-version/</guid>
+      <description>各版本问题 GMT — The Generic Mapping Tools软件，是地球科学进行科研的画图必备软件。
+GMT至今已有几个大的版本：4、5和6。在进行版本切换的时候，会出现兼容的问题。Index of /gmt/bin/提供了4、5、6版本的安装文件。
+ gmt-4.5.18-pdf-win32.exe 30-Jun-2018 12:31 gmt-4.5.18-win32.exe 30-Jun-2018 12:31 gmt-4.5.18-win64.exe 30-Jun-2018 12:32 gmt-5.4.5-darwin-x86_64.dmg 05-Jan-2019 02:05 gmt-5.4.5-win32.exe 05-Jan-2019 02:05 gmt-5.4.5-win64.exe 05-Jan-2019 02:05 gmt-6.0.0-darwin-x86_64.dmg 01-Nov-2019 23:54 gmt-6.0.0-win32.exe 01-Nov-2019 23:54 gmt-6.0.0-win64.exe 01-Nov-2019 23:54 gmt-6.0.0rc5-darwin-x86_64.dmg 24-Oct-2019 03:14 gmt-6.0.0rc5-win32.exe 24-Oct-2019 04:07 gmt-6.0.0rc5-win64.exe 24-Oct-2019 03:15 gshhg-2.3.7-win32.exe 31-Aug-2018 00:51 mex-gmt-5.4.5-darwin-x84_64.tbz 05-Jan-2019 02:28  参考资料 本节列出网络上可免费获取的GMT学习资源。各个学习资源的质量以及维护程度不同， 建议用户以英文官方文档以及本中文手册为主，其余学习资源仅供参考。
+入门教程
+ 《GMT中文手册》中的入门教程 GMT官方入门教程 《地学GMT绘图》系列视频教程 （作者:@liuzhumei）  《GMT5入门教程》 《GMT6新特性》   GMT 教學手冊 作者: 鄭懷傑 (适用于GMT5)  参考手册</description>
+    </item>
+    
+    <item>
+      <title>记武汉封城的日子(11)—Hugo博客的侧边栏目录</title>
+      <link>https://www.xiaoledeng.cn/2020/02/02/wuhan-life-11-blog-content-toc/</link>
+      <pubDate>Sun, 02 Feb 2020 18:07:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/02/02/wuhan-life-11-blog-content-toc/</guid>
+      <description>1. 前言 一篇博客的内容多了后，需要目录来厘清逻辑关系。这里记录一下设置步骤的关键点。
+2. 设置步骤的关键点  在主题文件夹\layouts\partials新建并编写toc.html文件。 在主题文件夹\layouts_default下，修改single.html文件：注意点是修改{{ partial &amp;ldquo;toc.html&amp;rdquo; . }}链接到第一步修改的toc.html文件。 调整一些细节，比如：处理手机兼容性的问题。在static\css\main.css中加入相关代码。  3. 参考资料  Hugo博客侧边导航栏 Hugo添加文章目录toc Hugo的LeaveIt主题优化记录一-修复错位，添加toc  </description>
+    </item>
+    
+    <item>
+      <title>有效沟通的7个C</title>
+      <link>https://www.xiaoledeng.cn/2020/01/19/7-cs-of-communication/</link>
+      <pubDate>Sun, 19 Jan 2020 20:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/01/19/7-cs-of-communication/</guid>
+      <description>人际沟通技巧的研究机构Mind Tools总结出，在日常的人际沟通中，无论是会面、电话、邮件、报告或是发言，都需要做到7个C:
+1. 清晰 (Clear) 无论是说话还是书写，清晰传达出你的信息和目标是第一步，无论是从口头语言上，还是身体语言上。在开口之前想清楚：你为什么要和对方沟通？如果连你自己都不确定，对方就更难确定你的意图了。
+2. 简洁 (Concise) 如果你想让对方更明白你在说什么，就去除不必要的信息。不要绕来绕去，能用3个句子表达的，就不要用6个句子来表达。
+3. 具体 (Concrete) 描述一些必要的细节和事实(少量、有重点)，让对方更能够理解你所描述的事情。
+4. 准确 (Correct) 这里的准确，指的是能够让对方准确地理解。你所使用的词汇、语言要确保准确无误，你的描述要使对方在理解时不出现偏差。
+5. 连贯 (Coherent) 你的表述需要具有内在的逻辑性。你所说的所有要点都要能够连接起来，服务于你所阐述的主题。
+6.完备 (Complete) 如果你的表述是完整的，对方就不会漏掉你的信息或是指令。比如，当你阐述了一件事情的背景后，还需要告诉对方去做什么，以及Ta做这件事需要具备什么条件、做什么准备。
+7.谦恭 (Courteous) 礼貌而谦恭的沟通不仅仅在态度上是友好的，而且是开放、真诚的，不存在暗藏的否认和侮辱，也没有被动型攻击。当你对对方进行回应时，已经对Ta的意见进行了充分尊重和考虑。</description>
+    </item>
+    
+    <item>
+      <title>解决问题的5步</title>
+      <link>https://www.xiaoledeng.cn/2020/01/15/problem-solving/</link>
+      <pubDate>Wed, 15 Jan 2020 13:10:30 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/01/15/problem-solving/</guid>
+      <description>1. 前言 “解决问题（Problem Solving）”的定义包含两个部分：问题和解决方案。
+ 问题：一种从当前状态达到确定目标的愿望状态 解决方案：以成功达到设定目标的方式管理问题  解决方案可能不能完全解决问题，但解决方案确实满足了为解决问题而制定的目标。简单来说，可能不能完全解决问题（结束世界饥饿），但可以有一个帮助它的目标（将饥饿儿童的数量减少10%）。
+2. 解决问题的5步 一般而言，以下的5步骤中，不是线性的，而是在实践的过程中交叉进行，甚至是循环的。
+2.1.定义问题（Define/ Identify the Problem） 问题是什么？ 除了明确问题所在之外，定义问题还要为实现的内容建立了目标。
+输入：出现问题或可以改进的地方。
+输出：对问题的明确定义及其解决的目标。
+2.2 头脑风暴（Brainstorm Ideas/ Explore information and create ideas） 解决问题的方法是哪些？目标是创建可供选择的可能解决方案的列表。问题越难，你需要的解决方案就越多。
+输入：一个目标，问题的研究与可能的解决方案。
+输出：可能解决方案的选择列表。
+2.3 决定解决方案（Decide on a Solution/ Select the best idea） 要做什么？理想的解决方案是有效的（它将满足目标），经济的（负担得起的），并且有最少的副作用（实施的有限后果）。
+输入：可能解决方案的选择列表，决策标准。
+输出：决定实现什么解决方案。
+2.4 实施解决方案（Implement the Solution/ Build and test the idea） 做什么？解决方案的实现需要计划和执行，一般而言是迭代的，重点应该放在测试和反馈的短周期上，而不是试图第一次就完美。
+输入：决定，规划，勤劳工作。
+输出：问题的解决方案。
+2.5 回顾结果（Review/ Evaluate the Results） 做了什么？为了知道你已经成功地解决问题，回顾一下什么是有效的，什么是无效的以及这个解决方案产生了什么影响，这是很重要的。这还可以帮助你提高长期解决问题的技能，避免你重新发明轮子。
+输入：决议，实施结果。
+输出：见解，案例研究，简历上的要点。
+3. 末了的话 做任何事情，本质上都是解决问题（Problem Solving），以上的5个步骤其实从一个人的学习开始，就在不断地训练。
+参考  The 5 Steps of Problem Solving  </description>
+    </item>
+    
+    <item>
+      <title>个性化方案设计的7点原则</title>
+      <link>https://www.xiaoledeng.cn/2020/01/10/individual-solution-design/</link>
+      <pubDate>Fri, 10 Jan 2020 17:39:30 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/01/10/individual-solution-design/</guid>
+      <description> 服务的态度：需要采取中性、客观的态度，尊重客户，以服务客户； 整合资源：明确客户已有的优质资源，对客户已有资源进行调研和评估，充分欣赏客户已有的资源，并挖掘出资源的亮点和优势； 扬长补短：发挥客户已有的优势，并且提升客户的不足； 明白需求：听取客户反馈的内容后，清晰明白客户的内在需求是什么，哪些是客户最关心的； 寻找突破点：找出客户个性化的突破点，也即精练出问题的关键点（1 ~ 3点即可），针对性地突破，突破之后带出巨大的效果； 可执行性：给出的方案一定是切实可行的，而且需要持续的跟踪来推动方案的执行； 给出具体选择：在执行的建议方面，尽量给出具体的选择，让客户去选择，而且给出的选择让客户舒适，容易接受，表达合适，选择也不用太多，注意选择的“可行性”。  </description>
+    </item>
+    
+    <item>
+      <title>费曼技巧 Feynman Technique</title>
+      <link>https://www.xiaoledeng.cn/2020/01/10/feynman-technique/</link>
+      <pubDate>Fri, 10 Jan 2020 13:45:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/01/10/feynman-technique/</guid>
+      <description>1. 前言  费曼学习法（又称：费曼技巧 Feynman Technique）的灵感源于诺贝尔物理奖获得者理查德•费曼（Richard Feynman），运用费曼技巧，你只需花上20分钟就能深入理解知识点,而且记忆深刻，难以遗忘。知识有两种类型，我们绝大多数人关注的都是错误的那类。第一类知识注重了解某个事物的名称。第二类知识注重了解某件事物。这可不是一回事儿。著名的诺贝尔物理学家理查德·费曼（Richard Feynman）能够理解这二者间的差别，这也是他成功最重要的原因之一。事实上，他创造了一种学习方法，确保他会比别人对事物了解的更透彻。——来源 费曼学习法 - MBA智库百科
+ 2. 具体步骤（4步）  Choose a Concept: 在空白纸的顶部写下概念的名称； Teach a Child: 使用简单的语言在空白纸页面上写下概念的解释。假装自己正在向其他人（例如，新学生）教书，这应该突出显示自己了解的内容，但更重要的是查明自己不太了解的内容； Identify Gaps: 查看自己不知道的内容，返回原始检索资料，重新阅读并重新学习； Review &amp;amp; Simplify: 如果自己使用的语言过于冗长或令人困惑（或者只是对源材料进行了措辞），请重试以便过滤内容。简化自己的语言，并在可能的情况下使用简单的类比，而后重复步骤2。  3. 两种知识：知识的名字和知识的概念内涵 费曼技术是一种简单而强大的技术，可确保自学者可以快速学习并保留新的概念和信息。因为知识一般分为两种：
+ 第一种类型的知识集中在知道某物的名字——它叫什么。 第二种专注于真正了解某件事，也就是理解某件事。  4. 教是最好的学习方式 “The person who says he knows what he thinks but cannot express it usually does not know what he thinks.” — Mortimer Adler
+根据学习金字塔原则（The Learning Pyramid or The Cone of Learning）：教别人(Teach Others)的学习内容平均留存率为90%，一般包括：说给别人听、教授给他人、输出自己的知识和见解。学习金字塔原则的表格为：</description>
+    </item>
+    
+    <item>
+      <title>Mac设置Git上传本地项目到github</title>
+      <link>https://www.xiaoledeng.cn/2020/01/09/mac-github/</link>
+      <pubDate>Thu, 09 Jan 2020 13:10:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/01/09/mac-github/</guid>
+      <description>初始化当前目录：git init
+  生成本地ssh (邮箱替换成你登录github的邮箱)：ssh-keygen -t rsa -C &amp;ldquo;youremail@youremail.com&amp;rdquo;
+  将 ssh 代码复制到剪贴板：pbcopy &amp;lt; ~/.ssh/id_rsa.pub
+  配置github的ssh key：Github-settings-配置 ssh-new SSH key
+  打开终端，验证一下是否添加ssh成功了: ssh -T git@github.com
+  设置github 登录名以及登陆邮箱：
+​	git config &amp;ndash;global user.name &amp;ldquo;your name&amp;rdquo;
+​	git config &amp;ndash;global user.email &amp;ldquo;youremail@youremail.com&amp;rdquo;
+  上传本地项目：
+​	git init ​	git add -A ​	git commit -m &amp;ldquo;good&amp;rdquo;
+  推送到github的xiaoledeng.github.io 只能使用 master分支
+​	git push -f git@github.</description>
+    </item>
+    
+    <item>
+      <title>LaTeX入门汇总</title>
+      <link>https://www.xiaoledeng.cn/2019/09/25/latex-introduction/</link>
+      <pubDate>Wed, 25 Sep 2019 22:18:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2019/09/25/latex-introduction/</guid>
+      <description>1. 引言 从2017年01月创建简书的LaTeX文集到如今（2019年09月），大约已有两年多的时间，本页面汇集了这期间个人学习LaTeX科研写作方面的经验。这些经验也包含在LaTeX科研写作-专题里，希望对读者在LaTeX方面的学习有所帮助。
+2. 学习LaTeX必读  学习LaTeX的一点想法 LaTeX科研写作——入门手册 LaTeX式科研方式 Mac下为什么卸载Microsoft Office系列和Mathtype？  3. 有用的建议  LaTeX的一些好习惯 在arXiv下载论文的LaTeX源码  4. 安装  Mac安装MacTex  5. 字体  LaTeX提示安装字体STHeiti LaTeX字体颜色 24种常用颜色的中英文名字 LaTeX设置Times News Roman字体 LaTeX设置字体大小 LaTeX英文模版变中文  6. 列表  LaTeX编号设置 LaTeX中的有序列表和无序列表  7. 术语表  LaTeX术语表 LaTeX术语表的一个经典模版  8. 代码  LaTeX插入代码块  9. 公式  Markdown文本如何插入LaTeX公式 LaTeX公式换行 LaTeX公式中的空格 LaTeX数学字体加粗 公式图片转换为LaTeX公式代码——Mathpix Snip 去掉图表的冒号  10. 表格  LaTeX的表格注释 LaTeX表格横置 LaTeX表格浮动在新页面放在页面顶部，而不是页面居中 三线表的加粗  11.</description>
+    </item>
+    
+    <item>
+      <title>受益一生的习惯</title>
+      <link>https://www.xiaoledeng.cn/2018/10/04/good-habit-over-all-life/</link>
+      <pubDate>Thu, 04 Oct 2018 11:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2018/10/04/good-habit-over-all-life/</guid>
+      <description> 减少手机使用量，增加阅读书籍、思考、记录和写作的时间； 早点起床，少看小说，关掉手机，断开网络，每天只查一次邮件，每天少做一件事； 慢生活沉淀，慢吃，健康饮食，坚持锻炼； 阅读，每天坚持写作（学术&amp;amp;散文blog技术和知识分享）； 用纸和笔随时记录，提前准备； 用热水泡脚； 早睡，早上醒来就起床； 心态，乐观积极； 终身学习； 精简生活方式； 总结&amp;amp;展望（每周/月/年）； 睡前回顾总结； Deep thinking——清晰明白做什么，以及为什么要做，比如何做更重要； 少用盗版，多用开源； 思考&amp;amp;自我反省； 保持独立思考，并为自己的选择担责任；  </description>
+    </item>
+    
+    <item>
+      <title>高效率科研方式系列</title>
+      <link>https://www.xiaoledeng.cn/2018/06/08/scientific-efficiency/</link>
+      <pubDate>Fri, 08 Jun 2018 09:22:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2018/06/08/scientific-efficiency/</guid>
+      <description>前言 高效率科研方式系列，最先发表在简书上，而后整理成了现在的这一篇文章。
+1. 多使用Email和博客文字记录 多用Email以及博客来整理自己头脑中思考的内容。因为，高效率地交流沟通，多用文字来表达思想，而且可以邮件或者博客记录下来。
+减少或者不用QQ等即时聊天软件，﻿当投入高效率思考工作的时候，手机处于静音模式。
+如果非常有必要联系，就是打电话，发短信，或者约时间见面聊。
+可以通过QQ, 微信等发状态来更新博客，表示自己还露面。
+输入知识的途径可以参考之前的一篇博客，减少甚至不刷QQ空间或者微信朋友圈，因为如果有重要的事情，你总是会被告知的，只是时间先后的问题，开始专注个人的时间分配，不要成为好像非常了解别人的生活而不经营自己生活的人。
+真正在意的朋友的生活的，是电话或者邮件联系，而不是回复空间和朋友圈。
+而邮箱的使用技巧是，有一个母邮箱，汇总所有的邮件。推荐使用的是QQ邮箱，关键是容量大，每隔三个月翻一次倍。
+高效率学习是为了高效率完成任务，然后就能有更多的时间来做自己真正发自内心想做的事。
+2. 持续跟踪本领域的最新文献 针对本领域的研究关注点，进行持续地跟踪研究。
+关键词 人名 一般而言，根据主要关注的学者的名字，来查询其纵向时间发表的文章，推荐网址：ResearchGate - Share and discover research。
+研究团队 注意定时关注研究团队的官方网站的相关更新。此更新频率不是太快，一般一个月一次。
+期刊杂志 持续关注一些主要期刊（如，Science、Nature、JGR、GRL、GJI等）的最新动态，以及最近accepted或者online的文章。
+工具 谷歌学术 这个不用说，是最主要的文献搜索以及下载工具。地址：Google Scholar
+Email订阅 通过Email来订阅期刊的最新更新以及收录通知。
+3. 分解细化任务 科研方面，一旦有了新的想法和创新点后，接下来就是围绕这个创新点列出需要完成的任务点，也即，将一个大的任务，细化分解为可行性的小任务。最好，这样的可行性小任务有具体的时间规划表。
+之后，根据这样的时间规划表来安排周进度表，来推动研究的持续进展。
+在这个过程中，鼓励能跟导师或者类似方向的同学，有持续地反馈和交流，方式包括Email、面谈等，这样可以大大提高研究推进的效率以及文章写作的速度。
+4. 高效专注的时间投入 看了《为什么富人越来越富，穷人越来越穷？》，总结里面一点科研超高效率的建议——专注并高效地时间投入，并用实验室记录本来记录。
+一般来说，科研工作者每天需要花很多时间，去熟悉研究背景、研究内容、推导公式、编写代码和分析大量测试数据。这些前期的工作，可能花了不少时间，还不一定见到进展和成效。但如果不花这些时间，后期就更不可能“天上掉下个林妹妹”。所以说，时间，特别是有效时间的付出，一定是必不可少的。这就要求科研工作者要耐得住寂寞，经得起各种各样的诱惑。
+专业的事情找专业的人做 严格注意，将专业的事情包出去，这样省下来的时间，可以做更多自己擅长的事，创造出更多的价值。即为，把有效的时间都用在有意义的事情上，默默地忽略这些不紧要的小事，将自己的精力和时间放在自己认为最重要的事情上。这样的讲话都是言简意赅、简明扼要、直达重点，没有什么废话。
+简单来说，专业的事情找专业的人做。
+虽然看上去是花了钱，但是时间精力方面得到了极大的保存，可以把这样的时间和精力放在了你所擅长的事情上面，放在了专业领域方面的积累和突破，而你的专业是独一无二的，所投入的时间而创造出来的价值会大大大于花时间去做不擅长的事情。
+比如：
+1)给电脑重装系统。虽然我知道怎么操作，但是手头没有现成的工具。找别人借了工具安装了系统之后，发现又要安装语言包以及各种驱动，而这样所花费的时间和精力是巨大的。而这样的操作如果给专业装系统的人，虽然花费只有30-50元不等，但是十几分钟就搞定了，因为他们手头有现成的资源。
+2)上网软件。之前会花费大量的时间和精力去研究免费的上网软件，再往后想用的时候发现又不稳定，需要再次花时间和精力去更新。而之后发现，如果花费一年150元左右，就可以畅通无忧地上午，所带来的优势例如Google Scholar等是巨大的，会大大提升科研方面积累的速度，下载资源、打开网页的速度大大提升，这样变相地节省时间和精力成本，让我们把精力和时间放在需要聚焦的关键点上。这样会大大提升科研的效率。
+信息时代，网络资源为学习、科研带来了极大的便利。但是，每个人的时间利用率大大不同。有的人用于资源收集，如文献研读、测试数据、开源代码、PPT讲座等；甚至还可以通过电子邮件等直接向文献作者寻求帮助，索要原始文献、测试数据和源代码等。
+5. 站在前人的肩膀上 谷歌学术(Google Scholar)里面有句话，站在巨人肩膀上(stand on the shoulder of the giants)，而科研的超高效率有一点就是：站在前人的肩膀上(stand on the shoulder of the formers)。
+前人的研究，包括思想、文章、公式、代码、程序等等，都是非常好的垫脚石。
+也正是这些垫脚石，一直不断地推动科学研究前进。</description>
+    </item>
+    
+    <item>
+      <title>科研灵感系列</title>
+      <link>https://www.xiaoledeng.cn/2017/06/22/scientific-lights/</link>
+      <pubDate>Thu, 22 Jun 2017 13:12:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2017/06/22/scientific-lights/</guid>
+      <description>1. 主题式阅读文献法 (2016.05.07) 最近师门又要有研讨会，需要我们做PPT，汇报最近的一些进展，有一个灵感，The LORD is my light，想到一种阅读方式——主题式阅读文献法。﻿﻿
+主题式文献阅读法，取自于《如何阅读一本书》里面的第四个层次的读书法——主题式阅读。
+其关键点是对于一个关键点进行聚焦式阅读，不管其他的内容，只查看一篇文献中所要聚焦的部分。
+在这个过程中，可以对于要研究的点，进行历史的一个纵向的回顾，看看不同的学者如何来发展并引用这个问题的，一直可以追溯到现在最新的动态。
+2. 纵向积累至一本书 (2016.05.09) 看了《在20岁到29岁这个阶段你需要做些什么？》这篇文章，对于以后三年的一些规划很有感动。
+  坚持读书与写作，就是这样的一个平台上面来记录；
+  选择了一个领域，这个在过去的三年时间里(2013-2016)年已经选好了，以及未来的三年的时间里(2016-2019)，会有很纵向深入研究的方面，跟踪此领域国际上最新的成果，在此方面积累并突破；
+  其中，有一个强烈的感动就是：
+ 在科研方面的不断地积累，逐渐总结经验，记录并整理一些东西，然后争取出书。
+ 虽然现在只是一个这样简单的想法，但是，却能慢慢地付出与实际行动。
+3. 开发原创项目 (2016.05.13) 开始思考并构建一个新的项目——自己带领并原创的项目。
+成果最好是一款软件。
+原创项目能持续推动科研的进行，并且沿着一个领域和方向走下去。
+4. 跨学科开创新领域 (2016.05.14) 在平时的阅读文献的过程中，注意以及紧盯着跨越学科的最新进展，培养探索新课题、新问题、新技术的能力。
+对于如何建立自己的学术领域，必须有过一番深入的思考：通过跨学科的最新进展来开创新的学术领域。
+如鲁白的自我反思：
+ 既然很少有人精通这两种截然不同的技术方法，两个不同领域的概念和思路，那我何不尝试跨界组合来研究？
+ 这样能在科研中，发展出一套融合不同领域的研究风格。并对新技术新思想非常敏感，敢于跨界，尤其擅长向不同领域的科学家和年轻人学习。
+故此，才能研究独到新颖，常常是原创性的成果。
+5. 撰写学术论文的步骤 (2017.06.22) 本文简要地描述，撰写学术论文的步骤。
+ 构思：学术论文的创新点。这个点是非常重要的，直接决定了学术论文的水平，也就是写作目的； 实验：理论公式推导、代码编写、实验图表的绘制，以及相关描述； 整体框架：关于学术论文的整体提纲和框架，特别是摘要、引言、总结等； 写写写：开始把学术论文的初稿完成； 改改改：跟导师等人，来回不断地修改撰写的学术论文，直至投稿。  </description>
+    </item>
+    
+    <item>
+      <title>GMT画图中图片的网格分散问题</title>
+      <link>https://www.xiaoledeng.cn/2017/03/17/gmt-grid-problem/</link>
+      <pubDate>Fri, 17 Mar 2017 17:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2017/03/17/gmt-grid-problem/</guid>
+      <description>1.问题描述和解决方案 在GMT画关于地学方面的图片时，出现了下图中的网格分散问题：
+查找代码，以及与人交流，最后定位到此行代码问题：
+gmt xyz2grd xyz.xyz -G$GRD2 -I0.0833333333333/0.0833333333333 -R$R 通过查看gmt的xyz2grd函数，发现是网格分辨率的问题：-I，以及-R。
+对于xyz.xyz数据文件，使用gmtinfo命令查看其属性：
+➜ gmtinfo xyz.xyz xyz.xyz: N = 9331200	&amp;lt;-179.958328/179.958328&amp;gt;	&amp;lt;-89.958336/89.958336&amp;gt;	&amp;lt;-10513/6573&amp;gt;  对应的x值为：-179.958328/179.958328，即为经度范围，间隔为：0.083328； 对应的y值为：-89.958336/89.958336，即为纬度范围，间隔为：0.083328； 对应的z值为：-10513/6573，即为数据范围。  故此，问题代码行改为：
+gmt xyz2grd xyz_BED2014.xyz -G$GRD2 -I0.083328/0.083328 -R$R -V 正确的图片就出来了：
+至此，此问题就解决了。
+2.总结一般规律  使用gmt xyz2grd 的时候一定要加上-V 选项，输出的信息可以帮助判断自己的转换是否正确； 不仅要考虑到数据xy的间隔，即为调整-I的分辨率； 而且xy各自的最大最小值范围，即为-R，也需要正确；  3.Reference  xyz2grd — GMT模块手册 XYZ2GRD — 官网  </description>
+    </item>
+    
+    <item>
+      <title>GMT学习资源集锦</title>
+      <link>https://www.xiaoledeng.cn/2017/03/17/gmt-learning-resources/</link>
+      <pubDate>Fri, 17 Mar 2017 07:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2017/03/17/gmt-learning-resources/</guid>
+      <description>欢迎来到 GMT (Generic Mapping Tools) 的世界。
+1.英文官方网址  GMT — The Generic Mapping Tools，经典的英文官网； The Generic Mapping Tools，新的英文官网； Download — The Generic Mapping Tools，下载地址； Documentation — The Generic Mapping Tools，说明文档；  2.中文参考资源  GMT中文社区，整合中文翻译的社区主页； GMT中文手册，即为快速入门的必读中文手册； 地学数据 | GMT中文社区，包含中国地图数据和地形起伏数据； 图库 | GMT中文社区，快速成图的必备；  3.其他资源  GenericMappingTools/pygmt: A Python interface for the Generic Mapping Tools Ben Horner-Johnson的GMT和Geophysics的相关链接； Stephen Shangxing Gao的GMT Examples；  4.修改历史  2017.03.17，创建此文； 2020.07.24，完善此文；  </description>
+    </item>
+    
+    <item>
+      <title>专业必备技能</title>
+      <link>https://www.xiaoledeng.cn/2016/06/09/professional-skill/</link>
+      <pubDate>Thu, 09 Jun 2016 15:23:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2016/06/09/professional-skill/</guid>
+      <description>打磨专业必备技能，定期定量地投入时间，而后专注地在一个领域积累沉淀，最后达到大师境界。
+1. 科研流程「Scientific Workflow」的必备技能   A1. 收集资源的技能——学术搜索(Google Scholar; Sci-hub等)，下载，订阅学术期刊(Email订阅相关领域顶级学术期刊以及Scholar + 人名 + 研究方向的关键词推送；定期浏览研究者/研究团队的主页)，归档资源管理(文件夹模式)——「文献pdf、会议PPT或Poster、程序源代码、数据源、书籍和硕士博士论文、相关主页和数据等网站总结」；
+  A2. 阅读文献的技能——英文阅读，思考整理归纳，做笔记等；
+ 研究前沿的技能——通过多读文献，了解自己研究领域的最新研究动态。 文献思路和创新点的总结； 主题式阅读法 + 并行学习法；    A3. 数据处理的技能——主要是数学软件Mathematica和Matlab，以及熟练不同操作系统下(Windows、Linux、Mac等)的数据处理流程，其他的编程语言：Fortran, Python, C, C++等；
+ 理论方法的技能——总结前人的方法，同时能有自己的创新，并能将公式写入程序，并进行相关的数值计算分析； 误差分析的技能——对实验结果进行精度评定；    A4. 成果出图的技能——Matlab和GMT软件的操作，Orign的操作，各类图件的制作和用AI或PS修改，推荐代码式画图；
+  A5. 文章撰写的技能——英文写作，投稿，修改；
+  A6. 成果展示的技能——PPT或海报参加学术会议，撰写申请项目等；
+ 学术交流的技能——能与中外学者较清晰地交流相互的研究成果，在会议或者交谈和邮件上；    A7. 信息备份的技能——对自己的资料成果信息实时备份，避免数据丢失的情况发生；
+  2. 补充辅助技能   B1. 收发邮件的技能：冷邮件(Cold-Email)文献作者等，与导师定期汇报进展的邮件。
+  B2. 寻求帮助的技能：知道如何高效地寻求帮助的，或人，或搜索工具等等。
+  B3. 时间管理的技能：如何高效率地专注地投入时间，和分配时间。</description>
+    </item>
+    
+    <item>
+      <title>wiz笔记的局限性以及主要用来干什么</title>
+      <link>https://www.xiaoledeng.cn/2016/01/12/wiz-note/</link>
+      <pubDate>Tue, 12 Jan 2016 12:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2016/01/12/wiz-note/</guid>
+      <description>A. Wiz笔记主要功能 1、记录原创性的内容，适合于总结归纳自己的思考，以文字的形式记录下来；
+2、 网络上的网页，微信好的内容整合；
+B. Wiz局限性 1、附件丢失——附件不要过大，尽量要有本地备份，特别是文献和书籍的电子版；
+2、图片丢失——图片本地备份；
+C. 最后的想法 1、Wiz应该成为原创的记录东西，一些从网上搜下来的信息要经过自己的吸收，然后删掉，保持精简的习惯；
+2、开始清理一些没有用的资源，或者保存起来，或者直接删掉；
+3、未经过整理、思考及吸收的东西，对个人来说都是无用的东西，需要舍弃；
+4、需要将数量多的文件整合到一个文件中，做到精简elegant。比如，一周一次整理，一个月一次大的归纳。
+5、在以后，不断精简Wiz笔记里面的内容——保证原创&amp;amp;思想，因为唯有思考整理之后的文章，才能发挥它们的用处。</description>
+    </item>
+    
+    <item>
+      <title>知识获取的系统化流程</title>
+      <link>https://www.xiaoledeng.cn/2015/05/14/process-obtain-system-knowledge/</link>
+      <pubDate>Thu, 14 May 2015 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2015/05/14/process-obtain-system-knowledge/</guid>
+      <description>1. 知识的输入 1.日常生活的知识输入：
+ 高质量的书籍（经典入门、参考手册、思想本质等）和论文（顶尖数据库和期刊）； 高质量的Blog（经典大牛博客）； Google搜到的问题解决办法； 看到的碎片化信息（须整理）（知乎、豆瓣等）；  2.输入工具：
+ 纸质书，电子书； 网络RSS聚合器； 为知Wiz软件，包括浏览器的插件，另外有多平台（Windows、Mac、Linux、iPad、Andoid）的支持； 微信和其他的社交软件；  说明：
+一般而言，每天接触的信息和资讯的来源无外乎以上几种，而每次上网浏览之后觉得好的知识，可以保留下来，供自己以后翻看查找，这可以用知识管理工具Wiz来实现，当然也可以使用类似的知识管理工具如evernote、有道云等。
+2. 知识的整理、归纳、消化  Wiz软件来进行资料的整理、归纳、消化  通过各种途径整理到Wiz这个软件中，在浏览器中可以用Wiz插件直接保存；
+而其他不在浏览器中的资料可以发到自己的Wiz邮箱里；
+最后就是手动输入。
+所有的信息汇聚到Wiz软件，知识的整理归纳显得重要，需要注意的是：
+a) 标签（Tags）的选择，要随意，不要太标准，方便自己以后查找；b) 目录的分类要明确、全面、清晰；c) 区分别人的信息、知识和我归纳整理的经验知识，最好通过命名的方式标示区分出来；   可以通过思维导图软件来进行相互之间关系属性的整理；
+  通过豆瓣读书来记录自己看过的书籍；
+  3. 经验和知识的输出 这个通过个人独立博客来进行，注意事项：
+ 内容：简洁、深入、原创性； 资料：博客的备份；  </description>
+    </item>
+    
+    <item>
+      <title>PPT演讲注意事项</title>
+      <link>https://www.xiaoledeng.cn/2014/05/29/notes-on-ppt/</link>
+      <pubDate>Thu, 29 May 2014 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2014/05/29/notes-on-ppt/</guid>
+      <description>PPT已经成为展示自己成果的一个重要工具。公共演讲中，PPT的分量也越来越关键。
+下面说说自己在PPT方面总结的一点个人经验。
+ 简洁是关键，但是不要为了简洁而省去关键点，不要为了简洁而简洁，简洁的前提是自己对这个点能够用自己的语言来表述； PPT模版很重要，需要积累各个场合的模版； 文字排版要合理，不要过多； 不要出现错字； 图表结合，诠释一个问题，图表的力量胜于文字，“一图一表胜百言”； 涉及到复杂的公式时，注意更重要的是讲解公式所表达的含义； 语言方面，注意措辞，不要说“然后&amp;hellip;然后”之类的话； 了解观众，提前做好大量的准备； 整个PPT要有焦点，自己讲述的时候要有逻辑；  注意： 以上分析和总结有点杂乱，后续要待加强PPT制作方面的学习。</description>
+    </item>
+    
+    <item>
+      <title>Matlab命名注意事项</title>
+      <link>https://www.xiaoledeng.cn/2014/05/26/matlab-rename/</link>
+      <pubDate>Mon, 26 May 2014 10:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2014/05/26/matlab-rename/</guid>
+      <description>Matlab命名有一定的技巧，以后应多多注意。
+ Matlab的命名对字母的大小写敏感，如myname和MyName为两个变量； 变量名的第一个字符必须是英文名，最多63个字符； 变量名不得包含空格、标点、运算符，但可以包含下划线，如 My_Name_213； 用户自定义变量名：不与关键字同名，检验命令为iskeyword UserName或exist UserName  Reference  精通MATLAB R2011a  </description>
+    </item>
+    
+    <item>
+      <title>Windows下音频格式mp3变速设置</title>
+      <link>https://www.xiaoledeng.cn/2014/05/25/windows-mp3-speed/</link>
+      <pubDate>Sun, 25 May 2014 20:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2014/05/25/windows-mp3-speed/</guid>
+      <description>前言 一直以来，都纠结音频格式的文件如何加速。手机Andorid、IOS系统比较麻烦，而IOS系统的Podcasts里面有0.5、1.0、1.5、2.0的速度调节器。今天思维反过来，直接把Mp3格式加速然后听，问题就解决了。
+ 系统：Windows 软件：goldwave，下载地址：goldwave  具体见Reference里面的详解。
+这里给出主脉，以备份。
+  打开文件
+  点击【效果】的【时间弯曲】
+ 【变化】-（150 or 200 or 250） 【算法】-【类似】 【设置】-（&amp;ldquo;命名&amp;rdquo; &amp;amp; 点击 &amp;ldquo;+&amp;rdquo; ）    批处理
+ 【文件】-【批处理】 【添加文件】 【处理】-【添加效果】-（&amp;ldquo;命名&amp;rdquo;） 【文件夹】    【开始】
+  Reference  把课件加速放到手机或者MP3里听  </description>
+    </item>
+    
+    <item>
+      <title>aTimeLogger</title>
+      <link>https://www.xiaoledeng.cn/2014/05/03/atimelogger/</link>
+      <pubDate>Sat, 03 May 2014 19:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2014/05/03/atimelogger/</guid>
+      <description>从接触李笑来的《与时间做朋友》中推荐的《奇特的一生》一书，深深地为这种方式所打动，就用笔和纸记录下每天的时间消耗。
+然而情况就在今天改变,无意中想到有没有相关的手机应用，果然网上一搜就有这个应用：aTimeLogger，使用效果非常好，强烈推荐大家使用。
+在官网注册。
+在报告选项，通过邮件发出备份cvs或者html格式，剩下的就是到官网上面统计分析自己的时间使用。</description>
+    </item>
+    
+  </channel>
+</rss>

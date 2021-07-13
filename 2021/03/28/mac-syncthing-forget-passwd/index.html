@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Mac下开源文件同步软件Syncthing忘记用户名和密码 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Mac下开源文件同步软件Syncthing忘记用户名和密码</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2021-03-28 16:10</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/linux/">#Linux</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-解决方案">1. 解决方案</h1>
+<p>在<code>/Users/shalom/Library/Application Support/Syncthing</code>的<code>config.xml</code>里面删除<code>&lt;user&gt;</code>和<code>&lt;password&gt;</code>两行：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt;gui enabled<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;true&#34;</span> tls<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span> debugging<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;false&#34;</span>&gt;
+   &lt;address&gt;127.0.0.1:8384&lt;/address&gt;
+   &lt;user&gt;syncguy&lt;/user&gt;
+   &lt;password&gt;$2a$10$s9wWHOQe...Cq7GPye69&lt;/password&gt;
+   &lt;apikey&gt;9RCKohqCAyrj5RjpyZdR2wXmQ9PyQFeN&lt;/apikey&gt;
+   &lt;theme&gt;default&lt;/theme&gt;
+&lt;/gui&gt;
+</code></pre></div><p>这样，就不用用户名和密码直接就可以登录<code>127.0.0.1:8384</code>。</p>
+<h1 id="2-参考">2. 参考</h1>
+<ul>
+<li><a href="https://docs.syncthing.net/users/faq.html#how-do-i-reset-the-gui-password">FAQ — Syncthing v1 documentation</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e8%a7%a3%e5%86%b3%e6%96%b9%e6%a1%88">
+                            1. 解决方案
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-%e5%8f%82%e8%80%83">
+                            2. 参考
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

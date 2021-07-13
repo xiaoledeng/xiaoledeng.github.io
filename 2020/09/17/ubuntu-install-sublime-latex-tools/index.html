@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Ubuntu安装Sublime和latex-tools - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Ubuntu安装Sublime和latex-tools</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-09-17 13:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/linux/">#Linux</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1安装sublime-text">1.安装Sublime text</h1>
+<ul>
+<li><a href="http://www.sublimetext.cn/docs/3/linux_repositories.html#apt">Sublime Text中文文档之 Linux Package Manager仓库 - Sublime Text 中文官网</a></li>
+</ul>
+<p>安装GPG密钥：</p>
+<pre><code>wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+</code></pre><p>确保apt已设置为使用https源：</p>
+<pre><code>sudo apt-get install apt-transport-https
+</code></pre><p>选择要使用的频道：</p>
+<ul>
+<li>Stable</li>
+</ul>
+<pre><code>echo &quot;deb https://download.sublimetext.com/ apt/stable/&quot; | sudo tee /etc/apt/sources.list.d/sublime-text.list
+</code></pre><ul>
+<li>Dev</li>
+</ul>
+<pre><code>echo &quot;deb https://download.sublimetext.com/ apt/dev/&quot; | sudo tee /etc/apt/sources.list.d/sublime-text.list
+</code></pre><p>更新apt源并安装Sublime Text</p>
+<pre><code>sudo apt-get update
+sudo apt-get install sublime-text
+</code></pre><h1 id="2安装sublime-text3插件latex-tools">2.安装Sublime Text3插件latex-tools</h1>
+<ul>
+<li>在终端输入sublime 启动sublime text3</li>
+<li>按快捷键Ctrl+Shift+P启动在对话框输入Install Package回车，然后在插件安装对话框输入latex tools就能看到，选中安装。</li>
+<li>打开Perference-&gt;Package Settings-&gt;LaTexTools-&gt;Settings-User</li>
+<li>在打开文件的227行&quot;linux&quot;中配置你的TexLive路径
+“texpath” : “$PATH:/usr/local/texlive/2020/bin/x86_64-linux”</li>
+<li>设置487中 “viewer”: “evince”（不设置空着应该也可以，系统默认用自己的evince）。</li>
+<li>安装dbus及依赖</li>
+</ul>
+<pre><code>sudo apt-get install dbus libdbus-glib-1-dev gcc
+</code></pre></div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1%e5%ae%89%e8%a3%85sublime-text">
+                            1.安装Sublime text
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2%e5%ae%89%e8%a3%85sublime-text3%e6%8f%92%e4%bb%b6latex-tools">
+                            2.安装Sublime Text3插件latex-tools
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

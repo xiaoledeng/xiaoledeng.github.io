@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Ubuntu配置ZeroTier - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Ubuntu配置ZeroTier</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-11-13 17:30</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/linux/">#Linux</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-简介">1. 简介</h1>
+<p><code>ZeroTier</code>的思路是：建立自己的局域网，到哪里都是局域网。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<p>1.官网注册账户： <a href="https://www.zerotier.com/">https://www.zerotier.com/</a> ，免费的账户允许接入100台设备，足够组网。</p>
+<p>2.官网上配置<code>ZeroTier</code>，关键是记住<code>NetworkID</code>号。</p>
+<p>3.Ubuntu安装<code>ZeroTier</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -s https://install.zerotier.com | sudo bash
+</code></pre></div><p>4.加入到组建的局域网</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo zerotier-cli join &lt;NetworkID&gt;
+</code></pre></div><p>5.回到<code>ZeroTier</code>网站的管理界面给设备auth并找到对应设备的<code>ManagedIPs</code>，并查阅Ubuntu的Address命令</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo zerotier-cli status
+</code></pre></div><p>6.其他在局域网的设备进入此Ubuntu系统：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh name@ManagedIPs
+</code></pre></div><h1 id="3-mac的常用命令">3. Mac的常用命令</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Get your ZeroTier address and check the service status</span>
+sudo zerotier-cli status
+
+<span style="color:#75715e"># Join, leave, and list networks</span>
+sudo zerotier-cli join &lt;NetworkID&gt;
+sudo zerotier-cli leave &lt;NetworkID&gt;
+sudo zerotier-cli listnetworks
+
+<span style="color:#75715e"># Stop and start the service with launchctl</span>
+sudo launchctl unload /Library/LaunchDaemons/com.zerotier.one.plist
+sudo launchctl load /Library/LaunchDaemons/com.zerotier.one.plist
+
+<span style="color:#75715e"># Cleanly uninstall ZeroTier One, preserving only your secret identity</span>
+sudo <span style="color:#e6db74">&#34;/Library/Application Support/ZeroTier/One/uninstall.sh&#34;</span>
+</code></pre></div><h1 id="4-参考">4. 参考</h1>
+<ul>
+<li><a href="https://www.jianshu.com/p/9f7691cb32d3">ubuntu配置ZeroTier - 简书</a></li>
+<li><a href="https://baijiahao.baidu.com/s?id=1668015615580161541&amp;wfr=spider&amp;for=pc">Zerotier:远程利器，办公，VPN组网，私有云必备</a></li>
+<li><a href="https://zerotier.atlassian.net/wiki/spaces/SD/pages/29065282/zerotier-cli">zerotier-cli - ZeroTier Knowledge Base - ZeroTier</a></li>
+<li><a href="https://www.zhihu.com/question/27771692">如何远程登录家里的Ubuntu电脑(命令行模式)？ - 知乎</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e7%ae%80%e4%bb%8b">
+                            1. 简介
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-%e6%ad%a5%e9%aa%a4">
+                            2. 步骤
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3-mac%e7%9a%84%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4">
+                            3. Mac的常用命令
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#4-%e5%8f%82%e8%80%83">
+                            4. 参考
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Ubuntu安装Tesseroid1.2.1和Gravitational Curvatures of Tesseroids - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Ubuntu安装Tesseroid1.2.1和Gravitational Curvatures of Tesseroids</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-09-29 13:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/linux/">#Linux</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/researchsoftware/">#Researchsoftware</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/geodesy/">#Geodesy</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1下载">1.下载</h1>
+<p>在以下页面下载：</p>
+<ul>
+<li><a href="https://github.com/leouieda/tesseroids/releases/tag/v1.2.1">Release v1.2.1 · leouieda/tesseroids</a></li>
+<li><a href="https://github.com/xiaoledeng/Gravitational_Curvatures_of_Tesseroids">xiaoledeng/Gravitational_Curvatures_of_Tesseroids</a></li>
+</ul>
+<p>两篇文献的引用格式为：</p>
+<blockquote>
+<p>Uieda, L., V. Barbosa, and C. Braitenberg (2016), <em>Tesseroids: Forward-modeling gravitational fields in spherical coordinates</em>, <em><strong>GEOPHYSICS</strong></em>, F41-F48, doi:<a href="http://dx.doi.org/10.1190/geo2015-0204.1">10.1190/geo2015-0204.1</a>.</p>
+<p>Deng, X.L., Shen, W.B (2019), <em>Topographic effects up to Gravitational Curvatures of tesseroids: A case study in China</em>,  <em><strong>Studia Geophysica et Geodaetica</strong></em>, 63(3), 345-366, doi:<a href="http://dx.doi.org/10.1007/s11200-018-0772-4">10.1007/s11200-018-0772-4</a>.</p>
+</blockquote>
+<h1 id="2文件操作">2.文件操作</h1>
+<p>包括：解压和文件复制。</p>
+<pre><code>unzip tesseroids-1.2.1.zip
+unzip Gravitational_Curvatures_of_Tesseroids-master.zip
+
+cd Gravitational_Curvatures_of_Tesseroids-master/
+cp -r src/ ../tesseroids-1.2.1
+cp SConstruct ../tesseroids-1.2.1
+</code></pre><h1 id="3安装必要python库">3.安装必要python库</h1>
+<p>查看必要的python库：</p>
+<pre><code>cd ../tesseroids-1.2.1/
+cat python-requirements.txt
+</code></pre><p>显示为：</p>
+<pre><code>matplotlib
+basemap
+numpy
+sphinx
+scons
+</code></pre><p>使用conda安装python库【需要提前安装<a href="https://www.anaconda.com/products/individual">Anaconda3</a>】：</p>
+<pre><code>conda install matplotlib
+conda install basemap
+conda install numpy
+conda install sphinx
+conda install scons
+</code></pre><h1 id="4scons编译">4.scons编译</h1>
+<p>在终端下输入：</p>
+<pre><code>cd ..
+scons
+</code></pre><p>编译成功后，可以看到bin目录。</p>
+<p>原始的<code>tesseroids-1.2.1/SConstruct</code>会出现以下错误：</p>
+<pre><code>File &quot;/home/shalom/tesseroids-1.2.1/SConstruct&quot;, line 22
+    print &quot;Error: unknown mode '%s'&quot; % (mode)
+          ^
+SyntaxError: invalid syntax
+</code></pre><p>这个错误是因为tesseroids1.2.1采用的是python2的输出，需要改为python3的输出。</p>
+<p>在<code>SConstruct</code>文件的22行和25行，分别改为：</p>
+<pre><code>   print(&quot;Error: unknown mode '%s'&quot; % mode)
+
+print('**** Compiling in ' + mode + ' mode...')   
+</code></pre><p>修改完成后，scons能编译成功。</p>
+<h1 id="4添加环境变量">4.添加环境变量</h1>
+<p>将bin目录添加到系统的环境变量。</p>
+<p>Windows下可参考：<a href="http://www.computerhope.com/issues/ch000549.htm">adding the bin folder to your PATH environment variable</a></p>
+<p>Ubuntu下，打开<code>~/.bashrc</code>：</p>
+<pre><code>gedit ~/.bashrc
+</code></pre><p>加入以下命令：</p>
+<pre><code>export PATH=/home/shalom/tesseroids-1.2.1/bin:$PATH
+</code></pre><p>使之有效：</p>
+<pre><code>source ~/.bashrc
+</code></pre><h1 id="5测试安装成功">5.测试安装成功</h1>
+<pre><code>tessgzzz -h
+</code></pre><p>显示：</p>
+<pre><code>tessgzzz -h
+Usage: tessgzzz MODELFILE [OPTIONS]
+
+Calculate the gzzz component due to a tesseroid model on
+specified observation points.
+
+Values are calculated in the local coordinate system of the
+observation point: x-&gt; North  y-&gt; East  z-&gt; Up (away from the
+center of the Earth).
+In order to maintain mainstream convention, component gz is
+calculated with z-&gt; Down.
+
+All units either SI or degrees!
+
+The computation of the gravitational effect of the tesseroids
+is done using the Gauss-Legendre Quadrature (GLQ) numerical
+integration method.
+
+WARNING: Avoid computing directly on top or inside the
+         tesseroids! This will break the GLQ and the formulas!
+
+Input:
+  Computation points passed through standard input (stdin).
+  Reads 3 or more values per line and inteprets the first 3 as:
+    longitude, latitude and height
+  of a computation points. Height should be in meters.
+  Othervalues in the line are ignored.
+  Lines that start with # are ignored as comments.
+  Lines should be no longer than 10000 (ten thousand) characters.
+
+Output:
+  Printed to standard output (stdout) in the form:
+    lon lat height ... result
+  ... represents any values that were read from input and
+  ignored. In other words, the result is appended to the last
+  column of the input. Use this to pipe tessg* programs
+  together.
+  * Comments about the provenance of the data are inserted into
+    the top of the output
+
+MODELFILE: File containing the tesseroid model
+  * Each tesseroid is specified by the values of its borders
+    and density
+  * The file should contain one tesseroid per line
+  * Each line should have the following column format:
+      West East South North Top Bottom Density
+  * Top and Bottom should be read as 'height to top' and 
+    'height to bottom' from the mean Earth radius. Use negative
+    values if bellow the surface, for example when modeling
+    deep structures, and positive if above the surface, for
+    example when modeling topography.
+  * If a line starts with # it will be considered a comment and
+    will be ignored.
+
+Options:
+  -a             Disable the automatic subdividing of
+                 tesseroids. Subdividing is done to ensure the
+                 GLQ gives accurate results. ONLY USE THIS
+                 OPTION IF YOU KNOW WHAT YOU ARE DOING!
+  -tRATIO        Use a custom distance-size ratio for the
+                 automatic subdivision of tesseroids. ONLY USE
+                 THIS OPTION IF YOU KNOW WHAT YOU ARE DOING!
+  -oOLON/OLAT/OR GLQ order to use in the longitudinal,
+                 latitudinal and radial integrations,
+                 respectively. Defaults to 2/2/2.
+                 Subdividing of tesseroids works best with the
+                 default order.
+  -h             Print instructions.
+  --version      Print version and license information.
+  -v             Enable verbose printing to stderr.
+  -lFILENAME     Print log messages to file FILENAME.
+
+Part of the Tesseroids package (v1.2.1).
+
+Project site: &lt;http://www.leouieda.com/tesseroids/&gt;
+Report bugs at: &lt;https://github.com/leouieda/tesseroids/issues&gt;
+
+Copyright (C) 2011-2020, Leonardo Uieda.
+This software is distributed under the terms of the BSD License:
+&lt;http://tesseroids.readthedocs.org/en/latest/license.html&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+</code></pre></div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1%e4%b8%8b%e8%bd%bd">
+                            1.下载
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2%e6%96%87%e4%bb%b6%e6%93%8d%e4%bd%9c">
+                            2.文件操作
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3%e5%ae%89%e8%a3%85%e5%bf%85%e8%a6%81python%e5%ba%93">
+                            3.安装必要python库
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#4scons%e7%bc%96%e8%af%91">
+                            4.scons编译
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#4%e6%b7%bb%e5%8a%a0%e7%8e%af%e5%a2%83%e5%8f%98%e9%87%8f">
+                            4.添加环境变量
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#5%e6%b5%8b%e8%af%95%e5%ae%89%e8%a3%85%e6%88%90%e5%8a%9f">
+                            5.测试安装成功
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

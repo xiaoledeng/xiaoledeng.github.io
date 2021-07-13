@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathematica on Xiao-Le Deng</title>
+    <link>https://www.xiaoledeng.cn/tags/mathematica/</link>
+    <description>Recent content in Mathematica on Xiao-Le Deng</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>2012 – 2021 · [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style) for [Hugo](https://gohugo.io/)</copyright>
+    <lastBuildDate>Wed, 07 Jul 2021 16:40:00 +0800</lastBuildDate><atom:link href="https://www.xiaoledeng.cn/tags/mathematica/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mathics: A free, open-source alternative to Mathematica®</title>
+      <link>https://www.xiaoledeng.cn/2021/07/07/mathics/</link>
+      <pubDate>Wed, 07 Jul 2021 16:40:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/07/07/mathics/</guid>
+      <description>1. Introduction Mathics Page: https://mathics.org/
+Mathics Github: https://github.com/mathics
+PDF: https://mathics.org/docs/mathics-latest.pdf
+Documentation: https://mathics-development-guide.readthedocs.io/en/latest/
+ Mathics is a free, open-source general-purpose computer algebra system featuring Mathematica®-compatible syntax and functions. It relies on a number of other Python libraries in the Python ecosystem.
+ pip install Mathics3 mathicsscript </description>
+    </item>
+    
+    <item>
+      <title>Mathematica的列表操作</title>
+      <link>https://www.xiaoledeng.cn/2021/07/06/mathematica-list-manipulation/</link>
+      <pubDate>Tue, 06 Jul 2021 17:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2021/07/06/mathematica-list-manipulation/</guid>
+      <description>1. 构造列表   Range — 形成一个数字范围或其它对象的列表 {1,2,3,…}
+  Table — 构造一个表达式任意维数的表格
+  Array — 构造一个任意维数的数组，应用函数到连续数组下标
+  ConstantArray — 构造任意维数的常数数组
+  CenterArray — 在任意维数的数组的中心嵌入一个数组
+  Subdivide — 区间的等细分列表
+  CoordinateBoundsArray, CoordinateBoundingBoxArray — 正则网格
+  SparseArray, Normal — 从指定的稀疏矩阵 positionvalue 创建列表
+  PowerRange — 形成指定范围内连续幂的列表
+  操作列表—Wolfram 语言参考资料
+  文件、流和外部运算—Wolfram 语言参考资料
+  2. 列表元素  list[[&amp;hellip;]] (Part) — 部分列表，可用 = 设置 Span (;;) — 通常指定元素的块和范围 First ▪ Last ▪ Rest ▪ Most ▪ Take ▪ Drop ▪ TakeDrop ▪ TakeList ▪ TakeWhile UpTo — 一定数目的元素，或者尽可能多 Append ▪ Prepend ▪ Insert ▪ Delete ▪ AppendTo ▪ PrependTo Position — 求出匹配模式的元素坐标 FirstPosition ▪ Extract ▪ ReplacePart ▪ MapAt ▪ ArrayRules ▪ Ordering Length ▪ Dimensions ▪ ArrayDepth ▪ LengthWhile Select, SelectFirst — 选择满足规则的元素 Cases, FirstCase — 匹配模式的元素 Pick ▪ DeleteCases ▪ BinLists ▪ Count ▪ DeleteDuplicates Nothing — 元素自动从列表中去除 MemberQ — 测试一个元素是否是一个列表的成员 FreeQ ▪ ArrayQ ▪ VectorQ ▪ MatrixQ AllTrue ▪ AnyTrue ▪ NoneTrue Max ▪ Min ▪ MaximalBy ▪ MinimalBy 查找子列表：SequencePosition ▪ SequenceCases ▪ SequenceCount 查找子集：SubsetPosition ▪ SubsetCases ▪ SubsetCount  3.</description>
+    </item>
+    
+    <item>
+      <title>计算机代数系统</title>
+      <link>https://www.xiaoledeng.cn/2020/11/13/computer-algebra-system/</link>
+      <pubDate>Fri, 13 Nov 2020 09:20:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/11/13/computer-algebra-system/</guid>
+      <description>计算机代数是研究符号计算的算法设计、理论分析和计算机实现的学科。
+网址：
+ Axiom http://arch.axiom-developer.org CoCoA http://cocoa.dima.unige.it Maple http://www.maplesoft.com Mathematica http://www.wolfram.com/products/mathematica Reduce http://www.uni-koeln.de/REDUCE Singular http://www.singular.uni-kl.de  《Computer Algebra Handbook——Foundation Application and Systems》</description>
+    </item>
+    
+    <item>
+      <title>Sympy: Python进行代数运算</title>
+      <link>https://www.xiaoledeng.cn/2020/09/21/python-sympy/</link>
+      <pubDate>Mon, 21 Sep 2020 16:00:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/09/21/python-sympy/</guid>
+      <description>1.安装 官网：SymPy
+官网安装：Installation — SymPy documentation。
+2.求导的基本使用 from sympy import * x,y,z = symbols(&#39;x y z&#39;) expr=sin(x)*exp(x)*z diff_expr=diff(expr, x) diff_expr2=diff(expr,x,2) print(diff_expr) print(diff_expr2) 3.参考  用Python学数学之Sympy代数符号运算 - 知乎  </description>
+    </item>
+    
+    <item>
+      <title>服务器上运行Mathematica命令行代码</title>
+      <link>https://www.xiaoledeng.cn/2020/08/04/run-mathematica-command-line-code-on-the-server/</link>
+      <pubDate>Tue, 04 Aug 2020 20:15:00 +0800</pubDate>
+      
+      <guid>https://www.xiaoledeng.cn/2020/08/04/run-mathematica-command-line-code-on-the-server/</guid>
+      <description>标题可以分为两个问题：
+ 如何在服务器上面运行Mathematica命令行代码？ 如何把nb文件转换成txt文件？  1.服务器上运行Mathematica命令行代码 关键命令：
+nohup math &amp;lt;test1.txt&amp;gt; test1.out &amp;amp;解释：
+ nohup和&amp;amp;为服务器后台运行命令； math为Mathematica调用的命令行工具； test1.txt为输入的nb文件的txt格式文件； test1.out为输出的记录文件；  关键点：如何把nb文件转换成txt文件。
+2.nb文件转换为txt文件 关键步骤如下：
+ 在Mathematica中，先选中所有Cell单元——点击一个Cell，键盘输入Ctrl+A选中所有Cell； 执行菜单命令 &amp;ldquo;Cell -&amp;gt; Convert to -&amp;gt; Input Form&amp;rdquo; ，将所有的Cell转换成标准输入形式； 执行菜单命令 &amp;ldquo;File -&amp;gt; Save As &amp;hellip;&amp;rdquo; ，另存为 txt 格式；  3.注意去掉多余的内容 在后续的Mathematica版本中，可能会包含：Ln[]和Out[]格式，注意打开txt文件，进行全文替换删除操作。</description>
+    </item>
+    
+  </channel>
+</rss>

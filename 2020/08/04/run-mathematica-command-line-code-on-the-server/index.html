@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>服务器上运行Mathematica命令行代码 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>服务器上运行Mathematica命令行代码</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-08-04 20:15</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/mathematica/">#Mathematica</a></span>
+      </div>
+  </div>
+<div class="content">
+  <p>标题可以分为两个问题：</p>
+<ol>
+<li>如何在服务器上面运行Mathematica命令行代码？</li>
+<li>如何把nb文件转换成txt文件？</li>
+</ol>
+<h1 id="1服务器上运行mathematica命令行代码">1.服务器上运行Mathematica命令行代码</h1>
+<p>关键命令：</p>
+<pre><code>nohup math &lt;test1.txt&gt; test1.out &amp;
+</code></pre><p>解释：</p>
+<ul>
+<li>nohup和&amp;为服务器后台运行命令；</li>
+<li>math为Mathematica调用的命令行工具；</li>
+<li>test1.txt为输入的nb文件的txt格式文件；</li>
+<li>test1.out为输出的记录文件；</li>
+</ul>
+<p>关键点：如何把nb文件转换成txt文件。</p>
+<h1 id="2nb文件转换为txt文件">2.nb文件转换为txt文件</h1>
+<p>关键步骤如下：</p>
+<ol>
+<li>在Mathematica中，先选中所有Cell单元——点击一个Cell，键盘输入Ctrl+A选中所有Cell；</li>
+<li>执行菜单命令 &ldquo;Cell -&gt; Convert to -&gt; Input Form&rdquo; ，将所有的Cell转换成标准输入形式；</li>
+<li>执行菜单命令 &ldquo;File -&gt; Save As &hellip;&rdquo; ，另存为 txt 格式；</li>
+</ol>
+<h1 id="3注意去掉多余的内容">3.注意去掉多余的内容</h1>
+<p>在后续的Mathematica版本中，可能会包含：Ln[]和Out[]格式，注意打开txt文件，进行全文替换删除操作。</p>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1%e6%9c%8d%e5%8a%a1%e5%99%a8%e4%b8%8a%e8%bf%90%e8%a1%8cmathematica%e5%91%bd%e4%bb%a4%e8%a1%8c%e4%bb%a3%e7%a0%81">
+                            1.服务器上运行Mathematica命令行代码
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2nb%e6%96%87%e4%bb%b6%e8%bd%ac%e6%8d%a2%e4%b8%batxt%e6%96%87%e4%bb%b6">
+                            2.nb文件转换为txt文件
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3%e6%b3%a8%e6%84%8f%e5%8e%bb%e6%8e%89%e5%a4%9a%e4%bd%99%e7%9a%84%e5%86%85%e5%ae%b9">
+                            3.注意去掉多余的内容
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

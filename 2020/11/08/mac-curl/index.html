@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Mac curl下载说明 - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Mac curl下载说明</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-11-08 14:10</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/linux/">#Linux</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-帮助手册">1. 帮助手册</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -h
+Usage: curl <span style="color:#f92672">[</span>options...<span style="color:#f92672">]</span> &lt;url&gt;
+     --abstract-unix-socket &lt;path&gt; Connect via abstract Unix domain socket
+     --alt-svc &lt;file name&gt; Enable alt-svc with this cache file
+     --anyauth       Pick any authentication method
+ -a, --append        Append to target file when uploading
+     --basic         Use HTTP Basic Authentication
+     --cacert &lt;file&gt; CA certificate to verify peer against
+     --capath &lt;dir&gt;  CA directory to verify peer against
+ -E, --cert &lt;certificate<span style="color:#f92672">[</span>:password<span style="color:#f92672">]</span>&gt; Client certificate file and password
+     --cert-status   Verify the status of the server certificate
+     --cert-type &lt;type&gt; Certificate file type <span style="color:#f92672">(</span>DER/PEM/ENG<span style="color:#f92672">)</span>
+     --ciphers &lt;list of ciphers&gt; SSL ciphers to use
+     --compressed    Request compressed response
+     --compressed-ssh Enable SSH compression
+ -K, --config &lt;file&gt; Read config from a file
+     --connect-timeout &lt;seconds&gt; Maximum time allowed <span style="color:#66d9ef">for</span> connection
+     --connect-to &lt;HOST1:PORT1:HOST2:PORT2&gt; Connect to host
+ -C, --continue-at &lt;offset&gt; Resumed transfer offset
+ -b, --cookie &lt;data|filename&gt; Send cookies from string/file
+ -c, --cookie-jar &lt;filename&gt; Write cookies to &lt;filename&gt; after operation
+     --create-dirs   Create necessary local directory hierarchy
+     --crlf          Convert LF to CRLF in upload
+     --crlfile &lt;file&gt; Get a CRL list in PEM format from the given file
+ -d, --data &lt;data&gt;   HTTP POST data
+     --data-ascii &lt;data&gt; HTTP POST ASCII data
+     --data-binary &lt;data&gt; HTTP POST binary data
+     --data-raw &lt;data&gt; HTTP POST data, <span style="color:#e6db74">&#39;@&#39;</span> allowed
+     --data-urlencode &lt;data&gt; HTTP POST data url encoded
+     --delegation &lt;LEVEL&gt; GSS-API delegation permission
+     --digest        Use HTTP Digest Authentication
+ -q, --disable       Disable .curlrc
+     --disable-eprt  Inhibit using EPRT or LPRT
+     --disable-epsv  Inhibit using EPSV
+     --disallow-username-in-url Disallow username in url
+     --dns-interface &lt;interface&gt; Interface to use <span style="color:#66d9ef">for</span> DNS requests
+     --dns-ipv4-addr &lt;address&gt; IPv4 address to use <span style="color:#66d9ef">for</span> DNS requests
+     --dns-ipv6-addr &lt;address&gt; IPv6 address to use <span style="color:#66d9ef">for</span> DNS requests
+     --dns-servers &lt;addresses&gt; DNS server addrs to use
+     --doh-url &lt;URL&gt; Resolve host names over DOH
+ -D, --dump-header &lt;filename&gt; Write the received headers to &lt;filename&gt;
+     --egd-file &lt;file&gt; EGD socket path <span style="color:#66d9ef">for</span> random data
+     --engine &lt;name&gt; Crypto engine to use
+     --expect100-timeout &lt;seconds&gt; How long to wait <span style="color:#66d9ef">for</span> 100-continue
+ -f, --fail          Fail silently <span style="color:#f92672">(</span>no output at all<span style="color:#f92672">)</span> on HTTP errors
+     --fail-early    Fail on first transfer error, <span style="color:#66d9ef">do</span> not <span style="color:#66d9ef">continue</span>
+     --false-start   Enable TLS False Start
+ -F, --form &lt;name<span style="color:#f92672">=</span>content&gt; Specify multipart MIME data
+     --form-string &lt;name<span style="color:#f92672">=</span>string&gt; Specify multipart MIME data
+     --ftp-account &lt;data&gt; Account data string
+     --ftp-alternative-to-user &lt;command&gt; String to replace USER <span style="color:#f92672">[</span>name<span style="color:#f92672">]</span>
+     --ftp-create-dirs Create the remote dirs <span style="color:#66d9ef">if</span> not present
+     --ftp-method &lt;method&gt; Control CWD usage
+     --ftp-pasv      Use PASV/EPSV instead of PORT
+ -P, --ftp-port &lt;address&gt; Use PORT instead of PASV
+     --ftp-pret      Send PRET before PASV
+     --ftp-skip-pasv-ip Skip the IP address <span style="color:#66d9ef">for</span> PASV
+     --ftp-ssl-ccc   Send CCC after authenticating
+     --ftp-ssl-ccc-mode &lt;active/passive&gt; Set CCC mode
+     --ftp-ssl-control Require SSL/TLS <span style="color:#66d9ef">for</span> FTP login, clear <span style="color:#66d9ef">for</span> transfer
+ -G, --get           Put the post data in the URL and use GET
+ -g, --globoff       Disable URL sequences and ranges using <span style="color:#f92672">{}</span> and <span style="color:#f92672">[]</span>
+     --happy-eyeballs-timeout-ms &lt;milliseconds&gt; How long to wait in milliseconds <span style="color:#66d9ef">for</span> IPv6 before trying IPv4
+     --haproxy-protocol Send HAProxy PROXY protocol v1 header
+ -I, --head          Show document info only
+ -H, --header &lt;header/@file&gt; Pass custom header<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> to server
+ -h, --help          This help text
+     --hostpubmd5 &lt;md5&gt; Acceptable MD5 hash of the host public key
+     --http0.9       Allow HTTP 0.9 responses
+ -0, --http1.0       Use HTTP 1.0
+     --http1.1       Use HTTP 1.1
+     --http2         Use HTTP <span style="color:#ae81ff">2</span>
+     --http2-prior-knowledge Use HTTP <span style="color:#ae81ff">2</span> without HTTP/1.1 Upgrade
+     --ignore-content-length Ignore the size of the remote resource
+ -i, --include       Include protocol response headers in the output
+ -k, --insecure      Allow insecure server connections when using SSL
+     --interface &lt;name&gt; Use network INTERFACE <span style="color:#f92672">(</span>or address<span style="color:#f92672">)</span>
+ -4, --ipv4          Resolve names to IPv4 addresses
+ -6, --ipv6          Resolve names to IPv6 addresses
+ -j, --junk-session-cookies Ignore session cookies read from file
+     --keepalive-time &lt;seconds&gt; Interval time <span style="color:#66d9ef">for</span> keepalive probes
+     --key &lt;key&gt;     Private key file name
+     --key-type &lt;type&gt; Private key file type <span style="color:#f92672">(</span>DER/PEM/ENG<span style="color:#f92672">)</span>
+     --krb &lt;level&gt;   Enable Kerberos with security &lt;level&gt;
+     --libcurl &lt;file&gt; Dump libcurl equivalent code of this command line
+     --limit-rate &lt;speed&gt; Limit transfer speed to RATE
+ -l, --list-only     List only mode
+     --local-port &lt;num/range&gt; Force use of RANGE <span style="color:#66d9ef">for</span> local port numbers
+ -L, --location      Follow redirects
+     --location-trusted Like --location, and send auth to other hosts
+     --login-options &lt;options&gt; Server login options
+     --mail-auth &lt;address&gt; Originator address of the original email
+     --mail-from &lt;address&gt; Mail from this address
+     --mail-rcpt &lt;address&gt; Mail to this address
+ -M, --manual        Display the full manual
+     --max-filesize &lt;bytes&gt; Maximum file size to download
+     --max-redirs &lt;num&gt; Maximum number of redirects allowed
+ -m, --max-time &lt;seconds&gt; Maximum time allowed <span style="color:#66d9ef">for</span> the transfer
+     --metalink      Process given URLs as metalink XML file
+     --negotiate     Use HTTP Negotiate <span style="color:#f92672">(</span>SPNEGO<span style="color:#f92672">)</span> authentication
+ -n, --netrc         Must read .netrc <span style="color:#66d9ef">for</span> user name and password
+     --netrc-file &lt;filename&gt; Specify FILE <span style="color:#66d9ef">for</span> netrc
+     --netrc-optional Use either .netrc or URL
+ -:, --next          Make next URL use its separate set of options
+     --no-alpn       Disable the ALPN TLS extension
+ -N, --no-buffer     Disable buffering of the output stream
+     --no-keepalive  Disable TCP keepalive on the connection
+     --no-npn        Disable the NPN TLS extension
+     --no-sessionid  Disable SSL session-ID reusing
+     --noproxy &lt;no-proxy-list&gt; List of hosts which <span style="color:#66d9ef">do</span> not use proxy
+     --ntlm          Use HTTP NTLM authentication
+     --ntlm-wb       Use HTTP NTLM authentication with winbind
+     --oauth2-bearer &lt;token&gt; OAuth <span style="color:#ae81ff">2</span> Bearer Token
+ -o, --output &lt;file&gt; Write to file instead of stdout
+     --pass &lt;phrase&gt; Pass phrase <span style="color:#66d9ef">for</span> the private key
+     --path-as-is    Do not squash .. sequences in URL path
+     --pinnedpubkey &lt;hashes&gt; FILE/HASHES Public key to verify peer against
+     --post301       Do not switch to GET after following a <span style="color:#ae81ff">301</span>
+     --post302       Do not switch to GET after following a <span style="color:#ae81ff">302</span>
+     --post303       Do not switch to GET after following a <span style="color:#ae81ff">303</span>
+     --preproxy <span style="color:#f92672">[</span>protocol://<span style="color:#f92672">]</span>host<span style="color:#f92672">[</span>:port<span style="color:#f92672">]</span> Use this proxy first
+ -#, --progress-bar  Display transfer progress as a bar
+     --proto &lt;protocols&gt; Enable/disable PROTOCOLS
+     --proto-default &lt;protocol&gt; Use PROTOCOL <span style="color:#66d9ef">for</span> any URL missing a scheme
+     --proto-redir &lt;protocols&gt; Enable/disable PROTOCOLS on redirect
+ -x, --proxy <span style="color:#f92672">[</span>protocol://<span style="color:#f92672">]</span>host<span style="color:#f92672">[</span>:port<span style="color:#f92672">]</span> Use this proxy
+     --proxy-anyauth Pick any proxy authentication method
+     --proxy-basic   Use Basic authentication on the proxy
+     --proxy-cacert &lt;file&gt; CA certificate to verify peer against <span style="color:#66d9ef">for</span> proxy
+     --proxy-capath &lt;dir&gt; CA directory to verify peer against <span style="color:#66d9ef">for</span> proxy
+     --proxy-cert &lt;cert<span style="color:#f92672">[</span>:passwd<span style="color:#f92672">]</span>&gt; Set client certificate <span style="color:#66d9ef">for</span> proxy
+     --proxy-cert-type &lt;type&gt; Client certificate type <span style="color:#66d9ef">for</span> HTTPS proxy
+     --proxy-ciphers &lt;list&gt; SSL ciphers to use <span style="color:#66d9ef">for</span> proxy
+     --proxy-crlfile &lt;file&gt; Set a CRL list <span style="color:#66d9ef">for</span> proxy
+     --proxy-digest  Use Digest authentication on the proxy
+     --proxy-header &lt;header/@file&gt; Pass custom header<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> to proxy
+     --proxy-insecure Do HTTPS proxy connections without verifying the proxy
+     --proxy-key &lt;key&gt; Private key <span style="color:#66d9ef">for</span> HTTPS proxy
+     --proxy-key-type &lt;type&gt; Private key file type <span style="color:#66d9ef">for</span> proxy
+     --proxy-negotiate Use HTTP Negotiate <span style="color:#f92672">(</span>SPNEGO<span style="color:#f92672">)</span> authentication on the proxy
+     --proxy-ntlm    Use NTLM authentication on the proxy
+     --proxy-pass &lt;phrase&gt; Pass phrase <span style="color:#66d9ef">for</span> the private key <span style="color:#66d9ef">for</span> HTTPS proxy
+     --proxy-pinnedpubkey &lt;hashes&gt; FILE/HASHES public key to verify proxy with
+     --proxy-service-name &lt;name&gt; SPNEGO proxy service name
+     --proxy-ssl-allow-beast Allow security flaw <span style="color:#66d9ef">for</span> interop <span style="color:#66d9ef">for</span> HTTPS proxy
+     --proxy-tls13-ciphers &lt;list&gt; TLS 1.3 ciphersuites <span style="color:#66d9ef">for</span> proxy <span style="color:#f92672">(</span>OpenSSL<span style="color:#f92672">)</span>
+     --proxy-tlsauthtype &lt;type&gt; TLS authentication type <span style="color:#66d9ef">for</span> HTTPS proxy
+     --proxy-tlspassword &lt;string&gt; TLS password <span style="color:#66d9ef">for</span> HTTPS proxy
+     --proxy-tlsuser &lt;name&gt; TLS username <span style="color:#66d9ef">for</span> HTTPS proxy
+     --proxy-tlsv1   Use TLSv1 <span style="color:#66d9ef">for</span> HTTPS proxy
+ -U, --proxy-user &lt;user:password&gt; Proxy user and password
+     --proxy1.0 &lt;host<span style="color:#f92672">[</span>:port<span style="color:#f92672">]</span>&gt; Use HTTP/1.0 proxy on given port
+ -p, --proxytunnel   Operate through an HTTP proxy tunnel <span style="color:#f92672">(</span>using CONNECT<span style="color:#f92672">)</span>
+     --pubkey &lt;key&gt;  SSH Public key file name
+ -Q, --quote         Send command<span style="color:#f92672">(</span>s<span style="color:#f92672">)</span> to server before transfer
+     --random-file &lt;file&gt; File <span style="color:#66d9ef">for</span> reading random data from
+ -r, --range &lt;range&gt; Retrieve only the bytes within RANGE
+     --raw           Do HTTP <span style="color:#e6db74">&#34;raw&#34;</span>; no transfer decoding
+ -e, --referer &lt;URL&gt; Referrer URL
+ -J, --remote-header-name Use the header-provided filename
+ -O, --remote-name   Write output to a file named as the remote file
+     --remote-name-all Use the remote file name <span style="color:#66d9ef">for</span> all URLs
+ -R, --remote-time   Set the remote file<span style="color:#e6db74">&#39;s time on the local output
+</span><span style="color:#e6db74"> -X, --request &lt;command&gt; Specify request command to use
+</span><span style="color:#e6db74">     --request-target Specify the target for this request
+</span><span style="color:#e6db74">     --resolve &lt;host:port:address[,address]...&gt; Resolve the host+port to this address
+</span><span style="color:#e6db74">     --retry &lt;num&gt;   Retry request if transient problems occur
+</span><span style="color:#e6db74">     --retry-connrefused Retry on connection refused (use with --retry)
+</span><span style="color:#e6db74">     --retry-delay &lt;seconds&gt; Wait time between retries
+</span><span style="color:#e6db74">     --retry-max-time &lt;seconds&gt; Retry only within this period
+</span><span style="color:#e6db74">     --sasl-ir       Enable initial response in SASL authentication
+</span><span style="color:#e6db74">     --service-name &lt;name&gt; SPNEGO service name
+</span><span style="color:#e6db74"> -S, --show-error    Show error even when -s is used
+</span><span style="color:#e6db74"> -s, --silent        Silent mode
+</span><span style="color:#e6db74">     --socks4 &lt;host[:port]&gt; SOCKS4 proxy on given host + port
+</span><span style="color:#e6db74">     --socks4a &lt;host[:port]&gt; SOCKS4a proxy on given host + port
+</span><span style="color:#e6db74">     --socks5 &lt;host[:port]&gt; SOCKS5 proxy on given host + port
+</span><span style="color:#e6db74">     --socks5-basic  Enable username/password auth for SOCKS5 proxies
+</span><span style="color:#e6db74">     --socks5-gssapi Enable GSS-API auth for SOCKS5 proxies
+</span><span style="color:#e6db74">     --socks5-gssapi-nec Compatibility with NEC SOCKS5 server
+</span><span style="color:#e6db74">     --socks5-gssapi-service &lt;name&gt; SOCKS5 proxy service name for GSS-API
+</span><span style="color:#e6db74">     --socks5-hostname &lt;host[:port]&gt; SOCKS5 proxy, pass host name to proxy
+</span><span style="color:#e6db74"> -Y, --speed-limit &lt;speed&gt; Stop transfers slower than this
+</span><span style="color:#e6db74"> -y, --speed-time &lt;seconds&gt; Trigger &#39;</span>speed-limit<span style="color:#960050;background-color:#1e0010">&#39;</span> abort after this time
+     --ssl           Try SSL/TLS
+     --ssl-allow-beast Allow security flaw to improve interop
+     --ssl-no-revoke Disable cert revocation checks <span style="color:#f92672">(</span>Schannel<span style="color:#f92672">)</span>
+     --ssl-reqd      Require SSL/TLS
+ -2, --sslv2         Use SSLv2
+ -3, --sslv3         Use SSLv3
+     --stderr        Where to redirect stderr
+     --styled-output Enable styled output <span style="color:#66d9ef">for</span> HTTP headers
+     --suppress-connect-headers Suppress proxy CONNECT response headers
+     --tcp-fastopen  Use TCP Fast Open
+     --tcp-nodelay   Use the TCP_NODELAY option
+ -t, --telnet-option &lt;opt<span style="color:#f92672">=</span>val&gt; Set telnet option
+     --tftp-blksize &lt;value&gt; Set TFTP BLKSIZE option
+     --tftp-no-options Do not send any TFTP options
+ -z, --time-cond &lt;time&gt; Transfer based on a time condition
+     --tls-max &lt;VERSION&gt; Set maximum allowed TLS version
+     --tls13-ciphers &lt;list&gt; TLS 1.3 ciphersuites <span style="color:#f92672">(</span>OpenSSL<span style="color:#f92672">)</span>
+     --tlsauthtype &lt;type&gt; TLS authentication type
+     --tlspassword   TLS password
+     --tlsuser &lt;name&gt; TLS user name
+ -1, --tlsv1         Use TLSv1.0 or greater
+     --tlsv1.0       Use TLSv1.0 or greater
+     --tlsv1.1       Use TLSv1.1 or greater
+     --tlsv1.2       Use TLSv1.2 or greater
+     --tlsv1.3       Use TLSv1.3 or greater
+     --tr-encoding   Request compressed transfer encoding
+     --trace &lt;file&gt;  Write a debug trace to FILE
+     --trace-ascii &lt;file&gt; Like --trace, but without hex output
+     --trace-time    Add time stamps to trace/verbose output
+     --unix-socket &lt;path&gt; Connect through this Unix domain socket
+ -T, --upload-file &lt;file&gt; Transfer local FILE to destination
+     --url &lt;url&gt;     URL to work with
+ -B, --use-ascii     Use ASCII/text transfer
+ -u, --user &lt;user:password&gt; Server user and password
+ -A, --user-agent &lt;name&gt; Send User-Agent &lt;name&gt; to server
+ -v, --verbose       Make the operation more talkative
+ -V, --version       Show version number and quit
+ -w, --write-out &lt;format&gt; Use output FORMAT after completion
+     --xattr         Store metadata in extended file attributes
+</code></pre></div></div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e5%b8%ae%e5%8a%a9%e6%89%8b%e5%86%8c">
+                            1. 帮助手册
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

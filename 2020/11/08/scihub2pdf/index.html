@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>scihub2pdf: Python download pdf tool - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>scihub2pdf: Python download pdf tool</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-11-08 16:10</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/python/">#Python</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1-简介">1. 简介</h1>
+<p style="text-align:justify; text-justify:inter-ideograph;">scihub2pdf is a module of bibcure, which downloads pdfs via a DOI number, article title or a bibtex file, using the database of libgen, Sci-Hub and Arxiv.</p>
+<p>Github: <a href="https://github.com/bibcure/scihub2pdf">https://github.com/bibcure/scihub2pdf</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pip install scihub2pdf
+</code></pre></div><p>Mac:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew tap homebrew/cask
+brew cask install phantomjs
+</code></pre></div><p>Ubuntu:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt-get install phantomjs
+sudo apt-get install nodejs
+sudo apt-get install npm
+sudo npm -g install phantomjs-prebuilt
+sudo npm -g install phantomjs-prebuilt@2.1.16 --ignore-script
+</code></pre></div><p><strong>注意</strong>：</p>
+<p>由于<code>scihub2pdf</code>默认用的<code>sci-hub</code>的地址为： <a href="https://sci-hub.cc">https://sci-hub.cc</a></p>
+<p>需要在 <code>/Users/shalom/anaconda3/lib/python3.7/site-packages/scihub2pdf</code>的路径下的两个文件</p>
+<ul>
+<li>scihub.py</li>
+<li>download.py</li>
+</ul>
+<p>修改为能用的<code>sci-hub</code>地址，比如： <a href="https://sci-hub.se">https://sci-hub.se</a></p>
+<h1 id="2-说明">2. 说明</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">scihub2pdf -h
+usage: scihub2pdf <span style="color:#f92672">[</span>-h<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--input INPUTFILE<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--title<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--uselibgen<span style="color:#f92672">]</span>
+                  <span style="color:#f92672">[</span>--location LOCATION<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>--txt<span style="color:#f92672">]</span>
+
+ SciHub to PDF
+ ----------------------------------------------------
+ Downloads pdfs via a DOI number, article title
+ or a bibtex file, using the database of libgen<span style="color:#f92672">(</span>sci-hub<span style="color:#f92672">)</span>.
+
+ Given a bibtex file
+
+ $ scihub2pdf -i input.bib
+
+ Given a DOI number...
+
+ $ scihub2pdf 10.1038/s41524-017-0032-0
+
+ Given a title...
+
+ $ scihub2pdf --title An useful paper
+
+ Arxiv...
+
+ $ scihub2pdf arxiv:0901.2686
+
+ $ scihub2pdf --title arxiv:Periodic table <span style="color:#66d9ef">for</span> topological insulators
+
+ <span style="color:#75715e">## Download from list of items</span>
+
+ Given a text file like
+
+
+ 10.1038/s41524-017-0032-0
+ 10.1063/1.3149495
+ .....
+
+ download all pdf<span style="color:#e6db74">&#39;s
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"> $ scihub2pdf -i dois.txt --txt
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"> Given a text file like
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"> Some Title 1
+</span><span style="color:#e6db74"> Some Title 2
+</span><span style="color:#e6db74"> .....
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"> download all pdf&#39;</span>s
+
+ $ scihub2pdf -i titles.txt --txt --title
+
+ Given a text file like
+
+
+ arXiv:1708.06891
+ arXiv:1708.06071
+ arXiv:1708.05948
+ .....
+
+ download all pdf<span style="color:#e6db74">&#39;s
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"> $ scihub2pdf -i arxiv_ids.txt --txt
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">-----------------------------------------------------
+</span><span style="color:#e6db74">     @author: Bruno Messias
+</span><span style="color:#e6db74">     @email: messias.physics@gmail.com
+</span><span style="color:#e6db74">     @telegram: @brunomessias
+</span><span style="color:#e6db74">     @github: https://github.com/bibcure/sci2pdf
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">optional arguments:
+</span><span style="color:#e6db74">  -h, --help            show this help message and exit
+</span><span style="color:#e6db74">  --input INPUTFILE, -i INPUTFILE
+</span><span style="color:#e6db74">                        bibtex input file
+</span><span style="color:#e6db74">  --title, -t           download from title
+</span><span style="color:#e6db74">  --uselibgen           Use libgen.io instead sci-hub.
+</span><span style="color:#e6db74">  --location LOCATION, -l LOCATION
+</span><span style="color:#e6db74">                        folder, ex: -l &#39;</span>folder/<span style="color:#e6db74">&#39;
+</span><span style="color:#e6db74">  --txt                 Just create a file with DOI&#39;</span>s or titles
+</code></pre></div></div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1-%e7%ae%80%e4%bb%8b">
+                            1. 简介
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2-%e8%af%b4%e6%98%8e">
+                            2. 说明
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Mac下如何利用GitBook编写电子书？ - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Mac下如何利用GitBook编写电子书？</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-08-04 20:20</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1安装git">1.安装git</h1>
+<p>下载地址：https://git-scm.com/downloads</p>
+<h1 id="2安装nodejs">2.安装Node.js</h1>
+<p>下载地址：https://nodejs.org/en/download/</p>
+<h1 id="3安装gitbook">3.安装gitbook</h1>
+<pre><code>npm install -g gitbook-cli 
+</code></pre><h1 id="4初始化gitbook">4.初始化gitbook</h1>
+<pre><code>gitbook init
+</code></pre><ul>
+<li>README.md —— 书籍的介绍写在这个文件里</li>
+<li>SUMMARY.md —— 书籍的目录结构在这里配置</li>
+</ul>
+<p>编辑 SUMMARY.md 文件，内容修改为：</p>
+<pre><code># 目录
+
+* [前言](README.md)
+* [第一章](Chapter1/README.md)
+  * [第1节：衣](Chapter1/衣.md)
+  * [第2节：食](Chapter1/食.md)
+  * [第3节：住](Chapter1/住.md)
+  * [第4节：行](Chapter1/行.md)
+* [第二章](Chapter2/README.md)
+* [第三章](Chapter3/README.md)
+* [第四章](Chapter4/README.md)
+</code></pre><h1 id="5预览电子书">5.预览电子书</h1>
+<p>在mybook文件夹中再次执行以下命令：</p>
+<pre><code>gitbook init
+</code></pre><p>预览书籍的命令：</p>
+<pre><code>gitbook serve
+</code></pre><p>构建书籍的命令，默认将生成的静态网站输出到_book目录：</p>
+<pre><code>gitbook build
+</code></pre><h1 id="6安装calibre和设置ebook-convert">6.安装calibre和设置ebook-convert</h1>
+<p>安装calibre地址：<a href="https://calibre-ebook.com/download">calibre - Download calibre</a></p>
+<p>设置ebook-convert：</p>
+<pre><code>sudo ln -s /Applications/calibre.app/Contents/MacOS/ebook-convert /usr/local/bin
+</code></pre><h1 id="7转换电子书格式">7.转换电子书格式</h1>
+<pre><code>ebook-convert mybook.epub mybook.mobi
+gitbook pdf ./ ./mybook.pdf
+gitbook epub ./ ./mybook.epub
+gitbook mobi ./ ./mybook.mobi
+</code></pre></div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1%e5%ae%89%e8%a3%85git">
+                            1.安装git
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2%e5%ae%89%e8%a3%85nodejs">
+                            2.安装Node.js
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3%e5%ae%89%e8%a3%85gitbook">
+                            3.安装gitbook
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#4%e5%88%9d%e5%a7%8b%e5%8c%96gitbook">
+                            4.初始化gitbook
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#5%e9%a2%84%e8%a7%88%e7%94%b5%e5%ad%90%e4%b9%a6">
+                            5.预览电子书
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#6%e5%ae%89%e8%a3%85calibre%e5%92%8c%e8%ae%be%e7%bd%aeebook-convert">
+                            6.安装calibre和设置ebook-convert
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#7%e8%bd%ac%e6%8d%a2%e7%94%b5%e5%ad%90%e4%b9%a6%e6%a0%bc%e5%bc%8f">
+                            7.转换电子书格式
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

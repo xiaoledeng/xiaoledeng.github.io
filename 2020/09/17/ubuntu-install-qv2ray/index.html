@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Ubuntu安装和配置Qv2ray - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Ubuntu安装和配置Qv2ray</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-09-17 14:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/linux/">#Linux</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/skills/">#Skills</a></span>
+      </div>
+  </div>
+<div class="content">
+  <h1 id="1说明">1.说明</h1>
+<p>建议参考官网的配置：</p>
+<ul>
+<li><a href="https://qv2ray.net/getting-started/">Qv2ray手册</a></li>
+</ul>
+<h1 id="2步骤">2.步骤</h1>
+<p>1.下载 Qv2ray 最新版本: <a href="https://github.com/Qv2ray/Qv2ray/releases">https://github.com/Qv2ray/Qv2ray/releases</a></p>
+<p>Ubuntu下直接下载 <code>Qv2ray.v2.5.0.linux-x64.AppImage</code>文件即可</p>
+<p>给权限</p>
+<pre><code>sudo chmod 777 -R Qv2ray.v2.5.0.linux-x64.AppImage
+</code></pre><p>此时先不用打开运行，等待第二步完成</p>
+<p>2.下载v2ray-Core</p>
+<p><a href="https://github.com/v2ray/v2ray-core/releases">https://github.com/v2ray/v2ray-core/releases</a></p>
+<p>选择<code>v2ray-linux-64.zip</code></p>
+<p>3.在~/.config/目录下创建一个新目录,名称为qv2ray/vcore(如果qv2ray不存在就手动创建)，把2步骤下载的压缩包直接解压缩到~/.config/qv2ray/vcore下</p>
+<p>请确保这些文件直接存在于 vcore 目录中:</p>
+<ul>
+<li>v2ray 或 v2ray.exe：核心可执行文件</li>
+<li>v2ctl 或 v2ctl.exe：核心控制程序</li>
+<li>geoip.dat：IP 规则数据库</li>
+<li>geosite.dat：域名规则数据库</li>
+</ul>
+<p>4.给v2ray和v2ctl可执行权限</p>
+<pre><code>chmod +x v2ray v2ctl
+</code></pre><p>5.双击第1步下载的appimage文件,进入首选项-&gt;内核设置</p>
+<p>核心可执行文件路径：将此设置为步骤3中的v2ray 可执行文件的完整路径。</p>
+<p>V2ray 资源目录：将其设置为 步骤3中的geoip.dat 和 geosite.dat 所在的位置。</p>
+<p>完成后，可以点击检查 V2Ray 核心设置按钮来验证 V2Ray 核心设置。重复尝试，直到通过了检查。</p>
+<p>6.按照官网地址手册去添加订阅：</p>
+<ul>
+<li><a href="https://qv2ray.net/getting-started/step3.html#%E9%80%9A%E8%BF%87%E5%88%86%E4%BA%AB%E9%93%BE%E6%8E%A5%E5%AF%BC%E5%85%A5">向 Qv2ray 中导入节点 | Qv2ray</a></li>
+</ul>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1%e8%af%b4%e6%98%8e">
+                            1.说明
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2%e6%ad%a5%e9%aa%a4">
+                            2.步骤
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+
+<title>Gravity and magnetics from fatiando.gravmag - Xiao-Le Deng</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+  <div>
+    <h1><a href="https://www.xiaoledeng.cn">Xiao-Le Deng</a></h1>
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/about/">About</a></nav>
+</header>
+<main>
+  <article>
+    <div class="title">
+  <h1>Gravity and magnetics from fatiando.gravmag</h1>
+  </div>
+<div style="position: fixed; right:-30px; max-width:300px; overflow:auto; top: 1px; width: 300px; bottom:100px">
+<div class="container text-center mt-3">
+    <iframe src="https://duckduckgo.com/search.html?site=https://www.xiaoledeng.cn&prefill=" style="overflow:hidden;margin:0;padding:0;max-width:80%;height:40px;" frameborder="0"></iframe>
+    
+</div>
+</div>
+<div class="meta">
+  <div>2020-10-15 16:00</div>
+  <div>
+    <span><a href="https://www.xiaoledeng.cn/tags/geodesy/">#Geodesy</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/researchsoftware/">#Researchsoftware</a></span>
+      <span><a href="https://www.xiaoledeng.cn/tags/python/">#Python</a></span>
+      </div>
+  </div>
+<div class="content">
+  <p>The page is API content about gravity and magnetics forward modeling, inversion, transformations and utilities from <a href="https://www.fatiando.org/v0.5/api/gravmag.html#module-fatiando.gravmag">Gravity and magnetics (fatiando.gravmag) — Fatiando 0.5</a>.</p>
+<p>It should be noted that <code>fatiando</code> is performed on <code>Python2.7</code>.</p>
+<p>The ongoing <code>Harmonica</code> is the part of <code>fatiando.gravmag</code> as fatiando/harmonica: Forward modeling, inversion, and processing gravity and magnetic data:</p>
+<ul>
+<li><a href="https://www.fatiando.org/harmonica/latest/">Documentation Harmonica</a></li>
+<li><a href="https://github.com/fatiando/harmonica">Github Harmonica</a></li>
+</ul>
+<h1 id="1forward-modeling">1.Forward modeling</h1>
+<p>The forward modeling modules provide ways to calculate the gravitational and magnetic field of various types of geometric objects:</p>
+<ul>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.prism.html#module-fatiando.gravmag.prism">prism</a>: 3D right rectangular prisms</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.polyprism.html#module-fatiando.gravmag.polyprism">polyprism</a>: 3D prisms with polygonal horizontal cross-sections</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.sphere.html#module-fatiando.gravmag.sphere">sphere</a>: Spheres in Cartesian coordinates</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.tesseroid.html#module-fatiando.gravmag.tesseroid">tesseroid</a>: Tesseroids (spherical prisms) for modeling in spherical coordinates</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.talwani.html#module-fatiando.gravmag.talwani">talwani</a>: 2D bodies with polygonal vertical cross-sections</li>
+</ul>
+<h1 id="2inversion">2.Inversion</h1>
+<p>The inversion modules use the forward modeling models and the <a href="https://www.fatiando.org/v0.5/api/inversion.html#module-fatiando.inversion">fatiando.inversion</a> package to solve potential field inverse problems:</p>
+<ul>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.basin2d.html#module-fatiando.gravmag.basin2d">basin2d</a>: 2D inversion of the shape of sedimentary basins and other outcropping bodies</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.harvester.html#module-fatiando.gravmag.harvester">harvester</a>: 3D inversion of compact bodies by planting anomalous densities</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.euler.html#module-fatiando.gravmag.euler">euler</a>: 3D Euler deconvolution methods to estimate source location</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.magdir.html#module-fatiando.gravmag.magdir">magdir</a>: Inversion methods to estimate the total magnetization vector of multiple sources.</li>
+</ul>
+<h1 id="3processing">3.Processing</h1>
+<p>The processing modules offer tools to prepare potential field data before or after modeling.</p>
+<ul>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.normal_gravity.html#module-fatiando.gravmag.normal_gravity">normal_gravity</a>: Compute normal gravity and reductions.</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.eqlayer.html#module-fatiando.gravmag.eqlayer">eqlayer</a>: Equivalent layer processing</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.transform.html#module-fatiando.gravmag.transform">transform</a>: Potential field transformations, like upward continuation, derivatives, etc</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.imaging.html#module-fatiando.gravmag.imaging">imaging</a>: Imaging methods for potential fields for estimating physical property distributions</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.tensor.html#module-fatiando.gravmag.tensor">tensor</a>: Utilities for operating on the gradient tensor</li>
+</ul>
+<h1 id="4interactivity">4.Interactivity</h1>
+<p>Module <a href="https://www.fatiando.org/v0.5/api/gravmag.interactive.html#module-fatiando.gravmag.interactive">interactive</a> implements matplotlib GUIs and IPython HTML widgets for interacting with the modeling and processing functions.</p>
+</div>
+<div style="position: fixed; right:50px; max-width:255px; overflow:auto; top: 120px; width: 220px; bottom:90px">
+
+
+
+
+
+
+
+
+
+
+<div class="toc">
+
+    <div class="page-header"><strong>目录</strong></div>
+
+    <div id="page-scrollspy" class="toc-nav">
+
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#1forward-modeling">
+                            1.Forward modeling
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#2inversion">
+                            2.Inversion
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#3processing">
+                            3.Processing
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+        
+            
+                
+                
+                    
+                    <ul class="nav">
+                    
+                    
+                        <li class="nav-item">
+                            <a class="nav-link text-left" href="#4interactivity">
+                            4.Interactivity
+                            </a>
+                        </li>
+                    
+                    
+                    </ul>
+                    
+                
+            
+        
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+  </article>
+</main>
+<footer>
+  <div>
+    <div>
+      2012 – 2021 · <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a> for <a href="https://gohugo.io/">Hugo</a></div>
+  </div>
+</footer>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+</html>
