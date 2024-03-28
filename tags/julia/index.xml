@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Julia on Xiao-Le Deng（邓小乐）</title>
+    <link>https://www.xiaoledeng.com/tags/julia/</link>
+    <description>Recent content in Julia on Xiao-Le Deng（邓小乐）</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Wed, 02 Feb 2022 19:00:00 +0800</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/julia/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Julia on Ubuntu</title>
+      <link>https://www.xiaoledeng.com/2022/02/02/ubuntu-install-julia/</link>
+      <pubDate>Wed, 02 Feb 2022 19:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/02/02/ubuntu-install-julia/</guid>
+      <description>Platform Specific Instructions for Official Binaries:&#xA;It is strongly recommended that the official generic binaries from the downloads page be used to install Julia on Linux and FreeBSD.&#xA;Download the linux installation file *.tar.gz: wget https://julialang-s3.julialang.org/bin/linux/x64/1.7/julia-1.7.1-linux-x86_64.tar.gz tar zxvf julia-1.7.1-linux-x86_64.tar.gz Add Julia&amp;rsquo;s bin folder (with full path) to PATH environment (gedit ~/.bashrc &amp;amp; source ~/.bashrc): export PATH=/home/deng/julia-1.7.1/bin:$PATH </description>
+    </item>
+    <item>
+      <title>Run Julia in Sublime on macOS</title>
+      <link>https://www.xiaoledeng.com/2022/02/02/run-julia-in-sublime-on-macos/</link>
+      <pubDate>Wed, 02 Feb 2022 12:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/02/02/run-julia-in-sublime-on-macos/</guid>
+      <description>1. Step Open Tools -&amp;gt; Build System -&amp;gt; New Build System in Sublime and paste these commands:&#xA;{ &amp;#34;shell_cmd&amp;#34;: &amp;#34;/Applications/Julia-1.7.app/Contents/Resources/julia/bin/julia $file&amp;#34;, &amp;#34;file_regex&amp;#34;: &amp;#34;^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$&amp;#34;, &amp;#34;working_dir&amp;#34;: &amp;#34;${file_path}&amp;#34;, &amp;#34;selector&amp;#34;: &amp;#34;source.jl&amp;#34;, &amp;#34;shell&amp;#34;: true } Note that /Applications/Julia-1.7.app/Contents/Resources/julia/bin/julia is the installation path of Julia on macOS.&#xA;Save the file Julia.sublime-build at the path Sublime Text3/Packages/User.&#xA;In Tools -&amp;gt; Build System, Julia will be shown.&#xA;2. Test with Hello Julia Save the command as Hello.jl:</description>
+    </item>
+    <item>
+      <title>Install Julia on macOS</title>
+      <link>https://www.xiaoledeng.com/2022/02/02/macos-install-julia/</link>
+      <pubDate>Wed, 02 Feb 2022 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/02/02/macos-install-julia/</guid>
+      <description>1. Download At the official website https://julialang.org/downloads/, download the file julia-1.7.1-mac64.dmg.&#xA;Drag and install Julia in the traditional way of macOS.&#xA;2. Add Julia to PATH sudo mkdir -p /usr/local/bin sudo rm -f /usr/local/bin/julia sudo ln -s /Applications/Julia-1.7.app/Contents/Resources/julia/bin/julia /usr/local/bin/julia or open ~/.zshrc and add this command:&#xA;alias julia=\&amp;#39;&amp;#39;/Applications/Julia-1.7.app/Contents/Resources/julia/bin/julia&amp;#39;\&amp;#39; 3. Reference Platform Specific Instructions for Official Binaries </description>
+    </item>
+  </channel>
+</rss>

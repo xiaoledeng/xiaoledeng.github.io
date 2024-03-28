@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on Xiao-Le Deng（邓小乐）</title>
+    <link>https://www.xiaoledeng.com/tags/windows/</link>
+    <description>Recent content in Windows on Xiao-Le Deng（邓小乐）</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Sun, 03 Mar 2024 16:02:57 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows系统Word转PDF带目录</title>
+      <link>https://www.xiaoledeng.com/2024/03/03/word-to-pdf-with-content/</link>
+      <pubDate>Sun, 03 Mar 2024 16:02:57 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/03/03/word-to-pdf-with-content/</guid>
+      <description> 确保 Word 文档中已包含自动生成的目录&#xA;选择左上角的「文件」—「另存为」—保存类型为「PDF」&#xA;选择「选项」按钮，勾选「创建书签时使用」「标题」&#xA;「确定」并「保存」即可&#xA;注意⚠️：以上仅在 Windows 系统的 Word 可行，macOS 下没操作成功。&#xA;参考 怎样在word转PDF的时候自动生成目录_word另存为pdf怎么生成目录-CSDN博客 </description>
+    </item>
+    <item>
+      <title>随笔—新旧系统和软件的思考</title>
+      <link>https://www.xiaoledeng.com/2024/02/25/old-new-systems-softwares/</link>
+      <pubDate>Sun, 25 Feb 2024 17:29:34 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/02/25/old-new-systems-softwares/</guid>
+      <description>今天遇到了一个难题：填写项目书的 Word 版本，用 Windows 11 中文系统的 Office 365 的 Word 2401 打开，宏模块的中文显示乱码。&#xA;实践后的解决方案为：使用 Windows 7 中文系统的 Word 2010 打开项目书的 Word 版本，宏模块的中文显示正常。&#xA;项目书的 Word 推荐有：Word 2000、Word XP、Word 2003、Word 2007、Word 2010和Word 2013。&#xA;事实上， Microsoft Office 的 Word 版本从 Word 95 一直到 Word 2024 1。&#xA;老机器上的 Windows 7 中文系统 （主流支援已结束于 2015 年 1 月 13 日 2 ） 的 Word 2010，反而发挥了作用，解决了问题。&#xA;系统和软件如果有兼容性的问题，往往要对应到具体的系统和软件版本。&#xA;参考 History of Microsoft Word - Wikipedia Windows 7 - 维基百科，自由的百科全书 </description>
+    </item>
+    <item>
+      <title>Windows非管理员安装百度网盘</title>
+      <link>https://www.xiaoledeng.com/2024/02/05/windows-intall-baidu-disk/</link>
+      <pubDate>Mon, 05 Feb 2024 11:05:18 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/02/05/windows-intall-baidu-disk/</guid>
+      <description> 下载安装 7-Zip&#xA;右键点击 百度云安装程序 &amp;gt; 7-Zip &amp;gt; 解压到 BaiduNetdisk_x.x.x&#xA;在解压出来的 BaiduNetdisk_x.x.x 文件夹内，删掉$开头的文件夹&#xA;移动解压出来的文件夹 BaiduNetdisk_x.x.x 到任意位置&#xA;双击 BaiduNetdisk.exe 即可。&#xA;参考 Win10安装百度网盘系统权限限制怎么办？ - 知乎 </description>
+    </item>
+    <item>
+      <title>开源ZY-Player播放器</title>
+      <link>https://www.xiaoledeng.com/2023/11/17/zy-player/</link>
+      <pubDate>Fri, 17 Nov 2023 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/17/zy-player/</guid>
+      <description>1. 引言 ZY-Player 是电视直播和视频播放器 （ https://zyplayer.fun/ ），平台包括：&#xA;🖥️ 电脑端 ( Windows &amp;amp; Mac &amp;amp; Linux )： ZY Player 📱 手机端 ( Android &amp;amp; IOS )：ZY Player APP 📺 电视端 ( Android &amp;amp; Mac ) ( 进行中 )：ZY Player TV 🌐 浏览器 ( Web )：ZY Player Web 简而言之，ZY-Player是一个外壳工具🔧，通过视频源地址来观看视频。&#xA;关键是：视频源地址.json文件。一般，可以在网络搜索🔍。&#xA;2. 电脑端的ZY Player安装和操作 在 GitHub 下载 Release 2.8.8 Hunlongyu/ZY-Player 并安装软件&#xA;依次进入 ⚙️设置 — 源管理 — 编辑源，点击导入，选中本地json文件，点击检测&#xA;点击最左边的圆圈，进入主页面，选中资源（例如，樱花资源），在站内/组内/全站进行搜索（例如，站内搜索 哈利波特），进入页面，点击播放</description>
+    </item>
+    <item>
+      <title>Word和Pages显示/隐藏符号</title>
+      <link>https://www.xiaoledeng.com/2023/11/17/word-pages-view-symbols/</link>
+      <pubDate>Fri, 17 Nov 2023 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/17/word-pages-view-symbols/</guid>
+      <description>1. Word显示/隐藏符号 步骤如下1：&#xA;Word — 首选项（Perferences） — 视图（View）&#xA;显示非打印字符（Show Non-printing Characters），选中 空间（Spaces） 和 制表符（Tab character）&#xA;2. Pages显示/隐藏符号 步骤如下2：&#xA;显示（View）— 显示不可见元素（Show invisibles）&#xA;显示（View）— 隐藏不可见元素（Hide invisibles）&#xA;3. 参考 在 Word 中显示或隐藏制表符标记 - Microsoft 支持 在 Mac 上的 Pages 文稿中查看格式符号和布局指南 - 官方 Apple 支持 (中国) </description>
+    </item>
+    <item>
+      <title>谷歌浏览器屏蔽网站</title>
+      <link>https://www.xiaoledeng.com/2023/11/16/chrome-block-website/</link>
+      <pubDate>Thu, 16 Nov 2023 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/16/chrome-block-website/</guid>
+      <description>1. 桌面版谷歌浏览器设置 适用于：Windows、Linux和macOS系统下的谷歌浏览器2&#xA;进入谷歌应用商店1，查找 BlockSite，添加到Chrome&#xA;创建BlockSite的帐户，转到 Block Sites，加入网站地址即可&#xA;设置在隐身模式下屏蔽：右键点击BlockSite图标，单击管理扩展（Manage Extension），勾选允许隐身（Allow in Incognito）&#xA;2. iPhone的浏览器设置 适用于：iPhone手机的所有浏览器2&#xA;设置（Setting）— 屏幕时间（Screen Time）— 内容和隐私限制（Content &amp;amp; Privacy Restrictions）&#xA;勾选内容和隐私限制（Content &amp;amp; Privacy Restrictions），进入内容限制（Content Restrictions），进入网页内容（Web Content），勾选限制成人网站（Limit Adult Websites）&#xA;在禁止访问（NEVER ALLOW）下，添加网站（Add Website）即可&#xA;3. 延伸阅读 https://chromewebstore.google.com/&#xA;如何在Google Chrome上屏蔽某些网站？教你八种方法轻松搞定-趣知笔记</description>
+    </item>
+    <item>
+      <title>Windows系统搭建Hugo博客</title>
+      <link>https://www.xiaoledeng.com/2023/11/13/windows-set-hugo-blog/</link>
+      <pubDate>Mon, 13 Nov 2023 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/13/windows-set-hugo-blog/</guid>
+      <description>1. 步骤 先安装 Hugo，下载 hugo.exe 可执行文件后，关键是添加 可执行文件 到 Windows系统的PATH路径；&#xA;测试安装 Hugo 是否成功，终端输入：&#xA;hugo version 终端输入： hugo new site blog 下载 themes 文件夹：xiaoledeng/simple-style，放到 themes 文件夹。&#xA;回到根目录，终端输入：&#xA;hugo server -t simple-style --buildDrafts 根据提示，打开网址： http://localhost:1313/ ，就可以看到网站基本内容。&#xA;博客文件在 content/post/文件夹，格式为 markdown格式，头文件如下：&#xA;--- title: &amp;#34;标题&amp;#34; slug: title date: 2012-01-01T01:00:00+08:00 tags: - &amp;#34;Life&amp;#34; - &amp;#34;Ideas&amp;#34; --- 2. 参考 Installing on Windows - Hugo中文文档 如何：向 PATH 环境变量中添加工具位置 | Microsoft Learn 在Windows上使用Hugo搭建博客 - 掘金 </description>
+    </item>
+    <item>
+      <title>Word公式字体自动加粗解决方案</title>
+      <link>https://www.xiaoledeng.com/2023/11/10/solution-word-formula-bold/</link>
+      <pubDate>Fri, 10 Nov 2023 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/10/solution-word-formula-bold/</guid>
+      <description>1. 前言 在网上搜索并实践后，终于解决了这个问题。&#xA;核心问题是：样式（Style）。&#xA;解决方案是：更改公式所在段落的样式。&#xA;2. 步骤 选中公式，点击样式（Styles Pane） — 新建样式（New Style），注意⚠️：此时样式设置为 不加粗，其他字体和字号与之前一样。&#xA;应用新建样式到公式所在段落，取消公式加粗，保存即可。&#xA;3. 其他解决方案 使用Word插入LaTeX公式； 换用macOS系统的Pages，并插入LaTeX公式； 4. 参考 使用word时，表格中的公式自动加粗的解决办法_无可奈何不耐烦的博客-CSDN博客 word公式字体总是自动加粗，这是为什么？ - 知乎 word2010公式会自动变成粗体_百度知道 Equations automatically save in bold in Word 2012 - Microsoft Community Microsoft word 365 equations automatically bold after save - Microsoft Community Cambria Math equation automatically bold after save the word 365 - Microsoft Community Why is word auto-bolding the entire document? : r/MicrosoftWord </description>
+    </item>
+    <item>
+      <title>Windows 8.1/10/11系统的激活</title>
+      <link>https://www.xiaoledeng.com/2023/11/07/activate-windows/</link>
+      <pubDate>Tue, 07 Nov 2023 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/07/activate-windows/</guid>
+      <description>PowerShell 在 Windows 8.1/10/11， 右击 Windows 开始，选择 PowerShell&#xA;输入以下命令：&#xA;irm https://massgrave.dev/get | iex 根据激活选项，选择编号 参考 win10、win11永久激活-这个工具轻松搞定（5月29日更新） - 知乎 Releases · massgravel/Microsoft-Activation-Scripts Genuine Installation Media </description>
+    </item>
+    <item>
+      <title>Word和Pages朗读文本</title>
+      <link>https://www.xiaoledeng.com/2023/07/13/word-pages-read-text/</link>
+      <pubDate>Thu, 13 Jul 2023 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/07/13/word-pages-read-text/</guid>
+      <description>1. Word朗读文本 审阅【Review】 — 大声朗读【Read Aloud】&#xA;2. Pages朗读文本 编辑【Edit】 — 语音【Speech】 — 开始朗读【Start Speaking】&#xA;3. 延伸阅读 收听Word文档 - Microsoft 支持 听 Mac 朗读文稿 - 官方 Apple 支持 (中国) 更改 Mac 用来朗读文本的声音 - 官方 Apple 支持 (中国) </description>
+    </item>
+    <item>
+      <title>iPhone、iPad远程Windows桌面</title>
+      <link>https://www.xiaoledeng.com/2023/06/12/iphone-ipad-remote-windows/</link>
+      <pubDate>Mon, 12 Jun 2023 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/06/12/iphone-ipad-remote-windows/</guid>
+      <description>1. 步骤 第一步，设置Windows系统能够被远程桌面访问，见：macOS系统远程Windows桌面。&#xA;第二步，在App Store下载并安装Microsoft Remote Desktop的APP。&#xA;第三部，打开Microsoft Remote Desktop软件，添加电脑，ip地址、用户名和密码。&#xA;2. 参考 macOS系统远程Windows桌面 如何用手机或电脑远程连接Win10电脑 - 知乎 </description>
+    </item>
+    <item>
+      <title>macOS和Windows系统通用U盘格式exFAT</title>
+      <link>https://www.xiaoledeng.com/2023/04/26/macos-windows-u-pan-format/</link>
+      <pubDate>Wed, 26 Apr 2023 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/04/26/macos-windows-u-pan-format/</guid>
+      <description>为了让macOS系统和Windows系统都能够读取U盘，需要将U盘格式设置为exFAT。&#xA;优点：exFAT没有文件大小限制，比FAT32更现代化和稳定。&#xA;在格式化U盘时，可使用以下内置的磁盘工具：&#xA;Disk Utility（macOS） Disk Management（Windows） </description>
+    </item>
+    <item>
+      <title>macOS系统远程Ubuntu系统</title>
+      <link>https://www.xiaoledeng.com/2023/04/04/macos-remote-ubuntu/</link>
+      <pubDate>Tue, 04 Apr 2023 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/04/04/macos-remote-ubuntu/</guid>
+      <description>1. VNC（Ubuntu系统需要外接显示器） VNC的全称为 Virtual Network Computing。&#xA;第一步，Ubuntu系统先设置共享屏幕：Settings——Sharing——Remote Desktop，进行基本设置。注意⚠️：Enable Legacy VNC Protocol需要改为Require a password。&#xA;第二步，在macOS系统上打开【聚焦搜索】，即：cmd + 空格，输入 vnc://your_ip，再输入密码即可。&#xA;2. 命令行ssh访问 第一步，设置Ubuntu系统的ssh服务，见：局域网ssh远程访问Ubuntu系统。&#xA;第二步，在macOS系统上，直接在终端输入：ssh username@ip_address，命令行上传下载文件见：Ubuntu连接服务器的账号登录和上传下载文件。当然也可以用软件去进行管理，比如：Royal TSX：macOS系统的服务器管理软件。&#xA;注意⚠️：&#xA;第二步，一般直接在局域网中直接可进行。 第二步，如果需要在外网中操作，Ubuntu系统和macOS系统都需要安装并设置好ZeroTier（比如，Ubuntu配置ZeroTier）。 第二步，Ubuntu长期开机时，需要注意防黑，见：Ubuntu防黑的经验总结。 第二步，推荐使用密钥文件登陆，而不是用户名和密码的方式，见：macOS系统ssh通过密钥文件连接Ubuntu系统 3. 远程软件 远程软件，无论是内网或外网都实现macOS系统远程Ubuntu系统。&#xA;常见的软件有：&#xA;AnyDesk https://anydesk.com/zhs TeamViewer https://www.teamviewer.cn/cn/ ToDesk https://www.todesk.com/ 具体见：外网远程访问Ubuntu系统和远程访问工具——ToDesk。&#xA;4. Ubuntu系统不需要外接显示器 具体Ubuntu的设置见：Ubuntu虚拟显示器且远程控制（无显示器接入）。&#xA;利用AnyDesk和ToDesk软件，操作成功过。&#xA;5. 末了的话 无论使用哪种方法，都需要确保Ubuntu系统中相应的服务已安装并启动，并且在macOS系统中使用正确的IP地址或主机名进行连接。&#xA;最后，注意⚠️网络安全🔐，防止被黑。</description>
+    </item>
+    <item>
+      <title>Windows系统关闭共享的用户组</title>
+      <link>https://www.xiaoledeng.com/2023/04/04/windows-close-groups/</link>
+      <pubDate>Tue, 04 Apr 2023 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/04/04/windows-close-groups/</guid>
+      <description>1.引言 在用台式机Windows系统时，发现有共享账户登陆到台式机上。&#xA;查看方式为：右键底部工具栏——Task Manager——Users，可以看到其他用户名。&#xA;2.解决方案 打开Windows Settings——Control Panel——Administrative Tools——Computer Management——Local Users and Groups——Groups——把共享组的用户删掉即可。</description>
+    </item>
+    <item>
+      <title>Chrome浏览器下载网页图片</title>
+      <link>https://www.xiaoledeng.com/2023/03/29/chrome-download-picture/</link>
+      <pubDate>Wed, 29 Mar 2023 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/03/29/chrome-download-picture/</guid>
+      <description>1. 步骤 用Chrome浏览器打开网页； 按 F12进入开发者工具； 点击新出现的左上角鼠标； 点击要下载的图片，会出现图片区域的html代码； 移动鼠标到 src 的图片地址，Current source就是图片的链接地址； 打开图片链接地址，保存图片即可。 2. 参考 微信读书-网页版 复制无法复制的文字 - 知乎 </description>
+    </item>
+    <item>
+      <title>macOS系统利用samba访问Windows系统的共享文件</title>
+      <link>https://www.xiaoledeng.com/2023/01/23/macos-samba-windows-file/</link>
+      <pubDate>Mon, 23 Jan 2023 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/01/23/macos-samba-windows-file/</guid>
+      <description>1. 步骤 前提：Windows系统的文件夹设置为共享模式。&#xA;第一步，Finder －&amp;gt; Go（前往） -&amp;gt; Connete to Server...（连接服务器）(Command + K)&#xA;第二步，输入IP地址、用户名和密码，连接即可。&#xA;2. 参考 Mac OS X 访问连接SAMBA共享磁盘 - 简书 将 Mac 连接到共享的电脑和服务器 - 官方 Apple 支持 (中国) </description>
+    </item>
+    <item>
+      <title>macOS系统远程Windows桌面</title>
+      <link>https://www.xiaoledeng.com/2023/01/23/macos-remote-windows/</link>
+      <pubDate>Mon, 23 Jan 2023 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/01/23/macos-remote-windows/</guid>
+      <description>1. 步骤 第一步，先设置Windows系统能够被远程桌面访问。&#xA;控制面板 -&amp;gt; 系统和安全 -&amp;gt; 允许远程访问 高级设置里同样打开允许远程访问 控制面板 -&amp;gt; 系统 -&amp;gt; 远程桌面 第二步，在App Center下载 Microsoft Remote Desktop Beta (macOS by Microsoft Remote Desktop)，并安装。&#xA;第三步，打开Microsoft Remote Desktop Beta软件，添加电脑，ip地址、用户名和密码。&#xA;2. 参考 Mac 远程桌面连接 Windows - 知乎 macOS 远程桌面控制 Windows - 郭工笔记 Mac远程桌面连接 - 知乎 </description>
+    </item>
+    <item>
+      <title>Ubuntu系统远程Windows桌面</title>
+      <link>https://www.xiaoledeng.com/2023/01/23/ubuntu-remote-windows/</link>
+      <pubDate>Mon, 23 Jan 2023 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/01/23/ubuntu-remote-windows/</guid>
+      <description>1. 安装Ubuntu软件 sudo add-apt-repository ppa:x2go/stable sudo apt-get update sudo apt-get install x2goserver x2goserver-xsession sudo apt install remmina 主要是：Remmina Remote Desktop Client软件。&#xA;2. Ubuntu操作命令 xfreerdp /u:username /p:password /w:1920 /h:1080 /v:ipaddress /smart-sizing +auto-reconnect 说明：&#xA;username 是用户名 password 是密码 ipaddress 是ip地址 注意：&#xA;Windows系统中要打开允许远程，见： How to enable Remote Desktop in Windows 10 (or Windows 7) | Digital Citizen 3. 参考 Connect to a Windows PC from Ubuntu using Remote Desktop Connection | Digital Citizen Ubuntu 20.</description>
+    </item>
+    <item>
+      <title>Windows系统使用Ubuntu子系统</title>
+      <link>https://www.xiaoledeng.com/2023/01/10/windows-uses-ubuntu/</link>
+      <pubDate>Tue, 10 Jan 2023 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/01/10/windows-uses-ubuntu/</guid>
+      <description>1. 打开开发模式 Start &amp;gt; Settings &amp;gt; update &amp;amp; security &amp;gt; For developers&#xA;2. 打开子系统 Win + R: optionalfeatures.exe&#xA;勾选 Windows Subsystem for Linux&#xA;3. 下载Ubuntu系统 进入 Store，输入 Ubuntu，选择合适的版本下载。&#xA;4. 参考 How to: Enable the Windows Subsystem for Linux - Microsoft Community</description>
+    </item>
+    <item>
+      <title>macOS系统关闭Microsoft AutoUpdate更新</title>
+      <link>https://www.xiaoledeng.com/2022/08/05/macos-close-auto-update/</link>
+      <pubDate>Fri, 05 Aug 2022 08:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/08/05/macos-close-auto-update/</guid>
+      <description>1. 方法 方法一：设置权限不可访问&#xA;cd /Library/Application\ Support/Microsoft/MAU2.0 sudo chmod 000 Microsoft\ AutoUpdate.app 或&#xA;sudo chmod -R 000 /Library/Application\ Support/Microsoft/Microsoft\ AutoUpdate.app 方法二：删除Microsoft\ AutoUpdate.app&#xA;sudo rm -rf /Library/Application\ Support/Microsoft/Microsoft\ AutoUpdate.app 2. 打开更新 下载并安装 Microsoft AutoUpdate tool，在软件里面更新即可。&#xA;3. 参考 在Mac上如何关闭烦人的Microsoft AutoUpdate弹框提示 - 知乎 禁用微软自动更新 - 苏轶然 - 博客园 Update Office for Mac automatically - Microsoft Support </description>
+    </item>
+    <item>
+      <title>利用PowerPoint实现mp4格式的ppt视频讲解</title>
+      <link>https://www.xiaoledeng.com/2022/05/22/powerpoint-mp4-ppt/</link>
+      <pubDate>Sun, 22 May 2022 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/05/22/powerpoint-mp4-ppt/</guid>
+      <description>1. 前言 去年（2021年），参加EGU2021时，是线上两分钟的演讲，做过一次ppt讲解，上传的是mp4格式，步骤是：先录音，而后合并ppt，为mp4格式。&#xA;今年（2022年），EGU2022改为线上和线下相结合的方式，这次要求是6分钟的演讲。本次用的是PowerPoint软件实现，发现比较方便，遂把具体步骤记录如下。&#xA;2. 具体步骤 第一步，用PowerPoint做完整个ppt。&#xA;第二步，点击Slide Show—Record Slide Show。至此，就可以对每一张ppt进行录音。而且，对于每一张ppt录音后，可以进行单独删除操作，重新录制这一张ppt，直到满意为止。&#xA;第三步，点击File—Export—mp4。注意，导出可能需要一些时间，最后导出来一个完整的mp4格式视频，是作为对整个ppt进行讲解的视频。</description>
+    </item>
+    <item>
+      <title>Ubuntu下用VirtualBox虚拟机安装Windows系统</title>
+      <link>https://www.xiaoledeng.com/2022/05/18/ubuntu-virtualbox-windows/</link>
+      <pubDate>Wed, 18 May 2022 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/05/18/ubuntu-virtualbox-windows/</guid>
+      <description>1. 下载并安装VirtualBox虚拟机 第一种方法，在官网 https://www.virtualbox.org/wiki/Linux_Downloads 下载并安装VirtualBox虚拟机。&#xA;第二种方法，用命令行：&#xA;sudo apt-get install virtualbox 2. 安装Windows系统并设置 设置语言：打开virtualbox，File—Perferences—Language—简体中文。&#xA;新建虚拟机并设置：点击新建，并设置虚拟机名称和存放位置、CPU内存、磁盘空间。&#xA;挂载ISO文件：点击设置—存储—没有盘片—选择虚拟磁盘。&#xA;配置windows虚拟机屏幕大小：点击设备—安装增强功能。&#xA;3. 参考 Ubuntu下用VirtualBox安装Windows虚拟机_Leefir:D的博客-CSDN博客_ubuntu安装windows虚拟机 </description>
+    </item>
+    <item>
+      <title>Windows下Visio对区域进行颜色填充</title>
+      <link>https://www.xiaoledeng.com/2021/07/01/windows-visio-color/</link>
+      <pubDate>Thu, 01 Jul 2021 10:20:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/07/01/windows-visio-color/</guid>
+      <description>1. 步骤 核心技能是，利用Visio的开发人员的工具，进行操作（包括，联合、组合、拆分、相交和剪除等）。&#xA;打开文件——高级——常规——勾选以开发人员模式运行——确定； 选中需要操作的图形——开发工具选型——操作——联合、组合、拆分、相交和剪除等； 对选中的图形任意位置进行颜色填充。 2. 参考 Visio中图进行任意区域进行颜色填充 Polaris luo的博客-CSDN博客 visio将某一区域填充颜色 </description>
+    </item>
+    <item>
+      <title>Windows写的python程序在Mac下运行，出现^M错误</title>
+      <link>https://www.xiaoledeng.com/2019/08/29/windows-python-mac-m-error/</link>
+      <pubDate>Thu, 29 Aug 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/08/29/windows-python-mac-m-error/</guid>
+      <description>Windows下写的python程序，在Mac下运行时，出现以下错误^M：&#xA;bad interpreter: /usr/bin/python^M: no such file or directory 解决方案为：下载dos2unix工具，转换python程序的^M符号，即&#xA;brew install dos2unix 然后运行：&#xA;dos2unix 文件 </description>
+    </item>
+    <item>
+      <title>Office文档（Word和PPT）丢失后的恢复办法</title>
+      <link>https://www.xiaoledeng.com/2019/05/24/office-word-ppt-restore/</link>
+      <pubDate>Fri, 24 May 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/05/24/office-word-ppt-restore/</guid>
+      <description>使用Word或者PPT时，如果遇到文档丢失后，不要着急。按照以下办法可以找到自动备份的版本，然后就可以恢复回来。&#xA;Mac系统 第一步：打开finder&#xA;第二步：输入command＋shift＋g（三个一起按哦），打开文件夹路径输入框&#xA;第三步：直接复制粘贴这里（Word）的路径 ~/Library/Containers/com.microsoft.Word/Data/Library/Preferences/AutoRecovery/ （如果是ppt就直接把路径改成 ~/Library/Containers/com.microsoft.PowerPoint/Data/Library/Preferences/AutoRecovery/）&#xA;第四步：回车&#xA;第五步：这就是未保存系统自动保存的文档 但是现在还是打不开的，因为文件格式与文件扩展名不符。这时候将后缀改成.doc （ppt就改成ppt/pptx)&#xA;Windows系统 不同点是路径为：&#xA;C:\Users\Administrator\AppData\Roaming\Microsoft\Word\</description>
+    </item>
+    <item>
+      <title>Mac下与Windows文本转换工具tofrodos</title>
+      <link>https://www.xiaoledeng.com/2017/03/16/mac-tofrodos/</link>
+      <pubDate>Thu, 16 Mar 2017 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/16/mac-tofrodos/</guid>
+      <description>一般而言，Linux和Windows下，文本文件的行结束标志是不同的。二者互相转换需要dos2unix工具。&#xA;而对于Mac下，dos2unix工具为：tofrodos，即为to-from-dos的解释。&#xA;1. 安装tofrodos 命令行下面输入：&#xA;brew install tofrodos 2. 二者转换 unix2dos 格式为：&#xA;todos *.txt dos2unix 格式为：&#xA;fromdos *.txt 解释为：从Mac(unix)到Windows下，用todos，即为to-dos。&#xA;而从Window到Mac(unix)上，用fromdos，即为from-dos.。</description>
+    </item>
+    <item>
+      <title>Windows软件备份</title>
+      <link>https://www.xiaoledeng.com/2016/05/19/windows-software/</link>
+      <pubDate>Thu, 19 May 2016 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2016/05/19/windows-software/</guid>
+      <description>Mathematica &amp;amp; Matlab——数学软件&#xA;编辑器：UltraEdit——文件打开&#xA;Office &amp;amp; Mathtype——文档编辑&amp;amp;公式编辑&#xA;Adobe Acrbat X pro——阅读PDF&#xA;Git——博客后台程序&#xA;Xmanager——远程管理服务器&#xA;网易云音乐 &amp;amp; QQ影音 &amp;amp; QQ &amp;amp; QQ输入法&#xA;谷歌浏览器 &amp;amp; 淘宝浏览器&#xA;Wiz笔记 &amp;amp; Markdown——博客 &amp;amp; 日记 &amp;amp; 个人整理经验等</description>
+    </item>
+    <item>
+      <title>Windows下音频格式mp3变速设置</title>
+      <link>https://www.xiaoledeng.com/2014/05/25/windows-mp3-speed/</link>
+      <pubDate>Sun, 25 May 2014 20:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2014/05/25/windows-mp3-speed/</guid>
+      <description>前言 一直以来，都纠结音频格式的文件如何加速。手机Andorid、IOS系统比较麻烦，而IOS系统的Podcasts里面有0.5、1.0、1.5、2.0的速度调节器。今天思维反过来，直接把Mp3格式加速然后听，问题就解决了。&#xA;系统：Windows 软件：goldwave，下载地址：goldwave 具体见Reference里面的详解。&#xA;这里给出主脉，以备份。&#xA;打开文件&#xA;点击【效果】的【时间弯曲】&#xA;【变化】-（150 or 200 or 250） 【算法】-【类似】 【设置】-（&amp;ldquo;命名&amp;rdquo; &amp;amp; 点击 &amp;ldquo;+&amp;rdquo; ） 批处理&#xA;【文件】-【批处理】 【添加文件】 【处理】-【添加效果】-（&amp;ldquo;命名&amp;rdquo;） 【文件夹】 【开始】&#xA;Reference 把课件加速放到手机或者MP3里听 </description>
+    </item>
+    <item>
+      <title>Windows 7搭建pelican博客框架</title>
+      <link>https://www.xiaoledeng.com/2014/05/24/windows-pelican/</link>
+      <pubDate>Sat, 24 May 2014 19:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2014/05/24/windows-pelican/</guid>
+      <description>一、安装准备软件 1.Python安装（注意不要安装在C盘）： 下载官网python2.7 Windows，安装路径选D，将安装路径加入到系统环境变量PATH中（计算机属性-高级系统设置-环境变量-系统变量-PATH）,例如我安装的路径如下：&#xA;D:\Python27\&#xD;2.easy_install安装 打开cmd，切换到ez_setup.py文件目录下，输入命令：（注意切换到ez_setup.py路径中，文件ez_setup.py见附件）&#xA;python ez_setup.py&#xD;安装好后在python安装目录下的Scripts文件夹会有一些关于easy_install的文件，所以要将此路径加到系统环境变量PATH（同第一步中的环境变量PATH），路径如下:&#xA;D:\Python27\Scripts&#xD;注意：此步骤可能出错，参考了网页ez_setup.py安装错误怎么解决_百度经验，注意用mimetypes.py这个文件替换到D:\Python27\Lib文件夹中的，mimetypes.py文件见附件。&#xA;3.Pip安装 pip直接用easy_install安装，直接在cmd中输入命令:&#xA;easy_install pip&#xD;安装好之后也会在Scripts文件夹生成一些Pip的可执行文件。&#xA;4.window下make工具的安装 将下载的make.exe文件拷贝到D:\Python27路径中。&#xA;5.安装Git 下载好Git文件，直接按照默认安装设置。&#xA;6.安装pelican和markdown 安装了Git后，打开Git Bash输入以下命令：&#xA;pip install pelican&#xD;pip install markdown&#xD;二、配置博客文件 1.创建博客 在Git Bash命令行窗口中输入如下命令：&#xA;mkdir blog&#xD;cd blog&#xD;pelican-quickstart&#xD;拷贝之前的备份文件覆盖（注意文件名为英文）。&#xA;2.将博客部署到github上 命令如下：&#xA;cd output&#xD;git init&#xD;git add .&#xD;git remote add origin https://github.com/xiaoledeng/xiaoledeng.github.io.git&#xD;git commit -m &#39;your message&#39;&#xD;git push origin master(or --force)&#xD;3.一次性部署到github 可配置Makefile文件中的github，要修改两处:&#xA;一处是将$(PUBLISHDIR)替换成$(CONFFILE);&#xA;另一处增加一些git命令;&#xA;具体如下所示：&#xA;publish:$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)&#xD;github: publish&#xD;cd $(OUTPUTDIR) &amp;amp;&amp;amp; git init; cd $(OUTPUTDIR) &amp;amp;&amp;amp; git commit -m &#39;your message&#39;;&#xD;cd $(OUTPUTDIR) &amp;amp;&amp;amp; git push --force origin master&#xD;注意：Makefile里面用tab，不然错误：</description>
+    </item>
+  </channel>
+</rss>
