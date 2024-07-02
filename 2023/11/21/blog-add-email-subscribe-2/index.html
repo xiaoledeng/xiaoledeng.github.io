@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>博客添加邮件订阅(2): Mailchimp - Xiao-Le Deng（邓小乐）</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://www.xiaoledeng.com">Xiao-Le Deng（邓小乐）</a></h1>
+    
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">博客添加邮件订阅(2): Mailchimp</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-11-21</span></div>
+  <div>
+    <span><a href="https://www.xiaoledeng.com/tags/blog/">#Blog</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-引言">1. 引言</h1>
+<p>邮件订阅用 Mailchimp<sup>1</sup>。</p>
+<p>此邮件订阅功能还是参考博客——山茶花舍<sup>2</sup>。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<ol>
+<li>
+<p>先在注册和登录账号： <a href="https://us21.admin.mailchimp.com/">https://us21.admin.mailchimp.com/</a></p>
+</li>
+<li>
+<p>点击 <a href="https://us2.admin.mailchimp.com/campaigns/#/create-campaign/explore/emailCampaign:custom">Create an Automation Email</a>，选择 Share blog updates，点击 “Begin”进入下一步</p>
+</li>
+<li>
+<p>RSS Feed： RSS feed URL 处填写为自己网站的 RSS 订阅链接，比如： <a href="https://xiaoledeng.com/index.xml">https://xiaoledeng.com/index.xml</a> ，周期可以根据需要设置。 选中 Resize RSS feed images to fit template，可以优化邮件内图片的尺寸。完成后，点击右下角的 Next。</p>
+</li>
+<li>
+<p>Recipients：选择 Entire audience（全体观众）。完成后，点击右下角的 Next。</p>
+</li>
+<li>
+<p>Setup：这一步设置Campaign info。Email subject 为发送邮件的标题，Mailchimp 的 RSS 格式化标签<sup>3</sup>为：<code>*|RSSITEM:TITLE|*</code>。From Name 为邮件中显示的发件人名字。From email address 为邮件中显示的发件人地址。 More options 中的 Auto-convert video 推荐选中，可以优化 Newsltter 内视频的样式。完成后，点击右下角的 Next。</p>
+</li>
+<li>
+<p>Template：这一步选择邮件模版。选中 Basic 栏下的 1 Column。</p>
+</li>
+<li>
+<p>Design：这一步设置邮件样式。将左侧预设的中间内容移除，在右侧的 Blocks 栏内找到 RSS Header 与 RSS Items，将这两项拖入左侧内容中。分别设置 RSS Header 与 RSS Items的样式为 Custom，可以设置字体 Font。完成后，点击右下角的 Next。</p>
+</li>
+<li>
+<p>Confirm：每一步完成，点击右下角的 Confirm。</p>
+</li>
+<li>
+<p>博客添加订阅邮件页：在 Audience 上有提供 <a href="https://us21.admin.mailchimp.com/audience/forms/dashboard/">Signup forms</a>, 推荐： <code>Embed code</code>，在<code>config.toml</code>添加菜单栏</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[[menu.main]]
+</span></span><span style="display:flex;"><span>weight = <span style="color:#f60">50</span>
+</span></span><span style="display:flex;"><span>name = <span style="color:#c30">&#34;Subscribe&#34;</span>
+</span></span><span style="display:flex;"><span>url = <span style="color:#c30">&#34;/subscribe/&#34;</span>
+</span></span></code></pre></div><p>在<code>content/</code>文件夹，添加<code>subscribe.md</code>文件，内容为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title:
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;mc_embed_shell&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#309;font-weight:bold">link</span> <span style="color:#309">href</span><span style="color:#555">=</span><span style="color:#c30">&#34;//cdn-images.mailchimp.com/embedcode/classic-061523.css&#34;</span> <span style="color:#309">rel</span><span style="color:#555">=</span><span style="color:#c30">&#34;stylesheet&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text/css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#309;font-weight:bold">style</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text/css&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-weight:bold">#mc_embed_signup</span>{<span style="color:#069;font-weight:bold">background</span>:<span style="color:#f60">#fff</span>; <span style="color:#a00;background-color:#faa">false</span>;<span style="color:#069;font-weight:bold">clear</span>:<span style="color:#069;font-weight:bold">left</span>; <span style="color:#069;font-weight:bold">font</span>:<span style="color:#f60">14</span><span style="color:#078;font-weight:bold">px</span> Helvetica,Arial,<span style="color:#069;font-weight:bold">sans-serif</span>; <span style="color:#069;font-weight:bold">width</span>: <span style="color:#f60">350</span><span style="color:#078;font-weight:bold">px</span>;}
+</span></span><span style="display:flex;"><span>        <span style="color:#09f;font-style:italic">/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#309;font-weight:bold">style</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;mc_embed_signup&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#309;font-weight:bold">form</span> <span style="color:#309">action</span><span style="color:#555">=</span><span style="color:#c30">&#34;https://xiaoledeng.us21.list-manage.com/subscribe/post?u=89d1f8a7730d94c22f142d471&amp;amp;id=5b8957b4b2&amp;amp;f_id=0017e8e6f0&#34;</span> <span style="color:#309">method</span><span style="color:#555">=</span><span style="color:#c30">&#34;post&#34;</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;mc-embedded-subscribe-form&#34;</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;mc-embedded-subscribe-form&#34;</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;validate&#34;</span> <span style="color:#309">target</span><span style="color:#555">=</span><span style="color:#c30">&#34;_blank&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;mc_embed_signup_scroll&#34;</span>&gt;&lt;<span style="color:#309;font-weight:bold">h2</span>&gt;Subscribe my website&lt;/<span style="color:#309;font-weight:bold">h2</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;indicates-required&#34;</span>&gt;&lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;asterisk&#34;</span>&gt;*&lt;/<span style="color:#309;font-weight:bold">span</span>&gt; indicates required&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;mc-field-group&#34;</span>&gt;&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">for</span><span style="color:#555">=</span><span style="color:#c30">&#34;mce-EMAIL&#34;</span>&gt;Email Address &lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;asterisk&#34;</span>&gt;*&lt;/<span style="color:#309;font-weight:bold">span</span>&gt;&lt;/<span style="color:#309;font-weight:bold">label</span>&gt;&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;email&#34;</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;EMAIL&#34;</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;required email&#34;</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;mce-EMAIL&#34;</span> <span style="color:#309">required</span><span style="color:#555">=</span><span style="color:#c30">&#34;&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;mc-field-group&#34;</span>&gt;&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">for</span><span style="color:#555">=</span><span style="color:#c30">&#34;mce-FNAME&#34;</span>&gt;First Name &lt;/<span style="color:#309;font-weight:bold">label</span>&gt;&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;FNAME&#34;</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34; text&#34;</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;mce-FNAME&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;mc-field-group&#34;</span>&gt;&lt;<span style="color:#309;font-weight:bold">label</span> <span style="color:#309">for</span><span style="color:#555">=</span><span style="color:#c30">&#34;mce-LNAME&#34;</span>&gt;Last Name &lt;/<span style="color:#309;font-weight:bold">label</span>&gt;&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;LNAME&#34;</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34; text&#34;</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;mce-LNAME&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;mce-responses&#34;</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;clear foot&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;response&#34;</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;mce-error-response&#34;</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;display: none;&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;response&#34;</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;mce-success-response&#34;</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;display: none;&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">aria-hidden</span><span style="color:#555">=</span><span style="color:#c30">&#34;true&#34;</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;position: absolute; left: -5000px;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text&#34;</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;b_89d1f8a7730d94c22f142d471_5b8957b4b2&#34;</span> <span style="color:#309">tabindex</span><span style="color:#555">=</span><span style="color:#c30">&#34;-1&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;optionalParent&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;clear foot&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;submit&#34;</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;subscribe&#34;</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;mc-embedded-subscribe&#34;</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;button&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;Subscribe&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>                &lt;<span style="color:#309;font-weight:bold">p</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;margin: 0px auto;&#34;</span>&gt;&lt;<span style="color:#309;font-weight:bold">a</span> <span style="color:#309">href</span><span style="color:#555">=</span><span style="color:#c30">&#34;http://eepurl.com/iErh_6&#34;</span> <span style="color:#309">title</span><span style="color:#555">=</span><span style="color:#c30">&#34;Mailchimp - email marketing made easy and fun&#34;</span>&gt;&lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;display: inline-block; background-color: transparent; border-radius: 4px;&#34;</span>&gt;&lt;<span style="color:#309;font-weight:bold">img</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;refferal_badge&#34;</span> <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg&#34;</span> <span style="color:#309">alt</span><span style="color:#555">=</span><span style="color:#c30">&#34;Intuit Mailchimp&#34;</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">span</span>&gt;&lt;/<span style="color:#309;font-weight:bold">a</span>&gt;&lt;/<span style="color:#309;font-weight:bold">p</span>&gt;
+</span></span><span style="display:flex;"><span>            &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#309;font-weight:bold">form</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">script</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text/javascript&#34;</span> <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;&lt;<span style="color:#309;font-weight:bold">script</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text/javascript&#34;</span>&gt;(<span style="color:#069;font-weight:bold">function</span>($) {<span style="color:#366">window</span>.fnames <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> <span style="color:#366">Array</span>(); <span style="color:#366">window</span>.ftypes <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> <span style="color:#366">Array</span>();fnames[<span style="color:#f60">0</span>]<span style="color:#555">=</span><span style="color:#c30">&#39;EMAIL&#39;</span>;ftypes[<span style="color:#f60">0</span>]<span style="color:#555">=</span><span style="color:#c30">&#39;email&#39;</span>;fnames[<span style="color:#f60">1</span>]<span style="color:#555">=</span><span style="color:#c30">&#39;FNAME&#39;</span>;ftypes[<span style="color:#f60">1</span>]<span style="color:#555">=</span><span style="color:#c30">&#39;text&#39;</span>;fnames[<span style="color:#f60">2</span>]<span style="color:#555">=</span><span style="color:#c30">&#39;LNAME&#39;</span>;ftypes[<span style="color:#f60">2</span>]<span style="color:#555">=</span><span style="color:#c30">&#39;text&#39;</span>;fnames[<span style="color:#f60">3</span>]<span style="color:#555">=</span><span style="color:#c30">&#39;ADDRESS&#39;</span>;ftypes[<span style="color:#f60">3</span>]<span style="color:#555">=</span><span style="color:#c30">&#39;address&#39;</span>;fnames[<span style="color:#f60">4</span>]<span style="color:#555">=</span><span style="color:#c30">&#39;PHONE&#39;</span>;ftypes[<span style="color:#f60">4</span>]<span style="color:#555">=</span><span style="color:#c30">&#39;phone&#39;</span>;fnames[<span style="color:#f60">5</span>]<span style="color:#555">=</span><span style="color:#c30">&#39;BIRTHDAY&#39;</span>;ftypes[<span style="color:#f60">5</span>]<span style="color:#555">=</span><span style="color:#c30">&#39;birthday&#39;</span>;}(jQuery));<span style="color:#069;font-weight:bold">var</span> $mcj <span style="color:#555">=</span> jQuery.noConflict(<span style="color:#069;font-weight:bold">true</span>);&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span></code></pre></div><h1 id="3-mailchimp修改时区">3. Mailchimp修改时区</h1>
+<p>登录 <a href="https://us21.admin.mailchimp.com/">Mailchimp</a>，点击右上角头像，选择 Profile — Settings — Details — Timezone，选择合适的时区（比如：GMT+08:00 Shanghai），最后保存。</p>
+<h1 id="4-延伸阅读">4. 延伸阅读</h1>
+<ol>
+<li><a href="https://us21.admin.mailchimp.com/">Mailchimp</a></li>
+<li><a href="https://irithys.com/p/blog-newsletter/">静态博客添加 Newsletter 的几种推荐方案</a></li>
+<li><a href="https://mailchimp.com/help/rss-merge-tags/#channel+tags">Mailchimp 官方 RSS 格式参考</a></li>
+<li><a href="https://www.skyue.com/20031415.html">使用mailchimp将RSS转为邮件订阅 - 拾月</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2024 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+            links[i].setAttribute('target', '_blank');
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

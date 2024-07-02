@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FreeBSD on Xiao-Le Deng（邓小乐）</title>
+    <link>https://www.xiaoledeng.com/tags/freebsd/</link>
+    <description>Recent content in FreeBSD on Xiao-Le Deng（邓小乐）</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Wed, 14 Feb 2024 16:56:53 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/freebsd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FreeBSD关闭多余的TTYV终端</title>
+      <link>https://www.xiaoledeng.com/2024/02/14/freebsd-closes-ttyv/</link>
+      <pubDate>Wed, 14 Feb 2024 16:56:53 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/02/14/freebsd-closes-ttyv/</guid>
+      <description>打开 /etc/ttys 文件，注释不用的TTYV，而后重启系统。&#xA;sudo vim /etc/ttys # Virtual terminals ttyv1 &amp;#34;/usr/libexec/getty Pc&amp;#34; xterm onifexists secure ttyv2 &amp;#34;/usr/libexec/getty Pc&amp;#34; xterm onifexists secure #ttyv3 &amp;#34;/usr/libexec/getty Pc&amp;#34; xterm onifexists secure #ttyv4 &amp;#34;/usr/libexec/getty Pc&amp;#34; xterm onifexists secure #ttyv5 &amp;#34;/usr/libexec/getty Pc&amp;#34; xterm onifexists secure #ttyv6 &amp;#34;/usr/libexec/getty Pc&amp;#34; xterm onifexists secure #ttyv7 &amp;#34;/usr/libexec/getty Pc&amp;#34; xterm onifexists secure ttyv8 &amp;#34;/usr/local/bin/xdm -nodaemon&amp;#34; xterm off secure 参考 关闭多少的TTY终端 | 老梁的学习笔记 </description>
+    </item>
+    <item>
+      <title>FreeBSD 14.0 安装中文Fcitx输入法</title>
+      <link>https://www.xiaoledeng.com/2024/02/13/freebsd-install-fcitx/</link>
+      <pubDate>Tue, 13 Feb 2024 13:46:14 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/02/13/freebsd-install-fcitx/</guid>
+      <description>FreeBSD 14.0，具体版本为：14.0-RELEASE-p3。&#xA;1. 安装中文字体 pkg install zh-CJKUnifonts 2. 安装并设置 Fcitx 输入法 安装命令：&#xA;pkg install zh-fcitx zh-fcitx-configtool zh-fcitx-libpinyin 在 ~/.zshrc加入以下命令：&#xA;export XMODIFIERS=&amp;#39;@im=fcitx&amp;#39; export GTK_IM_MODULE=fcitx export GTK3_IM_MODULE=fcitx 执行以下命令：&#xA;mkdir -p ~/.config/autostart cp /usr/local/share/applications/fcitx.desktop ~/.config/autostart/ 3. 设置 Fcitx 输入法为小鹤双拼 搜索关键词 xiaohe：&#xA;cd ~/.config/fcitx grep -ir xiaohe ./conf/fcitx-libpinyin.config:# XiaoHe 打开文件：&#xA;vim ~/.config/fcitx/conf/fcitx-libpinyin.config 设置双拼方案为小鹤：&#xA;[Shuangpin] # Shuangpin Scheme # Available Value: # Ziranma # Microsoft # ZiGuang # ABC # PinyinJiaJia # XiaoHe #Scheme=Ziranma Scheme=XiaoHe 点击右上角的输入法按钮，重启，选择双拼输入法即可。</description>
+    </item>
+    <item>
+      <title>FreeBSD设置中文环境</title>
+      <link>https://www.xiaoledeng.com/2024/02/09/freebsd-set-chinese/</link>
+      <pubDate>Fri, 09 Feb 2024 11:20:10 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/02/09/freebsd-set-chinese/</guid>
+      <description> 编辑 /etc/login.conf，加入中文环境: chinese:Chinese Users Account:\ :charset=UTF-8:\ :lang=zh_CN.UTF-8:\ :tc=default: 使在 /etc/login.conf 新增的配置生效: cap_mkdb /etc/login.conf 用 vipw 列出已有的用户，用户格式如下： user:password:1111:11:language:0:0:User Name:/home/user:/bin/sh 把已创建的用户中的 language 改成 chinese，重新登录即可。&#xA;参考 FreeBSD设置中文环境 | 老梁的学习笔记 第 24 章 本地化－I18N/L10N使用和设置 | FreeBSD Documentation Portal Daily Driving FreeBSD - The Cool Blog </description>
+    </item>
+    <item>
+      <title>FreeBSD 14.0 安装Xfce桌面</title>
+      <link>https://www.xiaoledeng.com/2024/02/09/freebsd-install-xfce/</link>
+      <pubDate>Fri, 09 Feb 2024 10:29:20 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/02/09/freebsd-install-xfce/</guid>
+      <description>1. 前言 FreeBSD 14.0 安装 Xfce 桌面，主要是安装 Xorg 和 Xfce，并进行相关的配置。&#xA;2. 安装和配置Xorg root用户安装 Xorg 命令: pkg install xorg 加入用户至 video 组: pw groupmod video -m username pw groupmod video -m root 查看本机显卡类别: pciconf -lv|grep -B4 VGA vgapci0@pci0:0:2:0: class=0x030000 rev=0x06 hdr=0x00 vendor=0x8086 device=0x1912 subvendor=0x1734 subdevice=0x121c vendor = &amp;#39;Intel Corporation&amp;#39; device = &amp;#39;HD Graphics 530&amp;#39; class = display subclass = VGA 安装和设置 Intel 显卡: pkg install drm-kmod sysrc kld_list+=i915kms pkg install libva-intel-driver mesa-libs mesa-dri pkg install nvidia-driver sysrc kld_list+=nvidia-modeset sysrc kld_list+=linux64 sysrc linux_enable=“YES” sysrc kld_list+=nvidia pkg install nvidia-hybrid-graphics sysrc nvidia_xorg_enable=“YES” service nvidia_xorg start 3.</description>
+    </item>
+    <item>
+      <title>FreeBSD对Linux的支持</title>
+      <link>https://www.xiaoledeng.com/2024/01/19/freebsd-support-linux/</link>
+      <pubDate>Fri, 19 Jan 2024 14:53:51 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/19/freebsd-support-linux/</guid>
+      <description>1. FreeBSD 配置 Linux 二进制兼容性 sysrc linux_enable=&amp;#34;YES&amp;#34; service linux start 2. CentOS 支持 pkg install linux_base-c7 此时，/compat/linux 路径下是 CentOS 7 的基础系统文件。&#xA;3. Debian / Ubuntu 支持 pkg install debootstrap debootstrap focal /compat/ubuntu 此时，/compat/ubuntu 路径下是 Ubuntu 的基础系统文件。&#xA;4. 延伸阅读 Chapter 12. Linux Binary Compatibility | FreeBSD Documentation Portal Linux® emulation in FreeBSD | FreeBSD Documentation Portal linux debootstrap </description>
+    </item>
+    <item>
+      <title>FreeBSD 14.0 install Mathematica 13.2</title>
+      <link>https://www.xiaoledeng.com/2024/01/18/frebsd-install-mathematica13.2/</link>
+      <pubDate>Thu, 18 Jan 2024 17:11:08 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/18/frebsd-install-mathematica13.2/</guid>
+      <description>1. Enable Linux binary compatibility on FreeBSD Run these commands with root:&#xA;# enable the Linux ABI at boot time sysrc linux_enable=&amp;#34;YES&amp;#34; # start linux without rebooting service linux start # install CentOS Base System from FreeBSD Packages pkg install linux_base-c7 2. Run the Mathematica Installer Run the command with root: # set the default ELF brand to Linux for all unbranded binaries sysctl kern.fallback_elf_brand=3 Open the Linux installer with root: vim Mathematica_13.</description>
+    </item>
+    <item>
+      <title>FreeBSD的不足和优点</title>
+      <link>https://www.xiaoledeng.com/2024/01/12/freebsd-shortage-merit/</link>
+      <pubDate>Fri, 12 Jan 2024 09:49:43 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/12/freebsd-shortage-merit/</guid>
+      <description>1. 不足 硬件兼容性有待提高&#xA;第三方软件支持，可以通过 Linux 兼容层解决&#xA;无商业支持&#xA;2. 优点 稳定：作为服务器，有坚如磐石 (Rock-stable Performance)的口碑&#xA;无广告&#xA;保护隐私：整个操作系统的源码公开，不会暗箱操作，不会泄漏隐私&#xA;不收集用户信息：整个操作系统的源码公开，不会有底层操作，不收集用户信息&#xA;精简优雅 (Minimalism and Elegant)：安装完操作系统后，文件夹清晰明了，系统自动进程不超过 20 个。用户设置和系统默认文件分离：&#xA;/etc/rc.d/的脚本是为基本系统的应用程序服务，如 cron 、sshd 、syslog 等。 /usr/local/etc/rc.d/的脚本是用户安装的第三方应用程序，如 NGINX 、 Postfix 等。 用户安装的应用程序在 /usr/local/，安装的二进制文件位于 /usr/local/bin/，配置文件位于 /usr/local/etc/ pkg 一站式软件管理，查询、安装、卸载、清理软件包&#xA;根据自己需求，决定是否安装桌面，无错误弹窗&#xA;及时发布安全通知，或给系统打补丁，或升级小系统&#xA;系统完整：整个操作系统和软件由一个开发团队从 1993 年维护至今，将近 30 多年的时间，保持了系统的完整性&#xA;RELEASE 系统更新，跨版本升级容易升&#xA;3. 已有文章 FreeBSD入门 Parallels Desktop安装FreeBSD 14.0 FreeBSD挂载U盘 FreeBSD设置SSH FreeBSD安装Fortran FreeBSD安装Python Unix system family tree Subscribe FreeBSD security notifications FreeBSD更新SSH FreeBSD设置默认编辑器 工作站安装FreeBSD 14.0 4. 延伸阅读 freebsd 桌面 linux FreeBSD桌面：优缺点一览 - LinuxJiaoCheng FreeBSD 大败局 - 知乎 FreeBSD的优点和缺点是什么 - 问答 - 亿速云 BSD 相比 Linux 有哪些优势?</description>
+    </item>
+    <item>
+      <title>工作站安装FreeBSD 14.0</title>
+      <link>https://www.xiaoledeng.com/2024/01/06/workstation-install-freebsd/</link>
+      <pubDate>Sat, 06 Jan 2024 16:17:19 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/06/workstation-install-freebsd/</guid>
+      <description>1. 前言 在虚拟机上安装了两次 FreeBSD 后，趁着 Ubuntu 上的程序刚好跑完，就重装台式机的系统为 FreeBSD。&#xA;重点：在配置 ZFS 的 Swap 时，大小应为实际内存的 1/4 ，即： 64 G内存，Swap设置为 16 G。&#xA;2. 步骤 下载 ISO 文件，制作 U 盘启动盘 下载地址： https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/14.0/&#xA;根据官网的推荐 (https://docs.freebsd.org/en/books/handbook/bsdinstall)，在 Windows 下安装 win32diskimager 软件，而后制作 U 盘启动盘。&#xA;台式机 BIOS 从 U 盘启动，按照顺序安装 参考： Parallels Desktop安装FreeBSD 14.0&#xA;这一步，Swap Volume Size 选择 (参考：swap size on ZFS with high amount of RAM | The FreeBSD Forums)：&#xA;System Type Swap Volume Size Dump Volume Size System with about 4 GB of physical memory 1 GB 2 GB Mid-range server with about 8 GB of physical memory 2 GB 4 GB High-end server with about 16 to 128 GB of physical memory 4-32 GB 8-64 GB High-end server with more than 128 GB of physical memory 1/4 of physical memory size 1/2 of physical memory size 更新系统 以 root 执行以下命令：</description>
+    </item>
+    <item>
+      <title>FreeBSD设置默认编辑器</title>
+      <link>https://www.xiaoledeng.com/2024/01/06/freebsd-set-default-editor/</link>
+      <pubDate>Sat, 06 Jan 2024 13:37:45 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/06/freebsd-set-default-editor/</guid>
+      <description>在 ~/.shrc 和 ~/.zshrc 添加以下内容：&#xA;alias vi=&amp;#34;vim&amp;#34; export EDITOR=/usr/local/bin/vim source ~/.shrc source ~/.zshrc 这样，使用 vi/ vim/ crontab -e 命令，都能用 vim 编辑器。&#xA;延伸阅读 cron - Change default crontab editor to nano in FreeBSD - Server Fault Shell - How to change EDITOR to default parameter | The FreeBSD Forums </description>
+    </item>
+    <item>
+      <title>FreeBSD更新SSH</title>
+      <link>https://www.xiaoledeng.com/2024/01/05/freebsd-update-ssh/</link>
+      <pubDate>Fri, 05 Jan 2024 14:25:49 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/05/freebsd-update-ssh/</guid>
+      <description>1. 步骤 查看系统和 SSH 当前版本： freebsd-version # 显示 14.0-RELEASE-p4 ssh -V # 显示 OpenSSH_9.5p1, OpenSSL 3.0.12 24 Oct 2023 查看 SSH 位置： which ssh # 显示 /usr/bin/ssh 查询 security/openssh-portable 1得知： FreeBSD:14:amd64 latest 9.6.p1_1,1 quarterly 所以，要配置源 sudo vim /etc/pkg/FreeBSD.conf：&#xA;url: &amp;#34;pkg+https://pkg.FreeBSD.org/${ABI}/quarterly&amp;#34;, 改为&#xA;url: &amp;#34;pkg+https://pkg.FreeBSD.org/${ABI}/latest&amp;#34;, 而后，更新源：&#xA;pkg update -f 更新系统 freebsd-update fetch freebsd-update install reboot 延伸阅读 FreshPorts &amp;ndash; security/openssh-portable: The portable version of OpenBSD&amp;rsquo;s OpenSSH </description>
+    </item>
+    <item>
+      <title>Subscribe FreeBSD security notifications</title>
+      <link>https://www.xiaoledeng.com/2024/01/03/subscribe-freebsd-security-notifications/</link>
+      <pubDate>Wed, 03 Jan 2024 14:48:30 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/03/subscribe-freebsd-security-notifications/</guid>
+      <description>Open the website: https://lists.freebsd.org/subscription/freebsd-security-notifications&#xA;Fill your email address and click the Subscribe butten.&#xA;After receiving the confirm email, just simply reply to the email message. The subject and the body of the message can be anything.&#xA;Finally, you will get the successful subscription email.</description>
+    </item>
+    <item>
+      <title>Introduction of macOS&#39;s man</title>
+      <link>https://www.xiaoledeng.com/2024/01/01/macos-man-intro/</link>
+      <pubDate>Mon, 01 Jan 2024 10:48:26 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/01/macos-man-intro/</guid>
+      <description>0. 引言 macOS&amp;rsquo;s man (i.e., manual) is based on FreeBSD, which is divided into 9 sections：&#xA;General user commands System calls and error numbers C programming libraries Devices and device drivers File formats Game instructions Miscellaneous information System maintenance commands Kernel interfaces 1. General user commands Command: man 1 intro&#xA;NAME intro – introduction to general commands (tools and utilities) DESCRIPTION Section one of the manual contains most of the commands which comprise the BSD user environment.</description>
+    </item>
+    <item>
+      <title>Unix system family tree</title>
+      <link>https://www.xiaoledeng.com/2023/12/30/unix-system-family-tree/</link>
+      <pubDate>Sat, 30 Dec 2023 11:06:41 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/30/unix-system-family-tree/</guid>
+      <description>This page is totaly from: https://cgit.freebsd.org/src/tree/share/misc/bsd-family-tree&#xA;1. The UNIX system family tree: Research and BSD First Edition (V1) | Second Edition (V2) | Third Edition (V3) | Fourth Edition (V4) | Fifth Edition (V5) | Sixth Edition (V6) -----* \ | \ | \ | Seventh Edition (V7)----|----------------------* \ | | \ 1BSD | 32V | | \ 2BSD---------------* | \ / | | \ / | | \/ | | 3BSD | | | | | 4.</description>
+    </item>
+    <item>
+      <title>FreeBSD安装Python</title>
+      <link>https://www.xiaoledeng.com/2023/12/29/freebsd-install-python/</link>
+      <pubDate>Fri, 29 Dec 2023 16:14:48 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/29/freebsd-install-python/</guid>
+      <description>1. 说明 目前，FreeBSD 14.0 RELEASE p4 默认安装的是 python 3.9。&#xA;2. 安装 安装命令：&#xA;sudo pkg install python Updating FreeBSD repository catalogue... FreeBSD repository is up to date. All repositories are up to date. The following 2 package(s) will be affected (of 0 checked): New packages to be INSTALLED: python: 3.9_3,2 python3: 3_3 Number of packages to be installed: 2 2 KiB to be downloaded. 终端输入 Python 显示：&#xA;Python 3.9.18 (main, Dec 19 2023, 01:22:46) [Clang 16.</description>
+    </item>
+    <item>
+      <title>FreeBSD安装Fortran</title>
+      <link>https://www.xiaoledeng.com/2023/12/29/freebsd-install-fortran/</link>
+      <pubDate>Fri, 29 Dec 2023 15:46:08 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/29/freebsd-install-fortran/</guid>
+      <description>1. 说明 FreeBSD 的 Fortran 编译器是 lfortran :&#xA;LFortran is a modern open-source (BSD licensed) interactive Fortran compiler built on top of LLVM. It can execute user’s code interactively to allow exploratory work (much like Python, MATLAB or Julia) as well as compile to binaries with the goal to run user’s code on modern architectures such as multi-core CPUs and GPUs.&#xA;Website: https://lfortran.org GitHub: https://github.com/lfortran/lfortran 2. 安装和测试 搜索 Fotran ：</description>
+    </item>
+    <item>
+      <title>FreeBSD设置SSH</title>
+      <link>https://www.xiaoledeng.com/2023/12/29/freebsd-ssh/</link>
+      <pubDate>Fri, 29 Dec 2023 15:10:47 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/29/freebsd-ssh/</guid>
+      <description>1. 步骤 在系统安装的时候，Space空格键 选择 SSH&#xA;编辑 /etc/rc.conf，添加一行：&#xA;sshd_enable=&amp;#34;YES&amp;#34; 注意⚠️：这一项默认有。&#xA;编辑 /etc/ssh/sshd_config，根据需要设置： sudo vim /etc/ssh/sshd_config # 不允许root登陆 PermitRootLogin no # 使用密码登录 PasswordAuthentication yes # 不允许空密码 PermitEmptyPasswords no 还有其他的一些设置，可参考：Ubuntu系统SSH设置小结。&#xA;启动或重启 SSHD 服务 service sshd start service sshd restart 查看 ssh 服务是否启动 netstat -an | grep ssh 2. 延伸阅读 FreeBSD开启SSH远程登录_freebsd11.4 远程连接-CSDN博客 Chapter 16. Security | FreeBSD Documentation Portal </description>
+    </item>
+    <item>
+      <title>FreeBSD挂载U盘</title>
+      <link>https://www.xiaoledeng.com/2023/12/29/frebds-mount-u-disk/</link>
+      <pubDate>Fri, 29 Dec 2023 14:54:20 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/29/frebds-mount-u-disk/</guid>
+      <description>1. 前言 因为 U 盘有不同的格式，所以用到的方法是不一样的。&#xA;2. 方法 首先，查看 /dev 目录下的内容 或 查看设备节点，并创建挂载 U 盘的文件夹 /mnt/usbdisk ：&#xA;ls /dev cat /etc/fstab mkdir /mnt/usbdisk 注意⚠️： da0 、 daos4 、 da0s1 、da0s2 、da1s4&#xA;U盘格式 MS-DOS 1, 4 ：&#xA;mount_msdosfs /dev/daos4 /mnt/usbdisk mount -t msdos /dev/daos4 /mnt/usbdisk U盘格式 vfat 2, 3 ：&#xA;mount_msdosfs /dev/da0s1 /mnt/usbdisk mount -t msdosfs /dev/da0s1 /mnt/usbdsk U盘格式 ntfs 2 :&#xA;mount_ntfs /dev/da0s1 /mnt/usbdisk U盘格式 xtFAT 5：&#xA;# pkg 安装 fusefs-exfat pkg install fusefs-exfat # 开机启动 echo &amp;#39;fuse_enable=&amp;#34;YES&amp;#34;&amp;#39; &amp;gt;&amp;gt; /etc/rc.</description>
+    </item>
+    <item>
+      <title>Parallels Desktop安装FreeBSD 14.0</title>
+      <link>https://www.xiaoledeng.com/2023/12/29/parallels-desktop-installl-freebsd/</link>
+      <pubDate>Fri, 29 Dec 2023 09:54:13 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/29/parallels-desktop-installl-freebsd/</guid>
+      <description>1. 安装过程 macOS系统和Parallels Desktop 的配置： macOS Catalina 10.15.7&#xA;Parallels Desktop version 11.2.0 (32581)&#xA;下载 FreeBSD-14.0-RELEASE-amd64-disc1.iso 文件，地址： https://www.freebsd.org/where/&#xA;https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/14.0/&#xA;Parallels Desktop的选项依次为：「New」—「Install Windows or another OS from a DVD or image file」—「Image File」—「选中第 2 步的 ISO 文件」—「Other - FreeBSD」—「Customize settings before installation」，最关键的一步：「Configure」—「Hardware」—「Boot Order」-「Advanced flags」，填入 vm.bios.efi = 1。此外，还可设置 Memory 和 Disk Space&#xA;安装：&#xA;额外的组件，只选 src（系统源码） 磁盘格式，选择 ZFS 设置网络，IPv4 和 IPv6 都要，默认设置 设置开机启动服务，只保留 sshd 安全性设置，保持默认（都不选） 可以设置一个常用用户 myself 注意⚠️： 键盘的空格键 Space 为选中和取消。&#xA;设置 用 root 进行系统更新： freebsd-update fetch freebsd-update install 用 root 用户安装 sudo ： pkg install sudo</description>
+    </item>
+    <item>
+      <title>FreeBSD入门</title>
+      <link>https://www.xiaoledeng.com/2023/12/28/freebsd-introduction/</link>
+      <pubDate>Thu, 28 Dec 2023 15:40:11 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/28/freebsd-introduction/</guid>
+      <description>1. 介绍 FreeBSD，全称 Free Berkeley Software Distribution (BSD)，是一个自由和开源的类 Unix 操作系统。&#xA;官网为： https://www.freebsd.org&#xA;FreeBSD 的第一个版本于 1993 年 11 月从 386BSD 开发，最新的版本为 2023 年 11 月 20 日的 14.0-RELEASE （FreeBSD version history - Wikipedia）。&#xA;FreeBSD 主要特点是稳定，有坚如磐石 (Rock-stable Performance) 之称，适合作为服务器的操作系统。&#xA;2. 下载和安装 下载地址： https://www.freebsd.org/where/&#xA;版本选择：CD (disc1.iso结尾)、DVD (dvd1.iso结尾)和regular USB memory sticks (memstick.img结尾)&#xA;安装： Chapter 2. Installing FreeBSD | FreeBSD Documentation Portal&#xA;注意⚠️：&#xA;额外的组件，全部取消不要选 磁盘格式，选择 ZFS 设置 root 用户密码，建议复杂一点 设置网络，IPv4 和 IPv6 都要 设置开机启动服务，只保留 sshd 安全性设置，保持默认（都不选） 参考： 在 Linode 上安装 FreeBSD – 小众开发者</description>
+    </item>
+  </channel>
+</rss>
