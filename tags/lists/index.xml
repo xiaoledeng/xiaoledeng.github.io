@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lists on Xiao-Le Deng（邓小乐）</title>
+    <link>https://www.xiaoledeng.com/tags/lists/</link>
+    <description>Recent content in Lists on Xiao-Le Deng（邓小乐）</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Sun, 10 Mar 2024 09:44:03 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/lists/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>中国历史简要纪年表</title>
+      <link>https://www.xiaoledeng.com/2024/03/10/chinese-history/</link>
+      <pubDate>Sun, 10 Mar 2024 09:44:03 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/03/10/chinese-history/</guid>
+      <description> 三皇五帝 夏(前21世纪—前17世纪) 商(前17世纪—前11世纪) 西周(前11世纪—前723) 春秋时期(公元前722—前481) 战国时期(公元前480—前222) 秦(公元前221—前207) 西汉、新(公元前206—公元25) 东汉(25—220) 魏、蜀、吴(220—280) 晋(265—420) 后秦(384—417)、北凉(397—439) 南北朝: 北魏、东魏、西魏、北齐、北周(386—581) 南北朝: 宋、齐、梁、陈(420—589) 隋(581—618) 唐(618—907) 五代(907—960) 宋(960—1279) 契丹、辽(907—1125) 金(1115—1234) 蒙古、元(1206—1370) 明(1368—1644)、南明和明郑(1645—1683) 满洲、后金、清(1583—1911) 延伸阅读 中国历史纪年表 中国历史（中国的历史）_百度百科 中国历史 - 维基百科，自由的百科全书 </description>
+    </item>
+    <item>
+      <title>Editorial Manager系统给LaTeX投稿的建议清单</title>
+      <link>https://www.xiaoledeng.com/2024/01/16/editorial-manager-latex-tips-lists/</link>
+      <pubDate>Tue, 16 Jan 2024 15:35:29 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/16/editorial-manager-latex-tips-lists/</guid>
+      <description>1. 前言 6年前，写过 LaTeX文稿投稿到Editorial-Manager系统 。&#xA;这次，写的是： Editorial Manager 系统给 LaTeX 投稿的建议清单。&#xA;2. 建议清单 所有文件必须位于同一文件夹级别； 不要使用子文件夹 All files must be on the same folder level; do not use sub folders)&#xA;主稿 TeX 文件必须是第一项 The main manuscript TeX file must be the first item&#xA;在下拉框中将主稿 TeX 文件定义为“Manuscript” Define the main TeX file as ‘Manuscript’ in the drop down box&#xA;上传任何图像文件（例如 EPS、PNG、TiFF 等）作为图形 Upload any image files (e.g. EPS, PNG, TiFF, etc.) as figures</description>
+    </item>
+    <item>
+      <title>在用的Sublime插件清单</title>
+      <link>https://www.xiaoledeng.com/2023/12/16/used-sublime-package-lists/</link>
+      <pubDate>Sat, 16 Dec 2023 11:08:09 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/16/used-sublime-package-lists/</guid>
+      <description>1. 清单🧾 ConvertToUTF8 1 LaTeXTools 2 MarkdownEditing 3 ModernFortran 4 Package Control 5 2. 参考 seanliang/ConvertToUTF8: A Sublime Text 2 &amp;amp; 3 plugin for editing and saving files encoded in GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS, etc. SublimeText/LaTeXTools: LaTeX plugin for Sublime Text 2 and 3 Home - MarkdownEditing eirik-kjonstad/modern-fortran-syntax: Modern Fortran syntax highlighting for Sublime Text 3/4 Package Control - the Sublime Text package manager 3. 延伸阅读 从写作、排版、学术、代码四个方向，挑选适合自己的文本编辑器 - 少数派 </description>
+    </item>
+    <item>
+      <title>世界大学排名清单</title>
+      <link>https://www.xiaoledeng.com/2023/12/01/list-of-world-university-ranking/</link>
+      <pubDate>Fri, 01 Dec 2023 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/01/list-of-world-university-ranking/</guid>
+      <description>迁木网：&#xA;2024 泰晤士高等教育世界大学排名 2024 QS世界大学排名 2023 上海交大世界大学学术排名 </description>
+    </item>
+    <item>
+      <title>iReader阅读器的支持格式清单</title>
+      <link>https://www.xiaoledeng.com/2023/11/30/ireader-format/</link>
+      <pubDate>Thu, 30 Nov 2023 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/30/ireader-format/</guid>
+      <description>掌阅iReader电子阅读器的格式支持清单🧾，包括：文档格式、音频格式和图片格式1。&#xA;文档格式：&#xA;txt epub pdf umd mobi ebk2 ebk3 azw3 ttf ttc otf xls xlsx ppt pptx doc docx zip漫画 djvu 音频格式：&#xA;mp3 flac wav m4a acc 图片格式：&#xA;jpg jpeg png 延伸阅读 【掌阅Smart3】掌阅iReader Smart3 10.3英寸大屏电子书阅读器 墨水屏电纸书 智能阅读办公电子纸笔记本 64GB 夜黑-京东 </description>
+    </item>
+    <item>
+      <title>四季蔬菜水果清单</title>
+      <link>https://www.xiaoledeng.com/2023/11/18/season-vegetable-fruit-lists/</link>
+      <pubDate>Sat, 18 Nov 2023 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/18/season-vegetable-fruit-lists/</guid>
+      <description>春季（3~5月） 水果：柠檬、草莓、圣女果、枇杷、菠萝、桑葚、山竹、莲雾、番石榴、柑橘、蛇瓜等。&#xA;蔬菜：生菜、菠菜、油菜、春笋、山椒、韭菜、小葱、茶树菇、土豆、西兰花、黄豆芽、茼蒿、莴笋、苋菜、西葫芦、香椿、西芹、香菇、紫菜、荸荠、海带等。&#xA;夏季（6~8月） 水果：桃子、李子、杏子、蓝莓、樱桃、荔枝、葡萄、火龙果、芒果、山竹、百香果、哈密瓜、甜瓜、西瓜、黄桃、无花果等。&#xA;蔬菜：黄瓜、丝瓜、苦瓜、冬瓜、南瓜、洋葱、西红柿、茄子、豆角、青椒、芹菜、秋葵、芦笋、紫甘蓝、四季豆等。&#xA;秋季（9~11月） 水果：葡萄、秋梨、石榴、山楂、甘蔗、柿子、柚子、枣、苹果、木瓜、柑橘、香蕉、海棠果、红提、脐橙、桂圆等。&#xA;蔬菜：莲藕、山药、红薯、栗子、菱角、雪里蕻、黑木耳、小白菜、白萝卜、青萝卜、芝麻、花生、玉米、芋头、生姜等。&#xA;冬季（12月~2月） 水果：沙糖桔、圣女果、罗汉果、橙子、柚子等。（冬末春初几乎没有应季水果）&#xA;蔬菜：白菜、菠菜、冬笋、韭菜、白萝卜、胡萝卜、芥菜、木耳等。&#xA;延伸阅读 常见的蔬菜种类100种大全 _ 78健康网 </description>
+    </item>
+    <item>
+      <title>常用豆类清单</title>
+      <link>https://www.xiaoledeng.com/2023/11/18/common-bean-lists/</link>
+      <pubDate>Sat, 18 Nov 2023 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/18/common-bean-lists/</guid>
+      <description> 红豆🫘 黄豆 绿豆 青豆 黑豆 白玉豆 白芸豆 大豆 扁豆 蚕豆 豌豆 豇豆 四季豆 菜豆 刀豆 木豆 四棱豆 鹰嘴豆 鞭毛豆 黑眼豆 兵豆 斑豆 &amp;hellip; 延伸阅读 常见的豆类有哪些？ - 知乎 豆类有哪些？ - 知乎 </description>
+    </item>
+    <item>
+      <title>常用蔬菜清单</title>
+      <link>https://www.xiaoledeng.com/2023/11/18/common-vegetable-lists/</link>
+      <pubDate>Sat, 18 Nov 2023 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/18/common-vegetable-lists/</guid>
+      <description>叶（青）菜类 上海青（大头青）、生菜🥬、球生菜、油麦、大芹菜、小芹菜、西芹、空心菜、红（青）苋菜、菠菜、菜心、芥兰、青（紫）油菜苔、木耳菜、小白菜、茼蒿、苦苣、黄心菜、塌塌菜、黑油菜、豌豆尖、丝瓜尖、田七、红薯叶（梗）、白（红）萝卜缨、芥菜&#xA;调味菜类 大葱、小葱、香葱、老姜🫚、新（嫩）姜🫚、大蒜🧄、新蒜、荆芥（西粉芥）、香菜（芫荽）、韭菜、蒜苔（臺）、蒜苗、蒜黄、韭黄、韭花、韭苔（臺）、小茴香苗&#xA;包心菜类 大白菜、黄白菜、包菜（卷心菜）、青甘蓝、紫甘蓝、大娃娃菜、小娃娃菜、麻叶白菜&#xA;萝卜类 青萝卜、白萝卜（象牙白）、心里美萝卜、水果萝卜（沙窝萝卜）、胡萝卜🥕、红皮萝卜&#xA;根茎类 红薯🍠、白薯、黄薯、紫薯、洋葱🧅、土豆🥔（有黄心白心之分）、莲菜（藕）、菜山药、铁棍山药、带壳生花生🥜、芋头、荸荠（马蹄）、菱角、芥疙瘩、地瓜、苤蓝、茭白&#xA;茄子类 圆茄（紫）、长茄（紫）🍆、杭茄（线茄）、青茄&#xA;椒类 黄（青）皮椒🫑、螺丝椒、泡椒、红椒🌶️、圆椒（青椒菜椒）、彩椒（红黄）、小米椒🌶️、线椒（青红）、杭椒、美人椒&#xA;豆角类 长豆角、白爬豆（白豆爬豆）、龙豆（无筋豆）、四季豆、扁豆、梅豆、荷兰豆、大豆角（蛇豆）、毛豆、豌豆（荚）🫛、蚕豆（荚）🫛、豇豆&#xA;瓜菜类 冬瓜（白皮青皮）、老南瓜、菜南瓜、板栗南瓜、西葫芦（北瓜）、荀瓜、苦瓜、丝瓜、瓠瓜（子）、菜瓜、佛手瓜、黄瓜🥒、小黄瓜、旱黄瓜、瓠瓜、节瓜、蛇瓜&#xA;笋类 青笋（莴笋）、香笋、冬笋、春笋、芦笋&#xA;野菜类 荠菜、面条棵（菜）、香椿芽、槐花、芦蒿、白蒿（菌陈）、蒲公英、马齿苋（菜）、雪里红（蕻）&#xA;海洋类 海木耳、海菜、龙须菜、麒麟菜、石花菜、裙带菜、海葡萄、海白菜、海带、紫菜&#xA;其它 西兰花🥦、有机花🥦（青梗散花）、菜花（实心花菜）、西红柿🍅（番茄洋柿）、秋葵、玉米🌽（分粘玉米水果玉米）&#xA;延伸阅读 常见蔬菜的种类，减肥朋友可以收藏了 - 知乎 常见的蔬菜种类100种大全 _ 78健康网 盘点世界上吃的最多的10种海洋蔬菜，很多中国人只吃过3种 - 每日头条 </description>
+    </item>
+    <item>
+      <title>常用水果清单</title>
+      <link>https://www.xiaoledeng.com/2023/11/18/common-fruit-lists/</link>
+      <pubDate>Sat, 18 Nov 2023 08:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/18/common-fruit-lists/</guid>
+      <description> 红苹果🍎 青苹果🍏 梨子🍐 橘子🍊 柠檬🍋 香蕉🍌 西瓜🍉 葡萄🍇 草莓🍓 蓝莓🫐 哈密瓜🍈 樱桃🍒 桃子🍑 芒果🥭 菠萝🍍 椰子🥥 猕猴桃🥝 橄榄果🫒 牛油果🥑 柚子 柿子 杏子 李子 覆盆子 无花果 石榴 百香果 火龙果 木瓜 杨桃 桂圆 荔枝 &amp;hellip; </description>
+    </item>
+    <item>
+      <title>中文测绘期刊清单</title>
+      <link>https://www.xiaoledeng.com/2023/11/15/chinese-survey-articles/</link>
+      <pubDate>Wed, 15 Nov 2023 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/15/chinese-survey-articles/</guid>
+      <description>本页面来自于：测绘期刊论文投稿网址邮箱大全，抓紧收藏啦！&#xA;1. EI收录 测绘学报 网址： http://xb.sinomaps.com/&#xA;电话： 010-68531192；68531322；68531225；68531338&#xA;Email： chxb@chinajournal.net.cn&#xA;武汉大学报·信息科学版 网址： http://ch.whu.edu.cn&#xA;电话：027-68778045&#xA;Email： whuxxb@vip.163.com&#xA;2. 中文核心 测绘通报 网址： http://tb.sinomaps.com&#xA;邮箱： chtb@chinajournal.net.cn&#xA;电话： 010-68531192；010-68531349；010-68531162；010-68531262&#xA;传真： 010-68531317&#xA;测绘科学 网址： http://chkd.cbpt.cnki.net/&#xA;邮箱： niu@casm.ac.cn&#xA;电话：010-63880931&#xA;QQ：2378225509&#xA;大地测量与地球动力学 网址： http://www.jgg09.com&#xA;电子信箱： 827485123@qq.com&#xA;联系电话： 027-87667622&#xA;测绘科学技术学报 网址： http://jfjc.cbpt.cnki.net&#xA;邮箱： cyxbbjb@163.com&#xA;地球信息科学学报 刊期： 月刊&#xA;主管： 中国科学院&#xA;主办： 中国科学院地理科学与资源研究所、中国地理学会&#xA;网址： http://www.dqxxkx.cn&#xA;电子信箱： dqxxkx@igsnrr.ac.cn&#xA;电话： 86-10-64888891&#xA;遥感学报 主管单位： 中国科学院&#xA;主办单位： 中国科学院遥感与数字地球研究所、中国环境遥感学会&#xA;刊期： 双月刊&#xA;ISSN： 1007-4619&#xA;网址： http://www.jors.cn</description>
+    </item>
+    <item>
+      <title>多功能折叠刀的功能清单</title>
+      <link>https://www.xiaoledeng.com/2023/10/18/list-of-functional-knife/</link>
+      <pubDate>Wed, 18 Oct 2023 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/10/18/list-of-functional-knife/</guid>
+      <description>具体地址：【京东京造JZGJ-05】京东京造 户外工具钳 多功能刀</description>
+    </item>
+    <item>
+      <title>北京市FM广播电台频率表</title>
+      <link>https://www.xiaoledeng.com/2023/10/09/beijing-fm-radio-stations-frequency-table/</link>
+      <pubDate>Mon, 09 Oct 2023 01:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/10/09/beijing-fm-radio-stations-frequency-table/</guid>
+      <description>1. 北京市朝阳区 频率 电台名称 FM 88.1 MHz 河北旅游文化广播 FM 90.0 MHz 中央人民广播电台·音乐之声 FM 92.9 MHz 顺义人民广播电台 FM 93.8 MHz 承德新闻综合频道 FM 94.5 MHz 北京新闻广播 FM 94.8 MHz 河北音乐广播 FM 97.4 MHz 北京音乐广播 FM 99.3 MHz 河北交通广播 FM 105.2 MHz 河北新闻广播 2. 参考 北京的广播电台 / Radio stations in Beijing, China — World Radio Map </description>
+    </item>
+    <item>
+      <title>macOS系统重装科研软件的步骤清单</title>
+      <link>https://www.xiaoledeng.com/2023/01/24/step-by-step-checklist-for-macos-system-reinstallation-software/</link>
+      <pubDate>Tue, 24 Jan 2023 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/01/24/step-by-step-checklist-for-macos-system-reinstallation-software/</guid>
+      <description>在2021年总结了科研软件清单，见：macOS科研软件清单。&#xA;此次是重新安装这些科研软件，故此记录下整个流程的大概步骤，方便以后优化。&#xA;1. 安装软件 Alfred https://www.alfredapp.com/ Anaconda https://www.anaconda.com/products/distribution ，建议命令行安装，在命令行加入环境路径echo &#39;export PATH=&amp;quot;/Users/username/anaconda3/bin:$PATH&amp;quot;&#39; &amp;gt;&amp;gt; ~/.zshrc和source ~/.zshrc，输入conda -V，显示版本号，即安装成功。 CheatSheet https://www.mediaatelier.com/CheatSheet/ draw.io https://www.diagrams.net/ GMT-5.4.5 https://www.generic-mapping-tools.org/download/ ，记得把 export PATH=${PATH}:/Applications/GMT-5.4.5.app/Contents/Resources/bin 加入到 ~./bashrc 或 ~./zshrc 文件中。 Google Chrome https://www.google.com/chrome/ Keka https://www.keka.io/en/ Mathematica https://tiebamma.github.io/InstallTutorial/ ，其他设置包括：Mathematica关闭网络连接 Mathpix https://mathpix.com/desktop-downloads Microsoft Excel, PowerPoint, Word Microsoft Remote Desktop Beta https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac NTFS for Mac https://www.seagate.com/cn/zh/support/software/paragon/ PDF Expert https://pdfexpert.com/ Royal TSX https://royalapps.com/ts/mac/download ，下载 Plugins，包括：Terminal和File Transfer，打开之前的rtsz文件即可。 Skim https://skim-app.sourceforge.io/ Spectacle https://www.spectacleapp.com/ Sublime Text https://www.sublimetext.com/ ，Sublime的其他设置包括：Mac下设置sublime的命令行打开文档、macOS系统关闭Sublime更新提示、macOS系统Sublime只显示空格、Crack Sublime Text and Sublime Merge MacTeX https://www.</description>
+    </item>
+    <item>
+      <title>斯图加特FM广播电台频率表</title>
+      <link>https://www.xiaoledeng.com/2022/12/23/stuttgart-fm-radio-stations-frequency-table/</link>
+      <pubDate>Fri, 23 Dec 2022 22:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/12/23/stuttgart-fm-radio-stations-frequency-table/</guid>
+      <description>FM radio stations in Stuttgart Frequence Radio Stations 87.9 MHz Deutschlandfunk Kultur 88.3 MHz SWR1 Baden-Württemberg 88.8 MHz SWR2 (Baden-Württemberg) 89.9 MHz 90.1 MHz SWR4 Baden-Württemberg 90.6 MHz hr1 90.8 MHz SWR DASDING (SWR) 91.8 MHz SWR2 (Baden-Württemberg) 92.0 MHz SWR2 (Baden-Württemberg) 92.2 MHz SWR3 (Württemberg) 93.5 MHz SWR1 Baden-Württemberg 94.7 MHz SWR1 Baden-Württemberg 95.3 MHz 95.7 MHz 95.9 MHz 96.2 MHz SWR2 (Baden-Württemberg) 97.8 MHz 98.4 MHz SWR3 99.1 MHz Freies Radio Für Stuttgart 99.</description>
+    </item>
+    <item>
+      <title>碳素墨水和档案墨水清单</title>
+      <link>https://www.xiaoledeng.com/2022/12/12/list-of-carbon-document-ink/</link>
+      <pubDate>Mon, 12 Dec 2022 08:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/12/12/list-of-carbon-document-ink/</guid>
+      <description>1. 碳素墨水 鸵鸟555（国产）&#xA;英雄231（国产）&#xA;万宝龙永恒蓝（德系）&#xA;鲶鱼永恒黑 Noodler&amp;rsquo;s Ink Black （美系）&#xA;写乐极黑 Sailor（日系）&#xA;白金1500（日系）&#xA;2. 档案墨水 鸵鸟313和鸵鸟553铁胆蓝黑（国产）&#xA;白云铁胆蓝黑（国产）&#xA;英雄232铁胆蓝黑（国产）&#xA;De-Atramentis Document Ink系列（德系）&#xA;Rohrer &amp;amp; Klingner Salix 铁胆蓝黑（德系）&#xA;百利金高阶黑 Pelikan Fount India document proof （德系）&#xA;戴阿米档案墨水 Diamine（英系）&#xA;写乐青墨 Sailor（日系）&#xA;3. 延伸阅读 有哪些钢笔墨水是防水的？ - 知乎</description>
+    </item>
+    <item>
+      <title>网络在线收听世界各地的广播电台</title>
+      <link>https://www.xiaoledeng.com/2022/11/22/listen-online-to-radio-stations-around-the-world/</link>
+      <pubDate>Tue, 22 Nov 2022 07:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/11/22/listen-online-to-radio-stations-around-the-world/</guid>
+      <description>1. 引言 在网页上，通过网络在线收听世界各地的广播电台，地址如下：&#xA;https://worldradiomap.com/list/&#xA;可以按照地区和城市划分。&#xA;2. 中国部分城市的广播电台 北京&#xA;天津&#xA;上海&#xA;重庆&#xA;广东·广州&#xA;辽宁·大连&#xA;辽宁·沈阳&#xA;吉林·长春&#xA;新疆·乌鲁木齐&#xA;陕西·西安&#xA;四川·成都&#xA;湖北·武汉&#xA;山东·青岛&#xA;黑龙江·哈尔滨&#xA;河南·郑州&#xA;河北·石家庄&#xA;江苏·南京&#xA;香港&#xA;澳门&#xA;台湾·台北</description>
+    </item>
+    <item>
+      <title>慕尼黑FM广播电台频率表</title>
+      <link>https://www.xiaoledeng.com/2022/10/29/munich-fm-radio-stations-frequency-table/</link>
+      <pubDate>Sat, 29 Oct 2022 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/10/29/munich-fm-radio-stations-frequency-table/</guid>
+      <description>FM radio stations in Munich Frequence Radio Stations FM 89.0 MHz Radio 2Day (classic rock, charts) FM 89.5 MHz BR Bayern 2 (documentaries, news, radio plays) FM 90.0 MHz BR24 or B5 Aktuell (news and reports) FM 91.3 MHz BR Bayern 1 (oldies, folk music and reports from Bavaria) FM 92.4 MHz Radio Horeb/Christian Radio Munich (non-commercial church radio), LORA (Munich citizens&amp;rsquo; radio), Radio Feierwerk (non-commercial program for children and young people) FM 93.</description>
+    </item>
+    <item>
+      <title>上海市FM广播电台频率表</title>
+      <link>https://www.xiaoledeng.com/2022/10/23/shanghai-fm-radio-stations-frequency-table/</link>
+      <pubDate>Sun, 23 Oct 2022 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/10/23/shanghai-fm-radio-stations-frequency-table/</guid>
+      <description>1. 上海市浦东新区 频率 电台名称 FM 87.9 MHz HIT FM FM 89.9 MHz 899都市广播 FM 91.4 MHz 中央人民广播电台·经济之声 FM 93.4 MHz 上海新闻广播 FM 94.0 MHz 五星体育广播 FM 94.7 MHz 经典音乐广播 FM 95.5 MHz 中国交通广播 FM 97.2 MHz 上海戏剧曲艺广播 FM 97.7 MHz 第一财经广播 FM 99.0 MHz 中央人民广播电台·中国之声 FM 100.1 MHz 浦东广播100.1 沸点音乐 FM 101.7 MHz 动感101 FM 103.7 MHz Love Radio FM 105.7 MHz 上海交通广播 FM 106.5 MHz 浦东广播106.5 东上海之声 FM 107.7 MHz 中央人民广播电台·音乐之声 2.</description>
+    </item>
+    <item>
+      <title>合肥市FM广播电台频率表</title>
+      <link>https://www.xiaoledeng.com/2022/10/18/hefei-fm-radio-stations-frequency-table/</link>
+      <pubDate>Tue, 18 Oct 2022 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/10/18/hefei-fm-radio-stations-frequency-table/</guid>
+      <description>1. 合肥市蜀山区 频率 电台名称 FM 87.6 MHz 合肥文艺广播 FM 88.1 MHz 合肥新闻综合广播 FM 89.5 MHz 安徽音乐广播 FM 90.8 MHz 安徽交通广播 FM 91.5 MHz 合肥新闻综合广播中央人民广播电台·音乐之声 FM 92.9 MHz 安徽新闻综合广播·安徽之声 安徽生活广播（或 安徽城市之声） FM 93.5 MHz 中央人民广播电台·中国之声 FM 94.3 MHz 中央人民广播电台·音乐之声 FM 95.5 MHz 安徽农村广播 FM 96.1 MHz 安徽旅游广播·高速之声 FM 97.1 MHz 安徽经济广播 FM 98.8 MHz 合肥故事广播 FM 99.5 MHz 安徽戏曲广播 FM 100.4 MHz 中国交通广播 FM 100.8 MHz 包河区广播电台 FM 102.6 MHz 合肥交通广播 FM 103.</description>
+    </item>
+    <item>
+      <title>留徳物品清单</title>
+      <link>https://www.xiaoledeng.com/2022/10/10/list-of-things-germany/</link>
+      <pubDate>Mon, 10 Oct 2022 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/10/10/list-of-things-germany/</guid>
+      <description>1. 文件（必备证件） 护照 身份证 白底照片 保险证明 现金（欧元）若干 国际信用卡 2. 电子产品 手机 电脑 平板电脑 德标/欧标的转换插头 插排 充电宝 短期电话卡 移动硬盘 U盘 各种充电器和充电线 3. 防疫物资 口罩 消毒湿纸巾 4. 常备药 感冒药 退烧药 消炎药 or 抗生素 止泻和胃肠药 过敏药 跌打损伤药 创可贴 风油精 云南白药 5. 生活物品 眼镜：带备用眼镜 厨房用品：小电饭锅、筷子、饭盒、小热水壶 调料：鸡精、花椒、麻椒、大料、十三香——炖肉、炖鸡、料火锅底料、蘸料、辣椒、蘸水粉&amp;hellip; 冬季衣物 床上用品：被褥、床单、枕头等 洗漱用品：毛巾、剃须刀等 零食少量 鞋：拖鞋、运动鞋 雨伞 中国特色的小礼物 指甲刀 参考 2022年去德国留学，需要带什么物品？ - 知乎 【德国留学】收藏！最全赴德行李准备攻略 德国留学 | 德国大学2022年夏季学期最完整行前指南！ - 知乎 德国留学可以带什么？穷学生版 - 知乎 来德国留学之前需要准备的物品清单 - 知乎 到德国留学要带什么必备品？ - 知乎 德国留学必备物品及生活指南 - 知乎 </description>
+    </item>
+    <item>
+      <title>国内开源软件镜像站的清单</title>
+      <link>https://www.xiaoledeng.com/2022/05/01/list-of-domestic-open-source-mirror-sites/</link>
+      <pubDate>Sun, 01 May 2022 19:40:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/05/01/list-of-domestic-open-source-mirror-sites/</guid>
+      <description>大学开源镜像站 教育网镜像站导航: https://mirrorz.org/&#xA;北京外国语大学: https://mirrors.bfsu.edu.cn 北京交通大学: https://mirror.bjtu.edu.cn/ 北京邮电大学: https://mirrors.bupt.edu.cn 重庆大学: https://mirrors.cqu.edu.cn 重庆邮电大学: https://mirrors.cqupt.edu.cn 东莞理工学院: https://mirrors.dgut.edu.cn 大连东软信息学院: http://mirrors.neusoft.edu.cn 哈尔滨工业大学: http://mirrors.hit.edu.cn/ 中国科学院: https://mirror.iscas.ac.cn 兰州大学: http://mirror.lzu.edu.cn/ 东北大学: http://mirror.neu.edu.cn 南京工业大学: https://mirrors.njtech.edu.cn 南京大学: https://mirror.nju.edu.cn 南京邮电大学: https://mirrors.njupt.edu.cn 西北农林科技大学: https://mirrors.nwafu.edu.cn 南阳理工学院: https://mirror.nyist.edu.cn 清华大学: https://mirrors.tuna.tsinghua.edu.cn/ or https://opentuna.cn/ 北京大学: https://mirrors.pku.edu.cn 华南农业大学: https://mirrors.scau.edu.cn 山东大学: https://mirrors.sdu.edu.cn 上海科技大学: https://mirrors.shanghaitech.edu.cn 上海交通大学: https://mirror.sjtu.edu.cn/ or https://mirrors.sjtug.sjtu.edu.cn/ 南方科技大学: https://mirrors.sustech.edu.cn 电子科技大学: http://mirrors.uestc.cn 中国科学技术大学: http://mirrors.ustc.edu.cn/ 西安电子科技大学: https://linux.xidian.edu.cn/mirrors 西安交通大学: https://mirrors.xjtu.edu.cn 云南大学: https://mirrors.ynu.edu.cn 浙江大学: http://mirrors.zju.edu.cn/ 公司开源镜像站 华为开源镜像站： https://mirrors.huaweicloud.com/home 腾讯软件源： https://mirrors.cloud.tencent.com/ 阿里巴巴开源镜像站： https://developer.</description>
+    </item>
+    <item>
+      <title>Ubuntu防黑的经验总结</title>
+      <link>https://www.xiaoledeng.com/2022/04/21/unhack-ubuntu-experiences/</link>
+      <pubDate>Thu, 21 Apr 2022 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/04/21/unhack-ubuntu-experiences/</guid>
+      <description>之前总觉得计算机被黑距离现实生活很遥远，直到自己的电脑Ubuntu系统被黑后，才发现原来计算机被黑就在身边，而且发生在自己身上。&#xA;思考之后，总结以下防黑经验：&#xA;密码改复杂； 密码定期更换； 禁止root远程登录，见：Ubuntu禁止用户远程ssh登录； 电脑的ssh服务：设置IP地址黑名单和白名单，即只允许固定IP登陆，见：Ubuntu设置ssh服务的IP地址黑名单和白名单； 电脑不用时，要关机和断网； 电脑跑程序时，可以断网跑； 定期查看系统日志文件，包括： lastlog命令，查看系统中所有用户最后一次登录时间； last命令，查看永久记录所有用户的登录、注销信息，同时记录系统的启动、重启、关机事件； lastb命令，查看错误登录日志； </description>
+    </item>
+    <item>
+      <title>重装Ubuntu系统的经验总结和软件清单</title>
+      <link>https://www.xiaoledeng.com/2022/04/12/reinstall-ubuntu-experiences/</link>
+      <pubDate>Tue, 12 Apr 2022 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/04/12/reinstall-ubuntu-experiences/</guid>
+      <description>1. 前言 居家办公期间，台式机的Ubuntu系统界面崩溃，是因为Gnome桌面的问题，即不能用登陆桌面，也不能ssh登陆。&#xA;返校后，重装了Ubuntu系统，包括华擎B460M主板还原BIOS设置。&#xA;隔天，设置命令行启动，结果Ubuntu系统再次崩溃，继续重装。&#xA;再隔一天，关机键强制重启系统后，Ubuntu系统又一次崩溃，原因是文件损坏，继续重装。&#xA;共计3次重装，所幸U盘是3.0接口，并且用固态硬盘，安装Ubuntu系统的时间大约30分钟内。&#xA;本文是记录Ubuntu系统安装后的一些经验总结，包括软件安装的清单。&#xA;经过这些天的试验，对个人而已，Ubuntu系统适合用于科学计算，不适合日常科研办公用。即，Ubuntu的状态为：长期开机运行，不外接显示器、键盘和鼠标，仅安装基本编程跑运算的软件，如，Mathematica、Matlab、Fortran和Python等，可以利用远程软件Anydesk和Todesk访问，也可以利用ssh命令行访问。&#xA;2. 步骤 下载Ubuntu长期支持版本的ISO镜像，教育网可用中科大开源地址： https://mirrors.ustc.edu.cn/&#xA;利用Ventoy制作U盘启动盘，见：多系统启动U盘安装工具：Ventoy&#xA;安装完Ubuntu系统后，进行一些基本的设置，包括：自动登录、不黑屏和换源等，换源见：Ubuntu 源使用帮助 — USTC Mirror Help 文档&#xA;Ubuntu虚拟桌面设置，即不需要外接显示器也可以远程访问，见：Ubuntu虚拟显示器且远程控制（无显示器接入）&#xA;安装基本软件，如：Mathematica和Intel oneAPI编程套件，见：Ubuntu安装Intel® oneAPI Base &amp;amp; HPC Toolkit&#xA;安装远程控制软件，如：AnyDesk https://anydesk.com/zhs/downloads/linux 和ToDesk https://www.todesk.com/linux.html，并进行基本设置，包括开机自动启动&#xA;至此，重启电脑后，可利用AnyDesk或ToDesk进行远程访问。&#xA;安装Clash上网、Zerotier和ssh设置，此项是用于ssh命令行能够访问，见：Ubuntu配置ZeroTier和 局域网ssh远程访问Ubuntu系统&#xA;Ubuntu系统安全的设置，见：Ubuntu防黑的经验总结</description>
+    </item>
+    <item>
+      <title>生活物资囤货清单</title>
+      <link>https://www.xiaoledeng.com/2022/04/09/life-food-lists/</link>
+      <pubDate>Sat, 09 Apr 2022 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/04/09/life-food-lists/</guid>
+      <description>常用食物 干货(腐竹，粉丝，裙带菜，紫菜，粉，面等) 冻品(冻肉，火锅类冻品，冻面点类汤圆，手抓饼，饺子，馄饨，烧卖) 速食(螺蛳粉，南昌拌粉，泡面，自热锅类) 预制菜(冻烤鱼，冻猪肚鸡，冻羊蝎子等大菜) 真空包的半成品(如山药，藕片，玉米，贡菜，笋) 基础主食：大米，面条，米粉多备 做饭设备 电磁炉 锅 饮料 牛奶 汽水 果汁 调料 食盐 白砂糖 冰糖 生抽 老抽 料酒 醋 葱、姜、蒜 常温可以摆放的食品 大米 面粉 挂面 刀削面 意大利面 方便面 燕麦 水果蔬菜罐头，如新疆笑厨西红柿罐头 蛋白粉 耐储肉类（腊肉、罐头肉、冻肉）蛋类 药品/补剂 常用药（感冒、腹泻、消炎药、胃疼、抗过敏） 慢性病药物（硝苯地平、胰岛素、速效救心丸等等） 多元维生素补剂或维生素片 益生菌 纤维素 日用品 卷纸 抽纸 厨房纸 卫生巾 消毒纸巾 垃圾袋 洗洁精 洗碗机洗碗块 洗手液 洗衣液 沐浴露 洗发水 牙膏 保鲜袋 保鲜膜 烤箱纸 锡箔纸 通下水道的溶剂 打扫厕所的喷剂 厕所抹布 电子设备 三合一的手机充电线 参考 写给上海以外朋友的囤货指南 </description>
+    </item>
+    <item>
+      <title>中国家庭应急物资储备建议清单</title>
+      <link>https://www.xiaoledeng.com/2022/03/14/recommended-list-of-household-emergency-supplies-in-china/</link>
+      <pubDate>Mon, 14 Mar 2022 20:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/03/14/recommended-list-of-household-emergency-supplies-in-china/</guid>
+      <description>1. 基础版 1.1 应急物品 具备收音功能的手摇充电电筒：可对手机充电、FM 自动搜台、按键可发报警声音。 救生哨：建议选择无核设计，可吹出高频求救信号 毛巾纸巾：用于个人卫生清洁 饮用水、食品：可长期储存食品，能够满足一家人72小时的热量与需求 1.2 应急工具 多功能雨衣：背包连体雨衣，用做防风防雨 防潮垫：用于人员、物品防潮 呼吸面罩：消防过滤式自救呼吸器，用于火灾逃生使用 多功能组合剪刀：有刀锯、螺丝刀、钢钳等组合功能 应急逃生绳：用于居住楼层较高，逃生使用 防风打火机：用于生火 灭火器：用于扑灭油锅火等 防火毯：火灾中披覆在身上逃生 1.3 应急药具 常用医药品：抗感染、抗感冒、抗腹泻、防暑降温药品类非处方药（少量） 急救包：包含碘伏棉棒、创可贴、纱布绷带等用于外伤处理包扎的医用材料 2. 扩充版 2.1 水和食品 饮用水：纯净水 食品：饼干或压缩饼干、干脆面、巧克力、罐头等；维生素补充剂、葡萄糖冲剂 特殊人群食品：婴儿奶粉、儿童特殊食品；老年人特殊食品；其他，如高血压、高血糖患者食品等 2.2 生活用品 洗漱用品：毛巾、牙刷、牙膏；洗发水、香皂、沐浴露 衣物：备用内衣裤、轻便贴身衣物；雨衣；帽子、手套 特殊人群用品：孕妇用品、卫生巾等；老花镜 其它生活用品：防潮垫；驱蚊剂；消毒液、漂白剂等；防水鞋、拖鞋；应急物品收纳包、资料收纳袋 防疫用品：医用一次性外科口罩；75%酒精（含喷雾器）、免洗消毒液 2.3 应急工具 逃生工具：应急逃生绳；救生衣、救生圈 求救联络工具：求救哨子；便携式收音机（带备用电池）；反光衣；手机、手机充电宝 生存救助工具：防护头盔；手摇手电/便携式手电（带备用电池）；红外线激光笔；多功能雨衣；防风打火机；蜡烛；应急毛毯；多功能剪刀；呼吸面罩；车载安全锤、撬棍；灭火器；防火毯 2.4 应急药具 消炎用品：碘伏棉棒/医用酒精棉片；创可贴；抗菌软膏 包扎用品：医用纱布块/纱布卷；医用弹性绷带；三角绷带；止血带/压脉带 辅助工具：镊子；医用橡胶手套；医用纸胶带宽胶带；棉花球；体温计 医用药品：常备药品（消炎药、止泻药、退烧药、感冒药、镇痛药、防暑降温药、烫伤烧伤膏） 2.5 重要文件资料 家庭成员信息资料：身份证；户口簿；机动车驾驶证；出生证；结婚证 重要财务资料：适量现金；银行卡、存折；不动产权证书 其他重要资料：家庭紧急联络单（电话联系表）；家庭应急卡片（建议正面附家庭成员照片、血型、常见病及用药情况，反面附家庭住址、家属联系方式、应急部门联系电话和紧急联络人联系方式） 3. 延伸阅读 全国基础版家庭应急物资储备建议清单 北京市家庭应急物资储备建议清单 天津市家庭应急物资储备建议清单 上海市家庭应急物资储备建议清单 广州市家庭应急物资储备建议清单 深圳市家庭应急物资储备建议清单 重庆市家庭应急物资储备建议清单 湖北省家庭应急物资储备建议清单 湖南省家庭应急物资储备建议清单 江苏省家庭应急物资储备建议清单 山东省家庭应急物资储备建议清单 江西省家庭应急物资储备建议清单 河北省家庭应急物资储备建议清单 沈阳市家庭应急物资储备建议清单 厦门市家庭应急物资储备建议清单 武汉市家庭应急物资储备建议清单 西安市家庭应急物资储备建议清单 </description>
+    </item>
+    <item>
+      <title>安徽阜阳小吃</title>
+      <link>https://www.xiaoledeng.com/2022/02/27/snacks-in-fuyang-anhui-province/</link>
+      <pubDate>Sun, 27 Feb 2022 19:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/02/27/snacks-in-fuyang-anhui-province/</guid>
+      <description>本页小吃来自于：阜阳小吃最新排名！上榜的有颍上谢桥明山酥糖、谢桥羊肉汤、八里河生态鱼头汤。&#xA;颍东插花牛肉汤 颍上谢桥明山酥糖 颍东口孜牛肉 颍上谢桥羊肉汤 颍东洞天功夫鱼 颍东口孜板鸡 颍东口孜烧鸡 界首特色胡辣汤 阜阳八里河生态鱼头汤 颍上手工鸡蛋馍 田三卷馍 颍上溜孜口腊肉 枕头馍 格拉条 太和板面 阜阳粉鸡 从2016年至今，吃过的以上小吃有：胡辣汤、手工鸡蛋馍、格拉条、阜阳粉鸡。</description>
+    </item>
+    <item>
+      <title>测绘科学与技术学科博士点和硕士点的高校及科研院所名单</title>
+      <link>https://www.xiaoledeng.com/2021/07/27/geodesy-phd-master-schools-lists/</link>
+      <pubDate>Tue, 27 Jul 2021 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/07/27/geodesy-phd-master-schools-lists/</guid>
+      <description>本页内容来自于：【慧天地】的最新发布！全国具有测绘科学与技术学科博士点、硕士点的高校及科研院所名单。&#xA;据【慧天地】统计，到目前为止，全国（不含港澳台地区）拥有测绘科学与技术一级学科博士点的高校共有19所；拥有一级学科硕士点的高校和科研院所共55所，仅拥有二级学科硕士点的高校有5所。&#xA;测绘科学与技术的介绍见： 国务院学位委员会第六届学科评议组六位大咖为您解读测绘科学与技术学科。&#xA;1. 具有测绘科学与技术一级学科博士点的19所高校 各高校按照授权单位代码排序，排名不分先后&#xA;10001 北京大学&#xA;10147 辽宁工程技术大学&#xA;10247 同济大学&#xA;10290 中国矿业大学&#xA;10294 河海大学&#xA;10405 东华理工大学&#xA;10424 山东科技大学&#xA;10460 河南理工大学&#xA;10486 武汉大学&#xA;10491 中国地质大学&#xA;10533 中南大学&#xA;10613 西南交通大学&#xA;10674 昆明理工大学&#xA;10704 西安科技大学&#xA;10710 长安大学&#xA;10732 兰州交通大学&#xA;14430 中国科学院大学&#xA;（注：中科院下属单位的学位点都统计到中国科学院大学）&#xA;91017 海军大连舰艇学院&#xA;91035 中国人民解放军战略支援部队信息工程大学&#xA;2. 只具有测绘科学与技术一级学科硕士点的36所高校及科研院所 （注：各高校及科研院所均按照授权单位代码排序，排名不分先后。具有测绘科学与技术一级学科博士点的19所高校自动具备相应一级学科硕士点，不再重复罗列。）&#xA;10016 北京建筑大学&#xA;10027 北京师范大学&#xA;10112 太原理工大学&#xA;10145 东北大学&#xA;10153 沈阳建筑大学&#xA;10183 吉林大学&#xA;10191 吉林建筑大学&#xA;10286 东南大学&#xA;10293 南京邮电大学&#xA;10291 南京工业大学&#xA;10300 南京信息工程大学</description>
+    </item>
+    <item>
+      <title>100条研究游戏规则</title>
+      <link>https://www.xiaoledeng.com/2021/06/05/100-research-rules-of-the-game/</link>
+      <pubDate>Sat, 05 Jun 2021 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/06/05/100-research-rules-of-the-game/</guid>
+      <description>本页内容完全来自于：Brennan 2019的谷歌翻译+人工修改，原文引用格式为：&#xA;Brennan, N.M. (2019), &amp;ldquo;100 research rules of the game: How to make your research world class; how to successfully publish in top international refereed journals&amp;rdquo;, Accounting, Auditing &amp;amp; Accountability Journal, Vol. 32 No. 2, pp. 691-706. https://doi.org/10.1108/AAAJ-02-2019-032&#xA;另外，在科研的100条规则(翻译 左博BOSS) - 知乎有中文翻译，可供参考。 ​&#xA;①总体 1 享受你的研究 擅长你不喜欢的事情是很难的。你做的研究越多，你就会越喜欢它（以一种痛苦的方式！）。&#xA;2 发挥你的优势 将您的专业知识（例如，精通另一种语言、访问数据、专业方法等）用于研究目的。把握时机。（同时也走出你的舒适区并发展你的专业知识。）&#xA;3 为你的研究承担所有权/责任 不要责怪你的导师/你的合著者/审稿人/编辑。你对你的研究负责。不重视您的研究的审稿人/编辑表明您没有向他们出售研究（参见 Bartunek et al. 2006；Faff 2015）。&#xA;4 目标是在文献中出名 想想你在文献中的定位。不要将自己分散得太细，否则您将无法在某个领域建立专业声誉。选择2到5个领域，其中至少一个应该是您学科的主流。&#xA;5 不要以一招小马著称 不要犁得太窄，以免只在一个领域出名，并因过度深挖一个领域而声名狼藉。&#xA;6 制定发表策略/计划 需要考虑的问题包括：您希望自己在文献中的位置、您感兴趣的研究类型以及您的研究是否与您的教学相辅相成。查看其他研究人员的个人资料，了解好的发表策略/计划可能是什么样子。他们的大学档案、Google Scholar或者在没有 Google Scholar 档案的情况下，Publish-or-Perish (Harzing 2018) 或 Scopus 都是很好的来源。</description>
+    </item>
+    <item>
+      <title>macOS科研软件清单</title>
+      <link>https://www.xiaoledeng.com/2021/05/16/list-of-scientific-softwares/</link>
+      <pubDate>Sun, 16 May 2021 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/05/16/list-of-scientific-softwares/</guid>
+      <description>1. 前言 本人的专业是理工科，科研方面会用到一些常用的软件，有必要撰写macOS系统的科研软件清单，以供自己总结，也可给看到的人参考。&#xA;2. 软件清单 科研写作 Texpad：macOS系统下的LaTeX编译器 MacTeX：整套macOS下的LaTeX的环境配置 公式利器Mathpix Snipping Tool：可把截图公式转变为LaTeX代码 Visual Studio Code：稳定的文本编辑器，可替换Sublime 3、Typora、Github Desktop、GMT、draw.io、Python和Fortran Word、PPT和Excel：Office和WPS Grammarly：英文语法检查工具 输入法：小鹤双拼输入法 画图 GMT：用于绘制论文图片，编程代码可重复 Ximd Zen：思维导图 draw.io：流程图 科学计算和编程 Mathematica：用于公式推导 Matlab：用于数值运算 Anaconda：Python软件包 gfortran或ifort：Fortran编译器 上网和服务器 ClashX：macOS系统下的上网工具1 V2RayX：macOS系统下的上网工具2 Tunnelblick：教育网网络访问服务器 Royal TSX或Transmit：服务器上传和下载文件 远程访问 TeamViewer Anydesk Todesk ZeroTier one 线上会议 Zoom TencentMeeting Skype 备份 OneDrive：教育用户有1T容量的网盘 Syncthing：资料备份工具 Paragon NTFS for Mac：硬盘管理工具 其他软件 Keka：解压和压缩文件 iTerm：命令行工具 Homebrew：命令行工具 Google Chrome：浏览器 PDF Expert：PDF阅读器 Parallels Desktop：虚拟机，安装Windows系统 Alfred：macOS系统的效率工具 Spectacle：控制窗口大小和位置的工具 3. 修改历史 2021.05.16，撰写此文； 2022.07.31，更新此文； </description>
+    </item>
+    <item>
+      <title>LaTeX绘图之TikZ入门资料清单</title>
+      <link>https://www.xiaoledeng.com/2021/04/16/latex-tikz/</link>
+      <pubDate>Fri, 16 Apr 2021 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/04/16/latex-tikz/</guid>
+      <description>1. 简要清单 awesome-tikz：xiaohanyu/awesome-tikz: A curated list of awesome TikZ documentations, libraries and resources 英文文档：tikzpgfmanual.pdf 命令大全：VisualTikZ.pdf Version 0.66 May 31, 2018 社区问答：Newest &amp;rsquo;tikz-pgf&amp;rsquo; Questions - TeX - LaTeX Stack Exchange 各种样例: TikZ and PGF examples A very minimal introduction to TikZ：minimaltikz.pdf 2. Awesome TikZ This part is from xiaohanyu/awesome-tikz: A curated list of awesome TikZ documentations, libraries and resources.&#xA;TikZ is a wonderful awesome graph drawing package for TeX/LaTeX/ConTeXt. Unlike other TeX packages, TikZ itself is really huge, its manual contains about 1100+ pages, 100+ chapters.</description>
+    </item>
+    <item>
+      <title>vscode编辑器</title>
+      <link>https://www.xiaoledeng.com/2021/04/12/vscode/</link>
+      <pubDate>Mon, 12 Apr 2021 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/04/12/vscode/</guid>
+      <description>1. 简介 Visual Studio Code (vscode)是一款编辑器，官网为：Visual Studio Code - Code Editing. Redefined。&#xA;特色是，可以把常用的编程环境都能设置，即All in one。&#xA;2. 常用插件清单 Auto Rename Tag：自动写好tag Better Comments：设置注释的各种格式 Bracket Pair Colorizer：设置不同颜色的括号 Browser Preview：打开网页链接 Code Runner：运行各种语言，包括：C、C++、Python、Julia等 Code Spell Checker：语法检查 Draw.io Integration：流程图 fortran：Fortran支持 LaTeX Workshop：LaTeX支持 Markdown All in One：Markdown支持 &amp;hellip; 3. Mac设置命令行缩写code 首先，打开~/.zshrc或~/.bashrc；&#xA;而后，添加以下命令：&#xA;alias code=\&amp;#39;&amp;#39;/Applications/Visual Studio Code.app/Contents/MacOS/Electron&amp;#39;\&amp;#39; 在终端输入source ~/.zshrc或source ~/.bashrc，而后输入code即可打开vscode编辑器。</description>
+    </item>
+    <item>
+      <title>LaTeX常用网站清单</title>
+      <link>https://www.xiaoledeng.com/2021/03/30/latex-website-list/</link>
+      <pubDate>Tue, 30 Mar 2021 07:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/03/30/latex-website-list/</guid>
+      <description>1. 大学课程 华东师范大学的 LaTeX 课程主页 黄正华的教学信息页面 2. 常用网址 TeX Users Group (TUG) TeX 宏包大本营 ctan.org TikZ 绘图样例合集 TeXample.net TeX - LaTeX Stack Exchange LaTeX工作室 Overleaf, Online LaTeX Editor 3. 常用工具 Mathpix Snip LaTeX Templates LaTeX Color Definitions The Comprehensive LaTeX Symbol List 数学符号表.pdf The Comprehensive LaTeX Symbol List Mathematical Symbols.pdf 4. 博客分享 LaTeX 分类: LaTeX | 始终 归档 | stone-zeng.github.io ElegantLaTeX Templates :: Documentation for ElegantLaTeX Templates 5. 参考 常逛这些站点，LaTeX 功力自然精进 6.</description>
+    </item>
+    <item>
+      <title>科研写作工具</title>
+      <link>https://www.xiaoledeng.com/2021/02/09/scientific-write-tools/</link>
+      <pubDate>Tue, 09 Feb 2021 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/02/09/scientific-write-tools/</guid>
+      <description>1. 检索&amp;amp;下载文献 Google Scholar Sci-hub： http://www.sci-hub.wang/ http://www.sci-hub.se/ http://www.sci-hub.tw/ http://www.sci-hub.ren/ Library Genesis： http://libgen.rs/ http://libgen.lc/ http://libgen.gs/ http://libgen.li/ Book4you 数据库导航-图书馆 2. 翻译工具 Google 翻译 DocTranslator 3. 写作工具 Linggle 和 Netspeak：词组，近义词，高频词汇查询 Thesaurus Academic Phrasebank：句子和表达 Grammarly：语法检查 4. 期刊查询 微信小程序：中国科学院文献情报中心 LetPub MedSci 5. 学术交流 ResearchGate Github </description>
+    </item>
+    <item>
+      <title>Raspberry Pi【4】常用软件源</title>
+      <link>https://www.xiaoledeng.com/2020/11/14/raspberry-pi-4/</link>
+      <pubDate>Sat, 14 Nov 2020 13:20:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/14/raspberry-pi-4/</guid>
+      <description>1. USTC 中国科学技术大学 Raspbian https://mirrors.ustc.edu.cn/raspbian/raspbian/&#xA;Raspberrypi https://mirrors.ustc.edu.cn/raspberrypi/&#xA;2. Aliyun 阿里云 Raspbian http://mirrors.aliyun.com/raspbian/raspbian/&#xA;3. 清华大学 Raspbian http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/&#xA;Raspberrypi https://mirrors.tuna.tsinghua.edu.cn/raspberrypi/&#xA;4. 华南农业大学（华南用户） Raspbian http://mirrors.scau.edu.cn/raspbian/&#xA;Raspberrypi https://mirrors.scau.edu.cn/raspberrypi/&#xA;5. 大连东软信息学院源（北方用户） Raspbian http://mirrors.neusoft.edu.cn/raspbian/raspbian/&#xA;6. 重庆大学源（中西部用户） Raspbian https://mirrors.cqu.edu.cn/raspbian/raspbian/&#xA;7. 新加坡国立大学 Raspbian http://mirror.nus.edu.sg/raspbian/raspbian&#xA;8. 牛津大学 Raspbian http://mirror.ox.ac.uk/sites/archive.raspbian.org/archive/raspbian/&#xA;9. 韩国KAIST大学 Raspbian http://ftp.kaist.ac.kr/raspbian/raspbian/&#xA;10. 参考 Raspbian 中国软件源 | 树莓派实验室 Raspbian 源使用帮助 — USTC Mirror Help 文档 Raspberrypi 源使用帮助 — USTC Mirror Help 文档 raspbian镜像-raspbian下载地址-raspbian安装教程-阿里巴巴开源镜像站 raspbian | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror Raspbian 源使用帮助 — SCAU Mirrors Help 文档 </description>
+    </item>
+    <item>
+      <title>Raspberry Pi【3】操作系统清单</title>
+      <link>https://www.xiaoledeng.com/2020/11/14/raspberry-pi-3/</link>
+      <pubDate>Sat, 14 Nov 2020 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/14/raspberry-pi-3/</guid>
+      <description>1. 整理版 Raspberry Pi OS : 默认的最常用于Raspberry Pi的免费操作系统 Pidora : 专为树莓派优化的 Fedora Linux 系统 Arch Linux ARM Ubuntu MATE : 是 Ubuntu Linux 官方的一个派生版，基于桌面环境 MATE Ubuntu Desktop Ubuntu Server : Ubuntu 专门用作服务器的版本 Ubuntu Core : 流行的 Ubuntu Linux 操作系统的精简版，旨在安装在各种嵌入式设备上 LibreELEC : 免费开源的轻量级“Just enough OS”Linux 发行版，它属于 KODI 的一个分支版本，功能类似于 Emby 和 PLEX 的多媒体服务平台。不同之处在于专为嵌入式设备而设计，支持各种 TV-BOX HTPC 和 RaspberryPi Windows 10 OSMC : 使得树莓派更适合做个xbmc播放器，是 Openelec 的升级版，同样是基于 Kodi 的开源项目 Openelec : Open Embedded Linux Entertainment Center，开源嵌入式Linux 娱乐中心 PiNet : 帮助学校建立和管理一个Raspberry Pi的课堂 Mozilla WebThings : Mozilla 的物联网平台项目 weather_station-2018-01-14 : 基于树莓派全自动气象站，可应用多种传感器 RISC OS : 第一款ARM计算机的操作系统 Kali Linux : 高级渗透测试和安全审计Linux发行版 NOOBS : 从安装的多个树莓派系统中选择你要启动的系统 Sabayon : 在5分钟以内使一台电脑进入强大的Gentoo Linux系统 Recalbox : 复古模拟平台 CentOS DietPi : 基于 Raspbian 的精简版本系统，其特点就是小和快 SUSE Linux Lakka : RetroArch 官方的 Linux 发行版，以多机种游戏模拟器 libretro 为核心 RetroPie : 将复古游戏机集成到Raspberry pi 树莓派上使之成为一个专用的游戏机模拟器平台 Kano : 专门面向儿童编程量身定做的树莓派镜像，让儿童在游戏中学习编程 RTandroid : 定制版的安卓系统，可以正常安装安卓软件，wifi蓝牙工作正常 Flintos : 一款更快速，更简单，更高效的云驱动操作系统 2.</description>
+    </item>
+    <item>
+      <title>Raspberry Pi【2】创意项目清单</title>
+      <link>https://www.xiaoledeng.com/2020/11/14/raspberry-pi-2/</link>
+      <pubDate>Sat, 14 Nov 2020 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/14/raspberry-pi-2/</guid>
+      <description>1. 34 个使用 Raspberry Pi 的酷创意 · LinuxTOY https://linuxtoy.org/archives/cool-ideas-for-raspberry-pi.html&#xA;Web 服务器 家庭自动化 BitTorrent 服务器 Web Cam 服务器 天气预报站 BitCoin Wallet QuadCopter VoIP PBX XMBC 多媒体中心 有声书籍播放器 Arduino Shields NAS 服务器 Apple Time Machine 支持 Tor 中继 家用 VPN 服务器 GPS 跟踪器（带 3G 支持） Advice Machine（无用但很酷） 模拟输入 超级电脑 Kindle 作为显示屏 PIC Programmer PenTesting/Hacking Android 系统 检查网络状态 Solar 数据记录器 把我发到太空 咖啡 制作一个酷坦克 电子相框 添加 WiFi OpenSource Kiosk Node JS 流量监视 超频 2. 101+ Raspberry Pi项目 https://www.</description>
+    </item>
+    <item>
+      <title>数据结果不对的排查清单</title>
+      <link>https://www.xiaoledeng.com/2020/11/13/check-wrong-results-lists/</link>
+      <pubDate>Fri, 13 Nov 2020 10:50:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/13/check-wrong-results-lists/</guid>
+      <description>函数表达式，即重新检查旧的函数表达式和新的函数表达式，并数值验证是否相等； 答案：数值验证的结果是相等的。&#xA;数值算法：重新检查旧的数值算法和新的数值算法，得到的数值结果是否是一样的； 答案：数值结果是一致的。&#xA;数据结果的输出格式：重新检查数据结果的输出格式不一致的地方； 答案：发现是数据结果的输出格式造成了数据结果不对的问题。</description>
+    </item>
+    <item>
+      <title>示例清单：Author Contribution Statements和Data Availability Statements</title>
+      <link>https://www.xiaoledeng.com/2020/11/12/examples-acs-das/</link>
+      <pubDate>Thu, 12 Nov 2020 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/12/examples-acs-das/</guid>
+      <description>1. Author Contribution Statements examples-of-author-contributions.pdf Authorship and contribution disclosures | Science Advances ICMJE | Recommendations | Defining the Role of Authors and Contributors 2. Data Availability Statements Data Availability Statements | Authors | Springer Nature:&#xA;The datasets generated during and/or analysed during the current study are available in the [NAME] repository, [PERSISTENT WEB LINK TO DATASETS]. The datasets generated during and/or analysed during the current study are available from the corresponding author on reasonable request.</description>
+    </item>
+    <item>
+      <title>Python OS模块的函数清单</title>
+      <link>https://www.xiaoledeng.com/2020/11/07/python-os/</link>
+      <pubDate>Sat, 07 Nov 2020 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/07/python-os/</guid>
+      <description>import os os.sep:取代操作系统特定的路径分隔符 os.name:指示你正在使用的工作平台。比如对于Windows，它是&amp;#39;nt&amp;#39;，而对于Linux/Unix用户，它是&amp;#39;posix&amp;#39;。 os.getcwd:得到当前工作目录，即当前python脚本工作的目录路径。 os.getenv()和os.putenv:分别用来读取和设置环境变量 os.listdir():返回指定目录下的所有文件和目录名 os.remove(file):删除一个文件 os.stat(file):获得文件属性 os.chmod(file):修改文件权限和时间戳 os.mkdir(name):创建目录 os.rmdir(name):删除目录 os.removedirs(r“c：\python”):删除多个目录 os.system():运行shell命令 os.exit():终止当前进程 os.linesep:给出当前平台的行终止符。例如，Windows使用&amp;#39;\r\n&amp;#39;，Linux使用&amp;#39;\n&amp;#39;而Mac使用&amp;#39;\r&amp;#39; os.path.split():返回一个路径的目录名和文件名 os.path.isfile()和os.path.isdir()分别检验给出的路径是一个目录还是文件 os.path.existe():检验给出的路径是否真的存在 os.listdir(dirname):列出dirname下的目录和文件 os.getcwd():获得当前工作目录 os.curdir:返回当前目录(&amp;#39;.&amp;#39;) os.chdir(dirname):改变工作目录到dirname os.path.isdir(name):判断name是不是目录，不是目录就返回false os.path.isfile(name):判断name这个文件是否存在，不存在返回false os.path.exists(name):判断是否存在文件或目录name os.path.getsize(name):或得文件大小，如果name是目录返回0L os.path.abspath(name):获得绝对路径 os.path.isabs():判断是否为绝对路径 os.path.normpath(path):规范path字符串形式 os.path.split(name):分割文件名与目录(事实上，如果你完全使用目录，它也会将最后一个目录作为文件名而分离，同时它不会判断文件或目录是否存在) os.path.splitext():分离文件名和扩展名 os.path.join(path,name):连接目录与文件名或目录 os.path.basename(path):返回文件名 os.path.dirname(path):返回文件路径 参考 python之OS模块详解 - 琴酒网络 - 博客园 </description>
+    </item>
+    <item>
+      <title>高效率工作方式的清单</title>
+      <link>https://www.xiaoledeng.com/2020/10/30/list-of-high-efficiency-work/</link>
+      <pubDate>Fri, 30 Oct 2020 22:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/10/30/list-of-high-efficiency-work/</guid>
+      <description> 每日上班时，Python根据日期生成每日待办事项的文件，并每日做好记录； 每日下班前，Python邮件发送以上文件到固定QQ邮箱； QQ邮箱保存以上内容到QQ记事本，同时随时随地保持一些有意思的内容到QQ记事本； 每月以博客的形式，总结本月研究工作的持续进展； </description>
+    </item>
+    <item>
+      <title>论文修改的清单</title>
+      <link>https://www.xiaoledeng.com/2020/10/30/list-of-editing-paper/</link>
+      <pubDate>Fri, 30 Oct 2020 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/10/30/list-of-editing-paper/</guid>
+      <description> 修改材料 查核校正，即先不考虑观点、结构、语言，只查核材料本身是否真实、可信、准确，包括对初稿中的定律、论断、数据、典型材料、引文出处等进行核对，发现疑点和前后矛盾的地方，一定要搞清楚、弄明白； 根据论证中心论点和各分论点的要求，对材料进行增、删、调。 修改结构 层次是否清楚，思路是否通畅； 结构是否完整； 结构是否严密。 修改语言和标点 要尽可能利用准确、生动、简洁的语言，对生造词语、词类误用、词义混乱等用词不当、词不达意的毛病，要坚决改掉，坚决消灭错别字和不规范的简化字、自造词； 对结构残缺、结构混乱、搭配不当等不合语法的句子，要注意改正，使之合乎语言规范； 要注意句子之间的逻辑联系，力求上下贯通，语气一致，通顺流畅； 检查标点、规范书写。 参考 好的论文，一定是改出来的！ </description>
+    </item>
+    <item>
+      <title>科研工作清单(3)—一日清单</title>
+      <link>https://www.xiaoledeng.com/2020/09/28/research-work-list-3/</link>
+      <pubDate>Mon, 28 Sep 2020 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/28/research-work-list-3/</guid>
+      <description> 早上到办公室，水杯倒水、上厕所和电脑开机等工作前准备事项 打开在线待办事项，列出今日待办(Todo Lists) 上午上班，聚焦撰写文章，中途可上厕所或喝水 中午吃饭 如有可能，尽量午休 下午上班前，可处理邮件(阅读和回复)，撰写blog等 下午上班，聚焦撰写文章，中途可上厕所或喝水 下班前，总结和邮件备份今日撰写稿件，撰写blog等 </description>
+    </item>
+    <item>
+      <title>科研工作清单(2)—撰写Draft</title>
+      <link>https://www.xiaoledeng.com/2020/09/27/research-work-list-2/</link>
+      <pubDate>Sun, 27 Sep 2020 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/27/research-work-list-2/</guid>
+      <description> 日常阅读文献，积累和构思创新点 编程实现模拟数值实验，得到初步数值结果 数值结果制成表格，绘制图片 撰写draft的理论(Theory)，数值实验(Numerical Experiments)，结果讨论(Discussions)和总结(Conclusions)部分；其中，参考文献的引用需要同步进行 撰写draft的引言(Introduction)和摘要(Abstract)部分，以完成初稿 修改初稿: 可发送合作作者共同完善初稿，直到达到投稿期刊杂志的阶段 </description>
+    </item>
+    <item>
+      <title>科研工作清单(1)—撰写Introduction</title>
+      <link>https://www.xiaoledeng.com/2020/09/25/research-work-list-1/</link>
+      <pubDate>Fri, 25 Sep 2020 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/25/research-work-list-1/</guid>
+      <description> 列好框架的关键点 根据关键点撰写不同的段落 撰写时，先一气呵成把关键内容写完，第二遍修改并加上参考文献的引用 完成Introduction后，通读并再修改一遍 </description>
+    </item>
+    <item>
+      <title>Software in Geodesy</title>
+      <link>https://www.xiaoledeng.com/2020/07/02/geodesy-software/</link>
+      <pubDate>Thu, 02 Jul 2020 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/07/02/geodesy-software/</guid>
+      <description>Name Reference Tesseroids Uieda, L., V. Barbosa, and C. Braitenberg (2016), Tesseroids: Forward-modeling gravitational fields in spherical coordinates, GEOPHYSICS, F41-F48, doi:10.1190/geo2015-0204.1 magnetic-tesseroids Eldar Baykiev, Jörg Ebbing, Marco Brönner, Karl Fabian (2016), Forward modeling magnetic fields of induced and remanent magnetization in the lithosphere using tesseroids, Computers &amp;amp; Geosciences, 96, 124-135, doi: 10.1016/j.cageo.2016.08.004 magtess-inversion-python Baykiev, E., Yixiati, D., &amp;amp; Ebbing, J. (2020). Global High-Resolution Magnetic Field Inversion Using Spherical Harmonic Representation of Tesseroids as Individual Sources.</description>
+    </item>
+    <item>
+      <title>学术英文写作的词汇和句式小结</title>
+      <link>https://www.xiaoledeng.com/2017/10/12/write-words-summary/</link>
+      <pubDate>Thu, 12 Oct 2017 10:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/10/12/write-words-summary/</guid>
+      <description>1. 引言 学术写作，关键还是在实践中学习。&#xA;学术写作的要点在于“语言层面”，即为多读（阅读文献）、多积累、多写，补上一个“多修改”。&#xA;此文将作为，阅读专业文献时，积累词汇、句式的文章。&#xA;本文列出学术英文写作的常用词汇，供写作的过程中使用。&#xA;2. 图、表 show, present, illustrate, summarize, demonstrate, contain, provide, list, report, give, reveal, display, indicate, suggest, describe 3. 文献观点 state, claim, argue, maintain, suggest, assert, hypothesize, conclude, describe, develop, propose, find, show, report, use, study, demonstrate, note, discuss, observe, explain, expand, publish, give, examine, analyze, focus, presume, speculate, assume, support, theorize, contend, recommend Based on, In the view of, According to 4. 常用的拉丁文缩写 cf. = compare e.</description>
+    </item>
+    <item>
+      <title>SCI论文Checking and Correcting Proof的检查清单</title>
+      <link>https://www.xiaoledeng.com/2017/10/11/sci-proof-list/</link>
+      <pubDate>Wed, 11 Oct 2017 19:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/10/11/sci-proof-list/</guid>
+      <description>1. 前言 一般而言，SCI论文被录用(Accept)之后，会有核改校样(Checking and Correcting Proof)的过程。&#xA;校样(Proof)属于论文发表前，消除原稿中错误的最后一次机会。对校样PDF进行仔细的检查是非常有必要的；如果文章带着明显的错误发表了，后续还要补错。&#xA;本文可作为校样文章的初步参考，希望能够帮助到需要的人。&#xA;2. 校样的检查清单 原则上讲，校样改动的范围只能是排版过程中造成的错误，以及涉及文章科学内容的矫误。&#xA;拼写格式的核对 仔细对照稿件，检查文章的英文拼写和格式是否一致。&#xA;具体包括：标点符号、计量单位等。&#xA;公式、符号的核对 论文中出现的数学公式、数学符号等，都需要仔细核对：&#xA;字母的黑体、斜体等； 字母的大小写等； 字母的上标、下标等； 特殊符号里的希腊字母等； &amp;hellip; 图、表、公式的编号核对 文中的图、表格、公式的编号是否顺序一致。&#xA;细节方面包括：图题、标题、线条、数据、顺序编号等。&#xA;参考文献的格式核对 参考文献的格式是否一致。&#xA;具体包括：参考文献的作者、题名、页码和编码顺序等&#xA;3. 总结 以上清单中检查出来的问题和修改要求，按照页码、行号来明确指出来。&#xA;同时，在校样PDF出现问题的地方，用有色笔标注出来。&#xA;本文仅仅只是一个初始的检查清单，之后还会持续地补充。&#xA;4. 阅读推荐 论文接受 | Alex LEE&amp;rsquo;s Blog； </description>
+    </item>
+    <item>
+      <title>外出携带物品清单</title>
+      <link>https://www.xiaoledeng.com/2017/10/04/things-list/</link>
+      <pubDate>Wed, 04 Oct 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/10/04/things-list/</guid>
+      <description>1. 引言 每次外出，都需要打包、清点需要携带的物品。随着外出次数的增加，不管是冬季去到寒冷的东北，还是夏季去到炎热的西北，甚至是国外，越发觉得需要列一个物品清单，来帮助自己快速的打包物品。之前是纸质的清单，每次外出都要找本子来翻阅；现在转换成电子的网页形式，以后应该会方便很多。&#xA;一般而言，外出所需要携带的物品，会有很多影响因素，如短期/长期、冬季/夏季、国内/国外、男/女、家庭/个人。所以，每个人需要根据自己的具体情况，来具体分析自己需要携带哪些物品。&#xA;本文作为外出所携带的物品的一个简单参考，希望对阅读的人有一些帮助。&#xA;2. 物品清单 必备类 “伸手要钱”——身份证、手机、钥匙、钱包（现金少许、银行卡、信用卡）&#xA;衣服类 夏季：“短袖、短裤”、长裤、鞋子、拖鞋、袜子、内衣、睡衣、睡裤； 冬季：“长袖、外套、毛衣、大衣、羽绒服、保暖衣裤”、长裤、鞋子、拖鞋、袜子、内衣、睡衣、睡裤； 卫生用品类 牙刷、牙膏、洗发水（袋装或小支）、香皂、洗面奶、洗衣皂或液、毛巾、镜子、梳子、刮胡刀； 空水杯、小包面巾纸或抽纸、指甲刀； 电器类 各种充电器（如手机充电器、笔记本充电器）、手机、笔记本电脑、充电宝、U盘、耳机、手电筒； 如有Mac，可携带HDMI、DVI以及网线口的转接线； 国外：转换插头（淘宝购买，注意类型）、当地电话卡（提前在携程上购买，注意时间和手机机型）； 食品类 些许零食（如，八宝粥等）； 面包、水果（番茄🍅、黄瓜、苹果🍎、香蕉🍌）、牛奶等； 矿泉水若干； 注意：上飞机时，八宝粥、牛奶等流体需要放在托运箱里面，不用放在随身书包里面。&#xA;书籍类 LifeLog本、笔和笔芯； 自己喜欢的一两本书籍； 备选用品类 冬季：帽子、围巾、手套、口罩； 夏季：防晒相关物品（防晒霜、冰袖等）、太阳眼镜、运动鞋； 耳塞、雨伞、飞机枕头、保鲜袋、购物袋； 3. 末了的话 此文仅作为初始的参考，后续还会不断扩展，敬请关注更新。&#xA;4. 修改历史 2017.10.04 创建此文； </description>
+    </item>
+    <item>
+      <title>SCI论文投稿Submissions Waiting for Author&#39;s Approval的检查清单</title>
+      <link>https://www.xiaoledeng.com/2017/10/02/sci-submission-check-list/</link>
+      <pubDate>Mon, 02 Oct 2017 19:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/10/02/sci-submission-check-list/</guid>
+      <description>1. 前言 一般而言，将写好的SCI论文上传到投稿系统后，都会有Submissions Waiting for Author&amp;rsquo;s Approval这个步骤。&#xA;此时，不管是Word格式还是LaTeX格式的原稿，在这个过程中，都会生成PDF格式的稿件。&#xA;对这个PDF稿件进行检查是非常有必要的，也关系到审稿的进度，甚至是稿件接收与否。&#xA;本文可作为投稿时检查文章的参考，希望能够帮助到需要的人。&#xA;2. 检查清单 公式是否正确 PDF稿件中的公式，特别是从Word的MathType转化而来的，非常有可能会缺失。&#xA;是否有页码行号 在后续的评审者给的Comments中，常常会有页码和行号的定位。因此需要检查PDF格式的稿件是否有正确的页码、行号。&#xA;编号是否一致 需要检查在文中的图、表格、公式的编号是否按照顺序一致。&#xA;英语语言问题 语言问题，常常是个问题。这个列出来一些常见语言检查清单：&#xA;主动被动语态误用； 名词作形容词误用（避免类似three-dimensional cultured primary rat hepatocytes这样的长词组，用of拆开）； which从句紧跟要说明的词；句子里避免多个动词并列（the drug elicited…., produced….., increased…. and decreased….。能用从句时就不要用并列句，和中国喜欢排比句的语言习惯不同）； 松散连接的从句不如独立成句（while，but之类，或者是thus，and连接的句子）； 避免太长的句子，即使要用也需层次分明，不至于要读几遍才看懂它的结构； 时态：has been……经常用到，但主从句避免同时采用has been，其中一个要换成过去式。 是否有恰当的词汇； 单复数问题； 时态问题； 注意：以上仅仅列出一部分问题，此方面还需要更加细致化。&#xA;常用的格式问题 缩写； 斜体； 单位符号（采用国际单位）； 大小写； 单位和数字间空格； 字体统一（避免中文字体以免国外的电脑不识别）； 注意：缩写方面要前后一致；字体和字号要统一。&#xA;文章各个部分的问题 Title（标题是否恰当；作者的顺序、地址和Email）； Abstract（简洁）； Keywords（方便他人查找）； Introduction； Methods； Results； Discussion； Conclusion； Acknowledgement（感谢和基金号）； Reference（参考文献中列出的文献与文章中出现的文献是否一致；参考文献的格式）； Appendix； 以上文章的各个部分，详细的内容可以参考这篇文章——论文马上就要投稿了？对照这份自查清单再最后检查一遍。&#xA;3. 总结 本文仅仅只是一个初始的检查清单，之后还会持续地补充。&#xA;4. 参考资料 详解：SCI论文投稿前的评估检查_word文档在线阅读与下载_无忧文档； 论文马上就要投稿了？对照这份自查清单再最后检查一遍； SCI论文投稿前必须检查的16个细节； </description>
+    </item>
+    <item>
+      <title>Windows软件备份</title>
+      <link>https://www.xiaoledeng.com/2016/05/19/windows-software/</link>
+      <pubDate>Thu, 19 May 2016 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2016/05/19/windows-software/</guid>
+      <description>Mathematica &amp;amp; Matlab——数学软件&#xA;编辑器：UltraEdit——文件打开&#xA;Office &amp;amp; Mathtype——文档编辑&amp;amp;公式编辑&#xA;Adobe Acrbat X pro——阅读PDF&#xA;Git——博客后台程序&#xA;Xmanager——远程管理服务器&#xA;网易云音乐 &amp;amp; QQ影音 &amp;amp; QQ &amp;amp; QQ输入法&#xA;谷歌浏览器 &amp;amp; 淘宝浏览器&#xA;Wiz笔记 &amp;amp; Markdown——博客 &amp;amp; 日记 &amp;amp; 个人整理经验等</description>
+    </item>
+    <item>
+      <title>如何利用现有电子设备提高生产率</title>
+      <link>https://www.xiaoledeng.com/2016/05/19/how-to-improve-efficient/</link>
+      <pubDate>Thu, 19 May 2016 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2016/05/19/how-to-improve-efficient/</guid>
+      <description>关键是：电子设备清晰地定位&#xA;台式机——2013.10入手，生产力的主力，输入输出设备；&#xA;Personal computer——2010.3入手，性能大大降低，只能作为基本的办公用，即为输出设备，Wiz笔记Markdown；&#xA;iPad——2013.10入手，定位不明确，可以作为输入设备；&#xA;手机——2014.2入手，随手来记录灵感，输入输出设备；</description>
+    </item>
+    <item>
+      <title>如何打发时间清单</title>
+      <link>https://www.xiaoledeng.com/2014/05/10/list-of-kill-time/</link>
+      <pubDate>Sat, 10 May 2014 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2014/05/10/list-of-kill-time/</guid>
+      <description> 看书 看电影 旅游 闲逛某地方，书店，购物中心 爬山 洗衣服 跟亲朋好友打电话 找个地方看星星月亮 春光明媚正是骑车时 健身 做手工 学喜欢的技术 拍照 写日记，博客 养小动物 引吭高歌 学语言 烹饪 发呆 听音乐 玩游戏 散步 睡觉 清理物品，简洁 喝酒 躺在草坪上，晒太阳，看路人 听音乐会 .. </description>
+    </item>
+    <item>
+      <title>本科毕业的一些思考</title>
+      <link>https://www.xiaoledeng.com/2013/06/30/some-thoughts-on-graduation/</link>
+      <pubDate>Sun, 30 Jun 2013 19:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2013/06/30/some-thoughts-on-graduation/</guid>
+      <description> 学会critical thinking 坚实的经济基础 健康强壮的身体 向人类10%那些可塑造的天才学习 食，清简 成为一个领域的＂佼佼者＂ ipad工具类最大潜能 阿甘般执着追求 有自己坚定的信仰，而后自信，勇气由此而来 保持好奇，激情般童心，有初心 修身养性，看透人生的真谛，领悟美的永义 了了生死，静心生活 涉猎天文地理，声光电化，文史经哲，名人逸事，天南地北，历史典故，风土人情 终生学习，反省，自悟 语言学习 国际化知识分子 体味明悟人生生活真善美 领会见识到不同文化、地域习俗 先吸收，后半吸半放，最后引导影响他人 为人类贡献自己的一点力 亲近自然，观万物之长，引人遐思 自己奋斗 要过得幸福，快乐的日子大于哀伤时日 保持读书的爱好 周游世界，品人生世间百态 记录自己经验 知识 ，为自己留下印记 适应孤独，有自我嘲讽之法 开心过生活，乐观积极过日子 悠哉读书，识人，明理，见性 改变自己 在正确的时间，遇到正确的人，一起享人生百态 不留遗憾走此一生 如打怪升级，为了达到满级即死亡，享受这一过程 </description>
+    </item>
+  </channel>
+</rss>

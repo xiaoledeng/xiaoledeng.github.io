@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Write on Xiao-Le Deng（邓小乐）</title>
+    <link>https://www.xiaoledeng.com/tags/write/</link>
+    <description>Recent content in Write on Xiao-Le Deng（邓小乐）</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Sat, 02 Mar 2024 10:14:47 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/write/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Poem和Poetry的差别</title>
+      <link>https://www.xiaoledeng.com/2024/03/02/difference-between-poem-and-poetry/</link>
+      <pubDate>Sat, 02 Mar 2024 10:14:47 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/03/02/difference-between-poem-and-poetry/</guid>
+      <description>&amp;ldquo;Poem&amp;rdquo; and &amp;ldquo;poetry&amp;rdquo; are terms that are often used interchangeably, but they can have slightly different meanings.&#xA;A &amp;ldquo;poem&amp;rdquo; is a specific piece of literary work that follows a particular form, structure, or style. It is a composition in verse, often characterized by imaginative language, rhythmic and metrical patterns, and the expression of deep emotions or thoughts. Essentially, a poem is a single instance of a written or spoken poetic work.</description>
+    </item>
+    <item>
+      <title>随笔—自动化网站写作</title>
+      <link>https://www.xiaoledeng.com/2023/12/15/automatic-website-write/</link>
+      <pubDate>Fri, 15 Dec 2023 08:57:04 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/15/automatic-website-write/</guid>
+      <description>1. 前言 一直以来，都是手动完成网站写作。虽然有一部分写成 job.sh 脚本【功能为：自动编译并上传 GitHub 】，并且用 Alfred 已经大幅度提升效率【还是需要在 Alfred 中输入命令行】，但是整个网站写作还没有实现自动化。&#xA;用 Keyboard Maestro 后，可以把整个网站写作流程全部实现自动化，用一个 快捷键 + 数字 实现自动化网站写作。&#xA;注意⚠️：本文实现的电脑💻系统为 macOS 。&#xA;2. 自动化步骤 快捷键 Option + Command + B ，调出面板，依次选择：&#xA;Blog 1 New 实现自动创建新的 markdown 文件📃 Blog 2 Server 实现自动搭建本地查看网站的预备 Blog 3 Broswer Safari 实现自动用 Safari 浏览器显示本地网站预览 Blog 4 Upload 实现自动编译并上传网站 注意⚠️：这里用1、2、3、4来标记，按下快捷键 Option + Command + B ，调出面板后，可以输入1、2、3、4选择对应功能执行。&#xA;2.1 自动创建新的 markdown 文件 新建一个 Macros，命名为 Blog 1 New&#xA;点击「New Trigger - Hot Key Trigger」，输入快捷键 Option + Command + B</description>
+    </item>
+    <item>
+      <title>【如何构建自己的笔记系统】</title>
+      <link>https://www.xiaoledeng.com/2023/11/08/how-to-build-notes-system-notes/</link>
+      <pubDate>Wed, 08 Nov 2023 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/08/how-to-build-notes-system-notes/</guid>
+      <description>本页内容来自于：如何构建自己的笔记系统？ - 知乎&#xA;学习的根本目的是运用知识解决问题，而解决问题的一个重要环节就是将问题归类。&#xA;我们读东西，应该少一些浮躁，多读一些经典，因为往往是经典的书或者文章才包含那些本质的知识。&#xA;写作并不是从零开始的过程，而是将已有想法组织起来的过程。笔记系统正是将平时我们那些转瞬即逝的想法保存起来、组织起来、集中起来。我们在写作时只需要想起“似乎某某领域的论点有用”，就能在笔记系统的相关类目中轻松找到一系列所需的论点。这样，我们回想论点的负担就能得到一定程度的降低，写作的效率也能得到一定的提升。&#xA;什么是创新？创新就是让之前不怎么相关的东西相关起来，这实际靠的就是大脑强大的联想能力，靠的就是思想的火花。&#xA;我们的创新其实靠的并不是笔记，而靠的是我们习以为常但又无比神秘的大脑。笔记终归是一个记录信息并以此来辅助记忆、辅助创新的工具，不要过于神话笔记的作用。&#xA;延伸阅读 如何构建自己的笔记系统？ - 知乎 如何构建笔记系统-实际操作篇 - 知乎 </description>
+    </item>
+    <item>
+      <title>输入特殊字符的思路</title>
+      <link>https://www.xiaoledeng.com/2023/09/12/special-characters-input/</link>
+      <pubDate>Tue, 12 Sep 2023 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/09/12/special-characters-input/</guid>
+      <description>在 PPT 中，需要输入特殊字符，有以下几种思路：&#xA;在输入法中，有特殊字符的选项，可直接输入；&#xA;在网页中，可能有需要的特殊字符，复制黏贴即可；&#xA;在PPT中，选择插入公式，理论上可以输入任何特殊字符，不过属性不是文本。</description>
+    </item>
+    <item>
+      <title>macOS系统下Alfred快速使用有道翻译</title>
+      <link>https://www.xiaoledeng.com/2022/04/24/macos-alfred-youdao/</link>
+      <pubDate>Sun, 24 Apr 2022 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/04/24/macos-alfred-youdao/</guid>
+      <description>1. 说明 Alfred是macOS系统的工作流软件，可以极大地提高工作效率，简而言之，简化常用的一些步骤。&#xA;使用有道在线翻译功能，常用的步骤是：打开 https://fanyi.youdao.com/，进行翻译。&#xA;Alfred快速使用有道翻译，即开启Alfred后，输入yd，即可进行翻译。&#xA;2. 步骤 GitHub项目地址： https://github.com/wensonsmith/YoudaoTranslator&#xA;下载插件，见： https://github.com/wensonsmith/YoudaoTranslator/releases&#xA;使用有道翻译，获取其 Key 与 Secret，见：获取有道翻译 Key 与 Secret · wensonsmith/YoudaoTranslator Wiki&#xA;配置 Workflow，见： https://github.com/wensonsmith/YoudaoTranslator/wiki&#xA;3. 参考 wensonsmith/YoudaoTranslator: Alfred Youdao Translate Workflow Home · wensonsmith/YoudaoTranslator Wiki 获取有道翻译 Key 与 Secret · wensonsmith/YoudaoTranslator Wiki Mac效率神器Alfred调用网易有道快速翻译 - 简书 </description>
+    </item>
+    <item>
+      <title>记深圳居家办公的日子(13)—文章Proofs</title>
+      <link>https://www.xiaoledeng.com/2022/03/09/shenzhen-life-13/</link>
+      <pubDate>Wed, 09 Mar 2022 22:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/03/09/shenzhen-life-13/</guid>
+      <description>今天收到这篇文章的Proofs——第三篇SG被录用 (Deng et al. 2022)，Proofs的步骤可以参考：SCI论文Checking and Correcting Proof的检查清单。&#xA;根据邮件提示，有在线的编辑更正工具，用起来还是很方便。&#xA;不过，总是会因为保存等原因，出现小问题。&#xA;这时候，有任何问题，都可以通过邮件联系出版社团队进行说明，前提是说清楚。&#xA;这是隔天关于今天的疫情情况：3月9日深圳新增15例本土确诊病例，新增20例境外输入确诊病例和4例无症状感染者</description>
+    </item>
+    <item>
+      <title>10个提高学术写作的建议</title>
+      <link>https://www.xiaoledeng.com/2022/02/18/10-suggestions-on-improving-academic-writing/</link>
+      <pubDate>Fri, 18 Feb 2022 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/02/18/10-suggestions-on-improving-academic-writing/</guid>
+      <description>本页内容完全来自于： 杜克大学教授：提高学术写作水平的10条建议！&#xA;写作是一种功夫，需要日积月累 制定以产出导向的目标，而不是以投入导向的目标 寻找发自内心的声音，不要为出版而写作 写作需要时间 写作锋芒来自磨砺，而不是吹嘘 构思一个引人入胜的谜题 先写作，然后再安排其他的事情——写作要排在首位 不能要求每一个点子都高大上，埋头坚持、在创作道路上一步一个脚印地跋涉 摸着石头过河，边实践边学习，认识到自己犯错正是他们的学习收获 好文章是改出来的，没有人的第一稿是完美的。成功的学者与不成功的学者之间的差异不一定是谁的写作水平高，而常常是谁能把编辑修改的功夫做足做好 </description>
+    </item>
+    <item>
+      <title>青基申请的他人经验</title>
+      <link>https://www.xiaoledeng.com/2021/12/30/summary-of-experiences-in-fund-application/</link>
+      <pubDate>Thu, 30 Dec 2021 19:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/12/30/summary-of-experiences-in-fund-application/</guid>
+      <description>本文主要总结了：今天下午本人参加系的基金申请动员会的经验分享。本页内容都来自于分享人，在此表示感谢。&#xA;1. 教授分享 内容要写得好，一定要深入浅出，讲明白，专家包括大同行、小同行； 研究基础和研究背景部分，要反映出申请人的学术训练、学术背景和学术水平，最好是博士研究内容的拓展； 研究立项依据：不到半小时，就能完全理解你要做什么？不能太，不超过3页，读完之后，就能决定给不给你； 最重要的是：有限时间把精华讲清楚； 形式上要格外注意：不能有错别字，因为态度反映在格式和细节上。 怎么写？ 站在评审者的角度去写，花一点时间就能懂； 为什么要做？（科学问题的重要性） 你将怎么做？（方法的合理性和可行性） 为什么是你？（有实力和有能力做好这个研究） Proposal，只有一次机会说清楚 (You only have one chance to impress). 细节： 写好之后，可以找人交流； 选题之后，值不值得去写？科学意义一定要有价值； 写的过程中，可找优秀的申请书对比； 写完后，请他人帮忙读一读，至少错别字能够找出来。 2. 他人成功经验 题目不宜过大，也不宜太技术化，而且容易看出创新性，和全文呼应； 摘要，一定要反复修改； 关键词的选择，决定了是工程应用导向，还是科学理论导向； 立项依据里面的国内外现状都要写； 重点语句，加粗特别显示，一页里面不要过多； 关键科学问题，青基1～2点即可； 研究方案，详细、合理、可行，最好路线图和表格清晰明了； 预期成果，不宜过多（青基2～3篇即可）； 时间方面，提前两个月完成初稿，后面有足够的时候去大修初稿； 基金申请是单向、挑刺、减分的过程。5个评审人中，务必保证申请获得大多数评审人的认可，而不招致少数评审人的严厉批评，故书面表达、用词上要精化、弱化挑刺的内容。 反复修改，直到自己和别人挑不出毛病，即使是不了解你领域的人也挑不出毛病； 之前专家的评审意见一定要重视，且在下次申请中一一回复； 申请书图片一定要清晰，甚至可以用PDF编辑器去替换PDF中的不清晰图片，图片易懂，甚至要重新修改细节（英语转中文）； 注意力分配机制： 重视本子的易读性，句子的逻辑跨度要统一，可参考人民日报评论员的文章，进行语感练习； 消除有跨句逻辑关联的句子，要环环相扣，读申请书有读小说的感觉； 本子大声朗读，至少读出声来，可用错别字检查技巧：Word或WPS——审阅——大声朗读； </description>
+    </item>
+    <item>
+      <title>Word生成A4横线稿纸</title>
+      <link>https://www.xiaoledeng.com/2021/09/26/word-a4-line/</link>
+      <pubDate>Sun, 26 Sep 2021 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/09/26/word-a4-line/</guid>
+      <description>1. 步骤 新建空白文档，插入一列表格（列数为1，行数29）； 选中所有表格，在表格工具-布局中设置行高0.80cm； 选中所有表格，在表格工具-设计中，先选无框线，再选内部框线； 对第一行和最后一行设置：将边框样式设置为双线，边框粗细设置为1.5磅，并用边框刷来刷一下第一行和最后一行； 插入-页脚或页眉，选择第一个样式，输入“第 页”，再调整为右对齐。 2. 文件 下载地址：&#xA;A4-line.docx&#xA;A4-line.pdf&#xA;3. 划线尺 如果想用工具直接在A4纸上划线，可以使用——划线尺，在淘宝搜索即可。&#xA;4. 参考 word打印A4横线稿纸-百度经验 </description>
+    </item>
+    <item>
+      <title>英文字符(Character)和单词(Word)的数量对应</title>
+      <link>https://www.xiaoledeng.com/2021/06/24/english-character-word-number/</link>
+      <pubDate>Thu, 24 Jun 2021 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/06/24/english-character-word-number/</guid>
+      <description>Characters with Spaces Word Count (With Spaces) Word Count (Without Spaces) 100 Characters 10-30 Words 20-30 Words 250 Characters 40-60 Words 40-80 Words 300 Characters 40-80 Words 50-100 Words 400 Characters 60-100 Words 70-130 Words 500 Characters 70-130 Words 80-170 Words 600 Characters 90-150 Words 100-200 Words 700 Characters 100-180 Words 120-230 Words 750 Characters 110-190 Words 130-250 Words 800 Characters 110-200 Words 130-270 Words 1,000 Characters 140-250 Words 170-330 Words 1,250 Characters 180-310 Words 210-420 Words 1,500 Characters 210-380 Words 250-500 Words 2,000 Characters 290-500 Words 330-670 Words 2,500 Characters 360-630 Words 420-830 Words 3,000 Characters 430-750 Words 500-1,000 Words 5,000 Characters 710-1,250 Words 830-1,670 Words 7,500 Characters 1,070-1,880 Words 1,250-2,500 Words 10,000 Characters 1,430-2,500 Words 1,670-3,330 Words 15,000 Characters 2,140-3,750 Words 2,500-5,000 Words 25,000 Characters 3,570-6,250 Words 4,170-8,330 Words Reference How Many Words Is 2,000 Characters?</description>
+    </item>
+    <item>
+      <title>如何写引言? (How to write Introduction)</title>
+      <link>https://www.xiaoledeng.com/2021/05/12/how-to-write-introduction/</link>
+      <pubDate>Wed, 12 May 2021 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/05/12/how-to-write-introduction/</guid>
+      <description>1. 来自Academic Phrasebank的建议 Introducing Work - Academic Phrasebank：&#xA;主题的背景和重要性 (background and importance of the topic) 简要回顾相关学术文献 (giving a brief review of the relevant academic literature) 提出研究领域中的问题、问题、知识缺口或争论 (present an issue, problem, knowledge gap or controversy in the field of study) 定义论文的主题或关键术语 (define the topic or key terms used in the paper) 称述目的，解释研究的意义或价值 (state the purpose, explain the significance or value of the study) 提供文章的结构概述 (provide an overview of the structure of the paper) The CARS model (create a research space) by John Swales (1990):</description>
+    </item>
+    <item>
+      <title>如何写摘要? (How to write Abstract)</title>
+      <link>https://www.xiaoledeng.com/2021/05/11/how-to-write-abstract/</link>
+      <pubDate>Tue, 11 May 2021 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/05/11/how-to-write-abstract/</guid>
+      <description>1. 写摘要的10个注意点 摘要传达的主要内容：&#xA;为什么进行这项研究 研究目的是什么 如何达成目标 主要研究发现 如何写论文摘要才能更出彩？的10个注意点：&#xA;在完成整篇论文后再写摘要。【写作顺序】 从前言 (Introduction) 和结论 (Conclusion) 章节挑出主要目的/假设跟结论。 从方法 (Methods) 挑出重点句。 从结果 (Results) 找出重要的结果。 将 2、3、4 找出的句子和要点依据以下顺序组织成一段：前言 (Introduction)、方法(Methods)、结果(Results)、结论(Conclusion)。 此段落不应包含：文章里没有提及的信息、未定义的缩写或组名、讨论过去的文献或参考引用、不必要的方法细节 将第 6 点提到的信息删除，调整剩下的句子，使文意顺畅，建议信息顺序如下：目的；基础研究设计；使用的方法和技巧；主要研究发现；总结你的解释、结论和含义。 确认摘要与内文的一致性。 请同事/同学检查是否目的、目标、方法及结论表达清楚。 检查摘要是否符合期刊要求（如字数、类型、建议的副标题等）。 2. 凯伦·麦基的建议 内容来源于：凯伦·麦基：如何写科学摘要&#xA;一个只阅读你的摘要的人应该能够理解你为什么进行了这项研究，你是如何进行的，你发现了什么，以及你的工作为什么重要。&#xA;简言之：背景或目标、问题、方法、结果和结论。&#xA;背景或目标、问题：研究了什么问题？ 为什么它很重要？提供一些研究背景、研究背后的动机和/或您提出的具体问题或假设 方法：用什么方法研究这个问题？概述一下方法，一般来说，方法部分保持简短，除非它是本文的重点。 结果：主要发现是什么？在描述结果时，努力把重点放在主要的发现上，并且列出不超过两到三点。此外，避免含糊不清或不精确的措辞。 结论：根据这些发现，得出了什么结论？更广泛的含义是什么？结论部分是把研究更广泛的含义说到位的地方。这些发现有什么新的或创新的地方？对研究领域有何影响？有什么应用？ 搜索引擎优化（SEO）：人们在寻找关于你的主题论文时可能使用的搜索词。除了在论文的标题和关键词栏中包含这些术语外，还应在整个摘要中根据上下文重复这些术语。&#xA;目的：这种重复会被搜索引擎用来对在线文档进行排名。通过优化你的摘要以供搜索引擎发现，你可以提高你的论文在搜索中的排名，并使同事更容易找到。 参考 如何写论文摘要才能更出彩？ 凯伦·麦基：如何写科学摘要 </description>
+    </item>
+    <item>
+      <title>双拼方案——小鹤双拼</title>
+      <link>https://www.xiaoledeng.com/2021/04/28/shuangpin/</link>
+      <pubDate>Wed, 28 Apr 2021 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/04/28/shuangpin/</guid>
+      <description>1. 引言 从我用电脑到现在，输入法的选择如下：&#xA;2009年夏天，买了一本五笔输入法学习； 2010年，开始有自己的电脑后，后面用的是搜狗输入法、QQ输入法和讯飞输入法的全拼。 期间，也接触过一点双拼，知道按键两次可以打出一个字，缩短全拼敲击键盘的次数，提高输入效率。&#xA;学会双拼是一项成本不高但是长期回报非常丰厚的投资。——小鹤双拼学习 - 简书&#xA;这次，看到小鹤双拼的官网，突然发现双拼并不是很难，只不过需要时间去适应和练习。&#xA;而且，有意思的是：macOS系统12.1.1后包括了双拼方案，包括：搜狗双拼、拼音加加双拼、微软双拼和小鹤双拼。&#xA;2. 小鹤双拼 官网： https://flypy.com&#xA;学习过程：一小时记忆键位，一周习惯双拼节奏，一月恢复全拼时速度&#xA;双拼方案：主要是韵母键位的设计方案，单声母键位不变；即把三个双声母 zh ch sh 和35个韵母安排到键盘的26个字母键位上的设计方案&#xA;零声母方案：指全拼中无声的母韵母音节在双拼中的处理方案，以韵母首字母为零声母，即把韵母的首字母当作声母&#xA;单字母韵母，零声母 + 韵母所在键，如： 啊＝aa 哦=oo 额=ee 双字母韵母，零声母 + 韵母末字母，如： 爱＝ai 恩=en 欧=ou 三字母韵母，零声母 + 韵母所在键，如： 昂＝ah 简单说：双字母音节保持全拼方式，一三字母音节为首字母加韵母所在键&#xA;3. 练习方法 用一个键盘膜 打印出来，下载地址为：打印版 练习网站：双拼练习 @ BlueSky 4. 参考 小鹤音形 - 双拼 小鹤音形双拼双形相关图片 - 简书 做少数派中的少数派：双拼输入快速入门 - 少数派 选择输入法的哲学：兼论双拼的优缺点 - 少数派 快速上手双拼，可以尝试这个练习平台 - 少数派 让双拼不再是只属于少数人的输入方式 - 少数派 </description>
+    </item>
+    <item>
+      <title>《如何写出一篇优秀的文献综述？》的笔记</title>
+      <link>https://www.xiaoledeng.com/2021/03/04/notes-experiences-of-review/</link>
+      <pubDate>Thu, 04 Mar 2021 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/03/04/notes-experiences-of-review/</guid>
+      <description>本页面的内容来自于：如何写出一篇优秀的文献综述？|《自然》专访。&#xA;1. 新加坡南洋理工大学化学与生物医学工程助理教授 赵文婷：突出重点，避免术语 综述不同于教科书，综述应该提供更有针对性的讨论，可以跳过一些话题，以免分散读者的注意力。确保综述的范围不要太广，以免拖延。&#xA;一篇好的综述还应该避免术语，要为不熟悉该领域的人解释基本概念，即用明白易懂的科学 语言写的综述。&#xA;2. 芝加哥大学化学副教授 田博之: 享受过程，形成自己的风格 这篇综述的目的是什么? 写综述的原因包括能为科学界贡献见解，以及为我的研究寻找机会。撰写综述也是培养初级研究人员项目管理和领导力等软技能的一种方式。&#xA;讨论一个大纲，拓展自己撰写和展示信息的方式。用表格来总结研究进展，并提出未来的研究方向。&#xA;3. 《自然综述:物理学》编辑 ANKITA ANIRBAN: 时效性和图表的大作用 最好的选题是及时的，并且能清楚解释为什么读者应该关注这个选题。&#xA;一篇综述仅仅对最新文献进行总结是不够的: 最有趣的综述往往能讨论本领域的分歧所在。&#xA;综述中的图表比大多数人想象得更为重要。我最喜欢的一篇综述式文章3有一张图，图中将多篇论文 (其中许多论文相互矛盾)的数据汇集在一起。然后用它来确定大的趋势，并提出可以解释所有不 同结论的潜在机制。&#xA;综述文章的一个重要作用是向研究人员介绍一个领域。示意性的图表可以用来说明文中讨论的科学问题。简洁才是关键所在，可以利用许多免费的绘图工具来提高他们综述图表的价值。&#xA;4. 韩国科学技术院研究助理教授 YOOJIN CHOI: 与时俱进，虚心听取建议 在综述投稿和修改的期间，领域里又发表了许多新的论文，甚至有一些竞争性综述。为了提供最新的原创综述，必须紧跟文献前沿。为此，让Google Scholar根据关键词每天发送相关文献的更新。&#xA;更加开放地接受批评，不仅能提升作品的价值，还能增加读者量。&#xA;5. 英国剑桥大学博士生 PAULA MARTIN-GONZALEZ: 善用技术 代码极大地改善了整理论文的方式，对本领域的关键著作和发现一目了然：&#xA;用户可以输入一个查询，比如“卵巢癌、计算机断层扫描、放射组学”，应用程序就会搜索PubMed等数据库中所有包含这些关键词的相关文献。 该代码会识别相关论文，并创建一个引用图，列出搜索结果中引用的所有参考文献。 该软件会突出显示与搜索中的其他论文有许多引用关系的论文，这些论文也能被称为开创性论文。 </description>
+    </item>
+    <item>
+      <title>科研写作工具</title>
+      <link>https://www.xiaoledeng.com/2021/02/09/scientific-write-tools/</link>
+      <pubDate>Tue, 09 Feb 2021 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/02/09/scientific-write-tools/</guid>
+      <description>1. 检索&amp;amp;下载文献 Google Scholar Sci-hub： http://www.sci-hub.wang/ http://www.sci-hub.se/ http://www.sci-hub.tw/ http://www.sci-hub.ren/ Library Genesis： http://libgen.rs/ http://libgen.lc/ http://libgen.gs/ http://libgen.li/ Book4you 数据库导航-图书馆 2. 翻译工具 Google 翻译 DocTranslator 3. 写作工具 Linggle 和 Netspeak：词组，近义词，高频词汇查询 Thesaurus Academic Phrasebank：句子和表达 Grammarly：语法检查 4. 期刊查询 微信小程序：中国科学院文献情报中心 LetPub MedSci 5. 学术交流 ResearchGate Github </description>
+    </item>
+    <item>
+      <title>文献总结和文献管理的步骤</title>
+      <link>https://www.xiaoledeng.com/2021/01/30/steps-paper-summary-manage/</link>
+      <pubDate>Sat, 30 Jan 2021 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/01/30/steps-paper-summary-manage/</guid>
+      <description>1. 文献总结 以Power Point (PPT)的格式，将一篇文献整理成一个PPT； 关键文献做详细总结，其他的可粗略阅读摘要、结论和图片； PPT框架的第一面，将文章的标题、作者、联系邮箱和作者单位写清楚； 摘要部分，可通过自己的文字将一篇文献的内容写清楚，必须保证是原创的文字； 图、表和公式部分，将关键的图、表、算法步骤和实验设置参数等进行摘抄； PPT的作用，未来既可以作为检索参考，也可以作为展示参考资料。&#xA;2. 文献管理 以Markdown的格式，将所有的文献的创新点写入到一个文本文档； 框架可以按照年份来列标题，比如，2021年； 每一年份下，可以按照作者的字母排序； 一篇文献一段话，要原创文字，看到之后就知道此篇文献的主要内容。 3. 参考 初入科研圈，做文献总结和整理的几点感悟 - 作者｜关蕾蕾 </description>
+    </item>
+    <item>
+      <title>JGR Atmospheres主编张明华《成功投稿和发表的一些体会》的笔记</title>
+      <link>https://www.xiaoledeng.com/2020/12/31/notes-experiences-of-successful-submission-and-publication/</link>
+      <pubDate>Thu, 31 Dec 2020 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/12/31/notes-experiences-of-successful-submission-and-publication/</guid>
+      <description>本页内容来自：JGR Atmospheres 主编张明华： 如何撰写和发表学术论文？的笔记。&#xA;1. 如何撰写一篇成功的稿件 1.1 摘要 四句话摘要：&#xA;为什么要做这个研究 你做了什么工作 这个工作发现了什么 得到的结果解决了什么重要问题，获得什么重要结论 另外，摘要保持在250词以内，不仅要说明你做了什么，还应解释你的工作的重要性和贡献。&#xA;1.2 引言 引言的结构；&#xA;为什么要做这个工作，介绍你的研究主题，并将其放到一个广阔的背景之下； 将范围缩小到一个研究问题或假设上，其他人都做了哪些相关工作； 你的研究创新，能够帮助理解或解决哪些问题？ 研究工作的重要性； 注意：目标读者是你的研究领域内的专家，有些专业常识可简洁。 基本条件：至少要有一个关键的创新点，要同时具备以下两个条件，&#xA;阐明你的研究解决了所在领域中的什么关键问题； 对数据、方法和结果的解释要围绕文章的核心思想； 可以通过问自己、问同事或同学解释得到一个关键的创新点。&#xA;1.3 文章的标题 一开始拟个标题，后面要深入推敲：&#xA;保持标题简洁（15个词以内），并在前65个字母中包含2-3个关键词； 将最主要的概念放在前面； 避免使用被动短语，如：effect of, involvement of, evidence of , 可以用 X impacts Y process through 替代 Evidence of X in Y process 注意：在他人决定是否要进一步阅读你的文章时，标题是最先被阅读到的句子。&#xA;1.4 其他心得 良好的英文写作很重要，能够帮助你准确传达文章的意思 写作不好说明稿件的其他部分可能也不严谨 会让审稿人对稿件的评审格外严格 会给编辑留下没有认真准备稿件的印象 设想审稿人可能提出的问题，并尽可能在初次撰写稿件时就给出解答。 用简单句子 2. 如何答复审稿意见 2.1 正确对待审稿意见 不要带着个人情绪或观点去看待审稿意见； 根据审稿意见改进论文，即使是“坏”的审稿意见也能从中学到东西； 认真对待审稿人的质疑，他们代表着你的读者； 如果审稿人对文章内容有误解，请别着急辩解，首先试着设想有可能是文章的表达不够清晰； 看到审稿意见后，可以放几天，冷静后再处理。&#xA;2.2 回复审稿意见 审稿意见实际上是，对文章的分析论证过程，和文章的结论提出疑问以及改进方案 如果你对审稿人的要求不清楚，请向编辑咨询 回复意见时，语言要尊敬，即便某些审稿意见并不礼貌。审稿人是编辑挑选的(有时候是作者自己推荐的)，往往是某个方向的资深学者。 每一条意见都应该认真回复，对不赞同的意见务必耍给出清楚的理由，比如：审稿人误解了文章的意思，审稿意见超出了文章的研究范围，并作出详细解释 不要试图回避审稿人的某些问题，哪怕这些问题没法彻底解决，给出你的思考和观点，认真细致的态度更容易贏得审稿人的尊重，有助于建立自己的学术声誉 注意：不要抱侥幸心态，认真严谨地回复审稿意见。</description>
+    </item>
+    <item>
+      <title>示例清单：Author Contribution Statements和Data Availability Statements</title>
+      <link>https://www.xiaoledeng.com/2020/11/12/examples-acs-das/</link>
+      <pubDate>Thu, 12 Nov 2020 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/12/examples-acs-das/</guid>
+      <description>1. Author Contribution Statements examples-of-author-contributions.pdf Authorship and contribution disclosures | Science Advances ICMJE | Recommendations | Defining the Role of Authors and Contributors 2. Data Availability Statements Data Availability Statements | Authors | Springer Nature:&#xA;The datasets generated during and/or analysed during the current study are available in the [NAME] repository, [PERSISTENT WEB LINK TO DATASETS]. The datasets generated during and/or analysed during the current study are available from the corresponding author on reasonable request.</description>
+    </item>
+    <item>
+      <title>论文修改的清单</title>
+      <link>https://www.xiaoledeng.com/2020/10/30/list-of-editing-paper/</link>
+      <pubDate>Fri, 30 Oct 2020 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/10/30/list-of-editing-paper/</guid>
+      <description> 修改材料 查核校正，即先不考虑观点、结构、语言，只查核材料本身是否真实、可信、准确，包括对初稿中的定律、论断、数据、典型材料、引文出处等进行核对，发现疑点和前后矛盾的地方，一定要搞清楚、弄明白； 根据论证中心论点和各分论点的要求，对材料进行增、删、调。 修改结构 层次是否清楚，思路是否通畅； 结构是否完整； 结构是否严密。 修改语言和标点 要尽可能利用准确、生动、简洁的语言，对生造词语、词类误用、词义混乱等用词不当、词不达意的毛病，要坚决改掉，坚决消灭错别字和不规范的简化字、自造词； 对结构残缺、结构混乱、搭配不当等不合语法的句子，要注意改正，使之合乎语言规范； 要注意句子之间的逻辑联系，力求上下贯通，语气一致，通顺流畅； 检查标点、规范书写。 参考 好的论文，一定是改出来的！ </description>
+    </item>
+    <item>
+      <title>何为原创内容？</title>
+      <link>https://www.xiaoledeng.com/2017/10/24/original-content/</link>
+      <pubDate>Tue, 24 Oct 2017 23:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/10/24/original-content/</guid>
+      <description>1.引言 现如今，网络上的信息呈几何倍增加，并且抄袭、改写、翻译等越来越多，那么何为原创内容呢?&#xA;2. 三个因素 个人认为以下三点构成了原创内容：&#xA;个人的体验； 用自己的语言表达； 以文字等形式发布。 个人的体验 第一点即为，个人的所见、所思、所想、所感、所悟、所得。&#xA;生活在你所处的环境里面，你总会与环境进行互动。&#xA;或者是每一天看到的事情，或者是看到了事情之后所引发的思考，或者是对某件事情的总结，或者是得着等等。&#xA;用自己的语言表达 第二点即为，原创的关键一点。&#xA;古往今来，留下来的文字多如海沙，用别人的话来表达自己的体验，就不算是原创了。&#xA;自己独特的语言来表达自己的体验，不失为一种独特的印记。&#xA;以文字等形式发布 第三点即为，发布自己的原创内容。&#xA;现阶段，每个人都可以有自己的网站，在自己的网站上发布自己的内容，形成自己的网络名片。&#xA;原创内容的形式有很多方面，包括文字、音频、图画等。当然，最常见的就是文字。</description>
+    </item>
+    <item>
+      <title>先做实验还是先写论文？</title>
+      <link>https://www.xiaoledeng.com/2017/10/14/first-do-or-write/</link>
+      <pubDate>Sat, 14 Oct 2017 20:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/10/14/first-do-or-write/</guid>
+      <description>1. 引言 当你做科研时，有了一个非常棒的想法，你是选择先做实验，然后整理实验结果写一篇论文？还是先开始写论文，然后再通过做实验来完善？&#xA;2. 先做后写 第一种“先做后写”，即为先做实验，等实验做出来了，而后有了好的结果，再汇集成果成图、表，最后写论文。&#xA;这应该是普遍的一种做研究写论文的模式，成为默认模式。&#xA;这种模式，有一个明显的缺陷——就是最后写出来的论文里面，会删减很多实验结果。&#xA;简单来说，就是实验做得多，文章内容写不了这么多。&#xA;3. 先写后做 “先写后做”，有了好的创新点，赶紧写。&#xA;把论文的框架搭建起来，而后做实验来验证，填充论文的内容。&#xA;这种模式，特别需要一种前瞻性，即为提出的猜想，要能够用实验来验证。&#xA;或者说，提前预想了论文中实验的结果。&#xA;4. 边写边做 不论是“先做后写”，还是“先写后做”，都会有各自的局限性。&#xA;这里，提出一种模式——“边写边做”，即为一边写论文，一边做实验。&#xA;“边写边做”结合了以上二者的优点，在写和做的循环中，高效率地推动研究进展。</description>
+    </item>
+    <item>
+      <title>学术英文写作的词汇和句式小结</title>
+      <link>https://www.xiaoledeng.com/2017/10/12/write-words-summary/</link>
+      <pubDate>Thu, 12 Oct 2017 10:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/10/12/write-words-summary/</guid>
+      <description>1. 引言 学术写作，关键还是在实践中学习。&#xA;学术写作的要点在于“语言层面”，即为多读（阅读文献）、多积累、多写，补上一个“多修改”。&#xA;此文将作为，阅读专业文献时，积累词汇、句式的文章。&#xA;本文列出学术英文写作的常用词汇，供写作的过程中使用。&#xA;2. 图、表 show, present, illustrate, summarize, demonstrate, contain, provide, list, report, give, reveal, display, indicate, suggest, describe 3. 文献观点 state, claim, argue, maintain, suggest, assert, hypothesize, conclude, describe, develop, propose, find, show, report, use, study, demonstrate, note, discuss, observe, explain, expand, publish, give, examine, analyze, focus, presume, speculate, assume, support, theorize, contend, recommend Based on, In the view of, According to 4. 常用的拉丁文缩写 cf. = compare e.</description>
+    </item>
+    <item>
+      <title>SCI论文Checking and Correcting Proof的检查清单</title>
+      <link>https://www.xiaoledeng.com/2017/10/11/sci-proof-list/</link>
+      <pubDate>Wed, 11 Oct 2017 19:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/10/11/sci-proof-list/</guid>
+      <description>1. 前言 一般而言，SCI论文被录用(Accept)之后，会有核改校样(Checking and Correcting Proof)的过程。&#xA;校样(Proof)属于论文发表前，消除原稿中错误的最后一次机会。对校样PDF进行仔细的检查是非常有必要的；如果文章带着明显的错误发表了，后续还要补错。&#xA;本文可作为校样文章的初步参考，希望能够帮助到需要的人。&#xA;2. 校样的检查清单 原则上讲，校样改动的范围只能是排版过程中造成的错误，以及涉及文章科学内容的矫误。&#xA;拼写格式的核对 仔细对照稿件，检查文章的英文拼写和格式是否一致。&#xA;具体包括：标点符号、计量单位等。&#xA;公式、符号的核对 论文中出现的数学公式、数学符号等，都需要仔细核对：&#xA;字母的黑体、斜体等； 字母的大小写等； 字母的上标、下标等； 特殊符号里的希腊字母等； &amp;hellip; 图、表、公式的编号核对 文中的图、表格、公式的编号是否顺序一致。&#xA;细节方面包括：图题、标题、线条、数据、顺序编号等。&#xA;参考文献的格式核对 参考文献的格式是否一致。&#xA;具体包括：参考文献的作者、题名、页码和编码顺序等&#xA;3. 总结 以上清单中检查出来的问题和修改要求，按照页码、行号来明确指出来。&#xA;同时，在校样PDF出现问题的地方，用有色笔标注出来。&#xA;本文仅仅只是一个初始的检查清单，之后还会持续地补充。&#xA;4. 阅读推荐 论文接受 | Alex LEE&amp;rsquo;s Blog； </description>
+    </item>
+    <item>
+      <title>SCI论文投稿Submissions Waiting for Author&#39;s Approval的检查清单</title>
+      <link>https://www.xiaoledeng.com/2017/10/02/sci-submission-check-list/</link>
+      <pubDate>Mon, 02 Oct 2017 19:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/10/02/sci-submission-check-list/</guid>
+      <description>1. 前言 一般而言，将写好的SCI论文上传到投稿系统后，都会有Submissions Waiting for Author&amp;rsquo;s Approval这个步骤。&#xA;此时，不管是Word格式还是LaTeX格式的原稿，在这个过程中，都会生成PDF格式的稿件。&#xA;对这个PDF稿件进行检查是非常有必要的，也关系到审稿的进度，甚至是稿件接收与否。&#xA;本文可作为投稿时检查文章的参考，希望能够帮助到需要的人。&#xA;2. 检查清单 公式是否正确 PDF稿件中的公式，特别是从Word的MathType转化而来的，非常有可能会缺失。&#xA;是否有页码行号 在后续的评审者给的Comments中，常常会有页码和行号的定位。因此需要检查PDF格式的稿件是否有正确的页码、行号。&#xA;编号是否一致 需要检查在文中的图、表格、公式的编号是否按照顺序一致。&#xA;英语语言问题 语言问题，常常是个问题。这个列出来一些常见语言检查清单：&#xA;主动被动语态误用； 名词作形容词误用（避免类似three-dimensional cultured primary rat hepatocytes这样的长词组，用of拆开）； which从句紧跟要说明的词；句子里避免多个动词并列（the drug elicited…., produced….., increased…. and decreased….。能用从句时就不要用并列句，和中国喜欢排比句的语言习惯不同）； 松散连接的从句不如独立成句（while，but之类，或者是thus，and连接的句子）； 避免太长的句子，即使要用也需层次分明，不至于要读几遍才看懂它的结构； 时态：has been……经常用到，但主从句避免同时采用has been，其中一个要换成过去式。 是否有恰当的词汇； 单复数问题； 时态问题； 注意：以上仅仅列出一部分问题，此方面还需要更加细致化。&#xA;常用的格式问题 缩写； 斜体； 单位符号（采用国际单位）； 大小写； 单位和数字间空格； 字体统一（避免中文字体以免国外的电脑不识别）； 注意：缩写方面要前后一致；字体和字号要统一。&#xA;文章各个部分的问题 Title（标题是否恰当；作者的顺序、地址和Email）； Abstract（简洁）； Keywords（方便他人查找）； Introduction； Methods； Results； Discussion； Conclusion； Acknowledgement（感谢和基金号）； Reference（参考文献中列出的文献与文章中出现的文献是否一致；参考文献的格式）； Appendix； 以上文章的各个部分，详细的内容可以参考这篇文章——论文马上就要投稿了？对照这份自查清单再最后检查一遍。&#xA;3. 总结 本文仅仅只是一个初始的检查清单，之后还会持续地补充。&#xA;4. 参考资料 详解：SCI论文投稿前的评估检查_word文档在线阅读与下载_无忧文档； 论文马上就要投稿了？对照这份自查清单再最后检查一遍； SCI论文投稿前必须检查的16个细节； </description>
+    </item>
+    <item>
+      <title>i.e.和e.g.的区别</title>
+      <link>https://www.xiaoledeng.com/2017/08/17/ie-eg-difference/</link>
+      <pubDate>Thu, 17 Aug 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/08/17/ie-eg-difference/</guid>
+      <description>1. 含义 I.e. and e.g. are both Latin abbreviations. E.g. stands for exempli gratia and means “for example.” I.e. is the abbreviation for id est and means “in other words.”&#xA;i.e. 是拉丁文 id est 的缩写，它的意思就是“那就是说，换句话说”，等同于“that is，in other words” ，目的是用来进一步解释前面所说的观点。&#xA;e.g. 是拉丁文 exempli gratia 的缩写，它的意思是“举个例子，比如”，等同与“for example”，目的就是用几个例子来说明前面的观点。&#xA;etc.就比较好理解了，它是 etcetera 的缩写，意思是“等等”，相当于“and so on”。&#xA;2. 例子 i.e. 使用&amp;quot;i.e.&amp;ldquo;来作解释。 &amp;ldquo;i.e.&amp;rdquo; 是用来在一句话之后换种方式解释或描述之前说的内容。&#xA;The elephant is a pachyderm, i.e., an animal with thick skin and nails resembling hooves.</description>
+    </item>
+    <item>
+      <title>科研灵感(5)—撰写学术论文的步骤</title>
+      <link>https://www.xiaoledeng.com/2017/06/22/research-light-5-step-to-write/</link>
+      <pubDate>Thu, 22 Jun 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/06/22/research-light-5-step-to-write/</guid>
+      <description>本文简要地描述，撰写学术论文的步骤。&#xA;构思：学术论文的创新点。这个点是非常重要的，直接决定了学术论文的水平，也就是写作目的； 实验：理论公式推导、代码编写、实验图表的绘制，以及相关描述； 整体框架：关于学术论文的整体提纲和框架，特别是摘要、引言、总结等； 写写写：开始把学术论文的初稿完成； 改改改：跟导师等人，来回不断地修改撰写的学术论文，直至投稿。 </description>
+    </item>
+    <item>
+      <title>施一公的六点写科技论文的经验</title>
+      <link>https://www.xiaoledeng.com/2016/05/27/six-points-to-write/</link>
+      <pubDate>Fri, 27 May 2016 18:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2016/05/27/six-points-to-write/</guid>
+      <description>本页内容来源于： 清华大学施一公教授：如何提高英文的科研写作能力&#xA;科研论文不同于读者来信，有其专业特点、甚至是固定格式。&#xA;写文章贵在一气呵成。&#xA;1、要写好科研论文，必须先养成读英文文章的习惯，争取每天30-60分钟。刚开始可以选择以读英文报纸、英文新闻为主，逐渐转为读专业杂志。我会在近期专门写一篇博客文章介绍一套行之有效的增强读专业杂志能力的办法。&#xA;2、写科研论文，最重要的是逻辑。逻辑的形成来自对实验数据的总体分析。必须先讨论出一套清晰的思路，然后按照思路来做图(Figures)，最后才能执笔。&#xA;3、具体写作时，先按照思路（即Figures）写一个以subheading为主的框架，然后开始具体写作。第一稿，切忌追求每一句话的完美，更不要追求词语的华丽，而主要留心逻辑（logic flow），注意前后句的逻辑关系、相邻两段的逻辑关系。写作时，全力以赴，尽可能不受外界事情干扰（关闭手机、座机），争取在最短时间内拿出第一稿。还要注意：一句话不可太长。&#xA;4、学会照葫芦画瓢。没有人天生会写优秀的科研论文，都是从别人那里学来的。学习别人的文章要注意专业领域的不同，有些领域（包括我所在的结构生物学）有它内在的写作规律。科研文章里的一些话是定式，比如 “To investigate the mechanism of …, we performed …”, “These results support the former, but not the latter, hypothesis …”, “Despite recent progress, how … remains to be elucidated …” 等等。用两次以后，就逐渐学会灵活运用了。在向别人学习时，切忌抄袭。在美国一些机构，连续7个英文单词在一起和别人的完全一样，原则上就被认为抄袭（plagiarism）。&#xA;5、第一稿写完后，给自己不要超过一天的休息时间，开始修改第二稿。修改时，还是以逻辑为主，但对每一句话都要推敲一下，对abstract和正文中的关键语句要字斟句酌。学会用“Thesaurus”（同义词替换）以避免过多重复。第二稿的修改极为关键，再往后就不会大改了。&#xA;6、第二稿以后的修改，主要注重具体的字句，不会改变整体逻辑了。投稿前，一定要整体读一遍，对个别词句略作改动。记住：学术期刊一般不会因为具体的语法错误拒绝一篇文章，但一定会因为逻辑混乱而拒绝一篇文章。&#xA;用最简单的话表达最明白的意思，但一定要逻辑严谨！</description>
+    </item>
+    <item>
+      <title>文章写作和排版的流程</title>
+      <link>https://www.xiaoledeng.com/2013/10/25/flows-write-paper/</link>
+      <pubDate>Fri, 25 Oct 2013 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2013/10/25/flows-write-paper/</guid>
+      <description>对于理工科来说，写文章的时候，公式输入总是问题。&#xA;一、Windows系统 在Windows系统下面，已经摸索出一套对自己高效率的工具配搭策略。&#xA;个人推荐的一个比较靠谱的“配搭工具流”：Mathematica、Mathtype和Word2010的配搭。&#xA;1、Mathematica公式输入；&#xA;2、Mathtype输入公式到Word2010里面；&#xA;3、Word2010写作以及排版。&#xA;二、Mac系统 看了一篇文章带着Mac去上学（四）：写作、论文、答辩工具推荐 | 雷锋网，里面提到了：&#xA;建议大家把论文的写作过程和排版过程分开进行，在写作的时候不要考虑排版和格式问题，这样会提高写作的效率，也便于多次修改。其次，由于国情所限（你的导师很可能让你提交doc格式的论文），Mac下的中文论文排版是一个比较麻烦的问题。我在这里只提供几个建议供大家参考：&#xA;如果你是个理工科的学生，可以使用LaTeX进行排版，Mac下有许多工具可以完成这个任务；&#xA;如果你的导师允许你提交PDF格式的论文，那么你可以在UlyssesIII、Scrivener等写作软件中写完论文，然后再输出到Apple Pages里进行排版，最后导出PDF格式；&#xA;如果你的导师要求必须提交doc格式的论文，请一定不要在Mac版的Word软件中排版，那会导致最后的论文出现各种奇怪的格式问题；最好的办法就是在UlyssesIII、Scrivener等写作软件中写完论文，然后进入Windows系统或者打开虚拟机，后面你们都懂的。&#xA;个人觉得，对于理工科研究者来说，这些工具有点商榷（后续补充自己的体验），需要自己经过实践&amp;amp;琢磨，并配搭出符合自己的高效率工具流。</description>
+    </item>
+  </channel>
+</rss>
