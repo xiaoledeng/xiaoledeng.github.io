@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>LaTeX换页 - Xiao-Le Deng（邓小乐）</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://www.xiaoledeng.com">Xiao-Le Deng（邓小乐）</a></h1>
+    
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">LaTeX换页</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2018-04-12</span></div>
+  <div>
+    <span><a href="https://www.xiaoledeng.com/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>\newpage 和 \clearpage 的区别：</p>
+<ul>
+<li>
+<p>\newpage：  The \newpage command ends the current page.</p>
+</li>
+<li>
+<p>\clearpage：The \clearpage command ends the current page and causes all figures and tables that have so far appeared in the input to be printed.</p>
+</li>
+</ul>
+<p>通俗点讲就是当你新加的一页内容较多时，两者基本一样，当新加的一页内容较少时，“\newpage”就无法实现你想要的效果，但“\clearpage”可以。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2024 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+            links[i].setAttribute('target', '_blank');
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on Xiao-Le Deng（邓小乐）</title>
+    <link>https://www.xiaoledeng.com/tags/markdown/</link>
+    <description>Recent content in Markdown on Xiao-Le Deng（邓小乐）</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Thu, 26 Sep 2024 10:05:23 +0200</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown居中的代码</title>
+      <link>https://www.xiaoledeng.com/2024/09/26/markdown-center/</link>
+      <pubDate>Thu, 26 Sep 2024 10:05:23 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/09/26/markdown-center/</guid>
+      <description>Markdown语言两端对齐的代码为：&#xA;&amp;lt;div style=&amp;#34;text-align:center&amp;#34;&amp;gt; 文字，需要居中的文字段落。 &amp;lt;/div&amp;gt; </description>
+    </item>
+    <item>
+      <title>Markdown的引用CSS样式</title>
+      <link>https://www.xiaoledeng.com/2024/01/13/markdown-quote-css-format/</link>
+      <pubDate>Sat, 13 Jan 2024 11:24:54 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/13/markdown-quote-css-format/</guid>
+      <description>Markdown 的引用 (quote) 为：&amp;gt;，修改其样式如下：&#xA;首先，CSS 样式文件的路径为 /themes/simple-style/static/css/main.css&#xA;其次，加入以下代码：&#xA;blockquote { border-left: 4px solid #8fe5f7; padding: 0 15px; color: #000000; } 4px 为宽度 #8fe5f7 为浅蓝色 延伸阅读 【MarkDown】修改主题CSS文件_markdown css-CSDN博客 </description>
+    </item>
+    <item>
+      <title>html两个div在同一行</title>
+      <link>https://www.xiaoledeng.com/2023/12/15/html-div-inline/</link>
+      <pubDate>Fri, 15 Dec 2023 19:37:53 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/15/html-div-inline/</guid>
+      <description>让两个 div 标签在同一行，需两个 div 的样式加上 style=&amp;quot;display: inline;&amp;quot; 1。&#xA;参考 HTML如何使两个div在同一行_html两个元素在一行-CSDN博客 </description>
+    </item>
+    <item>
+      <title>个人网站底部添加中华诗词</title>
+      <link>https://www.xiaoledeng.com/2023/12/15/website-footer-add-chinese-poetry/</link>
+      <pubDate>Fri, 15 Dec 2023 19:11:12 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/15/website-footer-add-chinese-poetry/</guid>
+      <description>说明： html 路径为 /themes/simple-style/layouts/_default/baseof.html&#xA;1. 今日诗词脚本 通用简单 html 代码 1：&#xA;&amp;lt;span id=&amp;#34;jinrishici-sentence&amp;#34;&amp;gt;正在加载今日诗词....&amp;lt;/span&amp;gt; &amp;lt;script src=&amp;#34;https://sdk.jinrishici.com/v2/browser/jinrishici.js&amp;#34; charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 显示效果：&#xA;正在加载今日诗词&amp;hellip;. 高级版的 html 代码 1：&#xA;&amp;lt;script src=&amp;#34;https://sdk.jinrishici.com/v2/browser/jinrishici.js&amp;#34; charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;div id=&amp;#34;poem_sentence&amp;#34; style=&amp;#34;display: inline;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; —— &amp;lt;div id=&amp;#34;poem_info&amp;#34; style=&amp;#34;display: inline;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; jinrishici.load(function(result) { var sentence = document.querySelector(&amp;#34;#poem_sentence&amp;#34;) var info = document.querySelector(&amp;#34;#poem_info&amp;#34;) sentence.innerHTML = result.data.content info.innerHTML = &amp;#39;【&amp;#39; + result.data.origin.dynasty + &amp;#39;】&amp;#39; + result.data.origin.author + &amp;#39;《&amp;#39; + result.data.origin.title + &amp;#39;》&amp;#39; }); &amp;lt;/script&amp;gt; 显示效果：&#xA;—— 2. 一句 通用简单 html 代码 2：</description>
+    </item>
+    <item>
+      <title>Keyboard Maestro复制Markdown格式</title>
+      <link>https://www.xiaoledeng.com/2023/12/14/copy-markdown-title-link/</link>
+      <pubDate>Thu, 14 Dec 2023 16:14:05 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/14/copy-markdown-title-link/</guid>
+      <description>1. 前言 之前在 Chrome 浏览器里，有 Copy as Markdown 的插件 1，可以快速复制 Markdown 格式 — [Tab名](link)。&#xA;用 Safari 浏览器外加 Tampermonkey 2 后，虽然也可以用一些脚本实现复制 Markdown 格式，但是效果不是很好，而且有时候粘贴不出想要的内容。&#xA;搜索🔍 Keyboard Maestro 复制 Markdown 格式，发现了 「用 Keyboard Maestro 做一个文本格式转换工具箱 - 少数派」 3，里面的部分工具🔧能够实现想要的功能：快速复制 Markdown 格式 — [Tab名](link)。&#xA;2. 步骤 下载 GitHub 文件 keyboard-maestro-gallery/Convert Toolbox/链接格式转换 Safari.kmmacros&#xA;只用其中的 Paste Markdown Link from Safari Tabs Macro 即可，AppleScript 为 4：&#xA;tell application &amp;#34;Safari&amp;#34; -- Initialize set tabNames to {} set tabURLs to {} set frontName to name of front document -- Collect the tab names and URLs from the top Safari window set topWindow to window 1 set topTabs to every tab of topWindow repeat with t in topTabs set end of tabNames to name of t set end of tabURLs to URL of t end repeat end tell -- Display a list of names for the user to choose from tell application &amp;#34;System Events&amp;#34; set activeApp to name of first application process whose frontmost is true activate choose from list tabNames with title &amp;#34;Safari Tabs&amp;#34; default items frontName if result is not false then set nameChoice to item 1 of result else return end if end tell -- Return the URL of the selected tab tell application activeApp to activate repeat with t from 1 to the count of tabNames if item t of tabNames is nameChoice then return &amp;#34;[&amp;#34; &amp;amp; (item t of tabNames) &amp;amp; &amp;#34;]&amp;#34; &amp;amp; &amp;#34;(&amp;#34; &amp;amp; (item t of tabURLs) &amp;amp; &amp;#34;)&amp;#34; end repeat 可以重新设置自己习惯的快捷键。 彩蛋🥚： 少数派部分文章合集</description>
+    </item>
+    <item>
+      <title>hugo新建文章的默认信息</title>
+      <link>https://www.xiaoledeng.com/2023/12/14/hugo-new-post-front-matter/</link>
+      <pubDate>Thu, 14 Dec 2023 09:05:03 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/14/hugo-new-post-front-matter/</guid>
+      <description>1. 前言 利用 hugo 创建新文章时 （命令行：hugo new post/new.md），可以设置文章的默认信息。&#xA;一般模版 Markdown 文件的路径为 archetypes/default.md。&#xA;注意1：&#xA;/archetypes 储存 .md 的模板文件，类似于 hexo 的 scaffolds ，该文件夹的优先级高于主题下的 /archetypes 文件夹&#xA;2. 默认信息设置 编辑 archetypes/default.md 为：&#xA;--- title: &amp;#34;{{ replace .Name &amp;#34;-&amp;#34; &amp;#34; &amp;#34; | title }}&amp;#34; slug: date: {{ .Date }} tags: - &amp;#34;Unix&amp;#34; --- 更多默认格式可以参考以下两篇1, 2。&#xA;3. 参考 Hugo 从入门到会用 修改hugo新建post的默认信息（front matter） </description>
+    </item>
+    <item>
+      <title>博客Markdown添加上标和下标</title>
+      <link>https://www.xiaoledeng.com/2023/11/15/blog-markdown-sup-sub/</link>
+      <pubDate>Wed, 15 Nov 2023 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/15/blog-markdown-sup-sub/</guid>
+      <description>引用格式：&#xA;# 上标 &amp;lt;sup&amp;gt;1&amp;lt;/sup&amp;gt; # 下标 &amp;lt;sub&amp;gt;2&amp;lt;/sub&amp;gt; 参考 在markdown中如何加入上标、下标？ - 简书 </description>
+    </item>
+    <item>
+      <title>Hugo博客设置段落两端对齐</title>
+      <link>https://www.xiaoledeng.com/2023/11/12/blog-set-paragraph-text-align-justify/</link>
+      <pubDate>Sun, 12 Nov 2023 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/12/blog-set-paragraph-text-align-justify/</guid>
+      <description>1. 基本配置 Hugo的主题是： https://github.com/xiaoledeng/simple-style&#xA;2. 设置方法 在文件夹 themes/simple-style/layouts/_default 下的 single.html 文件中，关于内容的设置为： &amp;lt;div class=&amp;#34;content&amp;#34;&amp;gt; {{ .Content -}} &amp;lt;/div&amp;gt; 在文件夹 themes/simple-style/static/css 下的 main.css 文件中，加入以下css样式设置： .content p{padding:0;margin:10px 0} .content p { margin-top: 0; text-align: justify; } 注意⚠️：text-align为CSS的文本对齐方式：center、left、right、justify。&#xA;justify：将拉伸每一行，以使每一行具有相等的宽度，并且左右边距是直的（就像在杂志和报纸中）。&#xA;3. 参考 在Hugo中为Markdown内容设置首行缩进 · 零壹軒·笔记 CSS 文本对齐 </description>
+    </item>
+    <item>
+      <title>在Markdown里使用LaTeX公式</title>
+      <link>https://www.xiaoledeng.com/2023/07/09/use-latex-in-markdown/</link>
+      <pubDate>Sun, 09 Jul 2023 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/07/09/use-latex-in-markdown/</guid>
+      <description>行内公式 Inline equation:&#xA;\\( LaTex代码 \\) \\[ your equation \\] 行间公式 Display style equation:&#xA;$$ LaTex代码 $$ 参考 How to use LaTeX in Markdown - Fabrizio Musacchio Math support in Markdown - The GitHub Blog </description>
+    </item>
+    <item>
+      <title>Markdown图片调整大小</title>
+      <link>https://www.xiaoledeng.com/2023/04/13/markdown-picture-width/</link>
+      <pubDate>Thu, 13 Apr 2023 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/04/13/markdown-picture-width/</guid>
+      <description>1. 前言 Markdown中，需要对图片的大小进行调整。&#xA;2. 命令 ![图像描述](./img.jpg){width=50%} 说明：width=50% 即图片缩放比例的百分比。&#xA;3. 参考 markdown中插入图片怎么定义图片的大小或比例？ - 知乎 </description>
+    </item>
+    <item>
+      <title>Markdown文件转PDF文件的换页代码</title>
+      <link>https://www.xiaoledeng.com/2023/04/10/markdown-pdf-newpage/</link>
+      <pubDate>Mon, 10 Apr 2023 20:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/04/10/markdown-pdf-newpage/</guid>
+      <description>1. 说明 在Markdown文件转换成PDF文件时，需要换页操作。&#xA;2. 代码 当使用Pandoc进行Markdown文件转换成PDF文件时，直接在markdown文件中，加入以下LaTeX代码：&#xA;\newpage 当使用通用转换时，使用以下代码：&#xA;&amp;lt;div STYLE=&amp;#34;page-break-after: always;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 3. 参考 Pandoc转换技巧之从markdown到PDF - 驭风万里无垠 Markdown转pdf分页_markdown 换页代码_付康为的博客-CSDN博客 </description>
+    </item>
+    <item>
+      <title>MacOS系统 Markdown 文件转成带目录和页码的中文 PDF 文件</title>
+      <link>https://www.xiaoledeng.com/2023/03/27/macos-markdown-pdf/</link>
+      <pubDate>Mon, 27 Mar 2023 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/03/27/macos-markdown-pdf/</guid>
+      <description>1. 安装Pandoc brew install pandoc 见： https://pandoc.org/installing.html&#xA;2. 安装 MacTex 见： https://www.tug.org/mactex/&#xA;3. 选用macOS系统的中文字体 打开 字体册（Font Book）应用程序，在“字体册”中可以查看已安装的中文字体，比如，宋体 为 Songti SC；楷体 为 Kaiti SC。&#xA;4. 转换命令 pandoc file.md -o file.pdf --toc --number-sections --pdf-engine=xelatex -V CJKmainfont=&amp;#34;Songti SC&amp;#34; 说明：&#xA;file.md：输入 Markdown 文件 -o file.pdf：输出 pdf 文件 &amp;ndash;toc：有目录 &amp;ndash;number-sections：带页码 &amp;ndash;pdf-engine=xelatex：latex的编译器为xelatex -V CJKmainfont=&amp;ldquo;Songti SC&amp;rdquo;：选用的中文字体 5. 延伸阅读 纯文本做笔记 &amp;mdash; 使用 Pandoc 把 Markdown 转为 PDF 文件 - jdhao&amp;rsquo;s digital space </description>
+    </item>
+    <item>
+      <title>Markdown字体、字号、字色、底色</title>
+      <link>https://www.xiaoledeng.com/2020/01/11/markdown-font-size-color/</link>
+      <pubDate>Sat, 11 Jan 2020 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/01/11/markdown-font-size-color/</guid>
+      <description>浅红色文字：浅红色文字&#xA;深红色文字：深红色文字&#xA;浅绿色文字：浅绿色文字&#xA;深绿色文字：深绿色文字&#xA;浅蓝色文字：浅蓝色文字&#xA;深蓝色文字：深蓝色文字&#xA;浅黄色文字：浅黄色文字&#xA;深黄色文字：深黄色文字&#xA;浅青色文字：浅青色文字&#xA;深青色文字：深青色文字&#xA;浅紫色文字：浅紫色文字&#xA;深紫色文字：深紫色文字&#xA;size为1：size为1 size为2：size为2 size为3：size为3 size为4：size为4 size为10：size为10&#xA;我是黑体字 我是宋体字 我是微软雅黑字 我是fantasy字 我是Helvetica字&#xA;背景色的设置是按照十六进制颜色值：#7FFFD4 背景色的设置是按照十六进制颜色值：#FF83FA 背景色的设置是按照十六进制颜色值：#D1EEEE 背景色的设置是按照十六进制颜色值：#C0FF3E 背景色的设置是按照十六进制颜色值：#54FF9F </description>
+    </item>
+    <item>
+      <title>语言代码表</title>
+      <link>https://www.xiaoledeng.com/2019/08/08/table-language/</link>
+      <pubDate>Thu, 08 Aug 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/08/08/table-language/</guid>
+      <description>语言代码表 语言代码 语言名称 af 南非语 af-ZA 南非语 ar 阿拉伯语 ar-AE 阿拉伯语(阿联酋) ar-BH 阿拉伯语(巴林) ar-DZ 阿拉伯语(阿尔及利亚) ar-EG 阿拉伯语(埃及) ar-IQ 阿拉伯语(伊拉克) ar-JO 阿拉伯语(约旦) ar-KW 阿拉伯语(科威特) ar-LB 阿拉伯语(黎巴嫩) ar-LY 阿拉伯语(利比亚) ar-MA 阿拉伯语(摩洛哥) ar-OM 阿拉伯语(阿曼) ar-QA 阿拉伯语(卡塔尔) ar-SA 阿拉伯语(沙特阿拉伯) ar-SY 阿拉伯语(叙利亚) ar-TN 阿拉伯语(突尼斯) ar-YE 阿拉伯语(也门) az 阿塞拜疆语 az-AZ 阿塞拜疆语(拉丁文) az-AZ 阿塞拜疆语(西里尔文) be 比利时语 be-BY 比利时语 bg 保加利亚语 bg-BG 保加利亚语 bs-BA 波斯尼亚语(拉丁文，波斯尼亚和黑塞哥维那) ca 加泰隆语 ca-ES 加泰隆语 cs 捷克语 cs-CZ 捷克语 cy 威尔士语 cy-GB 威尔士语 da 丹麦语 da-DK 丹麦语 de 德语 de-AT 德语(奥地利) de-CH 德语(瑞士) de-DE 德语(德国) de-LI 德语(列支敦士登) de-LU 德语(卢森堡) dv 第维埃语 dv-MV 第维埃语 el 希腊语 el-GR 希腊语 en 英语 en-AU 英语(澳大利亚) en-BZ 英语(伯利兹) en-CA 英语(加拿大) en-CB 英语(加勒比海) en-GB 英语(英国) en-IE 英语(爱尔兰) en-JM 英语(牙买加) en-NZ 英语(新西兰) en-PH 英语(菲律宾) en-TT 英语(特立尼达) en-US 英语(美国) en-ZA 英语(南非) en-ZW 英语(津巴布韦) eo 世界语 es 西班牙语 es-AR 西班牙语(阿根廷) es-BO 西班牙语(玻利维亚) es-CL 西班牙语(智利) es-CO 西班牙语(哥伦比亚) es-CR 西班牙语(哥斯达黎加) es-DO 西班牙语(多米尼加共和国) es-EC 西班牙语(厄瓜多尔) es-ES 西班牙语(传统) es-ES 西班牙语(国际) es-GT 西班牙语(危地马拉) es-HN 西班牙语(洪都拉斯) es-MX 西班牙语(墨西哥) es-NI 西班牙语(尼加拉瓜) es-PA 西班牙语(巴拿马) es-PE 西班牙语(秘鲁) es-PR 西班牙语(波多黎各(美)) es-PY 西班牙语(巴拉圭) es-SV 西班牙语(萨尔瓦多) es-UY 西班牙语(乌拉圭) es-VE 西班牙语(委内瑞拉) et 爱沙尼亚语 et-EE 爱沙尼亚语 eu 巴士克语 eu-ES 巴士克语 fa 法斯语 fa-IR 法斯语 fi 芬兰语 fi-FI 芬兰语 fo 法罗语 fo-FO 法罗语 fr 法语 fr-BE 法语(比利时) fr-CA 法语(加拿大) fr-CH 法语(瑞士) fr-FR 法语(法国) fr-LU 法语(卢森堡) fr-MC 法语(摩纳哥) gl 加里西亚语 gl-ES 加里西亚语 gu 古吉拉特语 gu-IN 古吉拉特语 he 希伯来语 he-IL 希伯来语 hi 印地语 hi-IN 印地语 hr 克罗地亚语 hr-BA 克罗地亚语(波斯尼亚和黑塞哥维那) hr-HR 克罗地亚语 hu 匈牙利语 hu-HU 匈牙利语 hy 亚美尼亚语 hy-AM 亚美尼亚语 id 印度尼西亚语 id-ID 印度尼西亚语 is 冰岛语 is-IS 冰岛语 it 意大利语 it-CH 意大利语(瑞士) it-IT 意大利语(意大利) ja 日语 ja-JP 日语 ka 格鲁吉亚语 ka-GE 格鲁吉亚语 kk 哈萨克语 kk-KZ 哈萨克语 kn 卡纳拉语 kn-IN 卡纳拉语 ko 朝鲜语 ko-KR 朝鲜语 kok 孔卡尼语 kok-IN 孔卡尼语 ky 吉尔吉斯语 ky-KG 吉尔吉斯语(西里尔文) lt 立陶宛语 lt-LT 立陶宛语 lv 拉脱维亚语 lv-LV 拉脱维亚语 mi 毛利语 mi-NZ 毛利语 mk 马其顿语 mk-MK 马其顿语(FYROM) mn 蒙古语 mn-MN 蒙古语(西里尔文) mr 马拉地语 mr-IN 马拉地语 ms 马来语 ms-BN 马来语(文莱达鲁萨兰) ms-MY 马来语(马来西亚) mt 马耳他语 mt-MT 马耳他语 nb 挪威语(伯克梅尔) nb-NO 挪威语(伯克梅尔)(挪威) nl 荷兰语 nl-BE 荷兰语(比利时) nl-NL 荷兰语(荷兰) nn-NO 挪威语(尼诺斯克)(挪威) ns 北梭托语 ns-ZA 北梭托语 pa 旁遮普语 pa-IN 旁遮普语 pl 波兰语 pl-PL 波兰语 pt 葡萄牙语 pt-BR 葡萄牙语(巴西) pt-PT 葡萄牙语(葡萄牙) qu 克丘亚语 qu-BO 克丘亚语(玻利维亚) qu-EC 克丘亚语(厄瓜多尔) qu-PE 克丘亚语(秘鲁) ro 罗马尼亚语 ro-RO 罗马尼亚语 ru 俄语 ru-RU 俄语 sa 梵文 sa-IN 梵文 se 北萨摩斯语 se-FI 北萨摩斯语(芬兰) se-FI 斯科特萨摩斯语(芬兰) se-FI 伊那里萨摩斯语(芬兰) se-NO 北萨摩斯语(挪威) se-NO 律勒欧萨摩斯语(挪威) se-NO 南萨摩斯语(挪威) se-SE 北萨摩斯语(瑞典) se-SE 律勒欧萨摩斯语(瑞典) se-SE 南萨摩斯语(瑞典) sk 斯洛伐克语 sk-SK 斯洛伐克语 sl 斯洛文尼亚语 sl-SI 斯洛文尼亚语 sq 阿尔巴尼亚语 sq-AL 阿尔巴尼亚语 sr-BA 塞尔维亚语(拉丁文，波斯尼亚和黑塞哥维那) sr-BA 塞尔维亚语(西里尔文，波斯尼亚和黑塞哥维那) sr-SP 塞尔维亚(拉丁) sr-SP 塞尔维亚(西里尔文) sv 瑞典语 sv-FI 瑞典语(芬兰) sv-SE 瑞典语 sw 斯瓦希里语 sw-KE 斯瓦希里语 syr 叙利亚语 syr-SY 叙利亚语 ta 泰米尔语 ta-IN 泰米尔语 te 泰卢固语 te-IN 泰卢固语 th 泰语 th-TH 泰语 tl 塔加路语 tl-PH 塔加路语(菲律宾) tn 茨瓦纳语 tn-ZA 茨瓦纳语 tr 土耳其语 tr-TR 土耳其语 ts 宗加语 tt 鞑靼语 tt-RU 鞑靼语 uk 乌克兰语 uk-UA 乌克兰语 ur 乌都语 ur-PK 乌都语 uz 乌兹别克语 uz-UZ 乌兹别克语(拉丁文) uz-UZ 乌兹别克语(西里尔文) vi 越南语 vi-VN 越南语 xh 班图语 xh-ZA 班图语 zh 中文 zh-CN 中文(简体) zh-HK 中文(香港) zh-MO 中文(澳门) zh-SG 中文(新加坡) zh-TW 中文(繁体) zu 祖鲁语 zu-ZA 祖鲁语 </description>
+    </item>
+    <item>
+      <title>Markdown两端对齐的代码</title>
+      <link>https://www.xiaoledeng.com/2018/03/30/html-alignment/</link>
+      <pubDate>Fri, 30 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/30/html-alignment/</guid>
+      <description>Markdown语言两端对齐的代码为：&#xA;&amp;lt;p style=&amp;#34;text-align:justify; text-justify:inter-ideograph;&amp;#34;&amp;gt; 文字，需要对齐的文字段落。 &amp;lt;/p&amp;gt; </description>
+    </item>
+    <item>
+      <title>Markdown文本插入LaTeX公式</title>
+      <link>https://www.xiaoledeng.com/2017/03/15/markdown-latex/</link>
+      <pubDate>Wed, 15 Mar 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/15/markdown-latex/</guid>
+      <description>网页版-MathJax Markdown文本一般使用MathJax来插入Latex公式。&#xA;本地版-Macdown 因为Mac下面使用的是Macdown的编辑器。只需要设置一些就OK了，支持Latex公式插入( $&amp;hellip;$ )。</description>
+    </item>
+  </channel>
+</rss>

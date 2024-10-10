@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Xiao-Le Deng（邓小乐）</title>
+    <link>https://www.xiaoledeng.com/tags/blog/</link>
+    <description>Recent content in Blog on Xiao-Le Deng（邓小乐）</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Thu, 26 Sep 2024 10:05:23 +0200</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown居中的代码</title>
+      <link>https://www.xiaoledeng.com/2024/09/26/markdown-center/</link>
+      <pubDate>Thu, 26 Sep 2024 10:05:23 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/09/26/markdown-center/</guid>
+      <description>Markdown语言两端对齐的代码为：&#xA;&amp;lt;div style=&amp;#34;text-align:center&amp;#34;&amp;gt; 文字，需要居中的文字段落。 &amp;lt;/div&amp;gt; </description>
+    </item>
+    <item>
+      <title>Hugo网站设置Time News Roman字体</title>
+      <link>https://www.xiaoledeng.com/2024/06/02/hugo-set-font/</link>
+      <pubDate>Sun, 02 Jun 2024 16:59:45 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/06/02/hugo-set-font/</guid>
+      <description>在对应的CSS设置（路径：/themes/simple-style/static/css/main.css）加入以下代码：&#xA;.content p{ font-family: &amp;#34;Times New Roman&amp;#34;; } </description>
+    </item>
+    <item>
+      <title>Hugo网站Pagefind搜索添加多语言</title>
+      <link>https://www.xiaoledeng.com/2024/06/01/hugo-pagefind-search-languages/</link>
+      <pubDate>Sat, 01 Jun 2024 06:32:08 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/06/01/hugo-pagefind-search-languages/</guid>
+      <description>在每一个 html 网页的表头，加入以下代码：&#xA;&amp;lt;html lang=&amp;#34;zh&amp;#34;&amp;gt; 对于 Hugo 网站来说，路径为：&#xA;/themes/simple-style/layouts/_default/baseof.html 参考 Multilingual search | Pagefind — Static low-bandwidth search at scale </description>
+    </item>
+    <item>
+      <title>html去除列表前面的点</title>
+      <link>https://www.xiaoledeng.com/2024/01/18/html-list-remove-point/</link>
+      <pubDate>Thu, 18 Jan 2024 09:50:48 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/18/html-list-remove-point/</guid>
+      <description>分别在以下三个文件&#xA;themes/simple-style/layouts/index.html themes/simple-style/layouts/list.html themes/simple-style/layouts/section.html 加入代码：&#xA;&amp;lt;!-- 列表前面的点去除 --&amp;gt; &amp;lt;style&amp;gt; ul li{ list-style: none; } &amp;lt;/style&amp;gt; &amp;lt;!-- 列表前面的点去除 --&amp;gt; 延伸阅读 HTML：列表去除列表前面的点 HTML的列表样式可以去除吗？怎么去掉li前面的小黑点 </description>
+    </item>
+    <item>
+      <title>Hugo网站设置Pagefind本地搜索(3)</title>
+      <link>https://www.xiaoledeng.com/2024/01/13/hugo-set-pagefind-local-search-3/</link>
+      <pubDate>Sat, 13 Jan 2024 17:18:46 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/13/hugo-set-pagefind-local-search-3/</guid>
+      <description>1. 前言 Hugo 给出的网站搜索工具 1，比较有名的是 lunr.js 和 Fuse.js，不过设置比较复杂 2。&#xA;已有的实践是：利用外部搜索，比如，Google、Bing、Baidu等，前提是收录了个人网站3, 4。&#xA;比较简单的本地搜索策略是：Pagefind 5，只需要两步就能设置完成网站的本地搜索 6。&#xA;2. 安装和设置Pagefind 安装 npm 工具 macOS 下用 brew 安装命令行工具 npm ：&#xA;brew install nmp Linux 和 Windows 下安装 npm ： https://nodejs.org/en/download/&#xA;在网站的根目录下，运行以下命令： npm i pagefind hugo 说明：安装 Pagefind 工具，并发布 hugo 站点。网站的默认发布文件夹为网站的根目录下的 public/&#xA;生成索引 npx pagefind --source public --bundle-dir search 说明： pagefind 在 public/文件夹下生成索引 search/文件夹&#xA;3. 设置静态网页的搜索入口 创建 html 格式的 shortcodes 文件 在 themes/simple-style/layouts/shortcodes/目录下，新建 search.html 模板文件，内容为：&#xA;&amp;lt;link href=&amp;#34;/search/pagefind-ui.</description>
+    </item>
+    <item>
+      <title>Markdown的引用CSS样式</title>
+      <link>https://www.xiaoledeng.com/2024/01/13/markdown-quote-css-format/</link>
+      <pubDate>Sat, 13 Jan 2024 11:24:54 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/13/markdown-quote-css-format/</guid>
+      <description>Markdown 的引用 (quote) 为：&amp;gt;，修改其样式如下：&#xA;首先，CSS 样式文件的路径为 /themes/simple-style/static/css/main.css&#xA;其次，加入以下代码：&#xA;blockquote { border-left: 4px solid #8fe5f7; padding: 0 15px; color: #000000; } 4px 为宽度 #8fe5f7 为浅蓝色 延伸阅读 【MarkDown】修改主题CSS文件_markdown css-CSDN博客 </description>
+    </item>
+    <item>
+      <title>Hugo更改代码高亮主题</title>
+      <link>https://www.xiaoledeng.com/2024/01/12/hugo-change-code-theme/</link>
+      <pubDate>Fri, 12 Jan 2024 14:16:53 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/12/hugo-change-code-theme/</guid>
+      <description>在 Hugo 根目录的 config.toml 加以下代码：&#xA;# 样式参考 https://swapoff.org/chroma/playground [markup.highlight] style = &amp;#39;manni&amp;#39; # 默认值不支持在 markdown 中写 html，需改成 true 开启 [markup.goldmark.renderer] unsafe = true 具体样式，可以参考： https://swapoff.org/chroma/playground&#xA;延伸阅读 Hugo 代码高亮 </description>
+    </item>
+    <item>
+      <title>macOS设置GitHub公钥命令行登录</title>
+      <link>https://www.xiaoledeng.com/2024/01/04/macos-github-login/</link>
+      <pubDate>Thu, 04 Jan 2024 12:57:22 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/04/macos-github-login/</guid>
+      <description>本地生成 SSH 密钥和公钥 ssh-keygen -t ed25519 -C &amp;#34;email&amp;#34; 注意⚠️：&#xA;命名：~/.ssh/id_ed25519_other 密码：可以输入复杂的密码 本地将公钥复制到剪贴板： pbcopy &amp;lt; ~/.ssh/id_ed25519_other.pub 配置 GitHub 的 SSH Key：打开 Github &amp;gt; Settings &amp;gt; SSH and GPG keys &amp;gt; SSH keys，点击 New SSH key，粘贴&#xA;设置 ~/.ssh/config 文件：&#xA;Host github.com IdentityFile ~/.ssh/id_ed25519_other PreferredAuthentications publickey AddKeysToAgent yes UseKeychain yes 注意⚠️：&#xA;UseKeychain yes 可以保存在第 1 步的密码，这样每次进行 GitHub 上传时，就不需要每次输入密码 Enter passphrase for key。 网上有很多教程，为了避免每次 GitHub 上传时输入公钥的密码，直接在第 1 步输入空密码，这样不安全，非常不可取。 打开终端，验证一下是否添加 SSH 成功: ssh -T git@github.</description>
+    </item>
+    <item>
+      <title>Python解析RSS库feedparser</title>
+      <link>https://www.xiaoledeng.com/2023/12/17/python-analysis-rss-feedparser/</link>
+      <pubDate>Sun, 17 Dec 2023 17:04:15 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/17/python-analysis-rss-feedparser/</guid>
+      <description>1. 前言 Python 的 feedparser 库 1，可以直接解析 RSS 源。&#xA;2. 代码 安装 feedparser 库：&#xA;pip install feedparser 获得个人网站的前 14 项 RSS 的日期📅、标题和链接🔗 2, 3：&#xA;import feedparser import datetime from time import mktime rss_url = &amp;#39;http://xiaoledeng.github.io/index.xml&amp;#39; def get_article(): title = [] link = [] date = [] rss_weekly = feedparser.parse(rss_url) for i in range(0,14): title.append(rss_weekly[&amp;#39;entries&amp;#39;][i].title) link.append(rss_weekly[&amp;#39;entries&amp;#39;][i].link) date.append((datetime.datetime.fromtimestamp(mktime(rss_weekly[&amp;#39;entries&amp;#39;][i].published_parsed)) + datetime.timedelta(hours=8)).strftime(&amp;#34;%Y-%m-%d&amp;#34;)) return title, link, date title, link, date = get_article() print(&amp;#39;\n\nNew articles:\n\n&amp;#39;) for i in range(0,7): print(f&amp;#39;{date[i]}&amp;#39;,f&amp;#39;{title[i]}&amp;#39;,f&amp;#39;{link[i]}\n&amp;#39;) print(&amp;#39;\n\nRecent articles:\n\n&amp;#39;) for i in range(7,14): print(f&amp;#39;{date[i]}&amp;#39;,f&amp;#39;{title[i]}&amp;#39;,f&amp;#39;{link[i]}\n&amp;#39;) 3.</description>
+    </item>
+    <item>
+      <title>html两个div在同一行</title>
+      <link>https://www.xiaoledeng.com/2023/12/15/html-div-inline/</link>
+      <pubDate>Fri, 15 Dec 2023 19:37:53 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/15/html-div-inline/</guid>
+      <description>让两个 div 标签在同一行，需两个 div 的样式加上 style=&amp;quot;display: inline;&amp;quot; 1。&#xA;参考 HTML如何使两个div在同一行_html两个元素在一行-CSDN博客 </description>
+    </item>
+    <item>
+      <title>个人网站底部添加中华诗词</title>
+      <link>https://www.xiaoledeng.com/2023/12/15/website-footer-add-chinese-poetry/</link>
+      <pubDate>Fri, 15 Dec 2023 19:11:12 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/15/website-footer-add-chinese-poetry/</guid>
+      <description>说明： html 路径为 /themes/simple-style/layouts/_default/baseof.html&#xA;1. 今日诗词脚本 通用简单 html 代码 1：&#xA;&amp;lt;span id=&amp;#34;jinrishici-sentence&amp;#34;&amp;gt;正在加载今日诗词....&amp;lt;/span&amp;gt; &amp;lt;script src=&amp;#34;https://sdk.jinrishici.com/v2/browser/jinrishici.js&amp;#34; charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 显示效果：&#xA;正在加载今日诗词&amp;hellip;. 高级版的 html 代码 1：&#xA;&amp;lt;script src=&amp;#34;https://sdk.jinrishici.com/v2/browser/jinrishici.js&amp;#34; charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;div id=&amp;#34;poem_sentence&amp;#34; style=&amp;#34;display: inline;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; —— &amp;lt;div id=&amp;#34;poem_info&amp;#34; style=&amp;#34;display: inline;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; jinrishici.load(function(result) { var sentence = document.querySelector(&amp;#34;#poem_sentence&amp;#34;) var info = document.querySelector(&amp;#34;#poem_info&amp;#34;) sentence.innerHTML = result.data.content info.innerHTML = &amp;#39;【&amp;#39; + result.data.origin.dynasty + &amp;#39;】&amp;#39; + result.data.origin.author + &amp;#39;《&amp;#39; + result.data.origin.title + &amp;#39;》&amp;#39; }); &amp;lt;/script&amp;gt; 显示效果：&#xA;—— 2. 一句 通用简单 html 代码 2：</description>
+    </item>
+    <item>
+      <title>随笔—自动化网站写作</title>
+      <link>https://www.xiaoledeng.com/2023/12/15/automatic-website-write/</link>
+      <pubDate>Fri, 15 Dec 2023 08:57:04 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/15/automatic-website-write/</guid>
+      <description>1. 前言 一直以来，都是手动完成网站写作。虽然有一部分写成 job.sh 脚本【功能为：自动编译并上传 GitHub 】，并且用 Alfred 已经大幅度提升效率【还是需要在 Alfred 中输入命令行】，但是整个网站写作还没有实现自动化。&#xA;用 Keyboard Maestro 后，可以把整个网站写作流程全部实现自动化，用一个 快捷键 + 数字 实现自动化网站写作。&#xA;注意⚠️：本文实现的电脑💻系统为 macOS 。&#xA;2. 自动化步骤 快捷键 Option + Command + B ，调出面板，依次选择：&#xA;Blog 1 New 实现自动创建新的 markdown 文件📃 Blog 2 Server 实现自动搭建本地查看网站的预备 Blog 3 Broswer Safari 实现自动用 Safari 浏览器显示本地网站预览 Blog 4 Upload 实现自动编译并上传网站 注意⚠️：这里用1、2、3、4来标记，按下快捷键 Option + Command + B ，调出面板后，可以输入1、2、3、4选择对应功能执行。&#xA;2.1 自动创建新的 markdown 文件 新建一个 Macros，命名为 Blog 1 New&#xA;点击「New Trigger - Hot Key Trigger」，输入快捷键 Option + Command + B</description>
+    </item>
+    <item>
+      <title>hugo新建文章的默认信息</title>
+      <link>https://www.xiaoledeng.com/2023/12/14/hugo-new-post-front-matter/</link>
+      <pubDate>Thu, 14 Dec 2023 09:05:03 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/14/hugo-new-post-front-matter/</guid>
+      <description>1. 前言 利用 hugo 创建新文章时 （命令行：hugo new post/new.md），可以设置文章的默认信息。&#xA;一般模版 Markdown 文件的路径为 archetypes/default.md。&#xA;注意1：&#xA;/archetypes 储存 .md 的模板文件，类似于 hexo 的 scaffolds ，该文件夹的优先级高于主题下的 /archetypes 文件夹&#xA;2. 默认信息设置 编辑 archetypes/default.md 为：&#xA;--- title: &amp;#34;{{ replace .Name &amp;#34;-&amp;#34; &amp;#34; &amp;#34; | title }}&amp;#34; slug: date: {{ .Date }} tags: - &amp;#34;Unix&amp;#34; --- 更多默认格式可以参考以下两篇1, 2。&#xA;3. 参考 Hugo 从入门到会用 修改hugo新建post的默认信息（front matter） </description>
+    </item>
+    <item>
+      <title>Mailchimp关闭Tinyletter</title>
+      <link>https://www.xiaoledeng.com/2023/12/01/mailchimp-close-tinyletter/</link>
+      <pubDate>Fri, 01 Dec 2023 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/01/mailchimp-close-tinyletter/</guid>
+      <description>Tinyletter1是一种邮件服务，于2011年开始，将于2024年2月29日关闭。&#xA;原文提示如下：&#xA;We’re discontinuing TinyLetter2. New signups won’t be accepted after Nov. 29, 2023. Active accounts will remain available until Feb. 29, 2024, so make sure to export all your data before then. Bring your newsletters to Mailchimp – new customers get a 1-month free trial.&#xA;团队将关注于核心产品 —— Mailchimp3。&#xA;即，本网站的 博客添加邮件订阅(1): Tinyletter + Zapier 内容将失效。&#xA;延伸阅读 TinyLetter An important update about the future of Tinyletter Marketing, Automation &amp;amp; Email Platform | Mailchimp </description>
+    </item>
+    <item>
+      <title>邮件订阅RSS更新</title>
+      <link>https://www.xiaoledeng.com/2023/11/28/email-subscribe-rss-update/</link>
+      <pubDate>Tue, 28 Nov 2023 20:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/28/email-subscribe-rss-update/</guid>
+      <description>1. 前言 RSS，Really Simple Syndication（简易信息聚合），是一种订阅信息内容的协议。1&#xA;RSS的优势包括：&#xA;主动选择信息 避免信息过载 无广告 专注内容 2. 步骤 获取各类RSS的地址，见 RSSHub&#xA;使用 Mailchimp 2 订阅邮件更新，见 博客添加邮件订阅(2): Mailchimp，替换 RSS地址 即可&#xA;3. 延伸阅读 2023 年为什么我们还要使用 RSS？探索、聚合和专注 - 少数派 RSS-To-Email Feeds | Mailchimp 高效获取信息，你需要这份 RSS 入门指南 - 少数派 GitHub - AboutRSS/ALL-about-RSS: A list of RSS related stuff: tools, services, communities and tutorials, etc. 使用mailchimp将RSS转为邮件订阅 - 拾月 </description>
+    </item>
+    <item>
+      <title>随笔—为什么注销简书</title>
+      <link>https://www.xiaoledeng.com/2023/11/24/why-close-jianshu/</link>
+      <pubDate>Fri, 24 Nov 2023 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/24/why-close-jianshu/</guid>
+      <description>1. 起因 在简书的 用户简介 加了个人网站的地址： www.xiaoledeng.com ，结果收到以下提示：&#xA;您好，经审核，您的用户简介违规，故我们重置了该简介，现您可重新设置新的简介，感谢您对简书的支持及配合。&#xA;所以，决定注销简书。&#xA;步骤是：下载之前简书上所有文章的Markdown文件，花时间合并到个人网站后，就成功注销。&#xA;2. 延伸阅读 简书现在为什么很多人不用了？ - 知乎 </description>
+    </item>
+    <item>
+      <title>博客添加邮件订阅(2): Mailchimp</title>
+      <link>https://www.xiaoledeng.com/2023/11/21/blog-add-email-subscribe-2/</link>
+      <pubDate>Tue, 21 Nov 2023 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/21/blog-add-email-subscribe-2/</guid>
+      <description>1. 引言 邮件订阅用 Mailchimp1。&#xA;此邮件订阅功能还是参考博客——山茶花舍2。&#xA;2. 步骤 先在注册和登录账号： https://us21.admin.mailchimp.com/&#xA;点击 Create an Automation Email，选择 Share blog updates，点击 “Begin”进入下一步&#xA;RSS Feed： RSS feed URL 处填写为自己网站的 RSS 订阅链接，比如： https://xiaoledeng.com/index.xml ，周期可以根据需要设置。 选中 Resize RSS feed images to fit template，可以优化邮件内图片的尺寸。完成后，点击右下角的 Next。&#xA;Recipients：选择 Entire audience（全体观众）。完成后，点击右下角的 Next。&#xA;Setup：这一步设置Campaign info。Email subject 为发送邮件的标题，Mailchimp 的 RSS 格式化标签3为：*|RSSITEM:TITLE|*。From Name 为邮件中显示的发件人名字。From email address 为邮件中显示的发件人地址。 More options 中的 Auto-convert video 推荐选中，可以优化 Newsltter 内视频的样式。完成后，点击右下角的 Next。&#xA;Template：这一步选择邮件模版。选中 Basic 栏下的 1 Column。&#xA;Design：这一步设置邮件样式。将左侧预设的中间内容移除，在右侧的 Blocks 栏内找到 RSS Header 与 RSS Items，将这两项拖入左侧内容中。分别设置 RSS Header 与 RSS Items的样式为 Custom，可以设置字体 Font。完成后，点击右下角的 Next。</description>
+    </item>
+    <item>
+      <title>博客添加邮件订阅(1): Tinyletter &#43; Zapier</title>
+      <link>https://www.xiaoledeng.com/2023/11/20/blog-add-email-subscribe-1/</link>
+      <pubDate>Mon, 20 Nov 2023 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/20/blog-add-email-subscribe-1/</guid>
+      <description>1. 引言 邮件订阅主要是：Tinyletter1 和 Zapier2 实现。&#xA;此邮件订阅功能参考博客——山茶花舍3。&#xA;2. 步骤 Tinyletter：先注册账号，填写基本信息，注意⚠️：send directly的邮件地址一定要记住并保密。&#xA;Zapier：&#xA;先注册账号 获取博客订阅内容：左上角 Create Zap — Built-in tools 的 RSS — 触发器 Event 选 New Items in Multiple Feeds — 点击 Continue，注意⚠️： Feed URLs中填写网站的xml文件地址，比如：https://xiaoledeng.com/index.xml 推送邮件：Email By Zapier — Send Outbound Email — Set up action （注意⚠️：TO 处填写send directly的邮件地址），其他选项直接保持默认即可，检查无误后点击继续，邮件回复：Yes, please send it 或是 Preview。 博客添加订阅邮件页：在 Tinyletter 分享上有提供订阅页与 Embed code，在config.toml添加菜单栏&#xA;[[menu.main]] weight = 50 name = &amp;#34;Subscribe&amp;#34; url = &amp;#34;/subscribe/&amp;#34; 在content/文件夹，添加subscribe.md文件，内容为：</description>
+    </item>
+    <item>
+      <title>博客精简日期显示</title>
+      <link>https://www.xiaoledeng.com/2023/11/19/blog-simplify-date/</link>
+      <pubDate>Sun, 19 Nov 2023 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/19/blog-simplify-date/</guid>
+      <description>1. 引言 本博客采用的是 Simple Style主题1。&#xA;日期显示的默认格式为：2006-01-02 15:04&#xA;日期显示的精简格式为：2006-01-02&#xA;即：去掉小时和分钟 15:04&#xA;2. 具体步骤 themes/simple-style/layouts/_default/list.html themes/simple-style/layouts/_default/single.html themes/simple-style/layouts/index.html 将以上三个文件中的 2006-01-02 15:04 替换为 2006-01-02 即可。&#xA;另外，index.html文件中的 - 替换成空格。&#xA;延伸阅读 Simple Style </description>
+    </item>
+    <item>
+      <title>随笔—个人网站文章的易读性</title>
+      <link>https://www.xiaoledeng.com/2023/11/15/personal-website-readable/</link>
+      <pubDate>Wed, 15 Nov 2023 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/15/personal-website-readable/</guid>
+      <description>个人网站的文章，要以读者的角度去看文章的易读性。&#xA;首先是，文章的排版。&#xA;不能有太多的超链接，可以用上标1和延伸阅读（或参考）代替。&#xA;其次是，文章的逻辑。&#xA;逻辑清楚，每个部分属于哪一块清晰明了。&#xA;最后是，文章的内容。&#xA;简洁、一气呵成、连贯，对看的人有帮助，即能够解决某个问题。&#xA;延伸阅读 博客文章Markdown添加上标和下标 </description>
+    </item>
+    <item>
+      <title>博客Markdown添加上标和下标</title>
+      <link>https://www.xiaoledeng.com/2023/11/15/blog-markdown-sup-sub/</link>
+      <pubDate>Wed, 15 Nov 2023 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/15/blog-markdown-sup-sub/</guid>
+      <description>引用格式：&#xA;# 上标 &amp;lt;sup&amp;gt;1&amp;lt;/sup&amp;gt; # 下标 &amp;lt;sub&amp;gt;2&amp;lt;/sub&amp;gt; 参考 在markdown中如何加入上标、下标？ - 简书 </description>
+    </item>
+    <item>
+      <title>Windows系统搭建Hugo博客</title>
+      <link>https://www.xiaoledeng.com/2023/11/13/windows-set-hugo-blog/</link>
+      <pubDate>Mon, 13 Nov 2023 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/13/windows-set-hugo-blog/</guid>
+      <description>1. 步骤 先安装 Hugo，下载 hugo.exe 可执行文件后，关键是添加 可执行文件 到 Windows系统的PATH路径；&#xA;测试安装 Hugo 是否成功，终端输入：&#xA;hugo version 终端输入： hugo new site blog 下载 themes 文件夹：xiaoledeng/simple-style，放到 themes 文件夹。&#xA;回到根目录，终端输入：&#xA;hugo server -t simple-style --buildDrafts 根据提示，打开网址： http://localhost:1313/ ，就可以看到网站基本内容。&#xA;博客文件在 content/post/文件夹，格式为 markdown格式，头文件如下：&#xA;--- title: &amp;#34;标题&amp;#34; slug: title date: 2012-01-01T01:00:00+08:00 tags: - &amp;#34;Life&amp;#34; - &amp;#34;Ideas&amp;#34; --- 2. 参考 Installing on Windows - Hugo中文文档 如何：向 PATH 环境变量中添加工具位置 | Microsoft Learn 在Windows上使用Hugo搭建博客 - 掘金 </description>
+    </item>
+    <item>
+      <title>个人网站加入Bing搜索</title>
+      <link>https://www.xiaoledeng.com/2023/11/12/add-page-bing-search/</link>
+      <pubDate>Sun, 12 Nov 2023 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/12/add-page-bing-search/</guid>
+      <description>步骤 先注册账户： https://www.bing.com/webmasters&#xA;使用 XML 文件验证，先将 XML 文件下载，再将该文件上载到网站的根目录中&#xA;在网页上验证&#xA;验证成功后，提交网站地图： https://www.xiaoledeng.com/sitemap.xml</description>
+    </item>
+    <item>
+      <title>Hugo博客设置搜索(2)</title>
+      <link>https://www.xiaoledeng.com/2023/11/12/blog-content-search-2/</link>
+      <pubDate>Sun, 12 Nov 2023 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/12/blog-content-search-2/</guid>
+      <description>1. 前言 之前的网页搜索功能，是基于Bing搜索，见Hugo博客设置搜索(1)。&#xA;这次是基于颜林林的个人网站的搜索代码实现，是Google搜索。&#xA;2. 步骤 在 simple-style/layouts/partials at master · yanlinlin82/simple-style 下载 header.html、search-form.html 和 search.html 到 本地文件夹路径 themes/simple-style/layouts/partials&#xA;注意⚠️：在文件夹 themes/simple-style/layouts/_default 下的 baseof.html 文件中，要有以下代码：&#xA;{{ partial &amp;#34;header.html&amp;#34; . -}} 在文件夹 themes/simple-style/static/css 下的 main.css 文件中，加入搜索框的css样式设置： div.search2 { position: fixed; right: -30px; max-width: 300px; overflow: auto; top: 1px; width: 300px; bottom: 100px } div.search { display: inline-block; margin-bottom: -12px; } form.search { width: 125px; margin-left: 20px; } form.search input[type=text] { padding: 5px 38px 10px 5px; border: 1px solid #999; float: left; font-size: 14px; width: 80px; } form.</description>
+    </item>
+    <item>
+      <title>Hugo博客设置段落两端对齐</title>
+      <link>https://www.xiaoledeng.com/2023/11/12/blog-set-paragraph-text-align-justify/</link>
+      <pubDate>Sun, 12 Nov 2023 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/12/blog-set-paragraph-text-align-justify/</guid>
+      <description>1. 基本配置 Hugo的主题是： https://github.com/xiaoledeng/simple-style&#xA;2. 设置方法 在文件夹 themes/simple-style/layouts/_default 下的 single.html 文件中，关于内容的设置为： &amp;lt;div class=&amp;#34;content&amp;#34;&amp;gt; {{ .Content -}} &amp;lt;/div&amp;gt; 在文件夹 themes/simple-style/static/css 下的 main.css 文件中，加入以下css样式设置： .content p{padding:0;margin:10px 0} .content p { margin-top: 0; text-align: justify; } 注意⚠️：text-align为CSS的文本对齐方式：center、left、right、justify。&#xA;justify：将拉伸每一行，以使每一行具有相等的宽度，并且左右边距是直的（就像在杂志和报纸中）。&#xA;3. 参考 在Hugo中为Markdown内容设置首行缩进 · 零壹軒·笔记 CSS 文本对齐 </description>
+    </item>
+    <item>
+      <title>Hugo博客添加Google AdSense</title>
+      <link>https://www.xiaoledeng.com/2023/11/11/blog-add-adsense/</link>
+      <pubDate>Sat, 11 Nov 2023 18:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/11/blog-add-adsense/</guid>
+      <description>1. 步骤 在simple-style主题文件夹 /layouts/partials/ 建立 Google AdSense 文件 ad.html，内容为： &amp;lt;!-- Google Adsense --&amp;gt; &amp;lt;script async src=&amp;#34;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3168821395322381&amp;#34; crossorigin=&amp;#34;anonymous&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 注意⚠️： 3168821395322381 为 Google AdSense 的账号&#xA;在主题文件夹 /layouts/_default/的 baseof.html 文件中的 &amp;lt;head&amp;gt;..&amp;lt;/head&amp;gt;之间，加入： {{ partial &amp;#34;ad.html&amp;#34; . }} 注意⚠️：第1步和第2步，主要是将script代码放入&amp;lt;head&amp;gt;..&amp;lt;/head&amp;gt;中。&#xA;在博客目录static文件夹，创建 ads.txt文件，内容为： google.com, pub-3168821395322381, DIRECT, f08c47fec0942fa0 2. 参考 Hugo博客添加搜索 Hugo静态站点接入Adsense广告 |mephisto.cc Google Adsense在Hugo中的配置 - 知乎 在 Hugo 博客中添加 Google AdSense - sulinehk&amp;rsquo;s blog - 专注于计算机科学与软件工程的技术博客 申请Google Adsense, 结合Hugo配置-腾讯云开发者社区-腾讯云 </description>
+    </item>
+    <item>
+      <title>三思博客中读书笔记的版权问题</title>
+      <link>https://www.xiaoledeng.com/2023/02/02/blog-notes-problem/</link>
+      <pubDate>Thu, 02 Feb 2023 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/02/02/blog-notes-problem/</guid>
+      <description>在之前的两篇博文中，回归个人博客的定位 和 再思博客的定位，讨论了关于博客的定位问题，特别是阅读电子书和记录读书笔记。&#xA;在博客中展示了这些读书笔记，其中涉及到了这些书籍的版权问题。&#xA;关键的一句话：&#xA;未经许可，不得以任何方式复制或抄袭本书部分或全部内容&#xA;版权所有，侵权必究&#xA;经过这三次的思考，跨越两年多的时间，之后的读书笔记不再放在博客上，已在博客中的读书笔记全部删掉。&#xA;对于记录的读书笔记，可以温故知新的方式，反思其中与自己经历有关的内容。&#xA;尊重书籍的版权，注重原创的文字。</description>
+    </item>
+    <item>
+      <title>博客迁移到新的macOS系统的操作</title>
+      <link>https://www.xiaoledeng.com/2022/07/19/blog-new-macos/</link>
+      <pubDate>Tue, 19 Jul 2022 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/07/19/blog-new-macos/</guid>
+      <description>1. 说明 换新电脑后，博客的内容需要复制到新的电脑，文件夹为：blog。&#xA;2. 具体操作 安装Homebrew，见： https://brew.sh/ /bin/bash -c &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)&amp;#34; 还有这个操作：&#xA;echo &amp;#39;eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34;&amp;#39; &amp;gt;&amp;gt; /Users/name/.zprofile eval &amp;#34;$(/opt/homebrew/bin/brew shellenv)&amp;#34; 安装Git brew install git 安装node.js brew install node 安装hugo brew install hugo 在文件夹blog，初始化git git init 利用SSH key方式进行验证，见：Github的blog上传password authentication出错的解决方案 ssh -T git@github.com ssh-keygen -t ed25519 -C &amp;#34;your_email@example.com&amp;#34; eval &amp;#34;$(ssh-agent -s)&amp;#34; touch ~/.ssh/config open ~/.ssh/config ssh-add -K ~/.ssh/id_ed25519 pbcopy &amp;lt; ~/.ssh/id_ed25519.pub 以及&#xA;git config --global user.name &amp;#34;xiaoledeng&amp;#34; git config --global user.</description>
+    </item>
+    <item>
+      <title>记深圳居家办公的日子(38)—再思博客的定位</title>
+      <link>https://www.xiaoledeng.com/2022/04/03/shenzhen-life-38/</link>
+      <pubDate>Sun, 03 Apr 2022 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/04/03/shenzhen-life-38/</guid>
+      <description>上一次，因为电子书版权的问题，已经在博客上面清理了一些电子书的内容，见：回归个人博客的定位。&#xA;今天，再次看到某一本电子书上的版权声明：&#xA;版权所有，侵权必究 未经许可，不得以任何方式复制或抄袭本书部分或全部内容&#xA;故此，对电子书摘录的读书笔记，又一次进行了博客整理。&#xA;一直以来，在电子书上阅读后，会对感兴趣的内容划线，并导出文字为邮件，继而整理成blog的读书笔记。另一个是对感兴趣的微信推文内容精简，都是附上了原始的链接和说明。见：Book和Notes。&#xA;简单来说，读书笔记的目的是为了让读到的内容转化成实践，即：是什么？为什么？怎么做？&#xA;博客的定位，在读书笔记方面，不再是感兴趣的内容摘录，而是用个人的言语去总结读书的内容。以此自勉。&#xA;这是隔天关于今天的疫情情况： 4月3日深圳无本土新增病例，新增3例境外输入确诊病例和27例输入无症状感染者</description>
+    </item>
+    <item>
+      <title>GitHub错误修复kex_exchange_identification</title>
+      <link>https://www.xiaoledeng.com/2022/03/19/github_kex_exchange_identification/</link>
+      <pubDate>Sat, 19 Mar 2022 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/03/19/github_kex_exchange_identification/</guid>
+      <description>今天，在终端里运行命令，上传Github博客内容，结果出现以下错误：&#xA;kex_exchange_identification: read: Connection reset by peer Connection reset by 20.205.243.166 port 22 fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists. ➜ ssh-keygen -R 20.205.243.166 # Host 20.205.243.166 found: line 18 /Users/name/.ssh/known_hosts updated. Original contents retained as /Users/name/.ssh/known_hosts.old 科学上网后，就正常了。&#xA;➜ ssh -T git@github.com Hi xiaoledeng! You&amp;#39;ve successfully authenticated, but GitHub does not provide shell access. </description>
+    </item>
+    <item>
+      <title>Github设置域名验证</title>
+      <link>https://www.xiaoledeng.com/2021/11/30/github-blog-verified-domain/</link>
+      <pubDate>Tue, 30 Nov 2021 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/11/30/github-blog-verified-domain/</guid>
+      <description>1. 说明 Github的Pages的地址是： https://github.com/xiaoledeng/xiaoledeng.github.io&#xA;在更改域名后，需要重新验证一下新域名是自己。&#xA;2. 步骤 第一步，在Github设置Pages：&#xA;在 https://github.com/xiaoledeng/xiaoledeng.github.io 页面加入CNAME文件，文件里面的内容为新域名的大写，即： WWW.XIAOLEDENG.COM 而后，在Settings——Pages下，填入Custom domain的地址为： www.xiaoledeng.com 第二步，在Github设置Verfied domains：&#xA;在Github个人账号的Settings——Pages下，点击Add a domain 提示：What domain would you like to add? 填入： xiaoledeng.com 后，点击 Add domain 会显示三步的信息，记住关键信息： _github-pages-challenge-xiaoledeng.xiaoledeng.com TXT信息 第三步，在购买的域名网站上设置域名解析：&#xA;添加新的主机记录：_github-pages-challenge-xiaoledeng.xiaoledeng.com 记录类型：TXT IP地址/主机名：d0ffb9aa925c84e2316b4965bae355 第四步，在本地终端输入：&#xA;dig _github-pages-challenge-xiaoledeng.xiaoledeng.com +nostats +nocomments +nocmd d0ffb9aa925c84e2316b4965bae355 得到以下信息：&#xA;; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.10.6 &amp;lt;&amp;lt;&amp;gt;&amp;gt; _github-pages-challenge-xiaoledeng.xiaoledeng.com +nostats +nocomments +nocmd d0ffb9aa925c84e2316b4965bae355 ;; global options: +cmd ;_github-pages-challenge-xiaoledeng.xiaoledeng.com. IN A _github-pages-challenge-xiaoledeng.xiaoledeng.com. 200 IN A 116.255.235.199 ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 42778 ;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 1280 ;; QUESTION SECTION: ;d0ffb9aa925c84e2316b4965bae355.</description>
+    </item>
+    <item>
+      <title>Github的blog上传password authentication出错的解决方案</title>
+      <link>https://www.xiaoledeng.com/2021/08/20/github-blog-password-authentication/</link>
+      <pubDate>Fri, 20 Aug 2021 13:20:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/08/20/github-blog-password-authentication/</guid>
+      <description>问题 remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.&#xA;remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.&#xA;fatal: unable to access &amp;lsquo;https://github.com/xiaoledeng/xiaoledeng.github.io.git/&#39;: The requested URL returned error: 403&#xA;解决方式 解释：由于Github采用personal access token的方式，所以需要修改命令行的密码验证方式。&#xA;主要思想是：利用SSH key方式进行验证。&#xA;1. 生成SSH 在终端输入： $ ssh-keygen -t ed25519 -C &amp;#34;your_email@example.com&amp;#34; Generating public/private ed25519 key pair. Enter file in which to save the key (/Users/name/.ssh/id_ed25519): Enter passphrase (empty for no passphrase): Enter same passphrase again: Your identification has been saved in /Users/name/.</description>
+    </item>
+    <item>
+      <title>随笔—博客益处和便携键盘</title>
+      <link>https://www.xiaoledeng.com/2021/05/24/essay-blog-keyboard/</link>
+      <pubDate>Mon, 24 May 2021 20:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/05/24/essay-blog-keyboard/</guid>
+      <description>1. 前言 今天入手了一个便携式折叠蓝牙键盘，晚上的时间可以随思想的外放，写一点文字，记录下一些感悟。&#xA;2. 博客的益处 今天有同行加我QQ，里面提到了博客的益处，这鼓舞了我，让我继续写博客的动力。&#xA;一直以来，自己的博客历经时间的洗礼，从2014年硕一，经历了硕士、博士和工作至今的记录，坚持记录点什么，督促着我在文字方面记录着自己的感悟，算是对学习和工作轨迹的系统记录。&#xA;期间，虽然经历了不同博客排版工具的更新，后面慢慢的变成现在最简单的模式——聚焦内容，简单形式。&#xA;个人学术主页不管是在谷歌学术、ResearchGate，还是在大学系网站，都会有记录。&#xA;唯独博客，记录着自己遇到的各种问题解决详细步骤，不仅让自己下次遇到同类型问题能够快速地解决，而且能够帮助同样遇到类似问题的人。&#xA;3. 便携式折叠蓝牙键盘 一直在寻找便携式的iPad，可在2013年买的iPad 4成为了——买前生产力，买后爱奇艺。&#xA;直到现在，经历深入的思考后，才发现手机 + 便携式折叠蓝牙键盘（航世 BOW HB066），这样的配置足够用了。&#xA;配搭QQ邮箱的记事本的笔记功能，保存文本在云空间里面，而后选择性的放在博客上。这样的输出方式，目前看来还是非常好的。&#xA;4. 末了的话 絮絮叨叨，今天结束了，点点滴滴都是生活。</description>
+    </item>
+    <item>
+      <title>Github Pages的设置</title>
+      <link>https://www.xiaoledeng.com/2020/12/25/setting-github-pages/</link>
+      <pubDate>Fri, 25 Dec 2020 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/12/25/setting-github-pages/</guid>
+      <description>1. 问题描述 Github Pages的个人主页出现404的错误，即无法访问。&#xA;2. 问题原因 Github教育用户到期，Github Pages的Private设置导致的，将Private改为Public即可。&#xA;3. 解决方法 打开Github Pages的项目地址，点击Settings，找到GitHub Pages设置，而后设置为Public，并选好Branch (Main 或 Master) 和博客地址，直到显示为：&#xA;Your site is published at https://www.xiaoledeng.com/&#xA;问题得到解决，个人主页再次可以访问。</description>
+    </item>
+    <item>
+      <title>回归个人博客的定位</title>
+      <link>https://www.xiaoledeng.com/2020/11/28/back-to-blog-purpose/</link>
+      <pubDate>Sat, 28 Nov 2020 20:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/28/back-to-blog-purpose/</guid>
+      <description>今天整理了一下几乎所有的博客内容，删除了可能涉及到版权和转载等问题的博客内容。有则改之，无则加勉。如还有涉及版权等问题，请来邮告知，一定速速删除相关内容。&#xA;缘由是整理了一本有版权的书籍《Broken Trust》，而后应版权者的邮件通知，删除了这本书的链接及内容。&#xA;这次事情，极大地提醒了版权作品的注意事项：&#xA;未经版权持有人和&amp;hellip;特别书面许可，请勿下载、打印、转载、复制&amp;hellip;.，不得传递或使用本文的内容用于任何公众商业用途。&#xA;以及类似于这样的语句：&#xA;Copyright @ &amp;hellip; All Right Reserved.&#xA;博客的定位（见：个人博客的定位）因为时间的流逝，变得有点模糊，后面一段时间的想法变成了系列的知识体系的内容。然而，通过这次事情，回归到最初的定位是非常有必要的。&#xA;不忘初心，方得始终，回到博客的最初定位：原创、原创、原创的内容，督促自己读书、思考、写作、分享，并对看到的人有一些益处。</description>
+    </item>
+    <item>
+      <title>Ubuntu安装git及Github命令行操作</title>
+      <link>https://www.xiaoledeng.com/2020/09/23/ubuntu-install-git/</link>
+      <pubDate>Wed, 23 Sep 2020 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/23/ubuntu-install-git/</guid>
+      <description>1.安装git和hugo sudo apt-get install git sudo apt install hugo sudo snap install hugo 2.git全局环境 git config --global user.name &amp;#34;用户名&amp;#34; git config --global user.email &amp;#34;邮箱地址&amp;#34; 3.ssh密钥 ssh-keygen -C &amp;#39;youremail@gmail.com&amp;#39; -t rsa 此命令会在用户目录/home/shalom/.ssh/下建立相应的密钥文件。&#xA;4.创建和上传公钥 cat ~/.ssh/id_rsa.pub 复制id_rsa.pub文件内容，访问GitHub网页，点击设置，SSH and GPG keys的SSH keys 建立一个SSH公钥。&#xA;5.测试连接 ssh -T git@github.com 连接成功：&#xA;Hi xiaoledeng! You&amp;rsquo;ve successfully authenticated, but GitHub does not provide shell access.&#xA;6.其他命令 git clone 项目地址 拉项目 git pull 拉代码 git push 提交到仓库 git init&#x9;指令初始化一个git仓库 git add .</description>
+    </item>
+    <item>
+      <title>Hugo博客设置搜索(1)</title>
+      <link>https://www.xiaoledeng.com/2020/05/28/blog-content-search/</link>
+      <pubDate>Thu, 28 May 2020 08:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/05/28/blog-content-search/</guid>
+      <description>1. 前言 随着博客的数量增多，需要搜索功能，以便及时地搜索到关键信息。这里记录一下设置步骤的关键点。&#xA;2. 设置步骤的关键点 从 hogo themes 库的 monopriv 主题文件夹 \layouts\partials 复制 search.html文件。 在主题文件夹 \layouts\partials 粘贴 search.html 文件。 在主题文件夹 \layouts\_default 下，修改 single.html 文件：注意点是修改 {{ partial &amp;quot;search.html&amp;quot; . }} 链接到 search.html 文件。 3. 参考资料 Monopriv | Hugo Themes </description>
+    </item>
+    <item>
+      <title>记武汉封城的日子(11)—Hugo博客的侧边栏目录</title>
+      <link>https://www.xiaoledeng.com/2020/02/02/wuhan-life-11-blog-content-toc/</link>
+      <pubDate>Sun, 02 Feb 2020 18:07:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/02/02/wuhan-life-11-blog-content-toc/</guid>
+      <description>1. 前言 一篇博客的内容多了后，需要目录来厘清逻辑关系。这里记录一下设置步骤的关键点。&#xA;2. 设置步骤的关键点 在主题文件夹\layouts\partials新建并编写toc.html文件。 在主题文件夹\layouts_default下，修改single.html文件：注意点是修改{{ partial &amp;ldquo;toc.html&amp;rdquo; . }}链接到第一步修改的toc.html文件。 调整一些细节，比如：处理手机兼容性的问题。在static\css\main.css中加入相关代码。 3. 参考资料 Hugo博客侧边导航栏 Hugo添加文章目录toc Hugo的LeaveIt主题优化记录一-修复错位，添加toc </description>
+    </item>
+    <item>
+      <title>Markdown字体、字号、字色、底色</title>
+      <link>https://www.xiaoledeng.com/2020/01/11/markdown-font-size-color/</link>
+      <pubDate>Sat, 11 Jan 2020 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/01/11/markdown-font-size-color/</guid>
+      <description>浅红色文字：浅红色文字&#xA;深红色文字：深红色文字&#xA;浅绿色文字：浅绿色文字&#xA;深绿色文字：深绿色文字&#xA;浅蓝色文字：浅蓝色文字&#xA;深蓝色文字：深蓝色文字&#xA;浅黄色文字：浅黄色文字&#xA;深黄色文字：深黄色文字&#xA;浅青色文字：浅青色文字&#xA;深青色文字：深青色文字&#xA;浅紫色文字：浅紫色文字&#xA;深紫色文字：深紫色文字&#xA;size为1：size为1 size为2：size为2 size为3：size为3 size为4：size为4 size为10：size为10&#xA;我是黑体字 我是宋体字 我是微软雅黑字 我是fantasy字 我是Helvetica字&#xA;背景色的设置是按照十六进制颜色值：#7FFFD4 背景色的设置是按照十六进制颜色值：#FF83FA 背景色的设置是按照十六进制颜色值：#D1EEEE 背景色的设置是按照十六进制颜色值：#C0FF3E 背景色的设置是按照十六进制颜色值：#54FF9F </description>
+    </item>
+    <item>
+      <title>Mac设置Git上传本地项目到github</title>
+      <link>https://www.xiaoledeng.com/2020/01/09/mac-github/</link>
+      <pubDate>Thu, 09 Jan 2020 13:10:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/01/09/mac-github/</guid>
+      <description>初始化当前目录：git init&#xA;生成本地ssh (邮箱替换成你登录github的邮箱)：ssh-keygen -t rsa -C &amp;ldquo;youremail@youremail.com&amp;rdquo;&#xA;将 ssh 代码复制到剪贴板：pbcopy &amp;lt; ~/.ssh/id_rsa.pub&#xA;配置github的ssh key：Github-settings-配置 ssh-new SSH key&#xA;打开终端，验证一下是否添加ssh成功了: ssh -T git@github.com&#xA;设置github 登录名以及登陆邮箱：&#xA;​&#x9;git config &amp;ndash;global user.name &amp;ldquo;your name&amp;rdquo;&#xA;​&#x9;git config &amp;ndash;global user.email &amp;ldquo;youremail@youremail.com&amp;rdquo;&#xA;上传本地项目：&#xA;​&#x9;git init ​&#x9;git add -A ​&#x9;git commit -m &amp;ldquo;good&amp;rdquo;&#xA;推送到github的xiaoledeng.github.io 只能使用 master分支&#xA;​&#x9;git push -f git@github.com:xiaoledeng/xiaoledeng.github.io.git master</description>
+    </item>
+    <item>
+      <title>Brew install hugo出错</title>
+      <link>https://www.xiaoledeng.com/2020/01/09/brew-install-hugo/</link>
+      <pubDate>Thu, 09 Jan 2020 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/01/09/brew-install-hugo/</guid>
+      <description>错误：&#xA;mod: dial tcp 216.58.200.49:443: i/o timeout 解决方案：&#xA;设置代理，在终端输入：export GOPROXY=https://goproxy.io</description>
+    </item>
+    <item>
+      <title>Markdown两端对齐的代码</title>
+      <link>https://www.xiaoledeng.com/2018/03/30/html-alignment/</link>
+      <pubDate>Fri, 30 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/30/html-alignment/</guid>
+      <description>Markdown语言两端对齐的代码为：&#xA;&amp;lt;p style=&amp;#34;text-align:justify; text-justify:inter-ideograph;&amp;#34;&amp;gt; 文字，需要对齐的文字段落。 &amp;lt;/p&amp;gt; </description>
+    </item>
+    <item>
+      <title>告别个人博客回归简书</title>
+      <link>https://www.xiaoledeng.com/2018/03/28/back-to-jianshu/</link>
+      <pubDate>Wed, 28 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/28/back-to-jianshu/</guid>
+      <description>最开始是在简书开启写东西的历程，而后转战个人博客 www.xiaoledeng.cn 的个人博客（2017.3.12–2018.3.16），现在又开始回归简书。&#xA;www.xiaoledeng.cn 作为个人主页的展示页，简洁明了，使用html编写，主要定位是专业个人主页网站。&#xA;而博客的内容，转移到了简书，也同样是简洁明了，既可以写随笔、专业经验、技术内容，不会有博客更新的压力，而是随兴而写。&#xA;这样，专业方面可以聚焦，博客内容也没什么压力，如此甚好。</description>
+    </item>
+    <item>
+      <title>Mac下搭建Academic博客</title>
+      <link>https://www.xiaoledeng.com/2018/03/15/macos-academic-blog/</link>
+      <pubDate>Thu, 15 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/15/macos-academic-blog/</guid>
+      <description> 安装git和hugo&#xA;brew install git brew install hugo 下载Academic博客的主题：&#xA;git clone https://github.com/sourcethemes/academic-kickstart.git My_Website 初始化主题：&#xA;cd My_Website git submodule update --init --recursive 快速开始：&#xA;hugo server </description>
+    </item>
+    <item>
+      <title>个人博客的定位</title>
+      <link>https://www.xiaoledeng.com/2017/10/07/blog/</link>
+      <pubDate>Sat, 07 Oct 2017 20:53:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/10/07/blog/</guid>
+      <description>1. 引言 关于个人博客（也即，个人主页）的定位，就是博客的关键词（key words）。&#xA;当别人检索到你个人博客时，关注的是哪一个方面的内容。&#xA;2. 博客目的 此个人博客是从2017年3月12日开始记录终身学习（Life learning）的内容，为终身学习的展示平台。最开始文稿为2015年11月19日。&#xA;而内容方面，尽量都是原创的文字。如果是其他地方的文字，一定会注明参考资料。&#xA;简而言之，个人博客的目的有：&#xA;督促自己读书、思考、写作、分享； 希望博客的内容对看到的人有一些益处； 一般而言，终生学习的每个阶段，都会有不同的关键词。比如，现阶段是博士研究生阶段，更多关注的是科研及专业方面的内容分享，有一些科研的干货（技术、工具、资源分享等），也有一些个人感悟的私货。&#xA;各个阶段的思想会有所不同，所发表的观点和言论也会有所变化。&#xA;但是，科研成果列表https://www.xiaoledeng.com/publications这一栏，会一直保留。如果持续地有论文或书面的成果，将会持续地更新；不管是期刊论文还是会议论文，成果排序的方式是按照数字。&#xA;3. 末了的话 最后，有终其一生的贯穿：信仰——不是宗教，也不是仪式，而是生命的信仰。&#xA;歌曲《夜空中最亮的星》里面提到了：&#xA;“每当我找不到存在的意义，每当我迷失在黑夜里，夜空中最亮的星，请照亮我前行”！&#xA;4. 版本历史 2017.10.07 撰写此文； 2020.10.13 修改此文； </description>
+    </item>
+    <item>
+      <title>Mac搭建Heox博客教程</title>
+      <link>https://www.xiaoledeng.com/2017/03/13/blog-heox/</link>
+      <pubDate>Mon, 13 Mar 2017 20:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/13/blog-heox/</guid>
+      <description>1. 配置Github的pages 分为注册，创建一个项目。具体参考教程见：Hexo-mac下搭建hexo博客 - 简书。&#xA;2. 安装Homebrew /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot; 3. 安装Git brew install git 4. 安装node.js brew install node 5. 配置SSH key ➜ ssh -T git@github.com Identity added: /Users/name/.ssh/id_rsa ((null)) Hi xiaoledeng! You&#39;ve successfully authenticated, but GitHub does not provide shell access. 6. 安装Heox npm install hexo-cli -g hexo init blog 创建了一个blog文件夹，&#xA;cd blog hexo init npm install hexo g // 全拼是：hexo generate，可以简写成 hexo g hexo s // 全拼是：hexo server，可以简写成 hexo s 如此，输入localhost:4000，就可以看到本地的Hello World博客啦！。</description>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>https://www.xiaoledeng.com/2016/10/01/hello-world/</link>
+      <pubDate>Sat, 01 Oct 2016 12:22:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2016/10/01/hello-world/</guid>
+      <description>Readme The URL of my personal websites is:&#xA;the permanent domain name is xiaoledeng.github.io History 2021.11.29, www.xiaoledeng.cn is changed to www.xiaoledeng.com From 2020.01.10, my personal website is blogged by Hugo with theme Simple Style. 2019.08.21 ~ 2020.01.09, my personal website was built with the website of Yin Wang. 2018.04.16 ~ 2019.08.21, my personal website was built in html format with the website of Li Zhang. 2017.04.12 ~ 2018.04.15, my personal website was blogged by Hexo with theme Next.</description>
+    </item>
+    <item>
+      <title>Windows 7搭建pelican博客框架</title>
+      <link>https://www.xiaoledeng.com/2014/05/24/windows-pelican/</link>
+      <pubDate>Sat, 24 May 2014 19:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2014/05/24/windows-pelican/</guid>
+      <description>一、安装准备软件 1.Python安装（注意不要安装在C盘）： 下载官网python2.7 Windows，安装路径选D，将安装路径加入到系统环境变量PATH中（计算机属性-高级系统设置-环境变量-系统变量-PATH）,例如我安装的路径如下：&#xA;D:\Python27\&#xD;2.easy_install安装 打开cmd，切换到ez_setup.py文件目录下，输入命令：（注意切换到ez_setup.py路径中，文件ez_setup.py见附件）&#xA;python ez_setup.py&#xD;安装好后在python安装目录下的Scripts文件夹会有一些关于easy_install的文件，所以要将此路径加到系统环境变量PATH（同第一步中的环境变量PATH），路径如下:&#xA;D:\Python27\Scripts&#xD;注意：此步骤可能出错，参考了网页ez_setup.py安装错误怎么解决_百度经验，注意用mimetypes.py这个文件替换到D:\Python27\Lib文件夹中的，mimetypes.py文件见附件。&#xA;3.Pip安装 pip直接用easy_install安装，直接在cmd中输入命令:&#xA;easy_install pip&#xD;安装好之后也会在Scripts文件夹生成一些Pip的可执行文件。&#xA;4.window下make工具的安装 将下载的make.exe文件拷贝到D:\Python27路径中。&#xA;5.安装Git 下载好Git文件，直接按照默认安装设置。&#xA;6.安装pelican和markdown 安装了Git后，打开Git Bash输入以下命令：&#xA;pip install pelican&#xD;pip install markdown&#xD;二、配置博客文件 1.创建博客 在Git Bash命令行窗口中输入如下命令：&#xA;mkdir blog&#xD;cd blog&#xD;pelican-quickstart&#xD;拷贝之前的备份文件覆盖（注意文件名为英文）。&#xA;2.将博客部署到github上 命令如下：&#xA;cd output&#xD;git init&#xD;git add .&#xD;git remote add origin https://github.com/xiaoledeng/xiaoledeng.github.io.git&#xD;git commit -m &#39;your message&#39;&#xD;git push origin master(or --force)&#xD;3.一次性部署到github 可配置Makefile文件中的github，要修改两处:&#xA;一处是将$(PUBLISHDIR)替换成$(CONFFILE);&#xA;另一处增加一些git命令;&#xA;具体如下所示：&#xA;publish:$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)&#xD;github: publish&#xD;cd $(OUTPUTDIR) &amp;amp;&amp;amp; git init; cd $(OUTPUTDIR) &amp;amp;&amp;amp; git commit -m &#39;your message&#39;;&#xD;cd $(OUTPUTDIR) &amp;amp;&amp;amp; git push --force origin master&#xD;注意：Makefile里面用tab，不然错误：</description>
+    </item>
+    <item>
+      <title>Ubuntu 14.04 LTS安装Pelican elegant主题</title>
+      <link>https://www.xiaoledeng.com/2014/05/02/ubuntu-install-pelican/</link>
+      <pubDate>Fri, 02 May 2014 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2014/05/02/ubuntu-install-pelican/</guid>
+      <description>一. 安装软件及环境准备: 1.软件安装: $ sudo apt-get install python-pip $ sudo apt-get install python-virtualenv $ virtualenv ~/virtualenvs/pelican $ cd ~/virtualenvs/pelican $ . bin/activate $ pip install -e git://github.com/getpelican/pelican#egg=pelican $ pip install Markdown $ mkdir blog $ cd blog $ pelican-quikstart blog/ |--content #存储所写的blog文件目录， | └──（blog pages) #博客文件，如*.md后缀的文件 |--output #执行make publish之后，会将博客文件转换成相应的html文件及相应的存储目录 | └──.git #执行git init之后，产生的远程仓库目录 | └──author #作者目录，存放pelicanconf.py中指定的Author文件 | └──category #分类目录，默认目录文件为misc，在编辑器中指定 | └──feeds #目录，pelicanconf.py中FEED_RSS指定的XML文件 | └──pages #目录，pelicanconf.py中ARTICLE_URL指定格式分类文件 | └──tag #目录，存放编辑器开头所指定的Tag | └──theme #目录，存放博客模板文件 | └──archives.</description>
+    </item>
+    <item>
+      <title>Ubuntu 13.10下使用Github和Octopress搭建个人博客</title>
+      <link>https://www.xiaoledeng.com/2014/05/01/ubuntu-blog-octopress/</link>
+      <pubDate>Thu, 01 May 2014 08:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2014/05/01/ubuntu-blog-octopress/</guid>
+      <description>1.[环境准备] 安装git、ruby和octopress $ sudo apt-get install git ruby ruby-dev $ git clone git://github.com/imathis/octopress.git octopress $ cd octopress $ sudo gem install bundler $ rbenv rehash $ bundle install $ rake install 2.注册[github] 注意：&#xA;用户名和自己建的网址要相同；&#xA;格式：用户名/用户名.github.io&#xA;另外，[用户名.github.com格式正慢慢替换]&#xA;3.连接github和octopress $ rake setup_github_pages $ rake generate $ rake deploy 可能出现问题：解决方案： $ cd _deploy $ git pull origin master $ git push --force origin master $ cd .. $ rake deploy $ git add .</description>
+    </item>
+  </channel>
+</rss>

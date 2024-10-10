@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GPU on Xiao-Le Deng（邓小乐）</title>
+    <link>https://www.xiaoledeng.com/tags/gpu/</link>
+    <description>Recent content in GPU on Xiao-Le Deng（邓小乐）</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Mon, 22 Jan 2024 09:29:22 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/gpu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macOS下Python的GPU/CPU对比测试</title>
+      <link>https://www.xiaoledeng.com/2024/01/22/macos-python-gpu-vs-cpu/</link>
+      <pubDate>Mon, 22 Jan 2024 09:29:22 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/22/macos-python-gpu-vs-cpu/</guid>
+      <description>m 芯片的 macOS 下 PyTorch 利用 GPU 加速的是：mps。&#xA;Python代码：&#xA;import torch import time # 检查是否支持 GPU # if torch.backends.mps.is_available(): # device = torch.device(&amp;#34;mps&amp;#34;) # print (&amp;#34;MPS device is found.&amp;#34;) device = torch.device(&amp;#34;mps&amp;#34; if torch.backends.mps.is_available() else &amp;#34;cpu&amp;#34;) # 生成大型随机矩阵 size = 4000 a_cpu = torch.randn(size, size) b_cpu = torch.randn(size, size) # CPU 上的矩阵相乘 start_time_cpu = time.time() result_cpu = torch.mm(a_cpu, b_cpu) cpu_time = time.time() - start_time_cpu # 将矩阵移动到 GPU a_gpu = a_cpu.to(device) b_gpu = b_cpu.</description>
+    </item>
+  </channel>
+</rss>

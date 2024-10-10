@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on Xiao-Le Deng（邓小乐）</title>
+    <link>https://www.xiaoledeng.com/tags/software/</link>
+    <description>Recent content in Software on Xiao-Le Deng（邓小乐）</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Thu, 12 Sep 2024 07:26:06 +0200</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/software/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>德国警报预测日</title>
+      <link>https://www.xiaoledeng.com/2024/09/12/warning-day/</link>
+      <pubDate>Thu, 12 Sep 2024 07:26:06 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/09/12/warning-day/</guid>
+      <description>2024年9月12日「Warntag (Warning Day)」上午11点，警报将在德国294个区和107个市进行首次测试，预计到11点45分解除警报。&#xA;警报🚨信息如下：&#xA;Emergency Alarm&#xA;TEST ALERT, NATIONWIDE ALERT DAY 2024&#xA;Thu 2024/09/12 - 11:00 am - Test alert - for Germany - There is no danger. - Further information: https://warnung.bund.de/m/aoMpJyFKa6oz - Published by: Bundesamt für Bevölkerungsschutz und Katastrophenhilfe 1&#xA;警报声种类：&#xA;民防警报（一分钟上下波动的警报）&#xA;意义：恐袭、洪水、暴雨、特大火灾、有害物质泄漏、发电站或工厂突发事故 怎么做：寻找建筑物、关闭门窗、打开收音机、关闭空调和换气系统、留意官方通知、通知邻居、不要堵塞紧急热线 ABC-Alarm（1分钟两次中断、30秒后重复）&#xA;意义：危险物质释放情况的警报，如核电站等事故 怎么做：寻找掩体、关闭门窗、打开收音机、关闭空调和换气系统、留意官方通知、通知邻居、不要堵塞紧急热线 解除警报（60秒无起伏）&#xA;意义：警报解除、危险结束 怎么做：可以离开掩体、各种设备可重新使用、留意官方通知 火警（1分钟，2次中断）&#xA;意义：给消防队的通知，和我们无关 怎么做：注意救援车辆、不要去消防局、不要去事故现场 预警测试（12秒或5秒）&#xA;意义：测试警报 怎么做：什么都不用做 报警App：&#xA;NINA Warn-App NINA - BBK KATwarn Katwarn - Warn- und Informationssystem für die Bevölkerung 延伸阅读 Warning Day: Germany to test alerts and sirens on September 12 注意！本周四你的手机会发出尖锐爆鸣！ 德国五种警报声的意思，关键时刻能救命！ </description>
+    </item>
+    <item>
+      <title>德国警报软件NINA</title>
+      <link>https://www.xiaoledeng.com/2024/03/08/germany-software-nina/</link>
+      <pubDate>Fri, 08 Mar 2024 12:38:59 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/03/08/germany-software-nina/</guid>
+      <description>通过德国联邦政府的紧急信息和新闻应用程序（ Notfall-Informations- und Nachrichten-App，简称 NINA 警告应用程序），可以收到有关各种危险情况（例如，危险物质扩散或重大火灾）的重要民防警告。 德国气象局的天气警报和联邦各州主管部门的洪水信息也集成到警报应用程序中。1&#xA;安装地址： NINA Download und Installation - BBK&#xA;2024年3月8日，收到以下提醒：&#xA;Für die Meldung vom 07. März 17:19 Uhr gibt es neue Informationen zum Zeitrahmen: Am heutigen Freitag, 08. März, kreuzen zwischen 18 Uhr und 22 Uhr Trümmerteile eines Batteriepakets der Internationalen Raumstation ISS den Luftraum über Deutschland. Leuchterscheinungen oder die Wahrnehmung eines Überschallknalls sind möglich. Die Wahrscheinlichkeit des Auftreffens der Trümmerteile in Deutschland ist nach jetzigen Informationen nach wie vor als sehr gering einzuschätzen.</description>
+    </item>
+    <item>
+      <title>Stellarium观天文</title>
+      <link>https://www.xiaoledeng.com/2024/02/26/stellarium-look-astronomy/</link>
+      <pubDate>Mon, 26 Feb 2024 13:55:17 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/02/26/stellarium-look-astronomy/</guid>
+      <description>1. Stellarium 简介 Stellarium 是一款开源的天文软件，可以用来看实时的天文星体运动，可以安装在 Windows、macOS、Linux 系统上。&#xA;网址： Stellarium Astronomy Software&#xA;2. 中国古代天文学设定 Configuration Windows 【设置】 &amp;gt; Main 【主要设置】 &amp;gt; 程序界面语言：简体中文，星空文化语言：简体中文。&#xA;3. 古天文学简介 中国天文学是独立发展的，恒星分组系统称为「星官」。经过几千年的演变，现在的星官和星名是在17至19世纪定型的。&#xA;Stellarium 目前提供 300 个中国星官和 3000 多个中国星名，来自《仪象考成》和《仪象考成续编》。&#xA;《仪象考成》是1756年完成的御制天文记录。&#xA;1844年，钦天监对其进行了修订，出版了《仪象考成续编》，这是今天中国传统星官和星名的主要参考。&#xA;伊世同在其著作《中西对照恒星图表1950.0》一书中对这些记载进行了考证和总结。&#xA;中国传统星空文化以《中西对照恒星图表1950.0》和《仪象考成》中的资料为基础。&#xA;此外，根据潘鼐的《中国恒星观测史》添加了一些未在1950年中西对照恒星图表确认的恒星。&#xA;4. 三垣二十八宿 三垣，是北天的三个天区，包括上垣之太微垣、中垣之紫微垣及下垣之天市垣。&#xA;二十八宿，是中国古代在黄道和赤道附近划分的天区，将黄道按赤经分为28个区域。每个区域称为一宿。&#xA;各宿在黄道附近各有一座同名星官，即主星官。附近区域的星官属于宿。每个星官都有一颗主星，称为距星。&#xA;在中国古代，二十八宿距星是确定赤道坐标系经度的基准。相邻两宿西侧距星的赤经差为宿度。中国传统的赤道坐标系将赤道分为 365.25 度，太阳运行一天转一度，也是28宿的宿度数之和。&#xA;二十八宿 (xiù) 分为四象，每象都与一个罗盘方向相关联，并包含七宿，对应于七曜。二十八宿与四象的对应关系，是以古代某一时期春分黄昏时分的天空为依据的。此时朱雀在南，青龙在东，玄武在北，白虎在西。&#xA;东：角、亢、氐、房、心、尾、箕 北：斗、牛、女、虚、危、室、壁 西：奎、娄、胃、昴、毕、觜、参 南：井、鬼、柳、星、张、翼、轸 5. 延伸阅读 余钊焕的个人网站 - 星图 二十八宿 - 维基百科，自由的百科全书 </description>
+    </item>
+    <item>
+      <title>Windows非管理员安装百度网盘</title>
+      <link>https://www.xiaoledeng.com/2024/02/05/windows-intall-baidu-disk/</link>
+      <pubDate>Mon, 05 Feb 2024 11:05:18 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/02/05/windows-intall-baidu-disk/</guid>
+      <description> 下载安装 7-Zip&#xA;右键点击 百度云安装程序 &amp;gt; 7-Zip &amp;gt; 解压到 BaiduNetdisk_x.x.x&#xA;在解压出来的 BaiduNetdisk_x.x.x 文件夹内，删掉$开头的文件夹&#xA;移动解压出来的文件夹 BaiduNetdisk_x.x.x 到任意位置&#xA;双击 BaiduNetdisk.exe 即可。&#xA;参考 Win10安装百度网盘系统权限限制怎么办？ - 知乎 </description>
+    </item>
+  </channel>
+</rss>
