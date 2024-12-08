@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on Xiao-Le Deng (邓小乐)</title>
+    <link>https://www.xiaoledeng.com/tags/java/</link>
+    <description>Recent content in Java on Xiao-Le Deng (邓小乐)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Tue, 24 Sep 2024 15:23:35 +0200</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qualtrics更改NPS Scale</title>
+      <link>https://www.xiaoledeng.com/2024/09/24/qualtrics-nps-scale/</link>
+      <pubDate>Tue, 24 Sep 2024 15:23:35 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/09/24/qualtrics-nps-scale/</guid>
+      <description>在线问卷 Qualtrics 更改 NPS 问题的度（默认0到10，改为1到7），用以下 JavaScript 代码：&#xA;Qualtrics.SurveyEngine.addOnload(function() { //Thomas Gibbons Consulting //Change NPS question scale (not simple layout) var scaleStart = 1; //Change - 0 or more and no greater than end var scaleEnd = 7; //Change - 10 or less and no less than start //No changes below var width = 100/(scaleEnd - scaleStart + 1) + &amp;#34;%&amp;#34;; var q = jQuery(&amp;#34;#&amp;#34;+this.questionId); var cc = q.find(&amp;#39;td.ControlContainer&amp;#39;); q.find(&amp;#39;td.LabelContainer&amp;#39;).each(function(index) { if(index&amp;lt;scaleStart || index&amp;gt;scaleEnd) { this.</description>
+    </item>
+    <item>
+      <title>个人网站底部添加中华诗词</title>
+      <link>https://www.xiaoledeng.com/2023/12/15/website-footer-add-chinese-poetry/</link>
+      <pubDate>Fri, 15 Dec 2023 19:11:12 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/15/website-footer-add-chinese-poetry/</guid>
+      <description>说明： html 路径为 /themes/simple-style/layouts/_default/baseof.html&#xA;1. 今日诗词脚本 通用简单 html 代码 1：&#xA;&amp;lt;span id=&amp;#34;jinrishici-sentence&amp;#34;&amp;gt;正在加载今日诗词....&amp;lt;/span&amp;gt; &amp;lt;script src=&amp;#34;https://sdk.jinrishici.com/v2/browser/jinrishici.js&amp;#34; charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 显示效果：&#xA;正在加载今日诗词&amp;hellip;. 高级版的 html 代码 1：&#xA;&amp;lt;script src=&amp;#34;https://sdk.jinrishici.com/v2/browser/jinrishici.js&amp;#34; charset=&amp;#34;utf-8&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;div id=&amp;#34;poem_sentence&amp;#34; style=&amp;#34;display: inline;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; —— &amp;lt;div id=&amp;#34;poem_info&amp;#34; style=&amp;#34;display: inline;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;script type=&amp;#34;text/javascript&amp;#34;&amp;gt; jinrishici.load(function(result) { var sentence = document.querySelector(&amp;#34;#poem_sentence&amp;#34;) var info = document.querySelector(&amp;#34;#poem_info&amp;#34;) sentence.innerHTML = result.data.content info.innerHTML = &amp;#39;【&amp;#39; + result.data.origin.dynasty + &amp;#39;】&amp;#39; + result.data.origin.author + &amp;#39;《&amp;#39; + result.data.origin.title + &amp;#39;》&amp;#39; }); &amp;lt;/script&amp;gt; 显示效果：&#xA;—— 2. 一句 通用简单 html 代码 2：</description>
+    </item>
+    <item>
+      <title>博客添加邮件订阅(2): Mailchimp</title>
+      <link>https://www.xiaoledeng.com/2023/11/21/blog-add-email-subscribe-2/</link>
+      <pubDate>Tue, 21 Nov 2023 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/11/21/blog-add-email-subscribe-2/</guid>
+      <description>1. 引言 邮件订阅用 Mailchimp1。&#xA;此邮件订阅功能还是参考博客——山茶花舍2。&#xA;2. 步骤 先在注册和登录账号： https://us21.admin.mailchimp.com/&#xA;点击 Create an Automation Email，选择 Share blog updates，点击 “Begin”进入下一步&#xA;RSS Feed： RSS feed URL 处填写为自己网站的 RSS 订阅链接，比如： https://xiaoledeng.com/index.xml ，周期可以根据需要设置。 选中 Resize RSS feed images to fit template，可以优化邮件内图片的尺寸。完成后，点击右下角的 Next。&#xA;Recipients：选择 Entire audience（全体观众）。完成后，点击右下角的 Next。&#xA;Setup：这一步设置Campaign info。Email subject 为发送邮件的标题，Mailchimp 的 RSS 格式化标签3为：*|RSSITEM:TITLE|*。From Name 为邮件中显示的发件人名字。From email address 为邮件中显示的发件人地址。 More options 中的 Auto-convert video 推荐选中，可以优化 Newsltter 内视频的样式。完成后，点击右下角的 Next。&#xA;Template：这一步选择邮件模版。选中 Basic 栏下的 1 Column。&#xA;Design：这一步设置邮件样式。将左侧预设的中间内容移除，在右侧的 Blocks 栏内找到 RSS Header 与 RSS Items，将这两项拖入左侧内容中。分别设置 RSS Header 与 RSS Items的样式为 Custom，可以设置字体 Font。完成后，点击右下角的 Next。</description>
+    </item>
+    <item>
+      <title>macOS系统安装m芯片的MATLAB R2022b测试版</title>
+      <link>https://www.xiaoledeng.com/2023/02/06/m-chip-macos-matlab-r2022b/</link>
+      <pubDate>Mon, 06 Feb 2023 22:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/02/06/m-chip-macos-matlab-r2022b/</guid>
+      <description>1. 步骤 先安装JAVA包，比如 Amazon Corretto 8 JDK，下载页面为：Downloads for Amazon Corretto 8，选 macOS aarch64。导入路径到环境变量，比如，在～/.zshrc加入export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home。&#xA;下载 MATLAB_R2022b_Beta_install.dmg 包，并安装。因为是测试版，所以不需要激活，直接可以使用。&#xA;注意：This beta will be available until June 30, 2023.&#xA;2. 参考 Install MATLAB R2022b Native Apple Silicon Open Beta Playing with the R2022b MATLAB Apple Silicon beta for M1/M2 Mac Amazon Corretto 8 Installation Instructions for macOS 10.10 or later </description>
+    </item>
+    <item>
+      <title>Mac命令行安装Java</title>
+      <link>https://www.xiaoledeng.com/2019/08/28/mac-install-jave/</link>
+      <pubDate>Wed, 28 Aug 2019 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/08/28/mac-install-jave/</guid>
+      <description>很简单，一个命令：&#xA;brew cask install java </description>
+    </item>
+    <item>
+      <title>日结—物理大地测量学</title>
+      <link>https://www.xiaoledeng.com/2013/10/31/summary-physical-geodesy/</link>
+      <pubDate>Thu, 31 Oct 2013 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2013/10/31/summary-physical-geodesy/</guid>
+      <description>早上高等物理大地测量学这门课程，感觉自己要把相关的文献都导到ipad里面，然后查看最新的动态；另外一些偏门的、古老的书籍，可以在图书馆资料保存室里面拿到打印店，搞成电子版或者纸质版。&#xA;Moritz H的三本经典书籍：&#xA;《Physical Geodesy》（电子和纸质都有） 《Advanced Physical Geodesy》（电子版） 《The figure of the Earth: theoretical geodesy and the earth&amp;rsquo;s interior》（图书馆有） 这几本书是物理大地测量的经典书籍。&#xA;另外最新的Geoid Dermination（IAG）发布的文档要看，这个是最新的一些方法和理论，还有数据处理的过程。&#xA;美国和澳大利亚的GPS水准数据集相对于师兄做的已经更新了，但是还是按照师兄的方法做一遍，了解整个流程，弄懂整套理论以及数据处理。期间可能查找到有趣的小程序可以保留下来。&#xA;Ubuntu设置Java环境，具体的设置网址在： https://help.ubuntu.com/community/Java</description>
+    </item>
+  </channel>
+</rss>

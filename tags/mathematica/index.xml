@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathematica on Xiao-Le Deng (邓小乐)</title>
+    <link>https://www.xiaoledeng.com/tags/mathematica/</link>
+    <description>Recent content in Mathematica on Xiao-Le Deng (邓小乐)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Thu, 21 Nov 2024 07:59:16 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/mathematica/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mathematica矩阵Table</title>
+      <link>https://www.xiaoledeng.com/2024/11/21/many-tables-in-mathematica/</link>
+      <pubDate>Thu, 21 Nov 2024 07:59:16 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/11/21/many-tables-in-mathematica/</guid>
+      <description> Table[expr,{i,imin,imax},{j,jmin,jmax}] gives a nested list. The list associated with i is outermost.&#xA;Table[i*j, {i, 1, 2}, {j, 1, 3}] // MatrixForm \[ \left( \begin{array}{ccc} 1 &amp;amp; 2 &amp;amp; 3 \\ 2 &amp;amp; 4 &amp;amp; 6 \\ \end{array} \right) \]&#xA;延伸阅读 Table: Make a list or array of values or expressions—Wolfram Documentation </description>
+    </item>
+    <item>
+      <title>Mathematica使用ParallelTable问题</title>
+      <link>https://www.xiaoledeng.com/2024/11/20/mathematica-paralleltable/</link>
+      <pubDate>Wed, 20 Nov 2024 15:03:14 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/11/20/mathematica-paralleltable/</guid>
+      <description>Mathematica 使用 ParallelTable 或类似的并行计算函数时，如果代码运行报错（例如 Part 2 of &amp;hellip; does not exist），这通常表明某些数据结构在并行环境中无法正确传递或初始化，或者参数设置不正确。&#xA;(* 加载必要的包 *) Needs[&amp;#34;NumericalDifferentialEquationAnalysis`&amp;#34;]; (* 分发上下文和变量到并行内核 *) ParallelEvaluate[Needs[&amp;#34;NumericalDifferentialEquationAnalysis`&amp;#34;]]; DistributeDefinitions[Transpose]; </description>
+    </item>
+    <item>
+      <title>Mathematica三角函数的化简</title>
+      <link>https://www.xiaoledeng.com/2024/10/14/mathematica-simplifying-trigonometric-functions/</link>
+      <pubDate>Mon, 14 Oct 2024 09:46:33 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/10/14/mathematica-simplifying-trigonometric-functions/</guid>
+      <description>函数包括：&#xA;Simplify：化简 FullSimplify：完全化简 Collect：按指定的变量合并相同项 TrigReduce：用于将三角函数表达式化为以单个三角函数为基础的表达式，它将和差、积的形式转化为单独的三角函数形式。 TrigExpand：用于将乘积或复合三角函数展开为简单三角函数的加法或乘法形式，通常用于三角恒等式的验证和分解。 TrigFactor：用于将三角函数的加法表达式转换为乘法形式。它在因式分解三角表达式时非常有用。 例如，先 TrigReduce 后 TrigFactor ，有奇效。&#xA;延伸阅读 Simplify: Expression Simplification (Expanding, Factoring, &amp;hellip;)—Wolfram Documentation FullSimplify: Returns the simplest form of an expression—Wolfram Documentation Collect: Gather terms involving the same powers—Wolfram Documentation TrigReduce—Wolfram Language Documentation TrigExpand—Wolfram Language Documentation TrigFactor—Wolfram Language Documentation </description>
+    </item>
+    <item>
+      <title>Mathematica合并相同项</title>
+      <link>https://www.xiaoledeng.com/2024/10/09/mathematica-collect/</link>
+      <pubDate>Wed, 09 Oct 2024 09:03:47 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/10/09/mathematica-collect/</guid>
+      <description>函数包括：&#xA;Simplify：化简 FullSimplify：完全化简 Collect：按指定的变量合并相同项 Expand和Factor：将表达式展开或因式分解 延伸阅读 Simplify: Expression Simplification (Expanding, Factoring, &amp;hellip;)—Wolfram Documentation FullSimplify: Returns the simplest form of an expression—Wolfram Documentation Collect: Gather terms involving the same powers—Wolfram Documentation Expand: Get the expansion of an expression—Wolfram Documentation Factor: Get the factorization of a polynomial—Wolfram Documentation </description>
+    </item>
+    <item>
+      <title>Mathematica的ReplaceAll替换失效分析</title>
+      <link>https://www.xiaoledeng.com/2024/10/08/replace-function-mathematica/</link>
+      <pubDate>Tue, 08 Oct 2024 15:34:24 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/10/08/replace-function-mathematica/</guid>
+      <description>注意⚠️：经过向 chatGPT 几次提问后，明白其中的原因。&#xA;1. 问题 首先，\(\frac{x}{\sqrt{y}}\) 中，\(\sqrt{y}\) 替换为 a ，如下：&#xA;x/Sqrt[y] /. {Sqrt[y] -&amp;gt; a} 结果还是\(\frac{x}{\sqrt{y}}\)，不变。&#xA;2. 解决方案 原因为：替换的模式必须与 FullForm 表达式完全匹配。&#xA;FullForm[x/Sqrt[y]] 结果为：&#xA;Times[x,Power[y,Rational[-1,2]]] 模式需要是 Power 表示法，而不是 Sqrt 表示法。&#xA;x/Sqrt[y] /. {y^(-1/2) -&amp;gt; a} 结果就是：\(a x\)。&#xA;3. 小结 替换功能 ReplaceAll 的小结：&#xA;模式不匹配：确保模式和表达式形式一致（检查 FullForm） 没有深入到子表达式：指定层级，通过 {0, Infinity} 表达式的形式与预期不同：确保模式和表达式形式一致（检查 FullForm） 多重模式匹配：使用合适的模式匹配 </description>
+    </item>
+    <item>
+      <title>Mathematica的Select函数</title>
+      <link>https://www.xiaoledeng.com/2024/05/22/mathematica-select-function/</link>
+      <pubDate>Wed, 22 May 2024 11:14:33 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/05/22/mathematica-select-function/</guid>
+      <description> Select[list,crit]&#xA;选取 list 中使得 crit[ei] 为 True 的所有元素 ei.&#xA;其中，crit 的选项有：&#xA;IntegerQ EvenQ OddQ NumberQ NumericQ MachineNumberQ TrueQ BooleanQ 延伸阅读 Select: 选择满足条件的元素—Wolfram Documentation IntegerQ—Wolfram Language Documentation EvenQ—Wolfram Language Documentation OddQ—Wolfram Language Documentation NumberQ—Wolfram Language Documentation NumericQ—Wolfram Language Documentation MachineNumberQ—Wolfram Language Documentation TrueQ—Wolfram Language Documentation BooleanQ—Wolfram Language Documentation </description>
+    </item>
+    <item>
+      <title>Mathematica在Windows/Linux/macOS系统下的路径</title>
+      <link>https://www.xiaoledeng.com/2024/05/15/path-mathematica-in-different-systems/</link>
+      <pubDate>Wed, 15 May 2024 14:36:34 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/05/15/path-mathematica-in-different-systems/</guid>
+      <description>Windows系统路径:&#xA;&amp;ldquo;C:\\x\\y\\z\\file.csv&amp;rdquo;&#xA;&amp;ldquo;C:/x/y/z/file.csv&amp;rdquo;&#xA;Linux 或 macOS系统路径:&#xA;&amp;ldquo;/x/y/z/file.csv&amp;rdquo;&#xA;命令：&#xA;Directory[] 当前目录 SetDirectory[] 设置后，后续的 Import 和 Export 会以此为基准路径 </description>
+    </item>
+    <item>
+      <title>FreeBSD 14.0 install Mathematica 13.2</title>
+      <link>https://www.xiaoledeng.com/2024/01/18/frebsd-install-mathematica13.2/</link>
+      <pubDate>Thu, 18 Jan 2024 17:11:08 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/18/frebsd-install-mathematica13.2/</guid>
+      <description>1. Enable Linux binary compatibility on FreeBSD Run these commands with root:&#xA;# enable the Linux ABI at boot time sysrc linux_enable=&amp;#34;YES&amp;#34; # start linux without rebooting service linux start # install CentOS Base System from FreeBSD Packages pkg install linux_base-c7 2. Run the Mathematica Installer Run the command with root: # set the default ELF brand to Linux for all unbranded binaries sysctl kern.fallback_elf_brand=3 Open the Linux installer with root: vim Mathematica_13.</description>
+    </item>
+    <item>
+      <title>Mathematica导出文件路径</title>
+      <link>https://www.xiaoledeng.com/2024/01/18/mathematica-export-path/</link>
+      <pubDate>Thu, 18 Jan 2024 14:56:47 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/18/mathematica-export-path/</guid>
+      <description>Export[NotebookDirectory[]&amp;lt;&amp;gt;&amp;#34;data.csv&amp;#34;,list] 说明：&#xA;NotebookDirectory[] 给出当前运行的笔记本的路径 list 为数据 data.csv 为导出数据的文件名和后缀 注意⚠️：&#xA;Unix、Linux 和 macOS 的文件路径为：/home/name Windows 的文件路径为：D:\home\name 延伸阅读 NotebookDirectory—Wolfram Language Documentation Using Export[] sends the file where? - Mathematica Stack Exchange </description>
+    </item>
+    <item>
+      <title>Mathematica代码转换为Python</title>
+      <link>https://www.xiaoledeng.com/2024/01/09/mathamtica-code-to-python/</link>
+      <pubDate>Tue, 09 Jan 2024 18:12:37 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/09/mathamtica-code-to-python/</guid>
+      <description>Python 代码：&#xA;from sympy.parsing.mathematica import parse_mathematica from sympy import var # 1. Defined symbols x, y, z = var(&amp;#39;x y z&amp;#39;) # 2. Transform a = &amp;#34;Cos[x]*Sin[y]*z^2&amp;#34; # Mathematica代码 print(parse_mathematica(a)) 显示：&#xA;z**2*sin(y)*cos(x) 延伸阅读 output formatting - How to export expression in mathematica to python - Mathematica Stack Exchange Parsing - SymPy 1.12 documentation List of active deprecations - SymPy 1.12 documentation </description>
+    </item>
+    <item>
+      <title>SageMat替代Mathematica</title>
+      <link>https://www.xiaoledeng.com/2024/01/01/sagemat-replace-mathematica/</link>
+      <pubDate>Mon, 01 Jan 2024 10:15:30 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/01/sagemat-replace-mathematica/</guid>
+      <description>最近搜索了一下，Mathematica 的替代品，发现了专门有网站给出了解决方案 1。&#xA;排名第一的是：SageMat 2，基于 Python 。&#xA;SageMath is a free open-source mathematics software system licensed under the GPL. It builds on top of many existing open-source packages: NumPy, SciPy, matplotlib, Sympy, Maxima, GAP, FLINT, R and many more.&#xA;&amp;ldquo;Creating a Viable Open Source Alternative to Magma, Maple, Mathematica, and MATLAB&amp;rdquo;&#xA;SageMath is the most popular Web-based, Windows, Mac &amp;amp; Linux alternative to Mathematica. SageMath is the most popular Open Source &amp;amp; free alternative to Mathematica.</description>
+    </item>
+    <item>
+      <title>Mathematica定位函数Position</title>
+      <link>https://www.xiaoledeng.com/2023/10/26/mathematica-list-position/</link>
+      <pubDate>Thu, 26 Oct 2023 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/10/26/mathematica-list-position/</guid>
+      <description>定位函数Position，用于定位列表中的元素位置，帮助手册说得很详细了。&#xA;延伸阅读 Position—Wolfram 语言参考资料 </description>
+    </item>
+    <item>
+      <title>macOS系统卸载Mathematica</title>
+      <link>https://www.xiaoledeng.com/2023/06/23/macos-uninstall-mathematica/</link>
+      <pubDate>Fri, 23 Jun 2023 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/06/23/macos-uninstall-mathematica/</guid>
+      <description>1. 步骤 用 Command + Shift + G 进入以下文件夹：&#xA;/Applications/Mathematica.app/ /Library/Mathematica/ ~/Library/Mathematica/ ~/Library/Wolfram/ ~/Library/Caches/Wolfram/ 删除以上文件即可。&#xA;2. 参考 Wolfram Support Quick Answers: How do I uninstall Mathematica? </description>
+    </item>
+    <item>
+      <title>macOS系统命令行运行Mathematica</title>
+      <link>https://www.xiaoledeng.com/2023/03/16/macos-command-line-run-mathematica/</link>
+      <pubDate>Thu, 16 Mar 2023 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/03/16/macos-command-line-run-mathematica/</guid>
+      <description>1. 核心步骤 将 Mathematica 的安装目录添加到 PATH 环境变量中，打开终端应用程序，输入以下命令：&#xA;vi ~/.zshrc 在打开的文件中添加以下行：&#xA;export PATH=$PATH:/Applications/Mathematica.app/Contents/MacOS 激活环境变量的路径：&#xA;source ~/.zshrc 2. 注意⚠️ 在以前的博文服务器上运行Mathematica命令行代码，终端中打开Mathmatica的命令行为 math。&#xA;但是，现在变为：wolfram、WolframKernel和MathKernel，还有：wolframscript。详细的命令可以在路径 /Applications/Mathematica.app/Contents/MacOS查找。&#xA;macOS系统下Mathematica版本如下。&#xA;wolfram、WolframKernel和MathKernel启动信息为：&#xA;Mathematica 12.3.1 Kernel for Mac OS X ARM (64-bit) Copyright 1988-2021 Wolfram Research, Inc. wolframscript启动信息为：&#xA;Wolfram Language 12.3.1 Engine for Mac OS X ARM (64-bit) Copyright 1988-2021 Wolfram Research, Inc. Mathematica 和 MathematicaServer 则是打开Mathematica的记事本。</description>
+    </item>
+    <item>
+      <title>用不同的内核运行Mathematica程序</title>
+      <link>https://www.xiaoledeng.com/2023/01/26/different-kernels-run-mathematica/</link>
+      <pubDate>Thu, 26 Jan 2023 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/01/26/different-kernels-run-mathematica/</guid>
+      <description>1. 说明 在Windows系统和macos系统里，默认用Local内核运行Mathematica程序。&#xA;对于多内核来说，可以定义不用的内核，即：用不同的内核运行不同的Mathmatica程序。&#xA;2. 步骤 添加新内核：Evaluation (计算) -&amp;gt; Kernel Configuration Options (内核配置选项)，有几个内核就设定几个&#xA;对于不同Mathamtica程序，选择不同的内核：Evaluation (计算) -&amp;gt; Notebook&amp;rsquo;s Kernel (笔记本内核)&#xA;3. 参考 使用单独的内核进行计算—Wolfram 语言参考资料 计算 &amp;gt; 内核配置选项&amp;hellip;—Wolfram 语言参考资料 </description>
+    </item>
+    <item>
+      <title>Mathematica关闭网络连接</title>
+      <link>https://www.xiaoledeng.com/2023/01/01/mathematica-closes-network/</link>
+      <pubDate>Sun, 01 Jan 2023 08:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/01/01/mathematica-closes-network/</guid>
+      <description>1. Mathematica的设置 按次序打开 Mathematica 的Perferences —— Internet &amp;amp; Mail，关闭以下两个设置:&#xA;Automatically check for data updates&#xA;Allow the Wolfram System to access the&#xA;2. macOS系统的设置 按次序打开 System Preferences——Security &amp;amp; Privacy —— Firewall，添加 Mathematica，而后设置为 block incoming connections</description>
+    </item>
+    <item>
+      <title>Mathics: A free, open-source alternative to Mathematica®</title>
+      <link>https://www.xiaoledeng.com/2021/07/07/mathics/</link>
+      <pubDate>Wed, 07 Jul 2021 16:40:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/07/07/mathics/</guid>
+      <description>1. Introduction Mathics Page: https://mathics.org/&#xA;Mathics Github: https://github.com/mathics&#xA;PDF: https://mathics.org/docs/mathics-latest.pdf&#xA;Documentation: https://mathics-development-guide.readthedocs.io/en/latest/&#xA;Mathics is a free, open-source general-purpose computer algebra system featuring Mathematica®-compatible syntax and functions. It relies on a number of other Python libraries in the Python ecosystem.&#xA;pip install Mathics3 mathicsscript </description>
+    </item>
+    <item>
+      <title>Mathematica的列表操作</title>
+      <link>https://www.xiaoledeng.com/2021/07/06/mathematica-list-manipulation/</link>
+      <pubDate>Tue, 06 Jul 2021 17:20:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/07/06/mathematica-list-manipulation/</guid>
+      <description>1. 构造列表 Range — 形成一个数字范围或其它对象的列表 {1,2,3,…}&#xA;Table — 构造一个表达式任意维数的表格&#xA;Array — 构造一个任意维数的数组，应用函数到连续数组下标&#xA;ConstantArray — 构造任意维数的常数数组&#xA;CenterArray — 在任意维数的数组的中心嵌入一个数组&#xA;Subdivide — 区间的等细分列表&#xA;CoordinateBoundsArray, CoordinateBoundingBoxArray — 正则网格&#xA;SparseArray, Normal — 从指定的稀疏矩阵 positionvalue 创建列表&#xA;PowerRange — 形成指定范围内连续幂的列表&#xA;操作列表—Wolfram 语言参考资料&#xA;文件、流和外部运算—Wolfram 语言参考资料&#xA;2. 列表元素 list[[&amp;hellip;]] (Part) — 部分列表，可用 = 设置 Span (;;) — 通常指定元素的块和范围 First ▪ Last ▪ Rest ▪ Most ▪ Take ▪ Drop ▪ TakeDrop ▪ TakeList ▪ TakeWhile UpTo — 一定数目的元素，或者尽可能多 Append ▪ Prepend ▪ Insert ▪ Delete ▪ AppendTo ▪ PrependTo Position — 求出匹配模式的元素坐标 FirstPosition ▪ Extract ▪ ReplacePart ▪ MapAt ▪ ArrayRules ▪ Ordering Length ▪ Dimensions ▪ ArrayDepth ▪ LengthWhile Select, SelectFirst — 选择满足规则的元素 Cases, FirstCase — 匹配模式的元素 Pick ▪ DeleteCases ▪ BinLists ▪ Count ▪ DeleteDuplicates Nothing — 元素自动从列表中去除 MemberQ — 测试一个元素是否是一个列表的成员 FreeQ ▪ ArrayQ ▪ VectorQ ▪ MatrixQ AllTrue ▪ AnyTrue ▪ NoneTrue Max ▪ Min ▪ MaximalBy ▪ MinimalBy 查找子列表：SequencePosition ▪ SequenceCases ▪ SequenceCount 查找子集：SubsetPosition ▪ SubsetCases ▪ SubsetCount 3.</description>
+    </item>
+    <item>
+      <title>计算机代数系统</title>
+      <link>https://www.xiaoledeng.com/2020/11/13/computer-algebra-system/</link>
+      <pubDate>Fri, 13 Nov 2020 09:20:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/13/computer-algebra-system/</guid>
+      <description>计算机代数是研究符号计算的算法设计、理论分析和计算机实现的学科。&#xA;网址：&#xA;Axiom http://arch.axiom-developer.org CoCoA http://cocoa.dima.unige.it Maple http://www.maplesoft.com Mathematica http://www.wolfram.com/products/mathematica Reduce http://www.uni-koeln.de/REDUCE Singular http://www.singular.uni-kl.de 《Computer Algebra Handbook——Foundation Application and Systems》</description>
+    </item>
+    <item>
+      <title>Sympy: Python进行代数运算</title>
+      <link>https://www.xiaoledeng.com/2020/09/21/python-sympy/</link>
+      <pubDate>Mon, 21 Sep 2020 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/21/python-sympy/</guid>
+      <description>1.安装 官网：SymPy&#xA;官网安装：Installation — SymPy documentation。&#xA;2.求导的基本使用 from sympy import * x,y,z = symbols(&amp;#39;x y z&amp;#39;) expr=sin(x)*exp(x)*z diff_expr=diff(expr, x) diff_expr2=diff(expr,x,2) print(diff_expr) print(diff_expr2) 3.参考 用Python学数学之Sympy代数符号运算 - 知乎 </description>
+    </item>
+    <item>
+      <title>服务器上运行Mathematica命令行代码</title>
+      <link>https://www.xiaoledeng.com/2020/08/04/run-mathematica-command-line-code-on-the-server/</link>
+      <pubDate>Tue, 04 Aug 2020 20:15:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/08/04/run-mathematica-command-line-code-on-the-server/</guid>
+      <description>标题可以分为两个问题：&#xA;如何在服务器上面运行Mathematica命令行代码？ 如何把nb文件转换成txt文件？ 1.服务器上运行Mathematica命令行代码 关键命令：&#xA;nohup math &amp;lt;test1.txt&amp;gt; test1.out &amp;amp; 解释：&#xA;nohup和&amp;amp;为服务器后台运行命令； math为Mathematica调用的命令行工具； test1.txt为输入的nb文件的txt格式文件； test1.out为输出的记录文件； 关键点：如何把nb文件转换成txt文件。&#xA;2.nb文件转换为txt文件 关键步骤如下：&#xA;在Mathematica中，先选中所有Cell单元——点击一个Cell，键盘输入Ctrl+A选中所有Cell； 执行菜单命令 &amp;ldquo;Cell -&amp;gt; Convert to -&amp;gt; Input Form&amp;rdquo; ，将所有的Cell转换成标准输入形式； 执行菜单命令 &amp;ldquo;File -&amp;gt; Save As &amp;hellip;&amp;rdquo; ，另存为 txt 格式； 3.注意去掉多余的内容 在后续的Mathematica版本中，可能会包含：In[]:=和Out[]=格式，注意打开txt文件，进行全文替换删除操作。</description>
+    </item>
+    <item>
+      <title>Mathematica提取第i列命令</title>
+      <link>https://www.xiaoledeng.com/2017/10/14/mathematica-i-row/</link>
+      <pubDate>Sat, 14 Oct 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/10/14/mathematica-i-row/</guid>
+      <description>Mathematica提取第i列命令：&#xA;a[[;;,i]] </description>
+    </item>
+    <item>
+      <title>Mathematica球面调和函数</title>
+      <link>https://www.xiaoledeng.com/2017/04/14/mathematica-spherical-harmonic/</link>
+      <pubDate>Fri, 14 Apr 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/04/14/mathematica-spherical-harmonic/</guid>
+      <description>Legendre多项式(the Legendre polynomial) Legendre多项式$P_n (x)$ 满足下面的微分方程：&#xA;$ (1-x^2) \frac{d^2 y}{d x^2} - 2 x \frac{d y}{d x} + n (n+1) y=0 $&#xA;此时，&#xA;$ P_n (x) = \frac{1}{2^n n!} \frac{d^n }{d x^n} {(x-1)^n} = \sum _{k=0}^{[n/2]} \frac{(-1)^k (2 n-2 k)!} {2^n k! (n-k)! (n-2k)!} x^{n-2k} $&#xA;其中，[ ]为取整数部分。&#xA;在Mathematica中，调用的Legendre多项式为：LegendreP[n,x]。&#xA;Table[LegendreP[n, x], {n, 1, 8}] // TableForm 连带Legendre多项式(the associated Legendre polynomial) $ P_{nm} (x) = (-1)^m (1-x^2)^{m/2} \frac{d^m }{d x^m} P_n (x)$</description>
+    </item>
+    <item>
+      <title>Mathematica矩阵的行操作</title>
+      <link>https://www.xiaoledeng.com/2017/03/24/mathematica-row/</link>
+      <pubDate>Fri, 24 Mar 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/24/mathematica-row/</guid>
+      <description>Mathematica里面进行矩阵的行运算：&#xA;输入：&#xA;a = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}} Table[a[[i]], {i, 3, 1, -1}] 得到：&#xA;{{7, 8, 9}, {4, 5, 6}, {1, 2, 3}} 注释：&#xA;矩阵a为三行三列的矩阵，每行可以表示为：a[[1]]，a[[2]]，a[[3]]。最后用Table来列出每一行，从第3行到第1行。</description>
+    </item>
+    <item>
+      <title>Mathematica的Reshape矩阵重塑</title>
+      <link>https://www.xiaoledeng.com/2017/03/16/mathematica-reshape/</link>
+      <pubDate>Thu, 16 Mar 2017 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/16/mathematica-reshape/</guid>
+      <description>Reshape命令 一般需要对矩阵进行重新分配行列，如转置等。需要如下命令：&#xA;ArrayReshape[list,dims] 解释：将 list 中的元素排列成一个维数为 dims 的矩形数组。&#xA;其中list可以表示为矩阵形式；dims为{x,y}维数。&#xA;In[1]:= ArrayReshape[{a, b, c, d, e, f}, {2, 3}] Out[1]:= {{a, b, c}, {d, e, f}} Reference ArrayReshape—Wolfram 语言参考资料 </description>
+    </item>
+    <item>
+      <title>Mathetica的Position定位函数</title>
+      <link>https://www.xiaoledeng.com/2017/03/16/mathematica-position/</link>
+      <pubDate>Thu, 16 Mar 2017 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/16/mathematica-position/</guid>
+      <description>Position用法 常常在Mathematica数据处理的时候，需要定位在List中的一个数值的具体位置，这是需要到Position函数。&#xA;Position[{a, b, a, a, b, c, b}, b] 得到的结果：&#xA;{{2}, {5}, {7}} Reference Position—Wolfram 语言参考资料 </description>
+    </item>
+    <item>
+      <title>Mathematica的Join函数</title>
+      <link>https://www.xiaoledeng.com/2017/03/16/mathematica-join/</link>
+      <pubDate>Thu, 16 Mar 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/16/mathematica-join/</guid>
+      <description>Join操作 增加一行的例子:&#xA;Join[IdentityMatrix[3], {{1, 2, 3}}] // MatrixForm 增加一列的例子：&#xA;Join[IdentityMatrix[3], Transpose[{{1, 2, 3}}], 2] // MatrixForm Reference Join—Wolfram 语言参考资料 </description>
+    </item>
+    <item>
+      <title>Mathematica的List函数</title>
+      <link>https://www.xiaoledeng.com/2017/03/16/mathematica-list/</link>
+      <pubDate>Thu, 16 Mar 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/16/mathematica-list/</guid>
+      <description>常用List操作函数 Length：查看List长度 Dimensions: 查看List维度 Transpose：转置List Table: 生成List，推荐1 Range: 生成List，推荐2 Import：导入数据 Export：导出数据 Reference Length—Wolfram 语言参考资料 Dimensions—Wolfram 语言参考资料 Transpose—Wolfram 语言参考资料 Table—Wolfram 语言参考资料 Range—Wolfram 语言参考资料 Import—Wolfram 语言参考资料 Export—Wolfram 语言参考资料 </description>
+    </item>
+    <item>
+      <title>Mathematica的BinaryReadList函数</title>
+      <link>https://www.xiaoledeng.com/2017/03/16/mathematica-binaryreadlist/</link>
+      <pubDate>Thu, 16 Mar 2017 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/16/mathematica-binaryreadlist/</guid>
+      <description>读取命令BinaryReadList Mathematica的一行命令读取二进制bin文件：&#xA;BinaryReadList[&amp;quot;file&amp;quot;,&amp;quot;type&amp;quot;] 其中，file为bin文件的路径地址；type为bin文件的存储格式。&#xA;type的值有：&#xA;&amp;ldquo;Byte&amp;rdquo;&#x9;8位无符号整数 &amp;ldquo;Character8&amp;rdquo;&#x9;8位字符 &amp;ldquo;Character16&amp;rdquo;&#x9;16位字符 &amp;ldquo;Complex64&amp;rdquo;&#x9;IEEE 単精度复数 &amp;ldquo;Complex128&amp;rdquo;&#x9;IEEE 双精度复数 &amp;ldquo;Complex256&amp;rdquo;&#x9;IEEE 四精度复数 &amp;ldquo;Integer8&amp;rdquo;&#x9;8位符号整数 &amp;ldquo;Integer16&amp;rdquo;&#x9;16位符号整数 &amp;ldquo;Integer32&amp;rdquo;&#x9;32位符号整数 &amp;ldquo;Integer64&amp;rdquo;&#x9;64位符号整数 &amp;ldquo;Integer128&amp;rdquo;&#x9;128位符号整数 &amp;ldquo;Real32&amp;rdquo;&#x9;IEEE 単精度实数 &amp;ldquo;Real64&amp;rdquo;&#x9;IEEE 双精度实数 &amp;ldquo;Real128&amp;rdquo;&#x9;IEEE 四精度实数 &amp;ldquo;TerminatedString&amp;rdquo;&#x9;由8位字符组成的以null结束的字符串 &amp;ldquo;UnsignedInteger8&amp;rdquo;&#x9;8位无符号整数 &amp;ldquo;UnsignedInteger16&amp;rdquo;&#x9;16位无符号整数 &amp;ldquo;UnsignedInteger32&amp;rdquo;&#x9;32位无符号整数 &amp;ldquo;UnsignedInteger64&amp;rdquo;&#x9;64位无符号整数 &amp;ldquo;UnsignedInteger128&amp;rdquo;&#x9;128位无符号整数 Reference 二进制文件—Wolfram 语言参考资料 BinaryReadList—Wolfram 语言参考资料 </description>
+    </item>
+    <item>
+      <title>Mathematica函数NumberForm保留小数点位数</title>
+      <link>https://www.xiaoledeng.com/2016/12/21/mathematica-numberform/</link>
+      <pubDate>Wed, 21 Dec 2016 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2016/12/21/mathematica-numberform/</guid>
+      <description>Mathematica对于输出的数值有比较好的小数点保留位数的函数——NumberForm，使用方法：&#xA;NumberForm[exp, {Infinity,n}] 解释：exp为数值结果，n为保留的小数点位数。 例子如下：&#xA;NumberForm[3.141596, {Infinity,5}] 结果为：&#xA;3.14160 </description>
+    </item>
+    <item>
+      <title>Mathematica地球科学函数库</title>
+      <link>https://www.xiaoledeng.com/2016/12/04/mathematica-geoscience-library/</link>
+      <pubDate>Sun, 04 Dec 2016 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2016/12/04/mathematica-geoscience-library/</guid>
+      <description>本文的目的：为了系统简要地列出关键的Mathematica中关于地球科学函数的库，即为函数库的关键字。&#xA;1. 基本数据类型 GeoElevationData：各个地点的海拔数据； MountainData：山脉的数据； VolcanoData：火山的数据； LakeData：湖泊的数据； OceanData：海洋的数据； GeomagneticModelData：地球详细的当前和历史磁场数据； GeogravityModelData：地球上所有位置的重力场数据； EarthquakeData：地震的实时和历史数据； 还有就是：&amp;ldquo;GeologicalLayer&amp;rdquo;(地质层) 和 &amp;ldquo;GeologicalPeriod&amp;rdquo;(地质时期)； 2. 参考文献 地球科学：数据与计算—Wolfram 语言参考资料。 </description>
+    </item>
+  </channel>
+</rss>
