@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C on Xiao-Le Deng (邓小乐)</title>
+    <link>https://www.xiaoledeng.com/tags/c/</link>
+    <description>Recent content in C on Xiao-Le Deng (邓小乐)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Thu, 21 Dec 2023 16:08:53 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/c/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macOS利用GPU加速Whisper语音转文字</title>
+      <link>https://www.xiaoledeng.com/2023/12/21/macos-gpu-speed-whisper/</link>
+      <pubDate>Thu, 21 Dec 2023 16:08:53 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/21/macos-gpu-speed-whisper/</guid>
+      <description>1. 前言 前几天，写了 开源Whisper语音转文字 的内容，但是在 macOS 上使用 whisper 默认的 --device mps 命令进行 GPU 加速，会报错。而单纯用 CPU 跑 whisper，耗时比较长。&#xA;搜索🔍相关主题后，发现：目前 GitHub 的 whisper 项目 1在 macOS 上安装后，暂时还不能使用 GPU 加速。&#xA;不过，可以基于 C/C++ 语言的 whisper.cpp 2，在 macOS 上实现用 GPU 加速 Whisper 语音转文字。&#xA;结果表明：在 macOS 上用 whisper.cpp 实现 GPU 加速 Whisper 语音转文字的速度提升非常明显。&#xA;2. 具体过程 2.1 下载语言包 建议利用官网命令下载，终端输入：&#xA;whisper 20231218.wav --language Chinese --model large large 语言包的路径为：~/.cache/whisper/large-v3.pt，文件格式为 pt ，大小约 2.9 G。&#xA;2.2 转换 pt 文件为 bin 文件 下载并解压两个 GitHub 的全文件夹—— whisper 1 和 whisper.</description>
+    </item>
+    <item>
+      <title>Ubuntu gcc problem: fatal error: stdio.h: No such file or directory</title>
+      <link>https://www.xiaoledeng.com/2021/12/22/ubuntu-gcc-stdio/</link>
+      <pubDate>Wed, 22 Dec 2021 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/12/22/ubuntu-gcc-stdio/</guid>
+      <description>1. 简介 gcc in Ubuntu is not installed by default and needs to be installed:&#xA;sudo apt-get install gcc However, after installing gcc, there is still such error: fatal error: stdio.h: No such file or directory。&#xA;Installation required:&#xA;$ sudo apt-get install build-essential Reading package lists... Done Building dependency tree Reading state information... Done E: Unable to locate package build-essential $ sudo apt-get install libc6-dev Reading package lists... Done Building dependency tree Reading state information.</description>
+    </item>
+    <item>
+      <title>oneAPI资源和安装</title>
+      <link>https://www.xiaoledeng.com/2021/07/19/oneapi-resource-install/</link>
+      <pubDate>Mon, 19 Jul 2021 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/07/19/oneapi-resource-install/</guid>
+      <description>1. Introduction OneAPI旨在提供一个适用于各类计算架构的统一编程模型和应用程序接口。 “OneAPI 提供一个通用、开放的编程体验，让开发者可以自由选择架构，无需在性能上作出妥协，也大大降低了使用不同的代码库、编程语言、编程工具和工作流程所带来的复杂性”。&#xA;Intel® oneAPI Toolkits:&#xA;基础工具：构建、分析、优化性能驱动和以数据为中心的应用程序 (Intel® oneAPI Base Toolkit：Download the Intel® oneAPI Base Toolkit) 高性能计算工具：提供C++、Fortran、OpenMP和MPI应用程序 (Intel® oneAPI HPC：Download the Intel oneAPI HPC Toolkit) 物联网工具：构建在网络边缘运行的高性能、高效、可靠的应用程序 (Intel® oneAPI IoT Toolkit：Download the Intel oneAPI IoT Toolkit) 可视化工具：创建高性能、高保真的可视化应用程序 (Intel® oneAPI Rendering Toolkit：Download the Intel oneAPI Rendering Toolkit) AI分析工具：为数据科学家、AI开发人员和研究人员提供熟悉的Python工具和框架，以加速 Intel体系结构上的端到端数据科学和分析管道 (Intel® oneAPI AI Analytics Toolkit：Download the Intel® oneAPI AI Analytics Toolkit) OpenVINO工具：跨多个 Intel体系结构，拓展了 Intel硬件（包括加速器）的工作负载，最大限度提升性能，为生命科学、零售、工业等多领域带来更多的高效应用 (Intel® Distribution of OpenVINO™ Toolkit：Fast Track Computer Vision &amp;amp; Deep Learning Inference With Intel® Distribution of OpenVINO™ toolkit) 2.</description>
+    </item>
+    <item>
+      <title>PPPLib</title>
+      <link>https://www.xiaoledeng.com/2020/12/27/ppplib/</link>
+      <pubDate>Sun, 27 Dec 2020 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/12/27/ppplib/</guid>
+      <description>1. Introduction Precise Point Positioning Library (PPPLib) is a multi-GNSS data processing software designed to process multi-frequency data from GPS, BeiDou, Galileo, GLONASS and QZSS.&#xA;Github: https://github.com/heiwa0519/PPPLib&#xA;2. Reference Chen, C., &amp;amp; Chang, G. (2020). PPPLib: An open-source software for precise point positioning using GPS, BeiDou, Galileo, GLONASS, and QZSS with multi-frequency observations. GPS Solutions, 25(1), 1-7. https://doi.org/10.1007/s10291-020-01052-4</description>
+    </item>
+    <item>
+      <title>GROOPS: Gravity Recovery Object Oriented Programming System</title>
+      <link>https://www.xiaoledeng.com/2020/12/11/groops/</link>
+      <pubDate>Fri, 11 Dec 2020 08:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/12/11/groops/</guid>
+      <description>1. Introduction Github: https://github.com/groops-devs/groops&#xA;2. Reference Mayer-Gürr, T., Behzadpour, S., Eicker, A., Ellmer, M., Koch, B., Krauss, S., Pock, C., Rieser, D., Strasser, S., Suesser-Rechberger, B., Zehentner, N., Kvas, A. (2020). GROOPS: A software toolkit for gravity field recovery and GNSS processing. Earth and Space Science Open Archive, 8. https://doi.org/10.1002/essoar.10505041.1</description>
+    </item>
+    <item>
+      <title>GeoTess</title>
+      <link>https://www.xiaoledeng.com/2020/12/04/geotess/</link>
+      <pubDate>Fri, 04 Dec 2020 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/12/04/geotess/</guid>
+      <description>1. Introduction Home: https://www.sandia.gov/geotess/&#xA;Documentation: https://www.sandia.gov/geotess/geotess-documentation.html&#xA;2. Reference Ballard, S., J. R. Hipp and C. J. Young. (2009). Efficient and Accurate Calculation of Ray Theory Seismic Travel Time through Variable Resolution 3D Earth Models. Seismological Research Letters. 80. 989-999. https://doi.org/10.1785/gssrl.80.6.989</description>
+    </item>
+    <item>
+      <title>PGPLOT Graphics Subroutine Library</title>
+      <link>https://www.xiaoledeng.com/2020/11/27/pgplot/</link>
+      <pubDate>Fri, 27 Nov 2020 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/27/pgplot/</guid>
+      <description>Introduction The PGPLOT Graphics Subroutine Library is a Fortran- or C-callable, device-independent graphics package for making simple scientific graphs.&#xA;Main Page: https://sites.astro.caltech.edu/~tjp/pgplot/&#xA;Installation Instructions: https://sites.astro.caltech.edu/~tjp/pgplot/install.html</description>
+    </item>
+    <item>
+      <title>SHA_SHS: spherical harmonic analysis and synthesis</title>
+      <link>https://www.xiaoledeng.com/2020/11/11/sha_shs/</link>
+      <pubDate>Wed, 11 Nov 2020 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/11/sha_shs/</guid>
+      <description>1. Introduction Download:&#xA;Bucha/#SHA http://edisk.cvt.stuba.sk/~xbuchab/SHA_code/SHA_SHS.zip 2. Reference Bucha, B., Hirt, C., Kuhn, M., 2019. Cap integration in spectral gravity forward modelling up to the full gravity tensor. Journal of Geodesy. https://doi.org/10.1007/s00190-019-01277-3</description>
+    </item>
+    <item>
+      <title>GravPSO2D: 2D gravity inversion using the Particle Swarm Optimization</title>
+      <link>https://www.xiaoledeng.com/2020/11/06/gravpso2d/</link>
+      <pubDate>Fri, 06 Nov 2020 12:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/06/gravpso2d/</guid>
+      <description>1. Introduction A Matlab Package for the 2D gravity inversion in sedimentary basins is presented.&#xA;GitHub: https://github.com/jgpallero/grav-pso-2d&#xA;2. Reference Palleroa J.L.G., Fernández-Martínezb J.L., Fernández-Muñizb Z., Bonvalotc S., Gabaldac G., Nalpasd T. (2020). GravPSO2D: A Matlab package for 2D gravity inversion in sedimentary basins using the Particle Swarm Optimization algorithm. Computers &amp;amp; Geosciences. https://doi.org/10.1016/j.cageo.2020.104653</description>
+    </item>
+    <item>
+      <title>Tesseroids: Forward modeling of gravity fields in spherical coordinates</title>
+      <link>https://www.xiaoledeng.com/2020/11/03/tesseroids/</link>
+      <pubDate>Tue, 03 Nov 2020 19:50:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/03/tesseroids/</guid>
+      <description>1. Introduction Tesseroids is a collection of command-line tools for modeling the gravitational potential, acceleration, and gradient (Marussi) tensor.&#xA;The mass models can be made of right rectangular prisms or tesseroids (spherical prisms). Computation for rectangular prisms can be made in Cartesian or spherical (geocentric) coordinates.&#xA;GitHub: https://github.com/leouieda/tesseroids&#xA;Documentation: http://tesseroids.leouieda.com/en/latest/&#xA;2. Reference Uieda L, Barbosa V, Braitenberg C. (2016). Tesseroids: Forward-modeling gravitational fields in spherical coordinates. Geophysics, 81(5), F41-F48. http://doi.org/10.1190/geo2015-0204.1</description>
+    </item>
+  </channel>
+</rss>
