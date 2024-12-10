@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ClearLinux on Xiao-Le Deng (邓小乐)</title>
+    <link>https://www.xiaoledeng.com/tags/clearlinux/</link>
+    <description>Recent content in ClearLinux on Xiao-Le Deng (邓小乐)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Wed, 04 Dec 2024 07:31:01 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/clearlinux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Clear Linux系统简介</title>
+      <link>https://www.xiaoledeng.com/2024/12/04/introduction-clear-linux/</link>
+      <pubDate>Wed, 04 Dec 2024 07:31:01 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/04/introduction-clear-linux/</guid>
+      <description>1. 简介 Clear Linux 是由英特尔开发的一款 Linux 发行版，主要针对英特尔架构进行了性能和安全优化，旨在为其硬件（尤其是处理器）优化性能，最大限度地发挥 Intel 硬件的潜能，同时展示优化的编译技术如何显著提高操作系统和应用的运行效率。&#xA;软件管理工具为：swupd，为 SoftWare UPDate 的缩写。&#xA;swupd bundle-add &amp;lt;bundle_name&amp;gt; swupd bundle-remove &amp;lt;bundle_name&amp;gt; 2. 历史 2015年，初次亮相，最初作为研究优化性能的内部项目 2016年，成为一个公共的开源 Linux 发行版 2019年5月，发布桌面版本 2020年，随着容器技术（如 Docker 和 Kubernetes）的兴起，被越来越多地部署在云和微服务环境 3. 版本 https://cdn.download.clearlinux.org/releases/&#xA;4. 延伸阅读 Home Clear Linux* Project | Clear Linux* Project Clear Linux OS - Wikipedia Get started — Documentation for Clear Linux* project swupd — Documentation for Clear Linux* project Available bundles — Documentation for Clear Linux* project </description>
+    </item>
+  </channel>
+</rss>
