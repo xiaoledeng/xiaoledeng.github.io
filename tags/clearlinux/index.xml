@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ClearLinux on Xiao-Le Deng (邓小乐)</title>
+    <link>https://www.xiaoledeng.com/tags/clearlinux/</link>
+    <description>Recent content in ClearLinux on Xiao-Le Deng (邓小乐)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Tue, 17 Dec 2024 13:43:27 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/clearlinux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux按时间排序ls</title>
+      <link>https://www.xiaoledeng.com/2024/12/17/linux-ls-time/</link>
+      <pubDate>Tue, 17 Dec 2024 13:43:27 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/17/linux-ls-time/</guid>
+      <description># 按最近的修改时间排序（从新到旧） time ls -lt # 反向排序（从旧到新） time reverse ls -ltr </description>
+    </item>
+    <item>
+      <title>Clear Linux默认进入命令行模式</title>
+      <link>https://www.xiaoledeng.com/2024/12/13/clear-linux-command-line/</link>
+      <pubDate>Fri, 13 Dec 2024 13:42:23 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/13/clear-linux-command-line/</guid>
+      <description> Clear Linux 默认可能使用图形化目标（graphical.target），需要将其切换为多用户目标（multi-user.target）： sudo systemctl set-default multi-user.target 启动图形界面时使用 startx 确保 xinit 和桌面环境已安装：&#xA;sudo swupd bundle-add x11-server xinit 如果需要 GNOME 桌面环境，可以安装 GNOME 相关软件包：&#xA;sudo swupd bundle-add desktop 确保 ~/.xinitrc 文件存在并包含启动桌面环境的命令。例如，如果使用 GNOME 桌面环境：&#xA;echo &amp;#34;exec gnome-session&amp;#34; &amp;gt; ~/.xinitrc 对于桌面环境 XFCE 或 KDE ，可以相应更改为：&#xA;echo &amp;#34;exec startxfce4&amp;#34; &amp;gt; ~/.xinitrc echo &amp;#34;exec startkde&amp;#34; &amp;gt; ~/.xinitrc 启动图形界面，终端输入：&#xA;startx 恢复到图形模式 sudo systemctl set-default graphical.target </description>
+    </item>
+    <item>
+      <title>Matlab激活文件</title>
+      <link>https://www.xiaoledeng.com/2024/12/13/matlab-activation-file/</link>
+      <pubDate>Fri, 13 Dec 2024 11:43:20 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/13/matlab-activation-file/</guid>
+      <description>cd /usr/local/MATLAB/R2022b/bin ./activate_matlab.sh 参考 How do you run the Activation Client? - MATLAB Answers - MATLAB Central How do I update my MATLAB license file for an Individual or Designated Computer license? - MATLAB Answers - MATLAB Central How do I find my username in order to install or activate my license? - MATLAB Answers - MATLAB Central </description>
+    </item>
+    <item>
+      <title>Clear Linux删除Matlab</title>
+      <link>https://www.xiaoledeng.com/2024/12/13/clear-linux-uninstall-matlab/</link>
+      <pubDate>Fri, 13 Dec 2024 11:40:44 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/13/clear-linux-uninstall-matlab/</guid>
+      <description>rm -rf /usr/local/MATLAB/R2024b rm /usr/local/bin/matlab /usr/local/bin/mcc /usr/local/bin/mex /usr/local/bin/mbuild 参考 How do I uninstall MATLAB or other MathWorks products on a Linux machine? - MATLAB Answers - MATLAB Central </description>
+    </item>
+    <item>
+      <title>Clear Linux的Matlab错误：Launching updater executable</title>
+      <link>https://www.xiaoledeng.com/2024/12/13/clear-linux-error-updater/</link>
+      <pubDate>Fri, 13 Dec 2024 09:53:54 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/13/clear-linux-error-updater/</guid>
+      <description>Clear Linux 系统命令行 Matlab 出现以下错误：&#xA;Launching updater executable An unexpected error has occurred 解决方案：&#xA;关闭 Matlab&#xA;卸载删除MathWorks Service Host，终端输入：&#xA;killall MATLAB MathWorksServiceHost rm -rf ~/.MathWorks/ServiceHost ~/.MATLABConnector 重新安装MathWorks Service Host，在 MATLAB Drive - MATLAB &amp;amp; Simulink 下载 Linux 版本并安装： sudo chmod a+x *.bin sudo ./*.bin 参考 How do I uninstall and reinstall the MathWorks Service Host? - MATLAB Answers - MATLAB Central MATLAB Drive - MATLAB &amp;amp; Simulink Updated Matlab keep trying to update - MATLAB Answers - MATLAB Central </description>
+    </item>
+    <item>
+      <title>Clear Linux安装Matlab</title>
+      <link>https://www.xiaoledeng.com/2024/12/12/clear-linux-install-matlab/</link>
+      <pubDate>Thu, 12 Dec 2024 14:40:54 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/12/clear-linux-install-matlab/</guid>
+      <description># 运行 MATLAB 安装程序 unzip matlab_R2024b_glnxa64.zip -d matlab_installer cd matlab_installer/bin/glnxa64 mkdir share mv libX11.* ./share/ sudo ./install cd /usr/local/MATLAB/R2024b/bin/glnxa64 sudo mkdir share sudo mv libX11.* ./share/ cd /matlab_installer/bin/glnxa64 ldd ./MATLABWindow | grep libX11 显示：&#xA;libX11.so.6 =&amp;gt; /usr/lib64/glibc-hwcaps/x86-64-v3/libX11.so.6.4.0 (0x00007f9f7f6f8000) 创建桌面启动文件：&#xA;vim ~/.local/share/applications/matlab.desktop [Desktop Entry] Name=MATLAB Comment=MATLAB Application Exec=/usr/local/MATLAB/R2024b/bin/matlab -desktop Icon=/usr/local/MATLAB/R2024b/extern/icons/matlab_icon.png Terminal=false Type=Application Categories=Development;Science; 参考 Matlab installation - General Discussion - Clear Linux OS Forum ERROR: MATLAB is selecting SOFTWARE OPENGL rendering. - MATLAB Answers - MATLAB Central How do I select hardware OpenGL rendering for MATLAB on Linux - Stack Overflow 下载并安装 MATLAB Why will MATLAB not start up properly on my Linux machine?</description>
+    </item>
+    <item>
+      <title>Clear Linux安装Julia</title>
+      <link>https://www.xiaoledeng.com/2024/12/12/clear-linux-install-julia/</link>
+      <pubDate>Thu, 12 Dec 2024 12:26:13 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/12/clear-linux-install-julia/</guid>
+      <description>curl -fsSL https://install.julialang.org | sh 重启 Terminal ，输入 Julia 即可。&#xA;参考 下载 Julia - Julia 编程语言 </description>
+    </item>
+    <item>
+      <title>Clear Linux设置SSH</title>
+      <link>https://www.xiaoledeng.com/2024/12/12/clear-linux-set-ssh/</link>
+      <pubDate>Thu, 12 Dec 2024 11:57:19 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/12/clear-linux-set-ssh/</guid>
+      <description>安装 openssh-server： sudo swupd bundle-add openssh-server 编辑 sshd.socket 文件： sudo systemctl edit sshd.socket 注意⚠️：在当前位置，加入以下命令【更改端口为 4200 】：&#xA;[Socket] ListenStream= ListenStream=4200 查看是否更改成功： cat /etc/systemd/system/sshd.socket.d/override.conf 重新加载systemd守护进程配置： sudo systemctl daemon-reload 重新启动 sshd.socket 单元： sudo systemctl restart sshd.socket 确认sshd.socket单元正在新端口上监听： sudo systemctl status sshd.socket 成功标志： Active: as active(listening)&#xA;上传/下载的SFTP功能 sudo vim /etc/ssh/sshd_config 加入命令：&#xA;subsystem sftp /usr/libexec/sftp-server 关于SSH的一些设置： sudo vim /etc/ssh/sshd_config # 禁止 root 用户进行ssh登录 PermitRootLogin no # 只允许用户 name 登录 AllowUsers name1 name2 # 禁止利用账户密码的方式进行ssh登录 PasswordAuthentication no ChallengeResponseAuthentication no AuthorizedKeysFile .</description>
+    </item>
+    <item>
+      <title>Clear Linux安装Mathematica</title>
+      <link>https://www.xiaoledeng.com/2024/12/11/clear-linux-install-mathematica/</link>
+      <pubDate>Wed, 11 Dec 2024 16:20:43 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/11/clear-linux-install-mathematica/</guid>
+      <description># 运行 Mathematica 安装程序 sudo sh Mathematica_Installer.sh 默认按Enter即可。</description>
+    </item>
+    <item>
+      <title>Clear Linux安装Anaconda (Python)</title>
+      <link>https://www.xiaoledeng.com/2024/12/11/clear-linux-install-anaconda/</link>
+      <pubDate>Wed, 11 Dec 2024 16:16:25 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/11/clear-linux-install-anaconda/</guid>
+      <description> 找到最新的Linux版本链接： https://www.anaconda.com/download/ # 终端中下载 curl -O https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh # 运行安装脚本 sh Anaconda3-*.sh # 初始化 Anaconda 环境 source ~/anaconda3/bin/activate conda init source ~/.bashrc 验证 Conda 和 Python 是否安装成功： conda --version python --version 显示：&#xA;conda 24.9.2 python 3.12.7 </description>
+    </item>
+    <item>
+      <title>Clear Linux安装oneAPI</title>
+      <link>https://www.xiaoledeng.com/2024/12/11/clear-linux-install-oneapi/</link>
+      <pubDate>Wed, 11 Dec 2024 15:10:29 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/11/clear-linux-install-oneapi/</guid>
+      <description> 下载两个 Linux 的 sh 文件： Get the Intel® oneAPI Base Toolkit Get Intel® oneAPI HPC Toolkit 预先安装 g++ 包： swupd bundle-add c-basic 安装： sh intel-oneapi-base-toolkit-2025.0.0.885_offline.sh sh intel-oneapi-hpc-toolkit-2025.0.0.825_offline.sh 按照图形界面的指示，完成安装。&#xA;设置环境变量并验证安装成功 在 ~/.bashrc 文件加入：&#xA;source /opt/intel/oneapi/setvars.sh source ~/.bashrc 验证安装成功：&#xA;ifx --version # 检查 Fortran 编译器版本 ifx (IFX) 2025.0.0 20241008 Copyright (C) 1985-2024 Intel Corporation. All rights reserved. 参考 Available bundles — Documentation for Clear Linux* project </description>
+    </item>
+    <item>
+      <title>Clear Linux安装lm-sensors</title>
+      <link>https://www.xiaoledeng.com/2024/12/11/clear-linux-lm-sensors/</link>
+      <pubDate>Wed, 11 Dec 2024 10:55:37 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/11/clear-linux-lm-sensors/</guid>
+      <description>lm-sensors：硬件监控工具，支持查看温度、电压等信息。&#xA;sudo swupd bundle-add lm-sensors sudo sensors-detect sensors </description>
+    </item>
+    <item>
+      <title>Clear Linux Desktop安装</title>
+      <link>https://www.xiaoledeng.com/2024/12/11/install-clear-linux-desktop/</link>
+      <pubDate>Wed, 11 Dec 2024 10:53:57 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/11/install-clear-linux-desktop/</guid>
+      <description>1. 刻录 USB 下载ISO文件Downloads | Clear Linux* Project和刻录软件Win32 Disk Imager，在 Windows 下完成 U盘 刻录系统。&#xA;2. 安装 设置时区、语言、键盘&#xA;选择分区 Advanced Installation&#xA;EFI：第一步Enter；512 MB；CLR_BOOT；ef00 Swap：第一步Enter；8 GB；CLR_SWAP；8200 ROOT：第一步Enter；Enter；CLR_ROOT；8300 添加用户并设置密码。&#xA;安装即可。&#xA;参考 Install Clear Linux* OS from the live desktop — Documentation for Clear Linux* project Install Clear Linux OS from the live server — Documentation for Clear Linux* project </description>
+    </item>
+    <item>
+      <title>Clear Linux系统简介</title>
+      <link>https://www.xiaoledeng.com/2024/12/04/introduction-clear-linux/</link>
+      <pubDate>Wed, 04 Dec 2024 07:31:01 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/04/introduction-clear-linux/</guid>
+      <description>1. 简介 Clear Linux 是由英特尔开发的一款 Linux 发行版，主要针对英特尔架构进行了性能和安全优化，旨在为其硬件（尤其是处理器）优化性能，最大限度地发挥 Intel 硬件的潜能，同时展示优化的编译技术如何显著提高操作系统和应用的运行效率。&#xA;软件管理工具为：swupd，为 SoftWare UPDate 的缩写。&#xA;swupd bundle-add &amp;lt;bundle_name&amp;gt; swupd bundle-remove &amp;lt;bundle_name&amp;gt; 2. 历史 2015年，初次亮相，最初作为研究优化性能的内部项目 2016年，成为一个公共的开源 Linux 发行版 2019年5月，发布桌面版本 2020年，随着容器技术（如 Docker 和 Kubernetes）的兴起，被越来越多地部署在云和微服务环境 3. 版本 https://cdn.download.clearlinux.org/releases/&#xA;4. 延伸阅读 Home Clear Linux* Project | Clear Linux* Project Clear Linux OS - Wikipedia Get started — Documentation for Clear Linux* project swupd — Documentation for Clear Linux* project Available bundles — Documentation for Clear Linux* project </description>
+    </item>
+  </channel>
+</rss>

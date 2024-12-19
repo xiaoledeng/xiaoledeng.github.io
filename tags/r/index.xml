@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>R on Xiao-Le Deng (邓小乐)</title>
+    <link>https://www.xiaoledeng.com/tags/r/</link>
+    <description>Recent content in R on Xiao-Le Deng (邓小乐)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Wed, 26 Oct 2022 21:00:00 +0800</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macOS系统下R语言画图的中文显示</title>
+      <link>https://www.xiaoledeng.com/2022/10/26/macos-r-picture-chinese/</link>
+      <pubDate>Wed, 26 Oct 2022 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/10/26/macos-r-picture-chinese/</guid>
+      <description>1. 引言 在macOS系统下，R语言画图时，显示的中文是乱码。&#xA;2. 解决方案 先安装包：&#xA;install.packages(&amp;#34;showtext&amp;#34;) 显示中文字体：&#xA;library(showtext) showtext_auto(enable = TRUE) font_add(&amp;#39;Songti&amp;#39;, &amp;#39;Songti.ttc&amp;#39;) plot(picture, family=&amp;#39;Songti&amp;#39;) 小结：&#xA;利用showtext包显示； picture是要画的图片； Songti.ttc是字体文件，macOS系统打开默认字体路径为：open /System/Library/Fonts； Songti是字体的名称。 3. 参考 R 语言 为什么图中有中文会乱码？ - 知乎 Mac 电脑查看字体文件位置 | 温欣爸比的博客 </description>
+    </item>
+    <item>
+      <title>R语言sjPlot包的sjt.corr函数更新为tab_corr函数</title>
+      <link>https://www.xiaoledeng.com/2022/10/25/r-sjplot-sjt-corr-tab-corr/</link>
+      <pubDate>Tue, 25 Oct 2022 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/10/25/r-sjplot-sjt-corr-tab-corr/</guid>
+      <description>在R语言中，sjPlot包的sjt.corr函数出错，错误信息为：&#xA;Error in sjt.corr(...): could not find function &amp;#34;sjt.corr&amp;#34; 将sjt.corr变为tab_corr，即可解决问题。&#xA;参考 correlation - sjPlot is loaded but R complains that it could not find sjt.corr function - Stack Overflow sjPlot已加载，但R抱怨找不到sjt.corr函数 - 问答 - 腾讯云开发者社区-腾讯云 </description>
+    </item>
+    <item>
+      <title>R语言的export包</title>
+      <link>https://www.xiaoledeng.com/2019/08/07/r-export-package/</link>
+      <pubDate>Wed, 07 Aug 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/08/07/r-export-package/</guid>
+      <description>安装 install.packages(&amp;quot;export&amp;quot;) library(export) 导出为ppt，并在ppt中修改 graph2ppt(file=&amp;quot;name.pptx&amp;quot;, width=7, height=5) 其他文件格式 graph2doc导出到Word，还支持通过graph2office导出到LibreOffice。&#xA;graph2bitmap graph2doc graph2eps graph2jpg graph2office graph2pdf graph2png graph2ppt graph2svg graph2tif graph2vector 表格：&#xA;table2csv table2csv2 table2doc table2excel table2html table2office table2ppt table2spreadsheet table2tex </description>
+    </item>
+    <item>
+      <title>R语言没有%-%函数解决方案</title>
+      <link>https://www.xiaoledeng.com/2019/08/03/r-no-function-solution/</link>
+      <pubDate>Sat, 03 Aug 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/08/03/r-no-function-solution/</guid>
+      <description>具体错误： Error in gapminder %&amp;gt;% filter(country == &amp;ldquo;Malawi&amp;rdquo;) : 没有&amp;quot;%&amp;gt;%&amp;ldquo;这个函数 停止执行&#xA;解决方案： install.packages(&amp;quot;magrittr&amp;quot;) # package installations are only needed the first time you use it library(magrittr) # needs to be run every time you start R and want to use %&amp;gt;% 或者&#xA;install.packages(&amp;quot;dplyr&amp;quot;) # alternative installation of the %&amp;gt;% library(dplyr) # alternatively, this also loads %&amp;gt;% 参考 r - Error: could not find function &amp;ldquo;%&amp;gt;%&amp;rdquo; - Stack Overflow </description>
+    </item>
+  </channel>
+</rss>
