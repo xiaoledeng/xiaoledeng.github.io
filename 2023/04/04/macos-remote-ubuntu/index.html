@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS系统远程Ubuntu系统 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://www.xiaoledeng.com">Xiao-Le Deng (邓小乐)</a></h1>
+    
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS系统远程Ubuntu系统</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-04-04</span></div>
+  <div>
+    <span><a href="https://www.xiaoledeng.com/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://www.xiaoledeng.com/tags/unix/">#Unix</a></span>
+      <span><a href="https://www.xiaoledeng.com/tags/windows/">#Windows</a></span>
+      <span><a href="https://www.xiaoledeng.com/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-vncubuntu系统需要外接显示器">1. VNC（Ubuntu系统需要外接显示器）</h1>
+<p>VNC的全称为 <code>Virtual Network Computing</code>。</p>
+<p>第一步，Ubuntu系统先设置共享屏幕：<code>Settings</code>——<code>Sharing</code>——<code>Remote Desktop</code>，进行基本设置。注意⚠️：<code>Enable Legacy VNC Protocol</code>需要改为<code>Require a password</code>。</p>
+<p>第二步，在macOS系统上打开【聚焦搜索】，即：<code>cmd + 空格</code>，输入 <code>vnc://your_ip</code>，再输入密码即可。</p>
+<h1 id="2-命令行ssh访问">2. 命令行ssh访问</h1>
+<p>第一步，设置Ubuntu系统的ssh服务，见：<a href="/2020/11/13/inside-login-ubuntu/">局域网ssh远程访问Ubuntu系统</a>。</p>
+<p>第二步，在macOS系统上，直接在终端输入：<code>ssh username@ip_address</code>，命令行上传下载文件见：<a href="/2020/09/21/ubuntu-link-server/">Ubuntu连接服务器的账号登录和上传下载文件</a>。当然也可以用软件去进行管理，比如：<a href="/2021/05/27/royal-tsx/">Royal TSX：macOS系统的服务器管理软件</a>。</p>
+<p>注意⚠️：</p>
+<ul>
+<li>第二步，一般直接在局域网中直接可进行。</li>
+<li>第二步，如果需要在外网中操作，Ubuntu系统和macOS系统都需要安装并设置好ZeroTier（比如，<a href="/2020/11/13/ubuntu-zerotier/">Ubuntu配置ZeroTier</a>）。</li>
+<li>第二步，Ubuntu长期开机时，需要注意防黑，见：<a href="/2022/04/21/unhack-ubuntu-experiences/">Ubuntu防黑的经验总结</a>。</li>
+<li>第二步，推荐使用密钥文件登陆，而不是用户名和密码的方式，见：<a href="/2023/04/04/macos-ssh-miyao-ubuntu/">macOS系统ssh通过密钥文件连接Ubuntu系统</a></li>
+</ul>
+<h1 id="3-远程软件">3. 远程软件</h1>
+<p>远程软件，无论是内网或外网都实现macOS系统远程Ubuntu系统。</p>
+<p>常见的软件有：</p>
+<ul>
+<li>AnyDesk <a href="https://anydesk.com/zhs">https://anydesk.com/zhs</a></li>
+<li>TeamViewer <a href="https://www.teamviewer.cn/cn/">https://www.teamviewer.cn/cn/</a></li>
+<li>ToDesk <a href="https://www.todesk.com/">https://www.todesk.com/</a></li>
+</ul>
+<p>具体见：<a href="/2020/11/13/outside-login-ubuntu/">外网远程访问Ubuntu系统</a>和<a href="/2021/03/09/todesk/">远程访问工具——ToDesk</a>。</p>
+<h1 id="4-ubuntu系统不需要外接显示器">4. Ubuntu系统不需要外接显示器</h1>
+<p>具体Ubuntu的设置见：<a href="/2020/09/19/ubuntu-screen-remote-control/">Ubuntu虚拟显示器且远程控制（无显示器接入）</a>。</p>
+<p>利用<code>AnyDesk</code>和<code>ToDesk</code>软件，操作成功过。</p>
+<h1 id="5-末了的话">5. 末了的话</h1>
+<p>无论使用哪种方法，都需要确保Ubuntu系统中相应的服务已安装并启动，并且在macOS系统中使用正确的IP地址或主机名进行连接。</p>
+<p>最后，注意⚠️网络安全🔐，防止被黑。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2024 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+            links[i].setAttribute('target', '_blank');
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

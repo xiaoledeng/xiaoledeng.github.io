@@ -1,0 +1,944 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LaTeX on Xiao-Le Deng (邓小乐)</title>
+    <link>https://www.xiaoledeng.com/tags/latex/</link>
+    <description>Recent content in LaTeX on Xiao-Le Deng (邓小乐)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Thu, 05 Dec 2024 15:43:55 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Word中把LaTeX代码转换为MathType</title>
+      <link>https://www.xiaoledeng.com/2024/12/05/word-latex-to-mathtype/</link>
+      <pubDate>Thu, 05 Dec 2024 15:43:55 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/05/word-latex-to-mathtype/</guid>
+      <description>本网站Word中MathType与LaTeX的相互转换提到了：在MathType中直接复制黏贴LaTeX代码。&#xA;这一前提是要对MathType进行设置：&#xA;Preferences Workspace preferences allow TEX language entry from the keyboard 参考 math mode - Using TEX in Mathtype - TeX - LaTeX Stack Exchange </description>
+    </item>
+    <item>
+      <title>LaTeX附录公式和表格编号及正确跳转</title>
+      <link>https://www.xiaoledeng.com/2024/12/04/latex-equation-table-number-cite/</link>
+      <pubDate>Wed, 04 Dec 2024 11:01:20 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/04/latex-equation-table-number-cite/</guid>
+      <description>1. 问题 点击附录中的Table A1，结果跳转到正文的Table 1；需要正确跳转到Table A1 附录中的公式编号A1, B2, C3；需要附录中的公式编号为A1, B1, C1 2. 解决方案 % 确保加载超链接支持 \usepackage{hyperref} % 放在附录 \appendix 后 \renewcommand{\thetable}{\Alph{section}\arabic{table}} \renewcommand{\theequation}{\Alph{section}\arabic{equation}} % 放在附录的 \section \label 后 \setcounter{equation}{0} \setcounter{table}{0} % 在表格 \caption 和 \label之间，加入 \phantomsection 强制创建锚点 \phantomsection </description>
+    </item>
+    <item>
+      <title>VSCode中LaTeX英文语法工具LTeX</title>
+      <link>https://www.xiaoledeng.com/2024/11/29/vscode-latex-english-tool-ltex/</link>
+      <pubDate>Fri, 29 Nov 2024 10:20:09 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/11/29/vscode-latex-english-tool-ltex/</guid>
+      <description>LTEX 使用 LanguageTool（LT）在Visual Studio Code中提供各种标记语言的离线语法检查。&#xA;LTEX目前支持BibTEX、ConTEXt、LATEX、Markdown、Org、reStructuredText、R Sweave 和 XHTML 文档。&#xA;此外，LTEX可以检查许多流行编程语言中的注释（可选，选择加入）。&#xA;LTeX – LanguageTool grammar/spell checking - Visual Studio Marketplace&#xA;LTeX – Grammar/Spell Checker Using LanguageTool with Support for LaTeX, Markdown, and Others | LTeX</description>
+    </item>
+    <item>
+      <title>LaTeX加一页空白页</title>
+      <link>https://www.xiaoledeng.com/2024/11/23/latex-add-blankpage/</link>
+      <pubDate>Sat, 23 Nov 2024 13:53:49 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/11/23/latex-add-blankpage/</guid>
+      <description>\newcommand{\blankpage}{ \newpage \thispagestyle{empty} \mbox{} \newpage } \blankpage </description>
+    </item>
+    <item>
+      <title>LaTeX积分符号的不同形式limits和displaystyle</title>
+      <link>https://www.xiaoledeng.com/2024/11/07/latex-different-int/</link>
+      <pubDate>Thu, 07 Nov 2024 08:20:01 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/11/07/latex-different-int/</guid>
+      <description>\int_{a}^{b} \int\limits_{a}^{b} \displaystyle\int_{a}^{b} \displaystyle\int\limits_{a}^{b} 参考 LaTeX单积分、双积分和三积分的上下限位置 How do I make an integral symbol larger in in-line math mode? - TeX - LaTeX Stack Exchange </description>
+    </item>
+    <item>
+      <title>LaTeX横置页面并图片占左侧、右侧空白</title>
+      <link>https://www.xiaoledeng.com/2024/11/06/latex-landscape-left-picture-right-blank/</link>
+      <pubDate>Wed, 06 Nov 2024 11:32:57 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/11/06/latex-landscape-left-picture-right-blank/</guid>
+      <description>\documentclass{article} \usepackage{graphicx} \usepackage{geometry} \usepackage{lscape} % 用于横置页面 \geometry{a4paper, margin=1in} \pagenumbering{gobble} % 去掉页码 \begin{document} \begin{landscape} % 使整个页面横向 \begin{figure}[h!] \centering % 设置图片在左边部分的中间 \hspace*{-15cm} % 向左偏移以调整位置，可根据需要调整偏移距离 \begin{minipage}[t]{0.7\textwidth} % 插入图片 \includegraphics[width=\linewidth]{001.png} % 替换为你的图片文件名 \end{minipage} \end{figure} \end{landscape} \end{document} </description>
+    </item>
+    <item>
+      <title>LaTeX错误output loop 100 consecutive dead cycles</title>
+      <link>https://www.xiaoledeng.com/2024/11/01/output-loop-100/</link>
+      <pubDate>Fri, 01 Nov 2024 11:00:53 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/11/01/output-loop-100/</guid>
+      <description>一个简单的解决方案是在出现此错误时手动添加分页符。只需添加 \newpage，就能解决这个问题。&#xA;参考 compiling - todonotes: Output loop&amp;mdash;100 consecutive dead cycles after 50 \todo{} on a page - TeX - LaTeX Stack Exchange </description>
+    </item>
+    <item>
+      <title>LaTeX设置图例caption字体和行距</title>
+      <link>https://www.xiaoledeng.com/2024/10/17/latex-figure-caption-font/</link>
+      <pubDate>Thu, 17 Oct 2024 09:32:19 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/10/17/latex-figure-caption-font/</guid>
+      <description>\usepackage{caption} % 可选字体大小有 tiny, scriptsize, footnotesize, small, normalsize, large, Large, LARGE, huge, Huge \captionsetup{font=small} % 设置图注与图之间的垂直间距为10pt, 单位可以是 pt、mm 等 \captionsetup{skip=10pt} </description>
+    </item>
+    <item>
+      <title>LaTeX图片的代码模块</title>
+      <link>https://www.xiaoledeng.com/2024/10/16/latex-picture-code/</link>
+      <pubDate>Wed, 16 Oct 2024 16:22:31 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/10/16/latex-picture-code/</guid>
+      <description>\usepackage{graphicx} \begin{figure}[H] \centering \includegraphics[width=0.5\textwidth]{imagefile.png} \caption{图片说明} \label{fig:example} \end{figure} [H] 为位置修饰符，摆放图片浮动体：&#xA;h (here)：尽可能把图片放在当前位置。 t (top)：把图片放在页面的顶部。 b (bottom)：把图片放在页面的底部。 p (page)：专门放在浮动体页面。 H：强制把图片放在当前位置，必须配合 \usepackage{float} 包一起使用 \centering 为居中显示。其他命令来调整图片的对齐方式：&#xA;\raggedright：左对齐 \raggedleft：右对齐 \includegraphics 插入图片的命令。{imagefile.png}：是图片的文件名和路径。&#xA;width=0.5\textwidth：图片的宽度设置。0.5\textwidth 表示图片的宽度是页面正文宽度的50%。如果同时指定宽度和高度，图片会按比例拉伸；通常只指定一个，以保持图片的原始比例。&#xA;width=5cm：宽度为5厘米。 height=4cm：指定图片的高度。 scale=0.8：按80%的比例缩放图片。 \caption{图片说明} 为图片添加说明文字。手动换行: 使用 \\ 、 \newline、\par。 \caption [短标题] {长的图片说明}&#xA;\label{fig:example} 标签用于交叉引用。</description>
+    </item>
+    <item>
+      <title>LaTeX设置参考文献的排序方式</title>
+      <link>https://www.xiaoledeng.com/2024/10/15/latex-biblatex-sort/</link>
+      <pubDate>Tue, 15 Oct 2024 12:58:12 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/10/15/latex-biblatex-sort/</guid>
+      <description>\documentclass{article} \usepackage[sorting=ynt]{biblatex} % 按年份降序排序 \addbibresource{yourbibliography.bib} % 加载.bib 文件 % 定义自定义标题 \newcommand{\ebibname}{参考文献} \begin{document} 这是引用文献的示例 \cite{examplecitation}。 % 打印参考文献，加入目录，并自定义标题 \printbibliography[heading=bibintoc, title=\ebibname] \end{document} 在 biblatex 中，sorting 选项决定了参考文献列表的排序方式。sorting 选项的含义为：&#xA;n 表示按 作者姓名 (Name) 排序。 y 表示按 年份 (Year) 排序。 t 表示按 标题 (Title) 排序。 v 表示按 卷号 (Volume) 排序。 a 表示按 字母顺序 (Alphabetical) 排列。 d 表示按 降序 (Descending) 排列。 none 表示按 原始顺序 不进行任何排序。 count 表示按 引用顺序 排列文献。 debug 用于 调试 排序问题。 组合：&#xA;nty (Name, Title, Year) 先按作者姓名排序，然后是标题，最后按年份排序。这是默认的排序方式。 nyt (Name, Year, Title) 先按作者姓名，然后按年份，最后按标题排序。 nyvt (Name, Year, Volume, Title) 先按作者姓名，再按年份、卷号和标题排序。这种方式适用于有卷号的出版物（如期刊）。 anyt (Alphabetical, Name, Year, Title) 先按字母顺序排列，然后按作者姓名、年份和标题顺序。这种方式通常用于按字母顺序显示参考文献的情况。 anyvt (Alphabetical, Name, Year, Volume, Title) 先按字母顺序，然后按作者、年份、卷号和标题排列。 ynt (Year, Name, Title) 先按年份（从旧到新）排序，再按作者姓名和标题排序。 ydnt (Year (descending), Name (descending), Title) 先按年份（从新到旧）排序，再按作者姓名降序和标题排序。 none (No sorting) 不进行排序。文献会按它们在 .</description>
+    </item>
+    <item>
+      <title>LaTeX设置索引Index</title>
+      <link>https://www.xiaoledeng.com/2024/10/15/latex-sets-index/</link>
+      <pubDate>Tue, 15 Oct 2024 07:09:02 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/10/15/latex-sets-index/</guid>
+      <description>在导言区启用 makeidx 包，并声明 \makeindex： \usepackage{makeidx} \makeindex 在需要的地方添加关键词，通过 \index{} 指定关键词： 这是一些文本，包含一个关键词\index{关键词}。 在文档的末尾使用 \printindex 来生成索引： \printindex 运行 latex 编译后，需要通过 makeindex 命令生成索引文件（例如 document.idx），并在下一次编译时生成带有索引的文档。</description>
+    </item>
+    <item>
+      <title>Springer的LaTeX模版</title>
+      <link>https://www.xiaoledeng.com/2024/10/07/springer-latex-model/</link>
+      <pubDate>Mon, 07 Oct 2024 08:53:01 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/10/07/springer-latex-model/</guid>
+      <description>下载地址： LaTeX author support | Publish your research | Springer Nature&#xA;另外，Word 模版见： Word Template | Springer — International Publisher&#xA;更新历史：&#xA;2021.06 Version 1 2023.03 Version 2 2023.04 Version 2.1 2023.12 Version 3 </description>
+    </item>
+    <item>
+      <title>LaTeX中希腊字母小写psi的形式不一</title>
+      <link>https://www.xiaoledeng.com/2024/10/02/latex-different-psi/</link>
+      <pubDate>Wed, 02 Oct 2024 11:55:12 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/10/02/latex-different-psi/</guid>
+      <description>LaTeX中，小写 $\psi$ 有两种形式，一种是italic，一种是upright：&#xA;# 默认 italic : an italic lowercase psi in Computer Modern \usepackage{txgreeks} # 改成 upright : an upright lowercase psi in a Times clone, as obtained with txfonts. \usepackage[upgreek]{txgreeks} 注意⚠️：&#xA;\usepackage{mathptmx} 如果文档里，使用了mathptmx包，则会变为第二种upright。&#xA;延伸阅读 math mode - \psi gives different results? - TeX - LaTeX Stack Exchange </description>
+    </item>
+    <item>
+      <title>macOS安装TeX Live 2024卸载TeX Live 2022</title>
+      <link>https://www.xiaoledeng.com/2024/10/02/macos-install-texlive2024-uninstall-texlive2022/</link>
+      <pubDate>Wed, 02 Oct 2024 10:58:12 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/10/02/macos-install-texlive2024-uninstall-texlive2022/</guid>
+      <description>1. 安装TeX Live 2024 查看现有TeX Live版本：&#xA;tlmgr --version tlmgr revision 62273 (2022-02-28 09:52:17 +0100) tlmgr using installation: /usr/local/texlive/2022 TeX Live (https://tug.org/texlive) version 2022 下载并安装 MacTeX.pkg： https://tug.org/mactex/mactex-download.html&#xA;tlmgr --version tlmgr revision 70080 (2024-02-23 00:13:07 +0100) tlmgr using installation: /usr/local/texlive/2024 TeX Live (https://tug.org/texlive) version 2024 将 TeX Live 2024 的路径添加到系统路径~/.zshrc中：&#xA;export PATH=&amp;#34;/usr/local/texlive/2024/bin/universal-darwin:$PATH&amp;#34; source ~/.zshrc 2. 删除旧版本 TeX Live 2022 使用 ls 列出已安装的 TeX Live 版本目录：&#xA;ls /usr/local/texlive 删除 TeX Live 2022 目录：</description>
+    </item>
+    <item>
+      <title>LaTeX解决Error: Unicode character (U&#43;200B)</title>
+      <link>https://www.xiaoledeng.com/2024/09/26/latex-solve-error-u200b/</link>
+      <pubDate>Thu, 26 Sep 2024 09:48:05 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/09/26/latex-solve-error-u200b/</guid>
+      <description>此错误表示，出现了异常字符（&amp;lt;0x200b&amp;gt;），需要查找并删掉即可。&#xA;​ \ub200b 参考 latex编译出现“U+200B”错误_latex出现unicode character (u+200b) latex-CSDN博客 </description>
+    </item>
+    <item>
+      <title>LaTeX的Landau符号</title>
+      <link>https://www.xiaoledeng.com/2024/06/27/landau-symbol/</link>
+      <pubDate>Thu, 27 Jun 2024 08:57:18 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/06/27/landau-symbol/</guid>
+      <description>\mathcal{O} 延伸阅读 amsmath - Big O notation - visual difference related to document configurations - TeX - LaTeX Stack Exchange Landau Symbols &amp;ndash; from Wolfram MathWorld </description>
+    </item>
+    <item>
+      <title>macOS的PowerPoint插入LaTeX公式</title>
+      <link>https://www.xiaoledeng.com/2024/03/22/macos-powerpoint-insert-latex-formula/</link>
+      <pubDate>Fri, 22 Mar 2024 15:26:59 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/03/22/macos-powerpoint-insert-latex-formula/</guid>
+      <description>macOS 的 Word 里，可直接插入 LaTeX 公式：&#xA;「Insert」—「Equation」—「LaTeX」—「Current Professional」 而后，把 Word 里的公式，拷贝到 PowerPoint 里即可。</description>
+    </item>
+    <item>
+      <title>LaTeX中文段落缩进</title>
+      <link>https://www.xiaoledeng.com/2024/03/11/latex-chinese-paragraph/</link>
+      <pubDate>Mon, 11 Mar 2024 16:04:37 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/03/11/latex-chinese-paragraph/</guid>
+      <description>\hspace{2em} </description>
+    </item>
+    <item>
+      <title>LaTeX表格字体大小</title>
+      <link>https://www.xiaoledeng.com/2024/02/12/latex-table-font-size/</link>
+      <pubDate>Mon, 12 Feb 2024 11:43:26 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/02/12/latex-table-font-size/</guid>
+      <description>之前，写过 LaTeX设置字体大小。这次是表格的字体大小。&#xA;\begin{table} \footnotesize \begin{tabular}{p{3.5cm}p{8cm}p{5cm}} text &amp;amp; text &amp;amp; text \end{tabular} \end{table} 注意：\footnotesize 即为字体大小，还有更小的：&#xA;\tiny \scriptsize \footnotesize </description>
+    </item>
+    <item>
+      <title>Editorial Manager系统给LaTeX投稿的建议清单</title>
+      <link>https://www.xiaoledeng.com/2024/01/16/editorial-manager-latex-tips-lists/</link>
+      <pubDate>Tue, 16 Jan 2024 15:35:29 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/16/editorial-manager-latex-tips-lists/</guid>
+      <description>1. 前言 6年前，写过 LaTeX文稿投稿到Editorial-Manager系统 。&#xA;这次，写的是： Editorial Manager 系统给 LaTeX 投稿的建议清单。&#xA;2. 建议清单 所有文件必须位于同一文件夹级别； 不要使用子文件夹 All files must be on the same folder level; do not use sub folders)&#xA;主稿 TeX 文件必须是第一项 The main manuscript TeX file must be the first item&#xA;在下拉框中将主稿 TeX 文件定义为“Manuscript” Define the main TeX file as ‘Manuscript’ in the drop down box&#xA;上传任何图像文件（例如 EPS、PNG、TiFF 等）作为图形 Upload any image files (e.g. EPS, PNG, TiFF, etc.) as figures</description>
+    </item>
+    <item>
+      <title>LaTeX设置行间距</title>
+      <link>https://www.xiaoledeng.com/2024/01/11/latex-line-space/</link>
+      <pubDate>Thu, 11 Jan 2024 16:15:54 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/11/latex-line-space/</guid>
+      <description>\usepackage{setspace} \setlength{\baselineskip}{20pt} 说明：pt - points (大约 1/72 inch)，是 Word 中的 磅 。&#xA;2. 字体大小对照 Word Ps(px) 磅(pt) 初号 42 p 44.9 pt 小初 36 p 38.5 pt 一号 26 p 27.8 pt 小一 24 p 25.7 pt 二号 22 p 23.5 pt 小二 18 p 19.3 pt 三号 16 p 17.1 pt 小三 15 p 16.0 pt 四号 14 p 15.0 pt 小四 12 p 12.8 pt 五号 10.5 p 11.</description>
+    </item>
+    <item>
+      <title>Computers &amp; Geosciences的LaTeX模版</title>
+      <link>https://www.xiaoledeng.com/2024/01/11/cg-latex-template/</link>
+      <pubDate>Thu, 11 Jan 2024 11:25:18 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/11/cg-latex-template/</guid>
+      <description>以 Computers &amp;amp; Geosciences LaTeX template 为关键词搜索，就能搜到官网给出的 LaTeX 模版：&#xA;Guide for authors - Computers &amp;amp; Geosciences - ISSN 0098-3004 | ScienceDirect.com by Elsevier cageo/CAGEO_LaTeXTemplate: This repository is a LaTeX project of a document that follows all the submission requirements for Computers &amp;amp; Geosciences. 每个期刊的 LaTeX 模版还是以官网的模版为准。</description>
+    </item>
+    <item>
+      <title>LaTeX列表嵌套</title>
+      <link>https://www.xiaoledeng.com/2024/01/03/latex-list-nesting/</link>
+      <pubDate>Wed, 03 Jan 2024 17:10:51 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/03/latex-list-nesting/</guid>
+      <description>\begin{itemize} \item 湖北 \begin{itemize} \item 武汉 \begin{itemize} \item 武汉大学 \item 华中科技大学 \end{itemize} \item 鄂州 \end{itemize} \item 安徽 \end{itemize} 参考 嵌套项目列表 ← LaTeX_latex 嵌套list-CSDN博客 </description>
+    </item>
+    <item>
+      <title>解决LaTeX公式前后空白太多</title>
+      <link>https://www.xiaoledeng.com/2023/12/21/solve-latex-equation-too-many-blank/</link>
+      <pubDate>Thu, 21 Dec 2023 10:03:39 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/21/solve-latex-equation-too-many-blank/</guid>
+      <description>在 TeX 文档前面加入以下命令设置 1：&#xA;\expandafter\def\expandafter\normalsize\expandafter{% \normalsize% \setlength\abovedisplayskip{0pt}% \setlength\belowdisplayskip{8pt}% \setlength\abovedisplayshortskip{-8pt}% \setlength\belowdisplayshortskip{2pt}% } 主要是：设置公式环境的前后间距。&#xA;延伸阅读 Reducting spacing above and below equations : r/LaTeX latex 公式与前后文本之间的间距过大，怎么调整？ - 知乎 关于数学公式前后空行问题 · Issue #57 · note286/xdupgthesis </description>
+    </item>
+    <item>
+      <title>Keyboard Maestro识别LaTeX公式</title>
+      <link>https://www.xiaoledeng.com/2023/12/13/keyboard-maestro-read-late-formula/</link>
+      <pubDate>Wed, 13 Dec 2023 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/13/keyboard-maestro-read-late-formula/</guid>
+      <description>1. 前言 本页内容基于 macOS使用pix2tex代替Mathpix识别LaTeX公式 ，用 Keyboard Maestro 实现自动化功能：&#xA;点击右上角 Keyboard Maestro 图标，选择 Capture &amp;amp; LaTeX 截图公式后，自动识别公式为 LaTeX 代码到剪贴板 可以粘贴到 LaTeX 文档中 2. 步骤 新建一个 Macros，命名为 Capture &amp;amp; LaTeX&#xA;点击「New Trigger - Status Menu Trigger」&#xA;添加Shell脚本：点击「New Action」，进入 Categories 的「Execute」，选中「Execute Shell Script」，鼠标🖱️双击添加，加入以下命令行，并设置为 Ignore results：&#xA;screencapture -i /Users/name/image.png /Users/name/anaconda3/bin/python /Users/name/LaTeXOCR.py | pbcopy rm /Users/name/image.png 通知📢显示：关闭「Actions」，再次点击「New Action」，进入 Categories 的「Notifications」，选中「Display Text」，鼠标🖱️双击添加，填入内容： %SystemClipboard%，设置为 Display text briefly&#xA;关闭「Actions」，完成✅操作&#xA;注意⚠️⚠️⚠️：&#xA;查看 Python 的执行目录： where python，结果为：/Users/name/anaconda3/bin/python 图片的路径是具体的全路径： /Users/name/image.png ，name改为自己的用户名 LaTeXOCR.</description>
+    </item>
+    <item>
+      <title>macOS使用pix2tex代替Mathpix识别LaTeX公式</title>
+      <link>https://www.xiaoledeng.com/2023/12/13/pic2tex-replace-mathpix-recognize-latex-code/</link>
+      <pubDate>Wed, 13 Dec 2023 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/13/pic2tex-replace-mathpix-recognize-latex-code/</guid>
+      <description>1. 前言 Mathpix 1 是一款年订阅制的收费软件，用于转换图片中公式成 LaTeX 代码。&#xA;LaTeX-OCR 或 pix2tex 2 是 Python 开源的工具，也可以转换图片中公式成 LaTeX 代码。&#xA;2. 安装步骤 Python 版本需要 Python 3.7+，终端输入： pip install &amp;#34;pix2tex[gui]&amp;#34; 将以下 Python 代码保存为 LaTeXOCR.py： from PIL import Image from pix2tex.cli import LatexOCR img = Image.open(&amp;#39;image.png&amp;#39;) model = LatexOCR() print(model(img)) 截图公式，保持为和LaTeXOCR.py同路径下的 image.png 文件&#xA;运行 python LaTeXOCR.py，&#xA;/Users/name/anaconda3/lib/python3.9/site-packages/scipy/__init__.py:155: UserWarning: A NumPy version &amp;gt;=1.18.5 and &amp;lt;1.25.0 is required for this version of SciPy (detected version 1.26.2 warnings.warn(f&amp;#34;A NumPy version &amp;gt;={np_minversion} and &amp;lt;{np_maxversion}&amp;#34; download weights v0.</description>
+    </item>
+    <item>
+      <title>LaTeX批量移除{\color{blue}...}</title>
+      <link>https://www.xiaoledeng.com/2023/10/30/latex-remove-color/</link>
+      <pubDate>Mon, 30 Oct 2023 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/10/30/latex-remove-color/</guid>
+      <description>1. 步骤 核心：使用正则表达式进行全文替换。&#xA;用 Sublime 打开tex文件&#xA;使用 Find — Replace，&#xA;情况1（一般情况）：不含有内嵌括号&#xA;{\s*\\color\s*{blue}\s*([^{}]*)} 替换为&#xA;$1 情况2：最大3层内嵌括号&#xA;{\s*\\color\s*{blue}\s*([^{}]*({[^{}]*({[^{}]*({[^{}]*}[^{}]*)*}[^{}]*)*}[^{}]*)*)} 替换为&#xA;$1 情况3：最大5层内嵌括号&#xA;{\s*\\color\s*{purple}\s*([^{}]*({[^{}]*({[^{}]*({[^{}]*({[^{}]*({[^{}]*}[^{}]*)*}[^{}]*)*}[^{}]*)*}[^{}]*)*}[^{}]*)*)} 替换为&#xA;$1 情况4：最大10层内嵌括号&#xA;{\s*\\color\s*{purple}\s*([^{}]*({[^{}]*({[^{}]*({[^{}]*({[^{}]*({[^{}]*({[^{}]*({[^{}]*({[^{}]*({[^{}]*({[^{}]*}[^{}]*)*}[^{}]*)*}[^{}]*)*}[^{}]*)*}[^{}]*)*}[^{}]*)*}[^{}]*)*}[^{}]*)*}[^{}]*)*}[^{}]*)*)} 替换为&#xA;$1 参考 正则表达式：批量移除修改版论文颜色标记 - 知乎 </description>
+    </item>
+    <item>
+      <title>LaTeX表格注释</title>
+      <link>https://www.xiaoledeng.com/2023/10/25/latex-table-note/</link>
+      <pubDate>Wed, 25 Oct 2023 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/10/25/latex-table-note/</guid>
+      <description>\usepackage{threeparttable} \begin{table}[!htbp] \centering \caption{...} \begin{threeparttable} \begin{tabular}{l l l} \hline A &amp;amp; B &amp;amp; C \\ \hline a &amp;amp; b &amp;amp; c \tnote{*} \\ \hline \end{tabular} \label{tab_name} \begin{tablenotes} \footnotesize \item[*] This is the note. \end{tablenotes} \end{threeparttable} \end{table} 说明：&#xA;文档最前面的包\usepackage{threeparttable}需要引用。 \begin{threeparttable} 和 \end{threeparttable} 是需要的。 \tnote{*}是上标的星号。 \begin{tablenotes} \footnotesize \item[*] This is the note. \end{tablenotes} 中的 This is the note. 是注释的内容。 </description>
+    </item>
+    <item>
+      <title>LaTeX手动给公式编号</title>
+      <link>https://www.xiaoledeng.com/2023/10/12/latex-formula-number/</link>
+      <pubDate>Thu, 12 Oct 2023 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/10/12/latex-formula-number/</guid>
+      <description>\usepackage{amsmath} \tag{编号} 参考 Latex 公式指定编号_latex给公式自定义编号-CSDN博客 Label equation with a symbol - TeX - LaTeX Stack Exchange </description>
+    </item>
+    <item>
+      <title>LaTeX公式环境下内置函数的加粗</title>
+      <link>https://www.xiaoledeng.com/2023/09/20/latex-formula-bold/</link>
+      <pubDate>Wed, 20 Sep 2023 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/09/20/latex-formula-bold/</guid>
+      <description>1. 说明 LaTeX内置的三角函数（如，sin、cos）等，需要在公式中加粗时，可以使用组合方案：&#xA;\boldsymbol{\mathrm{\bf{sin}} \theta_S} 2. bf \usepackage{tempora} \bf{...} 3. boldsymbol \usepackage{amsmath} \boldsymbol{...} 4. bm \usepackage{amsmath} \usepackage{bm} \bm{...} 参考 LaTeX加粗操作 LaTex 加粗（加黑）的方式 - 未雨愁眸 - 博客园 LaTeX加粗的坑，\bm、\boldmath、\boldsymbol、\mathbf不加粗，乱码，报错_latex \bm_云发的博客-CSDN博客 LaTeX中数学 公式 希腊字母符号 加粗的方法 - 简书 </description>
+    </item>
+    <item>
+      <title>著名出版社书稿的LaTeX模版</title>
+      <link>https://www.xiaoledeng.com/2023/07/30/book-latex-model/</link>
+      <pubDate>Sun, 30 Jul 2023 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/07/30/book-latex-model/</guid>
+      <description> MIT Press https://mitpress.mit.edu/latex-and-tex-guidelines/&#xA;Cambridge University Press https://www.cam.ac.uk/brand-resources/templates&#xA;Springer https://www.springernature.com/gp/authors/campaigns/latex-author-support&#xA;Wiley https://authorservices.wiley.com/author-resources/book-authors/prepare-your-manuscript/wiley-latex-template.html&#xA;参考 世界知名出版社书稿模板合集 - 走到世界前列 </description>
+    </item>
+    <item>
+      <title>在Markdown里使用LaTeX公式</title>
+      <link>https://www.xiaoledeng.com/2023/07/09/use-latex-in-markdown/</link>
+      <pubDate>Sun, 09 Jul 2023 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/07/09/use-latex-in-markdown/</guid>
+      <description>行内公式 Inline equation:&#xA;\\( LaTex代码 \\) \\[ your equation \\] 行间公式 Display style equation:&#xA;$$ LaTex代码 $$ 参考 How to use LaTeX in Markdown - Fabrizio Musacchio Math support in Markdown - The GitHub Blog </description>
+    </item>
+    <item>
+      <title>LaTeX单积分int、双积分iint和三积分iiint的上下限位置</title>
+      <link>https://www.xiaoledeng.com/2023/05/01/latex-int-iint-iiint-limits/</link>
+      <pubDate>Mon, 01 May 2023 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/05/01/latex-int-iint-iiint-limits/</guid>
+      <description>1. 单积分（Integral） 正常单积分（Integral）：&#xA;\int_{}^{} 上下限位置在单积分的上下：&#xA;\int\limits_{}^{} 2. 双积分（double integral） 正常双积分（double integral）：&#xA;\iint_{}^{} 上下限位置在双积分的上下：&#xA;\iint\limits_{}^{} 3. 三积分（Triple integral） 正常三积分（Triple integral）：&#xA;\iiint_{}^{} 上下限位置在三积分的上下：&#xA;\iiint\limits_{}^{} 4. 参考 math operators - \int with \limits or without? - TeX - LaTeX Stack Exchange Integrals, sums and limits - Overleaf, Online LaTeX Editor </description>
+    </item>
+    <item>
+      <title>Markdown图片调整大小</title>
+      <link>https://www.xiaoledeng.com/2023/04/13/markdown-picture-width/</link>
+      <pubDate>Thu, 13 Apr 2023 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/04/13/markdown-picture-width/</guid>
+      <description>1. 前言 Markdown中，需要对图片的大小进行调整。&#xA;2. 命令 ![图像描述](./img.jpg){width=50%} 说明：width=50% 即图片缩放比例的百分比。&#xA;3. 参考 markdown中插入图片怎么定义图片的大小或比例？ - 知乎 </description>
+    </item>
+    <item>
+      <title>Markdown文件转PDF文件的换页代码</title>
+      <link>https://www.xiaoledeng.com/2023/04/10/markdown-pdf-newpage/</link>
+      <pubDate>Mon, 10 Apr 2023 20:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/04/10/markdown-pdf-newpage/</guid>
+      <description>1. 说明 在Markdown文件转换成PDF文件时，需要换页操作。&#xA;2. 代码 当使用Pandoc进行Markdown文件转换成PDF文件时，直接在markdown文件中，加入以下LaTeX代码：&#xA;\newpage 当使用通用转换时，使用以下代码：&#xA;&amp;lt;div STYLE=&amp;#34;page-break-after: always;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 3. 参考 Pandoc转换技巧之从markdown到PDF - 驭风万里无垠 Markdown转pdf分页_markdown 换页代码_付康为的博客-CSDN博客 </description>
+    </item>
+    <item>
+      <title>MacOS系统 Markdown 文件转成带目录和页码的中文 PDF 文件</title>
+      <link>https://www.xiaoledeng.com/2023/03/27/macos-markdown-pdf/</link>
+      <pubDate>Mon, 27 Mar 2023 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/03/27/macos-markdown-pdf/</guid>
+      <description>1. 安装Pandoc brew install pandoc 见： https://pandoc.org/installing.html&#xA;2. 安装 MacTex 见： https://www.tug.org/mactex/&#xA;3. 选用macOS系统的中文字体 打开 字体册（Font Book）应用程序，在“字体册”中可以查看已安装的中文字体，比如，宋体 为 Songti SC；楷体 为 Kaiti SC。&#xA;4. 转换命令 pandoc file.md -o file.pdf --toc --number-sections --pdf-engine=xelatex -V CJKmainfont=&amp;#34;Songti SC&amp;#34; 说明：&#xA;file.md：输入 Markdown 文件 -o file.pdf：输出 pdf 文件 &amp;ndash;toc：有目录 &amp;ndash;number-sections：带页码 &amp;ndash;pdf-engine=xelatex：latex的编译器为xelatex -V CJKmainfont=&amp;ldquo;Songti SC&amp;rdquo;：选用的中文字体 5. 延伸阅读 纯文本做笔记 &amp;mdash; 使用 Pandoc 把 Markdown 转为 PDF 文件 - jdhao&amp;rsquo;s digital space </description>
+    </item>
+    <item>
+      <title>LaTeX公式的子编号</title>
+      <link>https://www.xiaoledeng.com/2023/03/20/latex-subnumbering/</link>
+      <pubDate>Mon, 20 Mar 2023 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/03/20/latex-subnumbering/</guid>
+      <description>\begin{subequations} \begin{equation} \label{1a} 公式1a内容 \end{equation} \begin{equation} \label{1b} 公式1a内容 \end{equation} \end{subequations} 参考 Subequations </description>
+    </item>
+    <item>
+      <title>LaTeX在页面底部添加注解 \footnote{}</title>
+      <link>https://www.xiaoledeng.com/2023/03/09/latex-footnote/</link>
+      <pubDate>Thu, 09 Mar 2023 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/03/09/latex-footnote/</guid>
+      <description>在页面底部添加注解的内容，直接用以下命令即可。&#xA;\footnote{content} 参考 latex在每页的底部添加注解\footnote_音程的博客-CSDN博客 </description>
+    </item>
+    <item>
+      <title>LaTeX表格或图片太多总是跑到最后一页的解决方案</title>
+      <link>https://www.xiaoledeng.com/2023/03/08/solution-latex-tables-pictures-always-run-to-last-page/</link>
+      <pubDate>Wed, 08 Mar 2023 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/03/08/solution-latex-tables-pictures-always-run-to-last-page/</guid>
+      <description>1. 说明 在LaTeX文档中，表格或图片太多，总是跑到参考文献的后面，即跑到最后一页。&#xA;2. 解决方案 在文档最前面添加以下包：&#xA;\usepackage[section]{placeins} 作用：禁止图片或者表格浮动超过\section的范围&#xA;3. 参考 latex 表格到了参考文献后面_cheerup_he的博客-CSDN博客 </description>
+    </item>
+    <item>
+      <title>Word中MathType与LaTeX的相互转换</title>
+      <link>https://www.xiaoledeng.com/2023/02/04/word-mathtype-latex/</link>
+      <pubDate>Sat, 04 Feb 2023 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/02/04/word-mathtype-latex/</guid>
+      <description>关于MathType的介绍：&#xA;MathType是一款专业的数学公式编辑器，兼容Office Word, Excel等700多种程序，用于编辑数学试卷、书籍、报刊、论文、幻灯演示等文档轻松输入各种复杂的数学公式和符号。&#xA;LaTeX代码转换MathType公式，见：MathType软件在TeX/LaTeX中的使用特色-MathType中文网，核心步骤：直接在MathType编辑器中，复制黏贴LaTeX代码。&#xA;MathType公式转换LaTeX代码，见：如何实现MathType公式转换LaTeX代码-MathType中文网，三个方法：&#xA;使用剪切和复制预置在txt文件中显示LaTeX代码 使用MathType转换公式（Convert Equations） 使用发布切换（Toggle MathType/TeX）自动转换 参考 MathType软件在TeX/LaTeX中的使用特色-MathType中文网 如何实现MathType公式转换LaTeX代码-MathType中文网 </description>
+    </item>
+    <item>
+      <title>Texpad改名为Texifier</title>
+      <link>https://www.xiaoledeng.com/2022/09/19/springer-2021-latex-abs/</link>
+      <pubDate>Mon, 19 Sep 2022 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/09/19/springer-2021-latex-abs/</guid>
+      <description>2022年8月18日，Texpad改名为Texifier，具体说明见：Texifier · · Renaming of Texpad to Texifier。&#xA;改名原因：&#xA;Why change the name?&#xA;This is in response to a brand conflict that was highlighted with a similarly named plain text editor app. As we expand to Windows in near future, this conflict was even more important to resolve as the other app is a Windows app.&#xA;现在官网地址：Texifier · Smoothest way to write LaTeX。&#xA;之前购买的macOS系统的Texpad账号，可以继续使用。&#xA;Texpad的最后版本号：macOS v1.9.9 (680)&#xA;Texifier的当前版本号：macOS v1.9.12 (700)</description>
+    </item>
+    <item>
+      <title>macOS系统Sublime配置LaTeX编译环境</title>
+      <link>https://www.xiaoledeng.com/2022/09/14/macos-sublime-latex/</link>
+      <pubDate>Wed, 14 Sep 2022 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/09/14/macos-sublime-latex/</guid>
+      <description>1. 安装LaTeXTools 按键 command + shift + p，调出 Package Control install package，再输入：LaTeXTools，完成安装。&#xA;2. 安装Skim PDF阅读器 在Skim | Home下载dmg，完成安装。&#xA;3. 配置Skim 打开Skim——Perferences——Sync——PDF-TeX Sync support 的 Preset 设置为 Sumblime Text。&#xA;同时，勾选 Check for file changes和Reload automatically。&#xA;4. 参考 macOS配置Sublime Text的Latex插件_zhangyuejf的博客-CSDN博客 macOS + Sublime Text + Latex 环境配置 - 简书 </description>
+    </item>
+    <item>
+      <title>LaTeX设置超链接的字体颜色</title>
+      <link>https://www.xiaoledeng.com/2022/08/16/latex-color-link/</link>
+      <pubDate>Tue, 16 Aug 2022 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/08/16/latex-color-link/</guid>
+      <description>\usepackage{color} \usepackage{hyperref} \hypersetup{ colorlinks=true, linkcolor=black, filecolor=black, urlcolor=black, citecolor=black, } 注意： 全部为黑色black，其他颜色将black修改即可。&#xA;参考 Latex如何设置超链接的字体颜色？如何更改颜色？_OpenSani的博客-CSDN博客_latex超链接颜色 </description>
+    </item>
+    <item>
+      <title>Springer 2021 LaTeX模版的绝对值问题</title>
+      <link>https://www.xiaoledeng.com/2022/07/13/springer-2021-latex-abs/</link>
+      <pubDate>Wed, 13 Jul 2022 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/07/13/springer-2021-latex-abs/</guid>
+      <description>1. 引言 Springer出版社在2021年更新了其投稿的LaTeX模版： Springer LaTeX templates | Springer。&#xA;2. 问题和解决 其中，Tex文件里，遇到绝对值|会报错，故不能用| |表示绝对值，而是要用\vert表示绝对值。&#xA;故，全文替换|为\vert，即可解决绝对值问题。&#xA;3. 参考 Springer LaTeX模板绝对值符号报错_CSDN博客 Springer latex期刊模板使用的坑_lijieling123的博客-CSDN博客_springer的latex模板怎么用 </description>
+    </item>
+    <item>
+      <title>LaTeX表格内容换行</title>
+      <link>https://www.xiaoledeng.com/2022/06/17/latex-table-new-line/</link>
+      <pubDate>Fri, 17 Jun 2022 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/06/17/latex-table-new-line/</guid>
+      <description>1. 方法一：模块法 \begin{tabular}[c]{@{}l@{}} a \\ b \\ \end{tabular} 注意：以上内容是表格内文字的一个模块。&#xA;2. 方法二：makecell包 LaTeX：表格内换行与各种居中完美解决 - 简书：&#xA;宏包：\usepackage{makecell} 环境：tabular 命令：\makecell[居中情况]{第1行内容 \\ 第2行内容 \\ 第3行内容 ...} 参数说明： [c]是水平居中，[l]水平左居中，[r]水平右居中； *[c]水平 + 垂直居中，*[l]垂直居中 + 水平左居中，*[r]垂直居中 + 水平右居中。 方法三：TeX模块命令 类似于方法一：&#xA;\vtop{\hbox{content a}\hbox{content b}} 方法四： \begin{table}[!htbp] \centering \caption{} \begin{tabular}{p{85pt}p{40pt}p{160pt}} \hline Name &amp;amp; Name &amp;amp; Name \\ \hline a &amp;amp; b &amp;amp; c \\ \hline \end{tabular} \label{tab_a} \end{table} 通过 p{85pt}p{40pt}p{160pt} 来自动换行。&#xA;参考 Latex表格内容自动换行_小白皮皮成长记的博客-CSDN博客_latex表格自动换行 LaTeX：表格内换行与各种居中完美解决 - 简书 How to add a forced line break inside a table cell - TeX - LaTeX Stack Exchange LaTeX之表格中强制换行_latex表格内强制换行-CSDN博客 历史 2022.</description>
+    </item>
+    <item>
+      <title>LaTeX去掉段落首行缩进</title>
+      <link>https://www.xiaoledeng.com/2022/05/20/latex-noindent/</link>
+      <pubDate>Fri, 20 May 2022 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/05/20/latex-noindent/</guid>
+      <description>1. 具体操作 全局操作：&#xA;\setlength{\parindent}{0pt} 局部操作：&#xA;\noindent 2. 参考 LaTeX 取消段落的首行缩进 - 简书 Latex去掉默认的段首空格_Xiaoli_Coding的博客-CSDN博客_latex取消首行缩进 LaTeX 关于缩进的设置取消默认的段落前的首行缩进_ROOOOOOM的博客-CSDN博客_latex取消首行缩进 </description>
+    </item>
+    <item>
+      <title>Windows下TeXstudio编译PDF目录乱码的解决方案</title>
+      <link>https://www.xiaoledeng.com/2022/05/16/windows-texstudio-ctex-pdf-bookmark/</link>
+      <pubDate>Mon, 16 May 2022 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/05/16/windows-texstudio-ctex-pdf-bookmark/</guid>
+      <description>1. 说明 在Windows系统下，安装CTeX和TeXstudio，编译出来的PDF文件中文目录有乱码。&#xA;在网上查了下解决方案，总结而言，解决问题的关键是gbk2uni.exe工具。&#xA;2. 解决步骤 第一步，拷贝gbk2uni.exe工具到TeX目录下。&#xA;gbk2uni.exe工具已默认包含在CTeX里，具体路径为：&#xA;C:\CTEX\CTeX\cct\bin\gbk2uni.exe 第二步，在TeXstudio下面，点击工具—打开终端。&#xA;第三步，在终端里，输入：&#xA;gbk2uni.exe Manuscript.out 第四步，再次重新正常编译Tex，就能解决问题。&#xA;3. 参考 Latex之CJK中文书签乱码_为伊憔悴的博客-CSDN博客_latex书签乱码 latex—中文目录乱码_erdaidai的博客-CSDN博客_latex目录乱码 latex生成pdf标签乱码解决方案_aaon22357的博客-CSDN博客_latex上传后生成pdf乱码 CeTx解决pdf书签乱码问题_pang9998的博客-CSDN博客_pdftexify和pdflatex </description>
+    </item>
+    <item>
+      <title>利用LaTeX自动生成Chicago author-date参考文献格式</title>
+      <link>https://www.xiaoledeng.com/2022/05/06/latex-chicago-author-date/</link>
+      <pubDate>Fri, 06 May 2022 18:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/05/06/latex-chicago-author-date/</guid>
+      <description>1. 简介 在 Taylor &amp;amp; Francis Online: Peer-reviewed Journals的期刊采用Chicago author-date参考文献的格式，比如： Geo-spatial Information Science。&#xA;其中，参考格式的具体内容，可以下载此文件，见： https://files.taylorandfrancis.com/tf_ChicagoAD.pdf&#xA;2. LaTeX实现Chicago author-date参考文献格式 首先，需要interact.cls文件，下载地址为：interact.cls&#xA;\documentclass[]{interact} 其次，使用biblatex-chicago包（此包的详细说明文档见： https://www.ctan.org/pkg/biblatex-chicago）：&#xA;\usepackage[authordate,backend=biber,doi=true,isbn=false]{biblatex-chicago} \bibliography{reference} 这里，reference是对应reference.bib参考文献的bib文件名。其中，文献的作者名，建议用缩写。&#xA;然后，去掉参考文献中重复人名用横线的设置：&#xA;\makeatletter \AtEveryBibitem{\global\undef\bbx@lasthash} \makeatother 而后，一般参考文献引用的命令\cite{}改为\textcite{}和\citep{}改为\autocite{}：&#xA;\textcite{} \autocite{} 最后，在文章中显示参考文献的具体内容：&#xA;\printbibliography 3. 参考 Remove dash for repeated author in biblatex-chicago - TeX - LaTeX Stack Exchange How to cite author and date, but only date in brackets with biblatex? - TeX - LaTeX Stack Exchange </description>
+    </item>
+    <item>
+      <title>LaTeX错误解决：Option clash for package hyperref</title>
+      <link>https://www.xiaoledeng.com/2022/04/26/latex-option-clash-package-hyperref/</link>
+      <pubDate>Tue, 26 Apr 2022 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/04/26/latex-option-clash-package-hyperref/</guid>
+      <description>1. 说明 错误原因：引用的hyperref包产生冲突。&#xA;解决方案：注释掉hyperref包。&#xA;2. 参考 【已解决】LaTeX 报错： Option clash for package hyperref_宇内虹游的博客-CSDN博客 ! LaTeX Error: Option clash for package hyperref._大奸猫的博客-CSDN博客 LaTeX error: Option clash for package hyperref - TeX - LaTeX Stack Exchange </description>
+    </item>
+    <item>
+      <title>博士后出站报告LaTeX模版的编译环境配置</title>
+      <link>https://www.xiaoledeng.com/2022/04/22/postdoc-latex-setting/</link>
+      <pubDate>Fri, 22 Apr 2022 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/04/22/postdoc-latex-setting/</guid>
+      <description>最新消息：最近博士后工作报告宏包:CTEX的v0.1g 2022/05/14版本—PostDocRep-1g.zip，可以直接利用XeTeX（包括在macOS系统）编译成功，不再需要下面具体步骤的设置（仅对PostDocRep-1e版本）。&#xA;1. 编译环境配置的具体步骤 在Windows系统下，下载并安装CTEX，见：下载中心:CTEX； 下载并安装TeXstudio软件，见：TeXstudio - A LaTeX editor，注意：Windows 7/8/10 (32 bit)的版本是Release 2.12.22 · texstudio-org/texstudio 在博士后工作报告宏包:CTEX下载PostDocRep-1e.zip文件，解压； 利用TeXstudio打开template文件夹中的template.tex文件，设置 GBK 编码，步骤依次为：Options—Configure TeXstudio—Editor—Default Font Encoding—GBK，不然就是乱码，并且出现Package CJK Error: Invalid character code的问题。 在Options—Configure TeXstudio—Build设置Default compiler，编译用PdfLaTeX—BibTeX—PdfLaTeX—PdfLaTeX的顺序。 template.tex文件有以下修改：&#xA;\documentclass[dvipdfm]{PostDocRep} 改为 \documentclass[notypeinfo,pdftex]{PostDocRep} PostDocRep.cls文件有以下修改：&#xA;\RequirePackage[dvipdfm]{hyperref} 改为 \RequirePackage{hyperref} \CTEXunderline 改为 \underline，不然下划线是蓝色的 PS：在macOS系统下面，没有测试成功，会出现的问题有：&#xA;中文字符乱码； Package hyperref Error: Wrong DVI mode driver option `dvipdfm&amp;rsquo;, [\ProcessKeyvalOptions{Hyp}] LaTeX Error: File `dvipdfm.def&amp;rsquo; not found. [&amp;hellip;d{ver@\Gin@driver}{\input{\Gin@driver}}{}] 测试后，在Windows系统上编译成功。&#xA;2. 参考 博后出站报告模板的bug和解决方法_zhoulm_新浪博客 Package CJK Error: Invalid character code.</description>
+    </item>
+    <item>
+      <title>Ubuntu安装Texlive2022</title>
+      <link>https://www.xiaoledeng.com/2022/04/06/ubuntu-install-texlive2022/</link>
+      <pubDate>Wed, 06 Apr 2022 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/04/06/ubuntu-install-texlive2022/</guid>
+      <description>1. 下载ISO镜像 可以在中科大网站下载：&#xA;http://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/&#xA;2. 安装步骤 挂载ISO：&#xA;sudo mount -o loop texlive2022.iso /mnt cd /mnt sudo ./install-tl 选择I进行安装。&#xA;安装完毕后，显示：&#xA;Welcome to TeX Live! See /usr/local/texlive/2022/index.html for links to documentation. The TeX Live web site (https://tug.org/texlive/) contains any updates and corrections. TeX Live is a joint project of the TeX user groups around the world; please consider supporting it by joining the group best for you. The list of groups is available on the web at https://tug.</description>
+    </item>
+    <item>
+      <title>vscode的LaTeX手动编译设置</title>
+      <link>https://www.xiaoledeng.com/2022/02/23/vscode-set-latex/</link>
+      <pubDate>Wed, 23 Feb 2022 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/02/23/vscode-set-latex/</guid>
+      <description>1. 编译设置 在vscode的LaTeX Workshp插件的设置里，将Auto Build: Run改为never，即从自动编译改为手动编译。&#xA;这样，电脑的风扇就安静了。&#xA;2. 参考 VS Code 中的LaTeX自动保存问题 - 博客园 </description>
+    </item>
+    <item>
+      <title>LaTeX表格三段线加粗</title>
+      <link>https://www.xiaoledeng.com/2022/02/22/latex-table-polyline-bold/</link>
+      <pubDate>Tue, 22 Feb 2022 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/02/22/latex-table-polyline-bold/</guid>
+      <description>1. 命令 \usepackage{booktabs} \begin{table}[!htbp] \centering \caption{...} \begin{tabular}{l l l} \toprule[1pt] a &amp;amp; b &amp;amp; c \\ \midrule[1pt] a &amp;amp; b &amp;amp; c \\ \hline a &amp;amp; b &amp;amp; c \\ \hline a &amp;amp; b &amp;amp; c \\ \bottomrule[1pt] \end{tabular} \label{table_a} \end{table} 2. 参考 latex表格线的加粗及合并两行_蒋国宝的IT技术博客-CSDN博客_latex表格线加粗 </description>
+    </item>
+    <item>
+      <title>LaTeX定制章节编号格式和计数器</title>
+      <link>https://www.xiaoledeng.com/2022/01/27/latex-sets-format-number/</link>
+      <pubDate>Thu, 27 Jan 2022 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/01/27/latex-sets-format-number/</guid>
+      <description>1. format of section or subsection \renewcommand\thesection{\Roman{section}} \renewcommand\thesubsection{\Roman{section}.\Alph{subsection}} \arabic 阿拉伯数字 \roman 小写的罗马数字 \Roman 大写的罗马数字 \alph 小写字母 \Alph 大写字母 2. depth of the number \setcounter{secnumdepth}{3} book: -2 ~ 5; default: 2; -2 means canceling the number article: -1 ~ 5; default: 3 3. counter \setcounter{table}{3} part 部序号 chapter 章序号 section 节 subsection 小节 subsubsection 小小节 paragraph 段 subparagraph 小段 figure 插图序号 table 表格序号 equation 公式序号 page 页码计数器 footnote 脚注序号 mpfootnote 小页环境中脚注计数器 4.</description>
+    </item>
+    <item>
+      <title>LaTeX的itemize默认小横线改实心圆点</title>
+      <link>https://www.xiaoledeng.com/2022/01/10/latex-itemize-bullet/</link>
+      <pubDate>Mon, 10 Jan 2022 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/01/10/latex-itemize-bullet/</guid>
+      <description>1. Step Add the [$\bullet$]:&#xA;\begin{itemize} \item[$\bullet$] text \end{itemize} 2. Reference LaTeX中实心圆点列表的一点经验_qysh123的专栏-CSDN博客_latex 实心圆点 LaTeX技巧645：如何让itemize的点小一点？_LaTeX_Fun_新浪博客 </description>
+    </item>
+    <item>
+      <title>vscode自动代码补全工具TabNine、GitHub Copilot</title>
+      <link>https://www.xiaoledeng.com/2021/12/15/vscode-auto-code/</link>
+      <pubDate>Wed, 15 Dec 2021 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/12/15/vscode-auto-code/</guid>
+      <description>1. TabNine 网址： Code Faster with AI Code Completions | Tabnine&#xA;在拓展里直接搜索TabNine，安装即可。&#xA;2. GitHub Copilot GitHub Copilot在 VS Code 编辑器中自动完成代码片段。&#xA;3. 参考 让你编码嗨到停不下来的8个VSCode插件 又一 VSCode 神器面世，AI 代码合成器！ </description>
+    </item>
+    <item>
+      <title>LaTeX设置目录显示层数</title>
+      <link>https://www.xiaoledeng.com/2021/12/15/latex-content-depth/</link>
+      <pubDate>Wed, 15 Dec 2021 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/12/15/latex-content-depth/</guid>
+      <description>1. 命令 \setcounter{tocdepth}{3} 说明：&#xA;chapter：第1层 section：第2层 subsection：第3层 subsubsection：第4层 2. 参考 LaTeX技巧222：LaTex如何调整目录的显示层数_LaTeX_Fun_新浪博客 </description>
+    </item>
+    <item>
+      <title>vscode编译LaTeX后清理过程文件</title>
+      <link>https://www.xiaoledeng.com/2021/12/10/vscode-latex-autoclean/</link>
+      <pubDate>Fri, 10 Dec 2021 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/12/10/vscode-latex-autoclean/</guid>
+      <description>1. 一步解决 在设置里面搜索：latex-workshop.latex.autoClean.run，选择以下之一：&#xA;never ：禁用自动清理功能 onFailed ：编译失败后清理项目。 onBuilt ：在完成一次编译后清理项目，无论编译是否成功。 2. rm删掉 写一个sh文件，直接用rm删掉：&#xA;rm *.aux *.blg *.fdb_latexmk *.fls *.log *.out *.bbl文件是参考文献的引用格式，建议保留。 *.synctex.gz文件建议保留，作用是正反向搜索的同步用。在pdf里面的部分，ctrl+鼠标左键点击文本，tex里面会自动跳到对应位置。 参考 vscode 配置 Latex 编译后自动清理多余文件(.log .out等文件)_呆萌的代Ma-CSDN博客 </description>
+    </item>
+    <item>
+      <title>Ubuntu配置LaTeX环境</title>
+      <link>https://www.xiaoledeng.com/2021/12/08/ubuntu-install-latex/</link>
+      <pubDate>Wed, 08 Dec 2021 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/12/08/ubuntu-install-latex/</guid>
+      <description>1. 安装Tex Live和Texmaker sudo apt-get install texlive-full sudo apt-get install texmaker 注意：软件源可以改为国内中科大的源，这样下载速度会很快，Tex Live大约有2.98G。&#xA;部分过程如下：&#xA;0 upgraded, 346 newly installed, 0 to remove and 16 not upgraded. Need to get 3,059 MB of archives. After this operation, 5,873 MB of additional disk space will be used. ... Fetched 3,059 MB in 1min 42s (30.0 MB/s) 2. 安装vscode 打开Ubuntu Software，搜索code，点击安装。&#xA;打开vscode，安装插件LaTex Workshop，之后就可以在vscode里面编译latex文件了。</description>
+    </item>
+    <item>
+      <title>LaTeX的mathrm的数学正体</title>
+      <link>https://www.xiaoledeng.com/2021/09/09/latex-mathrm/</link>
+      <pubDate>Thu, 09 Sep 2021 11:20:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/09/09/latex-mathrm/</guid>
+      <description>\mathrm{...} 将公式内的字母由数学斜体变为正体（罗马体）。&#xA;延伸阅读 在数学环境中，\LaTeX 命令是否应该包在 \mathrm 中？ - 知乎 LaTeX（TeX）中\mathrm{}的作用含义 – 柳婼 blog $\LaTeX$ 公式输入基础教程（一） - kuing&amp;rsquo;s Blog </description>
+    </item>
+    <item>
+      <title>LaTeX大括号的多行公式</title>
+      <link>https://www.xiaoledeng.com/2021/07/02/latex-big-brackets-for-formulae/</link>
+      <pubDate>Fri, 02 Jul 2021 17:20:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/07/02/latex-big-brackets-for-formulae/</guid>
+      <description>1. 方法一 aligned \begin{equation} \label{eq_a} x= \left\{ \begin{aligned} a &amp;amp;, &amp;amp; &amp;amp; x=0 \\ b &amp;amp;, &amp;amp; &amp;amp; x=1 \\ c &amp;amp;, &amp;amp; &amp;amp; x=2 \end{aligned} \right. \end{equation} 2. 方法二 array \begin{equation} \label{eq_b} x= \left\{ \begin{array}{c c} a &amp;amp;, &amp;amp; &amp;amp; x=0 \\ b &amp;amp;, &amp;amp; &amp;amp; x=1 \\ c &amp;amp;, &amp;amp; &amp;amp; x=2 \end{array} \right. \end{equation} 3. 参考 LaTex中插入大括号的多行公式 - 云+社区 - 腾讯云 </description>
+    </item>
+    <item>
+      <title>LaTeX多行文字对齐</title>
+      <link>https://www.xiaoledeng.com/2021/06/23/latex-left-right-center/</link>
+      <pubDate>Wed, 23 Jun 2021 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/06/23/latex-left-right-center/</guid>
+      <description>\begin{center} 居中文字 \\ 居中文字 \end{center} \begin{flushleft} 左对齐文字 \\ 左对齐文字 \end{flushleft} \begin{flushright} 右对齐文字 \\ 右对齐文字 \end{flushright} 参考 LaTeX技巧66：页面设置&amp;amp;常见段落格式的设定_LaTeX_Fun_新浪博客 </description>
+    </item>
+    <item>
+      <title>随笔—写文章用LaTeX</title>
+      <link>https://www.xiaoledeng.com/2021/06/22/essay-write-with-latex/</link>
+      <pubDate>Tue, 22 Jun 2021 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/06/22/essay-write-with-latex/</guid>
+      <description>最近，看到师弟在写文章，用的是Word，其中跟Grammarly搭配，适合检查英语语法的对错。&#xA;不过，个人认为：进行英文学术写作，LaTeX比Word效率高。&#xA;自从在2016年用Word修改论文时，全篇公式变成图片之后，下定决心用LaTeX写和修改论文。至此，从2017年1月开始就用LaTeX写英文论文。&#xA;一般而言，国外的学术期刊都会有固定的LaTeX投稿模版，比如，Nature、Springer、Elsevier和Wiley等平台。这样做的目的，是让作者把精力放在论文的质量上，而不是过多把时间和精力放在论文的排版上，毕竟后期的接收文章后有专门的杂志团队来排版。&#xA;LaTeX有一些优点，其中，重要的是文章的格式已固定，填充关键的内容即可。再者，还有固定的模块代码——图片、公式和表格等。&#xA;投稿的时候，只需要提交tex源码、相关配置文件和图片等即可。在投稿系统上，从tex源码生成的PDF文件仔细检查后，即可提交。</description>
+    </item>
+    <item>
+      <title>Ubuntu安装overleaf的sharelatex</title>
+      <link>https://www.xiaoledeng.com/2021/06/03/ubuntu-install-overleaf-sharelatex/</link>
+      <pubDate>Thu, 03 Jun 2021 17:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/06/03/ubuntu-install-overleaf-sharelatex/</guid>
+      <description>1. 安装docker 打开 /etc/apt/sources.list.d/docker.list：&#xA;sudo vi /etc/apt/sources.list.d/docker.list 添加下面内容：&#xA;deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable 更新并安装：&#xA;sudo apt-get update sudo apt-get install docker-ce 查看是否安装成功：&#xA;docker --version Docker version 20.10.7, build f0df350&#xA;2. 安装 docker-Compose 进入 https://github.com/docker/compose/releases 查看最新版本，当前版本为1.29.2&#xA;sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose 设置权限:&#xA;sudo chmod +x /usr/local/bin/docker-compose 查看是否安装成功:&#xA;docker-compose --version docker-compose version 1.29.2, build 5becea4c&#xA;3. 安装Overleaf的开源版本sharelatex docker权限问题，添加docker用户组：&#xA;#添加docker用户组 sudo groupadd docker #将登陆用户加入到docker用户组中 sudo gpasswd -a $USER docker #更新用户组 newgrp docker 通过docker安装Overleaf的开源版本sharelatex：</description>
+    </item>
+    <item>
+      <title>bibmap：LaTeX中文参考文献拼音排序</title>
+      <link>https://www.xiaoledeng.com/2021/05/26/latex-bibmap/</link>
+      <pubDate>Wed, 26 May 2021 12:40:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/05/26/latex-bibmap/</guid>
+      <description>1. 说明 中文参考文献，作者的拼音是常用的排序依据。需要自动的添加拼音信息。&#xA;2. bibmap 下载地址： https://github.com/hushidong/biblatex-map&#xA;用法：&#xA;在 https://github.com/hushidong/biblatex-map 下载bibmap程序。下载整个binary目录即可。 把需要添加拼音的bib文件放到这个binary目录下面，然后在命令行，运行命令： python bibmap.py biblatex-map-test.bib --nofmt --addpinyin python bibmap.py biblatex-map-test.bib --nofmt -m bibmapaddpinyinkey.py 得到新的bib文件为newbiblatex-map-test.bib。其命名规则是：如果原文件c.bib，则修改后的文件名为newc.bib。 3. 多音字出错的处理 有时默认的拼音可能存在问题，那么这时可以手动调整，在 bibmapaddpinyinkey.py 添加需要修改的多音字的拼音，比如：&#xA;#设置多音字的首读音 multiplepinyin={ &amp;#39;曾&amp;#39;:&amp;#39;zeng1&amp;#39;, &amp;#39;沈&amp;#39;:&amp;#39;shen3&amp;#39;, &amp;#39;翟&amp;#39;:&amp;#39;zhai2&amp;#39; } 4. 参考 为中文参考文献自动添加排序用的拼音信息域 </description>
+    </item>
+    <item>
+      <title>LaTeX绘图之TikZ入门资料清单</title>
+      <link>https://www.xiaoledeng.com/2021/04/16/latex-tikz/</link>
+      <pubDate>Fri, 16 Apr 2021 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/04/16/latex-tikz/</guid>
+      <description>1. 简要清单 awesome-tikz：xiaohanyu/awesome-tikz: A curated list of awesome TikZ documentations, libraries and resources 英文文档：tikzpgfmanual.pdf 命令大全：VisualTikZ.pdf Version 0.66 May 31, 2018 社区问答：Newest &amp;rsquo;tikz-pgf&amp;rsquo; Questions - TeX - LaTeX Stack Exchange 各种样例: TikZ and PGF examples A very minimal introduction to TikZ：minimaltikz.pdf 2. Awesome TikZ This part is from xiaohanyu/awesome-tikz: A curated list of awesome TikZ documentations, libraries and resources.&#xA;TikZ is a wonderful awesome graph drawing package for TeX/LaTeX/ConTeXt. Unlike other TeX packages, TikZ itself is really huge, its manual contains about 1100+ pages, 100+ chapters.</description>
+    </item>
+    <item>
+      <title>LaTeX常用网站清单</title>
+      <link>https://www.xiaoledeng.com/2021/03/30/latex-website-list/</link>
+      <pubDate>Tue, 30 Mar 2021 07:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/03/30/latex-website-list/</guid>
+      <description>1. 大学课程 华东师范大学的 LaTeX 课程主页 黄正华的教学信息页面 2. 常用网址 TeX Users Group (TUG) TeX 宏包大本营 ctan.org TikZ 绘图样例合集 TeXample.net TeX - LaTeX Stack Exchange LaTeX工作室 Overleaf, Online LaTeX Editor 3. 常用工具 Mathpix Snip LaTeX Templates LaTeX Color Definitions The Comprehensive LaTeX Symbol List 数学符号表.pdf The Comprehensive LaTeX Symbol List Mathematical Symbols.pdf 4. 博客分享 LaTeX 分类: LaTeX | 始终 归档 | stone-zeng.github.io ElegantLaTeX Templates :: Documentation for ElegantLaTeX Templates 5. 参考 常逛这些站点，LaTeX 功力自然精进 6.</description>
+    </item>
+    <item>
+      <title>LaTeX设置参考文献之间的间距</title>
+      <link>https://www.xiaoledeng.com/2021/03/03/latex-set-references-space/</link>
+      <pubDate>Wed, 03 Mar 2021 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/03/03/latex-set-references-space/</guid>
+      <description>1. 问题描述 如何缩小参考文献之间的间距？&#xA;2. 解决问题 如果参考文献格式是natbib格式，直接用\bibsep (\setlength{\bibsep}{18pt}设置： \usepackage{natbib} \setlength{\bibsep}{18pt} 注意：调节18pt的数值，即可调节间距，数值越大间距越大，数值越小，间距越小。&#xA;如果参考文献格式不是natbib格式，可用etoolbox包设置： \usepackage{etoolbox} \apptocmd{\thebibliography}{\setlength{\itemsep}{18pt}}{}{} 注意：调节方法与前面类似。&#xA;3. 参考 spacing - How to increase space between bibliography without using biblatex - TeX - LaTeX Stack Exchange spacing - Condense the space between bibliographic entries - TeX - LaTeX Stack Exchange </description>
+    </item>
+    <item>
+      <title>LaTeX设置标题和正文第一行的间距</title>
+      <link>https://www.xiaoledeng.com/2021/03/02/latex-title-first-content-space/</link>
+      <pubDate>Tue, 02 Mar 2021 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/03/02/latex-title-first-content-space/</guid>
+      <description>1. 问题描述 如何缩小标题和正文第一行的间距？&#xA;2. 解决问题 \title{content \vspace{-2em}} \vspace{-2em} 是实现以上功能的命令：&#xA;负数表示缩小间距； 正数表示扩大间距。 3. 参考 latex中如何缩小标题（title）和正文第一行的间距-CSDN博客 spacing - Reducing the space between the \title and the first line of the the abstract in IEEEtran - TeX - LaTeX Stack Exchange </description>
+    </item>
+    <item>
+      <title>LaTeX设置加粗楷体</title>
+      <link>https://www.xiaoledeng.com/2021/02/20/latex-bold-kaiti/</link>
+      <pubDate>Sat, 20 Feb 2021 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/02/20/latex-bold-kaiti/</guid>
+      <description>1. 问题描述 在LaTeX使用楷体加粗，会出现字体变成了黑体加粗。&#xA;2. 解决问题 粗体命令用 \bfseries{} 或 \textbf{}，不用 \bf{}。&#xA;\documentclass[AutoFakeBold]{ctexbook} \begin{document} {\kaishu 楷书} {\bfseries\kaishu 伪粗体楷书} \end{document} AutoFakeBold 是全局打开伪粗体功能。&#xA;3. 参考 xelatex编译加粗楷体为什么会失败？ - 知乎 </description>
+    </item>
+    <item>
+      <title>LaTeX设置页眉页脚</title>
+      <link>https://www.xiaoledeng.com/2021/02/06/latex-pagestyle/</link>
+      <pubDate>Sat, 06 Feb 2021 19:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/02/06/latex-pagestyle/</guid>
+      <description>1. 关键命令 pagestyle：当前页以及后续页面 \pagestyle{empty} % 无页眉页脚 \pagestyle{plain} % 无页眉，页脚为居中页码 \pagestyle{headings} % 页眉为章节标题，无页脚 \pagestyle{myheadings} % 页眉内容可自定义，无页脚 thispagestyle：当前页 2. 延伸阅读 latex如何把目录页的页码去掉？ - aou - 博客园 latex 页眉页脚设置 - 简书 574. LaTeX技巧83：fancyhdr页眉页脚设计史上最全代码 - LaTeX科技排版工作室 </description>
+    </item>
+    <item>
+      <title>LaTeX手动给Table和Figure编号</title>
+      <link>https://www.xiaoledeng.com/2020/11/21/latex-manual-number-table-figure/</link>
+      <pubDate>Sat, 21 Nov 2020 12:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/21/latex-manual-number-table-figure/</guid>
+      <description>一般而言，LaTeX会自动给Table和Figure编号，但是偶尔要手动给Table和Figure编号时，可用下面的命令：&#xA;\begin{table} \renewcommand\thetable{4.5} ... \end{table} \begin{figure} \renewcommand\thefigure{4.5} ... \end{figure} \renewcommand\thetable{4.5}命令就是手动给Table编号。 \renewcommand\thefigure{4.5}命令就是手动给Figure编号。 参考 manual numbering of tables </description>
+    </item>
+    <item>
+      <title>LaTeX表格太长自动分页</title>
+      <link>https://www.xiaoledeng.com/2020/11/21/latex-long-table-auto-page/</link>
+      <pubDate>Sat, 21 Nov 2020 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/21/latex-long-table-auto-page/</guid>
+      <description>1. supertabular \usepackage{supertabular} {\scriptsize \begin{center} \topcaption{...} \label{name} \begin{supertabular}{l l r r r r} \hline{} Parameters &amp;amp; Numbers &amp;amp; Min &amp;amp; Max &amp;amp; Mean &amp;amp; STD \\ \hline &amp;amp; 04 &amp;amp; -123 &amp;amp; 20 &amp;amp; 3 &amp;amp; 1 \\ \hline \end{supertabular} \end{center} } 2. longtable { \footnotesize% set font size for longtable \begin{longtable}{c} \caption{This is a sample table.}\\ \hline \textbf{First entry} \\ \hline \endfirsthead \multicolumn{1}{c}% {\bfseries\small \tablename\ \thetable\ {continued from previous page}}\\ \hline \textbf{First entry} \\ \hline \endhead \hline \multicolumn{1}{r}{\textit{Continued on next page}}\\ \endfoot \hline \endlastfoot 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ 1 \\ \end{longtable} } 注意：</description>
+    </item>
+    <item>
+      <title>LaTeX图表位置操作</title>
+      <link>https://www.xiaoledeng.com/2020/11/20/latex-location-figure-table/</link>
+      <pubDate>Fri, 20 Nov 2020 16:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/20/latex-location-figure-table/</guid>
+      <description>1. 代码及说明 固定表格的位置：&#xA;\usepackage{float} \restylefloat{table} \begin{table} ... \end{table} 固定图片的位置：&#xA;\usepackage{float} \restylefloat{figure} \begin{figure} ... \end{figure} 其他：&#xA;\usepackage{placeins} \FloatBarrier \begin{table}[H] \begin{tabular}{llll} .... \end{tabular} \end{table} \FloatBarrier \begin{table}[!htbp] !-忽略“美学”标准 h-here t-top b-bottom p-page-of-its-own h Place the float here, i.e., approximately at the same point it occurs in the source text (however, not exactly at the spot) t Position at the top of the page. b Position at the bottom of the page. p Put on a special page for floats only.</description>
+    </item>
+    <item>
+      <title>handcalcs:  Python 计算代码转换为LaTeX公式</title>
+      <link>https://www.xiaoledeng.com/2020/11/18/handcalcs/</link>
+      <pubDate>Wed, 18 Nov 2020 12:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/18/handcalcs/</guid>
+      <description>1. 简介 handcalcs is a library to render Python calculation code automatically in LaTeX, but in a manner that mimics how one might format their calculation if it were written with a pencil: write the symbolic formula, followed by numeric substitutions, and then the result.&#xA;Because handcalcs shows the numeric substitution, the calculations become significantly easier to check and verify by hand.&#xA;Github: https://github.com/connorferster/handcalcs&#xA;Install:&#xA;pip install handcalcs 2. 参考 Python代码转Latex公式，这个开源库用一行代码帮你搞定 </description>
+    </item>
+    <item>
+      <title>LaTeX加粗操作</title>
+      <link>https://www.xiaoledeng.com/2020/11/17/latex-bf/</link>
+      <pubDate>Tue, 17 Nov 2020 10:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/17/latex-bf/</guid>
+      <description>\usepackage{tempora} {\bf ???} \textbf{} \usepackage{bm} \bm{} </description>
+    </item>
+    <item>
+      <title>LaTeX表格长公式换行</title>
+      <link>https://www.xiaoledeng.com/2020/11/10/latex-table-long-formula/</link>
+      <pubDate>Tue, 10 Nov 2020 09:10:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/10/latex-table-long-formula/</guid>
+      <description>在LaTeX的表格环境中，如果有长公式需要换行，需要以下命令：&#xA;$\begin{array}{l} ... \\ ... \end{array}$ 说明：&#xA;\\表示要换行的部分； ...和...分别为前半公式和后半公式。 </description>
+    </item>
+    <item>
+      <title>scihub2pdf: Python download pdf tool</title>
+      <link>https://www.xiaoledeng.com/2020/11/08/scihub2pdf/</link>
+      <pubDate>Sun, 08 Nov 2020 16:10:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/08/scihub2pdf/</guid>
+      <description>1. 简介 scihub2pdf is a module of bibcure, which downloads pdfs via a DOI number, article title or a bibtex file, using the database of libgen, Sci-Hub and Arxiv.&#xA;Github: https://github.com/bibcure/scihub2pdf&#xA;pip install scihub2pdf Mac:&#xA;brew tap homebrew/cask brew cask install phantomjs Ubuntu:&#xA;sudo apt-get install phantomjs sudo apt-get install nodejs sudo apt-get install npm sudo npm -g install phantomjs-prebuilt sudo npm -g install phantomjs-prebuilt@2.1.16 --ignore-script 注意：&#xA;由于scihub2pdf默认用的sci-hub的地址为： https://sci-hub.cc&#xA;需要在 /Users/name/anaconda3/lib/python3.</description>
+    </item>
+    <item>
+      <title>bibcure: Python bib tool</title>
+      <link>https://www.xiaoledeng.com/2020/11/08/bibcure/</link>
+      <pubDate>Sun, 08 Nov 2020 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/08/bibcure/</guid>
+      <description>1. 简介 Bibcure helps in boring tasks by keeping your bibtex file up to date and normalized.&#xA;Install:&#xA;pip install bibcure Github: https://github.com/bibcure/bibcure&#xA;2. 说明 bibcure -h usage: bibcure [-h] --input INPUT --output OUTPUT Bibcure helps in boring tasks by keeping your bibfile up to date and normalized. $ bibcure -i input.bib -o output.bib Given a bib file... . check sure the Arxiv items have been published, then update them(requires internet connection) .</description>
+    </item>
+    <item>
+      <title>doi2bib: Python doi to bib tool</title>
+      <link>https://www.xiaoledeng.com/2020/11/08/doi2bib/</link>
+      <pubDate>Sun, 08 Nov 2020 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/08/doi2bib/</guid>
+      <description>1. 简介 doi2bib is a module of bibcure and scihub2pdf from https://pypi.org/project/doi2bib/&#xA;GitHub: https://github.com/bibcure/doi2bib&#xA;pip install doi2bib 2. 说明 doi2bib -i inputfile -o outputfile --abstract doi2bib -h usage: doi2bib [-h] [--input INPUT] [--output OUTPUT] [--abstract] Convert a list of DOIs in a bibfile. You also can convert a simple DOI, like: $ doi2bib 10.1063/1.3149495 ----------------------------------------------------- @author: Bruno Messias @email: messias.physics@gmail.com @telegram: @brunomessias @github: https://github.com/bibcure/doi2bib optional arguments: -h, --help show this help message and exit --input INPUT, -i INPUT input file --output OUTPUT, -o OUTPUT bibtex output file --abstract try to import the abstract info </description>
+    </item>
+    <item>
+      <title>LaTeX表格横置</title>
+      <link>https://www.xiaoledeng.com/2020/11/05/latex-horizontal-table/</link>
+      <pubDate>Thu, 05 Nov 2020 08:40:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/05/latex-horizontal-table/</guid>
+      <description>1. 说明 长表格超出页面的右边界，而不显示，需将长表格旋转90度横放。&#xA;2. 解决方案 在导言区添加rotating宏包：\usepackage[figuresright]{rotating} 将table环境改为sidewaystable环境：&#xA;\begin{table}[thp] \caption{This is the caption} \centering \begin{tabular}{|c|c|c|c|} \hline ....... \end{tabular} \end{table} \begin{sidewaystable}[thp] \caption{This is the caption} \centering \begin{tabular}{|c|c|c|c|} \hline ....... \end{tabular} \end{sidewaystable} 3. 参考 Latex如何将长表格Table横置(旋转90度) Haifeng的博客-CSDN博客 </description>
+    </item>
+    <item>
+      <title>Nature期刊的LaTeX模版</title>
+      <link>https://www.xiaoledeng.com/2020/11/03/nature-latex-templates/</link>
+      <pubDate>Tue, 03 Nov 2020 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/03/nature-latex-templates/</guid>
+      <description>1. 下载Nature的LaTeX模版 在CTAN: /tex-archive/macros/latex/contrib/nature下载模版，基本信息如下：&#xA;Nature package Version: 1.0, 24 Feb. 2004 by Peter Czoschke 2. 添加图片模块 默认Nature模版是不加入图片模块的，可通过templates - Nature include graphics - TeX - LaTeX Stack Exchange给出的解决方案：&#xA;\documentclass{nature} \usepackage{graphicx} \makeatletter \let\saved@includegraphics\includegraphics \AtBeginDocument{\let\includegraphics\saved@includegraphics} \renewenvironment*{figure}{\@float{figure}}{\end@float} \makeatother \begin{document} \begin{figure}[!htbp] \centering \includegraphics[width=4.0in]{name.pdf} \caption{Descriptions of the picture} \label{label of the picture} \end{figure} \end{document} </description>
+    </item>
+    <item>
+      <title>Python实现从doi号到bib文件</title>
+      <link>https://www.xiaoledeng.com/2020/11/02/doi2bib/</link>
+      <pubDate>Mon, 02 Nov 2020 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/02/doi2bib/</guid>
+      <description>1. 简介 在LaTeX的文献管理技能中，有个技能是：知道了doi号，如何得到bib文件。&#xA;2. 在线网站 ZoteroBib: https://zbib.org/ doi2bib: https://doi2bib.org/ 3. Python代码实现 来自DOI to BibTeX的Python3代码doi2bib.py：&#xA;import sys import urllib.request from urllib.error import HTTPError BASE_URL = &amp;#39;http://dx.doi.org/&amp;#39; try: doi = sys.argv[1] except IndexError: print(&amp;#39;Usage:\n{} &amp;lt;doi&amp;gt;&amp;#39;.format(sys.argv[0])) sys.exit(1) url = BASE_URL + doi req = urllib.request.Request(url) req.add_header(&amp;#39;Accept&amp;#39;, &amp;#39;application/x-bibtex&amp;#39;) try: with urllib.request.urlopen(req) as f: bibtex = f.read().decode() print(bibtex) except HTTPError as e: if e.code == 404: print(&amp;#39;DOI not found.&amp;#39;) else: print(&amp;#39;Service unavailable.&amp;#39;) sys.exit(1) 示例：&#xA;$ python doi2bib.</description>
+    </item>
+    <item>
+      <title>LaTeX三剑客（图、表、公式）的通用模块</title>
+      <link>https://www.xiaoledeng.com/2020/10/29/latex-module-picture-table-formula/</link>
+      <pubDate>Thu, 29 Oct 2020 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/10/29/latex-module-picture-table-formula/</guid>
+      <description>1. 图 \begin{figure}[!htbp] \centering \includegraphics[width=4.0in]{name.pdf} \caption{Descriptions of the picture} \label{label of the picture} \end{figure} 2. 表 \begin{table}[!htbp] \caption{Descriptions of the table} \centering \begin{tabular}{l l l l} \hline A &amp;amp; B &amp;amp; C &amp;amp; D \\ \hline x &amp;amp; y &amp;amp; z &amp;amp; a \\ \hline \end{tabular} \label{label of the table} \end{table} 3. 公式 \begin{equation} \label{label of the equation} content of the equation \end{equation} </description>
+    </item>
+    <item>
+      <title>LaTeX引用一段话</title>
+      <link>https://www.xiaoledeng.com/2020/09/18/latex-cite-notes/</link>
+      <pubDate>Fri, 18 Sep 2020 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/18/latex-cite-notes/</guid>
+      <description>\begin{quotation} ``一段话内容&amp;#39;&amp;#39; \end{quotation} </description>
+    </item>
+    <item>
+      <title>latexify: Python生成LaTeX公式</title>
+      <link>https://www.xiaoledeng.com/2020/09/05/latexify-python-latex/</link>
+      <pubDate>Sat, 05 Sep 2020 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/05/latexify-python-latex/</guid>
+      <description>1.简介 latexify_py: Generates LaTeX math description from Python functions。在Python编程中，将Python函数公式生成为LaTeX代码。&#xA;Github地址为：latexify_py。&#xA;2.示例代码 安装：pip install latexify-py&#xA;以下示例代码下载地址为：latexify_example.ipynb&#xA;pip uninstall -y latexify-py # 卸载latexify-py pip install latexify-py # 安装latexify-py import math # 导入math模块 import latexify # 导入latexify模块 # 示例一 # 定义函数 @latexify.with_latex def solve(a, b, c): return (-b + math.sqrt(b**2 - 4*a*c)) / (2*a) print(solve(1, 4, 3)) # 计算函数值 print(solve)&#x9;# 得到函数的LaTeX公式代码 solve&#x9;# 在jupyter notebook中直接展示函数公式 # 示例二 # 定义函数 @latexify.with_latex def sinc(x): if x == 0: return 1 else: return math.</description>
+    </item>
+    <item>
+      <title>Python生成LaTeX表格</title>
+      <link>https://www.xiaoledeng.com/2020/08/04/python-latex-table/</link>
+      <pubDate>Tue, 04 Aug 2020 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/08/04/python-latex-table/</guid>
+      <description>问题: 如何将Python下的表格数据导出为LaTeX表格？&#xA;简言之，Python输出表格结果到LaTeX，这里介绍3个工具：&#xA;pandas.DataFrame.to_latex PyTex PyLaTeX 1. pandas.DataFrame.to_latex 地址：pandas.DataFrame.to_latex documentation&#xA;&amp;gt;&amp;gt;&amp;gt; df = pandas.DataFrame({&amp;#39;name&amp;#39;: [&amp;#39;Raphael&amp;#39;, &amp;#39;Donatello&amp;#39;],&amp;#39;mask&amp;#39;: [&amp;#39;red&amp;#39;, &amp;#39;purple&amp;#39;],&amp;#39;weapon&amp;#39;: [&amp;#39;sai&amp;#39;, &amp;#39;bo staff&amp;#39;]}) &amp;gt;&amp;gt;&amp;gt; print(df.to_latex(index=False)) \begin{tabular}{lll} \toprule name &amp;amp; mask &amp;amp; weapon \\ \midrule Raphael &amp;amp; red &amp;amp; sai \\ Donatello &amp;amp; purple &amp;amp; bo staff \\ \bottomrule \end{tabular} 2.PyTex 地址：HarryXD2018/PyTex: A python tool that generate latex(e.g. Table, matrix) code.&#xA;这是一个可以将Python中的列表、Numpy类型的二元数组，CSV表格文件或是代码转化为Latex代码的Python第三方库。您可以将此第三方库作为脚本运行，或是在命令提示行中将CSV文件或是图片文件拖拽至其中运行，即可得到对应的Tex代码。在脚本运行中，如果有需要，可以将生产的内容复制到剪切板中。&#xA;3.PyLaTeX 地址：PyLaTeX documentation&#xA;PyLaTeX is a Python library for creating and compiling LaTeX files.</description>
+    </item>
+    <item>
+      <title>LaTeX加水印</title>
+      <link>https://www.xiaoledeng.com/2019/07/19/latex-watermark/</link>
+      <pubDate>Fri, 19 Jul 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/07/19/latex-watermark/</guid>
+      <description>在LaTeX编辑的PDF文档中加水印的代码为：&#xA;\usepackage{draftwatermark} \SetWatermarkText{Initial Draft} % the Text \SetWatermarkLightness{0.9} % the lightness from 0 to 1, default 0.8 \SetWatermarkScale{1.0} % the scale, default 1.2 SetWatermarkText：关键字 SetWatermarkLightness：关键字的亮度 SetWatermarkScale：关键字的大小 </description>
+    </item>
+    <item>
+      <title>LaTeX三线表的加粗</title>
+      <link>https://www.xiaoledeng.com/2019/05/24/latex-table-three-table-bold/</link>
+      <pubDate>Fri, 24 May 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/05/24/latex-table-three-table-bold/</guid>
+      <description>1. 常用的三线表 \documentclass[UTF8]{ctexart} \begin{document} \begin{tabular}{ccc} \hline 姓名&amp;amp; 学号&amp;amp; 性别\\ \hline Steve Jobs&amp;amp; 001&amp;amp; Male\\ Bill Gates&amp;amp; 002&amp;amp; Female\\ \hline \end{tabular} \end{document} 2. 加粗后的三线表 \documentclass[UTF8]{ctexart} \usepackage{booktabs} %需要加载宏包{booktabs} \begin{document} \begin{tabular}{ccc} \toprule %添加表格头部粗线 姓名&amp;amp; 学号&amp;amp; 性别\\ \midrule %添加表格中横线 Steve Jobs&amp;amp; 001&amp;amp; Male\\ Bill Gates&amp;amp; 002&amp;amp; Female\\ \bottomrule %添加表格底部粗线 \end{tabular} \end{document} </description>
+    </item>
+    <item>
+      <title>LaTeX去掉图表的冒号</title>
+      <link>https://www.xiaoledeng.com/2019/04/23/latex-figure-table-remove-colon/</link>
+      <pubDate>Tue, 23 Apr 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/04/23/latex-figure-table-remove-colon/</guid>
+      <description>在LaTeX排版中，图表会有冒号，如，表 1.1: 或 图 1.1: 。&#xA;以下命令去掉此冒号：&#xA;\usepackage{caption} \captionsetup[table]{labelsep=space} % 表 \captionsetup[figure]{labelsep=space} % 图 或者是：&#xA;\captionsetup{labelformat=default,labelsep=space} %去除冒号 </description>
+    </item>
+    <item>
+      <title>Mathpix-Snip公式图片转换LaTeX代码</title>
+      <link>https://www.xiaoledeng.com/2019/04/11/mathpic-snip-latex-code/</link>
+      <pubDate>Thu, 11 Apr 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/04/11/mathpic-snip-latex-code/</guid>
+      <description>推荐一款软件Mathpix Snip，用于高效地输入LaTeX公式的代码。&#xA;下载网址： https://mathpix.com/&#xA;步骤 激活Mathpix Snip工具&#xA;截取公式的图片&#xA;编辑获得的LaTeX代码&#xA;黏贴LaTeX代码</description>
+    </item>
+    <item>
+      <title>LaTeX英文模版变中文</title>
+      <link>https://www.xiaoledeng.com/2019/02/21/latex-english-to-chinese/</link>
+      <pubDate>Thu, 21 Feb 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/02/21/latex-english-to-chinese/</guid>
+      <description>加入宏包：&#xA;\usepackage[UTF8]{ctex}&#xA;使用 Xelatex 编译。</description>
+    </item>
+    <item>
+      <title>LaTeX提示安装字体STHeiti</title>
+      <link>https://www.xiaoledeng.com/2019/02/11/latex-font-stheiti/</link>
+      <pubDate>Mon, 11 Feb 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/02/11/latex-font-stheiti/</guid>
+      <description>问题 在编译中文的文稿时，TeXpad编辑器一直提示：&#xA;x86_64-darwin needs to download the font “STHeiti”.&#xA;但是，点击下载后，发现这个弹窗一直存在，也就是没有下载成功。&#xA;系统环境 我的系统：Mac&#xA;LaTeX版本：MacTex 2018&#xA;LaTeX的编辑器：TeXpad&#xA;解决方案： 打开 FontBook的字体管理器，即为Font Book.app； 在FontBook里的“所有字体”中查找“STHeiti”； 然后下载STHeiti字体。 </description>
+    </item>
+    <item>
+      <title>LaTeX表格浮动</title>
+      <link>https://www.xiaoledeng.com/2019/01/26/latex-table-float/</link>
+      <pubDate>Sat, 26 Jan 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/01/26/latex-table-float/</guid>
+      <description>当LaTeX表格使用\begin{table}[!htbp]进行自由浮动时，表格可能会浮动到新的页面，并占据一整个新页面，而且往往浮动的表格在新页面是居中显示的。这样，造成表头上边的空行太多，而显得不太合适。&#xA;当希望浮动的表格能够放在页面的顶部，这样看起来表格更为妥帖。&#xA;命令： \makeatletter \setlength{@fptop}{5pt} \makeatother&#xA;含义：设置从页面顶部到第一个浮动的距离（Set distance from a top of the page to the first float）。&#xA;其中，@fptop的值可改变浮动表格到页面顶部的距离，除了5pt，也可以按照自己的设置来调整，比如，4pt，或者大一点7pt。</description>
+    </item>
+    <item>
+      <title>LaTeX中的有序列表和无序列表</title>
+      <link>https://www.xiaoledeng.com/2019/01/23/latex-item/</link>
+      <pubDate>Wed, 23 Jan 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/01/23/latex-item/</guid>
+      <description>引用包：&#xA;\usepackage{enumerate} LaTeX中的有序列表（带数字等） \begin{enumerate}[(1)] \item 有编号的列表 \item ... \end{enumerate} 注意：[(1)]可以变成[{[1]}], [(i)], &amp;hellip;.&#xA;LaTeX中的无序列表（无编号） \begin{itemize} \item 无编号的列表 \item ... \end{itemize} </description>
+    </item>
+    <item>
+      <title>LaTeX问题File ended while scanning use of @writefile</title>
+      <link>https://www.xiaoledeng.com/2019/01/18/latex-file-end-writefile/</link>
+      <pubDate>Fri, 18 Jan 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/01/18/latex-file-end-writefile/</guid>
+      <description>问题描述：File ended while scanning use of @writefile.&#xA;我的解决方法，在Mac系统下重新安装了MacTex2018，然后编译之后，问题就自动解决了。&#xA;在网上搜索的办法并没有解决问题： https://www.jianshu.com/p/b92fff3e9742?utm_campaign=maleskine&amp;amp;utm_content=note&amp;amp;utm_medium=seo_notes&amp;amp;utm_source=recommendation 给出了编译报出：File ended while scanning use of @writefile. 错误我一直以为是哪里有{}不对等导致的，仔细检查并未发现！真实原因：实际上就是因为aux文件没有完整输入，导致上次编译结束后aux文件的部分内容缺失。处理：删掉原来的.aux文件即可解决！再次编译就通过了。&#xA;https://blog.csdn.net/kebu12345678/article/details/79301284给出了解决方法：删除编译文件夹内.aux扩展名结尾的文件，重新用Latex命令进行编译，自动生成正确的aux文件，完成错误的修复。&#xA;英文原文见这里：&#xA;Solution to: File ended while scanning use of @writefile&#xA;Recently came across this error in latex. This shows up every time I try to compile the code after I first saw this error and restarting my system or the latex editor did not help-&#xA;Runaway argument? ! File ended while scanning use of @writefile.</description>
+    </item>
+    <item>
+      <title>LaTeX括号大小</title>
+      <link>https://www.xiaoledeng.com/2018/12/17/latex-bracket/</link>
+      <pubDate>Mon, 17 Dec 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/12/17/latex-bracket/</guid>
+      <description> \left 和\right 的括号方法 然后可以使用big, Big, bigg, Bigg控制括号的大小 </description>
+    </item>
+    <item>
+      <title>LaTeX数学字体加粗</title>
+      <link>https://www.xiaoledeng.com/2018/12/17/latex-math-font-bold/</link>
+      <pubDate>Mon, 17 Dec 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/12/17/latex-math-font-bold/</guid>
+      <description>\mathbf{...} \usepackage{amsmath,bm} \bm{...} \boldmath ... \unboldmath </description>
+    </item>
+    <item>
+      <title>LaTeX-术语表的一个经典模版</title>
+      <link>https://www.xiaoledeng.com/2018/11/30/latex-nomenclature-model/</link>
+      <pubDate>Fri, 30 Nov 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/11/30/latex-nomenclature-model/</guid>
+      <description>三列术语表、或四列术语表，都可以按照这个模板修改而得。&#xA;\documentclass{article} \usepackage{nomencl,etoolbox,ragged2e,siunitx,mathtools} \DeclarePairedDelimiter{\abs}{\lvert}{\rvert} \newcommand{\DimensUnits}[2]{\hfill\makebox[8em]{#1\hfill}% \makebox[4em]{#2\hfill}\ignorespaces} \newcommand{\DefinitionCol}[1]{\hfill\parbox[t]{12em}{#1}\ignorespaces} \newcommand{\nomsubtitle}[1]{\item[\large\bfseries #1]} \renewcommand\nomgroup[1]{\def\nomtemp{\csname nomstart#1\endcsname}\nomtemp} \newcommand{\nomstartR}{\nomsubtitle{Roman Symbols}% \item[\bfseries Symbol]% \textbf{Description}\DimensUnits{\textbf{Dimensions}}{\textbf{Units}}} \newcommand{\nomstartG}{\nomsubtitle{Greek Symbols}% \item[\bfseries Symbol]% \textbf{Description}\DimensUnits{\textbf{Dimensions}}{\textbf{Units}}} \newcommand{\nomstartD}{\nomsubtitle{Dimensionless Numbers}% \item[\bfseries Symbol]\textbf{Description}\DefinitionCol{\textbf{Definition}}} \renewcommand*{\nompreamble}{\markboth{\nomname}{\nomname}} \newcommand{\nomdescr}[1]{\parbox[t]{4cm}{\RaggedRight #1}} \newcommand{\nomwithdim}[5]{\nomenclature[#1]{#2}% {\nomdescr{#3}\DimensUnits{#4}{#5}}} \newcommand{\nomtypeR}[5][]{\nomwithdim{R#1}{#2}{#3}{#4}{#5}} \newcommand{\nomtypeG}[5][]{\nomwithdim{G#1}{#2}{#3}{#4}{#5}} \newcommand{\nomtypeD}[4][]{\nomenclature[D#1]{#2}{\nomdescr{#3}\DefinitionCol{#4}}} \makenomenclature \begin{document} \mbox{} \nomtypeR[abc]{\(a,b,c\)}{half axes of ellipsoid}{L}{\si{m}} \nomtypeR[C]{\(C\)}{dimensionless coefficient (e.g.\ for drag model)}{--}{1} \nomtypeG{\( \varepsilon_0 \)}{vacuum permittivity}{F/L}{\si{F.m^{-1}}} \nomtypeD{\( \mathcal A_r \)}{Archimedes number}{\(\displaystyle \frac{d^3g\rho_c\abs{\Delta\rho}}{\mu_c^2} = \sqrt{\frac{\mathcal E_0^3}{\mathcal M_0}} \)} \nomtypeR[CC]{\(\mathbf{C}\)}{another dimensionless coefficient}{--}{1} \nomtypeR[A]{\(A\)}{a dimensionless coefficient}{--}{1} \nomtypeR[Z]{\(Z\)}{a dimensionless coefficient}{--}{1} \printnomenclature[6em] \end{document} 参考 How to achieve nomenclature entries like: symbol, Description, Dimension and unit, etc?</description>
+    </item>
+    <item>
+      <title>LaTeX插入日期</title>
+      <link>https://www.xiaoledeng.com/2018/11/28/latex-add-date/</link>
+      <pubDate>Wed, 28 Nov 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/11/28/latex-add-date/</guid>
+      <description>\usepackage{datetime} %日期 \renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日} \today </description>
+    </item>
+    <item>
+      <title>LaTeX设置doi</title>
+      <link>https://www.xiaoledeng.com/2018/05/08/latex-set-doi/</link>
+      <pubDate>Tue, 08 May 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/05/08/latex-set-doi/</guid>
+      <description>在用LaTeX写论文的时候，参考文献里面的doi号的，点击doi号之后，外在的链接可以打开这一篇文献。&#xA;方法一 使用新命令：&#xA;\newcommand{\DOI}[1]{doi: \href{https://doi.org/#1}{#1}} 在需要显示doi的地方，使用以下命令&#xA;\DOI{10.1007/s10712-018-9460-8} 方法二 使用bib文献库的方法：&#xA;前面添加包：&#xA;\usepackage{natbib} \usepackage{doi} 在引用参考文献的地方：&#xA;\bibliographystyle{spbasic} 注意：bib文献库里面，doi号码要有。</description>
+    </item>
+    <item>
+      <title>LaTeX编号设置</title>
+      <link>https://www.xiaoledeng.com/2018/04/27/latex-number-setting/</link>
+      <pubDate>Fri, 27 Apr 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/04/27/latex-number-setting/</guid>
+      <description>\usepackage{enumerate} \begin{enumerate}[(i)] \item Xidian \item Computer \item Application \end{enumerate} 可以使用 A，a，I，i，1 作为可选项产生 \Alph，\alph，\Roman，\roman，\arabic 的效果。</description>
+    </item>
+    <item>
+      <title>LaTeX换页</title>
+      <link>https://www.xiaoledeng.com/2018/04/12/latex-newpage/</link>
+      <pubDate>Thu, 12 Apr 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/04/12/latex-newpage/</guid>
+      <description>\newpage 和 \clearpage 的区别：&#xA;\newpage： The \newpage command ends the current page.&#xA;\clearpage：The \clearpage command ends the current page and causes all figures and tables that have so far appeared in the input to be printed.&#xA;通俗点讲就是当你新加的一页内容较多时，两者基本一样，当新加的一页内容较少时，“\newpage”就无法实现你想要的效果，但“\clearpage”可以。</description>
+    </item>
+    <item>
+      <title>LaTeX表格横置</title>
+      <link>https://www.xiaoledeng.com/2018/04/11/latex-table-setting/</link>
+      <pubDate>Wed, 11 Apr 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/04/11/latex-table-setting/</guid>
+      <description>1. LaTeX表格横置代码 \usepackage{lscape} \begin{document} \begin{landscape} This is a landscape page. \end{landscape} \end{document} 2. 页面横置 \usepackage{pdflscape} \begin{landscape} ... \end{landscape} 参考 latex页面横置 – Sam&amp;rsquo;s Note </description>
+    </item>
+    <item>
+      <title>在arXiv下载论文的LaTeX源码</title>
+      <link>https://www.xiaoledeng.com/2018/03/29/arxiv-latex-source/</link>
+      <pubDate>Thu, 29 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/29/arxiv-latex-source/</guid>
+      <description>引言 LaTeX学习的关键就是模板模仿。&#xA;arXiv网址 https://arxiv.org/，提供了论文的LaTeX源码文件，可供下载。&#xA;步骤 找到一篇arXiv论文的版面，点击Download中的Other formats； 点击Source目录下的：Download source； 改名为：.zip， .tar.gz等的尾缀，然后解压缩此文件； 打开tex主文件，编译成PDF； 参考资料 科学网—论文投稿latex源程序模版不再愁！！； 在arxiv上下载Latex源文件的方法(便捷的找到SCI杂志投稿的Latex源程序) - Latex/Ctex - 数学建模与统计建模论坛(Mathematical Modelling and Statistical Modelling Forum) - Powered by Discuz!； LaTeX实战经验：如何利用arxiv学习LaTeX - CSDN博客； </description>
+    </item>
+    <item>
+      <title>LaTeX超链接hyperref</title>
+      <link>https://www.xiaoledeng.com/2018/03/27/latex-hyperref/</link>
+      <pubDate>Tue, 27 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/27/latex-hyperref/</guid>
+      <description>package 调用package：&#xA;\usepackage{hyperref} \hypersetup{ colorlinks=true, linkcolor=blue, filecolor=blue, urlcolor=blue, citecolor=cyan, } 注意：颜色可以选取其他颜色，比如：blue、yellow、green等。&#xA;引用 两种引用方法：&#xA;\url{http://www.xiaoledeng.com} 或者&#xA;\href{http://www.xiaoledeng.com}{Xiao-Le Deng} 如果是邮箱的话，加入mailto命令即可。&#xA;\href{mailto:邮箱}{邮箱} </description>
+    </item>
+    <item>
+      <title>LaTeX设置Times-News-Roman字体</title>
+      <link>https://www.xiaoledeng.com/2018/03/26/latex-times-news-roman/</link>
+      <pubDate>Mon, 26 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/26/latex-times-news-roman/</guid>
+      <description>命令很简单，引用Times的宏包。&#xA;\usepackage{times} </description>
+    </item>
+    <item>
+      <title>LaTeX目录中加入插图和表格命令</title>
+      <link>https://www.xiaoledeng.com/2018/03/25/latex-figure-table/</link>
+      <pubDate>Sun, 25 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/25/latex-figure-table/</guid>
+      <description>前言 LaTeX学位论文的目录中，会有插图、表格和术语表的大标题。&#xA;本文简要介绍如何在目录中加入学位论文中出现的插图、插表和术语表的目录。&#xA;命令 插图列表： \renewcommand*{\listfigurename}{插图列表} \listoffigures \addcontentsline{toc}{chapter}{插图列表} 表格列表： \renewcommand*{\listtablename}{表格列表} \listoftables \addcontentsline{toc}{chapter}{表格列表} 术语缩写列表： \include{includefile/Abbreviation} \addcontentsline{toc}{chapter}{术语缩写列表} </description>
+    </item>
+    <item>
+      <title>LaTeX的一些好习惯</title>
+      <link>https://www.xiaoledeng.com/2018/03/24/latex-good-habit/</link>
+      <pubDate>Sat, 24 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/24/latex-good-habit/</guid>
+      <description>选择LaTeX就是选择了更高效的写作方式，那么，LaTeX有哪些好的习惯？以下总结自知乎http://www.zhihu.com/question/66167182：&#xA;配置多显示屏，横屏编辑，竖屏显示； 在线制作Latex表格的网站：http://www.tablesgenerator.com 写特别大的文档，要将整个文档分成若干部分，用 \include 加到主文件中； 去arxiv上直接下现有论文的latex模版； 在线合作编辑推荐：overleaf 找一个好模版挺重要的；平时看到比较漂亮的文档模版时，研究一下，分离出一个最简可用的部分，将来写文档/简历/书的时候使用； … </description>
+    </item>
+    <item>
+      <title>LaTeX的fontawesome图标</title>
+      <link>https://www.xiaoledeng.com/2018/03/23/latex-fontawesome/</link>
+      <pubDate>Fri, 23 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/23/latex-fontawesome/</guid>
+      <description>package 首先，调用package：&#xA;\usepackage{fontawesome} fontawesome图标 fontawesome图标的细节，可以参考：The fontawesome package High quality web icons。&#xA;至于学术图标，可以参考：The academicons package High quality icons of online academic profiles。&#xA;注意：安装学术图标的字体academicons.ttf，并导入 \newfontfamily{\AI}{academicons.ttf}。</description>
+    </item>
+    <item>
+      <title>LaTeX术语表</title>
+      <link>https://www.xiaoledeng.com/2018/03/22/latex-nomenclature/</link>
+      <pubDate>Thu, 22 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/22/latex-nomenclature/</guid>
+      <description>一般而言，术语(Nomenclature)指的是：&#xA;术语又称技术名词、科学术语、科技术语或技术术语，是在特定专业领域中一般概念的词语指称，一个术语表示一个概念。（维基百科）&#xA;本文介绍在LaTeX下如何实现术语表的编写。&#xA;调用宏包 在宏包区域，加入以下代码：&#xA;\usepackage{nomencl} \makenomenclature 术语模块 \nomenclature{LaTeX}{LaTeX is ...} \nomenclature{A}{A is ...} \nomenclature{B}{B is ...} \nomenclature{C}{C is ...} 调用并显示术语表 在调用并显示术语表前，可以换个想要的名字，比如，Notations：&#xA;\def\nomname{Notations} 调用并显示术语表的位置，一般建议放在目录之后。&#xA;\printnomenclature 编译 编译需要通过makeindex编译。&#xA;设置的方法为：在 Texmaker 的 Option -&amp;gt; Configure Texmaker -&amp;gt; Commands，在 makeindex 这一项中填入: makeindex %.nlo -s nomencl.ist -o %.nls -t %.nlg，这样每次 makeindex 的时候就会考虑术语表。然后就像往常一样编译两次就可以了。&#xA;一般而言，就是需要“makeindex %.nlo -s nomencl.ist -o %.nls -t %.nlg”这个命令来完成编译，不同的编译器可以依据这个命令来设置。&#xA;参考资料 Latex 笔记 (2) 编写术语表 | Tony @ France； 科学网—Latex术语表的生成 - 吴建军的博文； Xm1 Math; </description>
+    </item>
+    <item>
+      <title>LaTeX文稿投稿到Editorial-Manager系统</title>
+      <link>https://www.xiaoledeng.com/2018/03/21/latex-editorial-manager/</link>
+      <pubDate>Wed, 21 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/21/latex-editorial-manager/</guid>
+      <description>继 LaTeX 投稿 ScholarOne Manuscript 之后，本次是LaTeX文稿投稿到Editorial Manager系统，从而由LaTeX文件在投稿系统中生成PDF文件。&#xA;1. 流程 首先，点击下图中的Submit New Manuscript，进入到New Submission里面的细节。&#xA;而后按照New Submission的流程，把一步一步都填写完整并正确，分别有：&#xA;Select Article Type; Enter Title; Add/Edit/Remove Authors; Funding Information; Select Section/Category; Submit Abstract; Enter Keywords; Select Classifications; Enter Comments; Suggest Reviewers; Attach Files; 2. 上传LaTeX文稿的注意事项 在Attach Files这一步，上传LaTeX文稿以及图片。&#xA;首次，上传LaTeX文稿，Item为*Manuscript，Description为Manuscript，此为序号1； 其次，上传图片文件，Item为Figure，Description为Fig1.eps，Fig2.eps等； 完成上面两个步骤之后，可以往下面的步骤进行，一直到building PDF这一步，生成正确的PDF文件。&#xA;注意事项：&#xA;图片文件Fig1.eps等，应该与LaTeX文稿在同一个路径下； 在LaTeX文稿中，引用的图片文件名应该等于上传图片的文件名； 本地的格式文件（例如，参考文献引用格式—bst文件，文章属性格式—cls和clo文件），则不需要上传到投稿系统里面； 3. 检查从LaTeX文稿到PDF文件是否正确 在Submissions Waiting for Author&amp;rsquo;s Approval一栏中，查看最后的PDF是否生成成功，检查列表参考：SCI论文投稿Submissions Waiting for Author&amp;rsquo;s Approval的检查清单。</description>
+    </item>
+    <item>
+      <title>LaTeX文字的加粗、斜体、下划线、删除线</title>
+      <link>https://www.xiaoledeng.com/2018/03/20/latex-bold-underline/</link>
+      <pubDate>Tue, 20 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/20/latex-bold-underline/</guid>
+      <description>加粗 \textbf{文字} 斜体 \emph{文字} 下划线 \underline{文字} 删除线 删除线需要调用package：&#xA;\usepackage{ulem} 而后是：&#xA;\sout{文字} %删除线 \uwave{文字} %波浪线 \xout{文字} %斜删除线 \uuline{文字} %双下划线 </description>
+    </item>
+    <item>
+      <title>LaTeX插入mp3文件</title>
+      <link>https://www.xiaoledeng.com/2018/03/19/latex-mp3/</link>
+      <pubDate>Mon, 19 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/19/latex-mp3/</guid>
+      <description>前言 LaTeX里面插入MP3文件，当然也可以插入MP4视频等文件。&#xA;代码 \documentclass[11pt]{report} \usepackage{media9} \usepackage[utf8]{inputenc} \begin{document} \section{Part 1} \includemedia[height=5em, width=30em, addresource=OneThingRemains.mp3, flashvars={source=OneThingRemains.mp3 &amp;amp; autoPlay=true}]{{\fbox{Consonant}}}{APlayer.swf} \end{document} 说明 以上核心代码为：\includemedia这一行。&#xA;注意引用package，也就是media9这个包。</description>
+    </item>
+    <item>
+      <title>LaTeX公式换行</title>
+      <link>https://www.xiaoledeng.com/2018/03/18/latex-formula-newline/</link>
+      <pubDate>Sun, 18 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/18/latex-formula-newline/</guid>
+      <description>LaTeX公式太长，需要换行，而且换行后对齐。&#xA;换行代码块 \begin{equation} \begin{aligned} ...... \end{aligned} \end{equation} 在中间的公式中，\\ 表示换行， &amp;amp; 表示对齐。每个等号前有个&amp;amp;，换行处有个\\ 。&#xA;参考资料 Latex 公式换行问题（换行，等号对齐） - 芳草碧连天 - CSDN博客； </description>
+    </item>
+    <item>
+      <title>LaTeX修改参考文献样式</title>
+      <link>https://www.xiaoledeng.com/2018/03/16/latex-reference-style/</link>
+      <pubDate>Fri, 16 Mar 2018 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2018/03/16/latex-reference-style/</guid>
+      <description>前言 使用LaTeX写学位论文中，会有各种不同的参考文献样式。&#xA;关于LaTeX使用参考文献的基础知识，可以参考已写的两篇Blog：&#xA;终极参考文献引用管理—BibTeX LaTeX参考文献管理工具BibDesk 本文简要介绍如何在更换参考文献的样式。&#xA;命令 在tex主文件同目录下面，要有natbib.bst；当然也可以换成其他的参考文献格式，要提前下载这个bst文件。&#xA;在tex主文件开头，添加参考文献格式natbib的声明：&#xA;\usepackage{natbib} 在tex主文件放参考文献的位置，添加引用参考文献的说明： \bibliographystyle{natbib} \bibliography{mybibtex} 注意：mybibtex.bib为参考文献BibTeX的一个文件，应放在tex主文件的同目录下。&#xA;在tex主文件内容中，引用文献的格式为： \citet{...} \citep{...} </description>
+    </item>
+    <item>
+      <title>LaTeX投稿ScholarOne-Manuscript</title>
+      <link>https://www.xiaoledeng.com/2017/06/17/latex-scholarone-manuscript/</link>
+      <pubDate>Sat, 17 Jun 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/06/17/latex-scholarone-manuscript/</guid>
+      <description>LaTeX写成了科研学术文章之后，需要投稿于各种杂志的审稿系统。&#xA;常见的网上电子投稿系统有：&#xA;ScholarOne Manuscript； Editorial Manager； &amp;hellip; &amp;hellip; 本文简述在LaTeX投稿ScholarOne Manuscript时，基本的流程，也包括需要到的问题及解决方案。&#xA;LaTeX投稿ScholarOne Manuscript的说明文件 首先，下载 Author LaTeX File Upload.pdf文件：Author LaTeX File Upload Guide。&#xA;在此文件中，介绍了ScholarOne Manuscript系统里面提交LaTeX文件的指南。&#xA;If the particular journal is not set up to convert LaTeX files to PDF, then the author may be permitted by the journal to upload a PDF file generated from their LaTeX files and may upload their LaTeX files as supplement files for publication.&#xA;也就是说，有些杂志使用ScholarOne Manuscript系统，并不支持转换LaTeX文件到PDF文件。这时候，作者可以上传PDF文件，然后上传LaTeX文件为补充文件。&#xA;判断依据为，上传文件的格式是否有TeX/LaTeX Suppl File选项：如果有，则可以上传LaTeX文件；如果没有，则上传PDF文件。</description>
+    </item>
+    <item>
+      <title>LaTeX的表格注释</title>
+      <link>https://www.xiaoledeng.com/2017/04/13/latex-table-notes/</link>
+      <pubDate>Thu, 13 Apr 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/04/13/latex-table-notes/</guid>
+      <description>调用threeparttable包 在文档的最前面加入以下命令：&#xA;\usepackage{threeparttable} 在表格处插入命令 \begin{table*} \label{table:number} \centering \caption{....} \begin{threeparttable} \begin{tabular}{lc} \hline A &amp;amp; B \\ \hline A &amp;amp; B\tnote{*} \\ A\tnote{**} &amp;amp; B \\ % 添加表格信息 \hline \end{tabular} \begin{tablenotes} \footnotesize \item[*] this is the .... %此处加入注释*信息 \item[**] my website is ... %此处加入注释**信息 \end{tablenotes} \end{threeparttable} \end{table*} 注意：星号可以换成数字或是其他的字符。&#xA;完整例子测试 \documentclass[12pt]{amsart} \usepackage{geometry} % see geometry.pdf on how to lay out the page. There&amp;#39;s lots. \geometry{a4paper} % or letter or a5paper or ... etc \usepackage{threeparttable} \title{test} \author{tsta} \date{} % delete this line to display the current date %%% BEGIN DOCUMENT \begin{document} \maketitle \tableofcontents \section{Test1} \subsection{Table} \begin{table*} \label{table:number} \centering \caption{.</description>
+    </item>
+    <item>
+      <title>LaTeX参考文献管理工具BibDesk</title>
+      <link>https://www.xiaoledeng.com/2017/04/11/latex-reference-bibdesk/</link>
+      <pubDate>Tue, 11 Apr 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/04/11/latex-reference-bibdesk/</guid>
+      <description>之前在 终极参考文献引用管理——BibTeX 中论述到了：使用BibTex格式的文件来统一管理Latex的参考文献。&#xA;那么，对于Bib文件，Mac下MacTex套装中有一个工具——BibDesk，来管理这样一个Bib文件。&#xA;TeXShop制作参考文献_百度经验初步介绍了一点点用法。&#xA;这里，要介绍一下内置的External-Web(BibDesk Web Group)浏览器，来自动导入Bib文件。这样就告别了下载-导入的限制，实现了半自动化的参考文献管理。&#xA;具体操作见下图：&#xA;1、先到浏览器输入网址，即为bib的下载网址；&#xA;2、点击下方的Import按钮即可导入。</description>
+    </item>
+    <item>
+      <title>LaTeX插入代码块</title>
+      <link>https://www.xiaoledeng.com/2017/03/29/latex-code-module/</link>
+      <pubDate>Wed, 29 Mar 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/29/latex-code-module/</guid>
+      <description>步骤 最前面加入listings包：&#xA;\usepackage{listings} 代码段&#xA;\begin{lstlisting} % 代码段 \end{lstlisting} 代码块的基本设置：&#xA;\lstset{ columns=fixed, numbers=left, % 在左侧显示行号 numberstyle=\tiny\color{gray}, % 设定行号格式 frame=none, % 不显示背景边框 backgroundcolor=\color[RGB]{245,245,244}, % 设定背景颜色 keywordstyle=\color[RGB]{40,40,255}, % 设定关键字颜色 numberstyle=\footnotesize\color{darkgray}, commentstyle=\it\color[RGB]{0,96,96}, % 设置代码注释的格式 stringstyle=\rmfamily\slshape\color[RGB]{128,0,0}, % 设置字符串格式 showstringspaces=false, % 不显示字符串中的空格 language=c++, % 设置语言 } 另外，一个模板：&#xA;\lstset{ % language=Octave, % the language of the code basicstyle=\footnotesize, % the size of the fonts that are used for the code numbers=left, % where to put the line-numbers numberstyle=\tiny\color{gray}, % the style that is used for the line-numbers stepnumber=2, % the step between two line-numbers.</description>
+    </item>
+    <item>
+      <title>LaTeX设置字体大小</title>
+      <link>https://www.xiaoledeng.com/2017/03/29/latex-font-size/</link>
+      <pubDate>Wed, 29 Mar 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/29/latex-font-size/</guid>
+      <description>全局模式 \documentclass[12pt]{article} 在文档的开头，有设置整个文章的字体大小，如：12pt。&#xA;局部模式 设置字体大小的命令从小到大为：&#xA;\tiny \scriptsize \footnotesize \small \normalsize \large \Large \LARGE \huge \Huge 注意：局部模式是相比于全局字体的基础上，来变大变小。&#xA;例子：&#xA;\documentclass[12pt]{article} \begin{document} Hello Latex. \tiny Hello Latex. \scriptsize Hello Latex. \footnotesize Hello Latex. \small Hello Latex. \normalsize Hello Latex. \large Hello Latex. \Large Hello Latex. \LARGE Hello Latex. \huge Hello Latex. \HUGE Hello Latex. \end{document} 参考 Latex教程：[2]设置字体大小_百度经验 </description>
+    </item>
+    <item>
+      <title>LaTeX科研写作入门手册</title>
+      <link>https://www.xiaoledeng.com/2017/03/28/letex-write-introduction/</link>
+      <pubDate>Tue, 28 Mar 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/28/letex-write-introduction/</guid>
+      <description>前言 使用LaTeX进行学术写作，够用就行。也就是说，LaTeX只是一个排版的工具，科研学术写作重要的是内容。&#xA;本文作为从“不知道LaTeX的小白”到“能够使用LaTeX进行写作”的简明入门手册，也是自己摸索出来的高效率学习LaTeX的方法。&#xA;首先，请阅读文章，明白个人在使用LaTeX学术写作的一些理解和思考：&#xA;科研高效率(12)—LaTeX式科研方式 学习Latex的一点想法 切记：不要自己从零开始学习LaTeX，完全没必要。&#xA;入门步骤 不同系统下安装LaTeX工具 Windows系统——TexLive2017；推荐清华大学的下载地址：TeXLive Download，下载当前目录中的任何一个镜像ISO文件：&#xA;Linux系统——TeXLive2017；推荐下载地址：TeXLive Download，下载当前目录中的压缩文件：&#xA;Mac系统——MacTex2017；推荐下载地址：MacTeX Download，下载MacTeX.pkg安装包，安装参考：Mac安装MacTex - 简书；&#xA;LaTeX编辑器推荐 优秀的LaTeX编辑器能够大大提高科研写作过程中的效率，特别是在tex编译成pdf之后的对照查看阶段。&#xA;Mac下面特别推荐的LaTeX顺序： TeXstudio &amp;gt; Texpad &amp;gt; Sublime Text + Skim 组合 &amp;gt; TeXshop&#xA;LaTeX的模板 下载所需要的模板文件（注：一般是压缩包，解压，得到很多文件），打开解压文件夹中的tex主文件，编译并调试，直到运行成功（即自动弹出PDF文件）。&#xA;杂志的模板 一般而言，官网上会有 LaTeX 模版。&#xA;武汉大学毕业论文模板(非官方，由武汉大学黄正华老师提供)： 武汉大学本科毕业论文 LaTeX 模版(2016 年 06 月 07 日修订)；&#xA;武汉大学硕士毕业论文 LaTeX 模版(2016 年 04 月 20 日修订)；&#xA;武汉大学博士毕业论文 LaTeX 模版(2016 年 04 月 20 日修订)；&#xA;另外，国内其他高校的毕业论文(本、硕、博)模板见：&#xA;国内高校-LaTeX工作室； Tex文件和PDF文件的结构 对照PDF中模板文章的结构，观察tex代码的的结构，而后改写成自己的文章。&#xA;下面以AGU通用模板为例子，来说明Tex文件和PDF文件的结构。&#xA;先下载 agu-template-updated-20161103.zip ，并解压如下图：</description>
+    </item>
+    <item>
+      <title>Markdown文本插入LaTeX公式</title>
+      <link>https://www.xiaoledeng.com/2017/03/15/markdown-latex/</link>
+      <pubDate>Wed, 15 Mar 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/15/markdown-latex/</guid>
+      <description>网页版-MathJax Markdown文本一般使用MathJax来插入Latex公式。&#xA;本地版-Macdown 因为Mac下面使用的是Macdown的编辑器。只需要设置一些就OK了，支持Latex公式插入( $&amp;hellip;$ )。</description>
+    </item>
+    <item>
+      <title>科研高效率(12)—LaTeX式科研方式</title>
+      <link>https://www.xiaoledeng.com/2017/02/13/latex-research-style/</link>
+      <pubDate>Mon, 13 Feb 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/02/13/latex-research-style/</guid>
+      <description>在2017年初，开始真正使用Latex工具（学习Latex的一点想法），至此，关于科研撰写方面的很多习惯都开始慢慢地改变。&#xA;本文中，仅谈谈使用Latex工具（Mac下面的MacTex工具包 Mac安装MacTex ）之后，慢慢地一些科研生活方式的改变。&#xA;1. 每天积累一点点 之前用Word撰写文章的时候，每一天开工前，都会把昨天写的文档命名今天的日期，以此类推，每一天都在写点东西。但是慢慢地，当一篇文章多起来的时候，Word打开的速度会慢，这样就比较尴尬。而且，文档的容量会慢慢地积累起来，最后可能会是几百M，甚至是多少G。&#xA;使用Latex之后，就一个tex文件，完完全全是纯文本的格式，容量小，易保存，至少用到现在没有出现，像Word崩溃的现象(有一次，情况很严重，写得东西没有及时保存，结果跪了)。&#xA;作为博士生，我一直相信一点：多种的多收，少种的少收。每一天的撰写文稿的积累，哪怕是100字，都是持续地撒种的过程。就算是“流泪撒种的”，必然会“欢呼收割”。&#xA;2. 专注内容，提高质量 科研重要的还是内容，而不是工具，见科研高效率(7)—聚焦点在内容而不是工具。使用Latex，其实并没有想象中的那么困难，入门很容易，一个下午的时间就搞定了。&#xA;使用Latex，再也不用担心格式的问题，因为每一个杂志都有套路——即为对应的投稿杂志，就有对应的模版（当然，这里针对的是国外期刊），包括各个学校的博士论文，都有对应的最新的模版。具体可以参考：LaTeX工作室-LaTeX科技排版专家，查找对应的模版即可。&#xA;不同杂志之间的模版切换也是比较简单，这里避免了很多的重复工作。&#xA;3. 排版效果高，节省公式输入的时间 可以说是专业的科技排版软件，针对大量的公式符号，有特别地优势。终于可以告别：Word+MathType的公式输入工具。&#xA;一行公式就是一个区域的代码，在不同的文章中引用就可以通用。&#xA;4. 自动编号，关注文章的逻辑性 公式可以自动编号，包括索引里面的大标题、次标题等，都可以自动编号。甚至可以交叉引用。这样，文章的结构脉络就更加清楚，更加关注整篇文章的逻辑结构。&#xA;5. 参考文献，重点放在文章的核心上 写过一篇文章——终极参考文献引用管理—BibTeX，没错，就是终极的参考文献引用管理。至此，再也不用担心参考文献的格式调整等，这一步节省了大量的时间。&#xA;末了的话 Latex并没有想象中的复杂，只要能够编译通过一个模版，在此模版上面添加内容。想添加什么功能，Baidu或者Google，实时地学习。&#xA;国际上，推荐使用开源的Latex，便于合作，提高效率。&#xA;世界很大，道法万千。生命短暂，提高效率。勇于尝试，乐于分享。</description>
+    </item>
+    <item>
+      <title>LaTeX对齐方式</title>
+      <link>https://www.xiaoledeng.com/2017/02/05/latex-alignment/</link>
+      <pubDate>Sun, 05 Feb 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/02/05/latex-alignment/</guid>
+      <description>一行对齐 \leftline{左对齐} \centerline{居中} \rightline{右对齐} 多行或者段落对齐 左对齐 \begin{flushleft}&amp;hellip;\end{flushleft} 居中 \begin{center}&amp;hellip;\end{center} 右对齐 \begin{flushright}&amp;hellip;\end{flushright} </description>
+    </item>
+    <item>
+      <title>终极参考文献引用管理—BibTeX</title>
+      <link>https://www.xiaoledeng.com/2017/01/10/latex-bibtex/</link>
+      <pubDate>Tue, 10 Jan 2017 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/01/10/latex-bibtex/</guid>
+      <description>就我而言，关于文献管理，在科研写作中，就是在Reference部分中排版，然后在论文中适当地格式引用。&#xA;最早用文献管理的软件是NoteExpress，而后是Endnote，现在是BibTex。&#xA;关于Endnote，批量参考文献的引用撰写了一个文稿：批量参考文献格式的引用技巧。Endnote适合在Windows下面的Word里面来引用，对应不同杂志的格式，在Endnote里面来变换不同的格式，将增加大量的重复工作。&#xA;现在，在Mac下面使用MacTex套装来科研写作。对于参考文献的管理和引用，得跟得上国际步伐，故此使用Latex工作流，发现并采用BibTeX格式的参考文献管理。&#xA;可以这样坦诚以及很负责任地说：一旦掌握了基本的BibTeX用法后，剩下的未来科研写作人生，都不需要自己去调整参考文献的格式了，只需要找到对应的模板，而后更换一行命令为对应模板即可。&#xA;1. 下载bib格式的参考文献格式 在每个杂志的电子文档页面都会有导出参考格式； 当然GoogleScholar也有导出BibTeX的格式，方法类似于：批量参考文献格式的引用技巧。 LaTeX技巧857：如何找到标准的参考文献Bib文件-LaTeX工作室 将所有的BibTeX内容都复制到一个格式为bib的文件中，如mybibex.bib 。这个mybibex.bib就是包括了你写文章所有的参考文献，也可以说是你一生科研写作的参考文献库。&#xA;2. 编译引用技巧 参考文献的内容放在：mybibex.bib文件； natbib.bst格式的文件，即为参考文献样式文件，针对不同的杂志会有不同的样式，需要自己Google到对应的bst文件。 主文件a.tex文件。 在主文件a.tex中，参考文献部分插入以下代码：&#xA;% BibTeX References \bibliographystyle{natbib} \bibliography{mybibtex} % name my BibTeX data base 注意：&#xA;\bibliographystyle{natbib} 为参考文献的样式，注意为natbib，不需要后缀； \bibliography{mybibtex} 为个人的参考文献库。 在a.tex其他的位置，需要有\cite{文献a}、\citet{文献a}、\citep{文献a} 等的引用格式，否则参考文献不会显示； 编译a.tex的时候，LaTex—BibTeX—LaTex—LaTex，需要编译四次。 详细地论述，可以参考LaTeX技巧829:使用BibTeX生成参考文献列表-LaTeX工作室。</description>
+    </item>
+    <item>
+      <title>LaTeX的双引号和单引号</title>
+      <link>https://www.xiaoledeng.com/2017/01/10/latex-quotation-marks/</link>
+      <pubDate>Tue, 10 Jan 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/01/10/latex-quotation-marks/</guid>
+      <description>双引号：&#xA;`` &amp;#39;&amp;#39; 单引号：&#xA;` &amp;#39; 参考 LaTeX技巧218：LaTeX如何正确输入引号:双引号“”单引号‘’_LaTeX_Fun_新浪博客 </description>
+    </item>
+    <item>
+      <title>24种常用颜色的中英文名字</title>
+      <link>https://www.xiaoledeng.com/2017/01/06/24-colors/</link>
+      <pubDate>Fri, 06 Jan 2017 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/01/06/24-colors/</guid>
+      <description> Red&#x9;纯红&#x9;#FF0000&#x9;255,0,0 Yellow&#x9;纯黄&#x9;#FFFF00&#x9;255,255,0 DarkCyan&#x9;深青色(暗青色)&#x9;#008B8B&#x9;0,139,139 Aquamarine&#x9;宝石碧绿(碧绿色) #7FFFD4 Snow&#x9;雪白色&#x9;#FFFAFA&#x9;255,250,250 Blue&#x9;纯蓝&#x9;#0000FF&#x9;0,0,255 BlueViolet&#x9;深紫罗兰的蓝色(紫罗兰)&#x9;#8A2BE2&#x9;138,43,226 Brown&#x9;棕色(褐色)&#x9;#A52A2A&#x9;165,42,42 Black&#x9;纯黑&#x9;#000000&#x9;0,0,0 Chartreuse&#x9;查特酒绿(黄绿色)&#x9;#7FFF00&#x9;127,255,0 Maroon&#x9;栗色&#x9;#800000&#x9;128,0,0 Coral&#x9;珊瑚色&#x9;#FF7F50&#x9;255,127,80 CornflowerBlue&#x9;矢车菊的蓝色(菊蓝色)&#x9;#6495ED&#x9;100,149,237 Crimson&#x9;猩红(暗深红色)&#x9;#DC143C&#x9;220,20,60 Cyan&#x9;青色&#x9;#00FFFF&#x9;0,255,255 DarkGoldenrod&#x9;暗金菊黄 #B8860B DarkGray&#x9;深灰色&#x9;#A9A9A9&#x9;169,169,169 DarkGreen&#x9;深绿色&#x9;#006400&#x9;0,100,0 PeachPuff&#x9;桃色&#x9;#FFDAB9&#x9;255,218,185 DarkMagenta&#x9;深洋红色(暗红色)&#x9;#8B008B&#x9;139,0,139 Magenta&#x9;洋红(红紫色)&#x9;#FF00FF&#x9;255,0,255 DarkSlateBlue&#x9;深岩暗蓝灰色(暗灰蓝)&#x9;#483D8B&#x9;72,61,139 DarkSlateGray&#x9;深石板灰(墨绿色)&#x9;#2F4F4F&#x9;47,79,79 Tan&#x9;晒黑(茶色)&#x9;#D2B48C&#x9;210,180,140 另附： Purple&#x9;紫色&#x9;#800080&#x9;128,0,128 Navy&#x9;海军蓝&#x9;#000080&#x9;0,0,128 DoderBlue&#x9;道奇蓝&#x9;#1E90FF&#x9;30,144,255 Teal&#x9;水鸭色&#x9;#008080&#x9;0,128,128 Lime&#x9;酸橙色&#x9;#00FF00&#x9;0,255,0 Green&#x9;纯绿&#x9;#008000&#x9;0,128,0 Olive&#x9;橄榄&#x9;#808000&#x9;128,128,0 Orange&#x9;橙色&#x9;#FFA500&#x9;255,165,0 </description>
+    </item>
+    <item>
+      <title>LaTeX字体颜色</title>
+      <link>https://www.xiaoledeng.com/2017/01/06/latex-font-color/</link>
+      <pubDate>Fri, 06 Jan 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/01/06/latex-font-color/</guid>
+      <description>给字体加颜色，默认的颜色有：red/ blue/ green/ black/ white/ cyan/ magenta/ yellow。&#xA;\usepackage{color} {\color{red} 文本} %红色 {\color{blue} 文本} %蓝色 </description>
+    </item>
+    <item>
+      <title>LaTeX 换行、分段和换页</title>
+      <link>https://www.xiaoledeng.com/2017/01/04/latex-newline-par-newpage/</link>
+      <pubDate>Wed, 04 Jan 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/01/04/latex-newline-par-newpage/</guid>
+      <description>1. 换行(\\) \newline 另起一段是空一行 \\ 2. 分段(\par) \par 3. 换页(\newpage) \newpage </description>
+    </item>
+    <item>
+      <title>LaTeX加入行号</title>
+      <link>https://www.xiaoledeng.com/2017/01/04/latex-add-linenumber/</link>
+      <pubDate>Wed, 04 Jan 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/01/04/latex-add-linenumber/</guid>
+      <description>1. 单栏行号 在tex文件中加入以下两行命令：&#xA;\usepackage{lineno} \linenumbers 第一个是添加lineno包，第二个在开始需要编号的位置加入行号。&#xA;注意：这个是针对单行，并且公式是不会标记行号的，还有\nolinenumbers为结束行号。&#xA;2. 双栏行号 \usepackage[switch]{lineno} \linenumbers 这个是针对杂志的投稿要求，需要是双栏，双栏文本使行号位于两侧，即页边位置。</description>
+    </item>
+    <item>
+      <title>Mac安装MacTex</title>
+      <link>https://www.xiaoledeng.com/2017/01/03/mac-install-mactex/</link>
+      <pubDate>Tue, 03 Jan 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/01/03/mac-install-mactex/</guid>
+      <description>1. 下载MacTex并安装 下载官网的MacTex，并安装。&#xA;2. Latex编译器TexShop的设置 安装完成后，会有TexShop编译器。&#xA;完成如下两个中文的环境设置：&#xA;设置默认的编译为Xelatex：Preferences—Typesetting—Default Command—Command Listed Below—XeLaTex；&#xA;设置语言编码为UTF-8：Preferences—Source—Encoding—Unicode(UTF-8)；当然Text and Background Colors也可以设置为白字黑底；&#xA;3. 测试中英文混搭 将下面的代码保持为UTF-8的Hello.tex文档。&#xA;\documentclass{article} \usepackage{fontspec} \setmainfont{SimSun} \begin{document} Hello, \LaTeX3, 中文混搭效果。 \end{document} 编译快捷键command+T，编译生成PDF格式。</description>
+    </item>
+    <item>
+      <title>学习Latex的一点想法</title>
+      <link>https://www.xiaoledeng.com/2017/01/02/idea-on-learning-latex/</link>
+      <pubDate>Mon, 02 Jan 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/01/02/idea-on-learning-latex/</guid>
+      <description>2017年，开始扎实地学习一些新的东西，其中一块就是Latex排版。&#xA;网上的关于Latex的资料云集，但是对于我来说，学习Latex的目标很明确，就是论文投稿的排版，还有就是毕业论文的撰写。&#xA;1. 投稿文章的排版 因为是国外的SCI，都是有固定的Latex的模板，比如JG_Latex模板等。&#xA;2. 毕业论文的模板 国内大学的本科、硕士和博士的毕业论文，一般都有Latex的模板。很庆幸有武汉大学的模板，具体见：黄正华的教学信息页面。&#xA;-武汉大学本科毕业论文 LaTeX 模版(2016 年 06 月 07 日修订.) -武汉大学硕士毕业论文 LaTeX 模版(2016 年 04 月 20 日修订.) -武汉大学博士毕业论文 LaTeX 模版(2016 年 04 月 20 日修订.)&#xA;3. 推荐资料 LaTeX 资源 LaTeX工作室-LaTeX科技排版专家 4. 末了的话 想当年，师兄博士毕业临走前，作为是CTEX社区的版主，曾经语重心长地劝勉我，要把精力放在内容上面，而不是工具上面。&#xA;还是那句话：重要的还是内容，而不是工具。见科研高效率(7)—聚焦点在内容而不是工具。&#xA;不是成为Latex的专家，而是使用Latex满足日常科研协作等的需要。</description>
+    </item>
+  </channel>
+</rss>
