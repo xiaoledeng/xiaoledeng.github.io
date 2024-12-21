@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on Xiao-Le Deng (邓小乐)</title>
+    <link>https://www.xiaoledeng.com/tags/automation/</link>
+    <description>Recent content in Automation on Xiao-Le Deng (邓小乐)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2024 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Thu, 19 Dec 2024 18:00:00 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macOS系统定时关闭和开启本地网络</title>
+      <link>https://www.xiaoledeng.com/2024/12/19/macos-open-close-local-network-timing/</link>
+      <pubDate>Thu, 19 Dec 2024 18:00:00 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/19/macos-open-close-local-network-timing/</guid>
+      <description>检查网络接口名称：&#xA;networksetup -listallhardwareports Hardware Port: PX88888A 3 Device: en10 Hardware Port: Wi-Fi Device: en1 以下内容加入： crontab -e&#xA;# Wifi 0 19 * * * /usr/sbin/networksetup -setairportpower en1 off 0 7 * * * /usr/sbin/networksetup -setairportpower en1 on # 本地网络 0 19 * * * /usr/sbin/networksetup -setnetworkserviceenabled &amp;#34;PX88888A 3&amp;#34; off 0 7 * * * /usr/sbin/networksetup -setnetworkserviceenabled &amp;#34;PX88888A 3&amp;#34; on </description>
+    </item>
+    <item>
+      <title>macOS对图片批量重命名</title>
+      <link>https://www.xiaoledeng.com/2024/11/06/macos-rename-auto/</link>
+      <pubDate>Wed, 06 Nov 2024 16:25:25 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/11/06/macos-rename-auto/</guid>
+      <description>count=1 # 初始化计数器，将变量 count 设置为 1 for file in *.PNG; do # 使用 for 循环遍历当前文件夹下所有的 .PNG 文件 if [ -f &amp;#34;$file&amp;#34; ]; then # 检查 file 是否为一个普通文件，以避免误操作 new_name=$(printf &amp;#34;image%02d.png&amp;#34; &amp;#34;$count&amp;#34;) # 使用 printf 格式化 count 为两位数 mv &amp;#34;$file&amp;#34; &amp;#34;$new_name&amp;#34; # 将当前文件 file 重命名为 new_name ((count++)) # 将 count 增加 1 fi done </description>
+    </item>
+    <item>
+      <title>macOS用ffpmeg批量mp4转mp3</title>
+      <link>https://www.xiaoledeng.com/2024/05/29/ffpmeg-mp4-to-mp3/</link>
+      <pubDate>Wed, 29 May 2024 16:37:37 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/05/29/ffpmeg-mp4-to-mp3/</guid>
+      <description>for i in *.mp4; do echo&amp;#34;${i%.*}.mp3&amp;#34;; ffmpeg -i &amp;#34;$i&amp;#34; &amp;#34;${i%.*}.mp3&amp;#34;;done 参考 macos使用ffpmeg批量mp4转mp3_macos 批量ffmpeg-CSDN博客 </description>
+    </item>
+    <item>
+      <title>macOS批量存储Safari浏览器网址</title>
+      <link>https://www.xiaoledeng.com/2024/01/21/macos-save-safari-links/</link>
+      <pubDate>Sun, 21 Jan 2024 13:41:35 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/21/macos-save-safari-links/</guid>
+      <description>1. 代码一 功能：运行 Apple Script 代码，实现把 Safari 浏览器的所有网址，存储到桌面的 MyURLs.txt 文件。&#xA;set myURLs to {} tell application &amp;#34;Safari&amp;#34; to set myURLs to the URL of every tab of every window set text item delimiters to linefeed set myURLs to myURLs as text set text item delimiters to {} if not myURLs is equal to &amp;#34;&amp;#34; then do shell script &amp;#34;echo &amp;#34; &amp;amp; myURLs&amp;#39;s quoted form &amp;amp; &amp;#34;&amp;gt; $HOME/Desktop/MyURLs.txt&amp;#34; end if 2. 代码二 功能：运行 Apple Script 代码，实现把 Safari 浏览器的所有网址，存储到桌面的 MyURLs.</description>
+    </item>
+    <item>
+      <title>Keyboard Maestro执行Shell脚本默认环境变量</title>
+      <link>https://www.xiaoledeng.com/2024/01/13/keyboard-maestro-shell-path/</link>
+      <pubDate>Sat, 13 Jan 2024 18:35:16 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/13/keyboard-maestro-shell-path/</guid>
+      <description>Keyboard Maestro 在执行 Shell 脚本 (Execute a Shell Script) 时，默认的环境变量为：&#xA;/usr/bin:/bin:/usr/sbin:/sbin 有三种解决方案1：&#xA;使用工具或文件的显式完整路径 (Use an explicit, full path to the tool or file.)&#xA;在每个执行 Shell 脚本操作中设置 $PATH 环境变量 (Set the $PATH environment variable within each Execute Shell Script action. )&#xA;在执行 Shell 脚本操作之前设置 ENV_PATH Keyboard Maestro 变量 (Set ENV_PATH Keyboard Maestro variable prior to the Execute Shell Script Action.)&#xA;比如，显式完整路径： /opt/homebrew/bin/node&#xA;where node /opt/homebrew/bin/node 在执行 node 时，在 Shell 脚本第一行加入：&#xA;PATH=$PATH:/opt/homebrew/bin/ 这样，就可以直接用 node。</description>
+    </item>
+    <item>
+      <title>解决crontab不执行的一般思路</title>
+      <link>https://www.xiaoledeng.com/2023/12/24/idea-on-crontab-not-run/</link>
+      <pubDate>Sun, 24 Dec 2023 11:46:10 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/24/idea-on-crontab-not-run/</guid>
+      <description>1. 前言 Linux 下利用 crontab 工具 1 进行定时操作时，会遇到不执行的情况。&#xA;一般而言，会有各种各样的原因 2, 3, 4：&#xA;环境变量 换行符：cron 中每个条目下面添加一个空行 crond 服务 shell 解释器 时区 百分号% 密码过期 权限 不同平台 不同 cron crontable 变量 GUI 但是，有解决问题的一般思路：查看系统日志和系统邮件，找到错误原因，而后解决。&#xA;2. 步骤 2.1 查看系统日志 终端命令：&#xA;tail -50 /var/log/syslog crontab 运行的关键字： CRON[1409480]: (name) CMD ...，&#xA;2.2 查看系统邮件 Ubuntu 下安装 mail 的终端命令：&#xA;sudo apt install mailutils 终端输入 mail ，选择数字序号，查看部分邮件如下：&#xA;Traceback (most recent call last): File &amp;#34;/usr/lib/python3/dist-packages/keyring/backends/libsecret.py&amp;#34;, line 62, in get_password items = Secret.</description>
+    </item>
+    <item>
+      <title>随笔—自动化网站写作</title>
+      <link>https://www.xiaoledeng.com/2023/12/15/automatic-website-write/</link>
+      <pubDate>Fri, 15 Dec 2023 08:57:04 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/15/automatic-website-write/</guid>
+      <description>1. 前言 一直以来，都是手动完成网站写作。虽然有一部分写成 job.sh 脚本【功能为：自动编译并上传 GitHub 】，并且用 Alfred 已经大幅度提升效率【还是需要在 Alfred 中输入命令行】，但是整个网站写作还没有实现自动化。&#xA;用 Keyboard Maestro 后，可以把整个网站写作流程全部实现自动化，用一个 快捷键 + 数字 实现自动化网站写作。&#xA;注意⚠️：本文实现的电脑💻系统为 macOS 。&#xA;2. 自动化步骤 快捷键 Option + Command + B ，调出面板，依次选择：&#xA;Blog 1 New 实现自动创建新的 markdown 文件📃 Blog 2 Server 实现自动搭建本地查看网站的预备 Blog 3 Broswer Safari 实现自动用 Safari 浏览器显示本地网站预览 Blog 4 Upload 实现自动编译并上传网站 注意⚠️：这里用1、2、3、4来标记，按下快捷键 Option + Command + B ，调出面板后，可以输入1、2、3、4选择对应功能执行。&#xA;2.1 自动创建新的 markdown 文件 新建一个 Macros，命名为 Blog 1 New&#xA;点击「New Trigger - Hot Key Trigger」，输入快捷键 Option + Command + B</description>
+    </item>
+    <item>
+      <title>Keyboard Maestro复制Markdown格式</title>
+      <link>https://www.xiaoledeng.com/2023/12/14/copy-markdown-title-link/</link>
+      <pubDate>Thu, 14 Dec 2023 16:14:05 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/14/copy-markdown-title-link/</guid>
+      <description>1. 前言 之前在 Chrome 浏览器里，有 Copy as Markdown 的插件 1，可以快速复制 Markdown 格式 — [Tab名](link)。&#xA;用 Safari 浏览器外加 Tampermonkey 2 后，虽然也可以用一些脚本实现复制 Markdown 格式，但是效果不是很好，而且有时候粘贴不出想要的内容。&#xA;搜索🔍 Keyboard Maestro 复制 Markdown 格式，发现了 「用 Keyboard Maestro 做一个文本格式转换工具箱 - 少数派」 3，里面的部分工具🔧能够实现想要的功能：快速复制 Markdown 格式 — [Tab名](link)。&#xA;2. 步骤 下载 GitHub 文件 keyboard-maestro-gallery/Convert Toolbox/链接格式转换 Safari.kmmacros&#xA;只用其中的 Paste Markdown Link from Safari Tabs Macro 即可，AppleScript 为 4：&#xA;tell application &amp;#34;Safari&amp;#34; -- Initialize set tabNames to {} set tabURLs to {} set frontName to name of front document -- Collect the tab names and URLs from the top Safari window set topWindow to window 1 set topTabs to every tab of topWindow repeat with t in topTabs set end of tabNames to name of t set end of tabURLs to URL of t end repeat end tell -- Display a list of names for the user to choose from tell application &amp;#34;System Events&amp;#34; set activeApp to name of first application process whose frontmost is true activate choose from list tabNames with title &amp;#34;Safari Tabs&amp;#34; default items frontName if result is not false then set nameChoice to item 1 of result else return end if end tell -- Return the URL of the selected tab tell application activeApp to activate repeat with t from 1 to the count of tabNames if item t of tabNames is nameChoice then return &amp;#34;[&amp;#34; &amp;amp; (item t of tabNames) &amp;amp; &amp;#34;]&amp;#34; &amp;amp; &amp;#34;(&amp;#34; &amp;amp; (item t of tabURLs) &amp;amp; &amp;#34;)&amp;#34; end repeat 可以重新设置自己习惯的快捷键。 彩蛋🥚： 少数派部分文章合集</description>
+    </item>
+    <item>
+      <title>Sublime设置自动保存</title>
+      <link>https://www.xiaoledeng.com/2023/12/14/sublime-auto-save/</link>
+      <pubDate>Thu, 14 Dec 2023 10:58:06 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/14/sublime-auto-save/</guid>
+      <description>1. 方法 打开 Preferences —— Settings，加入：&#xA;&amp;#34;save_on_focus_lost&amp;#34;:true, 即：编辑器失去焦点后，会自动保存。&#xA;2. 参考 sublime如何自动保存-CSDN博客 </description>
+    </item>
+    <item>
+      <title>Keyboard Maestro识别LaTeX公式</title>
+      <link>https://www.xiaoledeng.com/2023/12/13/keyboard-maestro-read-late-formula/</link>
+      <pubDate>Wed, 13 Dec 2023 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/13/keyboard-maestro-read-late-formula/</guid>
+      <description>1. 前言 本页内容基于 macOS使用pix2tex代替Mathpix识别LaTeX公式 ，用 Keyboard Maestro 实现自动化功能：&#xA;点击右上角 Keyboard Maestro 图标，选择 Capture &amp;amp; LaTeX 截图公式后，自动识别公式为 LaTeX 代码到剪贴板 可以粘贴到 LaTeX 文档中 2. 步骤 新建一个 Macros，命名为 Capture &amp;amp; LaTeX&#xA;点击「New Trigger - Status Menu Trigger」&#xA;添加Shell脚本：点击「New Action」，进入 Categories 的「Execute」，选中「Execute Shell Script」，鼠标🖱️双击添加，加入以下命令行，并设置为 Ignore results：&#xA;screencapture -i /Users/name/image.png /Users/name/anaconda3/bin/python /Users/name/LaTeXOCR.py | pbcopy rm /Users/name/image.png 通知📢显示：关闭「Actions」，再次点击「New Action」，进入 Categories 的「Notifications」，选中「Display Text」，鼠标🖱️双击添加，填入内容： %SystemClipboard%，设置为 Display text briefly&#xA;关闭「Actions」，完成✅操作&#xA;注意⚠️⚠️⚠️：&#xA;查看 Python 的执行目录： where python，结果为：/Users/name/anaconda3/bin/python 图片的路径是具体的全路径： /Users/name/image.png ，name改为自己的用户名 LaTeXOCR.</description>
+    </item>
+    <item>
+      <title>Keyboard Maestro识别二维码并打开</title>
+      <link>https://www.xiaoledeng.com/2023/12/12/keyboard-maestro-read-code-and-open/</link>
+      <pubDate>Tue, 12 Dec 2023 19:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/12/keyboard-maestro-read-code-and-open/</guid>
+      <description>1. 说明 利用 Keyboard Maestro ，实现的功能为：&#xA;点击右上角 Keyboard Maestro 图标，选择 Capture &amp;amp; QR 截图二维码后，自动识别文字到剪贴板 自动用浏览器打开网址 2. 步骤 新建一个 Macros，命名为 Capture &amp;amp; QR&#xA;点击「New Trigger - Status Menu Trigger」&#xA;添加Shell脚本：点击「New Action」，进入 Categories 的「Execute」，选中「Execute Shell Script」，鼠标🖱️双击添加，加入以下命令行，并设置为 Ignore results：&#xA;screencapture -i /Users/name/qrimg.png /opt/homebrew/bin/zbarimg /Users/name/qrimg.png | sed -e &amp;#39;s/scanned.*//g&amp;#39; -e &amp;#39;s/QR-Code://g&amp;#39; | pbcopy rm /Users/name/qrimg.png 通知📢显示：关闭「Actions」，再次点击「New Action」，进入 Categories 的「Notifications」，选中「Display Text」，鼠标🖱️双击添加，填入内容： %SystemClipboard%，设置为 Display text briefly&#xA;Safari 浏览器打开：关闭「Actions」，再次点击「New Action」，进入 Categories 的「Safari Control」，选中「New Safari Tab」，鼠标🖱️双击添加，With URL 选为 %SystemClipboard%</description>
+    </item>
+    <item>
+      <title>Keyboard Maestro设置中文OCR</title>
+      <link>https://www.xiaoledeng.com/2023/12/12/keyboard-maestro-set-ocr/</link>
+      <pubDate>Tue, 12 Dec 2023 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/12/keyboard-maestro-set-ocr/</guid>
+      <description>1. 前言 OCR (Optical Character Recognition，光学字符识别)，即：检查图片中的字符，并将其翻译成计算机文字。&#xA;Keyboard Maestro 支持调用 macOS 内置 OCR 的功能，实现的功能为：&#xA;点击右上角 Keyboard Maestro 图标，选择 Capture &amp;amp; OCR Chinese 截取一段屏幕区域后，自动识别文字到剪贴板 黏贴对应的文字即可 2. 设置步骤 新建一个 Macros，命名为 Capture &amp;amp; OCR Chinese&#xA;点击「New Trigger - Status Menu Trigger」&#xA;点击「New Action」，进入 Categories 的「Execute」，选中「Execute Shell Script」，鼠标🖱️双击添加，加入命令行： screencapture -ic，设置为 Ignore results&#xA;关闭「Actions」，再次点击「New Action」，进入 Categories 的「Image」，选中「OCR Images」，鼠标🖱️双击添加，Language选为： Languages - Chinese sim【即，中文简体】，设置为 Save results to a clipboard，Save to System Clipboard&#xA;关闭「Actions」，再次点击「New Action」，进入 Categories 的「Variables」，选中「Filter」，鼠标🖱️双击添加，Filter 选为 System Clipboard，with 选为 Trim Whiterspace，to 选为 System Clipboard</description>
+    </item>
+    <item>
+      <title>Keyboard Maestro在特定的应用使用特定的输入法</title>
+      <link>https://www.xiaoledeng.com/2023/12/11/keyboard-maestro-change-input/</link>
+      <pubDate>Mon, 11 Dec 2023 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/11/keyboard-maestro-change-input/</guid>
+      <description>1. 前言 在特定的应用里，实现特定的输入法。比如，&#xA;在终端 Terminal 里，用 英文ABC 输入法； 在短信 Message 里，用 Shuangpin 输入法； 在 Alfred 里，用 英文ABC 输入法； &amp;hellip; 2. 设置步骤 新建一个 Macros，命名为 Input ABC in Terminal&#xA;点击「New Trigger - Application Trigger」，选择 「Terminal」和「Activates」&#xA;点击「New Action」，进入 Categories 的「System Control」，选中「Set Keyboard Layout」，鼠标🖱️双击添加&#xA;点击「Set keyboard layout to」，选中「ABC」&#xA;关闭「Actions」，完成✅操作&#xA;3. 延伸阅读 无需专门安装 App，用 Keyboard Maestro 切换输入法和浏览器 - 少数派 </description>
+    </item>
+    <item>
+      <title>Keyboard Maestro代替Spectacle调整窗口大小</title>
+      <link>https://www.xiaoledeng.com/2023/12/11/keyboard-maestro-replace-spectacle-resize-window/</link>
+      <pubDate>Mon, 11 Dec 2023 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/11/keyboard-maestro-replace-spectacle-resize-window/</guid>
+      <description>1. 前言 一直以来，macOS 电脑💻的窗口大小和位置是通过 Spectacle 1 设置键盘⌨️快捷键快速调整，不需要鼠标🖱️，操作很方便。&#xA;开始使用 Keyboard Maestro 2 后，发现设置快捷键可实现同样的功能，故而 Spectacle 可以卸载了。&#xA;2. 设置步骤 新建一个 Macros，命名为 窗口左放&#xA;点击「New Trigger - Hot Key Trigger」，输入一个快捷键，例如： Option + Command + -&amp;gt;&#xA;点击「New Action」，进入 Categories 的「Interface Control」，选中「Resize a Window」，鼠标🖱️双击添加&#xA;点击「Resize by - Move and Resize」，选中「Left Column」&#xA;关闭「Actions」，完成✅操作&#xA;重复上面五步 3，完成 Keyboard Maestro 提供的九种最常见的窗口排列模式：&#xA;全屏 (Full Screen)&#xA;左右排列 (Left Column; Right Column)&#xA;上下排列 (Top Half; Bottom Half)&#xA;四角排列 (Top Left; Top Right; Bottom Left; Bottom Right)</description>
+    </item>
+    <item>
+      <title>macOS系统的脚本工具osascript</title>
+      <link>https://www.xiaoledeng.com/2023/12/06/macos-script-tool-osascript/</link>
+      <pubDate>Wed, 06 Dec 2023 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/06/macos-script-tool-osascript/</guid>
+      <description>1. 引言 “Every time I get a script it&amp;rsquo;s a matter of trying to know what I could do with it. I see colors, imagery. It has to have a smell. It&amp;rsquo;s like falling in love. You can&amp;rsquo;t give a reason why” - Paul Newman&#xA;“Mac OS X is a rock-solid system that&amp;rsquo;s beautifully designed. I much prefer it to Linux” - Bill Joy&#xA;macOS系统的脚本工具 osascript 能够在终端命令行执行一些操作。&#xA;基本语法：&#xA;osascript [-l language] [-e command] [-s flags] [programfile] 2.</description>
+    </item>
+    <item>
+      <title>macOS系统定时通知</title>
+      <link>https://www.xiaoledeng.com/2023/12/06/macos-notification-on-time/</link>
+      <pubDate>Wed, 06 Dec 2023 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/06/macos-notification-on-time/</guid>
+      <description>1. 前言 “Wisdom is the power to put our time and our knowledge to the proper use” ~ Thomas J. Watson&#xA;通过macOS系统的桌面右上角的通知📢，提醒一些信息，比如：定时提醒吃饭🍚，定时下班关机💼和定时打开页面。&#xA;这些实现起来，使用两个工具🔧：crontab 和 osascript 。&#xA;本网站已经写了两篇关于 crontab 的使用：&#xA;macOS系统定时关闭和开启Wi-Fi Linux命令行定时工具crontab 2. 实现 macOS 系统定时通知 打开 crontab 编辑： crontab -e 加入以下命令： # 工作日（周一、二、三、四和五）下午五点半，提醒下班，6.Dec.2023 Deng 30 17 * * 1,2,3,4,5 osascript -e &amp;#39;display notification &amp;#34;定时下班是为了更好地上班💼！&amp;#34; with title &amp;#34;下班&amp;#34; subtitle &amp;#34;准时下班很重要&amp;#34; sound name &amp;#34;Tink&amp;#34;&amp;#39; 说明： Tink 为系统内置的声音🔊，可以选择其他系统内置的声音，见 /System/Library/Sounds文件夹。&#xA;打开 System Setting — Notifications — Script Editor，打开通知📢并进行相关设置。 3.</description>
+    </item>
+    <item>
+      <title>Linux命令行定时工具crontab</title>
+      <link>https://www.xiaoledeng.com/2023/12/06/linux-tool-crontab/</link>
+      <pubDate>Wed, 06 Dec 2023 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/06/linux-tool-crontab/</guid>
+      <description>1. 说明 “Wisdom is the power to put our time and our knowledge to the proper use” ~ Thomas J. Watson&#xA;crontab 是 Linux系统的命令行定时工具，用于在固定的间隔时间执行指定的系统指令或 shell script 脚本。&#xA;格式为：&#xA;# ┌───────────── minute (0–59) # │ ┌───────────── hour (0–23) # │ │ ┌───────────── day of the month (1–31) # │ │ │ ┌───────────── month (1–12) # │ │ │ │ ┌───────────── day of the week (0–6) (Sunday to Saturday; # │ │ │ │ │ 7 is also Sunday on some systems) # │ │ │ │ │ # │ │ │ │ │ # * * * * * &amp;lt;command to execute&amp;gt; # 分 时 日 月 星期 要运行的命令 注释：</description>
+    </item>
+    <item>
+      <title>macOS系统定时关闭和开启Wi-Fi</title>
+      <link>https://www.xiaoledeng.com/2023/12/05/macos-open-close-wifi-timing/</link>
+      <pubDate>Tue, 05 Dec 2023 18:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/05/macos-open-close-wifi-timing/</guid>
+      <description>1. 引言 macOS 系统，需要定时关闭和定时开启 Wi-Fi 1。&#xA;搜索了一下，发现 macOS 系统终端实现定时任务有两个工具： Launchd（或launchctl） 和 crontab 2。&#xA;crontab 更通用一点，兼容适合更多的 Linux 系统。故而，选择 crontab 3。&#xA;2. 步骤 2.1 开启 crontab 查看 crontab 是否启动： sudo launchctl list | grep cron 显示：&#xA;- 0 com.vix.cron 检查需要的文件： ls -al /etc/crontab 显示：&#xA;ls: /etc/crontab: No such file or directory 如果 crontab 文件不存在则创建：&#xA;sudo touch /etc/crontab 2.2 crontab 创建任务 编辑定时任务： crontab -e 一般是进入 vi 编辑模式，点击 i 开始编辑，复制并黏贴指定的定时任务：&#xA;# 每天9点关闭Wi-Fi 0 9 * * * /usr/sbin/networksetup -setairportpower en0 off # 每天12点开启Wi-Fi 0 12 * * * /usr/sbin/networksetup -setairportpower en0 on :wq退出并保存文件。</description>
+    </item>
+    <item>
+      <title>macOS系统图片命令行工具sips</title>
+      <link>https://www.xiaoledeng.com/2022/08/18/macos-sips/</link>
+      <pubDate>Thu, 18 Aug 2022 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/08/18/macos-sips/</guid>
+      <description>1. 简介 sips是macOS系统的一个命令行工具，可以实现图片的裁剪、缩放、旋转、翻转和格式转换。&#xA;之前，做过记录：Mac图片处理工具sips，这次记录不同方面。&#xA;2. 格式转换 sips -s format jpeg -s formatOptions low input.jpg -o output.png 其中，&#xA;-s format的选项有： jpeg | tiff | png | gif | jp2 | pict | bmp | qtif | psd | sgi | tga -s formatOptions的选项有：default、low、normal、high、best、 百分比（数值）、lzw、packbits 3. 说明文档 sips -h sips - scriptable image processing system. This tool is used to query or modify raster image files and ColorSync ICC profiles. Its functionality can also be used through the &amp;#34;Image Events&amp;#34; AppleScript suite.</description>
+    </item>
+    <item>
+      <title>macOS系统youtube-dl下载视频、音频和字幕</title>
+      <link>https://www.xiaoledeng.com/2022/08/11/macos-youtube-dl-download-videos-audios-subtitles/</link>
+      <pubDate>Thu, 11 Aug 2022 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/08/11/macos-youtube-dl-download-videos-audios-subtitles/</guid>
+      <description>1. 安装youtube-dl brew install youtube-dl 2. 下载视频 youtube-dl -f best URL 其中，URL为视频地址。&#xA;3. 下载音频 最佳音频下载：&#xA;youtube-dl -f bestaudio URL 4. 下载字幕 列出字幕：&#xA;youtube-dl --list-subs URL 下载字幕：&#xA;youtube-dl --write-sub --sub-lang de-DE --skip-download URL de-DE可以改为第一步列出的字幕名称，比如：zh-Hans、zh-Hant和en等。&#xA;5. 参考 youtube-dl-github 视频专业下载工具，Youtube-dl 详细使用教程与初学上手示例 如何使用youtube-dl仅下载视频字幕 </description>
+    </item>
+  </channel>
+</rss>
