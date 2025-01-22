@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GMT on Xiao-Le Deng (邓小乐)</title>
+    <link>https://www.xiaoledeng.com/tags/gmt/</link>
+    <description>Recent content in GMT on Xiao-Le Deng (邓小乐)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2025 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Mon, 08 Mar 2021 16:30:00 +0800</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/gmt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GMT绘制各省的地形图</title>
+      <link>https://www.xiaoledeng.com/2021/03/08/gmt-province-relief/</link>
+      <pubDate>Mon, 08 Mar 2021 16:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/03/08/gmt-province-relief/</guid>
+      <description>1. 下载地形grd数据 下载地址： https://mirrors.ustc.edu.cn/gmt/data/&#xA;上述数据中，最高分辨率为15s（即：earth_relief_15s.grd，约 2.77G）。&#xA;如果需要 1s 分辨率，可从SRTM内插数据下载：&#xA;https://topex.ucsd.edu/WWW_html/srtm30_plus.html 2. 绘图代码 #!/bin/bash # gmt version: Version 5.4.5 [64-bit] [4 cores] ps=province.ps gmt gmtset FORMAT_GEO_MAP = dddF MAP_FRAME_WIDTH=2p gmt gmtset FONT_ANNOT_PRIMARY 7p,Helvetica,black FONT_LABEL 7p,Helvetica,black # 根据需要选择省界，CN.42为湖北 gmt pscoast -ECN.42 -M -Df &amp;gt; sd.txt # psclip 使用省界裁切地图 Begin of the clip gmt psclip sd.txt `gmt gmtinfo sd.txt -I0.000001` -JM2i -K &amp;gt; $ps gmt makecpt -Cdem2 -T0/2000/1 &amp;gt; mss.cpt # 数据的绝对路径为：/Users/name/gmt/earth_relief_15s.grd # grdimage 添加DEM绘图，并添加方位光照效果。 gmt grdimage -J -R /Users/name/gmt/earth_relief_15s.</description>
+    </item>
+    <item>
+      <title>PyGMT: Pythonic Generic Mapping Tools</title>
+      <link>https://www.xiaoledeng.com/2020/10/28/pygmt/</link>
+      <pubDate>Wed, 28 Oct 2020 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/10/28/pygmt/</guid>
+      <description>1. Introduction PyGMT is a library for processing geospatial and geophysical data and making publication quality maps and figures. It provides a Pythonic interface for the [Generic Mapping Tools (GMT)](https://github.com/GenericMappingTools/gmt), a command-line program widely used in the Earth Sciences.&#xA;Documentation: https://www.pygmt.org/dev/&#xA;GitHub: https://github.com/GenericMappingTools/pygmt&#xA;Install: https://www.pygmt.org/dev/install.html&#xA;# install pygmt environment conda config --prepend channels conda-forge conda create --name pygmt python=3.8 pip numpy pandas xarray netcdf4 packaging gmt # open pygmt environment conda activate pygmt # install pygmt conda install pygmt # test conda install pytest pytest-mpl ipython import pygmt pygmt.</description>
+    </item>
+    <item>
+      <title>GMT6数据（1）earth_relief: 全球地形起伏数据</title>
+      <link>https://www.xiaoledeng.com/2020/10/12/gmt6-data-1-earth-relief/</link>
+      <pubDate>Mon, 12 Oct 2020 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/10/12/gmt6-data-1-earth-relief/</guid>
+      <description>1.数据简介 earth_relief 数据是GMT提供的全球地形起伏数据，其包含了全球陆地和洋底的高程数据。 原始数据来源于公开数据，GMT经过了一些预处理，提供了不同分辨率和不同配准方式的网格数据， 以满足用户的不同需求。earth_relief 数据默认使用GMT内置的 geo CPT文件。&#xA;下表列出了GMT提供的 earth_relief 数据的代码、配准方式、分辨率、球面距离(fullwidth)以及文件大小。&#xA;代码 配准方式 分辨率 球面距离 大小 01d g,p 1 弧度 ~111 km 112 KB 30m g,p 30 弧分 ~55 km 377 KB 20m g,p 20 弧分 ~37 km 783 KB 15m g,p 15 弧分 ~28 km 1.4 MB 10m g,p 10 弧分 ~18 km 2.9 MB 06m g,p 6 弧分 ~10 km 7.5 MB 05m g,p 5 弧分 ~9 km 11 MB 04m g,p 4 弧分 ~7.</description>
+    </item>
+    <item>
+      <title>GMT6学习体系</title>
+      <link>https://www.xiaoledeng.com/2020/09/12/gmt6-learning-system/</link>
+      <pubDate>Sat, 12 Sep 2020 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/12/gmt6-learning-system/</guid>
+      <description>英文官网：The Generic Mapping Tools&#xA;中文：GMT中文社区&#xA;1. 简介 GMT简介：GMT是什么、GMT的历史、GMT开发者、GMT的特点、其它制图软件&#xA;GMT版本：版本号、GMT主流版本&#xA;引用&#xA;学习资源&#xA;2. 安装 Linux 下安装 GMT：Fedora、RHEL/CentOS、Ubuntu/Debian用户、ArchLinux用户&#xA;Windows 下安装 GMT：安装GMT、安装其它可选软件&#xA;macOS 下安装 GMT：使用 Homebrew 安装、使用 GMT 安装包、使用 Macports 安装&#xA;跨平台GMT安装方案：通过 conda 安装&#xA;Linux/macOS 下编译GMT源码：编译及运行依赖、安装依赖软件、下载源码及数据、安装GMT、修改环境变量、测试是否安装成功、升级/卸载GMT&#xA;3. 版本迁移 GMT4 → GMT5&#xA;GMT5 → GMT6&#xA;经典模式 → 现代模式：经典模式的问题、现代模式的优点、从经典到现代&#xA;4. 入门教程 GMT初探: Linux篇：启动终端、运行GMT、生成脚本模板、查看并编辑脚本文件、执行脚本以绘图&#xA;GMT初探: macOS篇：启动终端、运行GMT、生成脚本模板、查看并编辑脚本文件、执行脚本以绘图&#xA;GMT初探: Windows篇：启动CMD命令行、运行GMT、生成脚本模板、查看并编辑脚本文件、执行脚本以绘图、&#xA;命令初探：GMT绘图脚本模板、绘制第一张图、GMT命令格式&#xA;脚本编程：Bash编程基础知识、Batch编程基础知识、将Bash脚本转换为Batch脚本、常用Unix小工具&#xA;绘制底图：全球地图、区域地图、线性坐标轴、三维线性坐标轴&#xA;绘制海岸线：绘制海岸线和湖岸线、设置要绘制的对象的最小面积、填充陆地与水体、绘制国界/州界、添加比例尺&#xA;绘制线段和多边形：绘制一条线段、绘制一个多边形、绘制多条线段、绘制多个多边形、大圆弧路径&#xA;绘制符号：符号一览、绘制简单符号、大小变化的符号、颜色变化的符号、绘制不同的符号、大小颜色和符号类型都变化的符号&#xA;添加文字：最简单的示例、文字属性、文本框、对齐方式、文本偏移量、变化的文字属性、&#xA;添加图例：自动图例、设置图例属性、手动设置图例&#xA;绘制地形起伏：全球地形起伏数据、绘制全球地形起伏图、绘图区域地形起伏图、增加光照效果、添加色标、制作CPT文件&#xA;理解图层：图件分析与拆解、绘制底图、绘制震中和台站位置、绘制射线路径、添加台站名、图层的先后顺序&#xA;绘制直方图：垂直直方图、增加修饰、水平直方图、百分比直方图&#xA;GMT单行模式&#xA;GMT图中图模式：用矩形框标记研究区域、用颜色标记研究区域&#xA;GMT子图模式：子图布局、第一张子图、共用X/Y轴、复杂布局&#xA;GMT多图模式&#xA;5. GMT基础 画布：图片格式、画布颜色、画布大小</description>
+    </item>
+    <item>
+      <title>GMT6入门教程（7）单行、图中图、子图和多图模式</title>
+      <link>https://www.xiaoledeng.com/2020/09/12/gmt6-tutorial-7/</link>
+      <pubDate>Sat, 12 Sep 2020 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/12/gmt6-tutorial-7/</guid>
+      <description>1.单行模式 原文地址：GMT单行模式 — GMT中文手册&#xA;“单行模式”：当绘图只需要一个GMT命令时，可省略 gmt begin 和 gmt end，只需要在绘图命令后加上 -format figname 即可。&#xA;完整模式命令：&#xA;gmt begin GlobalMap png,pdf gmt coast -Rg -JH15c -Gpurple -Baf -B+t&amp;#34;My First Plot&amp;#34; gmt end show 单行模式命令：&#xA;gmt coast -Rg -JH15c -Gpurple -Baf -B+t&amp;#34;My First Plot&amp;#34; -pdf,png GlobalMap 2.图中图模式 原文地址：GMT图中图模式 — GMT中文手册&#xA;模块：inset&#xA;用法：图中图模式以 inset begin 开始，并以 inset end 结束。&#xA;解释：使用 inset begin 进入图中图模式，其作用是在纸张上规划出一个矩形区域，并将绘图原点移动到该矩形区域的左下角。接下来的所有绘图命令均只在该区域内进行操作。当使用 inset end 结束图中图模式时，绘图原点会自动恢复到图中图模式之前的位置，且所有设置参数都将回到之前的状态。&#xA;2.1用矩形框标记研究区域 命令：&#xA;gmt begin inset-map png,pdf gmt coast -R139.2/140.5/34.8/36 -JM12c -Baf -BWSne -W2p -A1000 -Glightbrown -Sazure1 --FORMAT_GEO_MAP=dddF gmt inset begin -DjBL+w3c/3.</description>
+    </item>
+    <item>
+      <title>GMT6入门教程（6）理解图层</title>
+      <link>https://www.xiaoledeng.com/2020/09/11/gmt6-tutorial-6/</link>
+      <pubDate>Fri, 11 Sep 2020 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/11/gmt6-tutorial-6/</guid>
+      <description>原文地址：理解图层 — GMT中文手册&#xA;GMT的每一个绘图命令都会产生一个图层，后绘制的图层会覆盖在先绘制的图层的上面，即后来者居上。故此，通过组合一系列简单的GMT命令，得到了一个复杂的GMT图件。&#xA;#!/bin/bash gmt begin layers png,pdf # 绘制地形起伏底图 gmt basemap -JH180/15c -Rg -B0 gmt grdimage @earth_relief_10m -Cetopo1 -I+d gmt colorbar -Bxa2000f+l&amp;#34;Elevation (m)&amp;#34; # 绘制大圆射线路径 gmt plot -W1p,red &amp;lt;&amp;lt; EOF &amp;gt; 130.72 32.78 104.39 29.90 &amp;gt; 130.72 32.78 13.14 52.50 &amp;gt; 130.72 32.78 19.99 -34.52 &amp;gt; 130.72 32.78 -77.15 38.89 &amp;gt; 130.72 32.78 -52.47 -31.62 &amp;gt; 130.72 32.78 150.36 -33.79 &amp;gt; 130.72 32.78 76.22 -69.22 EOF # 绘制震中位置 gmt plot -Sa0.</description>
+    </item>
+    <item>
+      <title>GMT6入门教程（5）绘制地形起伏和直方图</title>
+      <link>https://www.xiaoledeng.com/2020/09/11/gmt6-tutorial-5/</link>
+      <pubDate>Fri, 11 Sep 2020 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/11/gmt6-tutorial-5/</guid>
+      <description>1.绘制地形起伏 原文地址：绘制地形起伏 — GMT中文手册&#xA;模块：grdimage&#xA;1.1全球地形起伏数据 要绘制全球或区域地形起伏图，首先需要拥有地形起伏数据，即不同经纬度处的高程或海深数据。&#xA;GMT用户可以通过给定文件名 @earth_relief_xxx 的方式来指定要使用某个精度的地形。xxx 用于指定数据精度，例如：15m、05m、01m和 15s 分别表示数据分辨率为15弧分、5弧分、1弧分和15弧秒。&#xA;全球地形起伏数据的详细介绍见: earth_relief: 全球地形起伏数据。&#xA;1.2绘制全球地形起伏图 命令：gmt grdimage @earth_relief_05m -JH180/10c&#xA;1.3绘图区域地形起伏图 命令：gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen&#xA;1.2增加光照效果 为图幅加上光照效果，是为了让地形起伏图更加立体。可以指定光照的方向、强度等参数，也可以直接使用 -I+d 以使用默认的光照效果。&#xA;增加光照效果本质上是计算了每个点沿着某个方位角的方向梯度，然后根据每个点的方向梯度的正负以及振幅调节该点颜色的亮度值。对于向阳处，其方向梯度为正值，则增加该点颜色的亮度；对于背阴处，其方向梯度为负值，则降低该点颜色的亮度。由此达到增加光照效果、增强立体感的目的。&#xA;命令：gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d&#xA;1.3添加色标 grdimage 绘制地形起伏数据本质上就是将高程的数值与颜色之间对应起来。二者之间的对应关系由色标文件（即CPT文件）决定。用 colorbar 向图中添加色标。&#xA;模块：colorbar&#xA;初始命令：gmt colorbar&#xA;进一步使用 -B 选项设置色标的标注间隔，并为色标添加一个标签，&#xA;命令: gmt colorbar -Bxaf+l&amp;quot;Elevation (m)&amp;quot;&#xA;也可以使用了 -D 选项将色标放在了地形起伏图的右侧中间（JMR）向右偏移1.5厘米，色标长度为10厘米，并将标签放在了色标左侧（+ml）&#xA;命令：gmt colorbar -DJMR+w10c+o1.5c/0c+ml -Bxa1000f -By+l&amp;quot;m&amp;quot;&#xA;1.4制作CPT文件 模块：makecpt和grd2cpt&#xA;使用 makecpt 模块在GMT内置CPT globe 的基础上生成了一个-8000到8000范围内的新CPT文件。生成的CPT文件将作为当前CPT文件，供接下来的 grdimage 和 colorbar 命令使用。</description>
+    </item>
+    <item>
+      <title>GMT6入门教程（4）添加图例和文字</title>
+      <link>https://www.xiaoledeng.com/2020/09/10/gmt6-tutorial-4/</link>
+      <pubDate>Thu, 10 Sep 2020 08:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/10/gmt6-tutorial-4/</guid>
+      <description>1.添加图例（legend） 原文地址：添加图例 — GMT中文手册&#xA;模块：legend&#xA;1.1自动图例 在使用 plot 模块绘制线条或符号时，可以额外加上 -llabel 选项以指定当前线段或符号的图例标签。&#xA;可以为 -l 选项加上其它子选项以控制图例的位置、大小以及其它显示效果&#xA;1.2设置图例属性 调用了 legend 选项，并设置了 -D 和 -F 选项，-DjBR+o0.1c/0.1c -F+p1p+glightblue。&#xA;jBR 表示将图例放在底图的右下角（BottomRight） +o0.1c/0.1c 表示将图例在右下角的基础上再加上额外的偏移量 -F+p1p+glightblue 则设置了图例框的轮廓和填充色 1.3手动设置图例 针对绘制符号和线条，legend 的输入格式为：&#xA;S dx1 symbol size fill pen dx2 text&#xA;S 表明这一行用于绘制符号或线段。 dx1 是符号或线段与图例左边框的距离 symbol 是要绘制的符号类型代码；若想要绘制线段，则设置 symbol 为 - size 符号尺寸或线段长度 fill 符号填充色；若不需要填充色，则可设置为 - pen 符号轮廓的画笔颜色；若不需要绘制符号轮廓，则可设置为 - text 符号对应的文字说明 dx2 文字与左边框之间的距离 例子：&#xA;# symbols S 0.25c c 0.3c - 0.25p,blue 0.</description>
+    </item>
+    <item>
+      <title>GMT6入门教程（3）绘制线段、多边形和符号</title>
+      <link>https://www.xiaoledeng.com/2020/09/09/gmt6-tutorial-3/</link>
+      <pubDate>Wed, 09 Sep 2020 20:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/09/gmt6-tutorial-3/</guid>
+      <description>1.绘制线段、多边形 原文地址：绘制线段和多边形 — GMT中文手册&#xA;模块：plot&#xA;1.1绘制一条线段 要绘制一条线段，就必须提供线段上数据点的信息，即数据的X坐标和Y坐标。 plot 会自动将输入数据中相邻的两点连接起来。&#xA;使用 plot 模块的 -W 选项设置画笔属性。画笔属性包括三个部分：线宽、颜色以及线型，三者之间用逗号隔开。&#xA;-W2p,red,- 选项，即设置了画笔属性为 2p 宽的红色虚线。p 是GMT中的一个长度单位。 几种常见的线型包括 -、.、.-和 -. 1.2绘制一个多边形 plot 使用 -L 选项将线段的首尾连接起来，构成了一个闭合多边形。&#xA;使用 -G 选项为闭合多边形填充颜色。&#xA;1.3绘制多条线段 可以将所有线段的数据点都保存到一个输入文件中，每个线段都包含了若干个数据点，在第一个数据点之前有一个 &amp;gt; 用于标记新的一段数据的开始。这种数据称之为多段数据。&#xA;1.4绘制多个多边形 使用相同的输入数据，通过加上 -L 可以构成闭合多边形，加上 -G 为多边形设置填充色。&#xA;1.5大圆弧路径 在笛卡尔坐标系下，绘制线段时，任意两点之间会以直线方式连接；而在地理投影下，任意两点之间则使用大圆弧路径方法会连接。如果想要在地理投影下也是要直线连接两点，则需要使用 -A 选项。&#xA;使用 plot 模块绘制了地球上两点之间的连线（红色，以大圆弧路径方式连接），然后，我们加上了 -A 选项再次绘制了这两点之间的连线（蓝色，以直线方式连接）&#xA;2.绘制符号 原文地址：绘制符号 — GMT中文手册&#xA;模块：plot&#xA;2.1符号一览 plot 模块绘制符号需要使用 -S 选项：&#xA;- 代表 -形 + 代表 十字形 a 代表 空五角形 c 代表 圆形（circle） d 代表 菱形 e 代表 斜椭圆形 g 代表 八面形 h 代表 六面形 i 代表 下三角形 n 代表 五面形 r 代表 长方形 s 代表 正方形 t 代表 上三角形（triangle） x 代表 X形 y 代表 | 2.</description>
+    </item>
+    <item>
+      <title>GMT6入门教程（2）绘制底图和海岸线</title>
+      <link>https://www.xiaoledeng.com/2020/09/09/gmt6-tutorial-2/</link>
+      <pubDate>Wed, 09 Sep 2020 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/09/gmt6-tutorial-2/</guid>
+      <description>1.绘制底图 原地址：绘制底图 — GMT中文手册&#xA;GMT用 coast 和 basemap模块绘制不同类型的底图，包括：&#xA;全球地图 区域地图 线性坐标轴 使用 -J 选项指定地图投影参数以及地图的尺寸，&#xA;-JH180/12c 指定地图投影参数，H 表示使用Hammer投影，地图中心位于经度180°处，地图宽度为12厘米（12c，c 表示单位厘米）。 -JM12c 指定了使用墨卡托投影（绘制区域地图最常用的投影方式），地图宽度为12厘米； -JX8c/5c 表明线性坐标轴（笛卡尔坐标投影）的宽度为8厘米，高度为5厘米 使用 -R 选项指定要绘制的区域范围（即经纬度范围），&#xA;-R0/360/-90/90 指定要绘制的区域范围，即经度0°到360°，纬度-90°到90°，四个数字之间用斜杠 / 分隔。 -Rg 代替了 -R0/360/-90/90。这二者是完全等效的，-Rg 中 g 代表 global。 -R10/70/-4/8 表明X轴范围为10到70，Y轴范围为-4到8 使用 -B 选项为地理底图加上边框并绘制经纬线，&#xA;-Bg 用于给底图加上边框，其中的 g 则用于向底图中加入网格线（g 代表 grid）。 -Bafg 表示绘制底图边框的标注（annotation）、刻度线（frame，即图中黑白线段的间隔）和网格线（grid） -Bxa4g2 表示设置X轴（x）的标注间隔为4度、网格线间隔为2度（a4g2） -Bya3g3 表示设置X轴（y）的标注间隔为3度、网格间隔为3度（a3g3） -BWSen 中WSEN分别是西南东北四个方向的英文单词首字母，用于控制四条边的属性。大写的 WS 表示给西边和南边添加标注，而小写的 en 则表示对于东边和北边只绘制边框但不显示标注 -BWSen+t”New Zealand” 中 +t 用于给整张图添加标题（title）。由于标题 New Zealand 中含有空格，我们需要使用引号将其括起来 -Bxa10f5g10+l”X Label” 设置了X轴的属性， a10f5g10 分别设置了标注（annotation）间隔为10，刻度（frame）间隔为5，网格线（grid ）间隔为10； +l”X Label” 则为X轴添加了标签；对于Y轴同理； 2.</description>
+    </item>
+    <item>
+      <title>GMT6入门教程（1）版本迁移</title>
+      <link>https://www.xiaoledeng.com/2020/09/08/gmt6-tutorial-1/</link>
+      <pubDate>Tue, 08 Sep 2020 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/08/gmt6-tutorial-1/</guid>
+      <description>版本迁移（经典模式 → 现代模式） 原地址：经典模式 → 现代模式 — GMT中文手册&#xA;将经典模式的脚本改成现代模式的脚本，基本可以遵循如下几点：&#xA;绘图脚本以 gmt begin figure 开头，以 gmt end show 结束 去掉 -K, -O, -P, 重定向符号以及PS文件名 去掉多余的 -J, -R 选项 某些模块重新命名。经典模式下以 ps 开头的模块省略 ps，比如 pscoast → coast、psbasemap → basemap。个别几个模块是例外，psxy → plot, psxyz → plot3d, psscale → colorbar 在需要绘制多子图、图中图时，考虑使用 inset 和 subplot 改写 现代模式下 makecpt 和 grd2cpt 默认将生成的CPT作为当前CPT，而不输出到文件中。这一特性在后面会具体介绍。如果需要生成CPT到文件中，需要额外使用 -H 选项。 </description>
+    </item>
+    <item>
+      <title>记武汉封城的日子(16)—GMT的特殊字符</title>
+      <link>https://www.xiaoledeng.com/2020/02/07/wuhan-life-16-gmt-special-characters/</link>
+      <pubDate>Fri, 07 Feb 2020 13:13:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/02/07/wuhan-life-16-gmt-special-characters/</guid>
+      <description>说明 GMT作图时，在转义序列 — GMT中文手册中，通过@~ 来打开/关闭Symbol（12号）字体。比如：@~\131@~ 是大写的Ψ。&#xA;具体的12号字体输入的编码数字参考特殊字符 — GMT中文手册中的Symbol表。&#xA;参考资料 特殊字符 — GMT中文手册 转义序列 — GMT中文手册 </description>
+    </item>
+    <item>
+      <title>记武汉封城的日子(12)—GMT安装版本问题</title>
+      <link>https://www.xiaoledeng.com/2020/02/03/wuhan-life-12-gmt-version/</link>
+      <pubDate>Mon, 03 Feb 2020 17:33:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/02/03/wuhan-life-12-gmt-version/</guid>
+      <description>各版本问题 GMT — The Generic Mapping Tools软件，是地球科学进行科研的画图必备软件。&#xA;GMT至今已有几个大的版本：4、5和6。在进行版本切换的时候，会出现兼容的问题。Index of /gmt/bin/提供了4、5、6版本的安装文件。&#xA;gmt-4.5.18-pdf-win32.exe 30-Jun-2018 12:31 gmt-4.5.18-win32.exe 30-Jun-2018 12:31 gmt-4.5.18-win64.exe 30-Jun-2018 12:32 gmt-5.4.5-darwin-x86_64.dmg 05-Jan-2019 02:05 gmt-5.4.5-win32.exe 05-Jan-2019 02:05 gmt-5.4.5-win64.exe 05-Jan-2019 02:05 gmt-6.0.0-darwin-x86_64.dmg 01-Nov-2019 23:54 gmt-6.0.0-win32.exe 01-Nov-2019 23:54 gmt-6.0.0-win64.exe 01-Nov-2019 23:54 gmt-6.0.0rc5-darwin-x86_64.dmg 24-Oct-2019 03:14 gmt-6.0.0rc5-win32.exe 24-Oct-2019 04:07 gmt-6.0.0rc5-win64.exe 24-Oct-2019 03:15 gshhg-2.3.7-win32.exe 31-Aug-2018 00:51 mex-gmt-5.4.5-darwin-x84_64.tbz 05-Jan-2019 02:28 参考资料 本节列出网络上可免费获取的GMT学习资源。各个学习资源的质量以及维护程度不同， 建议用户以英文官方文档以及本中文手册为主，其余学习资源仅供参考。&#xA;入门教程&#xA;《GMT中文手册》中的入门教程 GMT官方入门教程 《地学GMT绘图》系列视频教程 （作者:@liuzhumei） 《GMT5入门教程》 《GMT6新特性》 GMT 教學手冊 作者: 鄭懷傑 (适用于GMT5) 参考手册&#xA;GMT中文手册 GMT官方参考手册 GMT官方模块手册 图库与示例</description>
+    </item>
+    <item>
+      <title>GMT画图中图片的网格分散问题</title>
+      <link>https://www.xiaoledeng.com/2017/03/17/gmt-grid-problem/</link>
+      <pubDate>Fri, 17 Mar 2017 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/17/gmt-grid-problem/</guid>
+      <description>1.问题描述和解决方案 在GMT画关于地学方面的图片时，出现了下图中的网格分散问题：&#xA;查找代码，以及与人交流，最后定位到此行代码问题：&#xA;gmt xyz2grd xyz.xyz -G$GRD2 -I0.0833333333333/0.0833333333333 -R$R 通过查看gmt的xyz2grd函数，发现是网格分辨率的问题：-I，以及-R。&#xA;对于xyz.xyz数据文件，使用gmtinfo命令查看其属性：&#xA;➜ gmtinfo xyz.xyz xyz.xyz: N = 9331200&#x9;&amp;lt;-179.958328/179.958328&amp;gt;&#x9;&amp;lt;-89.958336/89.958336&amp;gt;&#x9;&amp;lt;-10513/6573&amp;gt; 对应的x值为：-179.958328/179.958328，即为经度范围，间隔为：0.083328； 对应的y值为：-89.958336/89.958336，即为纬度范围，间隔为：0.083328； 对应的z值为：-10513/6573，即为数据范围。 故此，问题代码行改为：&#xA;gmt xyz2grd xyz_BED2014.xyz -G$GRD2 -I0.083328/0.083328 -R$R -V 正确的图片就出来了：&#xA;至此，此问题就解决了。&#xA;2.总结一般规律 使用gmt xyz2grd 的时候一定要加上-V 选项，输出的信息可以帮助判断自己的转换是否正确； 不仅要考虑到数据xy的间隔，即为调整-I的分辨率； 而且xy各自的最大最小值范围，即为-R，也需要正确； 3.Reference xyz2grd — GMT模块手册 XYZ2GRD — 官网 </description>
+    </item>
+    <item>
+      <title>GMT学习资源集锦</title>
+      <link>https://www.xiaoledeng.com/2017/03/17/gmt-learning-resources/</link>
+      <pubDate>Fri, 17 Mar 2017 07:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/17/gmt-learning-resources/</guid>
+      <description>欢迎来到 GMT (Generic Mapping Tools) 的世界。&#xA;1.英文官方网址 GMT — The Generic Mapping Tools，经典的英文官网； The Generic Mapping Tools，新的英文官网； Download — The Generic Mapping Tools，下载地址； Documentation — The Generic Mapping Tools，说明文档； 2.中文参考资源 GMT中文社区，整合中文翻译的社区主页； GMT中文手册，即为快速入门的必读中文手册； 地学数据 | GMT中文社区，包含中国地图数据和地形起伏数据； 图库 | GMT中文社区，快速成图的必备； 3.其他资源 GenericMappingTools/pygmt: A Python interface for the Generic Mapping Tools Ben Horner-Johnson的GMT和Geophysics的相关链接； Stephen Shangxing Gao的GMT Examples； 4.修改历史 2017.03.17，创建此文； 2020.07.24，完善此文； </description>
+    </item>
+  </channel>
+</rss>
