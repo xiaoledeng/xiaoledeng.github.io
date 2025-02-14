@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>随笔—自动化网站写作 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://www.xiaoledeng.com">Xiao-Le Deng (邓小乐)</a></h1>
+    
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">随笔—自动化网站写作</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-15</span></div>
+  <div>
+    <span><a href="https://www.xiaoledeng.com/tags/essay/">#Essay</a></span>
+      <span><a href="https://www.xiaoledeng.com/tags/write/">#Write</a></span>
+      <span><a href="https://www.xiaoledeng.com/tags/blog/">#Blog</a></span>
+      <span><a href="https://www.xiaoledeng.com/tags/unix/">#Unix</a></span>
+      <span><a href="https://www.xiaoledeng.com/tags/automation/">#Automation</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>一直以来，都是手动完成网站写作。虽然有一部分写成 job.sh 脚本【功能为：自动编译并上传 GitHub 】，并且用 Alfred 已经大幅度提升效率【还是需要在 Alfred 中输入命令行】，但是整个网站写作还没有实现自动化。</p>
+<p>用 Keyboard Maestro 后，可以把整个网站写作流程全部实现自动化，用一个 快捷键 + 数字 实现自动化网站写作。</p>
+<p>注意⚠️：本文实现的电脑💻系统为 macOS 。</p>
+<h1 id="2-自动化步骤">2. 自动化步骤</h1>
+<p>快捷键 <code>Option + Command + B</code> ，调出面板，依次选择：</p>
+<ul>
+<li><code>Blog 1 New</code> 实现自动创建新的 markdown 文件📃</li>
+<li><code>Blog 2 Server</code> 实现自动搭建本地查看网站的预备</li>
+<li><code>Blog 3 Broswer Safari</code> 实现自动用 Safari 浏览器显示本地网站预览</li>
+<li><code>Blog 4 Upload</code> 实现自动编译并上传网站</li>
+</ul>
+<p>注意⚠️：这里用1、2、3、4来标记，按下快捷键 <code>Option + Command + B</code> ，调出面板后，可以输入1、2、3、4选择对应功能执行。</p>
+<h2 id="21-自动创建新的-markdown-文件">2.1 自动创建新的 markdown 文件</h2>
+<ol>
+<li>
+<p>新建一个 Macros，命名为 <code>Blog 1 New</code></p>
+</li>
+<li>
+<p>点击「New Trigger - Hot Key Trigger」，输入快捷键 <code>Option + Command + B</code></p>
+</li>
+<li>
+<p>点击「New Action」，进入 Categories 的「Execute」，选中「Execute Shell Script」，鼠标🖱️双击添加，加入以下命令行，并设置为 <code>Ignore results</code>：</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">cd</span> /Users/name/blog/
+</span></span><span style="display:flex;"><span>/opt/homebrew/bin/hugo new post/<span style="color:#069;font-weight:bold">$(</span>date +%Y%m%d<span style="color:#069;font-weight:bold">)</span>.md
+</span></span><span style="display:flex;"><span>/Applications/Sublime<span style="color:#c30;font-weight:bold">\ </span>Text.app/Contents/SharedSupport/bin/subl /Users/name/blog/content/post
+</span></span><span style="display:flex;"><span>/Applications/Sublime<span style="color:#c30;font-weight:bold">\ </span>Text.app/Contents/SharedSupport/bin/subl /Users/name/blog/content/post/<span style="color:#069;font-weight:bold">$(</span>date +%Y%m%d<span style="color:#069;font-weight:bold">)</span>.md
+</span></span></code></pre></div><ol start="4">
+<li>关闭「Actions」，即可</li>
+</ol>
+<p>注意⚠️：</p>
+<ul>
+<li><code>/Users/name/blog/</code> 为网站的完全路径</li>
+<li><code>/opt/homebrew/bin/hugo</code> 为 hugo 执行的完全路径，用 <code>which hugo</code> 或 <code>where hugo</code>查看</li>
+<li><code>/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl </code> 为 Sublime Text 的完全路径</li>
+<li><code>/Users/name/blog/content/post</code> 为网站文章的 markdown 文件的存放路径</li>
+<li><code>$(date +%Y%m%d).md</code> 为年月日命名的 markdown 文件，比如：<code>20231215.md</code></li>
+<li>markdown 文件的默认信息设置，请参考前面的一篇文章： <a href="/2023/12/14/hugo-new-post-front-matter">hugo新建文章的默认信息</a></li>
+</ul>
+<h2 id="22-自动搭建本地查看网站的预备">2.2 自动搭建本地查看网站的预备</h2>
+<ol>
+<li>
+<p>新建一个 Macros，命名为 <code>Blog 2 Server</code></p>
+</li>
+<li>
+<p>点击「New Trigger - Hot Key Trigger」，输入快捷键 <code>Option + Command + B</code></p>
+</li>
+<li>
+<p>点击「New Action」，进入 Categories 的「Execute」，选中「Execute Shell Script」，鼠标🖱️双击添加，加入以下命令行，并设置为 <code>Ignore results</code>：</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">cd</span> /Users/name/blog
+</span></span><span style="display:flex;"><span>/opt/homebrew/bin/hugo server
+</span></span></code></pre></div><ol start="4">
+<li>关闭「Actions」，即可</li>
+</ol>
+<p>注意⚠️：</p>
+<ul>
+<li>预备命令 <code>/opt/homebrew/bin/hugo server</code>，只要运行一次，可在浏览器用 <code>http://localhost:1313</code> 查看。</li>
+<li>第二次或多次运行后，端口会变为其他数字，且不可见，没有什么用，且在后台耗费资源，不推荐第二次或多次运行。</li>
+</ul>
+<h2 id="23-自动在浏览器显示本地网站预览">2.3 自动在浏览器显示本地网站预览</h2>
+<ol>
+<li>
+<p>新建一个 Macros，命名为 <code>Blog 3 Server</code></p>
+</li>
+<li>
+<p>点击「New Trigger - Hot Key Trigger」，输入快捷键 <code>Option + Command + B</code></p>
+</li>
+<li>
+<p>点击「New Action」，进入 Categories 的「Application Control」，选中「Activate a Specific Application」，鼠标🖱️双击添加，设置为 <code>Safari</code></p>
+</li>
+<li>
+<p>点击「New Action」，进入 Categories 的「Safari Control」，选中「New Safari Window」，鼠标🖱️双击添加，<code>With URL</code> 设置为 <code>http://localhost:1313</code></p>
+</li>
+<li>
+<p>关闭「Actions」，即可</p>
+</li>
+</ol>
+<h2 id="24-自动编译并上传网站">2.4 自动编译并上传网站</h2>
+<ol>
+<li>
+<p>新建一个 Macros，命名为 <code>Blog 4 Upload</code></p>
+</li>
+<li>
+<p>点击「New Trigger - Hot Key Trigger」，输入快捷键 <code>Option + Command + B</code></p>
+</li>
+<li>
+<p>点击「New Action」，进入 Categories 的「Execute」，选中「Execute Shell Script」，鼠标🖱️双击添加，加入以下命令行，并设置为 <code>Ignore results</code>：</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">cd</span> /Users/name/blog
+</span></span><span style="display:flex;"><span>sh /Users/name/blog/job.sh
+</span></span></code></pre></div><p><code>job.sh</code> 【功能为：自动编译并上传 GitHub 】的具体内容为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#099">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span><span style="color:#09f;font-style:italic"># 部署到 github pages 脚本</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 错误时终止脚本</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">set</span> -e
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 删除打包文件夹</span>
+</span></span><span style="display:flex;"><span>rm -rf public
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 打包。simple-style是主题</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`</span>
+</span></span><span style="display:flex;"><span>/opt/homebrew/bin/hugo -t simple-style 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 进入打包文件夹</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">cd</span> public
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Add changes to git.</span>
+</span></span><span style="display:flex;"><span>/opt/homebrew/bin/git init
+</span></span><span style="display:flex;"><span>/opt/homebrew/bin/git add -A
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Commit changes.</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">msg</span><span style="color:#555">=</span><span style="color:#c30">&#34;building site `date`&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">if</span> <span style="color:#555">[</span> <span style="color:#033">$#</span> -eq <span style="color:#f60">1</span> <span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">then</span> <span style="color:#033">msg</span><span style="color:#555">=</span><span style="color:#c30">&#34;</span><span style="color:#033">$1</span><span style="color:#c30">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>/opt/homebrew/bin/git commit -m <span style="color:#c30">&#34;</span><span style="color:#033">$msg</span><span style="color:#c30">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 推送到github</span>
+</span></span><span style="display:flex;"><span>/opt/homebrew/bin/git remote add origin git@github.com:yourname/yourname.github.io.git
+</span></span><span style="display:flex;"><span>/opt/homebrew/bin/git branch -M main
+</span></span><span style="display:flex;"><span>/opt/homebrew/bin/git push origin main --force
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 回到原文件夹</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">cd</span> ..
+</span></span></code></pre></div><p>注意⚠️：</p>
+<ul>
+<li><code>/opt/homebrew/bin/git</code> 为 git 的完全路径，用 <code>which git</code> 或 <code>where git</code> 查看</li>
+<li><code>yourname</code> 为 github.io 的用户名</li>
+</ul>
+<ol start="4">
+<li>
+<p>点击「New Action」，进入 Categories 的「Notifications」，选中「Display Text」，鼠标🖱️双击添加，添加内容为：<code>已上传完成✅！🍺🍵☕️</code></p>
+</li>
+<li>
+<p>关闭「Actions」，即可</p>
+</li>
+</ol>
+<h1 id="3-末了的话">3. 末了的话</h1>
+<p>只有想不到，没有做不到。</p>
+<p>重复的操作，交给自动化工具🔧。</p>
+<p>工具🔧是为内容服务，重要‼️的是内容💡。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2025 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50623821-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+            links[i].setAttribute('target', '_blank');
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
