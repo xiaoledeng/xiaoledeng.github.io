@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Matlab on Xiao-Le Deng (邓小乐)</title>
+    <link>https://www.xiaoledeng.com/tags/matlab/</link>
+    <description>Recent content in Matlab on Xiao-Le Deng (邓小乐)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2025 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Fri, 13 Dec 2024 11:43:20 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/matlab/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Matlab激活文件</title>
+      <link>https://www.xiaoledeng.com/2024/12/13/matlab-activation-file/</link>
+      <pubDate>Fri, 13 Dec 2024 11:43:20 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/13/matlab-activation-file/</guid>
+      <description>cd /usr/local/MATLAB/R2022b/bin ./activate_matlab.sh 参考 How do you run the Activation Client? - MATLAB Answers - MATLAB Central How do I update my MATLAB license file for an Individual or Designated Computer license? - MATLAB Answers - MATLAB Central How do I find my username in order to install or activate my license? - MATLAB Answers - MATLAB Central </description>
+    </item>
+    <item>
+      <title>Clear Linux删除Matlab</title>
+      <link>https://www.xiaoledeng.com/2024/12/13/clear-linux-uninstall-matlab/</link>
+      <pubDate>Fri, 13 Dec 2024 11:40:44 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/13/clear-linux-uninstall-matlab/</guid>
+      <description>rm -rf /usr/local/MATLAB/R2024b rm /usr/local/bin/matlab /usr/local/bin/mcc /usr/local/bin/mex /usr/local/bin/mbuild 参考 How do I uninstall MATLAB or other MathWorks products on a Linux machine? - MATLAB Answers - MATLAB Central </description>
+    </item>
+    <item>
+      <title>Clear Linux的Matlab错误：Launching updater executable</title>
+      <link>https://www.xiaoledeng.com/2024/12/13/clear-linux-error-updater/</link>
+      <pubDate>Fri, 13 Dec 2024 09:53:54 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/13/clear-linux-error-updater/</guid>
+      <description>Clear Linux 系统命令行 Matlab 出现以下错误：&#xA;Launching updater executable An unexpected error has occurred 解决方案：&#xA;关闭 Matlab&#xA;卸载删除MathWorks Service Host，终端输入：&#xA;killall MATLAB MathWorksServiceHost rm -rf ~/.MathWorks/ServiceHost ~/.MATLABConnector 重新安装MathWorks Service Host，在 MATLAB Drive - MATLAB &amp;amp; Simulink 下载 Linux 版本并安装： sudo chmod a+x *.bin sudo ./*.bin 参考 How do I uninstall and reinstall the MathWorks Service Host? - MATLAB Answers - MATLAB Central MATLAB Drive - MATLAB &amp;amp; Simulink Updated Matlab keep trying to update - MATLAB Answers - MATLAB Central </description>
+    </item>
+    <item>
+      <title>Clear Linux安装Matlab</title>
+      <link>https://www.xiaoledeng.com/2024/12/12/clear-linux-install-matlab/</link>
+      <pubDate>Thu, 12 Dec 2024 14:40:54 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/12/clear-linux-install-matlab/</guid>
+      <description># 运行 MATLAB 安装程序 unzip matlab_R2024b_glnxa64.zip -d matlab_installer cd matlab_installer/bin/glnxa64 mkdir share mv libX11.* ./share/ sudo ./install cd /usr/local/MATLAB/R2024b/bin/glnxa64 sudo mkdir share sudo mv libX11.* ./share/ cd /matlab_installer/bin/glnxa64 ldd ./MATLABWindow | grep libX11 显示：&#xA;libX11.so.6 =&amp;gt; /usr/lib64/glibc-hwcaps/x86-64-v3/libX11.so.6.4.0 (0x00007f9f7f6f8000) 创建桌面启动文件：&#xA;vim ~/.local/share/applications/matlab.desktop [Desktop Entry] Name=MATLAB Comment=MATLAB Application Exec=/usr/local/MATLAB/R2024b/bin/matlab -desktop Icon=/usr/local/MATLAB/R2024b/extern/icons/matlab_icon.png Terminal=false Type=Application Categories=Development;Science; 参考 Matlab installation - General Discussion - Clear Linux OS Forum ERROR: MATLAB is selecting SOFTWARE OPENGL rendering. - MATLAB Answers - MATLAB Central How do I select hardware OpenGL rendering for MATLAB on Linux - Stack Overflow 下载并安装 MATLAB Why will MATLAB not start up properly on my Linux machine?</description>
+    </item>
+    <item>
+      <title>Matlab的四精度(Quadruple Precision)</title>
+      <link>https://www.xiaoledeng.com/2024/05/16/matlab-quad/</link>
+      <pubDate>Thu, 16 May 2024 11:53:47 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/05/16/matlab-quad/</guid>
+      <description> MATLAB® 提供遵循 IEEE® 标准 754 的双精度 (double) 和单精度 (single) 浮点数数据类型。&#xA;如果数值范围约在 \( –3.4 \times 10^{38} \) 和 \( 3.4 \times 10^{38} \) 之间，您既可以用单精度，也可以用双精度来存储。如果数值超出该范围，请用双精度来存储。&#xA;实现 Matlab 四精度的工具有：&#xA;Symbolic Math Toolbox™ 2 Multiprecision Computing Toolbox for MATLAB 3, 4 延伸阅读 浮点数 - MATLAB &amp;amp; Simulink - MathWorks 高精度数值计算 - MATLAB &amp;amp; Simulink - MathWorks Multiprecision Computing Toolbox for MATLAB User’s Manual of Multiprecision Computing Toolbox for MATLAB </description>
+    </item>
+    <item>
+      <title>macOS系统安装m芯片的MATLAB R2022b测试版</title>
+      <link>https://www.xiaoledeng.com/2023/02/06/m-chip-macos-matlab-r2022b/</link>
+      <pubDate>Mon, 06 Feb 2023 22:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/02/06/m-chip-macos-matlab-r2022b/</guid>
+      <description>1. 步骤 先安装JAVA包，比如 Amazon Corretto 8 JDK，下载页面为：Downloads for Amazon Corretto 8，选 macOS aarch64。导入路径到环境变量，比如，在～/.zshrc加入export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home。&#xA;下载 MATLAB_R2022b_Beta_install.dmg 包，并安装。因为是测试版，所以不需要激活，直接可以使用。&#xA;注意：This beta will be available until June 30, 2023.&#xA;2. 参考 Install MATLAB R2022b Native Apple Silicon Open Beta Playing with the R2022b MATLAB Apple Silicon beta for M1/M2 Mac Amazon Corretto 8 Installation Instructions for macOS 10.10 or later </description>
+    </item>
+    <item>
+      <title>Ubuntu installs Matlab2021b</title>
+      <link>https://www.xiaoledeng.com/2022/01/07/ubuntu-installs-matlab2021b/</link>
+      <pubDate>Fri, 07 Jan 2022 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/01/07/ubuntu-installs-matlab2021b/</guid>
+      <description>1. Steps Download the matlab_R2021b_glnxa64.zip at the matlab page https://ww2.mathworks.cn/licensecenter/licenses&#xA;Unzip and install:&#xA;unzip matlab_R2021b_glnxa64.zip cd matlab_R2021b_glnxa64/ ./install Note that the difference between sudo ./install (for root) and ./install (for current user).&#xA;When installing matlab, the paths are /home/deng/MATLAB/R2021b other than /usr/local/MATLAB/R2021b and /home/deng/bin other than /usr/local/bin.&#xA;Add the command matlab into the file ~/.bashrc by: gedit ~/.bashrc alias matlab=\&amp;#39;&amp;#39;/home/deng/bin/matlab&amp;#39;\&amp;#39; source ~/.bashrc Add the Pin icon to Favorites: cd ~/.local/share/applications sudo gedit matlab.</description>
+    </item>
+    <item>
+      <title>Parameter Estimation and Inverse Problems</title>
+      <link>https://www.xiaoledeng.com/2021/01/22/peip/</link>
+      <pubDate>Fri, 22 Jan 2021 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/01/22/peip/</guid>
+      <description>1. Basic Information ISBN: 978-0-12-804651-7 Language: English Published: 2018 Copyright: Copyright © 2019 Elsevier Inc. All rights reserved. Imprint: Elsevier No. of pages: 404 2. Table of Contents Preface to the Third Edition Chapter One - Introduction Chapter Two - Linear Regression Chapter Three - Rank Deficiency and Ill-Conditioning Chapter Four - Tikhonov Regularization Chapter Five - Discretizing Inverse Problems Using Basis Functions Chapter Six - Iterative Methods Chapter Seven - Sparsity Regularization and Total Variation Techniques Chapter Eight - Fourier Techniques Chapter Nine - Nonlinear Regression Chapter Ten - Nonlinear Inverse Problems Chapter Eleven - Bayesian Methods Chapter Twelve - Epilogue Appendix A - Review of Linear Algebra Appendix B - Review of Probability and Statistics Appendix C - Review of Vector Calculus Appendix D - Glossary of Notation Bibliography Index 3.</description>
+    </item>
+    <item>
+      <title>Geophysical Data Analysis - Discrete Inverse Theory</title>
+      <link>https://www.xiaoledeng.com/2021/01/22/gda/</link>
+      <pubDate>Fri, 22 Jan 2021 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/01/22/gda/</guid>
+      <description>1. Basic Information Title: Geophysical Data Analysis - Discrete Inverse Theory 4th Edition Authors: William Menke ISBN - Paperback: 978-0-12-813555-6 ISBN - eBook: 978-0-12-813556-3 Imprint: Academic Press Published Date: 12th April 2018 Page Count: 352 2. Table of Contents Describing Inverse Problems Some Comments on Probability Theory Solution of the Linear, Gaussian Inverse Problem, Viewpoint 1: The Length Method Solution of the Linear, Gaussian Inverse Problem, Viewpoint 2: Generalized Inverses Solution of the Linear, Gaussian Inverse Problem, Viewpoint 3: Maximum Likelihood Methods Nonuniqueness and Localized Averages Applications of Vector Spaces Linear Inverse Problems and Non-Gaussian Statistics Nonlinear Inverse Problems Factor Analysis Continuous Inverse Theory and Tomography Sample Inverse Problems Applications of Inverse Theory to Solid Earth Geophysics 3.</description>
+    </item>
+    <item>
+      <title>GNSS-IR tools using Fortran and Matlab</title>
+      <link>https://www.xiaoledeng.com/2020/12/26/gnss-ir/</link>
+      <pubDate>Sat, 26 Dec 2020 18:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/12/26/gnss-ir/</guid>
+      <description>1. Introduction Download: https://geodesy.noaa.gov/gps-toolbox/exist.htm&#xA;2. References Roesler, C., Larson, K.M. Software tools for GNSS interferometric reflectometry (GNSS-IR). GPS Solution, 22, 80 (2018). https://doi.org/10.1007/s10291-018-0744-8</description>
+    </item>
+    <item>
+      <title>GTeC: Gravity Terrain Correction</title>
+      <link>https://www.xiaoledeng.com/2020/11/24/gtec/</link>
+      <pubDate>Tue, 24 Nov 2020 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/24/gtec/</guid>
+      <description>1. Introduction A versatile MATLAB® tool for a detailed computation of the terrain correction and Bouguer gravity anomalies.&#xA;2. Reference Cella, F. (2015). GTeC—A versatile MATLAB® tool for a detailed computation of the terrain correction and Bouguer gravity anomalies. Computers &amp;amp; geosciences, 84, 72-85. https://doi.org/10.1016/j.cageo.2015.07.015</description>
+    </item>
+    <item>
+      <title>SHADE: Spherical HArmonic coefficient empirical DE-correlation</title>
+      <link>https://www.xiaoledeng.com/2020/11/23/shade/</link>
+      <pubDate>Mon, 23 Nov 2020 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/23/shade/</guid>
+      <description>1. Introduction Download: SHADE&#xA;2. References Piretzidis, D., &amp;amp; Sideris, M. G. (2018). SHADE: A MATLAB toolbox and graphical user interface for the empirical de-correlation of GRACE monthly solutions. Computers &amp;amp; Geosciences, 119, 137-150. https://doi.org/10.1016/j.cageo.2018.06.012</description>
+    </item>
+    <item>
+      <title>SRBF_package: spherical radial basis functions</title>
+      <link>https://www.xiaoledeng.com/2020/11/12/srbf_package/</link>
+      <pubDate>Thu, 12 Nov 2020 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/12/srbf_package/</guid>
+      <description>1. Introduction SRBF_package is a collection of a few routines for gravity field modelling with band-limited spherical radial basis functions (SRBFs), allowing both analysis and synthesis of the gravitational field. Website:&#xA;Bucha/#SRBF_package http://edisk.cvt.stuba.sk/~xbuchab/SRBF_package/SRBF_package.zip 2. Reference Bucha, B., Janák, J., Papčo, J., Bezděk, A., 2016. High-resolution regional gravity field modelling in a mountainous area from terrestrial gravity data. Geophysical Journal International. 207, 949-966. http://doi.org/10.1093/gji/ggw311</description>
+    </item>
+    <item>
+      <title>SHA_SHS: spherical harmonic analysis and synthesis</title>
+      <link>https://www.xiaoledeng.com/2020/11/11/sha_shs/</link>
+      <pubDate>Wed, 11 Nov 2020 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/11/sha_shs/</guid>
+      <description>1. Introduction Download:&#xA;Bucha/#SHA http://edisk.cvt.stuba.sk/~xbuchab/SHA_code/SHA_SHS.zip 2. Reference Bucha, B., Hirt, C., Kuhn, M., 2019. Cap integration in spectral gravity forward modelling up to the full gravity tensor. Journal of Geodesy. https://doi.org/10.1007/s00190-019-01277-3</description>
+    </item>
+    <item>
+      <title>isGrafLab: Irregular Surface GRAvity Field LABoratory</title>
+      <link>https://www.xiaoledeng.com/2020/11/10/isgraflab/</link>
+      <pubDate>Tue, 10 Nov 2020 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/10/isgraflab/</guid>
+      <description>1. Introduction isGrafLab (Irregular Surface GRAvity Field LABoratory) is a modified version of GrafLab that allows accurate and fast computation of functionals of the geopotential at dense grids on irregular surfaces such as the Earth&#39;s surface.&#xA;Download: Downloads - Faculty of Civil Engineering in Bratislava&#xA;Others:&#xA;Bucha/#isGrafLab Definition of functionals of the geopotential used in GrafLab software 2. Reference Bucha, B., Janák, J. (2014). A MATLAB-based graphical user interface program for computing functionals of the geopotential up to ultra-high degrees and orders: Efficient computation at irregular surfaces.</description>
+    </item>
+    <item>
+      <title>GrafLab: GRAvity Field LABoratory</title>
+      <link>https://www.xiaoledeng.com/2020/11/09/graflab/</link>
+      <pubDate>Mon, 09 Nov 2020 21:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/09/graflab/</guid>
+      <description>1. Introduction GrafLab (GRAvity Field LABoratory) is a MATLAB-based routine for computing functionals of the geopotential up to ultra-high degrees and orders (tens of thousands and beyond). Download: Downloads - Faculty of Civil Engineering in Bratislava&#xA;Others:&#xA;Bucha/#GrafLab Definition of functionals of the geopotential used in GrafLab software 2. Reference Bucha, B., Janák, J. (2013). A MATLAB-based graphical user interface program for computing functionals of the geopotential up to ultra-high degrees and orders.</description>
+    </item>
+    <item>
+      <title>GravPSO2D: 2D gravity inversion using the Particle Swarm Optimization</title>
+      <link>https://www.xiaoledeng.com/2020/11/06/gravpso2d/</link>
+      <pubDate>Fri, 06 Nov 2020 12:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/06/gravpso2d/</guid>
+      <description>1. Introduction A Matlab Package for the 2D gravity inversion in sedimentary basins is presented.&#xA;GitHub: https://github.com/jgpallero/grav-pso-2d&#xA;2. Reference Palleroa J.L.G., Fernández-Martínezb J.L., Fernández-Muñizb Z., Bonvalotc S., Gabaldac G., Nalpasd T. (2020). GravPSO2D: A Matlab package for 2D gravity inversion in sedimentary basins using the Particle Swarm Optimization algorithm. Computers &amp;amp; Geosciences. https://doi.org/10.1016/j.cageo.2020.104653</description>
+    </item>
+    <item>
+      <title>TGF: Terrain-related Gravity Field</title>
+      <link>https://www.xiaoledeng.com/2020/11/02/tgf/</link>
+      <pubDate>Mon, 02 Nov 2020 11:20:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/11/02/tgf/</guid>
+      <description>1. Introduction Download: TGF - Astronomische und Physikalische Geodäsie&#xA;2. Reference Yang, M., Hirt, C., &amp;amp; Pail, R. (2020). TGF: A New MATLAB-based Software for Terrain-related Gravity Field Calculations. Remote Sensing, 12(7), 1063. https://doi.org/10.3390/rs12071063</description>
+    </item>
+    <item>
+      <title>BTTB: Fast multiplications for matrices with Block Toeplitz Toeplitz Block</title>
+      <link>https://www.xiaoledeng.com/2020/10/30/bttb/</link>
+      <pubDate>Fri, 30 Oct 2020 13:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/10/30/bttb/</guid>
+      <description>1. Introduction GitHub: renautra/FastBTTB&#xA;Website: BTTB software/ Dr.Rosemary Renaut&#xA;2. Reference Hogue, J. D., Renaut, R. A., &amp;amp; Vatankhah, S. (2020). A tutorial and open source software for the efficient evaluation of gravity and magnetic kernels. Computers &amp;amp; Geosciences, 144, 104575. https://doi.org/10.1016/j.cageo.2020.104575</description>
+    </item>
+    <item>
+      <title>Matlab命名注意事项</title>
+      <link>https://www.xiaoledeng.com/2014/05/26/matlab-rename/</link>
+      <pubDate>Mon, 26 May 2014 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2014/05/26/matlab-rename/</guid>
+      <description>Matlab命名有一定的技巧，以后应多多注意。&#xA;Matlab的命名对字母的大小写敏感，如myname和MyName为两个变量； 变量名的第一个字符必须是英文名，最多63个字符； 变量名不得包含空格、标点、运算符，但可以包含下划线，如 My_Name_213； 用户自定义变量名：不与关键字同名，检验命令为iskeyword UserName或exist UserName Reference 精通MATLAB R2011a </description>
+    </item>
+    <item>
+      <title>日结—MATLAB算法</title>
+      <link>https://www.xiaoledeng.com/2013/11/13/summary-matlab-algorithm/</link>
+      <pubDate>Wed, 13 Nov 2013 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2013/11/13/summary-matlab-algorithm/</guid>
+      <description>今天，借了一本书：《Matlab智能算法30个案例分析》。&#xA;正如同书的扉页所说的：对于这些算法我们的学习态度应该是怎么样的？如果我们只是用这些算法来解决实际问题，只是想用这些算法尝试下常规算法难以准确求解的问题，对于这些复杂的理论，我们可以简单研究，了解算法中最精髓的几个概念，以及算法模型的抽象方法皆可。&#xA;更应该把时间放在如何从实际待求解问题中抽象出适合算法求解的模型上，甚至是如何利用与借鉴别人的方法和经验来解决自己的问题。</description>
+    </item>
+  </channel>
+</rss>

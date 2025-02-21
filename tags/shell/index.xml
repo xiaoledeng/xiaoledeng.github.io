@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shell on Xiao-Le Deng (邓小乐)</title>
+    <link>https://www.xiaoledeng.com/tags/shell/</link>
+    <description>Recent content in Shell on Xiao-Le Deng (邓小乐)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2025 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Wed, 06 Nov 2024 16:25:25 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>macOS对图片批量重命名</title>
+      <link>https://www.xiaoledeng.com/2024/11/06/macos-rename-auto/</link>
+      <pubDate>Wed, 06 Nov 2024 16:25:25 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/11/06/macos-rename-auto/</guid>
+      <description>count=1 # 初始化计数器，将变量 count 设置为 1 for file in *.PNG; do # 使用 for 循环遍历当前文件夹下所有的 .PNG 文件 if [ -f &amp;#34;$file&amp;#34; ]; then # 检查 file 是否为一个普通文件，以避免误操作 new_name=$(printf &amp;#34;image%02d.png&amp;#34; &amp;#34;$count&amp;#34;) # 使用 printf 格式化 count 为两位数 mv &amp;#34;$file&amp;#34; &amp;#34;$new_name&amp;#34; # 将当前文件 file 重命名为 new_name ((count++)) # 将 count 增加 1 fi done </description>
+    </item>
+    <item>
+      <title>macOS用ffpmeg批量mp4转mp3</title>
+      <link>https://www.xiaoledeng.com/2024/05/29/ffpmeg-mp4-to-mp3/</link>
+      <pubDate>Wed, 29 May 2024 16:37:37 +0200</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/05/29/ffpmeg-mp4-to-mp3/</guid>
+      <description>for i in *.mp4; do echo&amp;#34;${i%.*}.mp3&amp;#34;; ffmpeg -i &amp;#34;$i&amp;#34; &amp;#34;${i%.*}.mp3&amp;#34;;done 参考 macos使用ffpmeg批量mp4转mp3_macos 批量ffmpeg-CSDN博客 </description>
+    </item>
+    <item>
+      <title>Unix文件列表按时间排序</title>
+      <link>https://www.xiaoledeng.com/2024/02/08/unix-bash-file-sort-by-time/</link>
+      <pubDate>Thu, 08 Feb 2024 13:09:29 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/02/08/unix-bash-file-sort-by-time/</guid>
+      <description>ll | sort -k7n 说明：7表示第 7 列，n表示数字模式。&#xA;参考 linux - Sort logs by date field in bash - Stack Overflow </description>
+    </item>
+    <item>
+      <title>macOS命令行unar解压7z文件(3)</title>
+      <link>https://www.xiaoledeng.com/2024/02/06/macos-unar-7z-files/</link>
+      <pubDate>Tue, 06 Feb 2024 13:52:44 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/02/06/macos-unar-7z-files/</guid>
+      <description>unar 1 是 The Unarchiver 提供的命令行解压工具，可以在各个系统里运行。&#xA;先下载 unarMac.zip 文件，解压后有两个文件：unar 和 lsar&#xA;将 unar 和 lsar 移动到路径 /Applications/The Unarchiver.app/Contents/MacOS/，并添加到系统 PATH 中：&#xA;echo &amp;#39;export PATH=&amp;#34;/Applications/The Unarchiver.app/Contents/MacOS/:$PATH&amp;#34;&amp;#39; &amp;gt;&amp;gt; ~/.zshrc source ~/.zshrc 说明： unar:&#xA;unar v1.10.1 (May 19 2016), a tool for extracting the contents of archive files. Usage: unar [options] archive [files ...] lsar:&#xA;lsar v1.10.1 (May 19 2016), a tool for listing the contents of archive files. Usage: lsar [options] archive [files .</description>
+    </item>
+    <item>
+      <title>macOS命令行7z解压7z文件(2)</title>
+      <link>https://www.xiaoledeng.com/2024/02/06/macos-command-7z-files/</link>
+      <pubDate>Tue, 06 Feb 2024 10:31:42 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/02/06/macos-command-7z-files/</guid>
+      <description>安装 7z 工具： brew install p7zip 命令行解压： 7z x name.7z.001 注意： 7z 会自动检测并解压分卷文件的其他部分。</description>
+    </item>
+    <item>
+      <title>macOS解压多个7z格式的分割文件(1)</title>
+      <link>https://www.xiaoledeng.com/2024/02/03/macos-7z-files/</link>
+      <pubDate>Sat, 03 Feb 2024 15:36:12 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/02/03/macos-7z-files/</guid>
+      <description>进入当前文件夹，终端输入以下命令：&#xA;cat *7z* &amp;gt; all.7z 然后，双击 all.7z 进行解压。</description>
+    </item>
+    <item>
+      <title>wget批量下载并命名</title>
+      <link>https://www.xiaoledeng.com/2024/01/02/wget-batch-download-and-name/</link>
+      <pubDate>Tue, 02 Jan 2024 16:30:42 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/02/wget-batch-download-and-name/</guid>
+      <description>1. 步骤 系统： macOS&#xA;第一步，先安装 wget 1，终端命令： brew install wget&#xA;第二步，准备好待下载的命名和链接文件 urls.txt：&#xA;49-爱让你变成发光的萤火虫 https://aod.cos.tx.xmcdn.com/group17/M00/C8/22/wKgJJFfEVPXDUE-wAKHTXJOiJFI702.m4a 44-爱是最重要的决定 https://aod.cos.tx.xmcdn.com/group20/M06/A4/73/wKgJJ1e2gSyCM1XSAh3hZQUzifs505.mp3 第三步，准备 shell 文件 download.sh：&#xA;#!/bin/bash while read file_name file_url do wget -O ${file_name}.${file_url: -3} -c ${file_url} done &amp;lt; urls.txt 第四步，终端运行 shell 文件：&#xA;sh download.sh 2. 延伸阅读 Wget - GNU Project - Free Software Foundation 【Linux】wget同时下载多个文件并重命名及示例shell脚本（带注释）、解决wget文件名称不正确问题、wget常用命令_wget批量下载文件并重命名-CSDN博客 linux下载文件命令 - pretty_田纳西 - 博客园 Shell 教程 | 菜鸟教程 </description>
+    </item>
+    <item>
+      <title>Shell字符串截取</title>
+      <link>https://www.xiaoledeng.com/2024/01/02/shell-cut-str/</link>
+      <pubDate>Tue, 02 Jan 2024 16:08:22 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/02/shell-cut-str/</guid>
+      <description># 截取字符串 $string 的后 3 个字符 string=&amp;#34;abcdefg&amp;#34; echo &amp;#34;${string: -3}&amp;#34; # 输出：efg 延伸阅读 shell 截取字符串后几位-掘金 linux shell 字符串操作详解 （长度，读取，替换，截取，连接，对比，删除，位置 ）-云社区-华为云 </description>
+    </item>
+    <item>
+      <title>Shell批量改后缀名</title>
+      <link>https://www.xiaoledeng.com/2024/01/02/shell-change-suffixes-in-batches/</link>
+      <pubDate>Tue, 02 Jan 2024 15:24:01 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/02/shell-change-suffixes-in-batches/</guid>
+      <description>Shell 脚本：&#xA;for i in *.txt; do mv &amp;#34;$i&amp;#34; &amp;#34;${i%.txt}.md&amp;#34;; done 延伸阅读 mac 批量改后缀名-掘金 mac批量修改文件名、后缀名_mac 递归 修改文件扩展名-CSDN博客 </description>
+    </item>
+    <item>
+      <title>Ubuntu终端修改系统时间</title>
+      <link>https://www.xiaoledeng.com/2023/12/07/ubuntu-terminal-change-system-time/</link>
+      <pubDate>Thu, 07 Dec 2023 15:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/07/ubuntu-terminal-change-system-time/</guid>
+      <description> 查看当前系统时间 date -R 运行 tzselect tzselect 依次选择：4) Asia；10) China；1) Beijing Time；1）Yes&#xA;复制文件到/etc目录下 sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 修改日期或时间 # 修改日期 sudo date -s MM/DD/YY # 修改时间 sudo date -s hh:mm:ss 更新计算机硬件时间（将系统时间写入硬件时间） sudo hwclock -w 查看时间： timedatectl 参考 Ubuntu下修改时区、日期和时间的方法 – WEB骇客 linux ubuntu 修改系统时间，时间同步 </description>
+    </item>
+    <item>
+      <title>关闭Ubuntu终端打开时显示的文本信息</title>
+      <link>https://www.xiaoledeng.com/2023/12/07/close-ubuntu-terminal-text-information/</link>
+      <pubDate>Thu, 07 Dec 2023 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/07/close-ubuntu-terminal-text-information/</guid>
+      <description>1. Ubuntu系统显示的信息 这个是Ubuntu系统显示的信息 1。禁用Ubuntu系统提示的信息：&#xA;touch ~/.hushlogin 2. oneAPI 启动显示的信息 这个是Ubuntu安装Intel® oneAPI Base &amp;amp; HPC Toolkit遗留的问题 2,3。&#xA;进入安装目录 /opt/intel/oneapi/，以管理员权限编辑setvars.sh： cd /opt/intel/oneapi/ sudo vi setvars.sh 分别注释掉以下行输出到屏幕的代码： # echo &amp;#34; &amp;#34; # echo &amp;#34;:: initializing oneAPI environment ...&amp;#34; # echo &amp;#34; $sourcer&amp;#34; # echo &amp;#34; $input_args&amp;#34; # echo &amp;#34;:: $arg_base -- $arg_verz&amp;#34; # echo &amp;#34;:: oneAPI environment initialized ::&amp;#34; # echo &amp;#34; &amp;#34; 修改 .bashrc 里的环境变量配置： source /opt/intel/oneapi/setvars.sh intel64 3. 参考 登录ubuntu时显示的启动文本信息 Ubuntu安装Intel® oneAPI Base &amp;amp; HPC Toolkit intel fortran免费版安装 </description>
+    </item>
+    <item>
+      <title>Linux系统终端删除mail</title>
+      <link>https://www.xiaoledeng.com/2023/12/06/linux-terminal-delete-mail/</link>
+      <pubDate>Wed, 06 Dec 2023 17:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/06/linux-terminal-delete-mail/</guid>
+      <description>在终端输入以下命令 1：&#xA;mail ? delete * ? q 参考 email - How do I delete all Terminal mail? - Ask Different </description>
+    </item>
+    <item>
+      <title>macOS系统的脚本工具osascript</title>
+      <link>https://www.xiaoledeng.com/2023/12/06/macos-script-tool-osascript/</link>
+      <pubDate>Wed, 06 Dec 2023 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/06/macos-script-tool-osascript/</guid>
+      <description>1. 引言 “Every time I get a script it&amp;rsquo;s a matter of trying to know what I could do with it. I see colors, imagery. It has to have a smell. It&amp;rsquo;s like falling in love. You can&amp;rsquo;t give a reason why” - Paul Newman&#xA;“Mac OS X is a rock-solid system that&amp;rsquo;s beautifully designed. I much prefer it to Linux” - Bill Joy&#xA;macOS系统的脚本工具 osascript 能够在终端命令行执行一些操作。&#xA;基本语法：&#xA;osascript [-l language] [-e command] [-s flags] [programfile] 2.</description>
+    </item>
+    <item>
+      <title>Linux命令行定时工具crontab</title>
+      <link>https://www.xiaoledeng.com/2023/12/06/linux-tool-crontab/</link>
+      <pubDate>Wed, 06 Dec 2023 14:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/06/linux-tool-crontab/</guid>
+      <description>1. 说明 “Wisdom is the power to put our time and our knowledge to the proper use” ~ Thomas J. Watson&#xA;crontab 是 Linux系统的命令行定时工具，用于在固定的间隔时间执行指定的系统指令或 shell script 脚本。&#xA;格式为：&#xA;# ┌───────────── minute (0–59) # │ ┌───────────── hour (0–23) # │ │ ┌───────────── day of the month (1–31) # │ │ │ ┌───────────── month (1–12) # │ │ │ │ ┌───────────── day of the week (0–6) (Sunday to Saturday; # │ │ │ │ │ 7 is also Sunday on some systems) # │ │ │ │ │ # │ │ │ │ │ # * * * * * &amp;lt;command to execute&amp;gt; # 分 时 日 月 星期 要运行的命令 注释：</description>
+    </item>
+    <item>
+      <title>macOS系统图片命令行工具sips</title>
+      <link>https://www.xiaoledeng.com/2022/08/18/macos-sips/</link>
+      <pubDate>Thu, 18 Aug 2022 13:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/08/18/macos-sips/</guid>
+      <description>1. 简介 sips是macOS系统的一个命令行工具，可以实现图片的裁剪、缩放、旋转、翻转和格式转换。&#xA;之前，做过记录：Mac图片处理工具sips，这次记录不同方面。&#xA;2. 格式转换 sips -s format jpeg -s formatOptions low input.jpg -o output.png 其中，&#xA;-s format的选项有： jpeg | tiff | png | gif | jp2 | pict | bmp | qtif | psd | sgi | tga -s formatOptions的选项有：default、low、normal、high、best、 百分比（数值）、lzw、packbits 3. 说明文档 sips -h sips - scriptable image processing system. This tool is used to query or modify raster image files and ColorSync ICC profiles. Its functionality can also be used through the &amp;#34;Image Events&amp;#34; AppleScript suite.</description>
+    </item>
+    <item>
+      <title>Linux的sed命令替换大文本内容</title>
+      <link>https://www.xiaoledeng.com/2022/06/20/linux-sed-replace/</link>
+      <pubDate>Mon, 20 Jun 2022 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/06/20/linux-sed-replace/</guid>
+      <description>1. 命令 当文件大小是GB时，普通编辑器很难对文件进行编辑。此时，可用sed命令进行。&#xA;sed -i &amp;#39;.bak&amp;#39; &amp;#39;s/被取代的字符/新的字符/g&amp;#39; file 2. 参考 Linux sed 命令 | 菜鸟教程 sed: 1: “…”: invalid command code - 落格博客 </description>
+    </item>
+    <item>
+      <title>Linux查看运行时间和最后重启时间</title>
+      <link>https://www.xiaoledeng.com/2020/09/22/linux-see-the-running-time/</link>
+      <pubDate>Tue, 22 Sep 2020 16:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2020/09/22/linux-see-the-running-time/</guid>
+      <description>1、uptime：显示系统运行时间和系统最后重启时间 $ uptime 15:53:21 up 1 day, 6:07, 1 user, load average: 0.93, 0.68, 0.50 $ uptime -s 2020-09-21 09:45:24 2、w：已登录账号和在干什么 $ w 15:54:06 up 1 day, 6:08, 1 user, load average: 0.72, 0.66, 0.50 USER TTY FROM LOGIN@ IDLE JCPU PCPU WHAT shalom :0 :0 Mon12 ?xdm? 4:16m 0.01s /usr/lib/gdm3/gdm-x-session 3、who -a：查看系统上传重启时间、LOGIN进程运行的信息、运行级别已经用户信息 $ who -a system boot 2020-09-21 09:45 shalom ? :0 2020-09-21 12:19 ? 9511 (:0) run-level 5 2020-09-21 09:46 who -b 可以查到最后重启的时间</description>
+    </item>
+    <item>
+      <title>Mac系统打开shell命令老是提示You-have-new-mail</title>
+      <link>https://www.xiaoledeng.com/2019/11/19/mac-shell-you-have-new-mail/</link>
+      <pubDate>Tue, 19 Nov 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/11/19/mac-shell-you-have-new-mail/</guid>
+      <description>【问题现象】 mac电脑打开 shell 命令控制台老是提示有 You have new mail.&#xA;【解决方法】 进入 /var/mail/ 目录，删除告警文件即可解决&#xA;cd /var/mail/ sudo rm -rf xxx </description>
+    </item>
+    <item>
+      <title>sed删除：d命令</title>
+      <link>https://www.xiaoledeng.com/2019/11/15/sed-delete-d/</link>
+      <pubDate>Fri, 15 Nov 2019 12:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/11/15/sed-delete-d/</guid>
+      <description>删除：d命令 删除example文件的第二行：&#xA;sed &#39;2d&#39; example 删除example文件的第二行到末尾所有行：&#xA;sed &#39;2,$d&#39; example 删除example文件的最后一行：&#xA;sed &#39;$d&#39; example 删除example文件所有包含test的行：&#xA;sed &#39;/test/&#39;d example 参考 Linux 删除和替换文件中某一行的方法 - rgb_rgb的博客 - CSDN博客 </description>
+    </item>
+    <item>
+      <title>linux的替换：sed -i</title>
+      <link>https://www.xiaoledeng.com/2019/11/15/linux-replace-sed-i/</link>
+      <pubDate>Fri, 15 Nov 2019 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/11/15/linux-replace-sed-i/</guid>
+      <description>sed -i &amp;quot;s/查找字段/替换字段/g&amp;quot; 例如：test.txt包括：&#xA;a;b c;d&#xA;使用命令把;替换成换行符：&#xA;sed -i &amp;quot;s/;/\\n/g&amp;quot; test.txt 而后，test.txt变为：&#xA;a b c d</description>
+    </item>
+    <item>
+      <title>Linux下在文件内部指定行（首行、末尾行等）插入内容</title>
+      <link>https://www.xiaoledeng.com/2019/11/15/linux-add-content/</link>
+      <pubDate>Fri, 15 Nov 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/11/15/linux-add-content/</guid>
+      <description>1、在文件的首行插入指定内容：&#xA;sed -i &amp;quot;1i#! /bin/sh -&amp;quot; a 执行后，在a文件的第一行插入#! /bin/sh -&#xA;2、在文件的指定行（n）插入指定内容：&#xA;sed -i &amp;quot;niecho &amp;quot;haha&amp;quot;&amp;quot; a 执行后，在a文件的第n行插入echo &amp;ldquo;haha&amp;rdquo;&#xA;3、在文件的末尾行插入指定内容：&#xA;用第二种方法也可以。一般实现：&#xA;echo “haha” &amp;gt;&amp;gt; a 执行后，在a文件的末尾行插入haha&#xA;参考 Linux下在文件内部指定行（首行、末尾行等）插入内容 - guolongnv - 博客园 </description>
+    </item>
+    <item>
+      <title>grep匹配多个关键字</title>
+      <link>https://www.xiaoledeng.com/2019/11/13/grep-keywords/</link>
+      <pubDate>Wed, 13 Nov 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/11/13/grep-keywords/</guid>
+      <description>一般情况下，grep 命令只能匹配一个关键字，怎么实现匹配多个关键字呢？&#xA;下面看几种情况：&#xA;1、 grep ‘字符串’&#xA;这是最普通的使用方式：&#xA;匹配文件中包含 MANPATH 的那一行：&#xA;cat manpath.config | grep &#39;MANPATH&#39; 2、 grep -v ‘字符串’&#xA;与上例子相反，反向匹配&#xA;匹配文件中不包含 MANPATH 的那一行：&#xA;cat manpath.config| grep -v &#39;MANPATH&#39; 3、 grep -E 同时匹配多个关键字–或关系&#xA;grep -E &amp;quot;word1|word2|word3&amp;quot; file.txt 匹配 file.txt 中包含 word1 或 word2 或 word3 的行。&#xA;满足其中任意条件（word1、word2和word3之一）就会匹配。&#xA;4、 同时匹配多个关键字–与关系&#xA;使用管道符连接多个 grep ，间接实现多个关键字的与关系匹配：&#xA;grep word1 file.txt | grep word2 |grep word3 必须同时满足三个条件（word1、word2和word3）才匹配。&#xA;参考 【Linux】grep 匹配多个关键字 - 媛测 - CSDN博客 </description>
+    </item>
+    <item>
+      <title>Linux统计文件夹和文件数目</title>
+      <link>https://www.xiaoledeng.com/2019/11/05/linux-folder-number/</link>
+      <pubDate>Tue, 05 Nov 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/11/05/linux-folder-number/</guid>
+      <description>统计当前目录下文件的个数（不包括目录） ls -l | grep &amp;quot;^-&amp;quot; | wc -l 统计当前目录下文件的个数（包括子目录） ls -lR | grep &amp;quot;^-&amp;quot; | wc -l 查看某目录下文件夹(目录)的个数（包括子目录） ls -lR | grep &amp;quot;^d&amp;quot; | wc -l 参考 Linux统计文件夹下的文件数目 | SnailTyan </description>
+    </item>
+    <item>
+      <title>Linux rm 无法删除目录非空</title>
+      <link>https://www.xiaoledeng.com/2019/11/04/linux-rm-folder/</link>
+      <pubDate>Mon, 04 Nov 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/11/04/linux-rm-folder/</guid>
+      <description>问题：&#xA;$ rm -r HA_sort rm: 无法删除&amp;quot;HA_sort&amp;quot;: 目录非空 解决方案：&#xA;lsof +D HA_sort 然后kill -9 ID .</description>
+    </item>
+    <item>
+      <title>Linux解压多个压缩包</title>
+      <link>https://www.xiaoledeng.com/2019/10/22/linux-unzip-zip/</link>
+      <pubDate>Tue, 22 Oct 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/10/22/linux-unzip-zip/</guid>
+      <description> 对于解压多个.gz文件的，用此命令：&#xA;for gz in *.gz; do gunzip $gz; done 对于解压多个.tar.gz文件的，用下面命令：&#xA;for tar in *.tar.gz; do tar xvf $tar; done </description>
+    </item>
+    <item>
+      <title>Mac sed 错误 -e extra characters after at the end of i command</title>
+      <link>https://www.xiaoledeng.com/2019/10/16/mac-sed-error-e-extra/</link>
+      <pubDate>Wed, 16 Oct 2019 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2019/10/16/mac-sed-error-e-extra/</guid>
+      <description>Mac的命令行sed出现以下错误：&#xA;mac sed -e : extra characters after \ at the end of i command&#xA;如果需要在文本第一行前插入一行文字，应该用什么sed命令呢？&#xA;sed -e &amp;lsquo;1i \hello&amp;rsquo; file.txt 不行，系统会提示：&#xA;&amp;ldquo;: extra characters after \ at the end of i command&#xA;那么到底该怎么做呢 ，你应该在输完\后，按回车，此时系统会认为命令没有结束，光标移动到下一行，你接着输入后面的内容，居然就可以了。命令大概长成下面这个样。&#xA;sed -e &amp;lsquo;1i\&#xA;hello&amp;rsquo; test.txt&#xA;参考 sed 在mac os x下的奇怪表现_土八路_新浪博客 </description>
+    </item>
+    <item>
+      <title>Linux统计文件行数wc</title>
+      <link>https://www.xiaoledeng.com/2017/03/21/linux-wc/</link>
+      <pubDate>Tue, 21 Mar 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/21/linux-wc/</guid>
+      <description>$ wc -lcw file1 file2 4 33 file1 7 52 file2 11 11 85 total 其中，- c 统计字节数；- l 统计行数；- w 统计字数。</description>
+    </item>
+    <item>
+      <title>Linux设置定时关机、重启、睡眠</title>
+      <link>https://www.xiaoledeng.com/2017/03/11/linux-shutdown-reboot-sleep/</link>
+      <pubDate>Sat, 11 Mar 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/11/linux-shutdown-reboot-sleep/</guid>
+      <description>命令的主体主要是 Shutdown，h/r/s 分别代表关机/重启/睡眠，然后在后面加上执行时间(yymmddhhmm)即可。&#xA;1. 设定2017年3月9日23:15分关机： sudo shutdown -h 1703092315 2. 设定2017年3月9日23:15分重启： sudo shutdown -r 1703092315 3. 设定2017年3月9日23:15分睡眠： sudo shutdown -s 1703092315 </description>
+    </item>
+    <item>
+      <title>Linux文件压缩 &amp; 解压的命令</title>
+      <link>https://www.xiaoledeng.com/2017/03/07/linux-file-zip-unzip/</link>
+      <pubDate>Tue, 07 Mar 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/07/linux-file-zip-unzip/</guid>
+      <description>本文来自： [linux把文件压缩成.tar.gz的命令 - 博客频道 - CSDN.NET ] (http://blog.csdn.net/qq_27803491/article/details/52785838)&#xA;tar格式 解包：[＊＊＊＊＊＊＊]$ tar xvf FileName.tar&#xA;打包：[＊＊＊＊＊＊＊]$ tar cvf FileName.tar DirName（注：tar是打包，不是压缩！）&#xA;gz格式 解压1：[＊＊＊＊＊＊＊]$ gunzip FileName.gz&#xA;解压2：[＊＊＊＊＊＊＊]$ gzip -d FileName.gz&#xA;压 缩：[＊＊＊＊＊＊＊]$ gzip FileName&#xA;tar.gz格式 解压：[＊＊＊＊＊＊＊]$ tar zxvf FileName.tar.gz&#xA;压缩：[＊＊＊＊＊＊＊]$ tar zcvf FileName.tar.gz DirName&#xA;bz2格式 解压1：[＊＊＊＊＊＊＊]$ bzip2 -d FileName.bz2&#xA;解压2：[＊＊＊＊＊＊＊]$ bunzip2 FileName.bz2&#xA;压 缩： [＊＊＊＊＊＊＊]$ bzip2 -z FileName&#xA;tar.bz2格式 解压：[＊＊＊＊＊＊＊]$ tar jxvf FileName.tar.bz2&#xA;压缩：[＊＊＊＊＊＊＊]$ tar jcvf FileName.tar.bz2 DirName&#xA;bz格式 解压1：[＊＊＊＊＊＊＊]$ bzip2 -d FileName.bz&#xA;解压2：[＊＊＊＊＊＊＊]$ bunzip2 FileName.</description>
+    </item>
+    <item>
+      <title>cat、tail、head、sed查看文件任意几行的数据</title>
+      <link>https://www.xiaoledeng.com/2017/03/04/linux-cat-tail-head-sed/</link>
+      <pubDate>Sat, 04 Mar 2017 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2017/03/04/linux-cat-tail-head-sed/</guid>
+      <description>一、使用cat、tail、head组合 1、查看最后1000行的数据&#xA;cat filename | tail -n 1000 2、查看1000到3000行的数据&#xA;cat filename | head -n 3000 | tail -n +1000 cat filename 打印文件所有内容 tail -n 1000 filename 打印文件最后1000行的数据 tail -n +1000 filename 打印文件第1000行开始以后的内容 head -n 1000 filename 打印前1000的内容 二、使用sed命令 显示1000到300行的数据&#xA;sed -n &#39;1000,3000p&#39; filename </description>
+    </item>
+  </channel>
+</rss>
