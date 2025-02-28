@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Parallel on Xiao-Le Deng (邓小乐)</title>
+    <link>https://www.xiaoledeng.com/tags/parallel/</link>
+    <description>Recent content in Parallel on Xiao-Le Deng (邓小乐)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>2012 – 2025 © [Xiao-Le Deng](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
+    <lastBuildDate>Fri, 06 Dec 2024 10:57:28 +0100</lastBuildDate>
+    <atom:link href="https://www.xiaoledeng.com/tags/parallel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python使用Numba并行测试</title>
+      <link>https://www.xiaoledeng.com/2024/12/06/python-numba-parallel/</link>
+      <pubDate>Fri, 06 Dec 2024 10:57:28 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/06/python-numba-parallel/</guid>
+      <description>from numba import njit, prange import numpy as np import time # 纯 Python 实现 def python_matrix_mult(A, B): rows, cols = A.shape[0], B.shape[1] result = [[0] * cols for _ in range(rows)] for i in range(rows): for j in range(cols): for k in range(A.shape[1]): result[i][j] += A[i][k] * B[k][j] return result # Numba 并行实现 @njit(parallel=True) def numba_matrix_mult(A, B): rows, cols = A.shape[0], B.shape[1] result = np.zeros((rows, cols)) for i in prange(rows): for j in range(cols): for k in range(A.</description>
+    </item>
+    <item>
+      <title>macOS下Conda更新PyTorch（GPU 版本）</title>
+      <link>https://www.xiaoledeng.com/2024/12/02/macos-conda-update-pytorch/</link>
+      <pubDate>Mon, 02 Dec 2024 14:37:17 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/12/02/macos-conda-update-pytorch/</guid>
+      <description>查看当前版本：&#xA;python -c &amp;#34;import torch; print(torch.__version__)&amp;#34; 2.3.0.dev20231221 更新命令：&#xA;conda install pytorch torchvision torchaudio -c pytorch 显示：&#xA;Retrieving notices: ...working... done Collecting package metadata (current_repodata.json): done Solving environment: done ==&amp;gt; WARNING: A newer version of conda exists. &amp;lt;== current version: 23.1.0 latest version: 24.11.0 Please update conda by running $ conda update -n base -c defaults conda Or to minimize the number of packages updated during conda update use conda install conda=24.</description>
+    </item>
+    <item>
+      <title>Intel Fortran编译工具ifort和ifx</title>
+      <link>https://www.xiaoledeng.com/2024/11/30/intel-fortran-ifort-ifx/</link>
+      <pubDate>Sat, 30 Nov 2024 08:30:00 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/11/30/intel-fortran-ifort-ifx/</guid>
+      <description>注意⚠️：&#xA;Intel® Fortran Compiler Classic (ifort) is discontinued as of this release (version 2025.0).1&#xA;1. 简介 Intel® Fortran Compiler Classic (IFORT)：传统的 Fortran 编译器，支持经典的 Fortran 标准（如 Fortran 77、90、95、2003、2008）&#xA;Intel® Fortran Compiler (IFX)：新一代基于 LLVM 框架的 Fortran 编译器，支持最新的 Fortran 标准（如 Fortran 2018 和未来版本）&#xA;Intel® oneAPI 工具包包括了IFORT和IFX。&#xA;2. ifort 选项 ifort 成熟：适合需要完全兼容现有 Fortran 代码的场景。&#xA;基础选项：&#xA;-c：只进行编译，生成目标文件（.o），不进行链接 -o &amp;lt;filename&amp;gt;：指定生成的可执行文件名称 -I&amp;lt;directory&amp;gt;：指定模块文件（.mod 文件）或头文件的搜索路径 -L&amp;lt;directory&amp;gt; 和 -l&amp;lt;library&amp;gt;：指定库的搜索路径和链接库 -static：生成静态链接的可执行文件，避免依赖动态库 优化选项：&#xA;-O0：关闭优化（默认设置，适合调试） -O1：基础优化，适合对编译时间敏感或有大量分支的代码 -O2：通用优化（推荐），优化循环、不变代码外提、指令调度等 -O3：高等级优化，适合需要最大化性能的程序，包括计算密集型程序、矢量化和内存访问优化 -xHost：生成专为运行平台优化的代码，针对本地 CPU 的特定架构优化 -ipo：启用跨文件优化（Interprocedural Optimization），进一步提升性能 -fast：启用多项性能优化选项（-O3、-ipo、-xHost 等） 并行化和矢量化选项：</description>
+    </item>
+    <item>
+      <title>Mathematica使用ParallelTable问题</title>
+      <link>https://www.xiaoledeng.com/2024/11/20/mathematica-paralleltable/</link>
+      <pubDate>Wed, 20 Nov 2024 15:03:14 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/11/20/mathematica-paralleltable/</guid>
+      <description>Mathematica 使用 ParallelTable 或类似的并行计算函数时，如果代码运行报错（例如 Part 2 of &amp;hellip; does not exist），这通常表明某些数据结构在并行环境中无法正确传递或初始化，或者参数设置不正确。&#xA;(* 加载必要的包 *) Needs[&amp;#34;NumericalDifferentialEquationAnalysis`&amp;#34;]; (* 分发上下文和变量到并行内核 *) ParallelEvaluate[Needs[&amp;#34;NumericalDifferentialEquationAnalysis`&amp;#34;]]; DistributeDefinitions[Transpose]; </description>
+    </item>
+    <item>
+      <title>macOS下Python的GPU/CPU对比测试</title>
+      <link>https://www.xiaoledeng.com/2024/01/22/macos-python-gpu-vs-cpu/</link>
+      <pubDate>Mon, 22 Jan 2024 09:29:22 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2024/01/22/macos-python-gpu-vs-cpu/</guid>
+      <description>M 芯片的 macOS 下 PyTorch 利用 GPU 加速的是：mps。&#xA;Python代码：&#xA;import torch import time # 检查是否支持 GPU if torch.backends.mps.is_available(): device = torch.device(&amp;#34;mps&amp;#34;) print (&amp;#34;MPS device is found.&amp;#34;) device = torch.device(&amp;#34;mps&amp;#34; if torch.backends.mps.is_available() else &amp;#34;cpu&amp;#34;) # 生成大型随机矩阵 size = 4000 a_cpu = torch.randn(size, size) b_cpu = torch.randn(size, size) # CPU 上的矩阵相乘 start_time_cpu = time.time() result_cpu = torch.mm(a_cpu, b_cpu) cpu_time = time.time() - start_time_cpu # 将矩阵移动到 GPU a_gpu = a_cpu.to(device) b_gpu = b_cpu.to(device) # GPU 上的矩阵相乘 start_time_gpu = time.</description>
+    </item>
+    <item>
+      <title>macOS利用GPU加速Whisper语音转文字</title>
+      <link>https://www.xiaoledeng.com/2023/12/21/macos-gpu-speed-whisper/</link>
+      <pubDate>Thu, 21 Dec 2023 16:08:53 +0100</pubDate>
+      <guid>https://www.xiaoledeng.com/2023/12/21/macos-gpu-speed-whisper/</guid>
+      <description>1. 前言 前几天，写了 开源Whisper语音转文字 的内容，但是在 macOS 上使用 whisper 默认的 --device mps 命令进行 GPU 加速，会报错。而单纯用 CPU 跑 whisper，耗时比较长。&#xA;搜索🔍相关主题后，发现：目前 GitHub 的 whisper 项目 1在 macOS 上安装后，暂时还不能使用 GPU 加速。&#xA;不过，可以基于 C/C++ 语言的 whisper.cpp 2，在 macOS 上实现用 GPU 加速 Whisper 语音转文字。&#xA;结果表明：在 macOS 上用 whisper.cpp 实现 GPU 加速 Whisper 语音转文字的速度提升非常明显。&#xA;2. 具体过程 2.1 下载语言包 建议利用官网命令下载，终端输入：&#xA;whisper 20231218.wav --language Chinese --model large large 语言包的路径为：~/.cache/whisper/large-v3.pt，文件格式为 pt ，大小约 2.9 G。&#xA;2.2 转换 pt 文件为 bin 文件 下载并解压两个 GitHub 的全文件夹—— whisper 1 和 whisper.</description>
+    </item>
+    <item>
+      <title>Parallel computation of Do loop using Openmpi in Fortran</title>
+      <link>https://www.xiaoledeng.com/2022/01/23/parallel-do-openmpi-fortran/</link>
+      <pubDate>Sun, 23 Jan 2022 09:30:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2022/01/23/parallel-do-openmpi-fortran/</guid>
+      <description>1. Key command use omp_lib !$OMP PARALLEL !$OMP DO !$OMP END DO !$OMP END PARALLEL or&#xA;use omp_lib !$OMP PARALLEL DO !$OMP END PARALLEL DO 2. File The content of the file test.f90 is:&#xA;program main use omp_lib implicit integer (i-n) implicit real*8 (a-h,o-z) real(8),allocatable:: number(:,:) inumber=2 jnumber=3 allocate(number(inumber,jnumber)) write(*,*) &amp;#34;parallel do&amp;#34; call cpu_time(time_begin1) !$OMP PARALLEL DO do i=1,inumber do j=1,jnumber number(i,j)=i+j write(*,*) i,j,number(i,j), OMP_get_thread_num() enddo enddo !$OMP END PARALLEL DO call cpu_time(time_end1) write(*,*) &amp;#34;The time cost is&amp;#34;,time_end1-time_begin1 do i=1,inumber do j=1,jnumber write(*,*) i,j,number(i,j) enddo enddo deallocate(number) end program main The content of the file job.</description>
+    </item>
+    <item>
+      <title>Ubuntu安装CUDA以GPU运行Fortran</title>
+      <link>https://www.xiaoledeng.com/2021/07/19/ubuntu-cuda-fortran/</link>
+      <pubDate>Mon, 19 Jul 2021 11:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2021/07/19/ubuntu-cuda-fortran/</guid>
+      <description>1. 检查 验证是否具有支持CUDA的GPU：&#xA;$ lspci | grep -i nvidia 01:00.0 VGA compatible controller: NVIDIA Corporation GP107GL [Quadro P620] (rev a1) 01:00.1 Audio device: NVIDIA Corporation GP107GL High Definition Audio Controller (rev a1) 验证是否具有受支持的Linux版本：&#xA;$ uname -m &amp;amp;&amp;amp; cat /etc/*release x86_64 DISTRIB_ID=Ubuntu DISTRIB_RELEASE=20.04 DISTRIB_CODENAME=focal DISTRIB_DESCRIPTION=&amp;#34;Ubuntu 20.04.2 LTS&amp;#34; NAME=&amp;#34;Ubuntu&amp;#34; VERSION=&amp;#34;20.04.2 LTS (Focal Fossa)&amp;#34; ID=ubuntu ID_LIKE=debian PRETTY_NAME=&amp;#34;Ubuntu 20.04.2 LTS&amp;#34; VERSION_ID=&amp;#34;20.04&amp;#34; HOME_URL=&amp;#34;https://www.ubuntu.com/&amp;#34; SUPPORT_URL=&amp;#34;https://help.ubuntu.com/&amp;#34; BUG_REPORT_URL=&amp;#34;https://bugs.launchpad.net/ubuntu/&amp;#34; PRIVACY_POLICY_URL=&amp;#34;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&amp;#34; VERSION_CODENAME=focal UBUNTU_CODENAME=focal 验证系统是否已安装gcc：&#xA;$ gcc --version gcc (Ubuntu 9.3.0-17ubuntu1~20.04) 9.</description>
+    </item>
+    <item>
+      <title>【Fortran并行科学计算】Hello-World程序</title>
+      <link>https://www.xiaoledeng.com/2016/11/25/fortran-hello-world/</link>
+      <pubDate>Fri, 25 Nov 2016 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2016/11/25/fortran-hello-world/</guid>
+      <description>MPI（message passing interface），是一个消息传递接口。MPI的函数总共有287个。&#xA;想实现一个MPI并行计算的程序的话，只要掌握MPI的工作机理和6个简单的MPI函数便可以了，本文介绍4个简单MPI函数：MPI_INIT、MPI_COMM_RANK、MPI_COMM_SIZE和MPI_FINALIZE。&#xA;注意：以下调用格式为Fortran格式，大部分教程都是C语言的MPI介绍，这里以及以后的文章都是以Fortran为基础，尤其要注意Fortran不分大小写。&#xA;一、Hello World程序 先给出一个最简单的Hello_world的Fortran + MPI的程序，在此基础上来分析MPI的4个最简单的函数——MPI_INIT、MPI_COMM_RANK、MPI_COMM_SIZE和MPI_FINALIZE。&#xA;program hello_world use mpi !include &amp;#39;mpif.h&amp;#39; integer ierr, num_procs, my_id call MPI_INIT ( ierr ) ! find out my process ID, and how many processes were started. call MPI_COMM_RANK (MPI_COMM_WORLD, my_id, ierr) call MPI_COMM_SIZE (MPI_COMM_WORLD, num_procs, ierr) print *, &amp;#34;Hello world! I&amp;#39;m process &amp;#34;, my_id, &amp;#34; out of &amp;#34;, num_procs, &amp;#34; processes.&amp;#34; call MPI_FINALIZE ( ierr ) stop end program hello_world 1.</description>
+    </item>
+    <item>
+      <title>【Fortran并行科学计算】quad_mpi-f90程序</title>
+      <link>https://www.xiaoledeng.com/2016/11/24/quad-mpi-f90/</link>
+      <pubDate>Thu, 24 Nov 2016 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2016/11/24/quad-mpi-f90/</guid>
+      <description>注意：本程序来源于——http://people.sc.fsu.edu/~jburkardt/f_src/quad_mpi/quad_mpi.html ，可以在此网站下载源代码。&#xA;本文是先运行编译此代码，然后分析源代码。&#xA;按照 【Fortran并行科学计算】Hello-World程序 的步骤，上传编译运行之后的结果如下：</description>
+    </item>
+    <item>
+      <title>【Fortran并行科学计算】Fortran&#43;mpi环境搭建</title>
+      <link>https://www.xiaoledeng.com/2016/11/24/set-fortran-mpi/</link>
+      <pubDate>Thu, 24 Nov 2016 09:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2016/11/24/set-fortran-mpi/</guid>
+      <description>首先，工欲善其事必先利其器——搭建Fortran的MPI并行的环境。&#xA;因为是使用的是学校服务器——MPI使用指南 | 武汉大学超算中心。&#xA;选用的是Intel提供的MPI服务。&#xA;1、修改环境变量：&#xA;vim ~/.bash_profile ###for Intel 2016 compiler export I_MPI_PMI_LIBRARY=&amp;quot;/usr/lib64/libpmi.so&amp;quot; source /home/software/intel/parallel_studio_xe_2016_update2/bin/compilervars.sh intel64 注意：在单个服务器上面的环境变量修改，记得按照默认的路径按照：&#xA;source /opt/intel/parallel_studio_xe_2016_update2/bin/compilervars.sh intel64 2、检验是否成功。&#xA;which mpirun 和&#xA;mpirun --version mpiifort --version 最后是调试时候能够正常使用。MPI使用指南 | 武汉大学超算中心提供的是C语言版本的使用方法，并且使用slurm调度系统进行提交。以后的文章会根据这上面的内容来调试相关的学习内容。</description>
+    </item>
+    <item>
+      <title>【Fortran并行科学计算】前言</title>
+      <link>https://www.xiaoledeng.com/2016/11/19/introduction-fortran-computation/</link>
+      <pubDate>Sat, 19 Nov 2016 10:00:00 +0800</pubDate>
+      <guid>https://www.xiaoledeng.com/2016/11/19/introduction-fortran-computation/</guid>
+      <description>一、为什么需要使用Fortran语言？ 1、此方向最新的研究进展，其提供的源代码是Fortran代码，可以直接站在前人的基础上来登高望远；&#xA;2、使用其他高级语言(MATLAB和Mathematica)的计算效率遇到了瓶颈，需要使用Fortran+MPI的并行功能来进行超量数据计算；&#xA;3、手头所有的资源：可供使用的MPI超算中心、已有一点点Fortran基础。&#xA;二、使用Fortran语言需要注意的事项 1、明白Fortran语言只是一个工具，具体的问题聚焦才是王道；&#xA;2、实时记录、整理、共享所学习到的Fortran+MPI方面的笔记。</description>
+    </item>
+  </channel>
+</rss>
