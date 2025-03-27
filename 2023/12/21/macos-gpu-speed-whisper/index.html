@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS利用GPU加速Whisper语音转文字 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS利用GPU加速Whisper语音转文字</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-21</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/c/">#C</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/parallel/">#Parallel</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/gpu/">#GPU</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>前几天，写了 <a href="/2023/12/19/whisper-transform-audio-to-text/">开源Whisper语音转文字</a> 的内容，但是在 macOS 上使用 whisper 默认的 <code>--device mps</code> 命令进行 GPU 加速，会报错。而单纯用 CPU 跑 whisper，耗时比较长。</p>
+<p>搜索🔍相关主题后，发现：目前 GitHub 的 whisper 项目 <sup>1</sup>在 macOS 上安装后，暂时还不能使用 GPU 加速。</p>
+<p>不过，可以基于 C/C++ 语言的 whisper.cpp <sup>2</sup>，在 macOS 上实现用 GPU 加速 Whisper 语音转文字。</p>
+<p>结果表明：在 macOS 上用 whisper.cpp 实现 GPU 加速 Whisper 语音转文字的速度提升非常明显。</p>
+<h1 id="2-具体过程">2. 具体过程</h1>
+<h2 id="21-下载语言包">2.1 下载语言包</h2>
+<p>建议利用官网命令下载，终端输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>whisper 20231218.wav --language Chinese --model large
+</span></span></code></pre></div><p>large 语言包的路径为：<code>~/.cache/whisper/large-v3.pt</code>，文件格式为 pt ，大小约 2.9 G。</p>
+<h2 id="22-转换-pt-文件为-bin-文件">2.2 转换 pt 文件为 bin 文件</h2>
+<p>下载并解压两个 GitHub 的全文件夹—— whisper <sup>1</sup> 和 whisper.cpp <sup>2</sup>。</p>
+<p>利用 whisper.cpp 提供的转换工具 convert-pt-to-ggml.py 将原始 pt 文件转换为 bin 文件，终端输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python /Users/name/Downloads/whisper.cpp-master/models/convert-pt-to-ggml.py ~/.cache/whisper/large-v3.pt /Users/name/Downloads/whisper-main/ /Users/name/Downloads/whisper.cpp-master/models/
+</span></span></code></pre></div><p>解释：</p>
+<ul>
+<li><code>/Users/name/Downloads/whisper.cpp-master/models/convert-pt-to-ggml.py</code> 为 convert-pt-to-ggml.py 文件的具体路径</li>
+<li><code>~/.cache/whisper/large-v3.pt</code> 为第 1 步下载的语言包</li>
+<li><code>/Users/name/Downloads/whisper.cpp-master/models/</code> 为生成 bin 文件的具体路径</li>
+</ul>
+<p>命令执行后，会在 <code>/Users/name/Downloads/whisper.cpp-master/models/</code> 文件夹下生成 ggml-model.bin 文件，大小约 3.1 G。</p>
+<h2 id="23-准备-16-khz-的语音-wav-文件">2.3 准备 16 kHz 的语音 WAV 文件</h2>
+<p>终端输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ffmpeg -i 20231218.mp4 -f WAV -acodec pcm_s16le -ac <span style="color:#f60">1</span> -ar <span style="color:#f60">16000</span> 20231218.WAV
+</span></span></code></pre></div><p>解释：</p>
+<ul>
+<li>ffmpeg 是转换视频和音频的工具 <sup>4</sup></li>
+<li><code>20231218.mp4</code> 为输入文件</li>
+<li><code>20231218.WAV</code> 为输出文件</li>
+</ul>
+<p>注意⚠️： WAV 文件必须是 16 kHz，不然会出现以下错误：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>read_wav: WAV file <span style="color:#c30">&#39;20231218.wav&#39;</span> must be <span style="color:#f60">16</span> kHz
+</span></span><span style="display:flex;"><span>error: failed to <span style="color:#366">read</span> WAV file <span style="color:#c30">&#39;samples/20231218.wav&#39;</span>
+</span></span></code></pre></div><h2 id="24-利用-gpu-加速-whisper-转换语音为文字">2.4 利用 GPU 加速 Whisper 转换语音为文字</h2>
+<p>切换到 whisper.cpp-master 文件夹下，终端输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./main -m models/ggml-model.bin -f samples/20231218.wav -l zh
+</span></span></code></pre></div><ul>
+<li><code>./main</code> 为 whisper.cpp 的主要工具，可以 <code>./main -h</code>查看具体帮助</li>
+<li><code>models/ggml-model.bin</code> 为语言包文件</li>
+<li><code>samples/20231218.wav</code> 为需要转换的语音，由第 3 步生成</li>
+<li><code>-l zh</code> 为指定语言</li>
+</ul>
+<p>输出的结果为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>whisper_init_from_file_with_params_no_state: loading model from <span style="color:#c30">&#39;models/ggml-model.bin&#39;</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: loading model
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#033">n_vocab</span>       <span style="color:#555">=</span> <span style="color:#f60">51866</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#033">n_audio_ctx</span>   <span style="color:#555">=</span> <span style="color:#f60">1500</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#033">n_audio_state</span> <span style="color:#555">=</span> <span style="color:#f60">1280</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#033">n_audio_head</span>  <span style="color:#555">=</span> <span style="color:#f60">20</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#033">n_audio_layer</span> <span style="color:#555">=</span> <span style="color:#f60">32</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#033">n_text_ctx</span>    <span style="color:#555">=</span> <span style="color:#f60">448</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#033">n_text_state</span>  <span style="color:#555">=</span> <span style="color:#f60">1280</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#033">n_text_head</span>   <span style="color:#555">=</span> <span style="color:#f60">20</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#033">n_text_layer</span>  <span style="color:#555">=</span> <span style="color:#f60">32</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#033">n_mels</span>        <span style="color:#555">=</span> <span style="color:#f60">128</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#033">ftype</span>         <span style="color:#555">=</span> <span style="color:#f60">1</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#033">qntvr</span>         <span style="color:#555">=</span> <span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#366">type</span>          <span style="color:#555">=</span> <span style="color:#f60">5</span> <span style="color:#555">(</span>large v3<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>whisper_model_load: adding <span style="color:#f60">1609</span> extra tokens
+</span></span><span style="display:flex;"><span>whisper_model_load: <span style="color:#033">n_langs</span>       <span style="color:#555">=</span> <span style="color:#f60">100</span>
+</span></span><span style="display:flex;"><span>whisper_backend_init: using Metal backend
+</span></span><span style="display:flex;"><span>ggml_metal_init: allocating
+</span></span><span style="display:flex;"><span>ggml_metal_init: found device: Apple M2
+</span></span><span style="display:flex;"><span>ggml_metal_init: picking default device: Apple M2
+</span></span><span style="display:flex;"><span>ggml_metal_init: default.metallib not found, loading from <span style="color:#366">source</span>
+</span></span><span style="display:flex;"><span>ggml_metal_init: <span style="color:#033">GGML_METAL_PATH_RESOURCES</span> <span style="color:#555">=</span> nil
+</span></span><span style="display:flex;"><span>ggml_metal_init: loading <span style="color:#c30">&#39;/Users/name/Downloads/whisper.cpp-master/ggml-metal.metal&#39;</span>
+</span></span><span style="display:flex;"><span>ggml_metal_init: GPU name:   Apple M2
+</span></span><span style="display:flex;"><span>ggml_metal_init: GPU family: MTLGPUFamilyApple8 <span style="color:#555">(</span>1008<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>ggml_metal_init: <span style="color:#033">hasUnifiedMemory</span>              <span style="color:#555">=</span> <span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>ggml_metal_init: <span style="color:#033">recommendedMaxWorkingSetSize</span>  <span style="color:#555">=</span> 22906.50 MB
+</span></span><span style="display:flex;"><span>ggml_metal_init: <span style="color:#033">maxTransferRate</span>               <span style="color:#555">=</span> built-in GPU
+</span></span><span style="display:flex;"><span>whisper_model_load:    Metal buffer <span style="color:#033">size</span> <span style="color:#555">=</span>  3094.88 MB
+</span></span><span style="display:flex;"><span>whisper_model_load: model <span style="color:#033">size</span>    <span style="color:#555">=</span> 3094.36 MB
+</span></span><span style="display:flex;"><span>whisper_backend_init: using Metal backend
+</span></span><span style="display:flex;"><span>ggml_metal_init: allocating
+</span></span><span style="display:flex;"><span>ggml_metal_init: found device: Apple M2
+</span></span><span style="display:flex;"><span>ggml_metal_init: picking default device: Apple M2
+</span></span><span style="display:flex;"><span>ggml_metal_init: default.metallib not found, loading from <span style="color:#366">source</span>
+</span></span><span style="display:flex;"><span>ggml_metal_init: <span style="color:#033">GGML_METAL_PATH_RESOURCES</span> <span style="color:#555">=</span> nil
+</span></span><span style="display:flex;"><span>ggml_metal_init: loading <span style="color:#c30">&#39;/Users/name/Downloads/whisper.cpp-master/ggml-metal.metal&#39;</span>
+</span></span><span style="display:flex;"><span>ggml_metal_init: GPU name:   Apple M2
+</span></span><span style="display:flex;"><span>ggml_metal_init: GPU family: MTLGPUFamilyApple8 <span style="color:#555">(</span>1008<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>ggml_metal_init: <span style="color:#033">hasUnifiedMemory</span>              <span style="color:#555">=</span> <span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>ggml_metal_init: <span style="color:#033">recommendedMaxWorkingSetSize</span>  <span style="color:#555">=</span> 22906.50 MB
+</span></span><span style="display:flex;"><span>ggml_metal_init: <span style="color:#033">maxTransferRate</span>               <span style="color:#555">=</span> built-in GPU
+</span></span><span style="display:flex;"><span>whisper_init_state: kv self <span style="color:#033">size</span>  <span style="color:#555">=</span>  220.20 MB
+</span></span><span style="display:flex;"><span>whisper_init_state: kv cross <span style="color:#033">size</span> <span style="color:#555">=</span>  245.76 MB
+</span></span><span style="display:flex;"><span>whisper_init_state: compute buffer <span style="color:#555">(</span>conv<span style="color:#555">)</span>   <span style="color:#555">=</span>   32.49 MB
+</span></span><span style="display:flex;"><span>whisper_init_state: compute buffer <span style="color:#555">(</span>encode<span style="color:#555">)</span> <span style="color:#555">=</span>  212.49 MB
+</span></span><span style="display:flex;"><span>whisper_init_state: compute buffer <span style="color:#555">(</span>cross<span style="color:#555">)</span>  <span style="color:#555">=</span>    9.45 MB
+</span></span><span style="display:flex;"><span>whisper_init_state: compute buffer <span style="color:#555">(</span>decode<span style="color:#555">)</span> <span style="color:#555">=</span>   99.30 MB
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>system_info: <span style="color:#033">n_threads</span> <span style="color:#555">=</span> <span style="color:#f60">4</span> / <span style="color:#f60">12</span> | <span style="color:#033">AVX</span> <span style="color:#555">=</span> <span style="color:#f60">0</span> | <span style="color:#033">AVX2</span> <span style="color:#555">=</span> <span style="color:#f60">0</span> | <span style="color:#033">AVX512</span> <span style="color:#555">=</span> <span style="color:#f60">0</span> | <span style="color:#033">FMA</span> <span style="color:#555">=</span> <span style="color:#f60">0</span> | <span style="color:#033">NEON</span> <span style="color:#555">=</span> <span style="color:#f60">1</span> | <span style="color:#033">ARM_FMA</span> <span style="color:#555">=</span> <span style="color:#f60">1</span> | <span style="color:#033">METAL</span> <span style="color:#555">=</span> <span style="color:#f60">1</span> | <span style="color:#033">F16C</span> <span style="color:#555">=</span> <span style="color:#f60">0</span> | <span style="color:#033">FP16_VA</span> <span style="color:#555">=</span> <span style="color:#f60">1</span> | <span style="color:#033">WASM_SIMD</span> <span style="color:#555">=</span> <span style="color:#f60">0</span> | <span style="color:#033">BLAS</span> <span style="color:#555">=</span> <span style="color:#f60">1</span> | <span style="color:#033">SSE3</span> <span style="color:#555">=</span> <span style="color:#f60">0</span> | <span style="color:#033">SSSE3</span> <span style="color:#555">=</span> <span style="color:#f60">0</span> | <span style="color:#033">VSX</span> <span style="color:#555">=</span> <span style="color:#f60">0</span> | <span style="color:#033">CUDA</span> <span style="color:#555">=</span> <span style="color:#f60">0</span> | <span style="color:#033">COREML</span> <span style="color:#555">=</span> <span style="color:#f60">0</span> | <span style="color:#033">OPENVINO</span> <span style="color:#555">=</span> <span style="color:#f60">0</span> | 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>main: processing <span style="color:#c30">&#39;samples/20231218.wav&#39;</span> <span style="color:#555">(</span><span style="color:#f60">8748884</span> samples, 546.8 sec<span style="color:#555">)</span>, <span style="color:#f60">4</span> threads, <span style="color:#f60">1</span> processors, <span style="color:#f60">5</span> beams + best of 5, <span style="color:#033">lang</span> <span style="color:#555">=</span> zh, <span style="color:#033">task</span> <span style="color:#555">=</span> transcribe, <span style="color:#033">timestamps</span> <span style="color:#555">=</span> <span style="color:#f60">1</span> ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>whisper_print_timings:     load <span style="color:#366">time</span> <span style="color:#555">=</span>   934.38 ms
+</span></span><span style="display:flex;"><span>whisper_print_timings:     <span style="color:#033">fallbacks</span> <span style="color:#555">=</span>   <span style="color:#f60">0</span> p /   <span style="color:#f60">0</span> h
+</span></span><span style="display:flex;"><span>whisper_print_timings:      mel <span style="color:#366">time</span> <span style="color:#555">=</span>   288.84 ms
+</span></span><span style="display:flex;"><span>whisper_print_timings:   sample <span style="color:#366">time</span> <span style="color:#555">=</span>  3426.48 ms / <span style="color:#f60">12652</span> runs <span style="color:#555">(</span>    0.27 ms per run<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>whisper_print_timings:   encode <span style="color:#366">time</span> <span style="color:#555">=</span>  9619.86 ms /    <span style="color:#f60">20</span> runs <span style="color:#555">(</span>  480.99 ms per run<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>whisper_print_timings:   decode <span style="color:#366">time</span> <span style="color:#555">=</span>  4992.92 ms /   <span style="color:#f60">316</span> runs <span style="color:#555">(</span>   15.80 ms per run<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>whisper_print_timings:   batchd <span style="color:#366">time</span> <span style="color:#555">=</span> 93701.06 ms / <span style="color:#f60">12241</span> runs <span style="color:#555">(</span>    7.65 ms per run<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>whisper_print_timings:   prompt <span style="color:#366">time</span> <span style="color:#555">=</span>  1840.59 ms /  <span style="color:#f60">4184</span> runs <span style="color:#555">(</span>    0.44 ms per run<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>whisper_print_timings:    total <span style="color:#366">time</span> <span style="color:#555">=</span> 114824.53 ms
+</span></span><span style="display:flex;"><span>ggml_metal_free: deallocating
+</span></span><span style="display:flex;"><span>ggml_metal_free: deallocating
+</span></span></code></pre></div><p>利用 Apple M2 GPU (GPU family: MTLGPUFamilyApple8 (1008)) <sup>5</sup> 加速后，语音转文字的速度提升非常明显。</p>
+<h1 id="3-延伸阅读">3. 延伸阅读</h1>
+<ol>
+<li><a href="https://github.com/openai/whisper">openai/whisper: Robust Speech Recognition via Large-Scale Weak Supervision</a></li>
+<li><a href="https://github.com/ggerganov/whisper.cpp/">ggerganov/whisper.cpp: Port of OpenAI&rsquo;s Whisper model in C/C++</a></li>
+<li><a href="/2023/12/19/whisper-transform-audio-to-text/">开源Whisper语音转文字</a></li>
+<li><a href="https://ffmpeg.org/">FFmpeg</a></li>
+<li><a href="https://developer.apple.com/documentation/metal/mtlgpufamily/mtlgpufamilyapple8?changes=latest_major&amp;language=objc">MTLGPUFamilyApple8 | Apple Developer Documentation</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2025 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
