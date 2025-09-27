@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>开源Whisper语音转文字 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Blog</a><a href="/publications/">Publications</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">开源Whisper语音转文字</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-19</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>实现视频或音频转文字的在线工具🔧有：</p>
+<ul>
+<li>飞书妙记（抖音） <a href="https://www.feishu.cn/product/minutes">https://www.feishu.cn/product/minutes</a></li>
+<li>剪映 （抖音） <a href="https://www.capcut.cn">https://www.capcut.cn</a> ，用法：点击导航栏「文本」，选择「智能字幕」</li>
+</ul>
+<p>开源免费，离线使用 —— whipser ，由 OpenAI 出品的自动语音识别系统 <sup>1, 2</sup>。</p>
+<h1 id="2-安装和测试">2. 安装和测试</h1>
+<p>macOS 安装最新的 whisper <sup>1</sup> ：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># install newest whisper on github.com</span>
+</span></span><span style="display:flex;"><span>pip install git+https://github.com/openai/whisper.git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># install torch cpu/</span>
+</span></span><span style="display:flex;"><span>pip3 install --pre --force-reinstall torch --index-url https://download.pytorch.org/whl/nightly/cpu
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># on MacOS using Homebrew (https://brew.sh/)</span>
+</span></span><span style="display:flex;"><span>brew install ffmpeg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># install rust</span>
+</span></span><span style="display:flex;"><span>pip install setuptools-rust
+</span></span></code></pre></div><p>命令行测试：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ whisper 20231218.wav --language Chinese --model large
+</span></span><span style="display:flex;"><span>100%|█████████████████████████████████████| 2.88G/2.88G <span style="color:#555">[</span>06:12&lt;00:00, 8.29MiB/s<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>/Users/name/anaconda3/lib/python3.9/site-packages/whisper/transcribe.py:115: UserWarning: FP16 is not supported on CPU; using FP32 instead
+</span></span><span style="display:flex;"><span>  warnings.warn<span style="color:#555">(</span><span style="color:#c30">&#34;FP16 is not supported on CPU; using FP32 instead&#34;</span><span style="color:#555">)</span>
+</span></span></code></pre></div><p>可以用 <code>whisper --help</code> 查看具体参数的含义。</p>
+<p>部分核心参数说明：</p>
+<ul>
+<li>
+<p><code>--model</code>指定使用模型，默认为 <code>--model small</code>，可选有：<code>tiny</code>、<code>base</code>、<code>small</code>、<code>medium</code>、<code>large</code>、<code>large-v2</code>，英文专用模型是在名称后加上 <code>.en</code></p>
+</li>
+<li>
+<p><code>--model_dir MODEL_DIR</code>指定模型路径，the path to save model files; uses <code>~/.cache/whisper</code> by default (default: None)</p>
+</li>
+<li>
+<p><code>--device</code>指定硬件加速 (device to use for PyTorch inference (default: cpu))， cuda 则为显卡，cpu 就是 CPU， mps 为苹果 M 芯片</p>
+</li>
+<li>
+<p><code>--output_dir OUTPUT_DIR, -o OUTPUT_DIR</code> 指定输出路径，directory to save the outputs (default: .)</p>
+</li>
+<li>
+<p><code>--output_format {txt,vtt,srt,tsv,json,all}, -f {txt,vtt,srt,tsv,json,all}</code> 指定输出格式，format of the output file; if not specified, all available formats will be produced (default: all)</p>
+</li>
+<li>
+<p><code> --task {transcribe,translate}</code> 指定转录方式，默认为 <code>--task transcribe</code> 转录模式，<code>--task translate</code> 为翻译模式【将其他语言翻译成英文】，whether to perform X-&gt;X speech recognition (&rsquo;transcribe&rsquo;) or X-&gt;English translation (&rsquo;translate&rsquo;) (default: transcribe)</p>
+</li>
+<li>
+<p><code>--language</code>指定转录语言，可选项有：</p>
+</li>
+</ul>
+<pre tabindex="0"><code>af,am,ar,as,az,ba,be,bg,bn,bo,br,bs,ca,cs,cy,da,de,el,en,es,et,eu,fa,fi,fo,fr,gl,gu,ha,haw,he,hi,hr,
+ht,hu,hy,id,is,it,ja,jw,ka,kk,km,kn,ko,la,lb,ln,lo,lt,lv,mg,mi,mk,ml,mn,mr,ms,mt,my,ne,nl,nn,no,oc,
+pa,pl,ps,pt,ro,ru,sa,sd,si,sk,sl,sn,so,sq,sr,su,sv,sw,ta,te,tg,th,tk,tl,tr,tt,uk,ur,uz,vi,yi,yo,yue,
+zh,Afrikaans,Albanian,Amharic,Arabic,Armenian,Assamese,Azerbaijani,Bashkir,Basque,Belarusian,Bengali,
+Bosnian,Breton,Bulgarian,Burmese,Cantonese,Castilian,Catalan,Chinese,Croatian,Czech,Danish,Dutch,
+English,Estonian,Faroese,Finnish,Flemish,French,Galician,Georgian,German,Greek,Gujarati,Haitian,
+Haitian Creole,Hausa,Hawaiian,Hebrew,Hindi,Hungarian,Icelandic,Indonesian,Italian,Japanese,Javanese,
+Kannada,Kazakh,Khmer,Korean,Lao,Latin,Latvian,Letzeburgesch,Lingala,Lithuanian,Luxembourgish,
+Macedonian,Malagasy,Malay,Malayalam,Maltese,Mandarin,Maori,Marathi,Moldavian,Moldovan,Mongolian,
+Myanmar,Nepali,Norwegian,Nynorsk,Occitan,Panjabi,Pashto,Persian,Polish,Portuguese,Punjabi,Pushto,
+Romanian,Russian,Sanskrit,Serbian,Shona,Sindhi,Sinhala,Sinhalese,Slovak,Slovenian,Somali,Spanish,
+Sundanese,Swahili,Swedish,Tagalog,Tajik,Tamil,Tatar,Telugu,Thai,Tibetan,Turkish,Turkmen,Ukrainian,
+Urdu,Uzbek,Valencian,Vietnamese,Welsh,Yiddish,Yoruba
+</code></pre><h1 id="3-延伸阅读">3. 延伸阅读</h1>
+<ol>
+<li><a href="https://github.com/openai/whisper">openai/whisper: Robust Speech Recognition via Large-Scale Weak Supervision</a></li>
+<li><a href="https://openai.com/research/whisper">Introducing Whisper</a></li>
+<li><a href="https://sspai.com/post/83644#!">精准转写：利用 Whisper 处理音视频转文字不完全指南 - 少数派</a></li>
+<li><a href="https://sspai.com/post/76899">找不到现成的字幕？Whisper 让不懂外语的你也能看懂日剧 - 少数派</a></li>
+<li><a href="https://sspai.com/post/79977">5 分钟 Whisper 测评，看完没有人比你更懂「语音识别」 - 少数派</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2025 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
