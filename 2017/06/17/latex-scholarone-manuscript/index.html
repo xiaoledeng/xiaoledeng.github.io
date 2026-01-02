@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>LaTeX投稿ScholarOne-Manuscript - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">LaTeX投稿ScholarOne-Manuscript</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2017-06-17</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>LaTeX写成了科研学术文章之后，需要投稿于各种杂志的审稿系统。</p>
+<p>常见的网上电子投稿系统有：</p>
+<ul>
+<li>ScholarOne Manuscript；</li>
+<li>Editorial Manager；</li>
+<li>&hellip; &hellip;</li>
+</ul>
+<p>本文简述在LaTeX投稿ScholarOne Manuscript时，基本的流程，也包括需要到的问题及解决方案。</p>
+<h1 id="latex投稿scholarone-manuscript的说明文件">LaTeX投稿ScholarOne Manuscript的说明文件</h1>
+<p>首先，下载 Author LaTeX File Upload.pdf文件：<a href="http://202.114.96.204/cache/10/03/manuscriptcentral.com/0ceaaa101aedc7fa516ec5dbea54c639/authorlatexfileupload.pdf">Author LaTeX File Upload Guide</a>。</p>
+<p>在此文件中，介绍了ScholarOne Manuscript系统里面提交LaTeX文件的指南。</p>
+<blockquote>
+<p>If the particular journal is not set up to convert LaTeX files to PDF, then the author may be permitted by the journal to upload a PDF file generated from their LaTeX files and may upload their LaTeX files as supplement files for publication.</p>
+</blockquote>
+<p>也就是说，有些杂志使用ScholarOne Manuscript系统，并不支持转换LaTeX文件到PDF文件。这时候，作者可以上传PDF文件，然后上传LaTeX文件为补充文件。</p>
+<p>判断依据为，上传文件的格式是否有TeX/LaTeX Suppl File选项：如果有，则可以上传LaTeX文件；如果没有，则上传PDF文件。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2015036-80db26bd95548029.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="LaTeX文件"></p>
+<h1 id="遇到问题">遇到问题</h1>
+<p>当把LaTeX生成的PDF文件上传到投稿系统，编译生成PDF时，出现了以下错误：</p>
+<blockquote>
+<p>We are sorry, but have encountered one or more error(s). They are listed below:</p>
+</blockquote>
+<blockquote>
+<p>We are sorry, but there is a problem with your submitted file(s) named *.pdf. Our system cannot process this file. The most common reason for this is badly embedded fonts or Type 3 fonts (which we do not support at the moment). If possible, please change the font settings and/or re-distil this PDF to a lower Adobe Acrobat version and try again. Read More &hellip;</p>
+</blockquote>
+<p>点击Read More之后，又得到如下错误提示：</p>
+<blockquote>
+<p>I received a Type 3 Font error during PDF creation. What should I do?</p>
+</blockquote>
+<blockquote>
+<p>A Type 3 font error is due to bit mapped fonts in your document or missing fonts used within the document. Bitmapped fonts display poorly on screen in PDF files and sometimes cause printing problems. We recommend for Word Documents that you embed your fonts and re-upload the file(s), or for PDF&rsquo;s save them using Acrobat 6 (or lower).</p>
+</blockquote>
+<blockquote>
+<p>If your fonts are all uploaded to the manuscript or embedded, please also check the file name. If you have uploaded a TeX file and there are spaces in the file name, it will not convert. Remove the spaces in the file name and re-upload the file and the Type 3 Font error message should no longer display when you try to view the PDF.</p>
+</blockquote>
+<blockquote>
+<p>Related Attachments</p>
+</blockquote>
+<blockquote>
+<p>None Found</p>
+</blockquote>
+<p>以上问题简称为：Type 3 fonts问题。</p>
+<h1 id="解决方案">解决方案</h1>
+<p>Type 3 fonts问题，即为字体问题。</p>
+<ul>
+<li>Windows系统下面的Adobe Acrobat Pro来打开pdf文件；</li>
+<li>选择打印此pdf为pdf格式，这样，字体就加上去，即为PDF加入内嵌字体；</li>
+</ul>
+<p>解决方案的主要思想就是：利用Adobe Acrobat Pro软件里面的全字体库，打印缺少字体的pdf为包含了字体的PDF文件。</p>
+<h1 id="参考资料">参考资料</h1>
+<ul>
+<li><a href="http://muchong.com/html/201307/6175128.html">IEEE 投稿遇到Type 3 fonts问题 - 论文投稿 - 小木虫 - 学术 科研 互动社区</a>;</li>
+<li><a href="http://www.doc88.com/p-303734503940.html">PDF加入内嵌字体教程 - 计算机教材 - 道客巴巴</a>;</li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

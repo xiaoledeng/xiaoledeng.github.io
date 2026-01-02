@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>解决crontab不执行的一般思路 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">解决crontab不执行的一般思路</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-24</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/minimalism/">#Minimalism</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/automation/">#Automation</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>Linux 下利用 crontab 工具 <sup>1</sup> 进行定时操作时，会遇到不执行的情况。</p>
+<p>一般而言，会有各种各样的原因 <sup>2, 3, 4</sup>：</p>
+<ul>
+<li>环境变量</li>
+<li>换行符：cron 中每个条目下面添加一个空行</li>
+<li>crond 服务</li>
+<li>shell 解释器</li>
+<li>时区</li>
+<li>百分号%</li>
+<li>密码过期</li>
+<li>权限</li>
+<li>不同平台</li>
+<li>不同 cron</li>
+<li>crontable 变量</li>
+<li>GUI</li>
+</ul>
+<p>但是，有解决问题的一般思路：查看<code>系统日志</code>和<code>系统邮件</code>，找到错误原因，而后解决。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<h2 id="21-查看系统日志">2.1 查看系统日志</h2>
+<p>终端命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tail -50 /var/log/syslog
+</span></span></code></pre></div><p>crontab 运行的关键字： <code>CRON[1409480]: (name) CMD ...</code>，</p>
+<h2 id="22-查看系统邮件">2.2 查看系统邮件</h2>
+<p>Ubuntu 下安装 mail 的终端命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install mailutils
+</span></span></code></pre></div><p>终端输入 <code>mail</code> ，选择数字序号，查看部分邮件如下：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Traceback <span style="color:#555">(</span>most recent call last<span style="color:#555">)</span>:
+</span></span><span style="display:flex;"><span>  File <span style="color:#c30">&#34;/usr/lib/python3/dist-packages/keyring/backends/libsecret.py&#34;</span>, line 62, in get_password
+</span></span><span style="display:flex;"><span>    <span style="color:#033">items</span> <span style="color:#555">=</span> Secret.password_search_sync<span style="color:#555">(</span>
+</span></span><span style="display:flex;"><span>gi.repository.GLib.GError: g-io-error-quark: Cannot autolaunch D-Bus without X11 <span style="color:#033">$DISPLAY</span> <span style="color:#555">(</span>0<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The above exception was the direct cause of the following exception:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Traceback <span style="color:#555">(</span>most recent call last<span style="color:#555">)</span>:
+</span></span><span style="display:flex;"><span>  File <span style="color:#c30">&#34;/home/name/xxx.py&#34;</span>, line 72, in &lt;module&gt;
+</span></span><span style="display:flex;"><span>    yag_smtp_connection.send<span style="color:#555">(</span>
+</span></span><span style="display:flex;"><span>  File <span style="color:#c30">&#34;/home/name/.local/lib/python3.10/site-packages/yagmail/sender.py&#34;</span>, line 156, in send
+</span></span><span style="display:flex;"><span>    self.login<span style="color:#555">()</span>
+</span></span><span style="display:flex;"><span>  File <span style="color:#c30">&#34;/home/name/.local/lib/python3.10/site-packages/yagmail/sender.py&#34;</span>, line 210, in login
+</span></span><span style="display:flex;"><span>    self._login<span style="color:#555">(</span>self.credentials<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>  File <span style="color:#c30">&#34;/home/name/.local/lib/python3.10/site-packages/yagmail/sender.py&#34;</span>, line 228, in _login
+</span></span><span style="display:flex;"><span>    <span style="color:#033">password</span> <span style="color:#555">=</span> self.handle_password<span style="color:#555">(</span>self.user, password<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>  File <span style="color:#c30">&#34;/home/name/.local/lib/python3.10/site-packages/yagmail/sender.py&#34;</span>, line 234, in handle_password
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> handle_password<span style="color:#555">(</span>user, password<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>  File <span style="color:#c30">&#34;/home/name/.local/lib/python3.10/site-packages/yagmail/password.py&#34;</span>, line 11, in handle_password
+</span></span><span style="display:flex;"><span>    <span style="color:#033">password</span> <span style="color:#555">=</span> keyring.get_password<span style="color:#555">(</span><span style="color:#c30">&#34;yagmail&#34;</span>, user<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>  File <span style="color:#c30">&#34;/usr/lib/python3/dist-packages/keyring/core.py&#34;</span>, line 55, in get_password
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> get_keyring<span style="color:#555">()</span>.get_password<span style="color:#555">(</span>service_name, username<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>  File <span style="color:#c30">&#34;/usr/lib/python3/dist-packages/keyring/backends/libsecret.py&#34;</span>, line 68, in get_password
+</span></span><span style="display:flex;"><span>    raise KeyringLocked<span style="color:#555">(</span><span style="color:#c30">&#39;Failed to unlock the item!&#39;</span><span style="color:#555">)</span> from error
+</span></span><span style="display:flex;"><span>keyring.errors.KeyringLocked: Failed to unlock the item!
+</span></span></code></pre></div><p>简而言之，是 <code>yagmail</code> 的 <code>keyring</code> 出了问题，即调用内置的邮箱密码出了问题。</p>
+<p>解决方法很简单，把邮箱密码放在命令里面 <sup>5</sup>。</p>
+<h1 id="3-延伸阅读">3. 延伸阅读</h1>
+<ol>
+<li><a href="/2023/12/06/linux-tool-crontab/">Linux命令行定时工具crontab</a></li>
+<li><a href="https://segmentfault.com/a/1190000020850932">为什么crontab不执行 - Tony Output - SegmentFault 思否</a></li>
+<li><a href="https://zhangge.net/5093.html">分享一次Linux任务计划crontab不执行的问题排查过程 | 张戈博客</a></li>
+<li><a href="https://www.deeplearn.me/572.html">crontab定时任务失效原因 - 算法之道</a></li>
+<li><a href="/2023/12/06/ubuntu-yagmail-always-input-password/">解决Ubuntu系统yagmail每次输入邮箱密码</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

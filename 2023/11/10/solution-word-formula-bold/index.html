@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Word公式字体自动加粗解决方案 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Word公式字体自动加粗解决方案</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-11-10</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/windows/">#Windows</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>在网上搜索并实践后，终于解决了这个问题。</p>
+<p>核心问题是：样式（Style）。</p>
+<p>解决方案是：更改公式所在段落的样式。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<ol>
+<li>
+<p>选中公式，点击样式（Styles Pane） — 新建样式（New Style），注意⚠️：此时样式设置为 <code>不加粗</code>，其他字体和字号与之前一样。</p>
+</li>
+<li>
+<p>应用新建样式到公式所在段落，取消公式加粗，保存即可。</p>
+</li>
+</ol>
+<h1 id="3-其他解决方案">3. 其他解决方案</h1>
+<ul>
+<li>使用<code>Word</code>插入<code>LaTeX公式</code>；</li>
+<li>换用<code>macOS系统</code>的<code>Pages</code>，并插入<code>LaTeX公式</code>；</li>
+</ul>
+<h1 id="4-参考">4. 参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/weixin_43915875/article/details/115383869">使用word时，表格中的公式自动加粗的解决办法_无可奈何不耐烦的博客-CSDN博客</a></li>
+<li><a href="https://www.zhihu.com/question/46817938">word公式字体总是自动加粗，这是为什么？ - 知乎</a></li>
+<li><a href="https://zhidao.baidu.com/question/2265863082366066388.html?qbpn=2_2&amp;tx=&amp;word=word2010%E5%85%AC%E5%BC%8F%E4%BC%9A%E8%87%AA%E5%8A%A8%E5%8F%98%E6%88%90%E7%B2%97%E4%BD%93&amp;fr=">word2010公式会自动变成粗体_百度知道</a></li>
+<li><a href="https://answers.microsoft.com/en-us/msoffice/forum/all/equations-automatically-save-in-bold-in-word-2012/4af73a9c-f841-42b2-b041-055f8d49e704">Equations automatically save in bold in Word 2012 - Microsoft Community</a></li>
+<li><a href="https://answers.microsoft.com/en-us/msoffice/forum/all/microsoft-word-365-equations-automatically-bold/4bc1e4b2-ce15-45c9-b911-f30a9d05d3b4">Microsoft word 365 equations automatically bold after save - Microsoft Community</a></li>
+<li><a href="https://answers.microsoft.com/en-us/msoffice/forum/all/cambria-math-equation-automatically-bold-after/b13090f3-d4e7-4397-9f4e-c1366ae13a33">Cambria Math equation automatically bold after save the word 365 - Microsoft Community</a></li>
+<li><a href="https://www.reddit.com/r/MicrosoftWord/comments/zmuuie/why_is_word_autobolding_the_entire_document/">Why is word auto-bolding the entire document? : r/MicrosoftWord</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

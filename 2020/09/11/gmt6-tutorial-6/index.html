@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>GMT6入门教程（6）理解图层 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">GMT6入门教程（6）理解图层</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-11</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/gmt/">#GMT</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/drawing/">#Drawing</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>原文地址：<a href="https://docs.gmt-china.org/latest/tutorial/layers/">理解图层 — GMT中文手册</a></p>
+<p>GMT的每一个绘图命令都会产生一个图层，后绘制的图层会覆盖在先绘制的图层的上面，即后来者居上。故此，通过组合一系列简单的GMT命令，得到了一个复杂的GMT图件。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#099">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span>gmt begin layers png,pdf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 绘制地形起伏底图</span>
+</span></span><span style="display:flex;"><span>gmt basemap -JH180/15c -Rg -B0
+</span></span><span style="display:flex;"><span>gmt grdimage @earth_relief_10m -Cetopo1 -I+d
+</span></span><span style="display:flex;"><span>gmt colorbar -Bxa2000f+l<span style="color:#c30">&#34;Elevation (m)&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 绘制大圆射线路径</span>
+</span></span><span style="display:flex;"><span>gmt plot -W1p,red <span style="color:#c30">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">130.72 32.78
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">104.39 29.90
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">130.72 32.78
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">13.14 52.50
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">130.72 32.78
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">19.99 -34.52
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">130.72 32.78
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">-77.15 38.89
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">130.72 32.78
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">-52.47 -31.62
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">130.72 32.78
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">150.36 -33.79
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">130.72 32.78
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">76.22 -69.22
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 绘制震中位置</span>
+</span></span><span style="display:flex;"><span>gmt plot -Sa0.5c -W0.5p,black,solid -Gyellow <span style="color:#c30">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">130.72 32.78
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 绘制台站位置</span>
+</span></span><span style="display:flex;"><span>gmt plot -St0.2c -W0.5p,black,solid -Gblack <span style="color:#c30">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">104.39 29.90
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">13.14 52.50
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">19.99 -34.52
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">-77.15 38.89
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">-52.47 -31.62
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">150.36 -33.79
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">76.22 -69.22
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 添加台站名</span>
+</span></span><span style="display:flex;"><span>gmt text -F+f9p,1,black+j -Dj0.1c/0.1c <span style="color:#c30">&lt;&lt; EOF
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">-77.15  38.89 ML Washington
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">76.22  -69.22 ML Zhongshanzhan
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">104.39  29.90 MR Zigong
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">13.14   52.50 TC Berlin
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">19.99  -34.52 ML Bredasdorp
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">150.36 -33.79 ML Sydney
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">-52.47 -31.62 ML Pelotas
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">EOF</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gmt end show
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

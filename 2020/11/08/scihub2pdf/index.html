@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>scihub2pdf: Python download pdf tool - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">scihub2pdf: Python download pdf tool</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-11-08</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-简介">1. 简介</h1>
+<p style="text-align:justify; text-justify:inter-ideograph;">scihub2pdf is a module of bibcure, which downloads pdfs via a DOI number, article title or a bibtex file, using the database of libgen, Sci-Hub and Arxiv.</p>
+<p>Github: <a href="https://github.com/bibcure/scihub2pdf">https://github.com/bibcure/scihub2pdf</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install scihub2pdf
+</span></span></code></pre></div><p>Mac:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew tap homebrew/cask
+</span></span><span style="display:flex;"><span>brew cask install phantomjs
+</span></span></code></pre></div><p>Ubuntu:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install phantomjs
+</span></span><span style="display:flex;"><span>sudo apt-get install nodejs
+</span></span><span style="display:flex;"><span>sudo apt-get install npm
+</span></span><span style="display:flex;"><span>sudo npm -g install phantomjs-prebuilt
+</span></span><span style="display:flex;"><span>sudo npm -g install phantomjs-prebuilt@2.1.16 --ignore-script
+</span></span></code></pre></div><p><strong>注意</strong>：</p>
+<p>由于<code>scihub2pdf</code>默认用的<code>sci-hub</code>的地址为： <a href="https://sci-hub.cc">https://sci-hub.cc</a></p>
+<p>需要在 <code>/Users/name/anaconda3/lib/python3.7/site-packages/scihub2pdf</code>的路径下的两个文件</p>
+<ul>
+<li>scihub.py</li>
+<li>download.py</li>
+</ul>
+<p>修改为能用的<code>sci-hub</code>地址，比如： <a href="https://sci-hub.se">https://sci-hub.se</a></p>
+<h1 id="2-说明">2. 说明</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scihub2pdf -h
+</span></span><span style="display:flex;"><span>usage: scihub2pdf <span style="color:#555">[</span>-h<span style="color:#555">]</span> <span style="color:#555">[</span>--input INPUTFILE<span style="color:#555">]</span> <span style="color:#555">[</span>--title<span style="color:#555">]</span> <span style="color:#555">[</span>--uselibgen<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>                  <span style="color:#555">[</span>--location LOCATION<span style="color:#555">]</span> <span style="color:#555">[</span>--txt<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> SciHub to PDF
+</span></span><span style="display:flex;"><span> ----------------------------------------------------
+</span></span><span style="display:flex;"><span> Downloads pdfs via a DOI number, article title
+</span></span><span style="display:flex;"><span> or a bibtex file, using the database of libgen<span style="color:#555">(</span>sci-hub<span style="color:#555">)</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Given a bibtex file
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $ scihub2pdf -i input.bib
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Given a DOI number...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $ scihub2pdf 10.1038/s41524-017-0032-0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Given a title...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $ scihub2pdf --title An useful paper
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Arxiv...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $ scihub2pdf arxiv:0901.2686
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $ scihub2pdf --title arxiv:Periodic table <span style="color:#069;font-weight:bold">for</span> topological insulators
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#09f;font-style:italic">## Download from list of items</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Given a text file like
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> 10.1038/s41524-017-0032-0
+</span></span><span style="display:flex;"><span> 10.1063/1.3149495
+</span></span><span style="display:flex;"><span> .....
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> download all pdf<span style="color:#c30">&#39;s
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">
+</span></span></span><span style="display:flex;"><span><span style="color:#c30"> $ scihub2pdf -i dois.txt --txt
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">
+</span></span></span><span style="display:flex;"><span><span style="color:#c30"> Given a text file like
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">
+</span></span></span><span style="display:flex;"><span><span style="color:#c30"> Some Title 1
+</span></span></span><span style="display:flex;"><span><span style="color:#c30"> Some Title 2
+</span></span></span><span style="display:flex;"><span><span style="color:#c30"> .....
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">
+</span></span></span><span style="display:flex;"><span><span style="color:#c30"> download all pdf&#39;</span>s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> $ scihub2pdf -i titles.txt --txt --title
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> Given a text file like
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> arXiv:1708.06891
+</span></span><span style="display:flex;"><span> arXiv:1708.06071
+</span></span><span style="display:flex;"><span> arXiv:1708.05948
+</span></span><span style="display:flex;"><span> .....
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> download all pdf<span style="color:#c30">&#39;s
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">
+</span></span></span><span style="display:flex;"><span><span style="color:#c30"> $ scihub2pdf -i arxiv_ids.txt --txt
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">-----------------------------------------------------
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">     @author: Bruno Messias
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">     @email: messias.physics@gmail.com
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">     @telegram: @brunomessias
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">     @github: https://github.com/bibcure/sci2pdf
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">optional arguments:
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">  -h, --help            show this help message and exit
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">  --input INPUTFILE, -i INPUTFILE
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">                        bibtex input file
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">  --title, -t           download from title
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">  --uselibgen           Use libgen.io instead sci-hub.
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">  --location LOCATION, -l LOCATION
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">                        folder, ex: -l &#39;</span>folder/<span style="color:#c30">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">  --txt                 Just create a file with DOI&#39;</span>s or titles
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

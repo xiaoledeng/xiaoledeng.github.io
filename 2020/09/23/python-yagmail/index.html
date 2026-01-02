@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>yagmail: Python发送邮件 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">yagmail: Python发送邮件</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-23</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1安装">1.安装</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install yagmail
+</span></span></code></pre></div><h1 id="2设置账号和密码">2.设置账号和密码</h1>
+<p>先安装keyring：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install keyring
+</span></span></code></pre></div><p>而后，在python端口输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">keyring</span>
+</span></span><span style="display:flex;"><span>keyring<span style="color:#555">.</span>set_password(<span style="color:#c30">&#39;yagmail&#39;</span>, <span style="color:#c30">&#39;mygmailusername&#39;</span>, <span style="color:#c30">&#39;mygmailpassword&#39;</span>)
+</span></span></code></pre></div><p>解释：</p>
+<ul>
+<li>mygmailusername为邮箱账号</li>
+<li>mygmailpassword为邮箱密码</li>
+</ul>
+<h1 id="3测试">3.测试</h1>
+<p>保存以下代码为mail.py，并运行。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># import yagmail module.</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">yagmail</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># connect to smtp server.</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># yagmail.register(&#39;emailaddress&#39;, &#39;passwd&#39;)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>yag_smtp_connection <span style="color:#555">=</span> yagmail<span style="color:#555">.</span>SMTP(
+</span></span><span style="display:flex;"><span>	user<span style="color:#555">=</span><span style="color:#c30">&#34;user@sustech.edu.cn&#34;</span>,  	<span style="color:#09f;font-style:italic"># 发件人邮箱</span>
+</span></span><span style="display:flex;"><span>	host<span style="color:#555">=</span><span style="color:#c30">&#39;smtp.exmail.qq.com&#39;</span>  		<span style="color:#09f;font-style:italic"># 邮箱的smtp地址</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># email to 收件人</span>
+</span></span><span style="display:flex;"><span>to <span style="color:#555">=</span> <span style="color:#c30">&#39;gmailusername@qq.com&#39;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#  抄送 收件人</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># cc = &#39;gmailusername@icloud.com&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#  密送</span>
+</span></span><span style="display:flex;"><span>bcc <span style="color:#555">=</span> <span style="color:#c30">&#39;gmailusername@foxmail.com&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># email subject 邮件标题</span>
+</span></span><span style="display:flex;"><span>subject <span style="color:#555">=</span> <span style="color:#c30">&#39;Test&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>body <span style="color:#555">=</span> <span style="color:#c30">&#39;This is the test from yagmail.&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># email contents 邮件的主要内容</span>
+</span></span><span style="display:flex;"><span>contents <span style="color:#555">=</span> [<span style="color:#c30">&#39;你好，</span><span style="color:#c30;font-weight:bold">\n\n</span><span style="color:#c30">&#39;</span>, body, <span style="color:#c30">&#39;</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">祝好&#39;</span>, <span style="color:#c30">&#39;Xiao-Le Deng&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># email with attached file path. 邮件的附件内容</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># attachments = [</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># &#39;/Users/name/Documents/a.txt&#39;,</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># &#39;/Users/name/Documents/b.txt&#39;]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># send the email</span>
+</span></span><span style="display:flex;"><span>yag_smtp_connection<span style="color:#555">.</span>send(
+</span></span><span style="display:flex;"><span>	to <span style="color:#555">=</span> to, 
+</span></span><span style="display:flex;"><span>	subject <span style="color:#555">=</span> subject, 
+</span></span><span style="display:flex;"><span>	contents <span style="color:#555">=</span> contents, 
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#	attachments = attachments,</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#	cc = cc,</span>
+</span></span><span style="display:flex;"><span>	bcc <span style="color:#555">=</span> bcc
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h1 id="4参考">4.参考</h1>
+<ul>
+<li><a href="https://github.com/kootenpv/yagmail">kootenpv/yagmail: Send email in Python conveniently for gmail using yagmail</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

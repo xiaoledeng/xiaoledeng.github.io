@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS终端SFTP上传或下载服务器的文件 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS终端SFTP上传或下载服务器的文件</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-04</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>在 macOS 上，不用第三方开源或商业软件进行 SSH 登录，已经实现用默认终端进行 SSH 管理 <sup>1</sup>。</p>
+<p>如果要上传或下载服务器的文件或文件夹，可以使用默认终端的 SFTP 工具。</p>
+<blockquote>
+<p>SFTP（SSH File Transfer Protocol，SSH 文件传输协议）和 SCP（Secure Copy，安全拷贝）是两种用于安全文件传输的协议，均使用SSH协议来传输文件。<sup>2</sup></p>
+</blockquote>
+<p>SCP 之前已经写过一篇文章 <sup>3</sup>。</p>
+<h1 id="2-sftp-操作">2. SFTP 操作</h1>
+<ol>
+<li>本地终端连接服务器</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sftp name@IP
+</span></span></code></pre></div><p>如果，本地已经设置了 <code>~/.ssh/config</code> <sup>1</sup>，可以直接用命令：<code>sftp server</code></p>
+<ol start="2">
+<li>上传文件/文件夹</li>
+</ol>
+<p>首先，可以通过 <code>!ls</code> 查看本地当前路径下的文件。</p>
+<p>输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>put a.txt /home/name
+</span></span></code></pre></div><ul>
+<li><code>a.txt</code> 为本地当前路径下的文件</li>
+<li><code>/home/name</code> 为服务器的路径</li>
+<li>加<code>-r</code> 可以对文件夹操作</li>
+</ul>
+<ol start="3">
+<li>下载文件/文件夹</li>
+</ol>
+<p>首先，可以通过 <code>ls</code> 查看服务器的当前路径下的文件。</p>
+<p>输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>get b.txt .
+</span></span></code></pre></div><ul>
+<li><code>b.txt</code> 为服务器当前路径下的文件</li>
+<li><code>.</code> 表示本地当前路径</li>
+<li>加<code>-r</code> 可以对文件夹操作</li>
+</ul>
+<ol start="4">
+<li>帮助</li>
+</ol>
+<p>输入 <code>help</code>，得到如下内容：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Available commands:
+</span></span><span style="display:flex;"><span>bye                                Quit sftp
+</span></span><span style="display:flex;"><span><span style="color:#366">cd</span> path                            Change remote directory to <span style="color:#c30">&#39;path&#39;</span>
+</span></span><span style="display:flex;"><span>chgrp <span style="color:#555">[</span>-h<span style="color:#555">]</span> grp path                Change group of file <span style="color:#c30">&#39;path&#39;</span> to <span style="color:#c30">&#39;grp&#39;</span>
+</span></span><span style="display:flex;"><span>chmod <span style="color:#555">[</span>-h<span style="color:#555">]</span> mode path               Change permissions of file <span style="color:#c30">&#39;path&#39;</span> to <span style="color:#c30">&#39;mode&#39;</span>
+</span></span><span style="display:flex;"><span>chown <span style="color:#555">[</span>-h<span style="color:#555">]</span> own path                Change owner of file <span style="color:#c30">&#39;path&#39;</span> to <span style="color:#c30">&#39;own&#39;</span>
+</span></span><span style="display:flex;"><span>copy oldpath newpath               Copy remote file
+</span></span><span style="display:flex;"><span>cp oldpath newpath                 Copy remote file
+</span></span><span style="display:flex;"><span>df <span style="color:#555">[</span>-hi<span style="color:#555">]</span> <span style="color:#555">[</span>path<span style="color:#555">]</span>                    Display statistics <span style="color:#069;font-weight:bold">for</span> current directory or
+</span></span><span style="display:flex;"><span>                                   filesystem containing <span style="color:#c30">&#39;path&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">exit</span>                               Quit sftp
+</span></span><span style="display:flex;"><span>get <span style="color:#555">[</span>-afpR<span style="color:#555">]</span> remote <span style="color:#555">[</span>local<span style="color:#555">]</span>         Download file
+</span></span><span style="display:flex;"><span><span style="color:#366">help</span>                               Display this <span style="color:#366">help</span> text
+</span></span><span style="display:flex;"><span>lcd path                           Change <span style="color:#366">local</span> directory to <span style="color:#c30">&#39;path&#39;</span>
+</span></span><span style="display:flex;"><span>lls <span style="color:#555">[</span>ls-options <span style="color:#555">[</span>path<span style="color:#555">]]</span>            Display <span style="color:#366">local</span> directory listing
+</span></span><span style="display:flex;"><span>lmkdir path                        Create <span style="color:#366">local</span> directory
+</span></span><span style="display:flex;"><span>ln <span style="color:#555">[</span>-s<span style="color:#555">]</span> oldpath newpath            Link remote file <span style="color:#555">(</span>-s <span style="color:#069;font-weight:bold">for</span> symlink<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>lpwd                               Print <span style="color:#366">local</span> working directory
+</span></span><span style="display:flex;"><span>ls <span style="color:#555">[</span>-1afhlnrSt<span style="color:#555">]</span> <span style="color:#555">[</span>path<span style="color:#555">]</span>             Display remote directory listing
+</span></span><span style="display:flex;"><span>lumask <span style="color:#366">umask</span>                       Set <span style="color:#366">local</span> <span style="color:#366">umask</span> to <span style="color:#c30">&#39;umask&#39;</span>
+</span></span><span style="display:flex;"><span>mkdir path                         Create remote directory
+</span></span><span style="display:flex;"><span>progress                           Toggle display of progress meter
+</span></span><span style="display:flex;"><span>put <span style="color:#555">[</span>-afpR<span style="color:#555">]</span> <span style="color:#366">local</span> <span style="color:#555">[</span>remote<span style="color:#555">]</span>         Upload file
+</span></span><span style="display:flex;"><span><span style="color:#366">pwd</span>                                Display remote working directory
+</span></span><span style="display:flex;"><span>quit                               Quit sftp
+</span></span><span style="display:flex;"><span>reget <span style="color:#555">[</span>-fpR<span style="color:#555">]</span> remote <span style="color:#555">[</span>local<span style="color:#555">]</span>        Resume download file
+</span></span><span style="display:flex;"><span>rename oldpath newpath             Rename remote file
+</span></span><span style="display:flex;"><span>reput <span style="color:#555">[</span>-fpR<span style="color:#555">]</span> <span style="color:#366">local</span> <span style="color:#555">[</span>remote<span style="color:#555">]</span>        Resume upload file
+</span></span><span style="display:flex;"><span>rm path                            Delete remote file
+</span></span><span style="display:flex;"><span>rmdir path                         Remove remote directory
+</span></span><span style="display:flex;"><span>symlink oldpath newpath            Symlink remote file
+</span></span><span style="display:flex;"><span>version                            Show SFTP version
+</span></span><span style="display:flex;"><span>!command                           Execute <span style="color:#c30">&#39;command&#39;</span> in <span style="color:#366">local</span> shell
+</span></span><span style="display:flex;"><span>!                                  Escape to <span style="color:#366">local</span> shell
+</span></span><span style="display:flex;"><span>?                                  Synonym <span style="color:#069;font-weight:bold">for</span> <span style="color:#366">help</span>
+</span></span></code></pre></div><h1 id="3-延伸阅读">3. 延伸阅读</h1>
+<ol>
+<li><a href="/2024/01/04/macOS-terminal-ssh-login-server/">macOS终端SSH公钥登陆服务器</a></li>
+<li><a href="https://help.aliyun.com/zh/ecs/use-cases/use-sftp-to-upload-files-to-a-linux-instance#4e1cc0d929u6i">通过SFTP或SPC上传本地文件到Linux系统的ECS或将ECS的文件下载至本地_云服务器 ECS(ECS)-阿里云帮助中心</a></li>
+<li><a href="/2020/09/21/ubuntu-link-server/">Ubuntu连接服务器的账号登录和上传下载文件</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/51749905">Linux 命令详解：SFTP - 知乎</a></li>
+<li><a href="https://man.openbsd.org/ssh.1">ssh(1) - OpenBSD manual pages</a></li>
+<li><a href="https://man.openbsd.org/sftp.1">sftp(1) - OpenBSD manual pages</a></li>
+<li><a href="https://man.openbsd.org/scp.1">scp(1) - OpenBSD manual pages</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

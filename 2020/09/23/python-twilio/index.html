@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>twilio: Python发送短信 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">twilio: Python发送短信</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-23</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-安装和配置twilio">1. 安装和配置twilio</h1>
+<p>安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install twilio
+</span></span></code></pre></div><p>在<a href="https://www.twilio.com/">https://www.twilio.com/</a>注册并获取账户的ACCOUNT SID、AUTH TOKEN和TRIAL NUMBER信息。</p>
+<h1 id="2-python代码实现过程">2. Python代码实现过程</h1>
+<p>1.使用api激活</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Download the helper library from https://www.twilio.com/docs/python/install</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">twilio.rest</span> <span style="color:#069;font-weight:bold">import</span> Client
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Your Account Sid and Auth Token from twilio.com/console</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># DANGER! This is insecure. See http://twil.io/secure</span>
+</span></span><span style="display:flex;"><span>account_sid <span style="color:#555">=</span> <span style="color:#c30">&#39;AC43f87995795328087d575&#39;</span>
+</span></span><span style="display:flex;"><span>auth_token <span style="color:#555">=</span> <span style="color:#c30">&#39;your_auth_token&#39;</span>
+</span></span><span style="display:flex;"><span>client <span style="color:#555">=</span> Client(account_sid, auth_token)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>new_key <span style="color:#555">=</span> client<span style="color:#555">.</span>new_keys<span style="color:#555">.</span>create()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#366">print</span>(new_key<span style="color:#555">.</span>sid)
+</span></span></code></pre></div><p>2.将以下代码保存为：text2phone.py</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#!/usr/local/bin/python3 </span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># -*- coding: utf-8 -*-  </span>
+</span></span><span style="display:flex;"><span><span style="color:#c30">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Date: 2019/08/31
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Author: Xiao-Le Deng
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">text2phone.py - Defines the text2phone() function 
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">that texts a message to a phone number, revised from Sweigart (2015)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Preset values:</span>
+</span></span><span style="display:flex;"><span>accountSID <span style="color:#555">=</span> <span style="color:#c30">&#39;AC**********************************&#39;</span> <span style="color:#09f;font-style:italic"># my ACCOUNT SID</span>
+</span></span><span style="display:flex;"><span>authToken  <span style="color:#555">=</span> <span style="color:#c30">&#39;*************************************&#39;</span> <span style="color:#09f;font-style:italic"># my AUTH TOKEN</span>
+</span></span><span style="display:flex;"><span>myNumber <span style="color:#555">=</span> <span style="color:#c30">&#39;*************&#39;</span> <span style="color:#09f;font-style:italic"># my phone number (e.g., +86....)</span>
+</span></span><span style="display:flex;"><span>twilioNumber <span style="color:#555">=</span> <span style="color:#c30">&#39;**************&#39;</span> <span style="color:#09f;font-style:italic"># my TRIAL NUMBER</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">twilio.rest</span> <span style="color:#069;font-weight:bold">import</span> Client
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">text2phone</span>(message):
+</span></span><span style="display:flex;"><span>    twilioClient <span style="color:#555">=</span> Client(accountSID, authToken)
+</span></span><span style="display:flex;"><span>    twilioClient<span style="color:#555">.</span>messages<span style="color:#555">.</span>create(body<span style="color:#555">=</span>message, from_<span style="color:#555">=</span>twilioNumber, to<span style="color:#555">=</span>myNumber)
+</span></span></code></pre></div><p>在同路径下的Python命令行下输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">text2phone</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>text2phone<span style="color:#555">.</span>text2phone(<span style="color:#c30">&#39;The boring task is finished! Well done!!&#39;</span>)
+</span></span></code></pre></div><p>手机会收到以上短信提醒。</p>
+<h1 id="3参考资料">3.参考资料</h1>
+<ul>
+<li><a href="https://automatetheboringstuff.com/chapter16/">Sweigart (2015) Automate the Boring Stuff with Python-Sending Text Messages with Twilio</a></li>
+<li><a href="https://www.twilio.com/docs/sms">Programmable SMS: Send and Receive Texts in Your App - Twilio</a></li>
+<li><a href="https://www.twilio.com/docs/sms/quickstart/python#install-python-and-the-twilio-helper-library">Twilio SMS Python Quickstart - Send &amp; Receive SMS - Twilio</a></li>
+<li><a href="https://www.twilio.com/docs/iam/keys/api-key-resource">REST API: API Keys - Twilio</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

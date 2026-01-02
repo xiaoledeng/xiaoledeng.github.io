@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS默认的SSH存储公钥密码 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS默认的SSH存储公钥密码</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-06</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>自从更新 macOS 的 SSH 后<sup>1</sup>，每次用 SSH 时，都被要求输入公钥密码，如：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -T git@github.com
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 显示</span>
+</span></span><span style="display:flex;"><span>Enter passphrase <span style="color:#069;font-weight:bold">for</span> key …
+</span></span></code></pre></div><p>一般地，输入一次后，后面都不需要输入公钥密码。</p>
+<p>但是，重启电脑后，还是需要再次输入公钥密码。</p>
+<p>一种思路是：在创建私钥和公钥时，设置公钥密码为空。不过，不推荐这种方法，因为不安全。</p>
+<p>另外一种思路是：还原 macOS 默认的 SSH ，并进行 keychain 设置。</p>
+<h1 id="2-删除-brew-安装的-openssh-版本-ssh">2. 删除 brew 安装的 openssh 版本 SSH</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew remove openssh
+</span></span><span style="display:flex;"><span>Uninstalling /opt/homebrew/Cellar/openssh/9.6p1... <span style="color:#555">(</span><span style="color:#f60">45</span> files, 6.4MB<span style="color:#555">)</span>
+</span></span></code></pre></div><h1 id="3-设置苹果默认-ssh-的-keychain">3. 设置苹果默认 SSH 的 keychain</h1>
+<p>通过终端查询苹果默认的 ssh-add: <code>man ssh-add</code> (macOS 13.6; February 4, 2022)，发现有以下两个功能：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>--apple-use-keychain
+</span></span><span style="display:flex;"><span>    When adding identities, each passphrase will also be stored in the user<span style="color:#c30">&#39;s keychain.
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">    When removing identities with -d, each passphrase will be removed from it.
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">--apple-load-keychain
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">    Add identities to the agent using any passphrase stored in the user&#39;</span>s keychain.
+</span></span></code></pre></div><p>注意⚠️：<code>ssh-add --apple-use-keychain --apple-load-keychain</code> 是 macOS 系统特有的。用 <code>brew install openssh</code> 安装的 OpenSSH 没有这个功能。</p>
+<p>第一步，添加 keychain：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/bin/ssh-add --apple-use-keychain ~/.ssh/id_ed25519_name
+</span></span></code></pre></div><p>第二步，使用 keychain，以下内容加入 <code>~/.zshrc</code> 文件 :</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># ssh apple-keychain 06.Jan.2024</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Add my keys to the ssh agent; passwords are pulled from the keychain.</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># The --apple-load-keychain option is unique to macOS.</span>
+</span></span><span style="display:flex;"><span>/usr/bin/ssh-add --apple-load-keychain 2&gt; /dev/null
+</span></span></code></pre></div><p>注意⚠️：<code>2&gt; /dev/null</code> 的作用是不显示过程文字 <code>Identity added: /Users/name/.ssh/id_ed25519_name ...</code>。</p>
+<p>第三步，配置 SSH ，在 <code>~/.ssh/config</code> 文件里加入以下内容：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host *
+</span></span><span style="display:flex;"><span>  AddKeysToAgent yes
+</span></span><span style="display:flex;"><span>  IgnoreUnknown UseKeychain
+</span></span><span style="display:flex;"><span>  UseKeychain yes
+</span></span><span style="display:flex;"><span>  IdentityFile ~/.ssh/id_ed25519_name
+</span></span></code></pre></div><p>经过以上三步，SSH 公钥密码就被存储在用户的 keychain 里。</p>
+<p>每次重启电脑并打开终端时，会自动加载 keychain 里存的公钥密码；而后， SSH 就能访问用户的 keychain 里存的公钥密码，避免了每次都要输入公钥密码的情形。</p>
+<h1 id="4-延伸阅读">4. 延伸阅读</h1>
+<ol>
+<li><a href="/2024/01/05/macOS-update-ssh/">macOS更新SSH</a></li>
+<li><a href="https://docs.github.com/en/enterprise-server@3.10/authentication/troubleshooting-ssh/error-ssh-add-illegal-option----apple-use-keychain">Error: ssh-add: illegal option &ndash; apple-use-keychain - GitHub Enterprise Server 3.10 Docs</a></li>
+<li><a href="https://www.technomancer.com/archives/464">Adding your ssh keys to macOS Keychain – Domain of the Technomancer</a></li>
+<li><a href="https://apple.stackexchange.com/questions/48502/how-can-i-permanently-add-my-ssh-private-key-to-keychain-so-it-is-automatically#250572">How can I permanently add my SSH private key to Keychain so it is automatically available to ssh? - Ask Different</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
