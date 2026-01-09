@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>GMT6入门教程（7）单行、图中图、子图和多图模式 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">GMT6入门教程（7）单行、图中图、子图和多图模式</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-12</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/gmt/">#GMT</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/drawing/">#Drawing</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1单行模式">1.单行模式</h1>
+<p>原文地址：<a href="https://docs.gmt-china.org/latest/tutorial/oneliner/">GMT单行模式 — GMT中文手册</a></p>
+<p>“单行模式”：当绘图只需要一个GMT命令时，可省略 gmt begin 和 gmt end，只需要在绘图命令后加上 -format figname 即可。</p>
+<p>完整模式命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gmt begin GlobalMap png,pdf
+</span></span><span style="display:flex;"><span>    gmt coast -Rg -JH15c -Gpurple -Baf -B+t<span style="color:#c30">&#34;My First Plot&#34;</span>
+</span></span><span style="display:flex;"><span>gmt end show
+</span></span></code></pre></div><p>单行模式命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gmt coast -Rg -JH15c -Gpurple -Baf -B+t<span style="color:#c30">&#34;My First Plot&#34;</span> -pdf,png GlobalMap
+</span></span></code></pre></div><h1 id="2图中图模式">2.图中图模式</h1>
+<p>原文地址：<a href="https://docs.gmt-china.org/latest/tutorial/inset/">GMT图中图模式 — GMT中文手册</a></p>
+<p>模块：<a href="https://docs.gmt-china.org/latest/module/inset/">inset</a></p>
+<p>用法：图中图模式以 inset begin 开始，并以 inset end 结束。</p>
+<p>解释：使用 inset begin 进入图中图模式，其作用是在纸张上规划出一个矩形区域，并将绘图原点移动到该矩形区域的左下角。接下来的所有绘图命令均只在该区域内进行操作。当使用 inset end 结束图中图模式时，绘图原点会自动恢复到图中图模式之前的位置，且所有设置参数都将回到之前的状态。</p>
+<h2 id="21用矩形框标记研究区域">2.1用矩形框标记研究区域</h2>
+<p>命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gmt begin inset-map png,pdf
+</span></span><span style="display:flex;"><span>    gmt coast -R139.2/140.5/34.8/36 -JM12c -Baf -BWSne -W2p -A1000 -Glightbrown -Sazure1 --FORMAT_GEO_MAP<span style="color:#555">=</span>dddF
+</span></span><span style="display:flex;"><span>    gmt inset begin -DjBL+w3c/3.6c+o0.1c -F+gwhite+p1p
+</span></span><span style="display:flex;"><span>        gmt coast -R129/146/30/46 -JM? -EJP+glightbrown+p0.2p -A10000
+</span></span><span style="display:flex;"><span>        <span style="color:#09f;font-style:italic"># 使用 -Sr+s 绘制矩形区域</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#366">echo</span> 139.2 34.8 140.5 <span style="color:#f60">36</span> | gmt plot -Sr+s -W1p,blue
+</span></span><span style="display:flex;"><span>    gmt inset end
+</span></span><span style="display:flex;"><span>gmt end show
+</span></span></code></pre></div><p>解释：</p>
+<ul>
+<li>inset begin 定义了小图的位置位于大图左下角（-DjBL），小图区域的宽度为3厘米，高度为3.6厘米（+w3c/3.6c），并且相对大图左下角偏移0.1厘米（+o0.1c）。同时还设置了小图区域的背景色为白色（+gwhite），并绘制了小图区域的边框（+p1p）。</li>
+<li>在小图区域内，使用 coast 模块绘制了日本全图，小图投影参数为 -JM?，其中 ? 表示根据 inset begin 中 -D 选项指定的宽度自动决定小图宽度。</li>
+<li>使用 plot 模块的 -Sr+s 选项在小图中绘制了一个对应于大图区域的矩形框，该命令需要输入矩形区域的两个对角顶点的经纬度。</li>
+</ul>
+<h2 id="22用颜色标记研究区域">2.2用颜色标记研究区域</h2>
+<p>命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gmt begin inset-example png,pdf
+</span></span><span style="display:flex;"><span>    gmt coast -R110E/170E/44S/9S -JM6i -B -BWSne -Wfaint -N2/1p -Gbrown -EAU+gbisque
+</span></span><span style="display:flex;"><span>    gmt inset begin -DjTR+w1.5i+o0.15i/0.1i -F+gwhite+p1p+c0.1c
+</span></span><span style="display:flex;"><span>        gmt coast -JG120/30S/? -Rg -Bg -Wfaint -Gbrown -EAU+gbisque -A5000
+</span></span><span style="display:flex;"><span>    gmt inset end
+</span></span><span style="display:flex;"><span>gmt end show
+</span></span></code></pre></div><p>解释：</p>
+<ul>
+<li>inset begin 定义了小图的位置位于大图右上角（-DjTR），小图区域宽度为 1.5英寸（+w1.5i）</li>
+<li>在小图内部在需要指定地图宽度的地方使用了 ? 让GMT自动帮我们决定小图的宽度。</li>
+</ul>
+<h1 id="3子图模式">3.子图模式</h1>
+<p>原文地址：<a href="https://docs.gmt-china.org/latest/tutorial/subplot/">GMT子图模式 — GMT中文手册</a></p>
+<p>两种方式可以绘制多子图：</p>
+<ul>
+<li>常规方式：在绘图时使用 <a href="https://docs.gmt-china.org/latest/option/XY/">-X 和 -Y 选项</a> 手动移动每个子图的原点</li>
+<li>现代方式：使用 <a href="https://docs.gmt-china.org/latest/module/subplot/">subplot</a> 模块提供的子图模式来布局和管理多子图</li>
+</ul>
+<p>现代方式更加简洁易用，建议使用现代方式。仅当图片非常复杂或不规则时，才推荐使用常规方式。</p>
+<p>模块：<a href="https://docs.gmt-china.org/latest/module/subplot/">subplot</a></p>
+<h2 id="31子图布局">3.1子图布局</h2>
+<p>subplot begin 用于设计子图的布局、尺寸以及其它属性。</p>
+<p>相邻子图之间的间隔则可以用 -M 选项控制。</p>
+<p>subplot set 用于激活指定的子图，接下来的所有绘图命令都将在该子图内进行绘制。</p>
+<p>GMT中可以通过 行号,列号 或者 索引号 （即第几个子图）的方式来指定子图。</p>
+<p>行号、列号和索引号，均从0开始起算。因而对于一个N行M列的子图布局而言，行号为0到N-1，列号为0到M-1，索引号为0到N*M-1。</p>
+<p>命令：gmt subplot begin 2x3 -Fs5c/3c</p>
+<p>解释：定义了一个2行3列的子图布局。-Fs5c/3c 则指定了每个子图区域的宽度为5厘米，高度为3厘米。</p>
+<p>命令：gmt subplot set 1,0 或 gmt subplot set 3</p>
+<p>解释：1,0即为行号和列号，3为索引号</p>
+<p>使用 subplot end 退出子图模式，命令：gmt subplot end</p>
+<h2 id="32第一张子图">3.2第一张子图</h2>
+<p>命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gmt begin map png,pdf
+</span></span><span style="display:flex;"><span>  gmt <span style="color:#366">set</span> FONT_TAG 15p FONT_HEADING 20p MAP_HEADING_OFFSET 0p
+</span></span><span style="display:flex;"><span>  gmt subplot begin 2x2 -Fs5c/3c -A -M0.2c/0.1c -T<span style="color:#c30">&#34;My Subplot Heading&#34;</span>
+</span></span><span style="display:flex;"><span>    gmt subplot <span style="color:#366">set</span> <span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>    gmt basemap -R0/10/0/10 -JX? -Baf -BWSen
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    gmt subplot <span style="color:#366">set</span> <span style="color:#f60">1</span>
+</span></span><span style="display:flex;"><span>    gmt basemap -R0/20/0/10 -JX? -Baf -BWSen
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    gmt subplot <span style="color:#366">set</span> <span style="color:#f60">2</span>
+</span></span><span style="display:flex;"><span>    gmt basemap -R0/10/0/20 -JX? -Baf -BWSen
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    gmt subplot <span style="color:#366">set</span> <span style="color:#f60">3</span>
+</span></span><span style="display:flex;"><span>    gmt basemap -R0/20/0/20 -JX? -Baf -BWSen
+</span></span><span style="display:flex;"><span>  gmt subplot end
+</span></span><span style="display:flex;"><span>gmt end show
+</span></span></code></pre></div><p>解释：</p>
+<ul>
+<li>调整子图编号的大小（<a href="https://docs.gmt-china.org/latest/conf/font/#term-FONT_TAG">FONT_TAG</a>）、总标题文字大小（<a href="https://docs.gmt-china.org/latest/conf/font/#term-FONT_HEADING">FONT_HEADING</a>）以及总标题相对于底图的偏移量（<a href="https://docs.gmt-china.org/latest/conf/map/#term-MAP_HEADING_OFFSET">MAP_HEADING_OFFSET</a>）</li>
+<li>用 subplot begin 定义了一个2行2列（2x2）的子图布局，每个子图区域宽5厘米高3厘米（-Fs5c/3c）</li>
+<li>-A: 对每个子图进行自动编号abcd</li>
+<li>-M0.2c/0.1c: 调整相邻子图之间的空白距离，X方向间隔为0.2厘米，Y方向间隔为0.1厘米</li>
+<li>-T”My Subplot Heading”: 为整张图加上一个总标题</li>
+<li>在子图模式内，使用 subplot set 0 的方式依次激活每个子图。</li>
+<li>在每个子图内绘图时，我们使用了线性投影方式 -JX?。通常需要指定图片的宽度或高度，这里使用了 ? 让GMT根据子图区域的大小自动帮我们选择最合适的子图宽度。</li>
+</ul>
+<h2 id="33共用xy轴">3.3共用X/Y轴</h2>
+<p>命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gmt begin map png,pdf
+</span></span><span style="display:flex;"><span>  gmt <span style="color:#366">set</span> FONT_TAG 15p FONT_HEADING 20p MAP_HEADING_OFFSET 10p
+</span></span><span style="display:flex;"><span>  gmt subplot begin 2x2 -Fs5c/3c -A -M0.2c/0.2c -T<span style="color:#c30">&#34;My Subplot Heading&#34;</span> -SRl -SCb -BWSrt
+</span></span><span style="display:flex;"><span>    gmt basemap -R0/10/0/10 -JX? -c
+</span></span><span style="display:flex;"><span>    gmt basemap -R0/20/0/10 -JX? -c
+</span></span><span style="display:flex;"><span>    gmt basemap -R0/10/0/20 -JX? -c
+</span></span><span style="display:flex;"><span>    gmt basemap -R0/20/0/20 -JX? -c
+</span></span><span style="display:flex;"><span>  gmt subplot end
+</span></span><span style="display:flex;"><span>gmt end show
+</span></span></code></pre></div><p>解释：</p>
+<ul>
+<li>-SRl 表示一行内（Row）的子图共用Y轴，且只在左边（l）轴显示标注，</li>
+<li>-SCb 表示一列内（Column）的子图共用X轴，且只在底部（b）轴显示标注。</li>
+</ul>
+<h2 id="34复杂布局">3.4复杂布局</h2>
+<p>命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gmt begin complex-subplot png,pdf
+</span></span><span style="display:flex;"><span>  gmt subplot begin 2x2 -Fs5c/3c -A
+</span></span><span style="display:flex;"><span>    gmt subplot <span style="color:#366">set</span> <span style="color:#f60">0</span> -A<span style="color:#c30">&#39;(a)&#39;</span>
+</span></span><span style="display:flex;"><span>    gmt basemap -R0/10/0/10 -JX11.75c/3c -Baf -BWSen
+</span></span><span style="display:flex;"><span>    <span style="color:#366">echo</span> <span style="color:#f60">5</span> <span style="color:#f60">5</span> TEXT | gmt text -JX11.75c/3c
+</span></span><span style="display:flex;"><span>    gmt subplot <span style="color:#366">set</span> <span style="color:#f60">2</span> -A<span style="color:#c30">&#39;(b)&#39;</span>
+</span></span><span style="display:flex;"><span>    gmt basemap -R0/5/0/5 -JX? -Baf -BWSen
+</span></span><span style="display:flex;"><span>    gmt subplot <span style="color:#366">set</span> <span style="color:#f60">3</span> -A<span style="color:#c30">&#39;(c)&#39;</span>
+</span></span><span style="display:flex;"><span>    gmt basemap -R0/5/0/5 -JX? -Baf -BWSen
+</span></span><span style="display:flex;"><span>  gmt subplot end
+</span></span><span style="display:flex;"><span>gmt end show
+</span></span></code></pre></div><p>在一个2行2列的子图布局中绘制了三张子图，其中第一张子图占据了第一行。</p>
+<p>在绘制三个底图时，后两个底图均使用了 -JX?，因而GMT会自动根据子图区域的大小确定子图的尺寸；而为了使得第一张子图占据两个子图区域的空间，我们使用了 -JX11.75c/3c 来人工指定其子图宽度，其中子图宽度11.75厘米是需要人工调整的。</p>
+<p>由于我们跳过了第二个子图区域，自动标签功能会将三个子图依次编号为a、c、d，这显然不是我们想要的，因而我们使用了 -A’(a)’ 选项手动设置子图编号。需要注意的是，由于小括号在Bash中有特殊含义，所以这里 (a) 两边加了单引号以避免Bash对小括号进行解释。</p>
+<h1 id="4多图模式">4.多图模式</h1>
+<p>原文地址：<a href="https://docs.gmt-china.org/latest/tutorial/multifig/">GMT多图模式 — GMT中文手册</a></p>
+<p>模块：<a href="https://docs.gmt-china.org/latest/module/figure/">figure</a></p>
+<p>可以在 gmt begin 和 gmt end 中多次使用 gmt figure 来创建新图，或激活已有的图。</p>
+<p>命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gmt begin
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 创建 Fig1 并在 Fig1 中绘图</span>
+</span></span><span style="display:flex;"><span>    gmt figure Fig1 png
+</span></span><span style="display:flex;"><span>    gmt basemap -R0/10/0/10 -JX10c -Baf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 创建 Fig2 并在 Fig2 中绘图</span>
+</span></span><span style="display:flex;"><span>    gmt figure Fig2 png
+</span></span><span style="display:flex;"><span>    gmt basemap -R0/5/0/5 -JX10c -Baf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 切换回 Fig1，并绘制圆圈</span>
+</span></span><span style="display:flex;"><span>    gmt figure Fig1
+</span></span><span style="display:flex;"><span>    <span style="color:#366">echo</span> <span style="color:#f60">5</span> <span style="color:#f60">5</span> | gmt plot -Sc1c -W2p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 切换回 Fig2，并绘制三角形</span>
+</span></span><span style="display:flex;"><span>    gmt figure Fig2
+</span></span><span style="display:flex;"><span>    <span style="color:#366">echo</span> <span style="color:#f60">1</span> <span style="color:#f60">2</span> | gmt plot -St1c -W1p
+</span></span><span style="display:flex;"><span>gmt end show
+</span></span></code></pre></div><p>使用 figure 模块在一个脚本中指定了两张图，并不断在两张图之间来回切换，最终会生成两张图，第一张图中在底图中绘制了圆圈，第二张图中则在底图中绘制了三角形。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

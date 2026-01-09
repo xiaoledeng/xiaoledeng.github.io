@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Raspberry Pi【6】桌面时间的格式设置 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Raspberry Pi【6】桌面时间的格式设置</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-09-24</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-设置方法">1. 设置方法</h1>
+<p>Raspberry Pi桌面的右上角，右键选择<code>Digital Clock Settings</code>，在<code>Clock Format</code>输入：<code>%A %d %b, %Y - %T</code>，显示的内容为：<code>Friday 24 Sep, 2021 - 15:00:00</code>。</p>
+<h1 id="2-说明">2. 说明</h1>
+<p>在终端输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>man strftime
+</span></span></code></pre></div><p>Digital clock format strings for <strong>Week &amp; Day of Week</strong>:</p>
+<ul>
+<li>%a – The abbreviated name of the day of the week.</li>
+<li>%A – The full name of the day of the week.</li>
+<li>%u – The day of the week as a decimal, (1 to 7), Monday being 1.</li>
+<li>%w – The day of the week as a decimal (0 to 6), Sunday being 0.</li>
+<li>%U – The week number of current year as a decimal number (00 to 53).</li>
+<li>%V – The ISO 8601-week number.</li>
+<li>%W – The week number of the current year as a decimal number (00 to 53).</li>
+<li>%j – The day of the year as a decimal number (001 to 366).</li>
+</ul>
+<p>Digital clock format strings for <strong>Day &amp; Month</strong>:</p>
+<ul>
+<li>%b – The abbreviated month name.</li>
+<li>%B – The full month name.</li>
+<li>%d – The day of the month as a decimal number (01 to 31).</li>
+<li>%h – Equivalent to %b.</li>
+<li>%m – The month as a decimal number (01 to 12).</li>
+<li>%M – The minute as a decimal number (00 to 59).</li>
+</ul>
+<p>Digital clock format strings for <strong>Date and Time</strong>:</p>
+<ul>
+<li>%c – The preferred date and time representation for the current locale.</li>
+<li>%D – Equivalent to %m/%d/%y. %e – Like %d, the day of the month as a decimal number with leading space.</li>
+<li>%F – Equivalent to %Y-%m-%d (the ISO 8601 date format).</li>
+<li>%x – The preferred date representation without the time.</li>
+<li>%+ – The date and time in date (1) format.</li>
+</ul>
+<p>Digital clock format strings for <strong>Year</strong>:</p>
+<ul>
+<li>%C – The century number (year/100) as a 2-digit integer.</li>
+<li>%G – The ISO 8601 week-based year.</li>
+<li>%g – Like %G, but without century, that is, with a 2-digit year (00–99).</li>
+<li>%y – The year as a decimal number without a century (00 to 99).</li>
+<li>%Y – The year as a decimal number including the century.</li>
+</ul>
+<p>Digital clock format strings for <strong>Time &amp; Time zone</strong>:</p>
+<ul>
+<li>%p – Either “AM” or “PM” according to the given time value.</li>
+<li>%P – Like %p but in lowercase: “am” or “pm”.</li>
+<li>%r – The time in a.m. or p.m. notation.</li>
+<li>%R – The time in 24-hour notation (%H:%M).</li>
+<li>%T – The time in 24-hour notation (%H:%M:%S)</li>
+<li>%H – The hour as a decimal number using a 24-hour clock (00 to 23).</li>
+<li>%I – The hour as a decimal number using a 12-hour clock (01 to 12).</li>
+<li>%k – The hour (24-hour clock) as a decimal number (0 to 23).</li>
+<li>%l – The hour (12-hour clock) as a decimal number (1 to 12).</li>
+<li>%s – The number of seconds since the Epoch, 1970-01-01 00:00:00 +0000.</li>
+<li>%S – The second as a decimal number (00 to 60).</li>
+<li>%X – The preferred time representation without the date.</li>
+<li>%z – The +hhmm or -hhmm numeric time zone (hour &amp; minute offset from UTC).</li>
+<li>%Z – The time zone name or abbreviation.</li>
+</ul>
+<p><strong>Special Characters and Modifiers</strong>:</p>
+<ul>
+<li>%n – A newline character.</li>
+<li>%t – A tab character.</li>
+<li>%% – A literal ‘%’ character.</li>
+</ul>
+<h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://piwithvic.com/raspberry-pi-desktop-clock-format">Clock Format For Raspberry Pi Desktop Clock - Pi with Vic</a></li>
+<li><a href="https://piwithvic.com/raspberry-pi/desktop/change-clock-format-for-raspberry-pi-desktop">Change Clock Format for Raspberry Pi Desktop - Pi With Vic</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

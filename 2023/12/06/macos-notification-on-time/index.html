@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS系统定时通知 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS系统定时通知</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-06</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/minimalism/">#Minimalism</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/automation/">#Automation</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<blockquote>
+<p>“Wisdom is the power to put our time and our knowledge to the proper use” ~ Thomas J. Watson</p>
+</blockquote>
+<p>通过macOS系统的桌面右上角的通知📢，提醒一些信息，比如：定时提醒吃饭🍚，定时下班关机💼和定时打开页面。</p>
+<p>这些实现起来，使用两个工具🔧：<code>crontab</code> 和 <code>osascript</code> 。</p>
+<p>本网站已经写了两篇关于 <code>crontab</code> 的使用：</p>
+<ul>
+<li><a href="/2023/12/05/macOS-open-close-wifi-timing/">macOS系统定时关闭和开启Wi-Fi</a></li>
+<li><a href="/2023/12/06/linux-tool-crontab/">Linux命令行定时工具crontab</a></li>
+</ul>
+<h1 id="2-实现-macos-系统定时通知">2. 实现 macOS 系统定时通知</h1>
+<ol>
+<li>打开 crontab 编辑：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>crontab -e
+</span></span></code></pre></div><ol start="2">
+<li>加入以下命令：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 工作日（周一、二、三、四和五）下午五点半，提醒下班，6.Dec.2023 Deng</span>
+</span></span><span style="display:flex;"><span><span style="color:#f60">30</span> <span style="color:#f60">17</span> * * 1,2,3,4,5 osascript -e <span style="color:#c30">&#39;display notification &#34;定时下班是为了更好地上班💼！&#34; with title &#34;下班&#34; subtitle &#34;准时下班很重要&#34; sound name &#34;Tink&#34;&#39;</span>
+</span></span></code></pre></div><p>说明： <code>Tink</code> 为系统内置的声音🔊，可以选择其他系统内置的声音，见 <code>/System/Library/Sounds</code>文件夹。</p>
+<ol start="3">
+<li>打开 <code>System Setting</code> — <code>Notifications</code> — <code>Script Editor</code>，打开通知📢并进行相关设置。</li>
+</ol>
+<h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://blog.petehouston.com/send-desktop-notification-from-command-line-in-macOS/">Send desktop notification from command line in macOS ⋆ Pete Houston</a></li>
+<li><a href="https://crontab.guru/#30_17_*_*_1,2,3,4,5">Crontab.guru - The cron schedule expression editor</a></li>
+<li><a href="https://ss64.com/osx/crontab.html">crontab Man Page - macOS - SS64.com</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

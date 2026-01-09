@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>LaTeX术语表 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">LaTeX术语表</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2018-03-22</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>一般而言，术语(Nomenclature)指的是：</p>
+<blockquote>
+<p>术语又称技术名词、科学术语、科技术语或技术术语，是在特定专业领域中一般概念的词语指称，一个术语表示一个概念。（维基百科）</p>
+</blockquote>
+<p>本文介绍在LaTeX下如何实现术语表的编写。</p>
+<h1 id="调用宏包">调用宏包</h1>
+<p>在宏包区域，加入以下代码：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-LaTeX" data-lang="LaTeX"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\usepackage</span><span style="color:#366">{</span>nomencl<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\makenomenclature</span> 
+</span></span></code></pre></div><h1 id="术语模块">术语模块</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-LaTeX" data-lang="LaTeX"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\nomenclature</span><span style="color:#366">{</span>LaTeX<span style="color:#366">}{</span>LaTeX is ...<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\nomenclature</span><span style="color:#366">{</span>A<span style="color:#366">}{</span>A is ...<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\nomenclature</span><span style="color:#366">{</span>B<span style="color:#366">}{</span>B is ...<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\nomenclature</span><span style="color:#366">{</span>C<span style="color:#366">}{</span>C is ...<span style="color:#366">}</span>
+</span></span></code></pre></div><h1 id="调用并显示术语表">调用并显示术语表</h1>
+<p>在调用并显示术语表前，可以换个想要的名字，比如，Notations：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-LaTeX" data-lang="LaTeX"><span style="display:flex;"><span> <span style="color:#069;font-weight:bold">\def\nomname</span><span style="color:#366">{</span>Notations<span style="color:#366">}</span>
+</span></span></code></pre></div><p>调用并显示术语表的位置，一般建议放在目录之后。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-LaTeX" data-lang="LaTeX"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\printnomenclature</span>
+</span></span></code></pre></div><h1 id="编译">编译</h1>
+<p>编译需要通过makeindex编译。</p>
+<blockquote>
+<p>设置的方法为：在 Texmaker 的 Option -&gt; Configure Texmaker -&gt; Commands，在 makeindex 这一项中填入: <strong>makeindex %.nlo -s nomencl.ist -o %.nls -t %.nlg</strong>，这样每次 makeindex 的时候就会考虑术语表。然后就像往常一样编译两次就可以了。</p>
+</blockquote>
+<p>一般而言，就是需要“makeindex %.nlo -s nomencl.ist -o %.nls -t %.nlg”这个命令来完成编译，不同的编译器可以依据这个命令来设置。</p>
+<h1 id="参考资料">参考资料</h1>
+<ul>
+<li><a href="https://dingtony.wordpress.com/2012/08/26/latex-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02-%E7%BC%96%E5%86%99%E6%9C%AF%E8%AF%AD%E8%A1%A8/">Latex 笔记 (2) 编写术语表 | Tony @ France</a>；</li>
+<li><a href="http://blog.sciencenet.cn/blog-798994-768983.html">科学网—Latex术语表的生成 - 吴建军的博文</a>；</li>
+<li><a href="http://www.xm1math.net/doculatex/nomenclature.html">Xm1 Math</a>;</li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS环境下安装Tesseroids的过程 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS环境下安装Tesseroids的过程</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2018-03-27</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-下载源代码">1. 下载源代码</h1>
+<p>在GitHub上面的地址为：<a href="https://github.com/leouieda/tesseroids">GitHub - leouieda/tesseroids: Forward modeling of gravity fields in spherical coordinates</a>。下载所有的文档为一个压缩文件：tesseroids-master.zip，并解压为：tesseroids-master文件。</p>
+<h1 id="2-编译安装">2. 编译安装</h1>
+<p><a href="https://github.com/leouieda/tesseroids">GitHub - leouieda/tesseroids: Forward modeling of gravity fields in spherical coordinates</a>官方文档中默认的是给出了Windows (32 bit only) and GNU/Linux (32 and 64 bit)的可执行程序，这些可执行程序放在bin目录下面，只需要添加bin目录到环境变量中，Windows下面添加环境变量可以参考：<a href="http://www.computerhope.com/issues/ch000549.htm">How to set the path in Microsoft Windows</a>。</p>
+<p>而对于Mac环境下面，需要编译生成bin目录。Tesseroids 使用的是<a href="http://www.scons.org/">SCons</a>管理编译文件，Mac环境下面可以通过 <a href="http://brew.sh/">Homebrew </a>来安装scons。</p>
+<h2 id="21-安装scons包">2.1 安装Scons包</h2>
+<ul>
+<li>
+<p>在Terminal里面输入以下命令安装HomeBrew：</p>
+<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+</li>
+<li>
+<p>而后，通过HomeBrew直接安装scons包：</p>
+<pre><code>brew install scons 
+</code></pre>
+</li>
+</ul>
+<h2 id="22-编译tesseroids文件">2.2 编译Tesseroids文件</h2>
+<p>cd切换到tesseroids-master文件里面，输入scons命令编译</p>
+<pre><code>  scons
+</code></pre>
+<p>这里，相关的编译文件都会生成在bin目录下。</p>
+<h2 id="23-添加bin目录到环境变量">2.3 添加bin目录到环境变量</h2>
+<p>注意：Terminal使用的是zsh，如果使用的是bash，以下的zshrc则改为bashrc文件。</p>
+<ul>
+<li>
+<p>打开.zshrc文件：</p>
+<pre><code>vi ~/.zshrc
+</code></pre>
+</li>
+<li>
+<p>写入以下代码，并保存退出。</p>
+<pre><code># add the tesseroid
+TESSHOME=/Users/name/Documents/2017tesseroid/Tesseroid-1.2.0/tesseroids-master
+export PATH=&quot;$TESSHOME/bin:$PATH&quot;
+</code></pre>
+</li>
+<li>
+<p>source下.zshrc文件：</p>
+<pre><code>source ~/.zshrc
+</code></pre>
+</li>
+<li>
+<p>查看环境变量是否添加成功：</p>
+<pre><code>echo $PATH
+</code></pre>
+</li>
+</ul>
+<p>如果显示的是有：/Users/name/Documents/2017tesseroid/Tesseroid-1.2.0/tesseroids-master/bin，则添加成功 。</p>
+<h1 id="3-检测是否安装成功">3. 检测是否安装成功</h1>
+<p>输入tessgrd -h 检验是否安装成功。</p>
+<pre><code>  ➜  ~ tessgrd -h
+  Usage: tessgrd [PARAMS] [OPTIONS]
+
+  Make a regular grid of points.
+
+  All units either SI or degrees!
+
+  Output:
+    Printed to standard output (stdout) in the format:
+      lon1    lat1    height
+      lon2    lat1    height
+      ...     ...     ...
+      lonNLON lat1    height
+      lon1    lat2    height
+      ...     ...     ...
+      ...     ...     ...
+      lonNLON latNLAT height
+
+    * Comments about the provenance of the data are inserted into
+the top of the output
+
+  Parameters:
+    -r           W/E/S/N: Bounding region of the grid.
+    -b           NLON/NLAT: Number of grid points in the
+                 longitudinal and latitudinal directions.
+    -z           HEIGHT: Height of the grid with respect to the
+           mean Earth radius.
+    -h           Print instructions.
+    --version    Print version and license information.
+
+  Options:
+    -v           Enable verbose printing to stderr.
+    -lFILENAME   Print log messages to file FILENAME.
+
+    Part of the Tesseroids package (v1.2.0).
+
+    Project site: &lt;http://www.leouieda.com/tesseroids/&gt;
+    Report bugs at: &lt;https://github.com/leouieda/tesseroids/issues&gt;
+
+    Copyright (C) 2011-2016, Leonardo Uieda.
+    This software is distributed under the terms of the BSD License:
+    &lt;http://tesseroids.readthedocs.org/en/latest/license.html&gt;
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+</code></pre>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

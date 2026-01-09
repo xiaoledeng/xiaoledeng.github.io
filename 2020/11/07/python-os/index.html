@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Python OS模块的函数清单 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Python OS模块的函数清单</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-11-07</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/lists/">#Lists</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">os</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>sep:取代操作系统特定的路径分隔符
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>name:指示你正在使用的工作平台<span style="color:#a00;background-color:#faa">。</span>比如对于Windows<span style="color:#a00;background-color:#faa">，</span>它是<span style="color:#c30">&#39;nt&#39;</span><span style="color:#a00;background-color:#faa">，</span>而对于Linux<span style="color:#555">/</span>Unix用户<span style="color:#a00;background-color:#faa">，</span>它是<span style="color:#c30">&#39;posix&#39;</span><span style="color:#a00;background-color:#faa">。</span>
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>getcwd:得到当前工作目录<span style="color:#a00;background-color:#faa">，</span>即当前python脚本工作的目录路径<span style="color:#a00;background-color:#faa">。</span>
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>getenv()和os<span style="color:#555">.</span>putenv:分别用来读取和设置环境变量
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>listdir():返回指定目录下的所有文件和目录名
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>remove(file):删除一个文件
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>stat(file):获得文件属性
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>chmod(file):修改文件权限和时间戳
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>mkdir(name):创建目录
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>rmdir(name):删除目录
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>removedirs(r<span style="color:#a00;background-color:#faa">“</span>c<span style="color:#a00;background-color:#faa">：</span>\python<span style="color:#a00;background-color:#faa">”</span>):删除多个目录
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>system():运行shell命令
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>exit():终止当前进程
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>linesep:给出当前平台的行终止符<span style="color:#a00;background-color:#faa">。</span>例如<span style="color:#a00;background-color:#faa">，</span>Windows使用<span style="color:#c30">&#39;</span><span style="color:#c30;font-weight:bold">\r\n</span><span style="color:#c30">&#39;</span><span style="color:#a00;background-color:#faa">，</span>Linux使用<span style="color:#c30">&#39;</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#39;</span>而Mac使用<span style="color:#c30">&#39;</span><span style="color:#c30;font-weight:bold">\r</span><span style="color:#c30">&#39;</span>
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>split():返回一个路径的目录名和文件名
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>isfile()和os<span style="color:#555">.</span>path<span style="color:#555">.</span>isdir()分别检验给出的路径是一个目录还是文件
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>existe():检验给出的路径是否真的存在
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>listdir(dirname):列出dirname下的目录和文件
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>getcwd():获得当前工作目录
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>curdir:返回当前目录(<span style="color:#c30">&#39;.&#39;</span>)
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>chdir(dirname):改变工作目录到dirname
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>isdir(name):判断name是不是目录<span style="color:#a00;background-color:#faa">，</span>不是目录就返回false
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>isfile(name):判断name这个文件是否存在<span style="color:#a00;background-color:#faa">，</span>不存在返回false
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>exists(name):判断是否存在文件或目录name
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>getsize(name):或得文件大小<span style="color:#a00;background-color:#faa">，</span>如果name是目录返回0L
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>abspath(name):获得绝对路径
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>isabs():判断是否为绝对路径
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>normpath(path):规范path字符串形式
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>split(name):分割文件名与目录(事实上<span style="color:#a00;background-color:#faa">，</span>如果你完全使用目录<span style="color:#a00;background-color:#faa">，</span>它也会将最后一个目录作为文件名而分离<span style="color:#a00;background-color:#faa">，</span>同时它不会判断文件或目录是否存在)
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>splitext():分离文件名和扩展名
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>join(path,name):连接目录与文件名或目录
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>basename(path):返回文件名
+</span></span><span style="display:flex;"><span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>dirname(path):返回文件路径
+</span></span></code></pre></div><h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://www.cnblogs.com/ginvip/p/6439679.html">python之OS模块详解 - 琴酒网络 - 博客园</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

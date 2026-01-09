@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Mac下开源文件同步软件Syncthing忘记用户名和密码 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Mac下开源文件同步软件Syncthing忘记用户名和密码</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-03-28</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-解决方案">1. 解决方案</h1>
+<p>在<code>/Users/name/Library/Application Support/Syncthing</code>的<code>config.xml</code>里面删除<code>&lt;user&gt;</code>和<code>&lt;password&gt;</code>两行：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&lt;gui <span style="color:#033">enabled</span><span style="color:#555">=</span><span style="color:#c30">&#34;true&#34;</span> <span style="color:#033">tls</span><span style="color:#555">=</span><span style="color:#c30">&#34;false&#34;</span> <span style="color:#033">debugging</span><span style="color:#555">=</span><span style="color:#c30">&#34;false&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>   &lt;address&gt;127.0.0.1:8384&lt;/address&gt;
+</span></span><span style="display:flex;"><span>   &lt;user&gt;syncguy&lt;/user&gt;
+</span></span><span style="display:flex;"><span>   &lt;password&gt;<span style="color:#033">$2</span>a<span style="color:#033">$10$s9wWHOQe</span>...Cq7GPye69&lt;/password&gt;
+</span></span><span style="display:flex;"><span>   &lt;apikey&gt;9RCKohqCAyrj5RjpyZdR2wXmQ9PyQFeN&lt;/apikey&gt;
+</span></span><span style="display:flex;"><span>   &lt;theme&gt;default&lt;/theme&gt;
+</span></span><span style="display:flex;"><span>&lt;/gui&gt;
+</span></span></code></pre></div><p>这样，就不用用户名和密码直接就可以登录<code>127.0.0.1:8384</code>。</p>
+<h1 id="2-参考">2. 参考</h1>
+<ul>
+<li><a href="https://docs.syncthing.net/users/faq.html#how-do-i-reset-the-gui-password">FAQ — Syncthing v1 documentation</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
