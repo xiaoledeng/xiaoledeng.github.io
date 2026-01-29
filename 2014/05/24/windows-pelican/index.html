@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Windows 7搭建pelican博客框架 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Windows 7搭建pelican博客框架</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2014-05-24</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/windows/">#Windows</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="一安装准备软件">一、安装准备软件</h1>
+<h2 id="1python安装注意不要安装在c盘">1.Python安装（注意不要安装在C盘）：</h2>
+<p>下载<a href="https://www.python.org/download/">官网python2.7 Windows</a>，安装路径选D，将安装路径加入到系统环境变量PATH中（计算机属性-高级系统设置-环境变量-系统变量-PATH）,例如我安装的路径如下：</p>
+<pre><code>D:\Python27\
+</code></pre>
+<h2 id="2easy_install安装">2.easy_install安装</h2>
+<p>打开cmd，切换到ez_setup.py文件目录下，输入命令：（注意切换到ez_setup.py路径中，文件ez_setup.py见附件）</p>
+<pre><code>python  ez_setup.py
+</code></pre>
+<p>安装好后在python安装目录下的Scripts文件夹会有一些关于easy_install的文件，所以要将此路径加到系统环境变量PATH（同第一步中的环境变量PATH），路径如下:</p>
+<pre><code>D:\Python27\Scripts
+</code></pre>
+<p><strong>注意</strong>：此步骤可能出错，参考了网页<a href="http://jingyan.baidu.com/article/09ea3ede27f88ac0aede3900.html">ez_setup.py安装错误怎么解决_百度经验</a>，注意用mimetypes.py这个文件替换到D:\Python27\Lib文件夹中的，mimetypes.py文件见附件。</p>
+<h2 id="3pip安装">3.Pip安装</h2>
+<p>pip直接用easy_install安装，直接在cmd中输入命令:</p>
+<pre><code>easy_install pip
+</code></pre>
+<p>安装好之后也会在Scripts文件夹生成一些Pip的可执行文件。</p>
+<h2 id="4window下make工具的安装">4.window下make工具的安装</h2>
+<p>将下载的<code>make.exe</code>文件拷贝到D:\Python27路径中。</p>
+<h2 id="5安装git">5.安装Git</h2>
+<p>下载好Git文件，直接按照默认安装设置。</p>
+<h2 id="6安装pelican和markdown">6.安装pelican和markdown</h2>
+<p>安装了Git后，打开Git Bash输入以下命令：</p>
+<pre><code>pip install pelican
+pip install markdown
+</code></pre>
+<h1 id="二配置博客文件">二、配置博客文件</h1>
+<h2 id="1创建博客">1.创建博客</h2>
+<p>在Git Bash命令行窗口中输入如下命令：</p>
+<pre><code>mkdir blog
+cd blog
+pelican-quickstart
+</code></pre>
+<p>拷贝之前的备份文件覆盖（注意文件名为英文）。</p>
+<h2 id="2将博客部署到github上">2.将博客部署到github上</h2>
+<p>命令如下：</p>
+<pre><code>cd output
+git init
+git add .
+git remote add origin https://github.com/xiaoledeng/xiaoledeng.github.io.git
+git commit -m 'your message'
+git push origin master(or --force)
+</code></pre>
+<h2 id="3一次性部署到github">3.一次性部署到github</h2>
+<p>可配置Makefile文件中的github，要修改两处:</p>
+<p>一处是将$(PUBLISHDIR)替换成$(CONFFILE);</p>
+<p>另一处增加一些git命令;</p>
+<p>具体如下所示：</p>
+<pre><code>publish:$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
+github: publish
+	cd $(OUTPUTDIR) &amp;&amp; git init; 
+	cd $(OUTPUTDIR) &amp;&amp; git commit -m 'your message';
+	cd $(OUTPUTDIR) &amp;&amp; git push --force origin master
+</code></pre>
+<p>注意：Makefile里面用tab，不然错误：</p>
+<pre><code>Makefile missing separator. Stop.
+</code></pre>
+<p>最后，只要进行Makefile的同级目录，执行make github即可完成一次性部署。</p>
+<p>注：在此过程中，可能要输入github username 和 password，要避免重复输入, 参看<a href="http://www.zendwind.com/pages/2013/11/27/git_push_non_user_pwd.html">Git Push 避免用户名和密码方法</a>。</p>
+<h1 id="三附件">三、附件：</h1>
+<p>附上文中用到的软件：</p>
+<ol>
+<li>官方的<a href="https://pypi.python.org/pypi/setuptools#windows-7-or-graphical-install">easy_install</a></li>
+<li>官方的<a href="http://git-scm.com/download/win">Git</a></li>
+<li>备份<a href="http://pan.baidu.com/s/1bnjEKCf">Python 2.7.6</a></li>
+<li>备份<a href="http://pan.baidu.com/s/1eQvdXiq">ez_setup.py</a></li>
+<li>补充备份使用，第二步中是官方版本。<a href="http://pan.baidu.com/s/1ntmcpy5">Git 1.9.2</a></li>
+<li>备份<a href="http://pan.baidu.com/s/1hqzJBBe">make.exe</a></li>
+<li>备份<a href="http://pan.baidu.com/s/1kTxDNUZ">mimetypes.py</a></li>
+</ol>
+<h1 id="reference">Reference</h1>
+<ol>
+<li><a href="http://www.cnblogs.com/ballwql/p/pelican.html">GITHUB个人博客搭建-Pelican 在Windows环境下的安装及配置 - ballwql - 博客园</a></li>
+<li><a href="http://www.yanyulin.info/pages/2013/11/pelican.html">pelican搭建属于自已的博客 - 烟雨林</a></li>
+<li><a href="http://www.zendwind.com/pages/2013/11/27/git_push_non_user_pwd.html">Git Push 避免用户名和密码方法</a></li>
+</ol>
+<h1 id="历史版本">历史版本</h1>
+<ul>
+<li>2014.5.24 写出第一版，未修改。</li>
+<li>2014.8.6 添加一些关键点，以及出错点ez_setup.py修复。</li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

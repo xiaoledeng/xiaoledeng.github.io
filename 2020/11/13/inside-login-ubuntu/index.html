@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>局域网ssh远程访问Ubuntu系统 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">局域网ssh远程访问Ubuntu系统</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-11-13</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-具体步骤">1. 具体步骤</h1>
+<ol>
+<li>查看ubuntu是否安装了ssh-server服务</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dpkg -l | grep ssh
+</span></span></code></pre></div><ol start="2">
+<li>安装ssh-server服务</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install openssh-server
+</span></span></code></pre></div><p>这一步可能提示需要安装对应版本的<code>openssh-client</code>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install openssh-client<span style="color:#555">=</span>1:8.2p1-4ubuntu0.2
+</span></span></code></pre></div><p>而后再安装<code>openssh-server</code>。</p>
+<ol start="3">
+<li>查看ssh-server是否启动</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ps -e | grep ssh
+</span></span></code></pre></div><p>若有sshd，说明ssh-server已启动。</p>
+<p>如果没有则可以这样启动：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /etc/init.d/ssh start
+</span></span><span style="display:flex;"><span>sudo service ssh start
+</span></span></code></pre></div><p>配置相关：ssh-server配置文件位于/etc/ssh/sshd_config，在这里可以定义SSH的服务端口，默认端口是22，你可以自己定义成其他端口号，如222。（或把配置文件中的”PermitRootLogin without-password”加一个”#”号,把它注释掉，再增加一句”PermitRootLogin yes”）</p>
+<p>然后重启SSH服务：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /etc/init.d/ssh stop
+</span></span><span style="display:flex;"><span>sudo /etc/init.d/ssh start
+</span></span></code></pre></div><ol start="4">
+<li>安装ifconfig工具</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install net-tools
+</span></span></code></pre></div><p>利用<code>ifconfig</code>查看本机的ip地址，即<code>inet</code>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifconfig
+</span></span></code></pre></div><ol start="5">
+<li>远程机器登录</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh username@ip_address
+</span></span></code></pre></div><h1 id="2-参考">2. 参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/jackghq/article/details/54974141">ubuntu开启SSH服务远程登录_jackghq的博客-CSDN博客</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

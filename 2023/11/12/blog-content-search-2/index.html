@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Hugo博客设置搜索(2) - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Hugo博客设置搜索(2)</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-11-12</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>之前的网页搜索功能，是基于Bing搜索，见<a href="/2020/05/28/blog-content-search/">Hugo博客设置搜索(1)</a>。</p>
+<p>这次是基于<a href="https://yanlinlin.cn/">颜林林的个人网站</a>的搜索代码实现，是Google搜索。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<ol>
+<li>
+<p>在 <a href="https://github.com/yanlinlin82/simple-style/tree/master/layouts/partials">simple-style/layouts/partials at master · yanlinlin82/simple-style</a> 下载 <code>header.html</code>、<code>search-form.html</code> 和 <code>search.html</code> 到 本地文件夹路径 <code>themes/simple-style/layouts/partials</code></p>
+</li>
+<li>
+<p>注意⚠️：在文件夹 <code>themes/simple-style/layouts/_default</code> 下的 <code>baseof.html</code> 文件中，要有以下代码：</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ partial &#34;header.html&#34; . -}}
+</span></span></code></pre></div><ol start="3">
+<li>在文件夹 <code>themes/simple-style/static/css</code> 下的 <code>main.css</code> 文件中，加入搜索框的css样式设置：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#309;font-weight:bold">div</span>.<span style="color:#0a8;font-weight:bold">search2</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">position</span>: <span style="color:#069;font-weight:bold">fixed</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">right</span>: <span style="color:#f60">-30</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">max-width</span>: <span style="color:#f60">300</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">overflow</span>: <span style="color:#069;font-weight:bold">auto</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">top</span>: <span style="color:#f60">1</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">width</span>: <span style="color:#f60">300</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">bottom</span>: <span style="color:#f60">100</span><span style="color:#078;font-weight:bold">px</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#309;font-weight:bold">div</span>.<span style="color:#0a8;font-weight:bold">search</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">display</span>: <span style="color:#069;font-weight:bold">inline-block</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">margin-bottom</span>: <span style="color:#f60">-12</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#309;font-weight:bold">form</span>.<span style="color:#0a8;font-weight:bold">search</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">width</span>: <span style="color:#f60">125</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">margin-left</span>: <span style="color:#f60">20</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#309;font-weight:bold">form</span>.<span style="color:#0a8;font-weight:bold">search</span> <span style="color:#309;font-weight:bold">input</span><span style="color:#555">[</span><span style="color:#309;font-weight:bold">type</span><span style="color:#555">=</span><span style="color:#309;font-weight:bold">text</span><span style="color:#555">]</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">padding</span>: <span style="color:#f60">5</span><span style="color:#078;font-weight:bold">px</span> <span style="color:#f60">38</span><span style="color:#078;font-weight:bold">px</span> <span style="color:#f60">10</span><span style="color:#078;font-weight:bold">px</span> <span style="color:#f60">5</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">border</span>: <span style="color:#f60">1</span><span style="color:#078;font-weight:bold">px</span> <span style="color:#069;font-weight:bold">solid</span> <span style="color:#f60">#999</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">float</span>: <span style="color:#069;font-weight:bold">left</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">font-size</span>: <span style="color:#f60">14</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">width</span>: <span style="color:#f60">80</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#309;font-weight:bold">form</span>.<span style="color:#0a8;font-weight:bold">search</span> <span style="color:#309;font-weight:bold">input</span><span style="color:#555">[</span><span style="color:#309;font-weight:bold">type</span><span style="color:#555">=</span><span style="color:#309;font-weight:bold">text</span><span style="color:#555">]</span>:<span style="color:#99f">focus</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">border</span>: <span style="color:#f60">1</span><span style="color:#078;font-weight:bold">px</span> <span style="color:#069;font-weight:bold">solid</span> <span style="color:#f60">#333</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">float</span>: <span style="color:#069;font-weight:bold">left</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">width</span>: <span style="color:#f60">80</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#309;font-weight:bold">form</span>.<span style="color:#0a8;font-weight:bold">search</span> <span style="color:#309;font-weight:bold">button</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">float</span>: <span style="color:#069;font-weight:bold">left</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">width</span>: <span style="color:#f60">30</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">padding</span>: <span style="color:#f60">5</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">border</span>: <span style="color:#069;font-weight:bold">none</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">background</span>: <span style="color:#069;font-weight:bold">transparent</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">cursor</span>: <span style="color:#069;font-weight:bold">pointer</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">margin-left</span>: <span style="color:#f60">-30</span><span style="color:#078;font-weight:bold">px</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#309;font-weight:bold">form</span>.<span style="color:#0a8;font-weight:bold">search</span> .<span style="color:#0a8;font-weight:bold">fa-search</span>::<span style="color:#99f">before</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">content</span>: <span style="color:#c30">&#34;\1F50D&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">font-style</span>: <span style="color:#069;font-weight:bold">normal</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">color</span>: <span style="color:#f60">#999</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#309;font-weight:bold">form</span>.<span style="color:#0a8;font-weight:bold">search</span> <span style="color:#309;font-weight:bold">button</span>:<span style="color:#99f">hover</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">color</span>: <span style="color:#f60">#333</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol start="4">
+<li>在博客根目录下，config.toml文件中，加入以下代码：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>search = <span style="color:#c30">&#34;google&#34;</span>  <span style="color:#09f;font-style:italic"># baidu, google, bing, duckduckgo</span>
+</span></span></code></pre></div><p>注意⚠️：根据实际情况选择搜索引擎名称。</p>
+<h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://github.com/yanlinlin82/yanlinlin.cn/">yanlinlin82/yanlinlin.cn</a></li>
+<li><a href="https://github.com/yanlinlin82/simple-style">yanlinlin82/simple-style&gt;</a></li>
+<li><a href="https://fatedeity.cn/posts/z-turn/hugo-add-local-search.html">给 hugo 博客添加搜索功能 - 程序员翔仔</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

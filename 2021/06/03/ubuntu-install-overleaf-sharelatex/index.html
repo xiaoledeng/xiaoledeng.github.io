@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu安装overleaf的sharelatex - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu安装overleaf的sharelatex</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-06-03</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-安装docker">1. 安装docker</h1>
+<p>打开 <code>/etc/apt/sources.list.d/docker.list</code>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/apt/sources.list.d/docker.list
+</span></span></code></pre></div><p>添加下面内容：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>deb <span style="color:#555">[</span><span style="color:#033">arch</span><span style="color:#555">=</span>amd64<span style="color:#555">]</span> https://download.docker.com/linux/ubuntu bionic stable
+</span></span></code></pre></div><p>更新并安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install docker-ce
+</span></span></code></pre></div><p>查看是否安装成功：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker --version
+</span></span></code></pre></div><p>Docker version 20.10.7, build f0df350</p>
+<h1 id="2-安装-docker-compose">2. 安装 docker-Compose</h1>
+<p>进入 <code>https://github.com/docker/compose/releases</code> 查看最新版本，当前版本为1.29.2</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-<span style="color:#c30">`</span>uname -s<span style="color:#c30">`</span>-<span style="color:#c30">`</span>uname -m<span style="color:#c30">`</span> -o /usr/local/bin/docker-compose
+</span></span></code></pre></div><p>设置权限:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo chmod +x /usr/local/bin/docker-compose
+</span></span></code></pre></div><p>查看是否安装成功:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose --version
+</span></span></code></pre></div><p>docker-compose version 1.29.2, build 5becea4c</p>
+<h1 id="3-安装overleaf的开源版本sharelatex">3. 安装Overleaf的开源版本sharelatex</h1>
+<p>docker权限问题，添加docker用户组：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#添加docker用户组</span>
+</span></span><span style="display:flex;"><span>sudo groupadd docker
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#将登陆用户加入到docker用户组中</span>
+</span></span><span style="display:flex;"><span>sudo gpasswd -a <span style="color:#033">$USER</span> docker 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#更新用户组</span>
+</span></span><span style="display:flex;"><span>newgrp docker 
+</span></span></code></pre></div><p>通过docker安装Overleaf的开源版本sharelatex：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull sharelatex/sharelatex
+</span></span></code></pre></div><h1 id="4-配置overleaf">4. 配置Overleaf</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://raw.githubusercontent.com/sharelatex/sharelatex/master/docker-compose.yml
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vi docker-compose.yml
+</span></span></code></pre></div><p>需要修改的就是<code>ports: - 80:80</code>，一般80端口都被apache或nginx占用了，改用其他端口如：<code>ports: - 5000:80</code>。</p>
+<p>其他可根据需要修改，如挂载位置等。</p>
+<h1 id="5-启动overleaf">5. 启动Overleaf</h1>
+<p>在<code>docker-compose.yml</code>所在路径下执行</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker-compose up -d
+</span></span></code></pre></div><h1 id="6-安装完整texlive">6. 安装完整texlive</h1>
+<p>先进入docker容器，在docker中安装编译所需的完整的texlive:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker <span style="color:#366">exec</span> -it sharelatex bash
+</span></span><span style="display:flex;"><span>tlmgr option repository https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/tlnet/
+</span></span><span style="display:flex;"><span>tlmgr update --self --all
+</span></span><span style="display:flex;"><span>tlmgr install scheme-full &amp;
+</span></span></code></pre></div><p>安装过程，十分漫长，总共需要安装近4000个包，应该就是要装一晚上的节奏，为了避免shell断掉加上 &amp;，回车后可以看到安装过程。可重复再执行update和install。</p>
+<h1 id="7-使用overleaf">7. 使用Overleaf</h1>
+<p>打开浏览器访问 <code>http://hostname:5000/launchpad</code> ，创建Admin账户，即可。</p>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/qq_19154605/article/details/105023891">Ubuntu 安装 docker-ce 提示 Package docker-ce is not available, but is referred to by another package._右手的鼠标-CSDN博客</a></li>
+<li><a href="https://www.cnblogs.com/kaishirenshi/p/10484278.html">ubuntu上安装docker和docker-Compose - 开始认识 - 博客园</a></li>
+<li><a href="https://blog.csdn.net/u011337602/article/details/104541261">docker 权限问题 Got permission denied while trying to connect to the Docker daemon socket at _u011337602的博客-CSDN博客</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/150827584?ivk_sa=1024320u">Overleaf-在线Latex编辑器部署 - 知乎</a></li>
+<li><a href="https://github.com/overleaf/overleaf/wiki/Quick-Start-Guide">Quick Start Guide · overleaf/overleaf Wiki</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

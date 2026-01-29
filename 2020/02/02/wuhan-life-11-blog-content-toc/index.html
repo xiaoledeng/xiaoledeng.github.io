@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>记武汉封城的日子(11)—Hugo博客的侧边栏目录 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">记武汉封城的日子(11)—Hugo博客的侧边栏目录</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-02-02</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/life/">#Life</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>一篇博客的内容多了后，需要目录来厘清逻辑关系。这里记录一下设置步骤的关键点。</p>
+<h1 id="2-设置步骤的关键点">2. 设置步骤的关键点</h1>
+<ul>
+<li>在主题文件夹\layouts\partials新建并编写toc.html文件。</li>
+<li>在主题文件夹\layouts_default下，修改single.html文件：注意点是修改{{ partial &ldquo;toc.html&rdquo; . }}链接到第一步修改的toc.html文件。</li>
+<li>调整一些细节，比如：处理手机兼容性的问题。在static\css\main.css中加入相关代码。</li>
+</ul>
+<h1 id="3-参考资料">3. 参考资料</h1>
+<ul>
+<li><a href="https://yyqx.online/posts/%E5%8D%9A%E5%AE%A2%E4%BE%A7%E8%BE%B9%E5%AF%BC%E8%88%AA%E6%A0%8F/">Hugo博客侧边导航栏</a></li>
+<li><a href="https://www.ariesme.com/post/2019/add_toc_for_hugo/">Hugo添加文章目录toc</a></li>
+<li><a href="https://huaien.co/technology/hugo-leaveit-theme-modified-of-bugs-1/">Hugo的LeaveIt主题优化记录一-修复错位，添加toc</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
