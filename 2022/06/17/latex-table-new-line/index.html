@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>LaTeX表格内容换行 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">LaTeX表格内容换行</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-06-17</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-方法一模块法">1. 方法一：模块法</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\begin</span><span style="color:#366">{</span>tabular<span style="color:#366">}</span>[c]<span style="color:#366">{</span>@<span style="color:#366">{}</span>l@<span style="color:#366">{}}</span>
+</span></span><span style="display:flex;"><span>a <span style="color:#069;font-weight:bold">\\</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#069;font-weight:bold">\\</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\end</span><span style="color:#366">{</span>tabular<span style="color:#366">}</span>
+</span></span></code></pre></div><p>注意：以上内容是表格内文字的一个模块。</p>
+<h1 id="2-方法二makecell包">2. 方法二：makecell包</h1>
+<p><a href="https://www.jianshu.com/p/b6b45402d8b2">LaTeX：表格内换行与各种居中完美解决 - 简书</a>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span>宏包：<span style="color:#069;font-weight:bold">\usepackage</span><span style="color:#366">{</span>makecell<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>环境：tabular
+</span></span><span style="display:flex;"><span>命令：<span style="color:#069;font-weight:bold">\makecell</span><span style="color:#309">[居中情况]</span><span style="color:#366">{</span>第1行内容 <span style="color:#069;font-weight:bold">\\</span> 第2行内容 <span style="color:#069;font-weight:bold">\\</span> 第3行内容 ...<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>参数说明：
+</span></span><span style="display:flex;"><span>[c]是水平居中，[l]水平左居中，[r]水平右居中；
+</span></span><span style="display:flex;"><span>*[c]水平 + 垂直居中，*[l]垂直居中 + 水平左居中，*[r]垂直居中 + 水平右居中。
+</span></span></code></pre></div><h1 id="方法三tex模块命令">方法三：TeX模块命令</h1>
+<p>类似于方法一：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\vtop</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\hbox</span><span style="color:#366">{</span>content a<span style="color:#366">}</span><span style="color:#069;font-weight:bold">\hbox</span><span style="color:#366">{</span>content b<span style="color:#366">}}</span>
+</span></span></code></pre></div><h1 id="方法四">方法四：</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\begin</span><span style="color:#366">{</span>table<span style="color:#366">}</span>[!htbp]
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">\centering</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">\caption</span><span style="color:#366">{}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">\begin</span><span style="color:#366">{</span>tabular<span style="color:#366">}{</span>p<span style="color:#366">{</span>85pt<span style="color:#366">}</span>p<span style="color:#366">{</span>40pt<span style="color:#366">}</span>p<span style="color:#366">{</span>160pt<span style="color:#366">}}</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">\hline</span>
+</span></span><span style="display:flex;"><span>            Name <span style="color:#366">&amp;</span> Name <span style="color:#366">&amp;</span> Name <span style="color:#069;font-weight:bold">\\</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">\hline</span>
+</span></span><span style="display:flex;"><span>            a <span style="color:#366">&amp;</span> b <span style="color:#366">&amp;</span> c <span style="color:#069;font-weight:bold">\\</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">\hline</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">\end</span><span style="color:#366">{</span>tabular<span style="color:#366">}</span> <span style="color:#069;font-weight:bold">\label</span><span style="color:#366">{</span>tab<span style="color:#366">_</span>a<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\end</span><span style="color:#366">{</span>table<span style="color:#366">}</span>
+</span></span></code></pre></div><p>通过 <code>p{85pt}p{40pt}p{160pt}</code> 来自动换行。</p>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/weixin_41938903/article/details/109788918">Latex表格内容自动换行_小白皮皮成长记的博客-CSDN博客_latex表格自动换行</a></li>
+<li><a href="https://www.jianshu.com/p/b6b45402d8b2">LaTeX：表格内换行与各种居中完美解决 - 简书</a></li>
+<li><a href="https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell">How to add a forced line break inside a table cell - TeX - LaTeX Stack Exchange</a></li>
+<li><a href="https://blog.csdn.net/dazuo01/article/details/22821935">LaTeX之表格中强制换行_latex表格内强制换行-CSDN博客</a></li>
+</ul>
+<h1 id="历史">历史</h1>
+<ul>
+<li>2022.06.17 创建此文；</li>
+<li>2023.05.16 补充修改此文；</li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

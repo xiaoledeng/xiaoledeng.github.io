@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Python生成LaTeX表格 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Python生成LaTeX表格</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-08-04</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>问题: 如何将Python下的表格数据导出为LaTeX表格？</p>
+<p>简言之，Python输出表格结果到LaTeX，这里介绍3个工具：</p>
+<ul>
+<li>pandas.DataFrame.to_latex</li>
+<li>PyTex</li>
+<li>PyLaTeX</li>
+</ul>
+<h1 id="1-pandasdataframeto_latex">1. pandas.DataFrame.to_latex</h1>
+<p>地址：<a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_latex.html">pandas.DataFrame.to_latex documentation</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#555">&gt;&gt;&gt;</span> df <span style="color:#555">=</span> pandas<span style="color:#555">.</span>DataFrame({<span style="color:#c30">&#39;name&#39;</span>: [<span style="color:#c30">&#39;Raphael&#39;</span>, <span style="color:#c30">&#39;Donatello&#39;</span>],<span style="color:#c30">&#39;mask&#39;</span>: [<span style="color:#c30">&#39;red&#39;</span>, <span style="color:#c30">&#39;purple&#39;</span>],<span style="color:#c30">&#39;weapon&#39;</span>: [<span style="color:#c30">&#39;sai&#39;</span>, <span style="color:#c30">&#39;bo staff&#39;</span>]})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#555">&gt;&gt;&gt;</span> <span style="color:#366">print</span>(df<span style="color:#555">.</span>to_latex(index<span style="color:#555">=</span><span style="color:#069;font-weight:bold">False</span>))
+</span></span><span style="display:flex;"><span>\begin{tabular}{lll}
+</span></span><span style="display:flex;"><span>\toprule
+</span></span><span style="display:flex;"><span>      name <span style="color:#555">&amp;</span>    mask <span style="color:#555">&amp;</span>    weapon \\
+</span></span><span style="display:flex;"><span>\midrule
+</span></span><span style="display:flex;"><span>   Raphael <span style="color:#555">&amp;</span>     red <span style="color:#555">&amp;</span>       sai \\
+</span></span><span style="display:flex;"><span> Donatello <span style="color:#555">&amp;</span>  purple <span style="color:#555">&amp;</span>  bo staff \\
+</span></span><span style="display:flex;"><span>\bottomrule
+</span></span><span style="display:flex;"><span>\end{tabular}
+</span></span></code></pre></div><h1 id="2pytex">2.PyTex</h1>
+<p>地址：<a href="https://github.com/HarryXD2018/PyTex">HarryXD2018/PyTex: A python tool that generate latex(e.g. Table, matrix) code.</a></p>
+<blockquote>
+<p>这是一个可以将Python中的列表、Numpy类型的二元数组，CSV表格文件或是代码转化为Latex代码的Python第三方库。您可以将此第三方库作为脚本运行，或是在命令提示行中将CSV文件或是图片文件拖拽至其中运行，即可得到对应的Tex代码。在脚本运行中，如果有需要，可以将生产的内容复制到剪切板中。</p>
+</blockquote>
+<h1 id="3pylatex">3.PyLaTeX</h1>
+<p>地址：<a href="https://jeltef.github.io/PyLaTeX/current/index.html#">PyLaTeX documentation</a></p>
+<blockquote>
+<p>PyLaTeX is a Python library for creating and compiling LaTeX files. The goal of this library is to be an easy, but extensible interface between Python and LaTeX.</p>
+</blockquote>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

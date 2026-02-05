@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Keyboard Maestro代替Spectacle调整窗口大小 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Keyboard Maestro代替Spectacle调整窗口大小</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-11</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/minimalism/">#Minimalism</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/automation/">#Automation</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>一直以来，macOS 电脑💻的窗口大小和位置是通过 Spectacle <sup>1</sup> 设置键盘⌨️快捷键快速调整，不需要鼠标🖱️，操作很方便。</p>
+<p>开始使用 Keyboard Maestro <sup>2</sup> 后，发现设置快捷键可实现同样的功能，故而 Spectacle 可以卸载了。</p>
+<h1 id="2-设置步骤">2. 设置步骤</h1>
+<ol>
+<li>
+<p>新建一个 Macros，命名为 <code>窗口左放</code></p>
+</li>
+<li>
+<p>点击「New Trigger - Hot Key Trigger」，输入一个快捷键，例如： Option + Command + -&gt;</p>
+</li>
+<li>
+<p>点击「New Action」，进入 Categories 的「Interface Control」，选中「Resize a Window」，鼠标🖱️双击添加</p>
+</li>
+<li>
+<p>点击「Resize by - Move and Resize」，选中「Left Column」</p>
+</li>
+<li>
+<p>关闭「Actions」，完成✅操作</p>
+</li>
+</ol>
+<p>重复上面五步 <sup>3</sup>，完成 Keyboard Maestro 提供的九种最常见的窗口排列模式：</p>
+<ul>
+<li>
+<p>全屏 (Full Screen)</p>
+</li>
+<li>
+<p>左右排列 (Left Column; Right Column)</p>
+</li>
+<li>
+<p>上下排列 (Top Half; Bottom Half)</p>
+</li>
+<li>
+<p>四角排列 (Top Left; Top Right; Bottom Left; Bottom Right)</p>
+</li>
+</ul>
+<h1 id="3-参考">3. 参考</h1>
+<ol>
+<li><a href="https://github.com/eczarny/spectacle">Spectacle</a></li>
+<li><a href="https://www.keyboardmaestro.com/">Keyboard Maestro</a></li>
+<li><a href="https://sspai.com/post/55908">用 Keyboard Maestro 实现窗口排列管理 - 少数派</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>再遇“修复移动硬盘无法读取”的经历 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">再遇“修复移动硬盘无法读取”的经历</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-02-24</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/windows/">#Windows</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-简介">1. 简介</h1>
+<p>最近在备份数据时，在Ubuntu系统下进行文件复制操作，结果移动硬盘卡住，直接拔出移动硬盘，再次连接电脑，无法正确读取此移动硬盘。</p>
+<p>之前遇到过这种情况，见： <a href="/2021/05/14/repair-hard-disk-cannot-be-read/">一次“修复移动硬盘无法读取”的经历</a>。</p>
+<p>在Window系统下，打开cmd，输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chkdsk g: /f
+</span></span></code></pre></div><p>结果显示错误：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>文件系统的类型是NTFS。
+</span></span><span style="display:flex;"><span>卷标是 ...。
+</span></span><span style="display:flex;"><span>损坏的主文件表。Windows 将尝试从磁盘恢复主文件表。 
+</span></span><span style="display:flex;"><span>Windows 无法恢复主文件表。CHKDSK 被中止。
+</span></span></code></pre></div><h1 id="2-解决方案">2. 解决方案</h1>
+<p>在网上搜索关键词<code>修复损坏的主文件表</code>后，解决方案是利用<a href="https://www.diskgenius.cn/">DiskGenius软件</a>进行恢复。</p>
+<p>具体步骤如下：</p>
+<ul>
+<li>先重建分区表，见： <a href="https://www.diskgenius.cn/help/rebuild.php">搜索已丢失分区 - DiskGenius</a></li>
+<li>再恢复文件，见： <a href="https://www.diskgenius.cn/help/restorefile.php">误删除、误格式化及损坏分区文件恢复 - DiskGenius</a></li>
+<li>中途如果时间久，可以<a href="https://www.diskgenius.cn/help/save-scan-progress.php">保存文件恢复进度 – DiskGenius</a>。</li>
+</ul>
+<p>完整教程见：</p>
+<ul>
+<li><a href="https://www.diskgenius.cn/function/recovery.php">用DiskGenius恢复分区及文件的方法 - DiskGenius</a></li>
+<li><a href="https://www.diskgenius.cn/exp/use-tutorial.php">DiskGenius数据恢复详细教程</a></li>
+</ul>
+<h1 id="3-经验">3. 经验</h1>
+<ol>
+<li>Ubuntu系统的大容量文件拷贝容易卡顿，建议在macOS系统操作；</li>
+<li><code>一定要安全弹出</code>移动硬盘或U盘，<code>一定要安全弹出</code>！<code>一定要安全弹出</code>！<code>一定要安全弹出</code>！</li>
+<li>不要格式化硬盘！</li>
+</ol>
+<h1 id="4-参考">4. 参考</h1>
+<ul>
+<li><a href="https://zhidao.baidu.com/question/549405578.html">硬盘主控文件表损坏，怎么恢复？_百度知道</a></li>
+<li><a href="http://www.downxia.com/downinfo/349958.html">DiskGenius V5.4.2.1239 免注册码版 下载_当下软件园_软件下载</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

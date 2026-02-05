@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu可视化工具ParaView - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu可视化工具ParaView</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2025-10-17</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/software/">#Software</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/researchsoftware/">#Researchsoftware</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-简介">1. 简介</h1>
+<p>ParaView 是一款开源的科学数据可视化应用程序，专为处理和分析大规模数据集而设计。它广泛应用于计算流体动力学(CFD)、有限元分析、气象模拟等科学计算领域。</p>
+<p>ParaView的主要特点包括：支持多种数据格式、强大的3D渲染能力、丰富的数据处理滤镜、并行计算支持，以及可通过Python脚本进行自动化操作。它可以运行在Windows、Linux和macOS等多个平台上，既提供图形界面也支持批处理模式，适合从研究人员到工程师的各类专业用户使用。PVSM格式文件是ParaView State File（ParaView状态文件），它用于保存ParaView的可视化状态和配置信息。</p>
+<p>ParaView基于VTK(Visualization Toolkit)开发，由美国Kitware公司与洛斯阿拉莫斯国家实验室等机构共同维护，是目前最流行的科学可视化工具之一。</p>
+<h1 id="3-ubuntu安装">3. Ubuntu安装</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install paraview
+</span></span></code></pre></div><p>安装后，可以通过以下方式打开PVSM文件：</p>
+<p>1、命令行方式：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash   paraview --state<span style="color:#555">=</span>文件.pvsm
+</span></span></code></pre></div><p>2、图形界面方式：</p>
+<ul>
+<li>启动 ParaView</li>
+<li>选择 File → Load State</li>
+<li>选择.pvsm文件</li>
+</ul>
+<p>注意：打开PVSM文件时，ParaView可能会要求您指定原始数据文件的位置（如果路径已改变）。</p>
+<h1 id="4-延伸阅读">4. 延伸阅读</h1>
+<ul>
+<li><a href="https://www.paraview.org">ParaView</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

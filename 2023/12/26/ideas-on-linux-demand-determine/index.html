@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>随笔—需求决定选择Linux的版本 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">随笔—需求决定选择Linux的版本</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-26</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/ideas/">#Ideas</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/essay/">#Essay</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>最近，思考了关于台式机工作站的需求，主要运行以下几种语言：</p>
+<ul>
+<li>Fortran</li>
+<li>Python</li>
+<li>Mathematica</li>
+</ul>
+<p>同时，对 Linux 版本的选择有个阶段性的小结：需求决定选择。</p>
+<h1 id="2-linux-版本选择">2. Linux 版本选择</h1>
+<p>从2010年接触电脑和网络以来，在之前的笔记本电脑、台式机或虚拟机，安装过以下 Linux 系统：</p>
+<ul>
+<li>Ubuntu <sup>1</sup></li>
+<li>OpenSUSE <sup>2</sup></li>
+<li>ArchLinux <sup>3</sup></li>
+<li>Manjaro <sup>4</sup></li>
+<li>Centos <sup>5</sup></li>
+<li>Gentoo <sup>6</sup></li>
+<li>deepin <sup>7</sup></li>
+<li>linux Mint <sup>8</sup></li>
+<li>Kali Linux <sup>9</sup></li>
+<li>Raspberry Pi OS <sup>10</sup></li>
+</ul>
+<h1 id="3-需求决定选择">3. 需求决定选择</h1>
+<p>最开始用 Linux，是在笔记本电脑上安装不同的 Linux 系统。不停地折腾，安装卸载，算是对不同的 Linux 类型有一些实际的体验。唯一做的事是搭建初始的博客——<code>octopress</code>和<code>Pelican elegant</code>。因为没有实际的需求，所以不能用在具体的工作中。</p>
+<p>使用 Ubuntu 的版本 <sup>11</sup>，有记录的依次是：<code>13.10</code> <sup>12</sup>、<code>14.04 LTS</code> <sup>13, 14</sup>、<code>16.04 LTS</code> <sup>15</sup>、<code>20.04.1 LTS</code> <sup>16, 17</sup>和<code>22.04.1 LTS</code><sup>18</sup>。</p>
+<p>从 2016 年使用 MacBook Pro 后，主要系统是 macOS 系统。2021 年 5 月，小结了 macOS 的优势：专注、稳定、便携、精益求精、编程方便 <sup>19</sup>。</p>
+<p>从 2020 年开始，在台式机上安装 Ubuntu，台式机的定位是<code>工作站跑程序</code>，也作为连接<code>服务器</code>的中介。因为有了<code>跑程序</code>——这个在工作中的实际需求，所以 Linux 算是真正使用起来。在使用 Ubuntu 的过程中，积累了一些的经验，都记录在个人网站的标签 <a href="/tags/unix/">Unix</a> 的关键词 <code>Ubuntu</code>中。</p>
+<p>个人的<code>工作站</code>(Workstation)，是介于<code>桌面</code>(Desktop)和<code>服务器</code>(Server)中间。一般是用 <code>ssh</code>命令行登录，查看程序运行的进程，并利用 Royal TSX <sup>20</sup> 上传和下载文件。偶尔，用显示器查看图形界面，进行一些操作。</p>
+<p>不用纠结 Linux 的哪一个版本，从真实的需求出发，就能选择合适的 Linux 版本。另外，在学习的过程中，积累的实践经验是宝贵的，需要及时记录下来。</p>
+<p>最近查了一些资料，推荐稳定的服务器 Linux 或 Unix 版本有：Ubuntu、Debian、FreeBSD <sup>21</sup>。</p>
+<p>通过个人的实践表明：稳定的 Linux 服务器，是不折腾和不随便更新的，要让它一直运行。</p>
+<p>没有最完美的 Linux 或 Unix 系统，都只是实现需求的工具而已，重要的是你的需求——创新内容、实现目的。</p>
+<p>望诸君一同共勉。</p>
+<h1 id="4-延伸阅读">4. 延伸阅读</h1>
+<ol>
+<li><a href="https://ubuntu.com/">Enterprise Open Source and Linux | Ubuntu</a></li>
+<li><a href="https://www.opensuse.org/">openSUSE - Linux OS. The makers&rsquo; choice for sysadmins, developers and desktop users.</a></li>
+<li><a href="https://archlinux.org/">Arch Linux</a></li>
+<li><a href="https://manjaro.org/">Manjaro</a></li>
+<li><a href="https://www.centos.org/">The CentOS Project</a></li>
+<li><a href="https://www.gentoo.org/">Welcome – Gentoo Linux</a></li>
+<li><a href="https://www.deepin.org/index/zh">deepin - 基于Linux的开源国产操作系统</a></li>
+<li><a href="https://linuxmint.com/">Home - Linux Mint</a></li>
+<li><a href="https://www.kali.org/">Kali Linux | Penetration Testing and Ethical Hacking Linux Distribution</a></li>
+<li><a href="https://www.raspberrypi.com/software/">Raspberry Pi OS – Raspberry Pi</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Ubuntu_version_history">Ubuntu version history - Wikipedia</a></li>
+<li><a href="/2014/05/01/ubuntu-blog-octopress/">Ubuntu 13.10下使用Github和Octopress搭建个人博客</a></li>
+<li><a href="/2014/05/02/ubuntu-install-software/">Ubuntu 14.04 LTS新安装的系列软件（步骤）</a></li>
+<li><a href="/2014/05/02/ubuntu-install-pelican/">Ubuntu 14.04 LTS安装Pelican elegant主题</a></li>
+<li><a href="/2019/11/21/ubuntu-apt-get-update/">Ubuntu 16.04 LTS配置国内高速apt-get更新源</a></li>
+<li><a href="/2020/09/17/ubuntu-change-source/">Ubuntu 20.04 LTS更换中科大教育网的软件源</a></li>
+<li><a href="/2020/09/20/ubuntu-research-system/">Ubuntu 20.04 LTS作为科研主系统</a></li>
+<li><a href="/2023/12/26/minimalism-on-ubuntu-software/">精简Ubuntu 22.04.1 LTS默认软件</a></li>
+<li><a href="/2021/05/29/essay-benefit-macOS/">随笔—macOS系统用于科研的优势</a></li>
+<li><a href="/2021/05/27/royal-tsx/">Royal TSX：macOS系统的服务器管理软件</a></li>
+<li><a href="https://www.liuquanhao.com/posts/Linux%E5%8F%91%E8%A1%8C%E7%89%88%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E9%80%89/#%E6%80%BB%E7%BB%93">Linux发行版应该怎么选 | 刘泉皓的个人网站</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

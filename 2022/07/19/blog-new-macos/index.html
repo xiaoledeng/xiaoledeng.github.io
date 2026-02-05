@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>博客迁移到新的macOS系统的操作 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">博客迁移到新的macOS系统的操作</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-07-19</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-说明">1. 说明</h1>
+<p>换新电脑后，博客的内容需要复制到新的电脑，文件夹为：<code>blog</code>。</p>
+<h1 id="2-具体操作">2. 具体操作</h1>
+<ul>
+<li>安装Homebrew，见： <a href="https://brew.sh/">https://brew.sh/</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/bin/bash -c <span style="color:#c30">&#34;</span><span style="color:#069;font-weight:bold">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span style="color:#069;font-weight:bold">)</span><span style="color:#c30">&#34;</span>
+</span></span></code></pre></div><p>还有这个操作：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">echo</span> <span style="color:#c30">&#39;eval &#34;$(/opt/homebrew/bin/brew shellenv)&#34;&#39;</span> &gt;&gt; /Users/name/.zprofile
+</span></span><span style="display:flex;"><span><span style="color:#366">eval</span> <span style="color:#c30">&#34;</span><span style="color:#069;font-weight:bold">$(</span>/opt/homebrew/bin/brew shellenv<span style="color:#069;font-weight:bold">)</span><span style="color:#c30">&#34;</span>
+</span></span></code></pre></div><ul>
+<li>安装Git</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install git
+</span></span></code></pre></div><ul>
+<li>安装node.js</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install node
+</span></span></code></pre></div><ul>
+<li>安装hugo</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install hugo
+</span></span></code></pre></div><ul>
+<li>在文件夹<code>blog</code>，初始化git</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span></code></pre></div><ul>
+<li>利用SSH key方式进行验证，见：<a href="/2021/08/20/github-blog-password-authentication/">Github的blog上传password authentication出错的解决方案</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -T git@github.com
+</span></span><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#c30">&#34;your_email@example.com&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">eval</span> <span style="color:#c30">&#34;</span><span style="color:#069;font-weight:bold">$(</span>ssh-agent -s<span style="color:#069;font-weight:bold">)</span><span style="color:#c30">&#34;</span>
+</span></span><span style="display:flex;"><span>touch ~/.ssh/config
+</span></span><span style="display:flex;"><span>open ~/.ssh/config
+</span></span><span style="display:flex;"><span>ssh-add -K ~/.ssh/id_ed25519
+</span></span><span style="display:flex;"><span>pbcopy &lt; ~/.ssh/id_ed25519.pub
+</span></span></code></pre></div><p>以及</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git config --global user.name <span style="color:#c30">&#34;xiaoledeng&#34;</span>
+</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#c30">&#34;your_email@example.com&#34;</span>
+</span></span></code></pre></div><ul>
+<li>测试是否成功：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo server -D
+</span></span><span style="display:flex;"><span>sh job.sh
+</span></span></code></pre></div><h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="/2017/03/13/blog-heox/">Mac搭建Heox博客教程</a></li>
+<li><a href="https://www.cnblogs.com/emanlee/p/12993683.html">git解决 fatal: not in a git directory - emanlee - 博客园</a></li>
+<li><a href="/2020/01/09/mac-github/">Mac设置Git上传本地项目到github</a></li>
+<li><a href="/2021/08/20/github-blog-password-authentication/">Github的blog上传password authentication出错的解决方案</a></li>
+<li><a href="https://blog.csdn.net/qq_43768946/article/details/90411154">Git使用出现git@github.com: Permission denied (publickey). 处理_JT.X的博客-CSDN博客_git@github.com</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

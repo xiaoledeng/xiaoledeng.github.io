@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>FreeBSD安装Python - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">FreeBSD安装Python</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-29</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/freebsd/">#FreeBSD</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-说明">1. 说明</h1>
+<p>目前，FreeBSD 14.0 RELEASE p4 默认安装的是 <code>python 3.9</code>。</p>
+<h1 id="2-安装">2. 安装</h1>
+<p>安装命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pkg install python
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Updating FreeBSD repository catalogue...
+</span></span><span style="display:flex;"><span>FreeBSD repository is up to date.
+</span></span><span style="display:flex;"><span>All repositories are up to date.
+</span></span><span style="display:flex;"><span>The following <span style="color:#f60">2</span> package<span style="color:#555">(</span>s<span style="color:#555">)</span> will be affected <span style="color:#555">(</span>of <span style="color:#f60">0</span> checked<span style="color:#555">)</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>New packages to be INSTALLED:
+</span></span><span style="display:flex;"><span>    python: 3.9_3,2
+</span></span><span style="display:flex;"><span>    python3: 3_3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Number of packages to be installed: <span style="color:#f60">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f60">2</span> KiB to be downloaded.
+</span></span></code></pre></div><p>终端输入 <code>Python</code> 显示：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Python 3.9.18 <span style="color:#555">(</span>main, Dec <span style="color:#f60">19</span> 2023, 01:22:46<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#555">[</span>Clang 16.0.6 <span style="color:#555">(</span>https://github.com/llvm/llvm-project.git llvmorg-16.0.6-0-g7cbf1 on freebsd14
+</span></span><span style="display:flex;"><span>Type <span style="color:#c30">&#34;help&#34;</span>, <span style="color:#c30">&#34;copyright&#34;</span>, <span style="color:#c30">&#34;credits&#34;</span> or <span style="color:#c30">&#34;license&#34;</span> <span style="color:#069;font-weight:bold">for</span> more information.
+</span></span></code></pre></div><p>查看 Python 默认版本：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python --version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Python 3.9.18
+</span></span></code></pre></div><p>查看 Python 安装路径：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>which python
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>/usr/local/bin/python
+</span></span></code></pre></div><p>安装 pip 工具：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pkg install py39-pip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Updating FreeBSD repository catalogue...
+</span></span><span style="display:flex;"><span>FreeBSD repository is up to date.
+</span></span><span style="display:flex;"><span>All repositories are up to date.
+</span></span><span style="display:flex;"><span>The following <span style="color:#f60">2</span> package<span style="color:#555">(</span>s<span style="color:#555">)</span> will be affected <span style="color:#555">(</span>of <span style="color:#f60">0</span> checked<span style="color:#555">)</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>New packages to be INSTALLED:
+</span></span><span style="display:flex;"><span>    py39-pip: 23.2.1
+</span></span><span style="display:flex;"><span>    py39-setuptools: 63.1.0_1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Number of packages to be installed: <span style="color:#f60">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The process will require <span style="color:#f60">27</span> MiB more space.
+</span></span><span style="display:flex;"><span><span style="color:#f60">3</span> MiB to be downloaded.
+</span></span></code></pre></div><h1 id="3-其他-python-版本">3. 其他 Python 版本</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pkg install python2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo pkg install python27
+</span></span><span style="display:flex;"><span>sudo pkg install py27-pip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo pkg install python3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo pkg install python37
+</span></span><span style="display:flex;"><span>sudo pkg install py37-pip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo pkg install python38
+</span></span><span style="display:flex;"><span>sudo pkg install py38-pip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo pkg install python310
+</span></span><span style="display:flex;"><span>sudo pkg install py310-pip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo pkg install python311
+</span></span><span style="display:flex;"><span>sudo pkg install py311-pip
+</span></span></code></pre></div><p>建立链接：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ln -s /usr/local/bin/python3.8 /usr/local/bin/python
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ln -s /usr/local/bin/pip-3.8 /usr/local/bin/pip
+</span></span></code></pre></div><p>加入环境变量：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim ~/.bashrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#366">export</span> <span style="color:#033">PATH</span><span style="color:#555">=</span><span style="color:#033">$PATH</span>:.local/bin/
+</span></span></code></pre></div><h1 id="4-延伸阅读">4. 延伸阅读</h1>
+<ul>
+<li><a href="https://computingforgeeks.com/how-to-install-pip-python-package-manager-on-freebsd-12/">Install pip Python package manager on FreeBSD 12 | ComputingForGeeks</a></li>
+<li><a href="https://forums.freebsd.org/threads/how-to-properly-install-and-use-python-modules-in-freebsd.83216/">Solved - How to properly install and use python modules in FreeBSD? | The FreeBSD Forums</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

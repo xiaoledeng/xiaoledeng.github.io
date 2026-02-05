@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu 14.04 LTS新安装的系列软件（步骤） - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu 14.04 LTS新安装的系列软件（步骤）</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2014-05-02</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p><strong>从Ubuntu13.10更新到Ubuntu14.04LTS</strong>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get install update-manager-core
+</span></span><span style="display:flex;"><span>$ sudo <span style="color:#069;font-weight:bold">do</span>-release-upgrade -d
+</span></span></code></pre></div><p><strong>注意</strong>：调换到源为主服务器并且设置源的一些基本信息；</p>
+<p>具体参照官网：<a href="http://www.ubuntu.com/download/desktop/upgrade">http://www.ubuntu.com/download/desktop/upgrade</a></p>
+<h1 id="一-更换源使得下载和更新速度达到最快">一. 更换源，使得下载和更新速度达到最快</h1>
+<p>打开“软件更新器(software updater)”或者“软件和更新”,根据自己网络选择。</p>
+<h1 id="二-安装博客工具octopress">二. 安装博客工具Octopress</h1>
+<p>参看<a href="http://xiaoledeng.github.io/ubuntu1310xia-shi-yong-githubhe-octopressda-jian-ge-ren-bo-ke.html">Ubuntu13.10下使用Github和Octopress搭建个人博客</a>的简要做法</p>
+<p>期间错误解决</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ gem install bundler
+</span></span></code></pre></div><p>出现：</p>
+<pre><code>Fetching: bundler-1.6.2.gem (100%)
+ERROR:  While executing gem ... (Errno::EACCES)
+Permission denied - /var/lib/gems
+</code></pre>
+<p>输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo gem install bundler
+</span></span></code></pre></div><p>提示需要安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get install rbenv
+</span></span></code></pre></div><p>第二步与之前不一样，即为把已经上传的文档download到本地：</p>
+<p>本地同步:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git clone git@github.com:xiaoledeng/xiaoledeng.github.io.git
+</span></span></code></pre></div><p>提示：Permission denied (publickey).</p>
+<p><strong>解决办法</strong>：
+用下面的命令生成public key</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ssh-keygen -t rsa
+</span></span><span style="display:flex;"><span>$ <span style="color:#366">cd</span> .ssh
+</span></span><span style="display:flex;"><span>$ gedit id_rsa.pub
+</span></span></code></pre></div><p>复制 id_rsa.pub中文件到你账户的<a href="https://github.com/settings/ssh">list of SSH keys</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git clone git@github.com:xiaoledeng/xiaoledeng.github.io.git
+</span></span><span style="display:flex;"><span>$ <span style="color:#366">cd</span> xiaoledeng.github.io
+</span></span><span style="display:flex;"><span>xiaoledeng.github.io$ git checkout <span style="color:#366">source</span>
+</span></span><span style="display:flex;"><span>xiaoledeng.github.io$ mkdir _deploy
+</span></span><span style="display:flex;"><span>xiaoledeng.github.io$ <span style="color:#366">cd</span> _deploy
+</span></span><span style="display:flex;"><span>xiaoledeng.github.io/_deploy$ git init
+</span></span><span style="display:flex;"><span>xiaoledeng.github.io/_deploy$ git remote add origin git@github.com:xiaoledeng/xiaoledeng.github.io.git
+</span></span><span style="display:flex;"><span>xiaoledeng.github.io/_deploy$ git pull origin master
+</span></span><span style="display:flex;"><span>xiaoledeng.github.io/_deploy$ <span style="color:#366">cd</span> ..
+</span></span></code></pre></div><p>至此，同步完成。</p>
+<h1 id="三-安装gmt45">三. 安装GMT4.5</h1>
+<p>具体命令：</p>
+<p>1.在终端运行</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get install GMT
+</span></span></code></pre></div><p>2.安装建议安装的软件包：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get install gmt-tutorial-pdf gmt-doc-pdf gmt-examples gmt-gshhs-high gmt-gshhs-full
+</span></span></code></pre></div><p>3.添加环境变量：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ gedit ~/.bashrc
+</span></span></code></pre></div><p>（打开.bashrc) 在文档末尾添加三行：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">export</span> <span style="color:#033">NETCDFHOME</span><span style="color:#555">=</span><span style="color:#c30">&#34;/usr/lib&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">export</span> <span style="color:#033">GMTHOME</span><span style="color:#555">=</span><span style="color:#c30">&#34;/usr/lib/gmt&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">export</span> <span style="color:#033">PATH</span><span style="color:#555">=</span><span style="color:#c30">&#34;</span><span style="color:#033">$PATH</span><span style="color:#c30">:</span><span style="color:#033">$GMTHOME</span><span style="color:#c30">/bin&#34;</span>
+</span></span></code></pre></div><p>4.验证是否安装正确以及版本</p>
+<p>输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ GMT -v
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GMT Version 4.5.11
+</span></span><span style="display:flex;"><span>Copyright 1991-2013 Paul Wessel and Walter H. F. Smith
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>This program comes with NO WARRANTY, to the extent permitted by law.
+</span></span><span style="display:flex;"><span>You may redistribute copies of this program under the terms of the
+</span></span><span style="display:flex;"><span>GNU General Public License.
+</span></span><span style="display:flex;"><span>For more information about these matters, see the file named LICENSE.TXT.
+</span></span><span style="display:flex;"><span>For a brief description of GMT programs, <span style="color:#366">type</span> GMT --help
+</span></span></code></pre></div><h1 id="四-安装markdown编辑器retext">四. 安装Markdown编辑器retext</h1>
+<p>博客编辑工具retext</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get install retext
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
