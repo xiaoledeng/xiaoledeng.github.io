@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>oneAPI资源和安装 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">oneAPI资源和安装</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-07-19</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/fortran/">#Fortran</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/c/">#C</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-introduction">1. Introduction</h1>
+<blockquote>
+<p>OneAPI旨在提供一个适用于各类计算架构的统一编程模型和应用程序接口。
+“OneAPI 提供一个通用、开放的编程体验，让开发者可以自由选择架构，无需在性能上作出妥协，也大大降低了使用不同的代码库、编程语言、编程工具和工作流程所带来的复杂性”。</p>
+</blockquote>
+<p><a href="https://software.intel.com/content/www/cn/zh/develop/tools/oneapi/all-toolkits.html#gs.6990th">Intel® oneAPI Toolkits</a>:</p>
+<ul>
+<li>基础工具：构建、分析、优化性能驱动和以数据为中心的应用程序 (Intel® oneAPI Base Toolkit：<a href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/base-toolkit/download.html">Download the Intel® oneAPI Base Toolkit</a>)</li>
+<li>高性能计算工具：提供C++、Fortran、OpenMP和MPI应用程序 (Intel® oneAPI HPC：<a href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/hpc-toolkit/download.html">Download the Intel oneAPI HPC Toolkit</a>)</li>
+<li>物联网工具：构建在网络边缘运行的高性能、高效、可靠的应用程序 (Intel® oneAPI IoT Toolkit：<a href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/iot-toolkit/download.html">Download the Intel oneAPI IoT Toolkit</a>)</li>
+<li>可视化工具：创建高性能、高保真的可视化应用程序 (Intel® oneAPI Rendering Toolkit：<a href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/rendering-toolkit/download.html">Download the Intel oneAPI Rendering Toolkit</a>)</li>
+<li>AI分析工具：为数据科学家、AI开发人员和研究人员提供熟悉的Python工具和框架，以加速 Intel体系结构上的端到端数据科学和分析管道 (Intel® oneAPI AI Analytics Toolkit：<a href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/ai-analytics-toolkit/download.html?operatingsystem=linux">Download the Intel® oneAPI AI Analytics Toolkit</a>)</li>
+<li>OpenVINO工具：跨多个 Intel体系结构，拓展了 Intel硬件（包括加速器）的工作负载，最大限度提升性能，为生命科学、零售、工业等多领域带来更多的高效应用 (Intel® Distribution of OpenVINO™ Toolkit：<a href="https://software.seek.intel.com/openvino-toolkit">Fast Track Computer Vision &amp; Deep Learning Inference With Intel® Distribution of OpenVINO™ toolkit</a>)</li>
+</ul>
+<h1 id="2-资源">2. 资源</h1>
+<p>Intel® oneAPI Base Toolkit：<a href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/base-toolkit/download.html">Download the Intel® oneAPI Base Toolkit</a></p>
+<ul>
+<li>Intel® oneAPI Collective Communications Library</li>
+<li>Intel® oneAPI Data Analytics Library</li>
+<li>Intel® oneAPI Deep Neural Networks Library</li>
+<li>Intel® oneAPI DPC++/C++ Compiler</li>
+<li>Intel® oneAPI DPC++ Library</li>
+<li>Intel® oneAPI Math Kernel Library</li>
+<li>Intel® oneAPI Threading Building Blocks</li>
+<li>Intel® oneAPI Video Processing Library</li>
+<li>Intel® Advisor</li>
+<li>Intel® Distribution for GDB*</li>
+<li>Intel® Distribution for Python*</li>
+<li>Intel® DPC++ Compatibility Tool</li>
+<li>Intel® FPGA Add-on for oneAPI Base Toolkit</li>
+<li>Intel® Integrated Performance Primitives</li>
+<li>Intel® VTune™ Profiler</li>
+</ul>
+<p>Intel® oneAPI HPC：<a href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/hpc-toolkit/download.html">Download the Intel oneAPI HPC Toolkit</a></p>
+<ul>
+<li>Intel® oneAPI DPC++/C++ Compiler</li>
+<li>Intel® C++ Compiler Classic</li>
+<li>Intel® Cluster Checker</li>
+<li>Intel® Fortan Compiler (Beta)</li>
+<li>Intel® Fortran Compiler Classic</li>
+<li>Intel® Inspector</li>
+<li>Intel® MPI Library</li>
+<li>Intel® Trace Analyzer and Collector</li>
+</ul>
+<h1 id="3-安装">3. 安装</h1>
+<h2 id="linux">Linux</h2>
+<p>What&rsquo;s Included in the Intel® oneAPI HPC Toolkit for Linux*</p>
+<ul>
+<li>Download size: 794 MB</li>
+<li>Install space required: 4.2 GB</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget https://registrationcenter-download.intel.com/akdlm/irc_nas/17764/l_HPCKit_p_2021.2.0.2997_offline.sh 
+</span></span><span style="display:flex;"><span>sudo bash l_HPCKit_p_2021.2.0.2997_offline.sh
+</span></span></code></pre></div><ul>
+<li>Step 1: From the console, locate the downloaded install file.</li>
+<li>Step 2: Use $ sudo sh ./<installer>.sh to launch the GUI Installer as root.
+Optionally, use $ sh ./<installer>.sh to launch the GUI Installer as current user.</li>
+<li>Step 3: Follow the instructions in the installer.</li>
+<li>Step 4: Explore the <a href="https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-hpc-linux/top.html">Get Started Guide</a>.</li>
+</ul>
+<p>环境变量：把<code>setbvars.sh</code>(setvars.sh的具体路径以自己的为准)添加到<code>~/.bashrc</code>为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">source</span> /opt/intel/oneapi/setvars.sh intel64
+</span></span></code></pre></div><p>检查结果：</p>
+<ul>
+<li>icc -v</li>
+<li>ifort -v</li>
+<li>mpiicc -v</li>
+<li>mpiifort -v</li>
+</ul>
+<h2 id="macos">macOS</h2>
+<p>What&rsquo;s Included in the Intel® oneAPI HPC Toolkit for macOS*</p>
+<ul>
+<li>Download size: 176 MB</li>
+<li>Install space required: 2.6 GB</li>
+</ul>
+<p>Steps:</p>
+<ul>
+<li>Step 1: Select the disk image (DMG file) that you downloaded.</li>
+<li>Step 2: Select the install icon to start bootstrapper.app.</li>
+<li>Step 3: Follow the instructions in the installer.</li>
+<li>Step 4: Explore the <a href="https://software.intel.com/content/www/us/en/develop/documentation/get-started-with-intel-oneapi-base-hpc-macOS/top.html">Get Started Guide</a>.</li>
+</ul>
+<h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/103299140">OneAPI：天下大同 - 知乎</a></li>
+<li><a href="https://www.sohu.com/a/446902282_100007018">oneAPI，所见即未来_Intel</a></li>
+<li><a href="https://blog.csdn.net/weixin_44506674/article/details/110413364">Intel oneAPI 学习笔记之 Centos 下安装 Intel® oneAPI Base Toolkit 和 Intel® oneAPI HPC Toolkit_万古霉素(Vancomycin)的博客-CSDN博客_oneapi安装</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/358928837">Intel学生许可过期后，安装 Intel® oneAPI Base Toolkit 和 Intel® oneAPI HPC来替代 - 知乎</a></li>
+<li><a href="https://www.jianshu.com/p/14a9a3366292">oneAPI的测试：Vector-add - 简书</a></li>
+<li><a href="https://www.jianshu.com/p/9005b1106dc6">macOS Big Sur 使用Intel oneAPI执行c++和fortran编译设置方法 - 简书</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

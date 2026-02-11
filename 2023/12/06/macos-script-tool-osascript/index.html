@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS系统的脚本工具osascript - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS系统的脚本工具osascript</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-06</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/shell/">#Shell</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/minimalism/">#Minimalism</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/automation/">#Automation</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-引言">1. 引言</h1>
+<blockquote>
+<p>“Every time I get a script it&rsquo;s a matter of trying to know what I could do with it. I see colors, imagery. It has to have a smell. It&rsquo;s like falling in love. You can&rsquo;t give a reason why” - Paul Newman</p>
+</blockquote>
+<blockquote>
+<p>“Mac OS X is a rock-solid system that&rsquo;s beautifully designed. I much prefer it to Linux” - Bill Joy</p>
+</blockquote>
+<p>macOS系统的脚本工具 <code>osascript</code> 能够在终端命令行执行一些操作。</p>
+<p>基本语法：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>osascript <span style="color:#555">[</span>-l language<span style="color:#555">]</span> <span style="color:#555">[</span>-e command<span style="color:#555">]</span> <span style="color:#555">[</span>-s flags<span style="color:#555">]</span> <span style="color:#555">[</span>programfile<span style="color:#555">]</span>
+</span></span></code></pre></div><h1 id="2-实例">2. 实例</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 弹出提醒</span>
+</span></span><span style="display:flex;"><span>osascript -e <span style="color:#c30">&#39;display alert &#34;上班💼时间到，该打卡了。&#34;&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Open or switch to Safari</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 打开或切换到 Safari浏览器</span>
+</span></span><span style="display:flex;"><span>osascript -e <span style="color:#c30">&#39;tell app &#34;Safari&#34; to activate&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Close safari</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 关闭 safari</span>
+</span></span><span style="display:flex;"><span>osascript -e <span style="color:#c30">&#39;quit app &#34;safari.app&#34;&#39;</span>
+</span></span><span style="display:flex;"><span>osascript -e ‘tell application “safari” to quit’
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Empty the trash</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 清空垃圾桶</span>
+</span></span><span style="display:flex;"><span>osascript -e <span style="color:#c30">&#39;tell application &#34;Finder&#34; to empty trash&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Set the output volume to 50%</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 设置音量🔊为50%</span>
+</span></span><span style="display:flex;"><span>sudo osascript -e <span style="color:#c30">&#39;set volume output volume 50&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Input volume and Alert volume can also be set from 0 to 100%:</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 设置音量🔊</span>
+</span></span><span style="display:flex;"><span>sudo osascript -e <span style="color:#c30">&#39;set volume input volume 40&#39;</span>
+</span></span><span style="display:flex;"><span>sudo osascript -e <span style="color:#c30">&#39;set volume alert volume 75&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Mute the output volume (True/False)</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 是否静音🔇</span>
+</span></span><span style="display:flex;"><span>osascript -e <span style="color:#c30">&#39;set volume output muted TRUE&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Toggle volume muting</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 切换音量静音</span>
+</span></span><span style="display:flex;"><span>osascript -e <span style="color:#c30">&#39;set volume output muted not (output muted of (get volume settings))&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Toggle system theme</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 切换系统主题—黑色模式</span>
+</span></span><span style="display:flex;"><span>osascript -e <span style="color:#c30">&#39;tell application &#34;System Events&#34; to tell appearance preferences to set dark mode to not dark mode&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Shut down without asking for confirmation</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 关闭而不询问确认</span>
+</span></span><span style="display:flex;"><span>osascript -e <span style="color:#c30">&#39;tell app &#34;System Events&#34; to shut down&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Restart without asking for confirmation</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 重启而不询问确认</span>
+</span></span><span style="display:flex;"><span>osascript -e <span style="color:#c30">&#39;tell app &#34;System Events&#34; to restart&#39;</span>
+</span></span></code></pre></div><h1 id="3-延伸阅读">3. 延伸阅读</h1>
+<ul>
+<li><a href="https://ss64.com/osx/osascript.html">osascript Man Page - macOS - SS64.com</a></li>
+<li><a href="https://ss64.com/osx/">An A-Z Index of the Apple macOS command line - SS64 Command line reference</a></li>
+<li><a href="https://blog.51cto.com/xbg950305/6105147">测试开发-怎么能忘记打卡呢-神器AppleScript_13177352的技术博客_51CTO博客</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

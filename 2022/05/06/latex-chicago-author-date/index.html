@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>利用LaTeX自动生成Chicago author-date参考文献格式 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">利用LaTeX自动生成Chicago author-date参考文献格式</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-05-06</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-简介">1. 简介</h1>
+<p>在 <a href="https://www.tandfonline.com/">Taylor &amp; Francis Online: Peer-reviewed Journals</a>的期刊采用Chicago author-date参考文献的格式，比如： <a href="https://www.tandfonline.com/journals/tgsi20">Geo-spatial Information Science</a>。</p>
+<p>其中，参考格式的具体内容，可以下载此文件，见： <a href="https://files.taylorandfrancis.com/tf_ChicagoAD.pdf">https://files.taylorandfrancis.com/tf_ChicagoAD.pdf</a></p>
+<h1 id="2-latex实现chicago-author-date参考文献格式">2. LaTeX实现Chicago author-date参考文献格式</h1>
+<p>首先，需要<code>interact.cls</code>文件，下载地址为：<a href="/documents/20220506/interact.cls">interact.cls</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\documentclass</span><span style="color:#309">[]</span><span style="color:#366">{</span>interact<span style="color:#366">}</span>
+</span></span></code></pre></div><p>其次，使用<code>biblatex-chicago</code>包（此包的详细说明文档见： <a href="https://www.ctan.org/pkg/biblatex-chicago">https://www.ctan.org/pkg/biblatex-chicago</a>）：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\usepackage</span><span style="color:#309">[authordate,backend=biber,doi=true,isbn=false]</span><span style="color:#366">{</span>biblatex-chicago<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\bibliography</span><span style="color:#366">{</span>reference<span style="color:#366">}</span>
+</span></span></code></pre></div><p>这里，<code>reference</code>是对应<code>reference.bib</code>参考文献的bib文件名。其中，文献的作者名，建议用缩写。</p>
+<p>然后，去掉参考文献中<code>重复人名用横线</code>的设置：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\makeatletter</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\AtEveryBibitem</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\global\undef\bbx</span>@lasthash<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\makeatother</span>
+</span></span></code></pre></div><p>而后，一般参考文献引用的命令<code>\cite{}</code>改为<code>\textcite{}</code>和<code>\citep{}</code>改为<code>\autocite{}</code>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\textcite</span><span style="color:#366">{}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\autocite</span><span style="color:#366">{}</span>
+</span></span></code></pre></div><p>最后，在文章中显示参考文献的具体内容：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\printbibliography</span>
+</span></span></code></pre></div><h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://tex.stackexchange.com/questions/455523/remove-dash-for-repeated-author-in-biblatex-chicago">Remove dash for repeated author in biblatex-chicago - TeX - LaTeX Stack Exchange</a></li>
+<li><a href="https://tex.stackexchange.com/questions/500571/how-to-cite-author-and-date-but-only-date-in-brackets-with-biblatex">How to cite author and date, but only date in brackets with biblatex? - TeX - LaTeX Stack Exchange</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

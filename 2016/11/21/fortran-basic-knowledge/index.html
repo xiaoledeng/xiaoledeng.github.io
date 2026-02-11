@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Fortran基础知识回顾 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Fortran基础知识回顾</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2016-11-21</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/fortran/">#Fortran</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="一fortran设计基础">一、Fortran设计基础</h1>
+<ul>
+<li>Fortran是不区分大小写的语言。</li>
+<li>书面格式包括：自由格式(Free Format, *.F90)和固定格式(Fixed Format, *.F &amp; *.FOR)。</li>
+<li>自由格式，注释是感叹号(!)，每行可以编写132字符，多得用&amp;&amp;连接；</li>
+</ul>
+<h1 id="二输入输出">二、输入输出</h1>
+<ul>
+<li>单精度E，有效位数6-7位；双精度D，有效位数15位。</li>
+<li>变量名可使用字母，数字，下划线，但是开首字符必须是字母；变量名的长度：Fortran77为6个字符，Fortran90为31个字符。</li>
+<li><a href="http://micro.ustc.edu.cn/Fortran/ZJDing/Sec7-1.htm">Sec7-1 <strong>输入输出编辑</strong></a></li>
+</ul>
+<h1 id="三流程控制与逻辑运算">三、流程控制与逻辑运算</h1>
+<ul>
+<li>IF语句和Select Case语句。</li>
+</ul>
+<h1 id="四循环">四、循环</h1>
+<ul>
+<li>Do和DoWhile两个；</li>
+</ul>
+<h1 id="五数组array">五、数组（Array）</h1>
+<ul>
+<li>Fortran最多可声明高达7维数组。</li>
+<li>where只用来数组赋值。</li>
+</ul>
+<h1 id="六函数">六、函数</h1>
+<p>结构如下：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Fortran" data-lang="Fortran"><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">program</span><span style="color:#bbb"> </span>main<span style="color:#bbb"> 
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>......<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>......<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">call</span><span style="color:#bbb"> </span>sub_1(...)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>......<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">call</span><span style="color:#bbb"> </span>sub_2(...)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>......<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">end</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">program</span><span style="color:#bbb"> </span>main<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">subroutine</span><span style="color:#bbb"> </span>sub_1(...)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">end</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">subroutine</span><span style="color:#bbb"> </span>sub_1<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">subroutine</span><span style="color:#bbb"> </span>sub_2(...)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span>...<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">    </span><span style="color:#069;font-weight:bold">end</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">subroutine</span><span style="color:#bbb"> </span>sub_2<span style="color:#bbb">
+</span></span></span></code></pre></div><h1 id="七文件">七、文件</h1>
+<ul>
+<li><a href="http://micro.ustc.edu.cn/Fortran/ZJDing/Sec7-2.htm"><strong>文件的存取</strong>Sec7-2</a></li>
+</ul>
+<p><strong>Fortran77<strong><strong>和</strong></strong>90/95****编程入门</strong></p>
+<h1 id="8参考来源">8、参考来源：</h1>
+<ol>
+<li><a href="http://www.jianshu.com/notebooks/5425611/latest">Fortran学习笔记 - 文集 - 简书-小小xiao呆著</a></li>
+<li>彭国伦. <em>Fortran 95 程序设计</em>. 中国电力出版社, 2012, 15次印刷.</li>
+<li><a href="http://micro.ustc.edu.cn/Fortran/ZJDing/">《Fortran77和90/95编程入门》</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
