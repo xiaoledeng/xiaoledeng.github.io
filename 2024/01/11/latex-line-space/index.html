@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>LaTeX设置行间距 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">LaTeX设置行间距</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-11</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\usepackage</span><span style="color:#366">{</span>setspace<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\setlength</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\baselineskip</span><span style="color:#366">}{</span>20pt<span style="color:#366">}</span>
+</span></span></code></pre></div><p>说明：<code>pt</code> - points (大约 1/72 inch)，是 Word 中的 <code>磅</code> 。</p>
+<h1 id="2-字体大小对照">2. 字体大小对照</h1>
+<table>
+  <thead>
+      <tr>
+          <th>Word</th>
+          <th>Ps(px)</th>
+          <th>磅(pt)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>初号</td>
+          <td>42 p</td>
+          <td>44.9 pt</td>
+      </tr>
+      <tr>
+          <td>小初</td>
+          <td>36 p</td>
+          <td>38.5 pt</td>
+      </tr>
+      <tr>
+          <td>一号</td>
+          <td>26 p</td>
+          <td>27.8 pt</td>
+      </tr>
+      <tr>
+          <td>小一</td>
+          <td>24 p</td>
+          <td>25.7 pt</td>
+      </tr>
+      <tr>
+          <td>二号</td>
+          <td>22 p</td>
+          <td>23.5 pt</td>
+      </tr>
+      <tr>
+          <td>小二</td>
+          <td>18 p</td>
+          <td>19.3 pt</td>
+      </tr>
+      <tr>
+          <td>三号</td>
+          <td>16 p</td>
+          <td>17.1 pt</td>
+      </tr>
+      <tr>
+          <td>小三</td>
+          <td>15 p</td>
+          <td>16.0 pt</td>
+      </tr>
+      <tr>
+          <td>四号</td>
+          <td>14 p</td>
+          <td>15.0 pt</td>
+      </tr>
+      <tr>
+          <td>小四</td>
+          <td>12 p</td>
+          <td>12.8 pt</td>
+      </tr>
+      <tr>
+          <td>五号</td>
+          <td>10.5 p</td>
+          <td>11.2 pt</td>
+      </tr>
+      <tr>
+          <td>小五</td>
+          <td>9 p</td>
+          <td>9.6 pt</td>
+      </tr>
+      <tr>
+          <td>六号</td>
+          <td>7.5 p</td>
+          <td>8.0 pt</td>
+      </tr>
+      <tr>
+          <td>小六</td>
+          <td>6.5 p</td>
+          <td>7.0 pt</td>
+      </tr>
+      <tr>
+          <td>七号</td>
+          <td>5.5 p</td>
+          <td>5.9 pt</td>
+      </tr>
+      <tr>
+          <td>八号</td>
+          <td>5 p</td>
+          <td>5.3 pt</td>
+      </tr>
+  </tbody>
+</table>
+<p>1 磅 = 1/72 英寸 = 0.3527 毫米</p>
+<p>1 px ＝ 0.75 pt</p>
+<ul>
+<li>px：pixel，像素，屏幕上显示的最小单位，用于网页设计，直观方便</li>
+<li>pt：point，是一个标准的长度单位，1 pt ＝ 1/72 英寸，用于印刷业</li>
+<li>一般默认单倍行距是 5 号字体，行间距为 12 磅</li>
+<li>对于字号为 10 磅的文本，在使用 1.5 倍行距时，行距约为 15 磅</li>
+<li>对于字号为 10 磅的文本，在使用 2 倍行距时，行距约为 20 磅</li>
+</ul>
+<h1 id="3-延伸阅读">3. 延伸阅读</h1>
+<ul>
+<li><a href="https://blog.csdn.net/u010297791/article/details/54232542">【Latex】Latex调整行间距_latex设置22磅行距-CSDN博客</a></li>
+<li><a href="https://blog.csdn.net/linder0209/article/details/84128166">字体大小对照表-CSDN博客</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>LaTeX问题File ended while scanning use of @writefile - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">LaTeX问题File ended while scanning use of @writefile</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2019-01-18</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>问题描述：File ended while scanning use of @writefile.</p>
+<p>我的解决方法，在Mac系统下重新安装了MacTex2018，然后编译之后，问题就自动解决了。</p>
+<h1 id="在网上搜索的办法并没有解决问题">在网上搜索的办法并没有解决问题：</h1>
+<ul>
+<li>
+<p><a href="https://www.jianshu.com/p/b92fff3e9742?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation">https://www.jianshu.com/p/b92fff3e9742?utm_campaign=maleskine&amp;utm_content=note&amp;utm_medium=seo_notes&amp;utm_source=recommendation</a> 给出了编译报出：File ended while scanning use of @writefile. 错误我一直以为是哪里有{}不对等导致的，仔细检查并未发现！真实原因：实际上就是因为aux文件没有完整输入，导致上次编译结束后aux文件的部分内容缺失。处理：删掉原来的.aux文件即可解决！再次编译就通过了。</p>
+</li>
+<li>
+<p><a href="https://blog.csdn.net/kebu12345678/article/details/79301284">https://blog.csdn.net/kebu12345678/article/details/79301284</a>给出了解决方法：删除编译文件夹内.aux扩展名结尾的文件，重新用Latex命令进行编译，自动生成正确的aux文件，完成错误的修复。</p>
+</li>
+<li>
+<p>英文原文见这里：</p>
+</li>
+</ul>
+<p>Solution to: File ended while scanning use of @writefile</p>
+<p>Recently came across this error in latex. This shows up every
+time I try to compile the code after I first saw this error and
+restarting my system or the latex editor did not help-</p>
+<blockquote>
+<p>Runaway argument?
+! File ended while scanning use of @writefile.</p>
+<p>par
+l.110 begin{document}</p>
+</blockquote>
+<p>This error is seen typically because of an incomplete
+entry in the aux file and can be removed by
+deleting the file with .aux extension in the latex source.
+To re-generate these aux files “latex” needs to be run.
+Note – you have to run latex and not texify or any
+other tool.</p>
+<p>Good luck.</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

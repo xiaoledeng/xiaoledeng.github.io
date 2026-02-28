@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Python的版本查看 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Python的版本查看</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2019-08-28</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>在命令行查看Python版本：</p>
+<pre><code>python —V
+</code></pre>
+<p>或者</p>
+<pre><code>python3 —V
+</code></pre>
+<p>或者</p>
+<pre><code>import sys
+print(sys.version_info)
+print(sys.version)
+</code></pre>
+<h1 id="例子">例子</h1>
+<p>在我电脑命令行上出来的结果依次为：</p>
+<pre><code>➜  ~ python2 -V
+Python 2.7.10
+➜  ~ python3 -V
+Python 3.7.4
+</code></pre>
+<p>进入python3下面：</p>
+<pre><code>➜  ~ python3
+Python 3.7.4 (default, Jul  9 2019, 18:13:23)
+[Clang 10.0.1 (clang-1001.0.46.4)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import sys
+&gt;&gt;&gt; print(sys.version_info)
+sys.version_info(major=3, minor=7, micro=4, releaselevel='final', serial=0)
+&gt;&gt;&gt; print(sys.version)
+3.7.4 (default, Jul  9 2019, 18:13:23)
+[Clang 10.0.1 (clang-1001.0.46.4)]
+</code></pre>
+<p>进入python2下面：</p>
+<pre><code>➜  ~ python2
+Python 2.7.10 (default, Feb 22 2019, 21:55:15)
+[GCC 4.2.1 Compatible Apple LLVM 10.0.1 (clang-1001.0.37.14)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; import sys
+&gt;&gt;&gt; print(sys.version_info)
+sys.version_info(major=2, minor=7, micro=10, releaselevel='final', serial=0)
+&gt;&gt;&gt; print(sys.version)
+2.7.10 (default, Feb 22 2019, 21:55:15)
+[GCC 4.2.1 Compatible Apple LLVM 10.0.1 (clang-1001.0.37.14)]
+</code></pre>
+<h1 id="注意事项">注意事项</h1>
+<ul>
+<li>有两个主要版本的Python仍在使用中：Python 2和Python 3。</li>
+<li>Python有许多流行：CPython，Jython，IronPython，PyPy等。</li>
+<li>确保在系统上运行Python的命令行是您期望的版本。</li>
+<li>首选Python 3作为您的下一个项目，因为这是Python社区的主要关注点。</li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

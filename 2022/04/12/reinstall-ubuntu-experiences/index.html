@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>重装Ubuntu系统的经验总结和软件清单 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">重装Ubuntu系统的经验总结和软件清单</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-04-12</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/lists/">#Lists</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>居家办公期间，台式机的<code>Ubuntu</code>系统界面崩溃，是因为<code>Gnome</code>桌面的问题，即不能用登陆桌面，也不能<code>ssh</code>登陆。</p>
+<p>返校后，重装了<code>Ubuntu</code>系统，包括<a href="/2022/04/06/asrock-b460m-bios-set/">华擎B460M主板还原BIOS设置</a>。</p>
+<p>隔天，设置命令行启动，结果<code>Ubuntu</code>系统再次崩溃，继续重装。</p>
+<p>再隔一天，关机键强制重启系统后，<code>Ubuntu</code>系统又一次崩溃，原因是文件损坏，继续重装。</p>
+<p>共计3次重装，所幸U盘是3.0接口，并且用固态硬盘，安装<code>Ubuntu</code>系统的时间大约30分钟内。</p>
+<p>本文是记录<code>Ubuntu</code>系统安装后的一些经验总结，包括软件安装的清单。</p>
+<p>经过这些天的试验，对个人而已，<code>Ubuntu</code>系统适合用于科学计算，不适合日常科研办公用。即，Ubuntu的状态为：长期开机运行，不外接显示器、键盘和鼠标，仅安装基本编程跑运算的软件，如，<code>Mathematica</code>、<code>Matlab</code>、<code>Fortran</code>和<code>Python</code>等，可以利用远程软件<code>Anydesk</code>和<code>Todesk</code>访问，也可以利用<code>ssh</code>命令行访问。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<ol>
+<li>
+<p>下载<code>Ubuntu</code>长期支持版本的<code>ISO</code>镜像，教育网可用中科大开源地址： <a href="https://mirrors.ustc.edu.cn/">https://mirrors.ustc.edu.cn/</a></p>
+</li>
+<li>
+<p>利用<code>Ventoy</code>制作U盘启动盘，见：<a href="/2022/02/22/ventoy/">多系统启动U盘安装工具：Ventoy</a></p>
+</li>
+<li>
+<p>安装完<code>Ubuntu</code>系统后，进行一些基本的设置，包括：自动登录、不黑屏和换源等，换源见：<a href="https://mirrors.ustc.edu.cn/help/ubuntu.html">Ubuntu 源使用帮助 — USTC Mirror Help 文档</a></p>
+</li>
+<li>
+<p><code>Ubuntu</code>虚拟桌面设置，即不需要外接显示器也可以远程访问，见：<a href="/2020/09/19/ubuntu-screen-remote-control/">Ubuntu虚拟显示器且远程控制（无显示器接入）</a></p>
+</li>
+<li>
+<p>安装基本软件，如：<code>Mathematica</code>和<code>Intel oneAPI</code>编程套件，见：<a href="/2021/11/22/ubuntu-install-intel-oneapi/">Ubuntu安装Intel® oneAPI Base &amp; HPC Toolkit</a></p>
+</li>
+<li>
+<p>安装远程控制软件，如：<code>AnyDesk</code> <a href="https://anydesk.com/zhs/downloads/linux">https://anydesk.com/zhs/downloads/linux</a> 和<code>ToDesk</code> <a href="https://www.todesk.com/linux.html">https://www.todesk.com/linux.html</a>，并进行基本设置，包括开机自动启动</p>
+</li>
+</ol>
+<p>至此，重启电脑后，可利用<code>AnyDesk</code>或<code>ToDesk</code>进行远程访问。</p>
+<ol start="7">
+<li>
+<p>安装<code>Clash</code>上网、<code>Zerotier</code>和<code>ssh</code>设置，此项是用于<code>ssh</code>命令行能够访问，见：<a href="/2020/11/13/ubuntu-zerotier/">Ubuntu配置ZeroTier</a>和 <a href="/2020/11/13/inside-login-ubuntu/">局域网ssh远程访问Ubuntu系统</a></p>
+</li>
+<li>
+<p>Ubuntu系统安全的设置，见：<a href="/2022/04/21/unhack-ubuntu-experiences/">Ubuntu防黑的经验总结</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>博客添加邮件订阅(2): Mailchimp - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">博客添加邮件订阅(2): Mailchimp</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-11-21</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/java/">#Java</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-引言">1. 引言</h1>
+<p>邮件订阅用 Mailchimp<sup>1</sup>。</p>
+<p>此邮件订阅功能还是参考博客——山茶花舍<sup>2</sup>。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<ol>
+<li>
+<p>先在注册和登录账号： <a href="https://us21.admin.mailchimp.com/">https://us21.admin.mailchimp.com/</a></p>
+</li>
+<li>
+<p>点击 <a href="https://us2.admin.mailchimp.com/campaigns/#/create-campaign/explore/emailCampaign:custom">Create an Automation Email</a>，选择 Share blog updates，点击 “Begin”进入下一步</p>
+</li>
+<li>
+<p>RSS Feed： RSS feed URL 处填写为自己网站的 RSS 订阅链接，比如： <a href="https://xiaoledeng.com/index.xml">https://xiaoledeng.com/index.xml</a> ，周期可以根据需要设置。 选中 Resize RSS feed images to fit template，可以优化邮件内图片的尺寸。完成后，点击右下角的 Next。</p>
+</li>
+<li>
+<p>Recipients：选择 Entire audience（全体观众）。完成后，点击右下角的 Next。</p>
+</li>
+<li>
+<p>Setup：这一步设置Campaign info。Email subject 为发送邮件的标题，Mailchimp 的 RSS 格式化标签<sup>3</sup>为：<code>*|RSSITEM:TITLE|*</code>。From Name 为邮件中显示的发件人名字。From email address 为邮件中显示的发件人地址。 More options 中的 Auto-convert video 推荐选中，可以优化 Newsltter 内视频的样式。完成后，点击右下角的 Next。</p>
+</li>
+<li>
+<p>Template：这一步选择邮件模版。选中 Basic 栏下的 1 Column。</p>
+</li>
+<li>
+<p>Design：这一步设置邮件样式。将左侧预设的中间内容移除，在右侧的 Blocks 栏内找到 RSS Header 与 RSS Items，将这两项拖入左侧内容中。分别设置 RSS Header 与 RSS Items的样式为 Custom，可以设置字体 Font。完成后，点击右下角的 Next。</p>
+</li>
+<li>
+<p>Confirm：每一步完成，点击右下角的 Confirm。</p>
+</li>
+<li>
+<p>博客添加订阅邮件页：在 Audience 上有提供 <a href="https://us21.admin.mailchimp.com/audience/forms/dashboard/">Signup forms</a>, 推荐： <code>Embed code</code>，在<code>config.toml</code>添加菜单栏</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[[menu.main]]
+</span></span><span style="display:flex;"><span>weight = <span style="color:#f60">50</span>
+</span></span><span style="display:flex;"><span>name = <span style="color:#c30">&#34;Subscribe&#34;</span>
+</span></span><span style="display:flex;"><span>url = <span style="color:#c30">&#34;/subscribe/&#34;</span>
+</span></span></code></pre></div><p>在<code>content/</code>文件夹，添加<code>subscribe.md</code>文件，内容为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title:
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;div id=&#34;mc_embed_shell&#34;&gt;
+</span></span><span style="display:flex;"><span>      &lt;link href=&#34;//cdn-images.mailchimp.com/embedcode/classic-061523.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;&gt;
+</span></span><span style="display:flex;"><span>  &lt;style type=&#34;text/css&#34;&gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#999;font-weight:bold">#mc_embed_signup</span>{background:<span style="color:#999;font-weight:bold">#fff</span>; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 350px;}
+</span></span><span style="display:flex;"><span>        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+</span></span><span style="display:flex;"><span>           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</span></span><span style="display:flex;"><span>&lt;/style&gt;
+</span></span><span style="display:flex;"><span>&lt;div id=&#34;mc_embed_signup&#34;&gt;
+</span></span><span style="display:flex;"><span>    &lt;form action=&#34;https://xiaoledeng.us21.list-manage.com/subscribe/post?u=89d1f8a7730d94c22f142d471&amp;amp;id=5b8957b4b2&amp;amp;f_id=0017e8e6f0&#34; method=&#34;post&#34; id=&#34;mc-embedded-subscribe-form&#34; name=&#34;mc-embedded-subscribe-form&#34; class=&#34;validate&#34; target=&#34;_blank&#34;&gt;
+</span></span><span style="display:flex;"><span>        &lt;div id=&#34;mc_embed_signup_scroll&#34;&gt;&lt;h2&gt;Subscribe my website&lt;/h2&gt;
+</span></span><span style="display:flex;"><span>            &lt;div class=&#34;indicates-required&#34;&gt;&lt;span class=&#34;asterisk&#34;&gt;*&lt;/span&gt; indicates required&lt;/div&gt;
+</span></span><span style="display:flex;"><span>            &lt;div class=&#34;mc-field-group&#34;&gt;&lt;label for=&#34;mce-EMAIL&#34;&gt;Email Address &lt;span class=&#34;asterisk&#34;&gt;*&lt;/span&gt;&lt;/label&gt;&lt;input type=&#34;email&#34; name=&#34;EMAIL&#34; class=&#34;required email&#34; id=&#34;mce-EMAIL&#34; required=&#34;&#34; value=&#34;&#34;&gt;&lt;/div&gt;&lt;div class=&#34;mc-field-group&#34;&gt;&lt;label for=&#34;mce-FNAME&#34;&gt;First Name &lt;/label&gt;&lt;input type=&#34;text&#34; name=&#34;FNAME&#34; class=&#34; text&#34; id=&#34;mce-FNAME&#34; value=&#34;&#34;&gt;&lt;/div&gt;&lt;div class=&#34;mc-field-group&#34;&gt;&lt;label for=&#34;mce-LNAME&#34;&gt;Last Name &lt;/label&gt;&lt;input type=&#34;text&#34; name=&#34;LNAME&#34; class=&#34; text&#34; id=&#34;mce-LNAME&#34; value=&#34;&#34;&gt;&lt;/div&gt;
+</span></span><span style="display:flex;"><span>        &lt;div id=&#34;mce-responses&#34; class=&#34;clear foot&#34;&gt;
+</span></span><span style="display:flex;"><span>            &lt;div class=&#34;response&#34; id=&#34;mce-error-response&#34; style=&#34;display: none;&#34;&gt;&lt;/div&gt;
+</span></span><span style="display:flex;"><span>            &lt;div class=&#34;response&#34; id=&#34;mce-success-response&#34; style=&#34;display: none;&#34;&gt;&lt;/div&gt;
+</span></span><span style="display:flex;"><span>        &lt;/div&gt;
+</span></span><span style="display:flex;"><span>    &lt;div aria-hidden=&#34;true&#34; style=&#34;position: absolute; left: -5000px;&#34;&gt;
+</span></span><span style="display:flex;"><span>        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+</span></span><span style="display:flex;"><span>        &lt;input type=&#34;text&#34; name=&#34;b_89d1f8a7730d94c22f142d471_5b8957b4b2&#34; tabindex=&#34;-1&#34; value=&#34;&#34;&gt;
+</span></span><span style="display:flex;"><span>    &lt;/div&gt;
+</span></span><span style="display:flex;"><span>        &lt;div class=&#34;optionalParent&#34;&gt;
+</span></span><span style="display:flex;"><span>            &lt;div class=&#34;clear foot&#34;&gt;
+</span></span><span style="display:flex;"><span>                &lt;input type=&#34;submit&#34; name=&#34;subscribe&#34; id=&#34;mc-embedded-subscribe&#34; class=&#34;button&#34; value=&#34;Subscribe&#34;&gt;
+</span></span><span style="display:flex;"><span>                &lt;p style=&#34;margin: 0px auto;&#34;&gt;&lt;a href=&#34;http://eepurl.com/iErh_6&#34; title=&#34;Mailchimp - email marketing made easy and fun&#34;&gt;&lt;span style=&#34;display: inline-block; background-color: transparent; border-radius: 4px;&#34;&gt;&lt;img class=&#34;refferal_badge&#34; src=&#34;https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg&#34; alt=&#34;Intuit Mailchimp&#34; style=&#34;width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;&#34;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+</span></span><span style="display:flex;"><span>            &lt;/div&gt;
+</span></span><span style="display:flex;"><span>        &lt;/div&gt;
+</span></span><span style="display:flex;"><span>    &lt;/div&gt;
+</span></span><span style="display:flex;"><span>&lt;/form&gt;
+</span></span><span style="display:flex;"><span>&lt;/div&gt;
+</span></span><span style="display:flex;"><span>&lt;script type=&#34;text/javascript&#34; src=&#34;//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js&#34;&gt;&lt;/script&gt;&lt;script type=&#34;text/javascript&#34;&gt;(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]=&#39;EMAIL&#39;;ftypes[0]=&#39;email&#39;;fnames[1]=&#39;FNAME&#39;;ftypes[1]=&#39;text&#39;;fnames[2]=&#39;LNAME&#39;;ftypes[2]=&#39;text&#39;;fnames[3]=&#39;ADDRESS&#39;;ftypes[3]=&#39;address&#39;;fnames[4]=&#39;PHONE&#39;;ftypes[4]=&#39;phone&#39;;fnames[5]=&#39;BIRTHDAY&#39;;ftypes[5]=&#39;birthday&#39;;}(jQuery));var $mcj = jQuery.noConflict(true);&lt;/script&gt;&lt;/div&gt;
+</span></span></code></pre></div><h1 id="3-mailchimp修改时区">3. Mailchimp修改时区</h1>
+<p>登录 <a href="https://us21.admin.mailchimp.com/">Mailchimp</a>，点击右上角头像，选择 Profile — Settings — Details — Timezone，选择合适的时区（比如：GMT+08:00 Shanghai），最后保存。</p>
+<h1 id="4-延伸阅读">4. 延伸阅读</h1>
+<ol>
+<li><a href="https://us21.admin.mailchimp.com/">Mailchimp</a></li>
+<li><a href="https://irithys.com/p/blog-newsletter/">静态博客添加 Newsletter 的几种推荐方案</a></li>
+<li><a href="https://mailchimp.com/help/rss-merge-tags/#channel+tags">Mailchimp 官方 RSS 格式参考</a></li>
+<li><a href="https://www.skyue.com/20031415.html">使用mailchimp将RSS转为邮件订阅 - 拾月</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

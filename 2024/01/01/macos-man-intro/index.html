@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Introduction of macOS&#39;s man - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Introduction of macOS&#39;s man</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-01</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/freebsd/">#FreeBSD</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="0-引言">0. 引言</h1>
+<p>macOS&rsquo;s <code>man</code> (i.e., <code>manual</code>) is based on FreeBSD, which is divided into 9 sections：</p>
+<ol>
+<li>General user commands</li>
+<li>System calls and error numbers</li>
+<li>C programming libraries</li>
+<li>Devices and device drivers</li>
+<li>File formats</li>
+<li>Game instructions</li>
+<li>Miscellaneous information</li>
+<li>System maintenance commands</li>
+<li>Kernel interfaces</li>
+</ol>
+<h1 id="1-general-user-commands">1. General user commands</h1>
+<p>Command: <code>man 1 intro</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>NAME
+</span></span><span style="display:flex;"><span>     intro – introduction to general commands <span style="color:#555">(</span>tools and utilities<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DESCRIPTION
+</span></span><span style="display:flex;"><span>     Section one of the manual contains most of the commands which comprise the BSD user
+</span></span><span style="display:flex;"><span>     environment.  Some of the commands included in section one are text editors, <span style="color:#366">command</span>
+</span></span><span style="display:flex;"><span>     shell interpreters, searching and sorting tools, file manipulation commands system
+</span></span><span style="display:flex;"><span>     status commands, remote file copy commands, mail commands, compilers and compiler
+</span></span><span style="display:flex;"><span>     tools, formatted output tools, and line printer commands.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     All commands <span style="color:#366">set</span> a status value upon <span style="color:#366">exit</span> which may be tested to see <span style="color:#069;font-weight:bold">if</span> the <span style="color:#366">command</span>
+</span></span><span style="display:flex;"><span>     completed normally.  The <span style="color:#366">exit</span> values and their meanings are explained in the
+</span></span><span style="display:flex;"><span>     individual manuals.  Traditionally, the value <span style="color:#f60">0</span> signifies successful completion of
+</span></span><span style="display:flex;"><span>     the command.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SEE ALSO
+</span></span><span style="display:flex;"><span>     man<span style="color:#555">(</span>1<span style="color:#555">)</span>, intro<span style="color:#555">(</span>2<span style="color:#555">)</span>, intro<span style="color:#555">(</span>4<span style="color:#555">)</span>, intro<span style="color:#555">(</span>8<span style="color:#555">)</span>,
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     Tutorials in the UNIX User<span style="color:#a00;background-color:#faa">&#39;</span>s Manual Supplementary Documents.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HISTORY
+</span></span><span style="display:flex;"><span>     A intro manual appeared in Version <span style="color:#f60">6</span> AT&amp;T UNIX.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>macOS 13.5
+</span></span><span style="display:flex;"><span>December 30, <span style="color:#f60">1993</span>
+</span></span></code></pre></div><h1 id="2-system-calls-and-error-numbers">2. System calls and error numbers</h1>
+<p>Command: <code>man 2 intro</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>NAME
+</span></span><span style="display:flex;"><span>     intro – introduction to system calls and error numbers
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SYNOPSIS
+</span></span><span style="display:flex;"><span>     <span style="color:#09f;font-style:italic">#include &lt;sys/errno.h&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DESCRIPTION
+</span></span><span style="display:flex;"><span>     This section provides an overview of the system calls, their error returns, and other
+</span></span><span style="display:flex;"><span>     common definitions and concepts.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HISTORY
+</span></span><span style="display:flex;"><span>     An intro manual page appeared in Version <span style="color:#f60">6</span> AT&amp;T UNIX.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>BSD <span style="color:#f60">4</span>
+</span></span><span style="display:flex;"><span>March 18, <span style="color:#f60">2015</span>
+</span></span></code></pre></div><h1 id="3-c-programming-libraries">3. C programming libraries</h1>
+<p>Command: <code>man 3 intro</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>NAME
+</span></span><span style="display:flex;"><span>     intro – introduction to the C libraries
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DESCRIPTION
+</span></span><span style="display:flex;"><span>     This section provides an overview of the C library functions, their error returns and
+</span></span><span style="display:flex;"><span>     other common definitions and concepts.  Most of these functions are available from
+</span></span><span style="display:flex;"><span>     the System library, libSystem.  Other libraries must be indicated at compile <span style="color:#366">time</span>
+</span></span><span style="display:flex;"><span>     with the -l option of the compiler.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HISTORY
+</span></span><span style="display:flex;"><span>     An intro manual appeared in Version <span style="color:#f60">7</span> AT&amp;T UNIX.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>macOS 13.5
+</span></span><span style="display:flex;"><span>August 17, <span style="color:#f60">2006</span>
+</span></span></code></pre></div><h1 id="4-devices-and-device-drivers">4. Devices and device drivers</h1>
+<p>Command: <code>man 4 intro</code></p>
+<p>Display: <code>No manual entry for intro</code></p>
+<h1 id="5-file-formats">5. File formats</h1>
+<p>Command: <code>man 5 intro</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>NAME
+</span></span><span style="display:flex;"><span>     intro – introduction to file formats
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DESCRIPTION
+</span></span><span style="display:flex;"><span>     This section contains information about file formats.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HISTORY
+</span></span><span style="display:flex;"><span>     The intro section manual page appeared in FreeBSD 2.2.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>macOS 13.5
+</span></span><span style="display:flex;"><span>February 16, <span style="color:#f60">1997</span>
+</span></span></code></pre></div><h1 id="6-game-instructions">6. Game instructions</h1>
+<p>Command: <code>man 6 intro</code></p>
+<p>Display: <code>No manual entry for intro</code></p>
+<h1 id="7-miscellaneous-information">7. Miscellaneous information</h1>
+<p>Command: <code>man 7 intro</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>NAME
+</span></span><span style="display:flex;"><span>     intro – miscellaneous information pages
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DESCRIPTION
+</span></span><span style="display:flex;"><span>     This section contains miscellaneous documentation.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HISTORY
+</span></span><span style="display:flex;"><span>     The intro section manual page appeared in 4.2BSD.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>macOS 13.5
+</span></span><span style="display:flex;"><span>June 5, <span style="color:#f60">1993</span>
+</span></span></code></pre></div><h1 id="8-system-maintenance-commands">8. System maintenance commands</h1>
+<p>Command: <code>man 8 intro</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>NAME
+</span></span><span style="display:flex;"><span>     intro – introduction to system maintenance procedures and commands
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DESCRIPTION
+</span></span><span style="display:flex;"><span>     This section contains information related to system operation and maintenance.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     It describes commands used to create new file systems <span style="color:#555">(</span>newfs<span style="color:#555">(</span>8<span style="color:#555">))</span>, verify the
+</span></span><span style="display:flex;"><span>     integrity of the file systems <span style="color:#555">(</span>fsck<span style="color:#555">(</span>8<span style="color:#555">))</span>, control disk usage <span style="color:#555">(</span>edquota<span style="color:#555">(</span>8<span style="color:#555">))</span>, maintain
+</span></span><span style="display:flex;"><span>     system backups <span style="color:#555">(</span>dump<span style="color:#555">(</span>8<span style="color:#555">))</span>, and recover files when disks die an untimely death
+</span></span><span style="display:flex;"><span>     <span style="color:#555">(</span>restore<span style="color:#555">(</span>8<span style="color:#555">))</span>.  Network related services like ftpd<span style="color:#555">(</span>8<span style="color:#555">)</span> are also described.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     All commands <span style="color:#366">set</span> an <span style="color:#366">exit</span> status.  Its value may be tested to see <span style="color:#069;font-weight:bold">if</span> the <span style="color:#366">command</span>
+</span></span><span style="display:flex;"><span>     completed normally.  Unless otherwise noted <span style="color:#555">(</span>rare<span style="color:#555">)</span>, the value <span style="color:#f60">0</span> signifies successful
+</span></span><span style="display:flex;"><span>     completion of the command, <span style="color:#069;font-weight:bold">while</span> a value &gt;0 indicates an error.  Some commands
+</span></span><span style="display:flex;"><span>     attempt to describe the nature of the failure by using error codes defined in
+</span></span><span style="display:flex;"><span>     sysexits<span style="color:#555">(</span>3<span style="color:#555">)</span>, or <span style="color:#366">set</span> the status to arbitrary values &gt;0 <span style="color:#555">(</span>typically 1<span style="color:#555">)</span>, but many such
+</span></span><span style="display:flex;"><span>     values are not described in the manual.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HISTORY
+</span></span><span style="display:flex;"><span>     The intro section manual page appeared in 4.2BSD.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>macOS 13.5
+</span></span><span style="display:flex;"><span>October 22, <span style="color:#f60">2006</span>
+</span></span></code></pre></div><h1 id="9-kernel-interfaces">9. Kernel interfaces</h1>
+<p>Command: <code>man 9 intro</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>NAME
+</span></span><span style="display:flex;"><span>     intro – introduction to system kernel interfaces
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>DESCRIPTION
+</span></span><span style="display:flex;"><span>     This section contains information about the interfaces and subroutines in the kernel.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>HISTORY
+</span></span><span style="display:flex;"><span>     The intro section manual page appeared in FreeBSD 2.2.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>macOS 13.5
+</span></span><span style="display:flex;"><span>December 13, <span style="color:#f60">1995</span>
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Mac下为什么卸载Microsoft-Office系列和Mathtype？ - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Mac下为什么卸载Microsoft-Office系列和Mathtype？</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2017-04-07</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="事情的缘由">事情的缘由</h1>
+<p>昨天(2017.4.7)，在Mac系统下果断地卸载了Microsoft Office系列(Word、PPT和Excel)和Mathtype。</p>
+<p>首先要说明的是，这些软件很好，至少是在Windows系统下面，非常适用。</p>
+<p>而在Mac系统下面，也可以用Word + Mathtype来进行科研文章的撰写。</p>
+<p>最开始，在Mac系统下用Word + Mathtype撰写文章的时候，完全没有问题。可是，在提交文章到国外杂志的系统时，就出现问题，而且是严重的问题：Word文章中的部分公式(即为用Mathtype编辑的公式)会显示不出来。不仅如此，在后续修改文章时，特别是对于使用Mathtype编辑的公式进行修改时，简直是噩梦。</p>
+<p>经过仔细地调试，终于确定问题出现的原因：Mac系统和Windows系统的Word + Mathtype会出现不兼容的现象(可能是不同系统字体缺失的原因)。</p>
+<p>最后，解决方案为，把Mac下面编辑的Word文档在Windows系统下面重新用Word打开，然后对文稿中缺失公式用Mathtype重新编辑（PS：这个工作量太大了，花了一个下午的时间）。</p>
+<p>注意，以上的情况仅针对于理工科的研究生，特别是需要使用Mathtype来编辑大量的公式。</p>
+<h1 id="解决方案">解决方案</h1>
+<p>那么，科研文章的撰写，在Mac下面最适合的工具是什么尼？</p>
+<p>答案是：Latex，工具包为MacTex中的TexShop。</p>
+<p>如果需要修改科研文章中的公式，由于Latex是代码表示，可以直接全文查找+替换即可。如此，几分钟的全文查找+替换可以解决上面提到Mathetype需要花一个下午的工作量。瞬间，二者立刻高下立判。</p>
+<h1 id="末了的话">末了的话</h1>
+<ul>
+<li>在什么圈子里面，使用最合适此圈子的工具：国际上科研文章的撰写大部分是Latex，并且国际期刊都提供自己杂志的Latex模板。猜测：国际期刊最后的排版还是使用Latex来排的。</li>
+<li>在什么系统下面，使用最适合此系统的工具。Microsoft Word + Mathtype适合Windows系统下面撰写科研文章，跨平台会出现问题；当然Latex不仅可以在Mac系统下使用，也可以在Windows系统下使用。</li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

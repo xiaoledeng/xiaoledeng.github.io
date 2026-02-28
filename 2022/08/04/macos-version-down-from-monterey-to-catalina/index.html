@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS系统从Monterey 12.3降到Catalina 10.15.7 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS系统从Monterey 12.3降到Catalina 10.15.7</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-08-04</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-引言">1. 引言</h1>
+<p>最近，明显感觉macOS系统变卡了。</p>
+<p>原因是：<code>2015 Macbook Pro 13寸</code>安装的<code>Monterey 12.3</code>系统不是很流畅，硬件带不动软件。</p>
+<p>在知乎搜索了一下，得到以下答案：</p>
+<blockquote>
+<p>Monterey的确是给 m1 pro/max 准备的，建议 intel 芯片的就不要升级了。</p>
+</blockquote>
+<blockquote>
+<p>用的最多的应该是 macOS Mojave 10.14.x、Catalina 10.15.x 了，非 M1 芯片的 intel 机器，选这两个就好了。</p>
+</blockquote>
+<blockquote>
+<p>机器出厂版本的最后一个小版本比较好（不升大版本）。</p>
+</blockquote>
+<blockquote>
+<p>若追求系统稳定建议升级到 macOS Catalina 10.15.7。</p>
+</blockquote>
+<blockquote>
+<p>Catalina是macOS 10里的最后一个版本，Catalina能比Mojave能获得更久的APP适配支持。如果为了长远的软件适配考虑，想尽量选一个有更长生命周期的版本的话，Catalina是那个更适合Mac养老的版本。</p>
+</blockquote>
+<p>故此，综合考虑<code>流畅性</code>、<code>稳定性</code>、<code>兼容性</code>和<code>安全性</code>（<a href="https://support.apple.com/zh-cn/HT213343">安全性更新 2022-005 Catalina</a>，发布时间：2022 年 7 月 20 日），选择：<code>Catalina 10.15.7</code>系统。</p>
+<h1 id="2-操作流程">2. 操作流程</h1>
+<p>第一，备份系统的数据。</p>
+<p>第二，启动时使用 <code>Shift</code>-<code>Option</code>-<code>Command</code>-<code>R</code> 进入 <code>macOS 恢复</code>的实用工具窗口。</p>
+<p>第三，进入硬盘工具，<code>抹掉磁盘</code>，注意是内部盘。</p>
+<p>第四，返回 macOS 恢复的实用工具窗口，选择<code>重新安装系统</code>，这时应该是安装<code>出厂版本的系统</code>。我的是<code>OS X El Capitan 10.11</code>。</p>
+<p>第五，安装完<code>OS X El Capitan 10.11</code>系统后，打开Safari浏览器地址<a href="https://support.apple.com/zh-cn/HT211683">如何获取旧版 macOS - Apple 支持 (中国)</a>，点击<a href="macappstores://apps.apple.com/cn/app/macOS-catalina/id1466841314?mt=12">macOS Catalina</a>下载系统，而后安装操作完成安装。</p>
+<p>安装完成后，<code>Catalina 10.15.7</code>系统用起来变流畅。</p>
+<h1 id="3-注意事项">3. 注意事项</h1>
+<ul>
+<li>抹掉磁盘前，一定要备份好数据；</li>
+<li>全程不需要额外的硬件，不过需要在网络环境下操作；</li>
+<li><code>OS X El Capitan 10.11</code>系统太老了，虽然很流畅，但是很多软件安装不了，除非软件安装包有备份；</li>
+<li>硬件决定了系统，系统决定了软件，<code>流畅性</code>和<code>稳定性</code>是电脑高效工作的前提；另外，<code>兼容性</code>和<code>安全性</code>也是必须要保证的。</li>
+</ul>
+<h1 id="4-参考">4. 参考</h1>
+<ul>
+<li><a href="https://www.zhihu.com/question/286767707/answer/2275575967">macOS的哪个版本最好用？ - 知乎</a></li>
+<li><a href="https://www.zhihu.com/question/489064765/answer/2141240243">macOS 到底哪个版本最流畅最省电最好用? - 知乎</a></li>
+<li><a href="https://support.apple.com/zh-cn/HT204904">如何重新安装 macOS - Apple 支持 (中国)</a></li>
+<li><a href="https://support.apple.com/zh-cn/HT211683">如何获取旧版 macOS - Apple 支持 (中国)</a></li>
+<li><a href="https://support.apple.com/zh-cn/HT201372">如何创建可引导的 macOS 安装器 - Apple 支持 (中国)</a></li>
+<li><a href="https://support.apple.com/zh-cn/HT201222">Apple 安全性更新 - Apple 支持 (中国)</a></li>
+<li><a href="https://www.youtube.com/watch?v=MbP-QhXpMYw&amp;ab_channel=%D0%94%D0%BC%D0%B8%D1%82%D1%80%D0%B8%D0%B9%D0%9C%D0%B8%D1%80%D0%BE%D0%BD%D0%BE%D0%B2">Speed Test macOS Sierra vs Catalina, and other Operating Systems - YouTube</a></li>
+<li><a href="https://www.quora.com/Which-was-the-best-release-of-OS-X-and-why">Which was the best release of OS X, and why? - Quora</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

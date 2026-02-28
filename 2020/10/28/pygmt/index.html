@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>PyGMT: Pythonic Generic Mapping Tools - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">PyGMT: Pythonic Generic Mapping Tools</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-10-28</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/researchsoftware/">#Researchsoftware</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/gmt/">#GMT</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/drawing/">#Drawing</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/software/">#Software</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-introduction">1. Introduction</h1>
+<p style="text-align:justify; text-justify:inter-ideograph;">PyGMT is a library for processing geospatial and geophysical data and making publication quality maps and figures. It provides a Pythonic interface for the [Generic Mapping Tools (GMT)](https://github.com/GenericMappingTools/gmt), a command-line program widely used in the Earth Sciences.</p>
+<p>Documentation: <a href="https://www.pygmt.org/dev/">https://www.pygmt.org/dev/</a></p>
+<p>GitHub: <a href="https://github.com/GenericMappingTools/pygmt">https://github.com/GenericMappingTools/pygmt</a></p>
+<p>Install: <a href="https://www.pygmt.org/dev/install.html">https://www.pygmt.org/dev/install.html</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># install pygmt environment</span>
+</span></span><span style="display:flex;"><span>conda config --prepend channels conda-forge
+</span></span><span style="display:flex;"><span>conda create --name pygmt <span style="color:#033">python</span><span style="color:#555">=</span>3.8 pip numpy pandas xarray netcdf4 packaging gmt
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># open pygmt environment</span>
+</span></span><span style="display:flex;"><span>conda activate pygmt
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># install pygmt</span>
+</span></span><span style="display:flex;"><span>conda install pygmt
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># test</span>
+</span></span><span style="display:flex;"><span>conda install pytest pytest-mpl ipython
+</span></span><span style="display:flex;"><span>import pygmt
+</span></span><span style="display:flex;"><span>pygmt.show_versions<span style="color:#555">()</span>
+</span></span><span style="display:flex;"><span>pygmt.test<span style="color:#555">()</span>
+</span></span></code></pre></div><h1 id="2-finding-the-gmt-shared-library">2. Finding the GMT shared library</h1>
+<p>Sometimes, PyGMT will be unable to find the correct version of the GMT shared library. This can happen if you have multiple versions of GMT installed.</p>
+<p>You can tell PyGMT exactly where to look for libgmt by setting the GMT_LIBRARY_PATH environment variable. This should be set to the directory where libgmt.so, libgmt.dylib or gmt.dll can be found for Linux, macOS and Windows respectively. e.g. in a terminal run:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Linux/macOS</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">export</span> <span style="color:#033">GMT_LIBRARY_PATH</span><span style="color:#555">=</span><span style="color:#033">$HOME</span>/anaconda3/envs/pygmt/lib
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Windows</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">set</span> <span style="color:#c30">&#34;GMT_LIBRARY_PATH=C:\Users\USERNAME\Anaconda3\envs\pygmt\Library\bin\&#34;
+</span></span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS/Ubuntu任务队列task-spooler - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS/Ubuntu任务队列task-spooler</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2025-11-13</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/automation/">#Automation</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>在科研和开发中，经常会遇到这样的问题：有一批长时间运行的脚本或程序，需要一个接一个执行，而且希望方便地查看状态和日志。</p>
+<p>macOS / Ubuntu 自带的 nohup 或后台运行 (&amp;) 往往不够直观，也难以管理。</p>
+<p>这时就需要：轻量级任务队列 task-spooler（ts/ tsp） 。</p>
+<h1 id="2-什么是-task-spooler">2. 什么是 task-spooler</h1>
+<p>task-spooler 是一个简单的本地任务队列管理工具，只需把命令交给它，它会自动排队执行，并提供日志、状态监控和优先级管理。</p>
+<p>最大的优势是无需复杂配置，就能实现任务排队和后台管理。</p>
+<h1 id="3-安装">3. 安装</h1>
+<p>Ubuntu 安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt install task-spooler
+</span></span></code></pre></div><p>macOS 安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>brew install task-spooler
+</span></span></code></pre></div><p>注意⚠️： macOS 用 ts 调用；Ubuntu 用 tsp 调用。</p>
+<h1 id="4-基本用法">4. 基本用法</h1>
+<p>1、添加任务到队列</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tsp bash job.sh
+</span></span><span style="display:flex;"><span>tsp python script.py
+</span></span></code></pre></div><p>任务会自动排队，前一个任务结束后才执行下一个。</p>
+<p>2、查看任务状态</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tsp -l
+</span></span></code></pre></div><p>状态包括：R（running 运行中）、Q（queued 排队）、D（完成）、E（错误）。</p>
+<p>3、查看任务输出</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tsp -c <span style="color:#f60">0</span>      <span style="color:#09f;font-style:italic"># 查看ID为0的任务输出</span>
+</span></span><span style="display:flex;"><span>tsp -o <span style="color:#f60">0</span>      <span style="color:#09f;font-style:italic"># 输出文件路径</span>
+</span></span></code></pre></div><p>4、控制并行任务数</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>tsp -S <span style="color:#f60">2</span>      <span style="color:#09f;font-style:italic"># 同时运行最多2个任务</span>
+</span></span></code></pre></div><p>5、管理任务</p>
+<ul>
+<li>删除任务：tsp -r <id></li>
+<li>清空队列：tsp -C</li>
+<li>清除已完成任务：tsp -K</li>
+</ul>
+<p>6、详细命令：</p>
+<pre tabindex="0"><code>tsp -h
+usage: tsp [action] [-ngfmdE] [-L &lt;lab&gt;] [-D &lt;id&gt;] [cmd...]
+Env vars:
+  TS_SOCKET  the path to the unix socket used by the ts command.
+  TS_MAILTO  where to mail the result (on -m). Local user by default.
+  TS_MAXFINISHED  maximum finished jobs in the queue.
+  TS_MAXCONN  maximum number of ts connections at once.
+  TS_ONFINISH  binary called on job end (passes jobid, error, outfile, command).
+  TS_ENV  command called on enqueue. Its output determines the job information.
+  TS_SAVELIST  filename which will store the list, if the server dies.
+  TS_SLOTS   amount of jobs which can run at once, read on server start.
+  TMPDIR     directory where to place the output files and the default socket.
+Actions:
+  -K       kill the task spooler server
+  -C       clear the list of finished jobs
+  -l       show the job list (default action)
+  -S [num] get/set the number of max simultaneous jobs of the server.
+  -t [id]  &#34;tail -n 10 -f&#34; the output of the job. Last run if not specified.
+  -c [id]  like -t, but shows all the lines. Last run if not specified.
+  -p [id]  show the pid of the job. Last run if not specified.
+  -o [id]  show the output file. Of last job run, if not specified.
+  -i [id]  show job information. Of last job run, if not specified.
+  -s [id]  show the job state. Of the last added, if not specified.
+  -r [id]  remove a job. The last added, if not specified.
+  -w [id]  wait for a job. The last added, if not specified.
+  -k [id]  send SIGTERM to the job process group. The last run, if not specified.
+  -u [id]  put that job first. The last added, if not specified.
+  -U &lt;id-id&gt;  swap two jobs in the queue.
+  -B       in case of full queue on the server, quit (2) instead of waiting.
+  -h       show this help
+  -V       show the program version
+Options adding jobs:
+  -n       don&#39;t store the output of the command.
+  -E       Keep stderr apart, in a name like the output file, but adding &#39;.e&#39;.
+  -g       gzip the stored output (if not -n).
+  -f       don&#39;t fork into background.
+  -m       send the output by e-mail (uses sendmail).
+  -d       the job will be run only if the job before ends well
+  -D &lt;id&gt;  the job will be run only if the job of given id ends well.
+  -L &lt;lab&gt; name this task with a label, to be distinguished on listing.
+  -N &lt;num&gt; number of slots required by the job (1 default).
+</code></pre><h1 id="5-延伸阅读">5. 延伸阅读</h1>
+<ul>
+<li><a href="https://manpages.ubuntu.com/manpages/noble/man1/tsp.1.html">Ubuntu tsp - task spooler. A simple unix batch system</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

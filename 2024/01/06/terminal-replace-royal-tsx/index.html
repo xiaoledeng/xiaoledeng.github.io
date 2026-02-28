@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>随笔—终端替代Royal TSX软件 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">随笔—终端替代Royal TSX软件</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-06</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/ideas/">#Ideas</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/essay/">#Essay</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>从 2021 年开始，在 macOS 上用的服务器管理软件为<code>Royal TSX</code> <sup>1, 2</sup> 。</p>
+<p>Royal TSX 的免费版最多支持 10 个连接，包括 SSH 和 SFTP。不过，Royal TSX 软件是一个商业软件，个人版定价为 45 欧。</p>
+<p>从 2024 年开始，利用默认终端 (Terminal) 替代 Royal TSX 软件，实现<code>远程登录服务器</code>和<code>上传或下载文件/文件夹</code>：</p>
+<ul>
+<li><a href="/2024/01/04/macOS-terminal-ssh-login-server/">macOS终端SSH公钥登陆服务器</a></li>
+<li><a href="/2024/01/04/macOS-sftp-put-get-files/">macOS终端SFTP上传或下载服务器的文件</a></li>
+</ul>
+<p>系统默认的工具，会随着系统的更新而更新。另外，第三方开源软件或商业软件，也需要定期更新。</p>
+<p>一般而言，践行数字极简，软件越少越好。既然，macOS 终端能够替代 Royal TSX 软件，那么 Royal TSX 软件可以卸载了。</p>
+<h1 id="延伸阅读">延伸阅读</h1>
+<ol>
+<li><a href="https://www.royalapps.com/ts/mac/download">https://www.royalapps.com/ts/mac/download</a></li>
+<li><a href="/2021/05/27/royal-tsx/">Royal TSX：macOS系统的服务器管理软件</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

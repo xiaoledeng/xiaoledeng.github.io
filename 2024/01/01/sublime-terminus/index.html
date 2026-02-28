@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Sublime运行终端Terminus - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Sublime运行终端Terminus</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-01</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>第一步，安装插件 Terminus：先 <code>Ctrl + Shift + p</code>，选中 <code>Package Control: Install Package</code>，输入 <code>Terminus</code></p>
+<p>第二步，设置 Terminus 的 Command Palette：</p>
+<p>Settings &gt; Package Settings &gt; Terminus &gt; Command Palette，输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#555">[</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#555">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c30">&#34;caption&#34;</span>: <span style="color:#c30">&#34;Terminus: Open Default Shell in Tab (View)&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#c30">&#34;command&#34;</span>: <span style="color:#c30">&#34;terminus_open&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#c30">&#34;args&#34;</span>   : <span style="color:#555">{</span>
+</span></span><span style="display:flex;"><span>           <span style="color:#c30">&#34;cmd&#34;</span>: <span style="color:#c30">&#34;zsh&#34;</span>,
+</span></span><span style="display:flex;"><span>           <span style="color:#c30">&#34;cwd&#34;</span>: <span style="color:#c30">&#34;</span><span style="color:#a00">${</span><span style="color:#033">file_path</span>:<span style="color:#a00">${</span><span style="color:#033">folder</span><span style="color:#a00">}}</span><span style="color:#c30">&#34;</span>,
+</span></span><span style="display:flex;"><span>           <span style="color:#c30">&#34;title&#34;</span>: <span style="color:#c30">&#34;Command Prompt&#34;</span>,
+</span></span><span style="display:flex;"><span>           <span style="color:#c30">&#34;panel_name&#34;</span>: <span style="color:#c30">&#34;Terminus&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#555">}</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#555">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#555">]</span>  
+</span></span></code></pre></div><p>注意⚠️：zsh 可以替换成 bash 或 cmd.exe (Windows)</p>
+<p>第三步，设置 Terminus 的 Key Bindings：</p>
+<p>Settings &gt; Package Settings &gt; Terminus &gt; Key Bindings，输入：</p>
+<pre tabindex="0"><code>[
+   {
+       &#34;keys&#34;: [&#34;alt+1&#34;],
+       &#34;command&#34;: &#34;terminus_open&#34;,
+        &#34;args&#34;: {
+            &#34;cwd&#34;: &#34;${file_path:${folder}}&#34;,
+            &#34;post_window_hooks&#34;: [
+                [&#34;carry_file_to_pane&#34;, {&#34;direction&#34;: &#34;down&#34;}]
+            ]
+        }
+   },
+   { 
+        &#34;keys&#34;: [&#34;alt+2&#34;], 
+        &#34;command&#34;: &#34;terminus_close&#34;, 
+        &#34;context&#34;: [{ &#34;key&#34;: &#34;terminus_view&#34;}]
+    }
+] 
+</code></pre><p>注意⚠️：</p>
+<ul>
+<li><code>alt + 1</code> 为打开终端(split view)的快捷键</li>
+<li><code>alt + 2</code> 为关闭终端的快捷键</li>
+</ul>
+<h1 id="延伸阅读">延伸阅读</h1>
+<ul>
+<li><a href="https://packagecontrol.io/packages/Terminus">Terminus - Packages - Package Control</a></li>
+<li><a href="https://www.geeksforgeeks.org/how-to-use-terminal-in-sublime-text-editor/">How to Use Terminal in Sublime Text Editor ? - GeeksforGeeks</a></li>
+<li><a href="https://blog.csdn.net/yiyuzhan6325/article/details/105923270">SublimeText3中使用terminal终端_sublime terminus-CSDN博客</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

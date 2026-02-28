@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>拉格朗日点 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">拉格朗日点</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-06</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/geodesy/">#Geodesy</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>本文主要是 <a href="https://science.nasa.gov/solar-system/resources/faq/what-are-lagrange-points/">What are Lagrange Points? - NASA Science</a> 的翻译。</p>
+<h1 id="1-什么是拉格朗日点">1. 什么是拉格朗日点？</h1>
+<p>拉格朗日点是空间中太阳和地球的双体系统的引力产生吸引和排斥的平衡区域。这些平衡区域可以用作太空中航天器的“停车位”保持在固定位置，燃料消耗最小。</p>
+<p>拉格朗日点是两个大质量（太阳和地球）的引力恰好等于小物体（月球）与它们一起移动所需的向心力的位置。</p>
+<p>意大利-法国数学家约瑟夫-路易·拉格朗日（Joseph-Louis Lagrange）在他的获奖论文（Essai sur le Problème des Trois Corps，1772年）中考虑了这个被称为“通用三体问题”的数学问题。</p>
+<h1 id="2-拉格朗日点在哪里">2. 拉格朗日点在哪里？</h1>
+<embed src="/figures/20240106/Diagram_of_Sun-Earth_Lagrange_points.jpeg" width=100%>
+<p>图片来自于美国国家航空航天局</p>
+<p>在五个拉格朗日点中，三个不稳定（L1、L2和L3），两个稳定（L4和L5）：</p>
+<ul>
+<li>L1、L2和L3是不稳定拉格朗日点，位于连接两个大质量（太阳和地球）的线上。</li>
+<li>L4和L5是稳定的拉格朗日点，它们构成了两个等边三角形的顶点，另外的两个顶点有两个大质量（太阳和地球）。L4引领地球轨道，L5跟随。</li>
+</ul>
+<h1 id="3-拉格朗日点的用途">3. 拉格朗日点的用途</h1>
+<p>L1提供了不间断的太阳视图，目前是 Solar &amp; Heliospheric Observatory (<a href="https://soho.nascom.nasa.gov">https://soho.nascom.nasa.gov</a>) 的所在地。</p>
+<p>L2是 <a href="https://en.wikipedia.org/wiki/Wilkinson_Microwave_Anisotropy_Probe">Wilkinson Microwave Anisotropy Probe</a> 的所在地，目前是 <a href="https://sci.esa.int/web/planck">Planck</a> 的所在地，以及詹姆斯·韦伯太空望远镜的未来家园。L2是天文学的理想选择，因为航天器足够接近，可以轻松地与地球通信，可以将太阳、地球和月球放在航天器后面以获得太阳能，并且（有适当的屏蔽）为望远镜提供了深空的清晰视野。</p>
+<p>L1和L2在大约23天的时间尺度上是不稳定的，围绕这些位置运行的卫星需要进行定期的航向和姿态校正。</p>
+<p>不太可能找到L3点的任何用途，因为它始终隐藏在太阳后面。</p>
+<p>L4和L5是稳定轨道的所在地。</p>
+<h1 id="4-如何寻找拉格朗日点">4. 如何寻找拉格朗日点？</h1>
+<p>理解拉格朗日点的最简单方法是采用与系统一起旋转的参考系。在这个框架中对静止物体施加的力可以从有效电位中得出，就像从天气图中推断风速一样。</p>
+<p>当有效电位的轮廓最接近时，力最强；当轮廓相距很远时，力最弱。</p>
+<embed src="/figures/20240106/Contour_plot_of_Lagrange_points-1.jpeg" width=100%>
+<p>有效电位的轮廓图（未按比例绘制），图片来自于美国国家航空航天局</p>
+<p>在上面的等高线图中，可以看到L4和L5对应于山顶，L1、L2和L3对应于马鞍（即电位向一个方向向上弯曲，向另一个方向向下弯曲的点）。</p>
+<p>这表明，放置在拉格朗日点的卫星有徘徊的趋势（尝试将大理石放在西瓜上或真正的马鞍上，就明白了）。</p>
+<p>但当停在L4或L5的卫星开始从山上滚下来时，它的速度会加快。此时，科里奥利力开始发挥作用——与导致飓风在地球上旋转的力量相同——并将卫星送入围绕拉格朗日点的稳定轨道。</p>
+<embed src="/figures/20240106/Lagrangianpointsanimated.gif" width=100%>
+<p>绿色的点表示第三个物体与前两个物体保持相对静止的拉格朗日点。例如，黄色圆为太阳，蓝色点为地球，动画中为约略位置，详细位置与轨道需考虑质量比例和质心而稍异于动画位置。在拉格朗日点之外的其他位置，引力将牵引第三个物体进入不稳定的轨道。</p>
+<h1 id="延伸阅读">延伸阅读</h1>
+<ul>
+<li><a href="https://science.nasa.gov/solar-system/resources/faq/what-are-lagrange-points/">What are Lagrange Points? - NASA Science</a></li>
+<li><a href="https://www.sciencealert.com/unique-locations-in-space-could-trigger-a-fierce-new-space-race">Lagrange Points Could Become Battlegrounds in a New Space Race : ScienceAlert</a></li>
+<li><a href="http://www.clep.org.cn/n5982044/n5988864/c6806706/content.html#:~:text=%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E7%82%B9%E5%8F%88%E7%A7%B0%E5%B9%B3%E5%8A%A8%E7%82%B9,%E6%A0%BC%E6%9C%97%E6%97%A5%E7%82%B9%E4%B8%8A%E3%80%82">中国探月与深空探测网 - 科普知识 - 天文知识</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Lagrange_point">Lagrange point - Wikipedia</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

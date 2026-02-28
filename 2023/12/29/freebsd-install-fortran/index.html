@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>FreeBSD安装Fortran - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">FreeBSD安装Fortran</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-29</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/freebsd/">#FreeBSD</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/fortran/">#Fortran</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-说明">1. 说明</h1>
+<p>FreeBSD 的 Fortran 编译器是 <code>lfortran</code> :</p>
+<blockquote>
+<p>LFortran is a modern open-source (BSD licensed) interactive Fortran compiler built on top of LLVM. It can execute user’s code interactively to allow exploratory work (much like Python, MATLAB or Julia) as well as compile to binaries with the goal to run user’s code on modern architectures such as multi-core CPUs and GPUs.</p>
+</blockquote>
+<ul>
+<li>Website: <a href="https://lfortran.org">https://lfortran.org</a></li>
+<li>GitHub: <a href="https://github.com/lfortran/lfortran">https://github.com/lfortran/lfortran</a></li>
+</ul>
+<h1 id="2-安装和测试">2. 安装和测试</h1>
+<p>搜索 Fotran ：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pkg search Fortran
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cfortran-4.3                   Easy-to-use powerful bridge between C and FORTRAN
+</span></span><span style="display:flex;"><span>fortran-utils-1.1              Tools <span style="color:#069;font-weight:bold">for</span> use with Fortran code, from 4.4BSD
+</span></span><span style="display:flex;"><span>json-fortran-8.3.0.8           Modern Fortran JSON API
+</span></span><span style="display:flex;"><span>lfortran-0.20.3                Modern interactive Fortran compiler built on top of LLVM
+</span></span><span style="display:flex;"><span>linux-c7-libgfortran-4.8.5_6   Runtime libraries <span style="color:#069;font-weight:bold">for</span> gfortran <span style="color:#555">(</span>Linux Centos 7.9.2009<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>netcdf-fortran-4.6.0           Fortran library <span style="color:#069;font-weight:bold">for</span> machine-independent, array-oriented data access
+</span></span></code></pre></div><p>安装 lfortran ：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pkg install lfortran
+</span></span><span style="display:flex;"><span>Updating FreeBSD repository catalogue...
+</span></span><span style="display:flex;"><span>FreeBSD repository is up to date.
+</span></span><span style="display:flex;"><span>All repositories are up to date.
+</span></span><span style="display:flex;"><span>The following <span style="color:#f60">17</span> package<span style="color:#555">(</span>s<span style="color:#555">)</span> will be affected <span style="color:#555">(</span>of <span style="color:#f60">0</span> checked<span style="color:#555">)</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>New packages to be INSTALLED:
+</span></span><span style="display:flex;"><span>    binutils: 2.40_4,1
+</span></span><span style="display:flex;"><span>    dwarfdump: <span style="color:#f60">20161124</span>
+</span></span><span style="display:flex;"><span>    e2fsprogs-libuuid: 1.47.0
+</span></span><span style="display:flex;"><span>    lfortran: 0.20.3
+</span></span><span style="display:flex;"><span>    libedit: 3.1.20221030,1
+</span></span><span style="display:flex;"><span>    libfmt: 9.1.0
+</span></span><span style="display:flex;"><span>    liblz4: 1.9.4,1
+</span></span><span style="display:flex;"><span>    libunwind: 20211201_2
+</span></span><span style="display:flex;"><span>    libzmq4: 4.3.4
+</span></span><span style="display:flex;"><span>    llvm15: 15.0.7_7
+</span></span><span style="display:flex;"><span>    lua53: 5.3.6
+</span></span><span style="display:flex;"><span>    norm: 1.5r6_3
+</span></span><span style="display:flex;"><span>    openpgm: 5.2.122_6
+</span></span><span style="display:flex;"><span>    perl5: 5.34.3_3
+</span></span><span style="display:flex;"><span>    xeus: 3.1.0_1
+</span></span><span style="display:flex;"><span>    xeus-zmq: 1.1.0
+</span></span><span style="display:flex;"><span>    zstd: 1.5.5
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Number of packages to be installed: <span style="color:#f60">17</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The process will require <span style="color:#f60">1</span> GiB more space.
+</span></span><span style="display:flex;"><span><span style="color:#f60">26</span> MiB to be downloaded.
+</span></span></code></pre></div><p>lfortran 的版本：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lfortran --version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lFortran version: 0.20.3
+</span></span><span style="display:flex;"><span>Platform: FreeBSD
+</span></span><span style="display:flex;"><span>Default target: x86_64-portbld-freebsd13.2
+</span></span></code></pre></div><p>lfortran 的帮助说明：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lfortran --help
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>LFortran: modern interactive LLVM-based Fortran compiler
+</span></span><span style="display:flex;"><span>Usage: lfortran <span style="color:#555">[</span>OPTIONS<span style="color:#555">]</span> <span style="color:#555">[</span>files...<span style="color:#555">]</span> <span style="color:#555">[</span>SUBCOMMAND<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Positionals:
+</span></span><span style="display:flex;"><span>  files TEXT ...         Source files
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Options:
+</span></span><span style="display:flex;"><span>  -h,--help              Print this <span style="color:#366">help</span> message and <span style="color:#366">exit</span>
+</span></span><span style="display:flex;"><span>  -S                     Emit assembly, <span style="color:#069;font-weight:bold">do</span> not assemble or link
+</span></span><span style="display:flex;"><span>  -c                     Compile and assemble, <span style="color:#069;font-weight:bold">do</span> not link
+</span></span><span style="display:flex;"><span>  -o TEXT                Specify the file to place the output into
+</span></span><span style="display:flex;"><span>  -v                     Be more verbose
+</span></span><span style="display:flex;"><span>  -E                     Preprocess only; <span style="color:#069;font-weight:bold">do</span> not compile, assemble or link
+</span></span><span style="display:flex;"><span>  -l TEXT ...            Link library option
+</span></span><span style="display:flex;"><span>  -L TEXT ...            Library path option
+</span></span><span style="display:flex;"><span>  -I TEXT ...            Include path
+</span></span><span style="display:flex;"><span>  -J TEXT                Where to save mod files
+</span></span><span style="display:flex;"><span>  -g                     Compile with debugging information
+</span></span><span style="display:flex;"><span>  -D TEXT ...            Define &lt;macro&gt;<span style="color:#555">=</span>&lt;value&gt; <span style="color:#555">(</span>or <span style="color:#f60">1</span> <span style="color:#069;font-weight:bold">if</span> &lt;value&gt; omitted<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>  --version              Display compiler version information
+</span></span><span style="display:flex;"><span>  -W TEXT ...            Linker flags
+</span></span><span style="display:flex;"><span>  --cpp                  Enable C preprocessing
+</span></span><span style="display:flex;"><span>  --fixed-form           Use fixed form Fortran <span style="color:#366">source</span> parsing
+</span></span><span style="display:flex;"><span>  --fixed-form-infer     Use heuristics to infer <span style="color:#069;font-weight:bold">if</span> a file is in fixed form
+</span></span><span style="display:flex;"><span>  --no-prescan           Turn off prescan
+</span></span><span style="display:flex;"><span>  --show-prescan         Show tokens <span style="color:#069;font-weight:bold">for</span> the given file and <span style="color:#366">exit</span>
+</span></span><span style="display:flex;"><span>  --show-tokens          Show tokens <span style="color:#069;font-weight:bold">for</span> the given file and <span style="color:#366">exit</span>
+</span></span><span style="display:flex;"><span>  --show-ast             Show AST <span style="color:#069;font-weight:bold">for</span> the given file and <span style="color:#366">exit</span>
+</span></span><span style="display:flex;"><span>  --show-asr             Show ASR <span style="color:#069;font-weight:bold">for</span> the given file and <span style="color:#366">exit</span>
+</span></span><span style="display:flex;"><span>  --with-intrinsic-mods  Show intrinsic modules in ASR
+</span></span><span style="display:flex;"><span>  --show-ast-f90         Show Fortran from AST <span style="color:#069;font-weight:bold">for</span> the given file and <span style="color:#366">exit</span>
+</span></span><span style="display:flex;"><span>  --no-color             Turn off colored AST/ASR
+</span></span><span style="display:flex;"><span>  --no-indent            Turn off Indented print ASR/AST
+</span></span><span style="display:flex;"><span>  --tree                 Tree structure print ASR/AST
+</span></span><span style="display:flex;"><span>  --json                 Print ASR/AST Json format
+</span></span><span style="display:flex;"><span>  --visualize            Print ASR/AST Visualization
+</span></span><span style="display:flex;"><span>  --pass TEXT            Apply the ASR pass and show ASR <span style="color:#555">(</span>implies --show-asr<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>  --skip-pass TEXT       Skip an ASR pass in default pipeline
+</span></span><span style="display:flex;"><span>  --show-llvm            Show LLVM IR <span style="color:#069;font-weight:bold">for</span> the given file and <span style="color:#366">exit</span>
+</span></span><span style="display:flex;"><span>  --show-cpp             Show C++ translation <span style="color:#366">source</span> <span style="color:#069;font-weight:bold">for</span> the given file and <span style="color:#366">exit</span>
+</span></span><span style="display:flex;"><span>  --show-c               Show C translation <span style="color:#366">source</span> <span style="color:#069;font-weight:bold">for</span> the given file and <span style="color:#366">exit</span>
+</span></span><span style="display:flex;"><span>  --show-asm             Show assembly <span style="color:#069;font-weight:bold">for</span> the given file and <span style="color:#366">exit</span>
+</span></span><span style="display:flex;"><span>  --show-wat             Show WAT <span style="color:#555">(</span>WebAssembly Text Format<span style="color:#555">)</span> and <span style="color:#366">exit</span>
+</span></span><span style="display:flex;"><span>  --show-julia           Show Julia translation <span style="color:#366">source</span> <span style="color:#069;font-weight:bold">for</span> the given file and <span style="color:#366">exit</span>
+</span></span><span style="display:flex;"><span>  --show-stacktrace      Show internal stacktrace on compiler errors
+</span></span><span style="display:flex;"><span>  --symtab-only          Only create symbol tables in ASR <span style="color:#555">(</span>skip executable stmt<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>  --time-report          Show compilation <span style="color:#366">time</span> report
+</span></span><span style="display:flex;"><span>  --static               Create a static executable
+</span></span><span style="display:flex;"><span>  --no-warnings          Turn off all warnings
+</span></span><span style="display:flex;"><span>  --no-error-banner      Turn off error banner
+</span></span><span style="display:flex;"><span>  --error-format <span style="color:#033">TEXT</span><span style="color:#555">=</span>human
+</span></span><span style="display:flex;"><span>                         Control how errors are produced <span style="color:#555">(</span>human, short<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>  --backend <span style="color:#033">TEXT</span><span style="color:#555">=</span>llvm    Select a backend <span style="color:#555">(</span>llvm, cpp, x86, wasm<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>  --openmp               Enable openmp
+</span></span><span style="display:flex;"><span>  --generate-object-code Generate object code into .o files
+</span></span><span style="display:flex;"><span>  --rtlib                Include the full runtime library in the LLVM output
+</span></span><span style="display:flex;"><span>  --use-loop-variable-after-loop
+</span></span><span style="display:flex;"><span>                         Allow using loop variable after the loop
+</span></span><span style="display:flex;"><span>  --fast                 Best performance <span style="color:#555">(</span>disable strict standard compliance<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>  --link-with-gcc        Calls GCC <span style="color:#069;font-weight:bold">for</span> linking instead of clang
+</span></span><span style="display:flex;"><span>  --target TEXT          Generate code <span style="color:#069;font-weight:bold">for</span> the given target
+</span></span><span style="display:flex;"><span>  --print-targets        Print the registered targets
+</span></span><span style="display:flex;"><span>  --implicit-typing      Allow implicit typing
+</span></span><span style="display:flex;"><span>  --implicit-interface   Allow implicit interface
+</span></span><span style="display:flex;"><span>  --implicit-argument-casting
+</span></span><span style="display:flex;"><span>                         Allow implicit argument casting
+</span></span><span style="display:flex;"><span>  --print-leading-space  Print leading white space <span style="color:#069;font-weight:bold">if</span> format is unspecified
+</span></span><span style="display:flex;"><span>  --interactive-parse    Use interactive parse
+</span></span><span style="display:flex;"><span>  --verbose              Print debugging statements
+</span></span><span style="display:flex;"><span>  --dump-all-passes      Apply all the passes and dump the ASR into a file
+</span></span><span style="display:flex;"><span>  --cumulative           Apply all the passes cumulatively till the given pass
+</span></span><span style="display:flex;"><span>  --realloc-lhs          Reallocate left hand side automatically
+</span></span><span style="display:flex;"><span>  --module-mangling      Mangles the module name
+</span></span><span style="display:flex;"><span>  --global-mangling      Mangles all the global symbols
+</span></span><span style="display:flex;"><span>  --intrinsic-mangling   Mangles all the intrinsic symbols
+</span></span><span style="display:flex;"><span>  --all-mangling         Mangles all possible symbols
+</span></span><span style="display:flex;"><span>  --bindc-mangling       Mangles functions with abi bind<span style="color:#555">(</span>c<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>  --mangle-underscore    Mangles with underscore
+</span></span><span style="display:flex;"><span>  --run                  Executes the generated binary
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Subcommands:
+</span></span><span style="display:flex;"><span>  fmt                    Format Fortran <span style="color:#366">source</span> files.
+</span></span><span style="display:flex;"><span>  kernel                 Run in Jupyter kernel mode.
+</span></span><span style="display:flex;"><span>  mod                    Fortran mod file utilities.
+</span></span><span style="display:flex;"><span>  pywrap                 Python wrapper generator
+</span></span></code></pre></div><p>第一个 helloworld.f90 程序的内容：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fortran" data-lang="fortran"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">program</span><span style="color:#bbb"> </span>hello_world<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#069;font-weight:bold">implicit</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">none</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#069;font-weight:bold">write</span><span style="color:#bbb"> </span>(<span style="color:#555">*</span>,<span style="color:#bbb"> </span><span style="color:#555">*</span>)<span style="color:#bbb"> </span><span style="color:#c30">&#39;Hello World!&#39;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb"></span><span style="color:#069;font-weight:bold">end</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">program</span><span style="color:#bbb"> </span>hello_world<span style="color:#bbb">
+</span></span></span></code></pre></div><p>用 lfortran 编译执行 helloworld.f90 ：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lfortran -o helloworld helloworld.f90 <span style="color:#555">&amp;&amp;</span> ./helloworld
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Hello World!
+</span></span></code></pre></div><h1 id="3-延伸阅读">3. 延伸阅读</h1>
+<ul>
+<li><a href="https://docs.lfortran.org/en/">LFortran Documentation — LFortran</a></li>
+<li><a href="https://www.fortran90.org/">Fortran 90 — Fortran90 1.0 documentation</a></li>
+<li><a href="https://fortranwiki.org/fortran/show/Compilers">Compilers in Fortran Wiki</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Using Fortran in Python: fortran-magic - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Using Fortran in Python: fortran-magic</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-12-27</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/fortran/">#Fortran</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-install">1. Install</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">$</span> pip install <span style="color:#555">-</span>U fortran<span style="color:#555">-</span>magic
+</span></span><span style="display:flex;"><span>DEPRECATION: Python <span style="color:#f60">2.7</span> will reach the end of its life on January <span style="color:#f60">1</span>st, <span style="color:#f60">2020.</span> Please upgrade your Python <span style="color:#069;font-weight:bold">as</span> Python <span style="color:#f60">2.7</span> won<span style="color:#c30">&#39;t be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support</span>
+</span></span><span style="display:flex;"><span>WARNING: Retrying (Retry(total<span style="color:#555">=</span><span style="color:#f60">4</span>, connect<span style="color:#555">=</span><span style="color:#069;font-weight:bold">None</span>, read<span style="color:#555">=</span><span style="color:#069;font-weight:bold">None</span>, redirect<span style="color:#555">=</span><span style="color:#069;font-weight:bold">None</span>, status<span style="color:#555">=</span><span style="color:#069;font-weight:bold">None</span>)) after connection broken by <span style="color:#c30">&#39;ConnectTimeoutError(&lt;pip._vendor.urllib3.connection.VerifiedHTTPSConnection object at 0x7fb79c279110&gt;, &#39;</span>Connection to pypi<span style="color:#555">.</span>org timed out<span style="color:#555">.</span> (connect timeout<span style="color:#555">=</span><span style="color:#f60">15</span>)<span style="color:#c30">&#39;)&#39;</span>: <span style="color:#555">/</span>simple<span style="color:#555">/</span>fortran<span style="color:#555">-</span>magic<span style="color:#555">/</span>
+</span></span><span style="display:flex;"><span>Collecting fortran<span style="color:#555">-</span>magic
+</span></span><span style="display:flex;"><span>  WARNING: Retrying (Retry(total<span style="color:#555">=</span><span style="color:#f60">4</span>, connect<span style="color:#555">=</span><span style="color:#069;font-weight:bold">None</span>, read<span style="color:#555">=</span><span style="color:#069;font-weight:bold">None</span>, redirect<span style="color:#555">=</span><span style="color:#069;font-weight:bold">None</span>, status<span style="color:#555">=</span><span style="color:#069;font-weight:bold">None</span>)) after connection broken by <span style="color:#c30">&#39;ConnectTimeoutError(&lt;pip._vendor.urllib3.connection.VerifiedHTTPSConnection object at 0x7fb79c2d5ad0&gt;, &#39;</span>Connection to files<span style="color:#555">.</span>pythonhosted<span style="color:#555">.</span>org timed out<span style="color:#555">.</span> (connect timeout<span style="color:#555">=</span><span style="color:#f60">15</span>)<span style="color:#c30">&#39;)&#39;</span>: <span style="color:#555">/</span>packages<span style="color:#555">/</span><span style="color:#f60">6</span>e<span style="color:#555">/</span>d8<span style="color:#555">/</span>e89e0c14bb91de926c47b91796eb7a035d9f7b7e4bbdb697fffc4df8115a<span style="color:#555">/</span>fortran<span style="color:#555">-</span>magic<span style="color:#555">-</span><span style="color:#f60">0.7</span><span style="color:#555">.</span>tar<span style="color:#555">.</span>gz
+</span></span><span style="display:flex;"><span>  Downloading https:<span style="color:#555">//</span>files<span style="color:#555">.</span>pythonhosted<span style="color:#555">.</span>org<span style="color:#555">/</span>packages<span style="color:#555">/</span><span style="color:#f60">6</span>e<span style="color:#555">/</span>d8<span style="color:#555">/</span>e89e0c14bb91de926c47b91796eb7a035d9f7b7e4bbdb697fffc4df8115a<span style="color:#555">/</span>fortran<span style="color:#555">-</span>magic<span style="color:#555">-</span><span style="color:#f60">0.7</span><span style="color:#555">.</span>tar<span style="color:#555">.</span>gz
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: ipython <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">fortran</span><span style="color:#555">-</span>magic) (<span style="color:#f60">5.8.0</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: numpy <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">fortran</span><span style="color:#555">-</span>magic) (<span style="color:#f60">1.16.5</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: setuptools<span style="color:#555">&gt;=</span><span style="color:#f60">18.5</span> <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">ipython</span><span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">42.0.2</span><span style="color:#555">.</span>post20191203)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: prompt<span style="color:#555">-</span>toolkit<span style="color:#555">&lt;</span><span style="color:#f60">2.0.0</span>,<span style="color:#555">&gt;=</span><span style="color:#f60">1.0.4</span> <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">ipython</span><span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">1.0.18</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: decorator <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">ipython</span><span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">4.4.1</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: backports<span style="color:#555">.</span>shutil<span style="color:#555">-</span>get<span style="color:#555">-</span>terminal<span style="color:#555">-</span>size; python_version <span style="color:#555">==</span> <span style="color:#c30">&#34;2.7&#34;</span> <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">ipython</span><span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">1.0.0</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: appnope; sys_platform <span style="color:#555">==</span> <span style="color:#c30">&#34;darwin&#34;</span> <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">ipython</span><span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">0.1.0</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: pexpect; sys_platform <span style="color:#555">!=</span> <span style="color:#c30">&#34;win32&#34;</span> <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">ipython</span><span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">4.7.0</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: pathlib2; python_version <span style="color:#555">==</span> <span style="color:#c30">&#34;2.7&#34;</span> <span style="color:#000;font-weight:bold">or</span> python_version <span style="color:#555">==</span> <span style="color:#c30">&#34;3.3&#34;</span> <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">ipython</span><span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">2.3.5</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: pygments <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">ipython</span><span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">2.5.2</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: traitlets<span style="color:#555">&gt;=</span><span style="color:#f60">4.2</span> <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">ipython</span><span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">4.3.3</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: simplegeneric<span style="color:#555">&gt;</span><span style="color:#f60">0.8</span> <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">ipython</span><span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">0.8.1</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: pickleshare <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">ipython</span><span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">0.7.5</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: wcwidth <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">prompt</span><span style="color:#555">-</span>toolkit<span style="color:#555">&lt;</span><span style="color:#f60">2.0.0</span>,<span style="color:#555">&gt;=</span><span style="color:#f60">1.0.4</span><span style="color:#555">-&gt;</span>ipython<span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">0.1.7</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: six<span style="color:#555">&gt;=</span><span style="color:#f60">1.9.0</span> <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">prompt</span><span style="color:#555">-</span>toolkit<span style="color:#555">&lt;</span><span style="color:#f60">2.0.0</span>,<span style="color:#555">&gt;=</span><span style="color:#f60">1.0.4</span><span style="color:#555">-&gt;</span>ipython<span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">1.13.0</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: ptyprocess<span style="color:#555">&gt;=</span><span style="color:#f60">0.5</span> <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">pexpect</span>; sys_platform <span style="color:#555">!=</span> <span style="color:#c30">&#34;win32&#34;</span><span style="color:#555">-&gt;</span>ipython<span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">0.6.0</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: scandir; python_version <span style="color:#555">&lt;</span> <span style="color:#c30">&#34;3.5&#34;</span> <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">pathlib2</span>; python_version <span style="color:#555">==</span> <span style="color:#c30">&#34;2.7&#34;</span> <span style="color:#000;font-weight:bold">or</span> python_version <span style="color:#555">==</span> <span style="color:#c30">&#34;3.3&#34;</span><span style="color:#555">-&gt;</span>ipython<span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">1.10.0</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: ipython<span style="color:#555">-</span>genutils <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">traitlets</span><span style="color:#555">&gt;=</span><span style="color:#f60">4.2</span><span style="color:#555">-&gt;</span>ipython<span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">0.2.0</span>)
+</span></span><span style="display:flex;"><span>Requirement already satisfied, skipping upgrade: enum34; python_version <span style="color:#555">==</span> <span style="color:#c30">&#34;2.7&#34;</span> <span style="color:#000;font-weight:bold">in</span> <span style="color:#555">./</span>anaconda3<span style="color:#555">/</span>envs<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>lib<span style="color:#555">/</span>python2<span style="color:#f60">.7</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages (<span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">traitlets</span><span style="color:#555">&gt;=</span><span style="color:#f60">4.2</span><span style="color:#555">-&gt;</span>ipython<span style="color:#555">-&gt;</span>fortran<span style="color:#555">-</span>magic) (<span style="color:#f60">1.1.6</span>)
+</span></span><span style="display:flex;"><span>Building wheels <span style="color:#069;font-weight:bold">for</span> collected packages: fortran<span style="color:#555">-</span>magic
+</span></span><span style="display:flex;"><span>  Building wheel <span style="color:#069;font-weight:bold">for</span> fortran<span style="color:#555">-</span>magic (setup<span style="color:#555">.</span>py) <span style="color:#555">...</span> done
+</span></span><span style="display:flex;"><span>  Created wheel <span style="color:#069;font-weight:bold">for</span> fortran<span style="color:#555">-</span>magic: filename<span style="color:#555">=</span>fortran_magic<span style="color:#555">-</span><span style="color:#f60">0.7</span><span style="color:#555">-</span>cp27<span style="color:#555">-</span>none<span style="color:#555">-</span><span style="color:#366">any</span><span style="color:#555">.</span>whl size<span style="color:#555">=</span><span style="color:#f60">7047</span> sha256<span style="color:#555">=</span>b43b7e253d506c450cae290c3c0f2f0ebcf047661313574aa2e01ead2401092d
+</span></span><span style="display:flex;"><span>  Stored <span style="color:#000;font-weight:bold">in</span> directory: <span style="color:#555">/</span>Users<span style="color:#555">/</span>name<span style="color:#555">/</span>Library<span style="color:#555">/</span>Caches<span style="color:#555">/</span>pip<span style="color:#555">/</span>wheels<span style="color:#555">/</span><span style="color:#f60">69</span><span style="color:#555">/</span>d1<span style="color:#555">/</span>e6<span style="color:#555">/</span><span style="color:#f60">83</span>c19e88d0641ed69f32b506aa07dc1283f5339ad6d393f4f7
+</span></span><span style="display:flex;"><span>Successfully built fortran<span style="color:#555">-</span>magic
+</span></span><span style="display:flex;"><span>Installing collected packages: fortran<span style="color:#555">-</span>magic
+</span></span><span style="display:flex;"><span>Successfully installed fortran<span style="color:#555">-</span>magic<span style="color:#555">-</span><span style="color:#f60">0.7</span>
+</span></span></code></pre></div><h1 id="2-usage">2. Usage</h1>
+<p>In <code>jupyter notebook</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>In[<span style="color:#f60">1</span>]: <span style="color:#555">%</span>load_ext fortranmagic
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In[<span style="color:#f60">2</span>]: <span style="color:#555">%%</span>fortran
+</span></span><span style="display:flex;"><span>        subroutine f1(x, y, z)
+</span></span><span style="display:flex;"><span>        real, intent(<span style="color:#000;font-weight:bold">in</span>) :: x,y
+</span></span><span style="display:flex;"><span>        real, intent(out) :: z
+</span></span><span style="display:flex;"><span>        z <span style="color:#555">=</span> sin(x<span style="color:#555">+</span>y)
+</span></span><span style="display:flex;"><span>        end subroutine f1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In[<span style="color:#f60">3</span>]: f1(<span style="color:#f60">1.0</span>, <span style="color:#f60">2.1415</span>)
+</span></span><span style="display:flex;"><span>Out[<span style="color:#f60">3</span>]: <span style="color:#f60">9.26574066397734e-05</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>In[<span style="color:#f60">4</span>]: <span style="color:#555">%%</span>fortran
+</span></span><span style="display:flex;"><span>        subroutine my_function(x, y, z)
+</span></span><span style="display:flex;"><span>            real, intent(<span style="color:#000;font-weight:bold">in</span>) :: x(:), y(:)
+</span></span><span style="display:flex;"><span>            real, intent(out) :: z(size(x))
+</span></span><span style="display:flex;"><span>            <span style="color:#a00;background-color:#faa">!</span> using vector operations
+</span></span><span style="display:flex;"><span>            z(:) <span style="color:#555">=</span> sin(x(:) <span style="color:#555">+</span> y(:))
+</span></span><span style="display:flex;"><span>        end subroutine
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In[<span style="color:#f60">5</span>]: 
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">numpy</span>
+</span></span><span style="display:flex;"><span>x <span style="color:#555">=</span> numpy<span style="color:#555">.</span>random<span style="color:#555">.</span>normal(size<span style="color:#555">=</span><span style="color:#f60">10</span>)
+</span></span><span style="display:flex;"><span>y <span style="color:#555">=</span> numpy<span style="color:#555">.</span>random<span style="color:#555">.</span>normal(size<span style="color:#555">=</span><span style="color:#f60">10</span>)
+</span></span><span style="display:flex;"><span>z <span style="color:#555">=</span> my_function(x, y)
+</span></span><span style="display:flex;"><span>z
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Out[<span style="color:#f60">5</span>]: 
+</span></span><span style="display:flex;"><span>array([<span style="color:#555">-</span><span style="color:#f60">0.40036342</span>, <span style="color:#555">-</span><span style="color:#f60">0.5483717</span> , <span style="color:#555">-</span><span style="color:#f60">0.71112984</span>, <span style="color:#555">-</span><span style="color:#f60">0.31596676</span>, <span style="color:#555">-</span><span style="color:#f60">0.9789854</span> ,
+</span></span><span style="display:flex;"><span>        <span style="color:#f60">0.16493222</span>, <span style="color:#555">-</span><span style="color:#f60">0.845283</span>  , <span style="color:#555">-</span><span style="color:#f60">0.94829416</span>,  <span style="color:#f60">0.8096917</span> ,  <span style="color:#f60">0.888128</span>  ],
+</span></span><span style="display:flex;"><span>      dtype<span style="color:#555">=</span>float32)
+</span></span></code></pre></div><p>Note that <code>fortran-magic</code> uses <code>f2py</code> under background.</p>
+<h1 id="3-reference">3. Reference</h1>
+<ul>
+<li><a href="https://arogozhnikov.github.io/2015/11/29/using-fortran-from-python.html">Using fortran from python</a></li>
+<li><a href="https://pypi.org/project/fortran-magic/">fortran-magic · PyPI</a></li>
+<li><a href="https://github.com/mgaitan/fortran_magic">mgaitan/fortran_magic: An extension for IPython/Jupyter that helps to use Fortran in your interactive session.</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

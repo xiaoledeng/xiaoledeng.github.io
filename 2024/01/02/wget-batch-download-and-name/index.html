@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>wget批量下载并命名 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">wget批量下载并命名</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-02</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/shell/">#Shell</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-步骤">1. 步骤</h1>
+<p>系统： macOS</p>
+<p>第一步，先安装 wget <sup>1</sup>，终端命令： <code>brew install wget</code></p>
+<p>第二步，准备好待下载的<code>命名</code>和<code>链接</code>文件 <code>urls.txt</code>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>49-爱让你变成发光的萤火虫    https://aod.cos.tx.xmcdn.com/group17/M00/C8/22/wKgJJFfEVPXDUE-wAKHTXJOiJFI702.m4a
+</span></span><span style="display:flex;"><span>44-爱是最重要的决定    https://aod.cos.tx.xmcdn.com/group20/M06/A4/73/wKgJJ1e2gSyCM1XSAh3hZQUzifs505.mp3
+</span></span></code></pre></div><p>第三步，准备 shell 文件 <code>download.sh</code>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#099">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span><span style="color:#069;font-weight:bold">while</span> <span style="color:#366">read</span> file_name file_url
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>        wget -O <span style="color:#a00">${</span><span style="color:#033">file_name</span><span style="color:#a00">}</span>.<span style="color:#a00">${</span><span style="color:#033">file_url</span>: -3<span style="color:#a00">}</span> -c <span style="color:#a00">${</span><span style="color:#033">file_url</span><span style="color:#a00">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">done</span> &lt; urls.txt
+</span></span></code></pre></div><p>第四步，终端运行 shell 文件：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sh download.sh
+</span></span></code></pre></div><h1 id="2-延伸阅读">2. 延伸阅读</h1>
+<ol>
+<li><a href="https://www.gnu.org/software/wget/">Wget - GNU Project - Free Software Foundation</a></li>
+<li><a href="https://blog.csdn.net/qq_43426078/article/details/123064733">【Linux】wget同时下载多个文件并重命名及示例shell脚本（带注释）、解决wget文件名称不正确问题、wget常用命令_wget批量下载文件并重命名-CSDN博客</a></li>
+<li><a href="https://www.cnblogs.com/pretty-ru/p/10936023.html">linux下载文件命令 - pretty_田纳西 - 博客园</a></li>
+<li><a href="https://www.runoob.com/linux/linux-shell.html">Shell 教程 | 菜鸟教程</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

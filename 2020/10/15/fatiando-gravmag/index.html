@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Gravity and magnetics from fatiando.gravmag - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Gravity and magnetics from fatiando.gravmag</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-10-15</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/geodesy/">#Geodesy</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/researchsoftware/">#Researchsoftware</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>The page is API content about gravity and magnetics forward modeling, inversion, transformations and utilities from <a href="https://www.fatiando.org/v0.5/api/gravmag.html#module-fatiando.gravmag">Gravity and magnetics (fatiando.gravmag) — Fatiando 0.5</a>.</p>
+<p>It should be noted that <code>fatiando</code> is performed on <code>Python2.7</code>.</p>
+<p>The ongoing <code>Harmonica</code> is the part of <code>fatiando.gravmag</code> as fatiando/harmonica: Forward modeling, inversion, and processing gravity and magnetic data:</p>
+<ul>
+<li><a href="https://www.fatiando.org/harmonica/latest/">Documentation Harmonica</a></li>
+<li><a href="https://github.com/fatiando/harmonica">Github Harmonica</a></li>
+</ul>
+<h1 id="1forward-modeling">1.Forward modeling</h1>
+<p>The forward modeling modules provide ways to calculate the gravitational and magnetic field of various types of geometric objects:</p>
+<ul>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.prism.html#module-fatiando.gravmag.prism">prism</a>: 3D right rectangular prisms</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.polyprism.html#module-fatiando.gravmag.polyprism">polyprism</a>: 3D prisms with polygonal horizontal cross-sections</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.sphere.html#module-fatiando.gravmag.sphere">sphere</a>: Spheres in Cartesian coordinates</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.tesseroid.html#module-fatiando.gravmag.tesseroid">tesseroid</a>: Tesseroids (spherical prisms) for modeling in spherical coordinates</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.talwani.html#module-fatiando.gravmag.talwani">talwani</a>: 2D bodies with polygonal vertical cross-sections</li>
+</ul>
+<h1 id="2inversion">2.Inversion</h1>
+<p>The inversion modules use the forward modeling models and the <a href="https://www.fatiando.org/v0.5/api/inversion.html#module-fatiando.inversion">fatiando.inversion</a> package to solve potential field inverse problems:</p>
+<ul>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.basin2d.html#module-fatiando.gravmag.basin2d">basin2d</a>: 2D inversion of the shape of sedimentary basins and other outcropping bodies</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.harvester.html#module-fatiando.gravmag.harvester">harvester</a>: 3D inversion of compact bodies by planting anomalous densities</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.euler.html#module-fatiando.gravmag.euler">euler</a>: 3D Euler deconvolution methods to estimate source location</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.magdir.html#module-fatiando.gravmag.magdir">magdir</a>: Inversion methods to estimate the total magnetization vector of multiple sources.</li>
+</ul>
+<h1 id="3processing">3.Processing</h1>
+<p>The processing modules offer tools to prepare potential field data before or after modeling.</p>
+<ul>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.normal_gravity.html#module-fatiando.gravmag.normal_gravity">normal_gravity</a>: Compute normal gravity and reductions.</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.eqlayer.html#module-fatiando.gravmag.eqlayer">eqlayer</a>: Equivalent layer processing</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.transform.html#module-fatiando.gravmag.transform">transform</a>: Potential field transformations, like upward continuation, derivatives, etc</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.imaging.html#module-fatiando.gravmag.imaging">imaging</a>: Imaging methods for potential fields for estimating physical property distributions</li>
+<li><a href="https://www.fatiando.org/v0.5/api/gravmag.tensor.html#module-fatiando.gravmag.tensor">tensor</a>: Utilities for operating on the gradient tensor</li>
+</ul>
+<h1 id="4interactivity">4.Interactivity</h1>
+<p>Module <a href="https://www.fatiando.org/v0.5/api/gravmag.interactive.html#module-fatiando.gravmag.interactive">interactive</a> implements matplotlib GUIs and IPython HTML widgets for interacting with the modeling and processing functions.</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

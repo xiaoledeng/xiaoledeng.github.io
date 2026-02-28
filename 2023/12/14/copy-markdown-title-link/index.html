@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Keyboard Maestro复制Markdown格式 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Keyboard Maestro复制Markdown格式</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-14</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/markdown/">#Markdown</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/automation/">#Automation</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>之前在 Chrome 浏览器里，有 <code>Copy as Markdown</code> 的插件 <sup>1</sup>，可以快速复制 Markdown 格式 — <code>[Tab名](link)</code>。</p>
+<p>用 Safari 浏览器外加 Tampermonkey <sup>2</sup> 后，虽然也可以用一些脚本实现复制 Markdown 格式，但是效果不是很好，而且有时候粘贴不出想要的内容。</p>
+<p>搜索🔍 Keyboard Maestro 复制 Markdown 格式，发现了 「用 Keyboard Maestro 做一个文本格式转换工具箱 - 少数派」 <sup>3</sup>，里面的部分工具🔧能够实现想要的功能：快速复制 Markdown 格式 — <code>[Tab名](link)</code>。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<ol>
+<li>
+<p>下载 GitHub 文件 <a href="https://github.com/BlackwinMin/keyboard-maestro-gallery/blob/master/Convert%20Toolbox/%E9%93%BE%E6%8E%A5%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%20Safari.kmmacros">keyboard-maestro-gallery/Convert Toolbox/链接格式转换 Safari.kmmacros</a></p>
+</li>
+<li>
+<p>只用其中的 <code>Paste Markdown Link from Safari Tabs</code> Macro 即可，AppleScript 为 <sup>4</sup>：</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tell application <span style="color:#c30">&#34;Safari&#34;</span>
+</span></span><span style="display:flex;"><span>    -- Initialize
+</span></span><span style="display:flex;"><span>    <span style="color:#366">set</span> tabNames to <span style="color:#555">{}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#366">set</span> tabURLs to <span style="color:#555">{}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#366">set</span> frontName to name of front document
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    -- Collect the tab names and URLs from the top Safari window
+</span></span><span style="display:flex;"><span>    <span style="color:#366">set</span> topWindow to window <span style="color:#f60">1</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#366">set</span> topTabs to every tab of topWindow
+</span></span><span style="display:flex;"><span>    repeat with t in topTabs
+</span></span><span style="display:flex;"><span>        <span style="color:#366">set</span> end of tabNames to name of t
+</span></span><span style="display:flex;"><span>        <span style="color:#366">set</span> end of tabURLs to URL of t
+</span></span><span style="display:flex;"><span>    end repeat
+</span></span><span style="display:flex;"><span>end tell
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-- Display a list of names <span style="color:#069;font-weight:bold">for</span> the user to choose from
+</span></span><span style="display:flex;"><span>tell application <span style="color:#c30">&#34;System Events&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#366">set</span> activeApp to name of first application process whose frontmost is <span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>    activate
+</span></span><span style="display:flex;"><span>    choose from list tabNames with title <span style="color:#c30">&#34;Safari Tabs&#34;</span> default items frontName
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">if</span> result is not <span style="color:#366">false</span> <span style="color:#069;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#366">set</span> nameChoice to item <span style="color:#f60">1</span> of result
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>    end <span style="color:#069;font-weight:bold">if</span>
+</span></span><span style="display:flex;"><span>end tell
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>-- Return the URL of the selected tab
+</span></span><span style="display:flex;"><span>tell application activeApp to activate
+</span></span><span style="display:flex;"><span>repeat with t from <span style="color:#f60">1</span> to the count of tabNames
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">if</span> item t of tabNames is nameChoice <span style="color:#069;font-weight:bold">then</span> <span style="color:#069;font-weight:bold">return</span> <span style="color:#c30">&#34;[&#34;</span> &amp; <span style="color:#555">(</span>item t of tabNames<span style="color:#555">)</span> &amp; <span style="color:#c30">&#34;]&#34;</span> &amp; <span style="color:#c30">&#34;(&#34;</span> &amp; <span style="color:#555">(</span>item t of tabURLs<span style="color:#555">)</span> &amp; <span style="color:#c30">&#34;)&#34;</span>
+</span></span><span style="display:flex;"><span>end repeat
+</span></span></code></pre></div><ol start="3">
+<li>可以重新设置自己习惯的快捷键。</li>
+</ol>
+<p>彩蛋🥚： <a href="http://silenceallat.top/save_html/%E5%B0%91%E6%95%B0%E6%B4%BE/">少数派部分文章合集</a></p>
+<h1 id="3-参考">3. 参考</h1>
+<ol>
+<li><a href="https://chromewebstore.google.com/detail/copy-as-markdown/fkeaekngjflipcockcnpobkpbbfbhmdn">Copy as Markdown - Chrome Web Store</a></li>
+<li><a href="https://www.tampermonkey.net">Tampermonkey</a></li>
+<li><a href="http://silenceallat.top/save_html/%E5%B0%91%E6%95%B0%E6%B4%BE/file/%E7%94%A8%20Keyboard%20Maestro%20%E5%81%9A%E4%B8%80%E4%B8%AA%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%B7%A5%E5%85%B7%E7%AE%B1%20-%20%E5%B0%91%E6%95%B0%E6%B4%BE.html">用 Keyboard Maestro 做一个文本格式转换工具箱 - 少数派</a></li>
+<li><a href="https://github.com/BlackwinMin/keyboard-maestro-gallery/blob/master/Convert%20Toolbox/%E9%93%BE%E6%8E%A5%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2%20Safari.kmmacros">keyboard-maestro-gallery/Convert Toolbox/链接格式转换 Safari.kmmacros</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

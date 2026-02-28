@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Fatiando - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Fatiando</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-10-16</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/geodesy/">#Geodesy</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/researchsoftware/">#Researchsoftware</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>This page is from <a href="https://legacy.fatiando.org/api/fatiando.html">The fatiando package — Fatiando 0.5</a>.</p>
+<h1 id="1introduction">1.Introduction</h1>
+<p>The <code>fatiando</code> package contains all the subpackages and modules required for most tasks.</p>
+<p>Modules for each geophysical method are group in subpackages:</p>
+<ul>
+<li><a href="https://legacy.fatiando.org/api/gravmag.html#module-fatiando.gravmag"><code>gravmag</code></a>: Gravity and magnetics (i.e., potential fields)</li>
+<li><a href="https://legacy.fatiando.org/api/seismic.html#module-fatiando.seismic"><code>seismic</code></a>: Seismics and seismology</li>
+<li><a href="https://legacy.fatiando.org/api/geothermal.html#module-fatiando.geothermal"><code>geothermal</code></a>: Geothermal heat transfer modeling</li>
+</ul>
+<p>Modules for gridding, meshing, visualization, etc:</p>
+<ul>
+<li><a href="https://legacy.fatiando.org/api/mesher.html#module-fatiando.mesher"><code>mesher</code></a>: Mesh generation and definition of geometric elements</li>
+<li><a href="https://legacy.fatiando.org/api/gridder.html#module-fatiando.gridder"><code>gridder</code></a>: Grid generation and operations (e.g., interpolation)</li>
+<li><a href="https://legacy.fatiando.org/api/vis.html#module-fatiando.vis"><code>vis</code></a>: Plotting utilities for 2D (using matplotlib) and 3D (using mayavi)</li>
+<li><a href="https://legacy.fatiando.org/api/datasets.html#module-fatiando.datasets"><code>datasets</code></a>: Fetch and load datasets and models from web repositories</li>
+<li><a href="https://legacy.fatiando.org/api/utils.html#module-fatiando.utils"><code>utils</code></a>: Miscelaneous utilities, like mathematical functions, unit conversion, etc</li>
+<li><a href="https://legacy.fatiando.org/api/constants.html#module-fatiando.constants"><code>constants</code></a>: Physical constants and unit conversions</li>
+</ul>
+<p>Also included is the <a href="https://legacy.fatiando.org/api/inversion.html#module-fatiando.inversion"><code>fatiando.inversion</code></a> package with utilities for implementing inverse problems. There you’ll find ready to use regularization, optimization methods, and templates to implement new inversion methods.</p>
+<p>Inversions implemented in Fatiando leverage <a href="https://legacy.fatiando.org/api/inversion.html#module-fatiando.inversion"><code>fatiando.inversion</code></a>, providing a common interface and usage patters. For examples, see modules <a href="https://legacy.fatiando.org/api/seismic.epic2d.html#module-fatiando.seismic.epic2d"><code>fatiando.seismic.epic2d</code></a>, <a href="https://legacy.fatiando.org/api/seismic.srtomo.html#module-fatiando.seismic.srtomo"><code>fatiando.seismic.srtomo</code></a>, <a href="https://legacy.fatiando.org/api/gravmag.basin2d.html#module-fatiando.gravmag.basin2d"><code>fatiando.gravmag.basin2d</code></a>, <a href="https://legacy.fatiando.org/api/gravmag.euler.html#module-fatiando.gravmag.euler"><code>fatiando.gravmag.euler</code></a>, <a href="https://legacy.fatiando.org/api/gravmag.eqlayer.html#module-fatiando.gravmag.eqlayer"><code>fatiando.gravmag.eqlayer</code></a>, etc.</p>
+<p>The design of <a href="https://legacy.fatiando.org/api/inversion.html#module-fatiando.inversion"><code>fatiando.inversion</code></a> was inspired by <a href="http://scikit-learn.org/">scikit-learn</a>, an amazing machine-learning library.</p>
+<h1 id="2list-of-modules-and-packages">2.List of modules and packages</h1>
+<ul>
+<li><a href="https://legacy.fatiando.org/api/gravmag.html">Gravity and magnetics (<code>fatiando.gravmag</code>)</a></li>
+<li><a href="https://legacy.fatiando.org/api/seismic.html">Seismics and seismology (<code>fatiando.seismic</code>)</a></li>
+<li><a href="https://legacy.fatiando.org/api/geothermal.html">Geothermal heat (<code>fatiando.geothermal</code>)</a></li>
+<li><a href="https://legacy.fatiando.org/api/mesher.html">Meshing (<code>fatiando.mesher</code>)</a></li>
+<li><a href="https://legacy.fatiando.org/api/gridder.html">Gridding (<code>fatiando.gridder</code>)</a></li>
+<li><a href="https://legacy.fatiando.org/api/vis.html">Visualization (<code>fatiando.vis</code>)</a></li>
+<li><a href="https://legacy.fatiando.org/api/datasets.html">Fetch data from the internet (<code>fatiando.datasets</code>)</a></li>
+<li><a href="https://legacy.fatiando.org/api/utils.html">Miscellaneous Utilities (<code>fatiando.utils</code>)</a></li>
+<li><a href="https://legacy.fatiando.org/api/constants.html">Physical constants and unit conversions (<code>fatiando.constants</code>)</a></li>
+<li><a href="https://legacy.fatiando.org/api/inversion.html">Inverse problems framework (<code>fatiando.inversion</code>)</a></li>
+</ul>
+<h1 id="3-update">3. Update</h1>
+<ul>
+<li>2021.12.20 update the new link of Fatiando from <a href="https://www.fatiando.org/v0.5">https://www.fatiando.org/v0.5</a> to <a href="https://legacy.fatiando.org/">https://legacy.fatiando.org/</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

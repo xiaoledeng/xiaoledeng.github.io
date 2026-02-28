@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Clear Linux系统简介 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Clear Linux系统简介</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-12-04</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/clearlinux/">#ClearLinux</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-简介">1. 简介</h1>
+<p>Clear Linux 是由英特尔开发的一款 Linux 发行版，主要针对英特尔架构进行了性能和安全优化，旨在为其硬件（尤其是处理器）优化性能，最大限度地发挥 Intel 硬件的潜能，同时展示优化的编译技术如何显著提高操作系统和应用的运行效率。</p>
+<p>软件管理工具为：<code>swupd</code>，为 SoftWare UPDate 的缩写。</p>
+<ul>
+<li>swupd bundle-add &lt;bundle_name&gt;</li>
+<li>swupd bundle-remove &lt;bundle_name&gt;</li>
+</ul>
+<h1 id="2-历史">2. 历史</h1>
+<ul>
+<li>2015年，初次亮相，最初作为研究优化性能的内部项目</li>
+<li>2016年，成为一个公共的开源 Linux 发行版</li>
+<li>2019年5月，发布桌面版本</li>
+<li>2020年，随着容器技术（如 Docker 和 Kubernetes）的兴起，被越来越多地部署在云和微服务环境</li>
+</ul>
+<h1 id="3-版本">3. 版本</h1>
+<p><a href="https://cdn.download.clearlinux.org/releases/">https://cdn.download.clearlinux.org/releases/</a></p>
+<h1 id="4-延伸阅读">4. 延伸阅读</h1>
+<ul>
+<li><a href="https://www.clearlinux.org/">Home Clear Linux* Project | Clear Linux* Project</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Clear_Linux_OS">Clear Linux OS - Wikipedia</a></li>
+<li><a href="https://www.clearlinux.org/clear-linux-documentation/get-started/index.html">Get started — Documentation for Clear Linux* project</a></li>
+<li><a href="https://www.clearlinux.org/clear-linux-documentation/guides/clear/swupd.html">swupd — Documentation for Clear Linux* project</a></li>
+<li><a href="https://www.clearlinux.org/clear-linux-documentation/reference/bundles/bundles.html#bundles">Available bundles — Documentation for Clear Linux* project</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

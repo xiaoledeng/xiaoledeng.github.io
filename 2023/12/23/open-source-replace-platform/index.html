@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>随笔—用开源替换平台 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">随笔—用开源替换平台</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-23</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/ideas/">#Ideas</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/essay/">#Essay</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/minimalism/">#Minimalism</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>在 11 月月底，利用一些平台工具——Tinyletter + Zapier <sup>1</sup> 或 Mailchimp <sup>2</sup> 实现了用邮件定期接收个人网站的更新。</p>
+<p>而后，更进一步，利用这些平台实现了：将一些感兴趣的 RSS 更新，定期发送到指定的邮箱 <sup>3</sup>。</p>
+<p>遗憾的是，Tinyletter 已经宣布将在 2024 年 2 月 29 日关闭 <sup>4</sup>。这说明了，平台也有可能关闭，具有一定的不稳定性。</p>
+<p>前几天，利用开源工具 —— Python 相关的库和 Linux 工具（即：feedparser 、 yagmail 和 crontab），替换了 Mailchimp 平台 <sup>5</sup>，用邮件定期接收个人网站的更新。</p>
+<p>今天，利用这些开源工具彻底实现了：将一些感兴趣的 RSS 更新，定期发送到邮箱。</p>
+<p>用开源工具替换商业平台，是靠谱的，有许多优点：自由无限制、精简无广告、高度自定义、私密又安全、稳健不崩溃。</p>
+<ul>
+<li>
+<p>自由无限制：商业一般都是提供相应的服务，从而获得收益。免费的代价是——功能和服务是有限制的，只有根据付费等级，才能享受相应的服务。开源工具是没有这些限制。</p>
+</li>
+<li>
+<p>精简无广告：在 Mailchimp 平台发出的每一封邮件末尾，都有其 Logo，点击后可以进入其官网，这个模块是不能删除的。开源工具则完全没有广告。</p>
+</li>
+<li>
+<p>高度自定义：开源工具就像一个个积木，可以按照自己的需求，搭建出自己想要的功能。商业平台需要付费开通相应的功能，进行定制邮件样式。</p>
+</li>
+<li>
+<p>私密又安全：用开源工具，邮件地址不会经过平台，不会被记录到数据库。</p>
+</li>
+<li>
+<p>稳健不崩溃：开源工具运行在本地，每天都会有运行日志，完全由自己维护和负责。平台说不定哪一天就会关闭，因为平台维系下去需要固定的收益。</p>
+</li>
+</ul>
+<h1 id="延伸阅读">延伸阅读</h1>
+<ol>
+<li><a href="/2023/11/20/blog-add-email-subscribe-1/">博客添加邮件订阅(1): Tinyletter + Zapier</a></li>
+<li><a href="/2023/11/21/blog-add-email-subscribe-2/">博客添加邮件订阅(2): Mailchimp</a></li>
+<li><a href="/2023/11/28/email-subscribe-rss-update/">邮件订阅RSS更新</a></li>
+<li><a href="/2023/12/01/mailchimp-close-tinyletter/">Mailchimp关闭Tinyletter</a></li>
+<li><a href="/2023/12/20/new-process-to-subscribe-update-of-website/">随笔—订阅网站更新的新流程</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

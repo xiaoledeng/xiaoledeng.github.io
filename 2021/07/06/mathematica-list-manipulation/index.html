@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Mathematica的列表操作 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Mathematica的列表操作</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-07-06</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/mathematica/">#Mathematica</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-构造列表">1. <a href="https://reference.wolfram.com/language/guide/ConstructingLists.html">构造列表</a></h1>
+<ul>
+<li>
+<p>Range — 形成一个数字范围或其它对象的列表 {1,2,3,…}</p>
+</li>
+<li>
+<p>Table — 构造一个表达式任意维数的表格</p>
+</li>
+<li>
+<p>Array — 构造一个任意维数的数组，应用函数到连续数组下标</p>
+</li>
+<li>
+<p>ConstantArray — 构造任意维数的常数数组</p>
+</li>
+<li>
+<p>CenterArray — 在任意维数的数组的中心嵌入一个数组</p>
+</li>
+<li>
+<p>Subdivide — 区间的等细分列表</p>
+</li>
+<li>
+<p>CoordinateBoundsArray, CoordinateBoundingBoxArray — 正则网格</p>
+</li>
+<li>
+<p>SparseArray, Normal — 从指定的稀疏矩阵 positionvalue 创建列表</p>
+</li>
+<li>
+<p>PowerRange — 形成指定范围内连续幂的列表</p>
+</li>
+<li>
+<p><a href="https://reference.wolfram.com/language/tutorial/ManipulatingLists.html#28009">操作列表—Wolfram 语言参考资料</a></p>
+</li>
+<li>
+<p><a href="https://reference.wolfram.com/language/tutorial/FilesStreamsAndExternalOperations.html#3333">文件、流和外部运算—Wolfram 语言参考资料</a></p>
+</li>
+</ul>
+<h1 id="2-列表元素">2. <a href="https://reference.wolfram.com/language/guide/ElementsOfLists.html">列表元素</a></h1>
+<ul>
+<li>list[[&hellip;]] (Part) — 部分列表，可用 = 设置</li>
+<li>Span (;;) — 通常指定元素的块和范围</li>
+<li>First ▪  Last ▪  Rest ▪  Most ▪  Take ▪  Drop ▪  TakeDrop ▪  TakeList ▪  TakeWhile</li>
+<li>UpTo — 一定数目的元素，或者尽可能多</li>
+<li>Append ▪  Prepend ▪  Insert ▪  Delete ▪  AppendTo ▪  PrependTo</li>
+<li>Position — 求出匹配模式的元素坐标</li>
+<li>FirstPosition ▪  Extract ▪  ReplacePart ▪  MapAt ▪  ArrayRules ▪  Ordering</li>
+<li>Length ▪  Dimensions ▪  ArrayDepth ▪  LengthWhile</li>
+<li>Select, SelectFirst — 选择满足规则的元素</li>
+<li>Cases, FirstCase — 匹配模式的元素</li>
+<li>Pick ▪  DeleteCases ▪  BinLists ▪  Count ▪  DeleteDuplicates</li>
+<li>Nothing — 元素自动从列表中去除</li>
+<li>MemberQ — 测试一个元素是否是一个列表的成员</li>
+<li>FreeQ</li>
+<li>▪  ArrayQ ▪  VectorQ ▪  MatrixQ</li>
+<li>AllTrue ▪  AnyTrue ▪  NoneTrue</li>
+<li>Max ▪  Min ▪  MaximalBy ▪  MinimalBy</li>
+<li>查找子列表：SequencePosition ▪  SequenceCases ▪  SequenceCount</li>
+<li>查找子集：SubsetPosition ▪  SubsetCases ▪  SubsetCount</li>
+</ul>
+<h1 id="3-重排列与重构列表">3. <a href="https://reference.wolfram.com/language/guide/RearrangingAndRestructuringLists.html">重排列与重构列表</a></h1>
+<ul>
+<li>Flatten — 展平成嵌套列表</li>
+<li>Join ▪  Partition ▪  Transpose ▪  Reverse ▪  Sort ▪  Split ▪  Gather ▪  Riffle ▪  &hellip;</li>
+</ul>
+<h1 id="4-函数作用于列表">4. <a href="https://reference.wolfram.com/language/guide/ApplyingFunctionsToLists.html">函数作用于列表</a></h1>
+<h1 id="5-数学和统计运算">5. <a href="https://reference.wolfram.com/language/guide/MathematicalAndCountingOperationsOnLists.html">数学和统计运算</a></h1>
+<ul>
+<li>Total ▪  Differences ▪  Count ▪  CountDistinct ▪  Counts ▪  BinCounts ▪  SequenceCount ▪  &hellip;</li>
+</ul>
+<h1 id="6-显示和可视化列表">6. <a href="https://reference.wolfram.com/language/guide/DataVisualization.html">显示和可视化列表</a></h1>
+<ul>
+<li>Column ▪  Row ▪  Grid ▪  ListPlot ▪  ArrayPlot ▪  &hellip;</li>
+</ul>
+<h1 id="7-导入和导出">7. <a href="https://reference.wolfram.com/language/guide/ImportingAndExporting.html">导入和导出</a></h1>
+<ul>
+<li>Import ▪  Export ▪  &ldquo;Table&rdquo; ▪  &ldquo;Text&rdquo; ▪  &ldquo;CSV&rdquo; ▪  &hellip;</li>
+</ul>
+<h1 id="8-从列表创建相关性">8. <a href="https://reference.wolfram.com/language/guide/Associations.html">从列表创建相关性</a></h1>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://reference.wolfram.com/language/guide/ListManipulation.html">列表操作—Wolfram 语言参考资料</a></li>
+<li><a href="https://sighingnow.github.io/math/mathematica_list.html">Mathematica中的列表(List) | HE Tao</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Python去除指定字符strip和replace - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Python去除指定字符strip和replace</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-03</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-引言">1. 引言</h1>
+<p>Python 去除字符串的指定字符时， strip 和 replace 的区别：</p>
+<ul>
+<li>strip 去掉<code>首尾的字符</code>；默认空的话，去除<code>空格</code></li>
+<li>replace 去掉<code>中间任意字符</code></li>
+</ul>
+<h1 id="2-示例">2. 示例</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>a <span style="color:#555">=</span> <span style="color:#c30">&#39;2023-01-03&#39;</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#555">=</span> a<span style="color:#555">.</span>strip(<span style="color:#c30">&#39;-&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#366">print</span>(b)
+</span></span><span style="display:flex;"><span>c <span style="color:#555">=</span> a<span style="color:#555">.</span>replace(<span style="color:#c30">&#39;-&#39;</span>,<span style="color:#c30">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#366">print</span>(c)
+</span></span></code></pre></div><p>结果：</p>
+<pre tabindex="0"><code>2023-01-03
+20230103
+</code></pre><h1 id="3-延伸阅读">3. 延伸阅读</h1>
+<ol>
+<li><a href="https://docs.python.org/3/library/stdtypes.html?highlight=strip#str.strip">str.strip([chars]): Built-in Types — Python 3.12.1 documentation</a></li>
+<li><a href="https://docs.python.org/3/library/stdtypes.html?highlight=strip#str.strip">str.replace(old, new[, count] Built-in Types — Python 3.12.1 documentation</a></li>
+<li><a href="https://blog.csdn.net/zdz0200/article/details/81453367">python 去除字符串中指定字符_python删除字符串中的指定字符-CSDN博客</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

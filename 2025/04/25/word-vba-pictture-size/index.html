@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Word利用VBA宏批量设置图片大小 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Word利用VBA宏批量设置图片大小</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2025-04-25</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/windows/">#Windows</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <ol>
+<li>
+<p>打开 Word 的“开发工具”选项卡：文件 → 选项 → 自定义功能区 → 勾选右边的“开发工具”。</p>
+</li>
+<li>
+<p>插入 VBA 宏代码：点击“开发工具”→“Visual Basic”；在左侧找到“本机文档（ThisDocument）”，双击；粘贴以下代码：</p>
+</li>
+</ol>
+<pre tabindex="0"><code>Sub ResizeAllPictures()
+    Dim iShape As InlineShape
+    Dim shape As Shape
+    Dim targetWidth As Single
+    Dim targetHeight As Single
+
+    &#39; 设置目标宽度和高度（单位：磅，1 厘米 ≈ 28.35 磅）
+    targetWidth = CentimetersToPoints(10)   &#39; 例如：10 厘米宽
+    targetHeight = CentimetersToPoints(12) &#39; 例如：12 厘米高
+
+    &#39; 调整内嵌图片（与文字在一行的）
+    For Each iShape In ActiveDocument.InlineShapes
+        If iShape.Type = wdInlineShapePicture Then
+            iShape.LockAspectRatio = msoFalse
+            iShape.Width = targetWidth
+            iShape.Height = targetHeight
+        End If
+    Next iShape
+
+    &#39; 调整浮动图片（可自由拖动的）
+    For Each shape In ActiveDocument.Shapes
+        If shape.Type = msoPicture Then
+            shape.LockAspectRatio = msoFalse
+            shape.Width = targetWidth
+            shape.Height = targetHeight
+        End If
+    Next shape
+
+    MsgBox &#34;所有图片已批量调整大小！&#34;
+End Sub
+</code></pre><ol start="3">
+<li>点击“运行”按钮（或按 F5）</li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

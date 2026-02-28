@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu安装微信和QQ - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu安装微信和QQ</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-02-17</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-优麒麟的ukylin-wine和ukylin-wechat">1. 优麒麟的ukylin-wine和ukylin-wechat</h1>
+<p>地址： <a href="http://archive.ubuntukylin.com/software/pool/partner/">http://archive.ubuntukylin.com/software/pool/partner/</a></p>
+<p>下载：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget http://archive.ubuntukylin.com/software/pool/partner/ukylin-wine_70.6.3.25_amd64.deb
+</span></span><span style="display:flex;"><span>wget http://archive.ubuntukylin.com/software/pool/partner/ukylin-wechat_3.0.0_amd64.deb
+</span></span><span style="display:flex;"><span>wget http://archive.ubuntukylin.com/software/pool/partner/ukylin-qq_1.0_amd64.deb
+</span></span></code></pre></div><p>安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install -f -y ./ukylin-wine_70.6.3.25_amd64.deb
+</span></span><span style="display:flex;"><span>sudo apt-get install -f -y ./ukylin-wechat_3.0.0_amd64.deb
+</span></span><span style="display:flex;"><span>sudo apt-get install -f -y ./ukylin-qq_1.0_amd64.deb
+</span></span></code></pre></div><p>结论：微信可以正常使用；QQ的部分字体缺失 (中文乱码是空格)，但不影响使用。</p>
+<p>解决方案：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install fonts-droid-fallback ttf-wqy-zenhei ttf-wqy-microhei fonts-arphic-ukai fonts-arphic-uming
+</span></span></code></pre></div><p>下载字体： <a href="http://www.mycode.net.cn/wp-content/uploads/2015/07/YaHeiConsolas.tar.gz">YaHeiConsolas.tar</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tar -zxvf YaHeiConsolas.tar.gz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo mkdir -p /usr/share/fonts/vista
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo cp YaHeiConsolas.ttf /usr/share/fonts/vista/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo chmod <span style="color:#f60">644</span> /usr/share/fonts/vista/*.ttf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#366">cd</span> /usr/share/fonts/vista/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo mkfontscale <span style="color:#555">&amp;&amp;</span> sudo mkfontdir <span style="color:#555">&amp;&amp;</span> sudo fc-cache -fv
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-get install unity-tweak-tool
+</span></span></code></pre></div><p>利用 unity-tweak-tool 设置 微软雅黑 + Consolas 字体。</p>
+<h1 id="2-网页版微信-electronic-wechat">2. 网页版微信 electronic-wechat</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install snap
+</span></span><span style="display:flex;"><span>sudo snap install electronic-wechat
+</span></span></code></pre></div><p>结论：网页版微信不能登陆。</p>
+<h1 id="3-深度系统的wine">3. 深度系统的wine</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -O- https://deepin-wine.i-m.dev/setup.sh | sh  
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Tencent WeChat Work Client on Deepin Wine6</span>
+</span></span><span style="display:flex;"><span>sudo apt-get install com.qq.weixin.work.deepin
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 微信 Tencent WeChat Client on Deepin Wine</span>
+</span></span><span style="display:flex;"><span>sudo apt-get install com.qq.weixin.deepin
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Tencent TIM Client on Deepin Wine</span>
+</span></span><span style="display:flex;"><span>sudo apt-get install com.qq.office.deepin
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># QQ Tencent QQ Client on Deepin Wine6</span>
+</span></span><span style="display:flex;"><span>sudo apt-get install com.qq.im.deepin
+</span></span></code></pre></div><p>深度系统的软件包列表： <a href="https://deepin-wine.i-m.dev/">https://deepin-wine.i-m.dev/</a></p>
+<ul>
+<li>首次使用需要添加仓库： wget -O- <a href="https://deepin-wine.i-m.dev/setup.sh">https://deepin-wine.i-m.dev/setup.sh</a> | sh</li>
+<li>而后使用： apt install &hellip; 安装对应软件包</li>
+</ul>
+<p>结论：软件包间的依赖关系无法满足，不能安装。</p>
+<h1 id="4-参考">4. 参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/dhdt1/article/details/119929494">Ubuntu20.04微信安装 简单 使用方便_dhdt1的博客-CSDN博客</a></li>
+<li><a href="https://blog.csdn.net/int_Brosea/article/details/106434347?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-6.nonecase&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-6.nonecase">在Ubuntu 20.04上优雅的使用微信和QQ（基于deepin wine）_int_Brosea的博客-CSDN博客</a></li>
+<li><a href="https://deepin-wine.i-m.dev/">深度系统软件包列表</a></li>
+<li><a href="https://github.com/zq1997/deepin-wine">zq1997/deepin-wine: 【deepin源移植】Debian/Ubuntu上最快的QQ/微信安装方式</a></li>
+<li><a href="https://www.cnblogs.com/impw/p/13734169.html">Ubuntu20.04 wechat和qq 字体太小，乱码 # - impwa - 博客园</a></li>
+<li><a href="https://blog.csdn.net/starzhou/article/details/105493420">ubuntu 安装微软雅黑和 Consolas 字体_starzhou的专栏-CSDN博客_ubuntu 微软雅黑</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

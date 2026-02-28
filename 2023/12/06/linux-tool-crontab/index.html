@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Linux命令行定时工具crontab - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Linux命令行定时工具crontab</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-06</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/shell/">#Shell</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/minimalism/">#Minimalism</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/automation/">#Automation</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-说明">1. 说明</h1>
+<blockquote>
+<p>“Wisdom is the power to put our time and our knowledge to the proper use” ~ Thomas J. Watson</p>
+</blockquote>
+<p>crontab 是 Linux系统的命令行定时工具，用于在固定的间隔时间执行指定的系统指令或 shell script 脚本。</p>
+<p>格式为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># ┌───────────── minute (0–59)</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># │ ┌───────────── hour (0–23)</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># │ │ ┌───────────── day of the month (1–31)</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># │ │ │ ┌───────────── month (1–12)</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># │ │ │ │ ┌───────────── day of the week (0–6) (Sunday to Saturday;</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># │ │ │ │ │                                   7 is also Sunday on some systems)</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># │ │ │ │ │</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># │ │ │ │ │</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># * * * * * &lt;command to execute&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 分 时 日 月 星期 要运行的命令</span>
+</span></span></code></pre></div><p>注释：</p>
+<ul>
+<li>第1列 分钟 0～59</li>
+<li>第2列 小时 0～23（0表示子夜）</li>
+<li>第3列 日 1～31</li>
+<li>第4列 月 1～12</li>
+<li>第5列 星期 0～7（0和7表示星期天）</li>
+<li>第6列 要运行的命令</li>
+</ul>
+<p>表达式：</p>
+<ul>
+<li>逗号（,）表示列举，例如： <code>1,3,4,7 * * * * echo hello world</code>表示，在每小时的1、3、4、7分时，打印&quot;hello world&quot;。</li>
+<li>连词符（-）表示范围，例如：<code>1-6 * * * * echo hello world</code>表示，每小时的1到6分钟内，每分钟都会打印&quot;hello world&quot;。</li>
+<li>星号（*）代表任何可能的值。例如：在“小时域”里的星号等于是“每一个小时”。</li>
+<li>百分号(%) 表示“每&quot;。例如：<code>*%10 * * * * echo hello world</code> 表示，每10分钟打印一回&quot;hello world&quot;。</li>
+</ul>
+<h1 id="2-基本用法">2. 基本用法</h1>
+<h2 id="ubuntu">Ubuntu</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ which crontab
+</span></span><span style="display:flex;"><span>/usr/bin/crontab
+</span></span></code></pre></div><h2 id="macos">macOS</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ where crontab
+</span></span><span style="display:flex;"><span>/usr/bin/crontab
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 开启</span>
+</span></span><span style="display:flex;"><span>sudo /usr/bin/crontab start
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 重启</span>
+</span></span><span style="display:flex;"><span>sudo /usr/bin/crontab restart
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 关闭</span>
+</span></span><span style="display:flex;"><span>sudo /usr/bin/crontab stop
+</span></span></code></pre></div><h1 id="3-实例">3. 实例</h1>
+<p>可以直接在 <a href="https://crontab.guru">https://crontab.guru</a> 输入，查看想要的效果。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每1分钟执行一次myCommand</span>
+</span></span><span style="display:flex;"><span>* * * * * myCommand
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每小时的第3和第15分钟执行</span>
+</span></span><span style="display:flex;"><span>3,15 * * * * myCommand
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 在上午8点到11点的第3和第15分钟执行</span>
+</span></span><span style="display:flex;"><span>3,15 8-11 * * * myCommand
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每隔两天的上午8点到11点的第3和第15分钟执行</span>
+</span></span><span style="display:flex;"><span>3,15 8-11 */2  *  * myCommand
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每周一上午8点到11点的第3和第15分钟执行</span>
+</span></span><span style="display:flex;"><span>3,15 8-11 * * <span style="color:#f60">1</span> myCommand
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每晚的21:30重启执行</span>
+</span></span><span style="display:flex;"><span><span style="color:#f60">30</span> <span style="color:#f60">21</span> * * * myCommand
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每月1、10、22日的4 : 45执行</span>
+</span></span><span style="display:flex;"><span><span style="color:#f60">45</span> <span style="color:#f60">4</span> 1,10,22 * * myCommand
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每周六、周日的1 : 10执行</span>
+</span></span><span style="display:flex;"><span><span style="color:#f60">10</span> <span style="color:#f60">1</span> * * 6,0 myCommand
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每天18 : 00至23 : 00之间每隔30分钟执行</span>
+</span></span><span style="display:flex;"><span>0,30 18-23 * * * myCommand
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每星期六的晚上11 : 00 pm执行</span>
+</span></span><span style="display:flex;"><span><span style="color:#f60">0</span> <span style="color:#f60">23</span> * * <span style="color:#f60">6</span> myCommand
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每一小时执行</span>
+</span></span><span style="display:flex;"><span>* */1 * * * myCommand
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 晚上11点到早上7点之间，每隔一小时执行</span>
+</span></span><span style="display:flex;"><span><span style="color:#f60">0</span> 23-7 * * * myCommand
+</span></span></code></pre></div><h1 id="4-延伸阅读">4. 延伸阅读</h1>
+<ul>
+<li><a href="https://crontab.guru/">Crontab.guru - The cron schedule expression editor</a></li>
+<li><a href="https://crontab.guru/examples.html">Cron examples - Crontab.guru</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Cron">cron - Wikipedia</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/Cron">Cron - 维基百科，自由的百科全书</a></li>
+<li><a href="https://linuxtools-rst.readthedocs.io/zh-cn/latest/tool/crontab.html">19. crontab 定时任务 — Linux Tools Quick Tutorial</a></li>
+<li><a href="https://ss64.com/osx/crontab.html">crontab Man Page - macOS - SS64.com</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

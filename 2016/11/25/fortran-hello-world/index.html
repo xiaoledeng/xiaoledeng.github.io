@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>【Fortran并行科学计算】Hello-World程序 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">【Fortran并行科学计算】Hello-World程序</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2016-11-25</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/fortran/">#Fortran</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/parallel/">#Parallel</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>MPI（message passing interface），是一个消息传递接口。MPI的函数总共有287个。</p>
+<p>想实现一个MPI并行计算的程序的话，只要掌握MPI的工作机理和6个简单的MPI函数便可以了，本文介绍4个简单MPI函数：MPI_INIT、MPI_COMM_RANK、MPI_COMM_SIZE和MPI_FINALIZE。</p>
+<p>注意：以下调用格式为Fortran格式，大部分教程都是C语言的MPI介绍，这里以及以后的文章都是以Fortran为基础，尤其要注意Fortran不分大小写。</p>
+<h1 id="一hello-world程序">一、Hello World程序</h1>
+<p>先给出一个最简单的Hello_world的Fortran + MPI的程序，在此基础上来分析MPI的4个最简单的函数——MPI_INIT、MPI_COMM_RANK、MPI_COMM_SIZE和MPI_FINALIZE。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Fortran" data-lang="Fortran"><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#069;font-weight:bold">program</span><span style="color:#bbb"> </span>hello_world<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#069;font-weight:bold">use</span><span style="color:#bbb"> </span>mpi<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#09f;font-style:italic">!include &#39;mpif.h&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#bbb">      </span><span style="color:#069;font-weight:bold">integer</span><span style="color:#bbb"> </span>ierr,<span style="color:#bbb"> </span>num_procs,<span style="color:#bbb"> </span>my_id<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#069;font-weight:bold">call</span><span style="color:#bbb"> </span>MPI_INIT<span style="color:#bbb"> </span>(<span style="color:#bbb"> </span>ierr<span style="color:#bbb"> </span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#09f;font-style:italic">! find out my process ID, and how many processes were started.
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#bbb">      </span><span style="color:#069;font-weight:bold">call</span><span style="color:#bbb"> </span>MPI_COMM_RANK<span style="color:#bbb"> </span>(MPI_COMM_WORLD,<span style="color:#bbb"> </span>my_id,<span style="color:#bbb"> </span>ierr)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#069;font-weight:bold">call</span><span style="color:#bbb"> </span>MPI_COMM_SIZE<span style="color:#bbb"> </span>(MPI_COMM_WORLD,<span style="color:#bbb"> </span>num_procs,<span style="color:#bbb"> </span>ierr)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#069;font-weight:bold">print</span><span style="color:#bbb"> </span><span style="color:#555">*</span>,<span style="color:#bbb"> </span><span style="color:#c30">&#34;Hello world! I&#39;m process &#34;</span>,<span style="color:#bbb"> </span>my_id,<span style="color:#bbb"> </span><span style="color:#c30">&#34; out of &#34;</span>,<span style="color:#bbb"> </span>num_procs,<span style="color:#bbb"> </span><span style="color:#c30">&#34; processes.&#34;</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#069;font-weight:bold">call</span><span style="color:#bbb"> </span>MPI_FINALIZE<span style="color:#bbb"> </span>(<span style="color:#bbb"> </span>ierr<span style="color:#bbb"> </span>)<span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">      </span><span style="color:#069;font-weight:bold">stop</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">	</span><span style="color:#069;font-weight:bold">end</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">program</span><span style="color:#bbb"> </span>hello_world<span style="color:#bbb">
+</span></span></span></code></pre></div><h2 id="1mpi初始化函数">1.MPI初始化函数</h2>
+<pre><code>call MPI_INIT (ierr)
+</code></pre>
+<p>MPI_Init用来初始化MPI执行环境，建立多个MPI进程之间的联系，为后续通信做准备。</p>
+<h2 id="2mpi结束函数">2.MPI结束函数</h2>
+<pre><code>call MPI_FINALIZE(ierr)
+</code></pre>
+<p>MPI_Finalize则是结束MPI执行环境。</p>
+<h2 id="3mpi进程标识获取函数">3.MPI进程标识获取函数</h2>
+<pre><code>call MPI_COMM_RANK(MPI_COMM_WORLD, my_id, ierr)
+</code></pre>
+<p>MPI_Comm_rank就是来标识各个MPI进程的，告诉调用该函数的进程“我是谁？”。</p>
+<h2 id="4mpi通信包含的进程数获取函数">4.MPI通信包含的进程数获取函数</h2>
+<pre><code>call MPI_COMM_SIZE(MPI_COMM_WORLD, num_procs, ierr)
+</code></pre>
+<p>MPI_COMM_SIZE用来标识相应进程组中有多少个进程。</p>
+<h1 id="二运行过程和结果">二、运行过程和结果</h1>
+<p>2.1. 将以上内容保存为hello_world.f90，上传到服务器的文件夹/home/xldeng/mpi里面：</p>
+<p>2.2. 编译hello_world.f90为hello_world，并用ls查看内容：</p>
+<pre><code>  mpiifort hello_world.f90 -o hello_world
+</code></pre>
+<p>2.3. 使用服务器里面的命令来调用不同的节点上面的核来计算：</p>
+<pre><code>  srun -p hpib -n 10 hello-world
+</code></pre>
+<h1 id="三注意事项">三、注意事项</h1>
+<p>3.1 . 注意程序中的一个小细节：</p>
+<pre><code>  use mpi 
+  !include 'mpif.h'
+</code></pre>
+<p>含义为调用mpi的库函数，因为使用的是Intel MPI + Fortran90，所以调用的方式为：use mpi。Fortran77可能需要 include &ldquo;mpif.h&rdquo;。</p>
+<p>3.2 . 在2.2节中的mpiifort是ifort的并行使用方法，检验mpiifort的用法：which mpiifort或者是mpiifort -v。</p>
+<p>3.3 .  在2.3节中的说明：本程序的运行平台为服务器上，所以使用的是<a href="http://hpc.whu.edu.cn/mpiguide/">MPI使用指南 | 武汉大学超算中心</a>中提供的提交方法。如果在单台服务器上面，可以使用如下命令：</p>
+<pre><code>mpirun -np 4 hello_wolrd
+</code></pre>
+<p>来运行程序。</p>
+<h1 id="四参考文献">四、参考文献</h1>
+<ul>
+<li><a href="http://blog.sina.com.cn/s/blog_a3d16f5e0101dsja.html">让你一天轻松搞定MPI并行编程_梦想前进天使_新浪博客</a></li>
+<li><a href="http://condor.cc.ku.edu/~grobe/docs/intro-MPI.shtml">Introduction to the Message Passing Interface (MPI) using Fortran, Academic Computing Services, University of Kansas</a></li>
+<li><a href="http://blog.csdn.net/garfielder007/article/details/51160827">MPI编程及性能优化 - GarfieldEr007的专栏 - 博客频道 - CSDN.NET</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

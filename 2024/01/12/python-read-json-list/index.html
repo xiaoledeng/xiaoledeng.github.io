@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Python读取json文件为list - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Python读取json文件为list</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-12</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>json 文件内容为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#309;font-weight:bold">&#34;title&#34;</span>: <span style="color:#c30">&#34;短歌行 其一&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#309;font-weight:bold">&#34;paragraphs&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;对酒当歌，人生几何！譬如朝露，去日苦多。&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;慨当以慷，忧思难忘。何以解忧？唯有杜康。&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;青青子衿，悠悠我心。但为君故，沉吟至今。&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;呦呦鹿鸣，食野之苹。我有嘉宾，鼓瑟吹笙。&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;明明如月，何时可掇？忧从中来，不可断绝。(明明 一作：佼佼)&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;越陌度阡，枉用相存。契阔谈讌，心念旧恩。(谈讌 一作：谈宴)&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;月明星稀，乌鹊南飞。绕树三匝，何枝可依？&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;山不厌高，海不厌深。周公吐哺，天下归心。(海 一作：水)&#34;</span>
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#309;font-weight:bold">&#34;title&#34;</span>: <span style="color:#c30">&#34;观沧海&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#309;font-weight:bold">&#34;paragraphs&#34;</span>: [
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;东临碣石，以观沧海。&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;水何澹澹，山岛竦峙。&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;树木丛生，百草丰茂。&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;秋风萧瑟，洪波涌起。&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;日月之行，若出其中；&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;星汉灿烂，若出其里。&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#c30">&#34;幸甚至哉，歌以咏志。&#34;</span>
+</span></span><span style="display:flex;"><span>        ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>Python 代码为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">json</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Opening JSON file and returns JSON object as a list</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">with</span> <span style="color:#366">open</span>(<span style="color:#c30">&#39;test.json&#39;</span>) <span style="color:#069;font-weight:bold">as</span> f:
+</span></span><span style="display:flex;"><span>    data <span style="color:#555">=</span> json<span style="color:#555">.</span>load(f) 
+</span></span><span style="display:flex;"><span>    <span style="color:#366">print</span>(<span style="color:#366">type</span>(data))
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># Iterating through the json as list </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(<span style="color:#366">len</span>(data)): 
+</span></span><span style="display:flex;"><span>        <span style="color:#366">print</span>(<span style="color:#c30">&#39;</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#39;</span>, data[i][<span style="color:#c30">&#34;title&#34;</span>], <span style="color:#c30">&#39;</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#39;</span>) 
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">for</span> j <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(<span style="color:#366">len</span>(data[i][<span style="color:#c30">&#34;paragraphs&#34;</span>])):
+</span></span><span style="display:flex;"><span>            <span style="color:#366">print</span>(data[i][<span style="color:#c30">&#34;paragraphs&#34;</span>][j])
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># Closing file </span>
+</span></span><span style="display:flex;"><span>    f<span style="color:#555">.</span>close()
+</span></span></code></pre></div><p>显示结果为：</p>
+<pre tabindex="0"><code>&lt;class &#39;list&#39;&gt;
+
+ 短歌行 其一 
+
+对酒当歌，人生几何！譬如朝露，去日苦多。
+慨当以慷，忧思难忘。何以解忧？唯有杜康。
+青青子衿，悠悠我心。但为君故，沉吟至今。
+呦呦鹿鸣，食野之苹。我有嘉宾，鼓瑟吹笙。
+明明如月，何时可掇？忧从中来，不可断绝。(明明 一作：佼佼)
+越陌度阡，枉用相存。契阔谈讌，心念旧恩。(谈讌 一作：谈宴)
+月明星稀，乌鹊南飞。绕树三匝，何枝可依？
+山不厌高，海不厌深。周公吐哺，天下归心。(海 一作：水)
+
+ 观沧海 
+
+东临碣石，以观沧海。
+水何澹澹，山岛竦峙。
+树木丛生，百草丰茂。
+秋风萧瑟，洪波涌起。
+日月之行，若出其中；
+星汉灿烂，若出其里。
+幸甚至哉，歌以咏志。
+</code></pre><h1 id="延伸阅读">延伸阅读</h1>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/447820510">如何在Python中优雅地处理JSON文件 - 知乎</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

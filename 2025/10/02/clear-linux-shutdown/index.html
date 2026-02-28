@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Clear Linux系统已停更 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Clear Linux系统已停更</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2025-10-02</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/clearlinux/">#ClearLinux</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="前言">前言</h1>
+<p>Linux 系统还是要选择稳定开发的，比如：<code>Ubuntu</code>等。</p>
+<h1 id="事件">事件</h1>
+<p>今天更新Clear Linux的系统，结果发现更新不了。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo swupd update
+</span></span><span style="display:flex;"><span>Update started
+</span></span><span style="display:flex;"><span>Error: Unable to determine the server version
+</span></span><span style="display:flex;"><span>Update failed
+</span></span></code></pre></div><p>后面才查到了官方声明：</p>
+<blockquote>
+<p>After years of innovation and community collaboration, we’re ending support for Clear Linux OS. Effective immediately, Intel will no longer provide security patches, updates, or maintenance for Clear Linux OS, and the Clear Linux OS GitHub repository will be archived in read-only mode. So, if you’re currently using Clear Linux OS, we strongly recommend planning your migration to another actively maintained Linux distribution as soon as possible to ensure ongoing security and stability.</p>
+<p>Rest assured that Intel remains deeply invested in the Linux ecosystem, actively supporting and contributing to various open-source projects and Linux distributions to enable and optimize for Intel hardware.</p>
+<p>A heartfelt thank you to every developer, user, and contributor who helped shape Clear Linux OS over the last 10 years. Your feedback and contributions have been invaluable.</p>
+</blockquote>
+<p>It was actively developed from <code>2/6/2015</code>-<code>7/18/2025</code>.</p>
+<h1 id="延伸阅读">延伸阅读</h1>
+<ul>
+<li><a href="https://community.clearlinux.org/t/all-good-things-come-to-an-end-shutting-down-clear-linux-os/10716">All good things come to an end: Shutting down Clear Linux OS - General Discussion - Clear Linux OS Forum</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

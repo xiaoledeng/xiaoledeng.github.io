@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS对比备份盘目录与本地目录 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS对比备份盘目录与本地目录</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2025-11-05</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>定期备份工作电脑是非常有必要的。一般是：利用 macOS 系统的 Time Machine 定期备份电脑。</p>
+<p>Time Machine 提供的系统工具 <code>tmutil</code> 可以直接比较当前系统和任意备份。会告诉哪些文件：</p>
+<ul>
+<li>在备份中存在但现在没有（被删除） (-)</li>
+<li>被修改 (!)</li>
+<li>被新增 (+)</li>
+</ul>
+<p>如果当前本地没有备份，当前本地被删了<code>100G</code>的文件，上一个备份的没有删除，如何判断删除的内容有哪些？</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<p>1、挂载备份盘，找到最新的备份路径：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tmutil listbackups
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 显示</span>
+</span></span><span style="display:flex;"><span>/Volumes/BackupDisk/Backups.backupdb/MacBook-Pro/2025-10-17-123456
+</span></span><span style="display:flex;"><span>/Volumes/BackupDisk/Backups.backupdb/MacBook-Pro/2025-10-31-123456
+</span></span><span style="display:flex;"><span>/Volumes/BackupDisk/Backups.backupdb/MacBook-Pro/2025-11-01-123456
+</span></span><span style="display:flex;"><span>/Volumes/BackupDisk/Backups.backupdb/MacBook-Pro/2025-11-03-123456
+</span></span></code></pre></div><p>2、比较当前系统和该备份</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo tmutil compare /Users <span style="color:#c30">&#34;/Volumes/BackupDisk/Backups.backupdb/MacBook-Pro/2025-11-03-123456/Data/Users&#34;</span> &gt; ~/Desktop/changed_files.txt
+</span></span></code></pre></div><p>说明：</p>
+<ul>
+<li>逐项比较当前系统 <code>/Users</code> 与备份的 <code>/Users</code> ，把结果写入桌面上的 <code>changed_files.txt</code></li>
+<li>-：本地已删除（备份有，本地没有）</li>
+<li>!：被修改</li>
+<li>+：本地新增</li>
+</ul>
+<p>3、查看变化</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 筛出删除的文件</span>
+</span></span><span style="display:flex;"><span>grep <span style="color:#c30">&#34;^-&#34;</span> ~/Desktop/changed_files.txt &gt; ~/Desktop/changed_files_deleted.txt
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 筛出文件夹的变化</span>
+</span></span><span style="display:flex;"><span>grep <span style="color:#c30">&#34;Documents&#34;</span> ~/Desktop/changed_files.txt &gt; ~/Desktop/changed_files_Documents.txt
+</span></span></code></pre></div><h1 id="3-末了的话">3. 末了的话</h1>
+<p>定期备份很必要。本地磁盘容量若有变化（增加或减少），如此可看到详细的变化。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Mac搭建Heox博客教程 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Mac搭建Heox博客教程</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2017-03-13</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-配置github的pages">1. 配置Github的pages</h1>
+<p>分为注册，创建一个项目。具体参考教程见：<a href="http://www.jianshu.com/p/b94e145bd972">Hexo-mac下搭建hexo博客 - 简书</a>。</p>
+<h1 id="2-安装homebrew">2. 安装Homebrew</h1>
+<pre><code>/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+<h1 id="3-安装git">3. 安装Git</h1>
+<pre><code>brew install git
+</code></pre>
+<h1 id="4-安装nodejs">4. 安装node.js</h1>
+<pre><code>brew install node
+</code></pre>
+<h1 id="5-配置ssh-key">5. 配置SSH key</h1>
+<pre><code>➜ ssh -T git@github.com
+Identity added: /Users/name/.ssh/id_rsa ((null))
+Hi xiaoledeng! You've successfully authenticated, but GitHub does not provide shell access.
+</code></pre>
+<h1 id="6-安装heox">6. 安装Heox</h1>
+<pre><code>npm install hexo-cli -g
+hexo init blog
+</code></pre>
+<p>创建了一个blog文件夹，</p>
+<pre><code>cd blog
+hexo init
+npm install
+hexo g  // 全拼是：hexo generate，可以简写成 hexo g
+hexo s  // 全拼是：hexo server，可以简写成 hexo s
+</code></pre>
+<p>如此，输入localhost:4000，就可以看到本地的Hello World博客啦！。</p>
+<h1 id="7-同步到github">7. 同步到Github</h1>
+<pre><code>npm install hexo-deployer-git --save
+hexo d
+</code></pre>
+<h1 id="8-更改hexo主题next">8. 更改Hexo主题NexT</h1>
+<pre><code>git clone https://github.com/iissnan/hexo-theme-next themes/next
+</code></pre>
+<p>其中，有一些细节性的修改，可以参考：<a href="http://theme-next.iissnan.com/">NexT 使用文档</a></p>
+<h1 id="9-创建不同的文档">9. 创建不同的文档</h1>
+<ul>
+<li>
+<p>创建新文章</p>
+<p>hexo new &ldquo;标题名字&rdquo;</p>
+</li>
+<li>
+<p>创建“关于我”的栏目</p>
+<p>hexo new page about</p>
+</li>
+<li>
+<p>创建“分类”的栏目</p>
+<p>hexo new page categories</p>
+</li>
+<li>
+<p>创建“tags”的栏目</p>
+<p>hexo new page tags</p>
+</li>
+</ul>
+<p>注意修改分类和tags的类型：Type值，见<a href="http://theme-next.iissnan.com/theme-settings.html">主题配置 - NexT 使用文档</a></p>
+<h1 id="10-关联域名">10. 关联域名</h1>
+<p>注意域名解析： xiaoledeng.github.io ，类型为CNAME。在blog/source/下面创建CNAME文件，内容为： <a href="https://www.xiaoledeng.com">www.xiaoledeng.com</a></p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

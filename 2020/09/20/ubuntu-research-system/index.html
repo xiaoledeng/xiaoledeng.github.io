@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu 20.04 LTS作为科研主系统 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu 20.04 LTS作为科研主系统</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-20</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-简介">1. 简介</h1>
+<p>新台式机电脑是dell，默认安装的是Windows10，可是运行速度堪忧，完全跟不上鼠标和键盘操作的节奏。</p>
+<p>是故，决定安装Ubuntu 20.4 LTS系统作为科研的主系统。</p>
+<p>台式机的基本配置：</p>
+<ul>
+<li>内存：16G+16G=32G</li>
+<li>处理器：Intel® Core™ i7-8700 CPU @ 3.20GHz × 12</li>
+<li>图形：llvmpipe (LLVM 10.0.0, 256 bits) / llvmpipe (LLVM 10.0.0, 256 bits)</li>
+<li>磁盘空间：1.0TB</li>
+</ul>
+<p>Ubuntu系统的基本配置：</p>
+<ul>
+<li>OS name：Ubuntu 20.04.1 LTS</li>
+<li>OS Type：64位</li>
+<li>GNOME Version：3.36.3</li>
+<li>Windowing System：X11</li>
+</ul>
+<h1 id="2-录制u盘启动盘">2. 录制U盘启动盘</h1>
+<p>在<a href="https://mirrors.ustc.edu.cn/">USTC Open Source Software Mirror</a>下载Ubuntu 20.4 LTS的镜像文件，而后刻录到U盘里面，作为系统系统盘。</p>
+<p>插上U盘，重启电脑，按F12，从U盘启动，依次按照步骤安装Ubuntu20.04LTS。</p>
+<h1 id="3-基本软件">3. 基本软件</h1>
+<p>首先，更改软件源：<a href="/2020/09/17/ubuntu-change-source/">Ubuntu更换中科大教育网的软件源</a>，以加快软件的下载速度。</p>
+<p>其次，依次安装常用软件：</p>
+<ul>
+<li>Mathematica12.1.1，通过<a href="https://tiebamma.github.io/InstallTutorial/">Mathematica 激活指南</a>下载和安装</li>
+<li>谷歌浏览器，在<a href="https://www.google.com/chrome/index.html">Google Chrome 网络浏览器</a>-其他平台-linux下载最新的Google Chrome .deb软件包，而后安装即可</li>
+<li>sublime编辑器，见<a href="/2020/09/17/ubuntu-install-sublime-latex-tools/">Ubuntu安装Sublime和latex-tools</a></li>
+<li>texlive2020，见<a href="/2020/09/17/ubuntu-install-texlive2020/">Ubuntu安装Texlive2020</a></li>
+<li>texstudio，见<a href="https://www.texstudio.org/">TeXstudio</a>- Download - Linux - Ubuntu 20.04</li>
+<li>gmt 6.1.1，见<a href="https://docs.gmt-china.org/latest/install/build-source/">Linux/macOS 下编译GMT源码 — GMT中文手册</a></li>
+<li>mathpix，见<a href="https://snapcraft.io/install/mathpix-snipping-tool/ubuntu">Install Mathpix Snipping Tool on Ubuntu using the Snap Store | Snapcraft</a></li>
+<li>Teamviewer，见<a href="https://www.teamviewer.cn/cn/download/linux/">下载 Linux 版 TeamViewer，进行远程桌面访问和协作</a></li>
+<li>Anydesk，见<a href="https://anydesk.com/zhs/downloads/linux">Linux上的AnyDesk远程桌面应用程序</a></li>
+<li>搜狗输入法，见<a href="https://pinyin.sogou.com/linux/">搜狗输入法 for linux</a></li>
+<li>Master PDF，见<a href="https://code-industry.net/free-pdf-editor/">Master PDF Editor for Linux. Download Master PDF Editor for Linux.</a></li>
+<li>Word系列，卸载libreoffice：sudo apt-get remove libreoffice-common；安装WPS，见：<a href="https://linux.wps.cn/#">WPS Office 2019 For Linux官网产品,WPS For Linux版下载，办公从未如此轻松</a></li>
+<li>unrar解压，命令：sudo apt-get install unrar</li>
+<li>删掉基本不用的自带软件（用的时候再装也来得及）：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get remove thunderbird totem rhythmbox empathy brasero simple-scan gnome-mahjongg aisleriot gnome-mines cheese transmission-common gnome-orca  gnome-sudoku
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-get remove onboard deja-dup
+</span></span></code></pre></div><ul>
+<li>JabRef参考文献，见<a href="/2020/09/20/ubuntu-install-jabref/">Ubuntu安装JabRef</a></li>
+<li>Snap管理软件，见<a href="/2020/09/20/linux-software-snap/">Linux管理软件Snap</a></li>
+</ul>
+<p>最后，设置Ubuntu系统：</p>
+<ul>
+<li><a href="/2020/09/18/ubuntu-show-second/">Ubuntu时钟显示秒</a></li>
+<li><a href="/2020/09/19/ubuntu-screen-remote-control/">Ubuntu虚拟显示器且远程控制（无显示器接入）</a></li>
+</ul>
+<h1 id="4参考">4.参考</h1>
+<ul>
+<li><a href="https://www.mscto.com/linux/636657.html">安装Ubuntu 20.04后要做的事(小白教程) | - 软件开发网</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Intel Fortran编译工具ifort和ifx - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Intel Fortran编译工具ifort和ifx</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-11-30</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/fortran/">#Fortran</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/parallel/">#Parallel</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>注意⚠️：</p>
+<blockquote>
+<p>Intel® Fortran Compiler Classic (ifort) is discontinued as of this release (version 2025.0).<sup>1</sup></p>
+</blockquote>
+<h1 id="1-简介">1. 简介</h1>
+<ul>
+<li>
+<p>Intel® Fortran Compiler Classic (IFORT)：传统的 Fortran 编译器，支持经典的 Fortran 标准（如 Fortran 77、90、95、2003、2008）</p>
+</li>
+<li>
+<p>Intel® Fortran Compiler (IFX)：新一代基于 LLVM 框架的 Fortran 编译器，支持最新的 Fortran 标准（如 Fortran 2018 和未来版本）</p>
+</li>
+</ul>
+<p>Intel® oneAPI 工具包包括了<code>IFORT</code>和<code>IFX</code>。</p>
+<h1 id="2-ifort-选项">2. ifort 选项</h1>
+<p><code>ifort</code> 成熟：适合需要完全兼容现有 Fortran 代码的场景。</p>
+<p>基础选项：</p>
+<ul>
+<li><strong><code>-c</code></strong>：只进行编译，生成目标文件（.o），不进行链接</li>
+<li><strong><code>-o &lt;filename&gt;</code></strong>：指定生成的可执行文件名称</li>
+<li><strong><code>-I&lt;directory&gt;</code></strong>：指定模块文件（.mod 文件）或头文件的搜索路径</li>
+<li><strong><code>-L&lt;directory&gt;</code> 和 <code>-l&lt;library&gt;</code></strong>：指定库的搜索路径和链接库</li>
+<li><strong><code>-static</code></strong>：生成静态链接的可执行文件，避免依赖动态库</li>
+</ul>
+<p>优化选项：</p>
+<ul>
+<li><strong><code>-O0</code></strong>：关闭优化（默认设置，适合调试）</li>
+<li><strong><code>-O1</code></strong>：基础优化，适合对编译时间敏感或有大量分支的代码</li>
+<li><strong><code>-O2</code></strong>：通用优化（推荐），优化循环、不变代码外提、指令调度等</li>
+<li><strong><code>-O3</code></strong>：高等级优化，适合需要最大化性能的程序，包括计算密集型程序、矢量化和内存访问优化</li>
+<li><strong><code>-xHost</code></strong>：生成专为运行平台优化的代码，针对本地 CPU 的特定架构优化</li>
+<li><strong><code>-ipo</code></strong>：启用跨文件优化（Interprocedural Optimization），进一步提升性能</li>
+<li><strong><code>-fast</code></strong>：启用多项性能优化选项（<code>-O3</code>、<code>-ipo</code>、<code>-xHost</code> 等）</li>
+</ul>
+<p>并行化和矢量化选项：</p>
+<ul>
+<li><strong><code>-parallel</code></strong>：启用自动并行化功能，适合多核 CPU</li>
+<li><strong><code>-qopenmp</code></strong>：启用 OpenMP 支持，需要代码中包含 OpenMP 指令</li>
+<li><strong><code>-coarray</code></strong>：启用 Fortran Coarray 支持（需要 Fortran 2008 标准）</li>
+<li><strong><code>-reduction</code></strong>：优化特定的并行循环归约操作</li>
+<li><strong><code>-vec</code></strong>：启用矢量化优化（默认启用）</li>
+<li><strong><code>-fma</code></strong>：启用 Fused Multiply-Add 指令以提升浮点计算效率（如果硬件支持）</li>
+</ul>
+<p>调试选项：</p>
+<ul>
+<li><strong><code>-g</code></strong>：生成调试信息，用于 GDB 或 Visual Studio 调试。</li>
+<li><strong><code>-traceback</code></strong>：在程序崩溃时生成函数调用堆栈信息，有助于定位问题</li>
+<li><strong><code>-check</code></strong>：检查代码中的潜在问题
+<ul>
+<li><strong><code>-check all</code></strong>：启用所有检查（数组越界、未初始化变量等）</li>
+<li><strong><code>-check bounds</code></strong>：检查数组下标越界</li>
+<li><strong><code>-check uninit</code></strong>：检查未初始化变量</li>
+</ul>
+</li>
+<li><strong><code>-warn</code></strong>：控制编译器警告
+<ul>
+<li><strong><code>-warn all</code></strong>：启用所有警告</li>
+<li><strong><code>-warn none</code></strong>：禁用所有警告</li>
+<li><strong><code>-warn unused</code></strong>：警告未使用的变量</li>
+</ul>
+</li>
+</ul>
+<p>语言标准相关：</p>
+<ul>
+<li><strong><code>-stand</code></strong>：检查代码是否符合特定的 Fortran 标准
+<ul>
+<li><strong><code>-stand f77</code></strong>：检查 Fortran 77 标准</li>
+<li><strong><code>-stand f95</code></strong>：检查 Fortran 95 标准</li>
+<li><strong><code>-stand f08</code></strong>：检查 Fortran 2008 标准</li>
+</ul>
+</li>
+<li><strong><code>-free</code></strong>：以自由格式解析源代码（默认支持 <code>.f90</code> 文件）。</li>
+<li><strong><code>-fixed</code></strong>：以固定格式解析源代码（默认支持 <code>.f</code> 文件）</li>
+</ul>
+<p>高级选项：</p>
+<ul>
+<li><strong><code>-reentrancy</code></strong>：控制线程安全模式
+<ul>
+<li><strong><code>-reentrancy threaded</code></strong>：启用多线程模式</li>
+<li><strong><code>-reentrancy none</code></strong>：关闭多线程模式</li>
+</ul>
+</li>
+<li><strong><code>-heap-arrays</code></strong>：将大数组分配到堆中而不是栈中</li>
+<li><strong><code>-fpp</code></strong>：启用 Fortran 预处理器，允许使用宏定义（类似于 C 的 <code>#define</code> 等）</li>
+<li><strong><code>-module &lt;dir&gt;</code></strong>：指定生成的 <code>.mod</code> 文件存放路径</li>
+</ul>
+<p>链接相关：</p>
+<ul>
+<li><strong><code>-shared</code></strong>：生成动态库（共享库）</li>
+<li><strong><code>-static</code></strong>：生成静态链接的可执行文件</li>
+<li><strong><code>-nolib-inline</code></strong>：禁用内联库代码优化</li>
+</ul>
+<p>错误处理和诊断：</p>
+<ul>
+<li><strong><code>-diag-enable</code> 和 <code>-diag-disable</code></strong>：控制特定诊断信息的显示</li>
+<li><strong><code>-diag-file &lt;filename&gt;</code></strong>：将诊断信息输出到指定文件</li>
+</ul>
+<p>其他实用选项：</p>
+<ul>
+<li><strong><code>-qopt-report</code></strong>：生成优化报告，便于分析编译器的优化行为</li>
+<li><strong><code>-save</code></strong>：将所有局部变量设为静态存储（与 Fortran 77 中的行为类似）</li>
+<li><strong><code>-zero</code></strong>：将未初始化变量初始化为 0（仅用于调试）</li>
+</ul>
+<h1 id="3-ifx-选项">3. ifx 选项</h1>
+<p><code>ifx</code> 适合现代化应用：比如异构计算、GPU 支持和最新 Fortran 特性。基本选项同ifort。不同点如下：</p>
+<p>优化选项：</p>
+<ul>
+<li><strong><code>-march=&lt;arch&gt;</code></strong>：针对指定架构优化（如 <code>x86-64</code>, <code>skylake</code>, <code>cascadelake</code> 等）</li>
+<li><strong><code>-fma</code></strong>：启用 Fused Multiply-Add（硬件支持时），提升浮点计算性能</li>
+</ul>
+<p>GPU 和异构计算：</p>
+<ul>
+<li><strong><code>-fsycl</code></strong>：启用 SYCL 支持，用于 oneAPI GPU 编程</li>
+<li><strong><code>-offload=&lt;device&gt;</code></strong>：指定代码运行的目标设备（如 <code>cpu</code>, <code>gpu</code> 等）</li>
+<li><strong><code>-fiopenmp-targets</code></strong>：针对 OpenMP target 并行运行，支持 GPU 或其他设备</li>
+</ul>
+<p>语言标准相关：</p>
+<ul>
+<li><strong><code>-stand</code></strong>：检查代码是否符合特定的 Fortran 标准
+<ul>
+<li><strong><code>-stand f18</code></strong>：检查 Fortran 2018 标准（默认支持）</li>
+<li><strong><code>-stand f08</code></strong>：检查 Fortran 2008 标准</li>
+</ul>
+</li>
+</ul>
+<p>预处理器选项：</p>
+<ul>
+<li><strong><code>-fpp</code></strong>：启用 Fortran 预处理器，支持宏定义等</li>
+</ul>
+<p>其他实用选项：</p>
+<ul>
+<li><strong><code>-qopt-zmm</code></strong>：启用宽矢量寄存器优化（适合 AVX-512 支持的硬件）</li>
+</ul>
+<h1 id="4-常用场景编译示例">4. 常用场景编译示例</h1>
+<p>开启调试模式：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifort -g -traceback -check all source.f90 -o debug_program
+</span></span></code></pre></div><p>生成高性能程序：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifort -O3 -ipo -xHost source.f90 -o fast_program
+</span></span></code></pre></div><p>并行化：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifort -qopenmp -parallel -O3 source.f90 -o parallel_program
+</span></span></code></pre></div><p>启用 OpenMP 并行：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifort -qopenmp source.f90 -o parallel_program
+</span></span></code></pre></div><p>检测潜在错误：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifort -check all -warn all -g source.f90 -o safe_program
+</span></span></code></pre></div><p>编译静态库：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifort -c module1.f90 module2.f90
+</span></span><span style="display:flex;"><span>ar rcs libmylib.a module1.o module2.o
+</span></span></code></pre></div><ul>
+<li>使用 <code>-c</code> 编译为目标文件（<code>.o</code>）。</li>
+<li>使用 <code>ar</code> 创建静态库。</li>
+</ul>
+<p>链接外部库：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifort program.f90 -L/path/to/library -lmylib -o linked_program
+</span></span></code></pre></div><ul>
+<li><strong><code>-L</code></strong>：指定库路径。</li>
+<li><strong><code>-l</code></strong>：链接库名称。</li>
+</ul>
+<p>执行程序：编译完成后，运行生成的可执行文件</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./output
+</span></span></code></pre></div><p>调试代码：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifx -g -traceback -check all source.f90 -o debug_program
+</span></span></code></pre></div><p>性能优化：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifx -O3 -ipo -xHost source.f90 -o optimized_program
+</span></span></code></pre></div><p>启用 GPU 加速：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifx -fsycl source.f90 -o gpu_program
+</span></span></code></pre></div><p>生成共享库：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ifx -shared -o libmylib.so source.f90
+</span></span></code></pre></div><h1 id="5-延伸阅读">5. 延伸阅读</h1>
+<ol>
+<li><a href="https://www.intel.com/content/www/us/en/docs/fortran-compiler/developer-guide-reference/2025-0/overview.html">Intel® Fortran Compiler Developer Guide and Reference</a></li>
+<li><a href="https://www.intel.com/content/www/us/en/developer/articles/release-notes/oneapi-fortran-compiler-release-notes.html">Intel® Fortran Compiler for oneAPI Release Notes</a></li>
+<li><a href="https://www.intel.com/content/www/us/en/docs/fortran-compiler/get-started-guide/2025-0/get-started-on-linux.html">Get Started on Linux</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

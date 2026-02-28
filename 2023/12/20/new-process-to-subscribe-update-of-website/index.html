@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>随笔—订阅网站更新的新流程 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">随笔—订阅网站更新的新流程</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-20</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/ideas/">#Ideas</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/essay/">#Essay</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/minimalism/">#Minimalism</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>最近，把 <code>订阅网站更新</code> 这个流程更新了一下。</p>
+<p>之前，<code>订阅网站更新</code> 是通过 Mailchimp 实现 <sup>1</sup>。具体实现的逻辑如下：</p>
+<ol>
+<li>对网站更新感兴趣的人，在 <a href="/about">About</a> 页面填入自己的邮箱，点击提交</li>
+<li>后台自动加入邮箱地址到 Mailchimp 平台</li>
+<li>在 Mailchimp 平台设置好内容和更新频率，自动定期发送更新到订阅的邮箱</li>
+</ol>
+<p>现在，<code>订阅网站更新</code> 是通过 Python 开源库实现。具体实现逻辑如下：</p>
+<ol>
+<li>对网站更新感兴趣的人，在 <a href="/about">About</a> 邮件发送 <code>订阅</code> 到我的邮箱</li>
+<li>把邮箱地址保存到文件，方便 Python 读取</li>
+<li>用 Python 的 feedparser 获取网站更新内容 <sup>2</sup></li>
+<li>用 Python 的 yagmail 发送邮件 <sup>3, 4, 5, 6</sup></li>
+<li>在 Linux 系统，用 crontab <sup>7</sup> 定期运行 Python</li>
+</ol>
+<p>新的流程，主要通过开源 Python 库 feedparser 和 yagmail，配合 crontab 定时工具来实现。</p>
+<p>整个新流程符合数字极简，不依托于 Mailchimp 平台，故而没有每月邮件发送次数和用户数量的限制。</p>
+<p>而且，邮箱信息不经过 Mailchimp 平台，具有一定的私密性。</p>
+<p>简而言之，自由精简，不受限，具有一定的稳健性和私密性。</p>
+<p>唯一需要的是：长期运行且联网的 Linux 系统。</p>
+<h1 id="延伸阅读">延伸阅读</h1>
+<ol>
+<li><a href="/2023/11/21/blog-add-email-subscribe-2/">博客添加邮件订阅(2): Mailchimp</a></li>
+<li><a href="/2023/12/17/python-analysis-rss-feedparser/">Python解析RSS库feedparser</a></li>
+<li><a href="/2020/09/23/python-yagmail/">yagmail: Python发送邮件</a></li>
+<li><a href="/2023/12/06/ubuntu-yagmail-always-input-password/">解决Ubuntu系统yagmail每次输入邮箱密码</a></li>
+<li><a href="/2023/12/06/ubuntu-yagmail-keyring-errors/">解决Ubuntu系统yagmail提示错误keyring.errors</a></li>
+<li><a href="/2023/12/18/yagmail-set-outlook-mail/">Yagmail设置Outlook邮箱</a></li>
+<li><a href="/2023/12/06/linux-tool-crontab/">Linux命令行定时工具crontab</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

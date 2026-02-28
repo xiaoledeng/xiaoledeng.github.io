@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Parallels Desktop安装FreeBSD 14.0 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Parallels Desktop安装FreeBSD 14.0</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-29</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/freebsd/">#FreeBSD</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-安装过程">1. 安装过程</h1>
+<ol>
+<li>macOS系统和Parallels Desktop 的配置：</li>
+</ol>
+<blockquote>
+<p>macOS Catalina 10.15.7</p>
+<p>Parallels Desktop version 11.2.0 (32581)</p>
+</blockquote>
+<ol start="2">
+<li>下载 FreeBSD-14.0-RELEASE-amd64-disc1.iso 文件，地址：</li>
+</ol>
+<blockquote>
+<p><a href="https://www.freebsd.org/where/">https://www.freebsd.org/where/</a></p>
+<p><a href="https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/14.0/">https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/14.0/</a></p>
+</blockquote>
+<ol start="3">
+<li>
+<p>Parallels Desktop的选项依次为：「New」—「Install Windows or another OS from a DVD or image file」—「Image File」—「选中第 2 步的 ISO 文件」—「Other - FreeBSD」—「Customize settings before installation」，最关键的一步：「Configure」—「Hardware」—「Boot Order」-「Advanced flags」，填入 <code>vm.bios.efi = 1</code>。此外，还可设置 Memory 和 Disk Space</p>
+</li>
+<li>
+<p>安装：</p>
+</li>
+</ol>
+<ul>
+<li>额外的组件，只选 src（系统源码）</li>
+<li>磁盘格式，选择 ZFS</li>
+<li>设置网络，IPv4 和 IPv6 都要，默认设置</li>
+<li>设置开机启动服务，只保留 sshd</li>
+<li>安全性设置，保持默认（都不选）</li>
+<li>可以设置一个常用用户 myself</li>
+</ul>
+<p>注意⚠️： 键盘的空格键 Space 为选中和取消。</p>
+<ol start="5">
+<li>设置</li>
+</ol>
+<ul>
+<li>用 root 进行系统更新：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>freebsd-update fetch
+</span></span><span style="display:flex;"><span>freebsd-update install
+</span></span></code></pre></div><ul>
+<li>
+<p>用 root 用户安装 sudo ： <code>pkg install sudo</code></p>
+</li>
+<li>
+<p>用 root 用户创建一个 admin 分组，并添加用户 myself :</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pw groupadd admin
+</span></span><span style="display:flex;"><span>pw groupmod admin -m myself
+</span></span></code></pre></div><ul>
+<li>在 <code>/usr/local/etc/sudoers.d/</code> 下新建文件 admin，内容为：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%admin <span style="color:#033">ALL</span><span style="color:#555">=(</span>ALL<span style="color:#555">)</span> ALL
+</span></span></code></pre></div><ul>
+<li>以下操作都是由普通用户操作，安装 <code>security/ca_root_nss</code>：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pkg install -r FreeBSD security/ca_root_nss
+</span></span></code></pre></div><ul>
+<li>源文件 <code>/etc/pkg/FreeBSD.conf</code> 中，http 改为 https，并重新生成索引</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vi /etc/pkg/FreeBSD.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo pkg update -f
+</span></span></code></pre></div><ul>
+<li>安装 <code>vim</code> 、<code>zsh</code>、<code>wget</code>、<code>git</code>和<code>oh-my-zsh</code>：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pkg install vim zsh wget git
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 配置 zsh</span>
+</span></span><span style="display:flex;"><span>chsh -s /usr/local/bin/zsh
+</span></span><span style="display:flex;"><span>touch ~/.zshrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 安装 oh-my-zsh  ( https://ohmyz.sh/ )</span>
+</span></span><span style="display:flex;"><span>sh -c <span style="color:#c30">&#34;</span><span style="color:#069;font-weight:bold">$(</span>wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -<span style="color:#069;font-weight:bold">)</span><span style="color:#c30">&#34;</span>
+</span></span></code></pre></div><h1 id="2-末了的话">2. 末了的话</h1>
+<p>FreeBSD 安装后，默认的目录非常清晰，果然是学院派。</p>
+<p>查看了一下系统默认进程，非常精简，只保留必要的进程（少于20个），这个数量确实震惊了。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

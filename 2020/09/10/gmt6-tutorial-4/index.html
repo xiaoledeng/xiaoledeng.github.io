@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>GMT6入门教程（4）添加图例和文字 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">GMT6入门教程（4）添加图例和文字</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-10</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/gmt/">#GMT</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/drawing/">#Drawing</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1添加图例legend">1.添加图例（legend）</h1>
+<p>原文地址：<a href="https://docs.gmt-china.org/latest/tutorial/legend/">添加图例 — GMT中文手册</a></p>
+<p>模块：<a href="https://docs.gmt-china.org/latest/module/legend/">legend</a></p>
+<h2 id="11自动图例">1.1自动图例</h2>
+<p>在使用 plot 模块绘制线条或符号时，可以额外加上 -llabel 选项以指定当前线段或符号的图例标签。</p>
+<p>可以为 -l 选项加上其它子选项以控制图例的位置、大小以及其它显示效果</p>
+<h2 id="12设置图例属性">1.2设置图例属性</h2>
+<p>调用了 legend 选项，并设置了 -D 和 -F 选项，-DjBR+o0.1c/0.1c -F+p1p+glightblue。</p>
+<ul>
+<li>jBR 表示将图例放在底图的右下角（BottomRight）</li>
+<li>+o0.1c/0.1c 表示将图例在右下角的基础上再加上额外的偏移量</li>
+<li>-F+p1p+glightblue 则设置了图例框的轮廓和填充色</li>
+</ul>
+<h2 id="13手动设置图例">1.3手动设置图例</h2>
+<p>针对绘制符号和线条，legend 的输入格式为：</p>
+<p>S dx1 symbol size fill pen dx2 text</p>
+<ul>
+<li>S 表明这一行用于绘制符号或线段。</li>
+<li>dx1 是符号或线段与图例左边框的距离</li>
+<li>symbol 是要绘制的符号类型代码；若想要绘制线段，则设置 symbol 为 -</li>
+<li>size 符号尺寸或线段长度</li>
+<li>fill 符号填充色；若不需要填充色，则可设置为 -</li>
+<li>pen 符号轮廓的画笔颜色；若不需要绘制符号轮廓，则可设置为 -</li>
+<li>text 符号对应的文字说明</li>
+<li>dx2 文字与左边框之间的距离</li>
+</ul>
+<p>例子：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># symbols</span>
+</span></span><span style="display:flex;"><span>S 0.25c c 0.3c -      0.25p,blue 0.8c circle
+</span></span><span style="display:flex;"><span>S 0.25c t 0.3c cyan   0.25p      0.8c triangle
+</span></span><span style="display:flex;"><span>S 0.25c i 0.3c blue   0.25p,red  0.8c triangle2
+</span></span><span style="display:flex;"><span>S 0.25c e 0.3c yellow 0.25p      0.8c ellipse
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># lines</span>
+</span></span><span style="display:flex;"><span>S 0.25c - 0.5c - 0.25p 0.8c line
+</span></span><span style="display:flex;"><span>S 0.25c - 0.5c - 0.25p,- 0.8c dashline
+</span></span><span style="display:flex;"><span>S 0.25c v0.1i+a40+e 0.25i magenta 0.25p 0.8c vector
+</span></span><span style="display:flex;"><span>S 0.25c f0.1i+l+t 0.25i blue 0.25p 0.8c fault
+</span></span></code></pre></div><h1 id="2添加文字">2.添加文字</h1>
+<p>原文地址：<a href="https://docs.gmt-china.org/latest/tutorial/texts/">添加文字 — GMT中文手册</a></p>
+<p>模块：<a href="https://docs.gmt-china.org/latest/module/text/">text</a></p>
+<h2 id="21最简单的示例">2.1最简单的示例</h2>
+<p>若需要添加文字，则输入数据中必须给出文字的X和Y坐标以及具体的文字。因而，输入数据有三列:</p>
+<p>X   Y   text</p>
+<h2 id="22文字属性">2.2文字属性</h2>
+<p>-F 选项来实现文字属性：</p>
+<ul>
+<li>-F+ffont 可以设置文字的属性，包括文字大小、字体和颜色，三者之间用逗号分隔。</li>
+<li>-F+a 则可以设置文字的旋转角度。</li>
+</ul>
+<p>-F+f16p,1,red+a30 即表示文字大小为16p，字体为1号字体，颜色为红色，文字旋转角度为30度。</p>
+<p>gmt text -L 查看GMT支持的字体名及其对应的字体编号。</p>
+<h2 id="23文本框">2.3文本框</h2>
+<p>加上文本框：</p>
+<ul>
+<li>-W 选项控制文本框的画笔属性</li>
+<li>-G 选项控制文本框的填充色</li>
+<li>-C 选项控制文字与文本框之间的空白</li>
+</ul>
+<p>-W1p -Glightblue -C25%/25%</p>
+<h2 id="24对齐方式">2.4对齐方式</h2>
+<p>GMT中文本的默认对齐方式为居中对齐，即将整个文本的中心放在指定的X和Y坐标处。</p>
+<p>文本的对齐方式由水平对齐方式和垂直对齐方式共同决定。</p>
+<p>水平对齐方式有三种：</p>
+<ul>
+<li>左对齐（Left）</li>
+<li>居中对齐（Center）</li>
+<li>右对齐（Right）。</li>
+</ul>
+<p>垂直对齐方式有三种：</p>
+<ul>
+<li>顶部对齐（Top）</li>
+<li>居中对齐（Middle）</li>
+<li>底部对齐（Bottom）。</li>
+</ul>
+<p>三种水平对齐方式和三种垂直对齐方式，构成了文本的9种对齐方式。</p>
+<p>-F+j 用于指定文本对齐方式。比如，-F+jTL 表示文本对齐方式为 TL（Top + Left），即表示以左上角方式对齐。</p>
+<h2 id="25文本偏移量">2.5文本偏移量</h2>
+<p>使用 -D 选项还可以对文本设置额外的偏移量。例如， -D0.5c/0.5c 分别设置了文本在X方向和Y方向的偏移量。</p>
+<h2 id="26变化的文字属性">2.6变化的文字属性</h2>
+<p>如果想要不同的文字有不同的文本属性，可以多次调用 text 模块，每次设置不同的文本属性。当然，还有更加灵活的办法，可以一个命令中实现变化的文字属性。</p>
+<p>使用了 -F+f+a+j 选项。上面已经介绍到，+f 设置文本属性， +a 设置文本旋转角度，+j 设置文本对齐方式。</p>
+<p>输入数据的格式由 +f、+a和 +j 的顺序决定，因而此时输入数据的格式为:</p>
+<p>X   Y   font    angle   justification   text</p>
+<p>第三列为字体属性，第四列为文本旋转角度，第五列为文本对齐方式。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

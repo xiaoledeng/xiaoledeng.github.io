@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>M芯片的macOS系统安装gfortran - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">M芯片的macOS系统安装gfortran</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-07-22</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/fortran/">#Fortran</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-说明">1. 说明</h1>
+<p>在跑Fotran程序时，使用Intel oneapi的Fortran（即，<code>ifort</code>）是需要Intel芯片，官网见：<a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/fortran-compiler.html">Intel® Fortran Compiler</a></p>
+<ul>
+<li>Intel Core processors</li>
+<li>Intel Xeon processor family</li>
+<li>Intel Xeon Scalable processors</li>
+</ul>
+<p>M1芯片和M2芯片的macOS系统，跑Fortran程序时，需要<code>gfortran</code>。</p>
+<h1 id="2-安装goftran">2. 安装goftran</h1>
+<p>在<a href="https://github.com/fxcoudert/gfortran-for-macOS/releases">Releases · fxcoudert/gfortran-for-macOS</a>，下载<code>gfortran-ARM-12.1-Monterey.dmg</code> for Apple Silicon computers并安装即可。</p>
+<p>测试gfortran：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ gfortran --version
+</span></span><span style="display:flex;"><span>GNU Fortran <span style="color:#555">(</span>GCC<span style="color:#555">)</span> 12.1.0
+</span></span><span style="display:flex;"><span>Copyright <span style="color:#555">(</span>C<span style="color:#555">)</span> <span style="color:#f60">2022</span> Free Software Foundation, Inc.
+</span></span><span style="display:flex;"><span>This is free software; see the <span style="color:#366">source</span> <span style="color:#069;font-weight:bold">for</span> copying conditions.  There is NO
+</span></span><span style="display:flex;"><span>warranty; not even <span style="color:#069;font-weight:bold">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ where gfortran
+</span></span><span style="display:flex;"><span>/usr/local/bin/gfortran
+</span></span></code></pre></div><h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://www.intel.com/content/www/us/en/developer/tools/oneapi/fortran-compiler.html">Intel® Fortran Compiler</a></li>
+<li><a href="https://fortran-lang.org/learn/os_setup/install_gfortran#macOS">Installing GFortran - Fortran Programming Language</a></li>
+<li><a href="https://github.com/fxcoudert/gfortran-for-macOS/releases">Releases · fxcoudert/gfortran-for-macOS</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

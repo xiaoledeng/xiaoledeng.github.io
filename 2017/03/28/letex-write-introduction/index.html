@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>LaTeX科研写作入门手册 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">LaTeX科研写作入门手册</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2017-03-28</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="前言">前言</h1>
+<p>使用LaTeX进行学术写作，够用就行。也就是说，LaTeX只是一个排版的工具，科研学术写作重要的是内容。</p>
+<p>本文作为从“不知道LaTeX的小白”到“能够使用LaTeX进行写作”的简明入门手册，也是自己摸索出来的高效率学习LaTeX的方法。</p>
+<p>首先，请阅读文章，明白个人在使用LaTeX学术写作的一些理解和思考：</p>
+<ul>
+<li><a href="/2017/02/13/latex-research-style/">科研高效率(12)—LaTeX式科研方式</a></li>
+<li><a href="/2017/01/02/idea-on-learning-latex/">学习Latex的一点想法</a></li>
+</ul>
+<p>切记：不要自己从零开始学习LaTeX，完全没必要。</p>
+<h1 id="入门步骤">入门步骤</h1>
+<h2 id="不同系统下安装latex工具">不同系统下安装LaTeX工具</h2>
+<ul>
+<li>
+<p>Windows系统——TexLive2017；推荐清华大学的下载地址：<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/">TeXLive Download</a>，下载当前目录中的任何一个镜像ISO文件：</p>
+</li>
+<li>
+<p>Linux系统——TeXLive2017；推荐下载地址：<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Source/">TeXLive Download</a>，下载当前目录中的压缩文件：</p>
+</li>
+<li>
+<p>Mac系统——MacTex2017；推荐下载地址：<a href="https://tug.org/mactex/mactex-download.html">MacTeX Download</a>，下载MacTeX.pkg安装包，安装参考：<a href="https://www.jianshu.com/p/7bbd54a89ac2">Mac安装MacTex - 简书</a>；</p>
+</li>
+</ul>
+<h2 id="latex编辑器推荐">LaTeX编辑器推荐</h2>
+<p>优秀的LaTeX编辑器能够大大提高科研写作过程中的效率，特别是在tex编译成pdf之后的对照查看阶段。</p>
+<p>Mac下面特别推荐的LaTeX顺序： <a href="http://www.texstudio.org/">TeXstudio</a> &gt; <a href="https://www.texpad.com/">Texpad</a>  &gt; Sublime Text + Skim 组合 &gt; TeXshop</p>
+<h2 id="latex的模板">LaTeX的模板</h2>
+<p>下载所需要的模板文件（注：一般是压缩包，解压，得到很多文件），打开解压文件夹中的tex主文件，编译并调试，直到运行成功（即自动弹出PDF文件）。</p>
+<ol>
+<li>杂志的模板</li>
+</ol>
+<p>一般而言，官网上会有 LaTeX 模版。</p>
+<ol start="2">
+<li>武汉大学毕业论文模板(非官方，由<a href="http://aff.whu.edu.cn/huangzh/">武汉大学黄正华老师</a>提供)：</li>
+</ol>
+<ul>
+<li>
+<p><a href="https://pan.baidu.com/s/1i55K1fv">武汉大学本科毕业论文 LaTeX 模版</a>(2016 年 06 月 07 日修订)；</p>
+</li>
+<li>
+<p><a href="https://pan.baidu.com/s/1hscat2O">武汉大学硕士毕业论文 LaTeX 模版</a>(2016 年 04 月 20 日修订)；</p>
+</li>
+<li>
+<p><a href="https://pan.baidu.com/s/1nvlZ4m9">武汉大学博士毕业论文 LaTeX 模版</a>(2016 年 04 月 20 日修订)；</p>
+</li>
+</ul>
+<p>另外，国内其他高校的毕业论文(本、硕、博)模板见：</p>
+<ul>
+<li><a href="http://www.latexstudio.net/archives/category/latex-templates/internal-university-tex-template">国内高校-LaTeX工作室</a>；</li>
+</ul>
+<h2 id="tex文件和pdf文件的结构">Tex文件和PDF文件的结构</h2>
+<p>对照PDF中模板文章的结构，观察tex代码的的结构，而后改写成自己的文章。</p>
+<p>下面以<strong>AGU通用模板</strong>为例子，来说明Tex文件和PDF文件的结构。</p>
+<p>先下载 <code>agu-template-updated-20161103.zip</code> ，并解压如下图：</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2015036-8ca901225a974392.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="agu1.png"></p>
+<p>这里，<code>\*.tex</code>都属于源文件，即为要打开编辑、编译的主文件；<code>agufull08.bst</code>和<code>agujournal.cls</code>都属于格式文件，一般不需要修改；<code>figsamp.eps</code>和<code>figsamp.pdf</code>是图片。</p>
+<p>投稿文章的结构包括：</p>
+<blockquote>
+<ol>
+<li>标题、作者、单位等文章开头信息；</li>
+<li>摘要和关键词（Abstract、Keywords）；</li>
+<li>文章主要部分（Introduction、Theory、Application、Discussions and Conclusions）；</li>
+<li>致谢（Acknowledgments）；</li>
+<li>参考文献（References）；</li>
+<li>附录（Appendix）；</li>
+</ol>
+</blockquote>
+<ul>
+<li>
+<p>开头信息</p>
+</li>
+<li>
+<p>LaTeX 三剑客——图、表和公式。图和表会有通用的插图和插表的模块；公式可以在线编辑（推荐：<a href="http://www.codecogs.com/latex/eqneditor.php">LaTeX公式在线编辑器</a>）,然后复制代码即可。</p>
+</li>
+<li>
+<p>参考文献（References），可以参考 <a href="/2017/01/10/latex-bibtex/">终极参考文献引用管理—BibTeX</a> 。</p>
+</li>
+</ul>
+<h1 id="末了的话">末了的话</h1>
+<p>恰当的 LaTeX 学习方法，能够使得入门 LaTeX 学术写作变得高效，并且让人把主要的焦点和精力投入到文章的内容上。</p>
+<p>欢迎加入到：QQ群 <code>416380533</code> (LaTeX学术写作学习群)。</p>
+<h1 id="参考资料推荐">参考资料推荐</h1>
+<ul>
+<li><a href="http://www.jianshu.com/c/32d1762ef4f9">Latex科研写作 - 专题 - 简书</a></li>
+<li><a href="http://aff.whu.edu.cn/huangzh/">武汉大学黄正华的教学信息页面</a></li>
+<li><a href="http://math.ecnu.edu.cn/~latex/links.html">华东师范大学的LaTeX 资源</a></li>
+<li><a href="http://www.latexstudio.net/">LaTeX工作室-LaTeX科技排版专家</a></li>
+</ul>
+<h1 id="修改历史">修改历史</h1>
+<ul>
+<li>2017.03.27 创建此文；</li>
+<li>2017.08.23 修改此文，调整结构；</li>
+<li>2018.04.24 更新此文；</li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

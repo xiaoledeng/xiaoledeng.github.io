@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>latexify: Python生成LaTeX公式 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">latexify: Python生成LaTeX公式</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-05</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1简介">1.简介</h1>
+<p><a href="https://github.com/google/latexify_py">latexify_py</a>: Generates LaTeX math description from Python functions。在Python编程中，将Python函数公式生成为LaTeX代码。</p>
+<p>Github地址为：<a href="https://github.com/google/latexify_py">latexify_py</a>。</p>
+<h1 id="2示例代码">2.示例代码</h1>
+<p>安装：pip install latexify-py</p>
+<p>以下示例代码下载地址为：<a href="/documents/20200905/latexify_example.ipynb">latexify_example.ipynb</a></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip uninstall -y latexify-py 	<span style="color:#09f;font-style:italic"># 卸载latexify-py</span>
+</span></span><span style="display:flex;"><span>pip install latexify-py 		<span style="color:#09f;font-style:italic"># 安装latexify-py</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">math</span> 		<span style="color:#09f;font-style:italic"># 导入math模块</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">latexify</span> 	<span style="color:#09f;font-style:italic"># 导入latexify模块</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 示例一</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 定义函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#99f">@latexify.with_latex</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">solve</span>(a, b, c):
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">return</span> (<span style="color:#555">-</span>b <span style="color:#555">+</span> math<span style="color:#555">.</span>sqrt(b<span style="color:#555">**</span><span style="color:#f60">2</span> <span style="color:#555">-</span> <span style="color:#f60">4</span><span style="color:#555">*</span>a<span style="color:#555">*</span>c)) <span style="color:#555">/</span> (<span style="color:#f60">2</span><span style="color:#555">*</span>a)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#366">print</span>(solve(<span style="color:#f60">1</span>, <span style="color:#f60">4</span>, <span style="color:#f60">3</span>)) 	<span style="color:#09f;font-style:italic"># 计算函数值</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">print</span>(solve)			<span style="color:#09f;font-style:italic"># 得到函数的LaTeX公式代码</span>
+</span></span><span style="display:flex;"><span>solve					<span style="color:#09f;font-style:italic"># 在jupyter notebook中直接展示函数公式</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 示例二</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 定义函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#99f">@latexify.with_latex</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">sinc</span>(x):
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">if</span> x <span style="color:#555">==</span> <span style="color:#f60">0</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">else</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> math<span style="color:#555">.</span>sin(x) <span style="color:#555">/</span> x
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#366">print</span>(sinc)				<span style="color:#09f;font-style:italic"># 得到函数的LaTeX公式代码</span>
+</span></span><span style="display:flex;"><span>sinc					<span style="color:#09f;font-style:italic"># 在jupyter notebook中直接展示函数公式</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 示例三</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 定义函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Elif or nested else-if are unrolled.</span>
+</span></span><span style="display:flex;"><span><span style="color:#99f">@latexify.with_latex</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">fib</span>(x):
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">if</span> x <span style="color:#555">==</span> <span style="color:#f60">0</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">elif</span> x <span style="color:#555">==</span> <span style="color:#f60">1</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">else</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> fib(x<span style="color:#555">-</span><span style="color:#f60">1</span>) <span style="color:#555">+</span> fib(x<span style="color:#555">-</span><span style="color:#f60">2</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#366">print</span>(fib)				<span style="color:#09f;font-style:italic"># 得到函数的LaTeX公式代码</span>
+</span></span><span style="display:flex;"><span>fib						<span style="color:#09f;font-style:italic"># 在jupyter notebook中直接展示函数公式</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 示例四</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Some math symbols are converted automatically.</span>
+</span></span><span style="display:flex;"><span><span style="color:#99f">@latexify.with_latex</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">greek</span>(alpha, beta, gamma, Omega):
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">return</span> alpha <span style="color:#555">*</span> beta <span style="color:#555">+</span> math<span style="color:#555">.</span>gamma(gamma) <span style="color:#555">+</span> Omega
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#366">print</span>(greek)			<span style="color:#09f;font-style:italic"># 得到函数的LaTeX公式代码</span>
+</span></span><span style="display:flex;"><span>greek					<span style="color:#09f;font-style:italic"># 在jupyter notebook中直接展示函数公式</span>
+</span></span></code></pre></div><h1 id="3参考">3.参考</h1>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/-goocVg_Ek-KJvy4_PIUbw">分分钟甩 Word 几条街，Python 编辑公式竟可以如此简单</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Hugo博客设置段落两端对齐 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Hugo博客设置段落两端对齐</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-11-12</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/markdown/">#Markdown</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-基本配置">1. 基本配置</h1>
+<p>Hugo的主题是： <a href="https://github.com/xiaoledeng/simple-style">https://github.com/xiaoledeng/simple-style</a></p>
+<h1 id="2-设置方法">2. 设置方法</h1>
+<ol>
+<li>在文件夹 <code>themes/simple-style/layouts/_default</code> 下的 <code>single.html</code> 文件中，关于内容的设置为：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;content&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  {{ .Content -}}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span></code></pre></div><ol start="2">
+<li>在文件夹 <code>themes/simple-style/static/css</code> 下的 <code>main.css</code> 文件中，加入以下css样式设置：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#0a8;font-weight:bold">content</span> <span style="color:#309;font-weight:bold">p</span>{<span style="color:#069;font-weight:bold">padding</span>:<span style="color:#f60">0</span>;<span style="color:#069;font-weight:bold">margin</span>:<span style="color:#f60">10</span><span style="color:#078;font-weight:bold">px</span> <span style="color:#f60">0</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#0a8;font-weight:bold">content</span> <span style="color:#309;font-weight:bold">p</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">margin-top</span>: <span style="color:#f60">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">text-align</span>: <span style="color:#069;font-weight:bold">justify</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>注意⚠️：<code>text-align</code>为CSS的文本对齐方式：<code>center</code>、<code>left</code>、<code>right</code>、<code>justify</code>。</p>
+<p><code>justify</code>：将拉伸每一行，以使每一行具有相等的宽度，并且左右边距是直的（就像在杂志和报纸中）。</p>
+<h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://note.qidong.name/2017/07/hugo-text-indent/">在Hugo中为Markdown内容设置首行缩进 · 零壹軒·笔记</a></li>
+<li><a href="https://www.w3school.com.cn/css/css_text_align.asp">CSS 文本对齐</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

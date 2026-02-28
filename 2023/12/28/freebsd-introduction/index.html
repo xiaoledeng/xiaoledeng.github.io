@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>FreeBSD入门 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">FreeBSD入门</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-28</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/freebsd/">#FreeBSD</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-介绍">1. 介绍</h1>
+<p>FreeBSD，全称 Free Berkeley Software Distribution (BSD)，是一个自由和开源的类 Unix 操作系统。</p>
+<p>官网为： <a href="https://www.freebsd.org">https://www.freebsd.org</a></p>
+<p>FreeBSD 的第一个版本于 1993 年 11 月从 386BSD 开发，最新的版本为 2023 年 11 月 20 日的 14.0-RELEASE （<a href="https://en.wikipedia.org/wiki/FreeBSD_version_history#Version_history">FreeBSD version history - Wikipedia</a>）。</p>
+<p>FreeBSD 主要特点是<code>稳定</code>，有<code>坚如磐石</code> (Rock-stable Performance) 之称，适合作为<code>服务器</code>的操作系统。</p>
+<h1 id="2-下载和安装">2. 下载和安装</h1>
+<p>下载地址： <a href="https://www.freebsd.org/where/">https://www.freebsd.org/where/</a></p>
+<p>版本选择：CD (disc1.iso结尾)、DVD (dvd1.iso结尾)和regular USB memory sticks (memstick.img结尾)</p>
+<p>安装： <a href="https://docs.freebsd.org/en/books/handbook/bsdinstall/">Chapter 2. Installing FreeBSD | FreeBSD Documentation Portal</a></p>
+<p>注意⚠️：</p>
+<ul>
+<li>额外的组件，全部取消不要选</li>
+<li>磁盘格式，选择 ZFS</li>
+<li>设置 root 用户密码，建议复杂一点</li>
+<li>设置网络，IPv4 和 IPv6 都要</li>
+<li>设置开机启动服务，只保留 sshd</li>
+<li>安全性设置，保持默认（都不选）</li>
+</ul>
+<p>参考： <a href="https://lvv.me/posts/2021/04/17_freebsd_on_linode/">在 Linode 上安装 FreeBSD – 小众开发者</a></p>
+<h1 id="3-一些常见设置">3. 一些常见设置</h1>
+<p>本节大部分设置来自于：</p>
+<ul>
+<li><a href="https://lvv.me/posts/2021/04/19_freebsd_101/">FreeBSD 入门笔记 – 小众开发者</a></li>
+<li><a href="https://lvv.me/posts/2022/05/17_bash_on_freebsd/">在 FreeBSD 中安装 Bash Shell – 小众开发者</a></li>
+</ul>
+<p>更多参考：</p>
+<ul>
+<li><a href="https://docs.freebsd.org/en/books/handbook/basics/">Chapter 3. FreeBSD Basics | FreeBSD Documentation Portal</a></li>
+<li><a href="https://docs.freebsd.org/en/books/handbook/ports/">Chapter 4. Installing Applications: Packages and Ports | FreeBSD Documentation Portal</a></li>
+<li><a href="https://docs.freebsd.org/en/books/handbook/cutting-edge/">Chapter 26. Updating and Upgrading FreeBSD | FreeBSD Documentation Portal</a></li>
+</ul>
+<h2 id="31-账户设置">3.1 账户设置</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 用 root 用户安装 sudo</span>
+</span></span><span style="display:flex;"><span>pkg install sudo
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 创建一个普通用户（用户名 myself ），默认添加到 staff 分组</span>
+</span></span><span style="display:flex;"><span>adduser -g staff -s sh -w yes
+</span></span><span style="display:flex;"><span>Username: myself
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 创建一个 admin 分组，并添加 myself 和 root 两位用户</span>
+</span></span><span style="display:flex;"><span>pw groupadd admin
+</span></span><span style="display:flex;"><span>pw groupmod admin -m myself root
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 创建一个 wheel 分组，只添加 root 用户</span>
+</span></span><span style="display:flex;"><span>pw groupadd wheel
+</span></span><span style="display:flex;"><span>pw groupmod wheel -m root
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 从 admin 组里移除用户 myself</span>
+</span></span><span style="display:flex;"><span>pw groupmod admin -d v
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 删除 admin 用户组</span>
+</span></span><span style="display:flex;"><span>pw groupdel admin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># staff，admin 和 wheel 权限的区别：</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#   staff，任何新建的用户都属于这个组，权限最低</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#   admin，具有管理系统的权限，可以使用 sudo 命令</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#   wheel，超级管理员权限，可以任意修改系统功能（这个名称来源于俚语 big wheel，意为大人物）</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 在 /usr/local/etc/sudoers.d/ 下新建两个文件 admin 和 wheel</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># admin内容如下：</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>%admin <span style="color:#033">ALL</span><span style="color:#555">=(</span>ALL<span style="color:#555">)</span> ALL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># wheel内容如下，多了个 NOPASSWD: ，使用 sudo 时不需要输入密码</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>%wheel <span style="color:#033">ALL</span><span style="color:#555">=(</span>ALL<span style="color:#555">)</span> NOPASSWD:ALL
+</span></span></code></pre></div><h2 id="32-配置源">3.2 配置源</h2>
+<p>默认的源在 <code>/etc/pkg/FreeBSD.conf</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># $FreeBSD$</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># To disable this repository, instead of modifying or removing this file,</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># create a /usr/local/etc/pkg/repos/FreeBSD.conf file:</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#   mkdir -p /usr/local/etc/pkg/repos</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#   echo &#34;FreeBSD: { enabled: no }&#34; &gt; /usr/local/etc/pkg/repos/FreeBSD.conf</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>FreeBSD: <span style="color:#555">{</span>
+</span></span><span style="display:flex;"><span>  url: <span style="color:#c30">&#34;pkg+http://pkg.FreeBSD.org/</span><span style="color:#a00">${</span><span style="color:#033">ABI</span><span style="color:#a00">}</span><span style="color:#c30">/quarterly&#34;</span>,
+</span></span><span style="display:flex;"><span>  mirror_type: <span style="color:#c30">&#34;srv&#34;</span>,
+</span></span><span style="display:flex;"><span>  signature_type: <span style="color:#c30">&#34;fingerprints&#34;</span>,
+</span></span><span style="display:flex;"><span>  fingerprints: <span style="color:#c30">&#34;/usr/share/keys/pkg&#34;</span>,
+</span></span><span style="display:flex;"><span>  enabled: yes
+</span></span><span style="display:flex;"><span><span style="color:#555">}</span>
+</span></span></code></pre></div><p>推荐安装 <code>security/ca_root_nss</code> 可以使用 <code>HTTPS</code> 防止被劫持</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pkg install -r FreeBSD security/ca_root_nss
+</span></span></code></pre></div><p>源地址可以改为 HTTPS：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>  url: <span style="color:#c30">&#34;pkg+https://pkg.FreeBSD.org/</span><span style="color:#a00">${</span><span style="color:#033">ABI</span><span style="color:#a00">}</span><span style="color:#c30">/quarterly&#34;</span>,
+</span></span><span style="display:flex;"><span>  ...
+</span></span></code></pre></div><p>重新生成索引：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pkg update -f
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Updating FreeBSD repository catalogue...
+</span></span><span style="display:flex;"><span>pkg: Repository FreeBSD has a wrong packagesite, need to re-create database
+</span></span><span style="display:flex;"><span>Fetching meta.conf: 100%    <span style="color:#f60">163</span> B   0.2kB/s    00:01    
+</span></span><span style="display:flex;"><span>Fetching packagesite.txz: 100%    <span style="color:#f60">6</span> MiB   6.5MB/s    00:01    
+</span></span><span style="display:flex;"><span>Processing entries: 100%
+</span></span><span style="display:flex;"><span>FreeBSD repository update completed. <span style="color:#f60">30336</span> packages processed.
+</span></span><span style="display:flex;"><span>All repositories are up to date.
+</span></span></code></pre></div><p>国内可用 中科大 的源， <a href="https://mirrors.ustc.edu.cn/help/freebsd-pkg.html">FreeBSD pkg 源使用帮助 — USTC Mirror Help 文档</a> 推荐的设置方法为：</p>
+<p>创建 <code>/usr/local/etc/pkg/repos/FreeBSD.conf</code>，操作如下：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p /usr/local/etc/pkg/repos
+</span></span><span style="display:flex;"><span><span style="color:#366">echo</span> <span style="color:#c30">&#39;FreeBSD: { url: &#34;pkg+https://mirrors.ustc.edu.cn/freebsd-pkg/${ABI}/quarterly&#34; }&#39;</span> &gt; /usr/local/etc/pkg/repos/FreeBSD.conf
+</span></span></code></pre></div><p>修改配置后，运行 <code>pkg update -f</code> 更新索引。</p>
+<h2 id="33-更新系统">3.3 更新系统</h2>
+<p>常规的安全更新：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>freebsd-update fetch
+</span></span><span style="display:flex;"><span>freebsd-update install
+</span></span></code></pre></div><p>小版本或者大版本更新，13.2是要更新到的版本号：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>freebsd-update upgrade -r 13.2-RELEASE upgrade
+</span></span><span style="display:flex;"><span>freebsd-update install
+</span></span></code></pre></div><p>安装后需要重启系统 <code>reboot</code>，然后再继续完成安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>freebsd-update install
+</span></span></code></pre></div><p>返回版本：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>freebsd-update rollback
+</span></span></code></pre></div><h2 id="34-安装软件">3.4 安装软件</h2>
+<p>FreeBSD 的包管理工具是 <code>pkg</code>，默认的安装目录是 <code>/usr/local/</code></p>
+<ul>
+<li>查找包：<code>pkg search</code></li>
+<li>更新包：<code>pkg update</code></li>
+<li>安装一个或多个包：<code>pkg install cmake ninja ...</code></li>
+<li>更新已安装的包： <code>pkg upgrade</code></li>
+<li>本地包安装命令 <code>pkg install xxx.pkg</code></li>
+<li>卸载包：<code>pkg delete</code></li>
+<li>清除本地包缓存：<code>pkg clean</code>，会清空缓存在 <code>/var/cache/pkg/</code> 里的包</li>
+<li>自动清理不用包：<code>pkg autoremove</code></li>
+</ul>
+<h2 id="35-ssh-设置">3.5 SSH 设置</h2>
+<p>设置文件： <code>/etc/ssh/sshd_config</code></p>
+<h2 id="36-更换默认-shell">3.6 更换默认 Shell</h2>
+<p>安装 <code>bash</code>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pkg install bash
+</span></span></code></pre></div><p>bash 的配置文件路径是 <code>/usr/local/etc/profile</code>，需要创建这个文件，内容如下：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># source *.sh files from /usr/local/etc/profile.d if they are readable</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">if</span> <span style="color:#555">[</span> -d /usr/local/etc/profile.d <span style="color:#555">]</span>; <span style="color:#069;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">for</span> i in /usr/local/etc/profile.d/*.sh; <span style="color:#069;font-weight:bold">do</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">if</span> <span style="color:#555">[</span> -r <span style="color:#033">$i</span> <span style="color:#555">]</span>; <span style="color:#069;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>      . <span style="color:#033">$i</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">done</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#366">unset</span> i
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">fi</span>
+</span></span></code></pre></div><p>安装 <code>zsh</code>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pkg install zsh
+</span></span><span style="display:flex;"><span>chsh -s /usr/local/bin/zsh
+</span></span><span style="display:flex;"><span>touch ~/.zshrc
+</span></span></code></pre></div><h1 id="4-末了的话">4. 末了的话</h1>
+<p><a href="https://blog.delphij.net/posts/2004/01/freebsd-committ/">FreeBSD committer 徐逸锋先生访谈 - delphij&rsquo;s Chaos</a>：</p>
+<p>李：作为一个 FreeBSD 的开发者，您希望对用户说什么?</p>
+<p>徐：坚持使用，一开始可能很难用，但是常用的也就那么点东西，熟悉了就不难了。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

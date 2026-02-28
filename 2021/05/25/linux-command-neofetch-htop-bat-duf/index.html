@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Linux命令—neofetch、htop、bat和duf - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Linux命令—neofetch、htop、bat和duf</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-05-25</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-neofetch">1. neofetch</h1>
+<blockquote>
+<p>展示操作系统信息的命令行工具，展示的信息包含：发行版本、内核、CPU、GPU 等。</p>
+</blockquote>
+<ul>
+<li>安装： <a href="https://github.com/dylanaraps/neofetch/wiki/Installation">https://github.com/dylanaraps/neofetch/wiki/Installation</a></li>
+<li>命令： neofetch</li>
+<li>地址： <a href="https://github.com/dylanaraps/neofetch">https://github.com/dylanaraps/neofetch</a></li>
+</ul>
+<p>macOS系统下直接用Homebrew安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install neofetch
+</span></span></code></pre></div><p>Ubuntu系统安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install neofetch
+</span></span></code></pre></div><h1 id="2-htop">2. htop</h1>
+<blockquote>
+<p>This is htop, a cross-platform interactive process viewer. It is a text-mode application (for console or X terminals) and requires ncurses.</p>
+<p>代替 top 的交互式管理进程的命令行工具，h 代表 for human。</p>
+</blockquote>
+<ul>
+<li>安装： <a href="https://htop.dev/downloads.html">https://htop.dev/downloads.html</a></li>
+<li>命令： htop</li>
+<li>地址： <a href="https://github.com/htop-dev/htop">https://github.com/htop-dev/htop</a></li>
+</ul>
+<p>macOS系统下直接用Homebrew安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install htop
+</span></span></code></pre></div><p>Ubuntu系统安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install htop
+</span></span></code></pre></div><h1 id="3-bat">3. bat</h1>
+<blockquote>
+<p>替代 cat 的命令行工具。</p>
+</blockquote>
+<ul>
+<li>安装： <a href="https://github.com/sharkdp/bat#installation">https://github.com/sharkdp/bat#installation</a></li>
+<li>命令： bat README.md</li>
+<li>项目地址： <a href="https://github.com/sharkdp/bat">https://github.com/sharkdp/bat</a></li>
+</ul>
+<p>macOS系统下直接用Homebrew安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install bat
+</span></span></code></pre></div><p>Ubuntu系统安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install bat
+</span></span></code></pre></div><h1 id="4-duf">4. duf</h1>
+<blockquote>
+<p>查看磁盘空间情况的命令行工具，足以代替 df 命令</p>
+</blockquote>
+<ul>
+<li>项目地址： <a href="https://github.com/muesli/duf">https://github.com/muesli/duf</a></li>
+</ul>
+<p>macOS系统下直接用Homebrew安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install duf
+</span></span></code></pre></div><h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/1ucpkx9Pz0myDJLqAV89pQ">如闪电划破雨夜，这些开源项目瞬间点亮了命令行</a></li>
+<li><a href="https://mp.weixin.qq.com/s/MlHes1ZYKACOM4GVEYBaJg">开源月刊《HelloGitHub》第 62 期</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

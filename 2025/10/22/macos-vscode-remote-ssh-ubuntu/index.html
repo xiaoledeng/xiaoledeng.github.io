@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS利用VS Code的Remote SSH连接Ubuntu - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS利用VS Code的Remote SSH连接Ubuntu</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2025-10-22</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/software/">#Software</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-引言">1. 引言</h1>
+<p>当在 <code>macOS</code> 上写代码、在 <code>Ubuntu</code> 上运行时，容易出现各种兼容问题，比如 <code>._</code> 隐藏文件。</p>
+<p>解决方案之一是 <code>VS Code</code>的 <code>Remote SSH</code> 模式。</p>
+<h1 id="2-设置">2. 设置</h1>
+<p>安装插件：</p>
+<ul>
+<li>打开 VS Code → 左侧<code>扩展</code>（或快捷键 <code>⇧⌘X</code>）</li>
+<li>搜索并安装 <code>Remote - SSH</code>（微软官方发布）</li>
+</ul>
+<p>添加远程主机：</p>
+<ul>
+<li>按 ⇧⌘P → 输入：Remote-SSH: Connect to Host&hellip;</li>
+<li>选择 “Add New SSH Host”，输入例如：<code>ssh user@192.168.1.180</code></li>
+<li>保存后重新连接。</li>
+</ul>
+<p>打开远程项目：</p>
+<ul>
+<li>连接成功后，左下角会显示 <code>&gt;&lt; SSH: your-server</code></li>
+</ul>
+<p>此时，打开的文件夹、终端、编译都在远程 <code>Ubuntu</code> 上完成。</p>
+<h1 id="3-优点">3. 优点</h1>
+<ul>
+<li>无需拷贝文件，直接在远程运行</li>
+<li>不会生成 ._ 文件</li>
+<li>支持远程终端、调试、Git 管理</li>
+<li>环境保持一致，省心又高效</li>
+</ul>
+<h1 id="4-总结">4. 总结</h1>
+<p>用 <code>VS Code</code>的 <code>Remote SSH</code> 让 <code>macOS</code> 变成远程 <code>Ubuntu</code> 的开发窗口，再不担心文件污染或环境不一致。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

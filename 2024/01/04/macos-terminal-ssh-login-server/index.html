@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS终端SSH公钥登陆服务器 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS终端SSH公钥登陆服务器</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-04</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>在 macOS 上，用的服务器管理软件是 <a href="https://www.royalapps.com/ts/mac/features">Royal TSX</a> <sup>1</sup>，是一款商业软件，免费有 5 个 SSH 的限额，一般而言是够用的。</p>
+<p>但是，第三方开源（比如，<a href="https://iterm2.com/">iTerm2</a>、<a href="https://github.com/electerm/electerm">electerm</a>）或商业软件的潜在漏洞，可能会造成安全隐患。一般要软件保持更新，而且软件版本更新后，会越来越大。</p>
+<p>所以，最好的策略是：使用 macOS 默认的 Terminal 终端进行 SSH 的管理。</p>
+<h1 id="2-设置-terminal">2. 设置 Terminal</h1>
+<ol>
+<li>本地生成新的私钥和公钥</li>
+</ol>
+<p>终端输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#c30">&#34;name@serverIP&#34;</span>
+</span></span></code></pre></div><p>在 <code>~/.ssh</code> 路径下会生成：</p>
+<ul>
+<li>私钥 id_ed25519_name</li>
+<li>公钥 id_ed25519_name.pub</li>
+</ul>
+<p>注意⚠️：</p>
+<ul>
+<li>命名：~/.ssh/id_ed25519_name</li>
+<li>密码：可以输入复杂的密码</li>
+</ul>
+<ol start="2">
+<li>本地上传公钥到服务器</li>
+</ol>
+<p>终端输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-copy-id -i ~/.ssh/id_ed25519.pub -p <span style="color:#f60">22</span> name@serverIP
+</span></span></code></pre></div><ol start="3">
+<li>服务器配置SSH</li>
+</ol>
+<p>终端输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vim /etc/ssh/sshd_config
+</span></span></code></pre></div><p>内容设置：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>RSAAuthentication yes
+</span></span><span style="display:flex;"><span>PubkeyAuthentication yes
+</span></span><span style="display:flex;"><span>AuthorizedKeysFile .ssh/authorized_keys
+</span></span></code></pre></div><p>注意⚠️： 通过 <code>man sshd_config</code> 查看详细参数说明。</p>
+<p>终端输入并查看：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat ~/.ssh/authorized_keys
+</span></span></code></pre></div><p>显示 ssh-ed25519 那一行，表示第 2 步 本地上传公钥到服务器 成功。</p>
+<p>重启 SSHD 服务：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>service sshd restart
+</span></span></code></pre></div><ol start="4">
+<li>本地设置 SSH，实现快捷登陆</li>
+</ol>
+<p>终端输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim ~/.ssh/config
+</span></span></code></pre></div><p>内容为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host Sever
+</span></span><span style="display:flex;"><span>  hostname IP
+</span></span><span style="display:flex;"><span>  port <span style="color:#f60">22</span>
+</span></span><span style="display:flex;"><span>  user name
+</span></span><span style="display:flex;"><span>  IdentityFile ~/.ssh/id_ed25519_name
+</span></span><span style="display:flex;"><span>  AddKeysToAgent yes
+</span></span><span style="display:flex;"><span>  UseKeychain yes
+</span></span><span style="display:flex;"><span>  ServerAliveInterval 1h30m
+</span></span><span style="display:flex;"><span>  TCPKeepAlive yes
+</span></span><span style="display:flex;"><span>  IgnoreUnknown AddKeysToAgent,UseKeychain  
+</span></span></code></pre></div><p>注意⚠️： 通过 <code>man sshd_config</code> 查看详细参数说明。</p>
+<p>终端输入 <code>ssh Sever</code> 就可以快捷登陆了。</p>
+<h1 id="3-延伸阅读">3. 延伸阅读</h1>
+<ol>
+<li><a href="/2021/05/27/royal-tsx/">Royal TSX：macOS系统的服务器管理软件</a></li>
+<li><a href="/2023/04/04/macOS-ssh-miyao-ubuntu/">macOS系统ssh通过密钥文件连接Ubuntu系统</a></li>
+<li><a href="/2023/12/27/update-ssh-setting/">Ubuntu系统SSH设置小结</a></li>
+<li><a href="https://moxo.io/blog/2017/11/01/%E7%AC%94%E8%AE%B0macOS-%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%99%A8-ssh-key-based-%E7%99%BB%E5%BD%95/#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E6%9C%AC%E5%9C%B0-%E9%A6%96%E5%85%88%E4%B8%BA-test-user-%E7%94%9F%E6%88%90%E6%96%B0%E7%9A%84%E7%A7%81%E9%92%A5%E5%92%8C%E5%85%AC%E9%92%A5">笔记：macOS 配置服务器 SSH key-based 登录 - 胡椒的小站</a></li>
+<li><a href="https://blog.twofei.com/881/">macOS Ventura 系统 ssh 不再支持 ssh-rsa 的原因及解决办法 - 陪她去流浪</a></li>
+<li><a href="https://blog.csdn.net/ouchangjian/article/details/123476713">Mac终端ssh容易断开解决方法_mac ssh serveraliveinterval-CSDN博客</a></li>
+<li><a href="https://www.cnblogs.com/sunsky303/p/16437041.html">SSH(sshd)终极安全加固指南 - sunsky303 - 博客园</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

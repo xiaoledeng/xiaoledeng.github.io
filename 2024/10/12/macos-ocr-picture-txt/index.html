@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS自带OCR识别图片文字 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS自带OCR识别图片文字</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-10-12</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>在 macOS 系统，用 Python 语言和自带的 OCR 功能识别图片，包括中文简体和繁体、横版或竖版，结果保存到一个txt文档。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">os</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">Vision</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">Quartz</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">Cocoa</span> <span style="color:#069;font-weight:bold">import</span> NSURL
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">PIL</span> <span style="color:#069;font-weight:bold">import</span> Image, ImageOps, ImageFilter
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">cv2</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">numpy</span> <span style="color:#069;font-weight:bold">as</span> <span style="color:#0cf;font-weight:bold">np</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">tempfile</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">tqdm</span> <span style="color:#069;font-weight:bold">import</span> tqdm  <span style="color:#09f;font-style:italic"># 用于显示处理进度</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">logging</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 设置输入和输出路径</span>
+</span></span><span style="display:flex;"><span>input_dir <span style="color:#555">=</span> <span style="color:#c30">&#34;/path/to/your/images&#34;</span>  <span style="color:#09f;font-style:italic"># 输入图片目录</span>
+</span></span><span style="display:flex;"><span>output_txt <span style="color:#555">=</span> <span style="color:#c30">&#34;/path/to/output.txt&#34;</span>   <span style="color:#09f;font-style:italic"># 输出文本文件路径</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 初始化日志</span>
+</span></span><span style="display:flex;"><span>logging<span style="color:#555">.</span>basicConfig(filename<span style="color:#555">=</span><span style="color:#c30">&#34;ocr_process.log&#34;</span>, level<span style="color:#555">=</span>logging<span style="color:#555">.</span>INFO)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 自动倾斜校正函数</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">deskew_image</span>(image_path):
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 读取图像</span>
+</span></span><span style="display:flex;"><span>    image <span style="color:#555">=</span> cv2<span style="color:#555">.</span>imread(image_path, cv2<span style="color:#555">.</span>IMREAD_GRAYSCALE)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 二值化图像（使用自适应阈值法）</span>
+</span></span><span style="display:flex;"><span>    _, binary_image <span style="color:#555">=</span> cv2<span style="color:#555">.</span>threshold(image, <span style="color:#f60">0</span>, <span style="color:#f60">255</span>, cv2<span style="color:#555">.</span>THRESH_BINARY <span style="color:#555">+</span> cv2<span style="color:#555">.</span>THRESH_OTSU)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 找到图像中的轮廓</span>
+</span></span><span style="display:flex;"><span>    coords <span style="color:#555">=</span> np<span style="color:#555">.</span>column_stack(np<span style="color:#555">.</span>where(binary_image <span style="color:#555">&gt;</span> <span style="color:#f60">0</span>))
+</span></span><span style="display:flex;"><span>    angle <span style="color:#555">=</span> cv2<span style="color:#555">.</span>minAreaRect(coords)[<span style="color:#555">-</span><span style="color:#f60">1</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 调整角度，确保文本为水平或垂直方向</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">if</span> angle <span style="color:#555">&lt;</span> <span style="color:#555">-</span><span style="color:#f60">45</span>:
+</span></span><span style="display:flex;"><span>        angle <span style="color:#555">=</span> <span style="color:#555">-</span>(<span style="color:#f60">90</span> <span style="color:#555">+</span> angle)
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">else</span>:
+</span></span><span style="display:flex;"><span>        angle <span style="color:#555">=</span> <span style="color:#555">-</span>angle
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 计算旋转矩阵并应用到图像</span>
+</span></span><span style="display:flex;"><span>    (h, w) <span style="color:#555">=</span> image<span style="color:#555">.</span>shape[:<span style="color:#f60">2</span>]
+</span></span><span style="display:flex;"><span>    center <span style="color:#555">=</span> (w <span style="color:#555">//</span> <span style="color:#f60">2</span>, h <span style="color:#555">//</span> <span style="color:#f60">2</span>)
+</span></span><span style="display:flex;"><span>    M <span style="color:#555">=</span> cv2<span style="color:#555">.</span>getRotationMatrix2D(center, angle, <span style="color:#f60">1.0</span>)
+</span></span><span style="display:flex;"><span>    rotated_image <span style="color:#555">=</span> cv2<span style="color:#555">.</span>warpAffine(image, M, (w, h), flags<span style="color:#555">=</span>cv2<span style="color:#555">.</span>INTER_CUBIC, borderMode<span style="color:#555">=</span>cv2<span style="color:#555">.</span>BORDER_REPLICATE)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 保存校正后的图像到临时文件</span>
+</span></span><span style="display:flex;"><span>    temp_file <span style="color:#555">=</span> tempfile<span style="color:#555">.</span>NamedTemporaryFile(suffix<span style="color:#555">=</span><span style="color:#c30">&#34;.png&#34;</span>, delete<span style="color:#555">=</span><span style="color:#069;font-weight:bold">False</span>)
+</span></span><span style="display:flex;"><span>    temp_path <span style="color:#555">=</span> temp_file<span style="color:#555">.</span>name
+</span></span><span style="display:flex;"><span>    cv2<span style="color:#555">.</span>imwrite(temp_path, rotated_image)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> temp_path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 图像预处理：自动倾斜校正、自适应阈值化、边框裁剪、灰度化等</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">preprocess_image</span>(image_path):
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 自动倾斜校正</span>
+</span></span><span style="display:flex;"><span>    corrected_image_path <span style="color:#555">=</span> deskew_image(image_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 打开校正后的图像</span>
+</span></span><span style="display:flex;"><span>    img <span style="color:#555">=</span> Image<span style="color:#555">.</span>open(corrected_image_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 灰度化</span>
+</span></span><span style="display:flex;"><span>    img <span style="color:#555">=</span> ImageOps<span style="color:#555">.</span>grayscale(img)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 自动边界裁剪（去除边缘空白）</span>
+</span></span><span style="display:flex;"><span>    img <span style="color:#555">=</span> ImageOps<span style="color:#555">.</span>crop(img, border<span style="color:#555">=</span><span style="color:#f60">10</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 自适应阈值化（二值化）</span>
+</span></span><span style="display:flex;"><span>    img <span style="color:#555">=</span> ImageOps<span style="color:#555">.</span>autocontrast(img)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 锐化</span>
+</span></span><span style="display:flex;"><span>    img <span style="color:#555">=</span> img<span style="color:#555">.</span>filter(ImageFilter<span style="color:#555">.</span>SHARPEN)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 去噪</span>
+</span></span><span style="display:flex;"><span>    img <span style="color:#555">=</span> img<span style="color:#555">.</span>filter(ImageFilter<span style="color:#555">.</span>MedianFilter(size<span style="color:#555">=</span><span style="color:#f60">3</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 保存到临时文件</span>
+</span></span><span style="display:flex;"><span>    temp_file <span style="color:#555">=</span> tempfile<span style="color:#555">.</span>NamedTemporaryFile(suffix<span style="color:#555">=</span><span style="color:#c30">&#34;.png&#34;</span>, delete<span style="color:#555">=</span><span style="color:#069;font-weight:bold">False</span>)
+</span></span><span style="display:flex;"><span>    temp_path <span style="color:#555">=</span> temp_file<span style="color:#555">.</span>name
+</span></span><span style="display:flex;"><span>    img<span style="color:#555">.</span>save(temp_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 删除校正后的临时文件</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">if</span> os<span style="color:#555">.</span>path<span style="color:#555">.</span>exists(corrected_image_path):
+</span></span><span style="display:flex;"><span>        os<span style="color:#555">.</span>remove(corrected_image_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> temp_path
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 处理单个图像并执行 OCR</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">process_image</span>(image_path):
+</span></span><span style="display:flex;"><span>    preprocessed_image_path <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">None</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">try</span>:
+</span></span><span style="display:flex;"><span>        preprocessed_image_path <span style="color:#555">=</span> preprocess_image(image_path)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#09f;font-style:italic"># 将图像转换为 CIImage</span>
+</span></span><span style="display:flex;"><span>        image_url <span style="color:#555">=</span> NSURL<span style="color:#555">.</span>fileURLWithPath_(preprocessed_image_path)
+</span></span><span style="display:flex;"><span>        ci_image <span style="color:#555">=</span> Quartz<span style="color:#555">.</span>CIImage<span style="color:#555">.</span>imageWithContentsOfURL_(image_url)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#09f;font-style:italic"># 创建 OCR 请求</span>
+</span></span><span style="display:flex;"><span>        ocr_request <span style="color:#555">=</span> Vision<span style="color:#555">.</span>VNRecognizeTextRequest<span style="color:#555">.</span>alloc()<span style="color:#555">.</span>init()
+</span></span><span style="display:flex;"><span>        ocr_request<span style="color:#555">.</span>setRecognitionLevel_(Vision<span style="color:#555">.</span>VNRequestTextRecognitionLevelAccurate)
+</span></span><span style="display:flex;"><span>        ocr_request<span style="color:#555">.</span>setRecognitionLanguages_([<span style="color:#c30">&#34;zh-Hans&#34;</span>, <span style="color:#c30">&#34;zh-Hant&#34;</span>, <span style="color:#c30">&#34;en&#34;</span>])  <span style="color:#09f;font-style:italic"># 支持简体中文、繁体中文和英文</span>
+</span></span><span style="display:flex;"><span>        ocr_request<span style="color:#555">.</span>setUsesLanguageCorrection_(<span style="color:#069;font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#09f;font-style:italic"># 创建处理程序</span>
+</span></span><span style="display:flex;"><span>        handler <span style="color:#555">=</span> Vision<span style="color:#555">.</span>VNImageRequestHandler<span style="color:#555">.</span>alloc()<span style="color:#555">.</span>initWithCIImage_options_(ci_image, <span style="color:#069;font-weight:bold">None</span>)
+</span></span><span style="display:flex;"><span>        success, error <span style="color:#555">=</span> handler<span style="color:#555">.</span>performRequests_error_([ocr_request], <span style="color:#069;font-weight:bold">None</span>)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">not</span> success:
+</span></span><span style="display:flex;"><span>            logging<span style="color:#555">.</span>error(<span style="color:#c30">f</span><span style="color:#c30">&#34;Error processing </span><span style="color:#a00">{</span>image_path<span style="color:#a00">}</span><span style="color:#c30">: </span><span style="color:#a00">{</span>error<span style="color:#a00">}</span><span style="color:#c30">&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">return</span> <span style="color:#c30">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#09f;font-style:italic"># 提取 OCR 结果</span>
+</span></span><span style="display:flex;"><span>        recognized_text <span style="color:#555">=</span> []
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">for</span> observation <span style="color:#000;font-weight:bold">in</span> ocr_request<span style="color:#555">.</span>results():
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">if</span> <span style="color:#366">isinstance</span>(observation, Vision<span style="color:#555">.</span>VNRecognizedTextObservation):
+</span></span><span style="display:flex;"><span>                <span style="color:#069;font-weight:bold">for</span> candidate <span style="color:#000;font-weight:bold">in</span> observation<span style="color:#555">.</span>topCandidates_(<span style="color:#f60">1</span>):
+</span></span><span style="display:flex;"><span>                    <span style="color:#069;font-weight:bold">if</span> candidate<span style="color:#555">.</span>confidence() <span style="color:#555">&gt;=</span> <span style="color:#f60">0.8</span>:  <span style="color:#09f;font-style:italic"># 过滤掉置信度低的文本</span>
+</span></span><span style="display:flex;"><span>                        recognized_text<span style="color:#555">.</span>append(candidate<span style="color:#555">.</span>string())
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">return</span> <span style="color:#c30">&#34;</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span><span style="color:#555">.</span>join(recognized_text)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">except</span> <span style="color:#c00;font-weight:bold">Exception</span> <span style="color:#069;font-weight:bold">as</span> e:
+</span></span><span style="display:flex;"><span>        logging<span style="color:#555">.</span>error(<span style="color:#c30">f</span><span style="color:#c30">&#34;Failed to process image </span><span style="color:#a00">{</span>image_path<span style="color:#a00">}</span><span style="color:#c30">: </span><span style="color:#a00">{</span><span style="color:#366">str</span>(e)<span style="color:#a00">}</span><span style="color:#c30">&#34;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">return</span> <span style="color:#c30">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">finally</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#09f;font-style:italic"># 删除临时文件</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span> preprocessed_image_path <span style="color:#000;font-weight:bold">and</span> os<span style="color:#555">.</span>path<span style="color:#555">.</span>exists(preprocessed_image_path):
+</span></span><span style="display:flex;"><span>            os<span style="color:#555">.</span>remove(preprocessed_image_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 处理所有图像文件并保存结果</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">process_all_images</span>(input_dir, output_txt):
+</span></span><span style="display:flex;"><span>    <span style="color:#09f;font-style:italic"># 获取目录中的图片文件，并按文件名排序</span>
+</span></span><span style="display:flex;"><span>    image_files <span style="color:#555">=</span> <span style="color:#366">sorted</span>([os<span style="color:#555">.</span>path<span style="color:#555">.</span>join(input_dir, f) <span style="color:#069;font-weight:bold">for</span> f <span style="color:#000;font-weight:bold">in</span> os<span style="color:#555">.</span>listdir(input_dir)
+</span></span><span style="display:flex;"><span>                          <span style="color:#069;font-weight:bold">if</span> f<span style="color:#555">.</span>endswith((<span style="color:#c30">&#39;.png&#39;</span>, <span style="color:#c30">&#39;.jpg&#39;</span>, <span style="color:#c30">&#39;.jpeg&#39;</span>, <span style="color:#c30">&#39;.tiff&#39;</span>, <span style="color:#c30">&#39;.bmp&#39;</span>))])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">with</span> <span style="color:#366">open</span>(output_txt, <span style="color:#c30">&#39;w&#39;</span>, encoding<span style="color:#555">=</span><span style="color:#c30">&#39;utf-8&#39;</span>) <span style="color:#069;font-weight:bold">as</span> f:
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">for</span> image_file <span style="color:#000;font-weight:bold">in</span> tqdm(image_files):
+</span></span><span style="display:flex;"><span>            result <span style="color:#555">=</span> process_image(image_file)
+</span></span><span style="display:flex;"><span>            f<span style="color:#555">.</span>write(<span style="color:#c30">f</span><span style="color:#c30">&#34;File: </span><span style="color:#a00">{</span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>basename(image_file)<span style="color:#a00">}</span><span style="color:#c30;font-weight:bold">\n</span><span style="color:#c30">&#34;</span>)
+</span></span><span style="display:flex;"><span>            f<span style="color:#555">.</span>write(<span style="color:#c30">f</span><span style="color:#c30">&#34;</span><span style="color:#a00">{</span>result<span style="color:#a00">}</span><span style="color:#c30;font-weight:bold">\n\n</span><span style="color:#c30">&#34;</span>)
+</span></span><span style="display:flex;"><span>            logging<span style="color:#555">.</span>info(<span style="color:#c30">f</span><span style="color:#c30">&#34;Processed </span><span style="color:#a00">{</span>os<span style="color:#555">.</span>path<span style="color:#555">.</span>basename(image_file)<span style="color:#a00">}</span><span style="color:#c30">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 执行处理所有图像</span>
+</span></span><span style="display:flex;"><span>process_all_images(input_dir, output_txt)
+</span></span><span style="display:flex;"><span><span style="color:#366">print</span>(<span style="color:#c30">&#34;OCR 处理完成，结果已保存到 txt 文件。&#34;</span>)
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

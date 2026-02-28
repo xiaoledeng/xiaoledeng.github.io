@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Linux查看运行时间和最后重启时间 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Linux查看运行时间和最后重启时间</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-22</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/shell/">#Shell</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1uptime显示系统运行时间和系统最后重启时间">1、uptime：显示系统运行时间和系统最后重启时间</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ uptime
+</span></span><span style="display:flex;"><span>15:53:21 up <span style="color:#f60">1</span> day,  6:07,  <span style="color:#f60">1</span> user,  load average: 0.93, 0.68, 0.50
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ uptime -s
+</span></span><span style="display:flex;"><span>2020-09-21 09:45:24
+</span></span></code></pre></div><h1 id="2w已登录账号和在干什么">2、w：已登录账号和在干什么</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ w
+</span></span><span style="display:flex;"><span>15:54:06 up <span style="color:#f60">1</span> day,  6:08,  <span style="color:#f60">1</span> user,  load average: 0.72, 0.66, 0.50
+</span></span><span style="display:flex;"><span>USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+</span></span><span style="display:flex;"><span>shalom   :0       :0               Mon12   ?xdm?   4:16m  0.01s /usr/lib/gdm3/gdm-x-session
+</span></span></code></pre></div><h1 id="3who--a查看系统上传重启时间login进程运行的信息运行级别已经用户信息">3、who -a：查看系统上传重启时间、LOGIN进程运行的信息、运行级别已经用户信息</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ who -a
+</span></span><span style="display:flex;"><span>           system boot  2020-09-21 09:45
+</span></span><span style="display:flex;"><span>shalom   ? :0           2020-09-21 12:19   ?          <span style="color:#f60">9511</span> <span style="color:#555">(</span>:0<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>           run-level <span style="color:#f60">5</span>  2020-09-21 09:46
+</span></span></code></pre></div><p>who -b 可以查到最后重启的时间</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ who -b
+</span></span><span style="display:flex;"><span>         system boot  2020-09-21 09:45
+</span></span></code></pre></div><h1 id="4last显示最近几次的重启时间已经运行时长">4、last：显示最近几次的重启时间已经运行时长</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ last
+</span></span><span style="display:flex;"><span>shalom   :0           :0               Mon Sep <span style="color:#f60">21</span> 12:19   still logged in
+</span></span><span style="display:flex;"><span>shalom   :0           :0               Mon Sep <span style="color:#f60">21</span> 09:46 - 12:19  <span style="color:#555">(</span>02:33<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Mon Sep <span style="color:#f60">21</span> 09:45   still running
+</span></span><span style="display:flex;"><span>shalom   :0           :0               Sun Sep <span style="color:#f60">20</span> 16:56 - down   <span style="color:#555">(</span>16:48<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Sun Sep <span style="color:#f60">20</span> 16:56 - 09:45  <span style="color:#555">(</span>16:48<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>shalom   :0           :0               Sun Sep <span style="color:#f60">20</span> 16:05 - down   <span style="color:#555">(</span>00:50<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Sun Sep <span style="color:#f60">20</span> 16:05 - 16:55  <span style="color:#555">(</span>00:50<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>shalom   :0           :0               Sun Sep <span style="color:#f60">20</span> 14:47 - down   <span style="color:#555">(</span>01:17<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Sun Sep <span style="color:#f60">20</span> 14:47 - 16:05  <span style="color:#555">(</span>01:17<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>shalom   :0           :0               Sun Sep <span style="color:#f60">20</span> 14:33 - down   <span style="color:#555">(</span>00:13<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Sun Sep <span style="color:#f60">20</span> 14:33 - 14:47  <span style="color:#555">(</span>00:13<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>shalom   :0           :0               Sun Sep <span style="color:#f60">20</span> 14:29 - crash  <span style="color:#555">(</span>00:03<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Sun Sep <span style="color:#f60">20</span> 14:29 - 14:47  <span style="color:#555">(</span>00:17<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>shalom   :0           :0               Fri Sep <span style="color:#f60">18</span> 09:04 - down  <span style="color:#555">(</span>2+05:24<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Fri Sep <span style="color:#f60">18</span> 09:03 - 14:29 <span style="color:#555">(</span>2+05:25<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>shalom   :0           :0               Thu Sep <span style="color:#f60">17</span> 16:34 - crash  <span style="color:#555">(</span>16:29<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>shalom   :0           :0               Thu Sep <span style="color:#f60">17</span> 16:06 - 16:33  <span style="color:#555">(</span>00:27<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>shalom   tty6                          Thu Sep <span style="color:#f60">17</span> 16:04 - crash  <span style="color:#555">(</span>16:59<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>shalom   :0           :0               Thu Sep <span style="color:#f60">17</span> 13:31 - 16:06  <span style="color:#555">(</span>02:34<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Thu Sep <span style="color:#f60">17</span> 13:30 - 14:29 <span style="color:#555">(</span>3+00:58<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wtmp begins Thu Sep <span style="color:#f60">17</span> 13:30:44 <span style="color:#f60">2020</span>
+</span></span></code></pre></div><h1 id="5last-reboot查看最近几次重启的时间信息">5、last reboot：查看最近几次重启的时间信息</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ last reboot
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Mon Sep <span style="color:#f60">21</span> 09:45   still running
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Sun Sep <span style="color:#f60">20</span> 16:56 - 09:45  <span style="color:#555">(</span>16:48<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Sun Sep <span style="color:#f60">20</span> 16:05 - 16:55  <span style="color:#555">(</span>00:50<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Sun Sep <span style="color:#f60">20</span> 14:47 - 16:05  <span style="color:#555">(</span>01:17<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Sun Sep <span style="color:#f60">20</span> 14:33 - 14:47  <span style="color:#555">(</span>00:13<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Sun Sep <span style="color:#f60">20</span> 14:29 - 14:47  <span style="color:#555">(</span>00:17<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Fri Sep <span style="color:#f60">18</span> 09:03 - 14:29 <span style="color:#555">(</span>2+05:25<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>reboot   system boot  5.4.0-47-generic Thu Sep <span style="color:#f60">17</span> 13:30 - 14:29 <span style="color:#555">(</span>3+00:58<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>wtmp begins Thu Sep <span style="color:#f60">17</span> 13:30:44 <span style="color:#f60">2020</span>
+</span></span></code></pre></div><h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://zhidao.baidu.com/question/1244550873192826779.html">怎么查看 Linux 运行了多长时间和最后重启时间？百度知道</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

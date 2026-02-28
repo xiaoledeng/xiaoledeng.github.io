@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>GMT6入门教程（3）绘制线段、多边形和符号 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">GMT6入门教程（3）绘制线段、多边形和符号</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-09</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/gmt/">#GMT</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/drawing/">#Drawing</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1绘制线段多边形">1.绘制线段、多边形</h1>
+<p>原文地址：<a href="https://docs.gmt-china.org/latest/tutorial/lines/">绘制线段和多边形 — GMT中文手册</a></p>
+<p>模块：<a href="https://docs.gmt-china.org/latest/module/plot/">plot</a></p>
+<h2 id="11绘制一条线段">1.1绘制一条线段</h2>
+<p>要绘制一条线段，就必须提供线段上数据点的信息，即数据的X坐标和Y坐标。 plot 会自动将输入数据中相邻的两点连接起来。</p>
+<p>使用 plot 模块的 -W 选项设置画笔属性。画笔属性包括三个部分：线宽、颜色以及线型，三者之间用逗号隔开。</p>
+<ul>
+<li>-W2p,red,- 选项，即设置了画笔属性为 2p 宽的红色虚线。p 是GMT中的一个长度单位。</li>
+<li>几种常见的线型包括 -、.、.-和 -.</li>
+</ul>
+<h2 id="12绘制一个多边形">1.2绘制一个多边形</h2>
+<p>plot 使用 -L 选项将线段的首尾连接起来，构成了一个闭合多边形。</p>
+<p>使用 -G 选项为闭合多边形填充颜色。</p>
+<h2 id="13绘制多条线段">1.3绘制多条线段</h2>
+<p>可以将所有线段的数据点都保存到一个输入文件中，每个线段都包含了若干个数据点，在第一个数据点之前有一个 &gt; 用于标记新的一段数据的开始。这种数据称之为多段数据。</p>
+<h2 id="14绘制多个多边形">1.4绘制多个多边形</h2>
+<p>使用相同的输入数据，通过加上 -L 可以构成闭合多边形，加上 -G 为多边形设置填充色。</p>
+<h2 id="15大圆弧路径">1.5大圆弧路径</h2>
+<p>在笛卡尔坐标系下，绘制线段时，任意两点之间会以直线方式连接；而在地理投影下，任意两点之间则使用大圆弧路径方法会连接。如果想要在地理投影下也是要直线连接两点，则需要使用 -A 选项。</p>
+<p>使用 plot 模块绘制了地球上两点之间的连线（红色，以大圆弧路径方式连接），然后，我们加上了 -A 选项再次绘制了这两点之间的连线（蓝色，以直线方式连接）</p>
+<h1 id="2绘制符号">2.绘制符号</h1>
+<p>原文地址：<a href="https://docs.gmt-china.org/latest/tutorial/symbols/">绘制符号 — GMT中文手册</a></p>
+<p>模块：<a href="https://docs.gmt-china.org/latest/module/plot/">plot</a></p>
+<h2 id="21符号一览">2.1符号一览</h2>
+<p>plot 模块绘制符号需要使用 -S 选项：</p>
+<ul>
+<li>- 代表 -形</li>
+<li>+ 代表 十字形</li>
+<li>a 代表 空五角形</li>
+<li>c 代表 圆形（circle）</li>
+<li>d 代表 菱形</li>
+<li>e 代表 斜椭圆形</li>
+<li>g 代表 八面形</li>
+<li>h 代表 六面形</li>
+<li>i 代表 下三角形</li>
+<li>n 代表 五面形</li>
+<li>r 代表 长方形</li>
+<li>s 代表 正方形</li>
+<li>t 代表 上三角形（triangle）</li>
+<li>x 代表 X形</li>
+<li>y 代表 |</li>
+</ul>
+<h2 id="22绘制简单符号">2.2绘制简单符号</h2>
+<p>-Sc0.5c 则表示绘制直径为0.5厘米的圆圈，同时，可以使用 -W 选项控制符号轮廓的画笔属性，使用 -G 选项为符号设置填充色。</p>
+<h2 id="23大小变化的符号">2.3大小变化的符号</h2>
+<p>输入数据的第三列控制圆圈大小。</p>
+<h2 id="24颜色变化的符号">2.4颜色变化的符号</h2>
+<p>对于输入数据，我们额外增加一列（通常称这一列为Z值），该列的值决定了符号的填充色。</p>
+<h2 id="25绘制不同的符号">2.5绘制不同的符号</h2>
+<p>输入数据的最后一列中 c、t和 i 则分别为三个数据指定了各自的符号类型。</p>
+<h2 id="26大小颜色和符号类型都变化的符号">2.6大小、颜色和符号类型都变化的符号</h2>
+<p>根据GMT的规定，此时输入数据的格式为:</p>
+<p>X   Y   Z   size    symbol</p>
+<p>即第三列控制符号填充色，第四列为符号大小，最后一列为符号类型代码。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

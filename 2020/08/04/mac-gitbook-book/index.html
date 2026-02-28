@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Mac下如何利用GitBook编写电子书？ - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Mac下如何利用GitBook编写电子书？</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-08-04</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1安装git">1.安装git</h1>
+<p>下载地址：https://git-scm.com/downloads</p>
+<h1 id="2安装nodejs">2.安装Node.js</h1>
+<p>下载地址：https://nodejs.org/en/download/</p>
+<h1 id="3安装gitbook">3.安装gitbook</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g gitbook-cli 
+</span></span></code></pre></div><h1 id="4初始化gitbook">4.初始化gitbook</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gitbook init
+</span></span></code></pre></div><ul>
+<li>README.md —— 书籍的介绍写在这个文件里</li>
+<li>SUMMARY.md —— 书籍的目录结构在这里配置</li>
+</ul>
+<p>编辑 SUMMARY.md 文件，内容修改为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#030;font-weight:bold"># 目录
+</span></span></span><span style="display:flex;"><span><span style="color:#030;font-weight:bold"></span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">*</span> [<span style="color:#309;font-weight:bold">前言</span>](<span style="color:#309">README.md</span>)
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">*</span> [<span style="color:#309;font-weight:bold">第一章</span>](<span style="color:#309">Chapter1/README.md</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">*</span> [<span style="color:#309;font-weight:bold">第1节：衣</span>](<span style="color:#309">Chapter1/衣.md</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">*</span> [<span style="color:#309;font-weight:bold">第2节：食</span>](<span style="color:#309">Chapter1/食.md</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">*</span> [<span style="color:#309;font-weight:bold">第3节：住</span>](<span style="color:#309">Chapter1/住.md</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">*</span> [<span style="color:#309;font-weight:bold">第4节：行</span>](<span style="color:#309">Chapter1/行.md</span>)
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">*</span> [<span style="color:#309;font-weight:bold">第二章</span>](<span style="color:#309">Chapter2/README.md</span>)
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">*</span> [<span style="color:#309;font-weight:bold">第三章</span>](<span style="color:#309">Chapter3/README.md</span>)
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">*</span> [<span style="color:#309;font-weight:bold">第四章</span>](<span style="color:#309">Chapter4/README.md</span>)
+</span></span></code></pre></div><h1 id="5预览电子书">5.预览电子书</h1>
+<p>在mybook文件夹中再次执行以下命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gitbook init
+</span></span></code></pre></div><p>预览书籍的命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gitbook serve
+</span></span></code></pre></div><p>构建书籍的命令，默认将生成的静态网站输出到_book目录：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gitbook build
+</span></span></code></pre></div><h1 id="6安装calibre和设置ebook-convert">6.安装calibre和设置ebook-convert</h1>
+<p>安装calibre地址：<a href="https://calibre-ebook.com/download">calibre - Download calibre</a></p>
+<p>设置ebook-convert：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ln -s /Applications/calibre.app/Contents/macOS/ebook-convert /usr/local/bin
+</span></span></code></pre></div><h1 id="7转换电子书格式">7.转换电子书格式</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ebook-convert mybook.epub mybook.mobi
+</span></span><span style="display:flex;"><span>gitbook pdf ./ ./mybook.pdf
+</span></span><span style="display:flex;"><span>gitbook epub ./ ./mybook.epub
+</span></span><span style="display:flex;"><span>gitbook mobi ./ ./mybook.mobi
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

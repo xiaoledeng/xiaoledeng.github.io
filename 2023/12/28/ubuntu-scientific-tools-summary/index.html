@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu系统的科研工具小结 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu系统的科研工具小结</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-28</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/lists/">#Lists</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/software/">#Software</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>Ubuntu 系统一般安装在工作站上，即台式机主机，性能比不上正规服务器，但是可用于日常工作的程序运行，简称：跑程序。</p>
+<p>之前写过一篇文章——<a href="/2020/09/20/ubuntu-research-system/">Ubuntu 20.04 LTS作为科研主系统</a>，里面提到了很多工具，经过 3 年多的实践发现：</p>
+<ul>
+<li>很多工具可以精简，即：没必要安装在 Ubuntu 系统上</li>
+<li>Ubuntu 系统不适合科研主系统，还是 macOS 系统适合</li>
+<li>Ubuntu 系统可作为很好的科研辅助系统，安装在工作站上</li>
+</ul>
+<p>一般而言，精简后的科研工具有：</p>
+<ul>
+<li>Mathematica</li>
+<li>MATLAB</li>
+<li>Python</li>
+<li>Fortran</li>
+<li>SSH</li>
+<li>crontab</li>
+</ul>
+<h1 id="2-细节">2. 细节</h1>
+<h2 id="20-精简设置-ubuntu">2.0 精简设置 Ubuntu</h2>
+<ul>
+<li><a href="/2023/12/26/minimalism-on-ubuntu-software/">精简Ubuntu 22.04.1 LTS默认软件</a></li>
+<li><a href="/2023/12/26/ubuntu-autointo-cli/">Ubuntu默认进入命令行模式</a></li>
+<li><a href="/2023/12/26/ubuntu-text-console-font-size/">Ubuntu字符模式调整字体和字号</a></li>
+<li><a href="/2023/12/26/ubuntu-text-console-keyboard/">Ubuntu字符模式调整键盘模式</a></li>
+</ul>
+<h2 id="21-mathematica">2.1 Mathematica</h2>
+<p>用法：<a href="/2020/08/04/run-mathematica-command-line-code-on-the-server/">服务器上运行Mathematica命令行代码</a></p>
+<p>替代品：<a href="/2021/07/07/mathics/">Mathics: A free, open-source alternative to Mathematica®</a></p>
+<h2 id="22-matlab">2.2 MATLAB</h2>
+<p>安装步骤：<a href="/2022/01/07/ubuntu-installs-matlab2021b/">Ubuntu installs Matlab2021b</a></p>
+<h2 id="23-python">2.3 Python</h2>
+<p>基于 Anaconda ，安装步骤：<a href="/2021/12/20/ubuntu-install-anaconda/">Ubuntu installs Anaconda</a></p>
+<p>开启多个 Python 版本的虚拟环境，见： <a href="/2021/12/20/ubuntu-install-fantiando-python/">Ubuntu installs Fatiando 0.5 in Python 2.7</a></p>
+<h2 id="24-fortran">2.4 Fortran</h2>
+<p>安装 ifort 版本：</p>
+<ul>
+<li><a href="/2020/10/16/ubuntu-install-intel/">Ubuntu安装Intel® Parallel Studio XE</a></li>
+<li><a href="/2021/12/22/ubuntu-uninstall-intel/">Ubuntu uninstalls Intel® Parallel Studio XE</a></li>
+<li><a href="/2021/11/22/ubuntu-install-intel-oneapi/">Ubuntu安装Intel® oneAPI Base &amp; HPC Toolkit</a></li>
+</ul>
+<p>其他：</p>
+<ul>
+<li><a href="/2021/07/19/ubuntu-cuda-fortran/">Ubuntu安装CUDA以GPU运行Fortran</a></li>
+<li><a href="/2023/12/07/close-ubuntu-terminal-text-information/">关闭Ubuntu终端打开时显示的文本信息</a></li>
+</ul>
+<h2 id="25-ssh">2.5 SSH</h2>
+<p>安装：<a href="/2020/11/13/inside-login-ubuntu/">局域网ssh远程访问Ubuntu系统</a></p>
+<p>安全设置：</p>
+<ul>
+<li><a href="/2022/04/21/ubuntu-root-ssh/">Ubuntu禁止用户远程ssh登录</a></li>
+<li><a href="/2022/04/21/ubuntu-ssh-ip-black-white-name-list/">Ubuntu设置ssh服务的IP地址黑名单和白名单</a></li>
+<li><a href="/2023/04/04/macOS-ssh-miyao-ubuntu/">macOS系统ssh通过密钥文件连接Ubuntu系统</a></li>
+<li><a href="/2023/12/27/update-ssh-setting/">Ubuntu系统SSH设置小结</a></li>
+<li><a href="/2022/04/21/unhack-ubuntu-experiences/">Ubuntu防黑的经验总结</a></li>
+</ul>
+<h2 id="26-crontab">2.6 crontab</h2>
+<p>用法：</p>
+<ul>
+<li><a href="/2023/12/06/linux-tool-crontab/">Linux命令行定时工具crontab</a></li>
+<li><a href="/2023/12/24/idea-on-crontab-not-run/">解决crontab不执行的一般思路</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

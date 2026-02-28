@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS 系统从 Ventura 13.6.3升级至 Sequoia 15.7.1 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS 系统从 Ventura 13.6.3升级至 Sequoia 15.7.1</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2025-10-08</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-引言">1. 引言</h1>
+<p>一直以来，我的主力工作机是 macOS 系统。最近，macOS 13 (Ventura)正式停止安全支持 (2025 年 9 月)。</p>
+<p>评估了现有硬件、AI需求和稳定性后，决定直接从 13.6.3 (Ventura) 升级到 15.7.1 (Sequoia)，跳过 13 (Ventura)、14 (Sonoma)，并避免升级到最新的 26.0.1 (Tahoe)。</p>
+<ul>
+<li>放弃 macOS 13 (Ventura)：安全更新结束，系统环境有隐患；第三方软件停止支持旧版本，如 brew 对 macOS 13 仅提供 Tier 3 支持，即无官方支持或 bug 修复。</li>
+<li>不选 macOS 14 (Sonoma)：稳定，但缺乏价值。没有 Apple Intelligence，无法使用写作改写等 AI 功能。同时，官方支持周期比 15 系列短整整一年。</li>
+<li>不选 macOS 26.0.1 (Tahoe)：初期版本不稳定，适配未完成。</li>
+<li>选择 macOS 15.7.1 (Sequoia)：功能比 macOS 14 (Sonoma)强，有AI功能；风险比 macOS 26.0.1 (Tahoe)小，稳定性成熟；安全性远胜 macOS 13 (Ventura)，安全支持到2027年9月。</li>
+</ul>
+<h1 id="2-过程">2. 过程</h1>
+<p>首先，备份数据。然后，在 App Store 搜索 Sequoia 并下载安装。下载和安装约需2小时。</p>
+<h1 id="3-体验">3. 体验</h1>
+<p>系统流畅度可行，主要因硬件良好，充分利用空闲 GPU。</p>
+<p>AI 工具提升了写作效率，Apple Intelligence 可自动改写草稿、提炼摘要、草拟邮件回复；在 Notes、Mail、Safari、Pages 等系统应用中可使用 AI 辅助写作。</p>
+<h1 id="4-延伸阅读">4. 延伸阅读</h1>
+<ul>
+<li><a href="https://support.apple.com/en-gb/guide/mac-help/mchldcd6c260/15.0/mac/15.0">Use Writing Tools with Apple Intelligence on Mac – Apple Support (UK)</a></li>
+<li><a href="https://support.apple.com/en-gb/guide/mac-help/mchlb2dbea8f/15.0/mac/15.0">Use Apple Intelligence in Mail on Mac – Apple Support (UK)</a></li>
+<li><a href="https://support.apple.com/en-gb/guide/mac-help/mchl00c5b2c3/15.0/mac/15.0">Use Apple Intelligence in Messages on Mac – Apple Support (UK)</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
