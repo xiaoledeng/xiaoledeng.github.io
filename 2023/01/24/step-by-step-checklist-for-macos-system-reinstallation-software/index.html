@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS系统重装科研软件的步骤清单 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS系统重装科研软件的步骤清单</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-01-24</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/lists/">#Lists</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>在2021年总结了科研软件清单，见：<a href="/2021/05/16/list-of-scientific-softwares/">macOS科研软件清单</a>。</p>
+<p>此次是重新安装这些科研软件，故此记录下整个流程的大概步骤，方便以后优化。</p>
+<h1 id="1-安装软件">1. 安装软件</h1>
+<ul>
+<li>Alfred <a href="https://www.alfredapp.com/">https://www.alfredapp.com/</a></li>
+<li>Anaconda <a href="https://www.anaconda.com/products/distribution">https://www.anaconda.com/products/distribution</a> ，建议命令行安装，在命令行加入环境路径<code>echo 'export PATH=&quot;/Users/username/anaconda3/bin:$PATH&quot;' &gt;&gt; ~/.zshrc</code>和<code>source ~/.zshrc</code>，输入<code>conda -V</code>，显示版本号，即安装成功。</li>
+<li>CheatSheet <a href="https://www.mediaatelier.com/CheatSheet/">https://www.mediaatelier.com/CheatSheet/</a></li>
+<li>draw.io <a href="https://www.diagrams.net/">https://www.diagrams.net/</a></li>
+<li>GMT-5.4.5 <a href="https://www.generic-mapping-tools.org/download/">https://www.generic-mapping-tools.org/download/</a> ，记得把 <code>export PATH=${PATH}:/Applications/GMT-5.4.5.app/Contents/Resources/bin</code> 加入到 <code>~./bashrc</code> 或 <code>~./zshrc</code> 文件中。</li>
+<li>Google Chrome <a href="https://www.google.com/chrome/">https://www.google.com/chrome/</a></li>
+<li>Keka <a href="https://www.keka.io/en/">https://www.keka.io/en/</a></li>
+<li>Mathematica <a href="https://tiebamma.github.io/InstallTutorial/">https://tiebamma.github.io/InstallTutorial/</a> ，其他设置包括：<a href="/2023/01/01/mathematica-closes-network/">Mathematica关闭网络连接</a></li>
+<li>Mathpix <a href="https://mathpix.com/desktop-downloads">https://mathpix.com/desktop-downloads</a></li>
+<li>Microsoft Excel, PowerPoint, Word</li>
+<li>Microsoft Remote Desktop Beta <a href="https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac">https://install.appcenter.ms/orgs/rdmacios-k2vy/apps/microsoft-remote-desktop-for-mac/distribution_groups/all-users-of-microsoft-remote-desktop-for-mac</a></li>
+<li>NTFS for Mac <a href="https://www.seagate.com/cn/zh/support/software/paragon/">https://www.seagate.com/cn/zh/support/software/paragon/</a></li>
+<li>PDF Expert <a href="https://pdfexpert.com/">https://pdfexpert.com/</a></li>
+<li>Royal TSX <a href="https://royalapps.com/ts/mac/download">https://royalapps.com/ts/mac/download</a> ，下载 <code>Plugins</code>，包括：<code>Terminal</code>和<code>File Transfer</code>，打开之前的<code>rtsz文件</code>即可。</li>
+<li>Skim <a href="https://skim-app.sourceforge.io/">https://skim-app.sourceforge.io/</a></li>
+<li>Spectacle <a href="https://www.spectacleapp.com/">https://www.spectacleapp.com/</a></li>
+<li>Sublime Text   <a href="https://www.sublimetext.com/">https://www.sublimetext.com/</a> ，Sublime的其他设置包括：<a href="/2020/07/31/mac-sublime-terminal-open/">Mac下设置sublime的命令行打开文档</a>、<a href="/2022/08/09/macOS-close-sublime-update/">macOS系统关闭Sublime更新提示</a>、<a href="/2022/08/10/macOS-sublime-tab-space/">macOS系统Sublime只显示空格</a>、<a href="https://gist.github.com/maboloshi/feaa63c35f4c2baab24c9aaf9b3f4e47">Crack Sublime Text and Sublime Merge</a></li>
+<li>MacTeX <a href="https://www.tug.org/mactex/">https://www.tug.org/mactex/</a></li>
+<li>Texifier <a href="https://www.texifier.com/mac">https://www.texifier.com/mac</a></li>
+<li>TimeMachineEditor <a href="https://tclementdev.com/timemachineeditor/">https://tclementdev.com/timemachineeditor/</a></li>
+<li>ToDesk <a href="https://www.todesk.com/download.html">https://www.todesk.com/download.html</a></li>
+<li>Tunnelblick <a href="https://tunnelblick.net/">https://tunnelblick.net/</a></li>
+<li>Visual Studio Code <a href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></li>
+</ul>
+<h1 id="2-命令行安装">2. 命令行安装</h1>
+<h2 id="21-terminal基本设置">2.1 Terminal基本设置</h2>
+<h2 id="22-安装homebrew">2.2 安装Homebrew</h2>
+<p><a href="https://brew.sh/">https://brew.sh/</a></p>
+<h2 id="23-安装zsh">2.3 安装zsh</h2>
+<p><a href="https://ohmyz.sh/">https://ohmyz.sh/</a></p>
+<h2 id="24-安装gfortran">2.4 安装gfortran</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xcode-select --install
+</span></span><span style="display:flex;"><span>brew install gcc
+</span></span></code></pre></div><p>见： <a href="/2022/07/22/m-chip-macOS-gfortran/">M芯片的macOS系统安装gfortran</a></p>
+<p><a href="https://gcc.gnu.org/wiki/GFortran">https://gcc.gnu.org/wiki/GFortran</a></p>
+<p><a href="https://fortran-lang.org/en/learn/os_setup/install_gfortran/">https://fortran-lang.org/en/learn/os_setup/install_gfortran/</a></p>
+<h2 id="25-安装doi2bib">2.5 安装doi2bib</h2>
+<p>这一步，需要提前安装好<code>conda</code>。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install doi2bib
+</span></span></code></pre></div><p>见：<a href="/2020/11/08/doi2bib/">doi2bib: Python doi to bib tool</a></p>
+<h2 id="26-博客环境迁移">2.6 博客环境迁移</h2>
+<p>见： <a href="/2022/07/19/blog-new-macOS/">博客迁移到新的macOS系统的操作</a></p>
+<h1 id="3-系统设置">3. 系统设置</h1>
+<h2 id="31-fliqlo时钟">3.1 Fliqlo时钟</h2>
+<p><a href="https://fliqlo.com/screensaver/">https://fliqlo.com/screensaver/</a></p>
+<h2 id="32-hot-corner-shortcuts设置">3.2 Hot Corner Shortcuts设置</h2>
+<p>Desktop &amp; Dock -&gt; Hot Corner Shortcuts</p>
+<p>左上——Lock Sreen</p>
+<p>左下——Desktop</p>
+<p>右上——Mission Control</p>
+<p>右下——Launchpad</p>
+<h2 id="33-鼠标设置">3.3 鼠标设置</h2>
+<p><code>System Preferences</code> -&gt; <code>Mouse</code>，而后进行以下设置：</p>
+<p>Scroll direction: <code>Natural</code></p>
+<p>Tracking speed: <code>Fast</code></p>
+<p>Double-Click speed: <code>Fast 退两格</code></p>
+<p>Scrolling speed: <code>Fast 退两格</code></p>
+<p>Primary mouse button: <code>Left</code></p>
+<h2 id="34-小鹤双拼输入法">3.4 小鹤双拼输入法</h2>
+<p><code>System Preferences</code> -&gt; <code>Keyboard</code> -&gt; <code>Input Sources</code></p>
+<p>添加 <code>Chinese, Simplified</code> -&gt; <code>Shuangpin - Simplified</code></p>
+<p>设置 <code>Shuangpin layout</code> -&gt; <code>Xiaohe</code></p>
+<p>另外，输入法的快捷键设置，见：<a href="/2022/08/08/macOS-input-method-control-space/">macOS系统切换输入法快捷键Control+Space</a></p>
+<h1 id="4-其他">4. 其他</h1>
+<ul>
+<li><a href="/2022/12/24/login-eduroam/">Universität Stuttgart登陆eduroam无线网络</a></li>
+<li><a href="/2023/01/22/us-vpn/">Universität Stuttgart登陆VPN</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

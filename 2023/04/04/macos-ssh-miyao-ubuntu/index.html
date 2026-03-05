@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS系统ssh通过密钥文件连接Ubuntu系统 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS系统ssh通过密钥文件连接Ubuntu系统</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-04-04</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>在一年前（2022年）的春天，因学校封控，故让机房的台式机一直开机跑程序。后来，学校解封后入校查看台式机，发现被黑了。</p>
+<p>当时，总结了一点Ubuntu系统防止被黑的经验，见：<a href="/2022/04/21/unhack-ubuntu-experiences/">Ubuntu防黑的经验总结</a>。</p>
+<p>究其原因，还是采用账号密码的方式登陆远程Ubuntu系统。</p>
+<p>如果能够通过密钥文件的方式，应该可以大大降低被黑风险。</p>
+<h1 id="2-ubuntu系统设置">2. Ubuntu系统设置</h1>
+<ol>
+<li>生成一对密钥(公钥，私钥)：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -t rsa
+</span></span></code></pre></div><p>这里，使用原始路径 <code>/name/.ssh/id_rsa</code>。同时，<code>passphrase</code>也需要设置一个复杂点的密码。</p>
+<ol start="2">
+<li>进入.ssh文件夹：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">cd</span> .ssh
+</span></span></code></pre></div><ol start="3">
+<li>在服务器上安装公钥：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat id_rsa.pub &gt;&gt; authorized_keys
+</span></span></code></pre></div><ol start="4">
+<li>对安装的公钥文件和.ssh文件夹授权：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod <span style="color:#f60">600</span> authorized_keys
+</span></span><span style="display:flex;"><span>chmod <span style="color:#f60">700</span> ~/.ssh
+</span></span></code></pre></div><ol start="5">
+<li>利用vi修改sshd配置：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vi /etc/ssh/sshd_config
+</span></span></code></pre></div><ol start="6">
+<li>在文件中，加入以下命令：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>RSAAuthentication yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>PubkeyAuthentication yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 禁止root用户进行ssh登录</span>
+</span></span><span style="display:flex;"><span>PermitRootLogin no
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 禁止利用账户密码的方式进行ssh登录，即只能通过密钥文件登陆</span>
+</span></span><span style="display:flex;"><span>PasswordAuthentication no
+</span></span><span style="display:flex;"><span>ChallengeResponseAuthentication no
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 只允许用户名name进行ssh登录</span>
+</span></span><span style="display:flex;"><span>AllowUsers name
+</span></span></code></pre></div><p>注意⚠️： 通过 <code>man sshd_config</code> 查看详细参数说明。</p>
+<ol start="7">
+<li>
+<p>利用vi对此文件退出并保存：<code>:wq</code></p>
+</li>
+<li>
+<p>重启ssh服务：</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>service sshd restart 
+</span></span></code></pre></div><ol start="9">
+<li>先在Ubuntu系统里，使用<code>Control + H</code>显示隐藏的.ssh文件夹，而后私钥文件<code>id_rsa</code>复制到macOS系统下。</li>
+</ol>
+<p>至此，Ubuntu系统的设置完成。</p>
+<h1 id="3-macos系统设置">3. macOS系统设置</h1>
+<ol>
+<li>
+<p>安装Royal TSX软件，用于远程访问Ubuntu系统，见： <a href="/2021/05/27/royal-tsx/">Royal TSX：macOS系统的服务器管理软件</a></p>
+</li>
+<li>
+<p>在Royal TSX软件的ssh终端管理里，主要设置Properties————Credentials：</p>
+<ul>
+<li><code>Credential</code>——<code>Specify username and password</code>——<code>Username</code>，只填写用户名，密码Password不用填写；</li>
+<li><code>Private Key File</code>——<code>Embed Private Key File</code>——Browse到私钥文件<code>id_rsa</code>——输入Ubuntu系统最开始输入的密码<code>Passphrase</code>。</li>
+<li>点击 <code>Apply &amp; Close</code>。</li>
+</ul>
+</li>
+<li>
+<p>在Royal TSX软件的SFTP文件管理里，也是类似上面的步骤。</p>
+</li>
+</ol>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/weixin_43993373/article/details/109460652">怎么使用ssh远程连接工具通过密钥连接linux服务器_KID星心的博客-CSDN博客</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/433462308">Mac上使用Royal TSX远程连接服务器 - 知乎</a></li>
+<li><a href="/2022/04/21/ubuntu-root-ssh/">Ubuntu禁止用户远程ssh登录</a></li>
+<li><a href="https://www.jianshu.com/p/10a2e85ea69f">SSH安全加固 - 简书</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

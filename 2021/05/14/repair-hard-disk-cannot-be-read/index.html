@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>一次“修复移动硬盘无法读取”的经历 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">一次“修复移动硬盘无法读取”的经历</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-05-14</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/windows/">#Windows</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-背景">1. 背景</h1>
+<p>希捷<code>4T移动硬盘</code>，拷贝资料的过程中，直接拔了数据线，没有正确地弹出。</p>
+<p>首先，连接移动硬盘到<code>Ubuntu</code>系统上，显示错误，没办法读取。</p>
+<p>其次，连接移动硬盘到<code>macOS</code>系统上，</p>
+<ul>
+<li>利用磁盘操作工作<code>Disk Utility</code>的<code>First Aid</code>急救功能（见：<a href="https://zhuanlan.zhihu.com/p/83542978">Mac 下移动硬盘异常退出修复 - 知乎</a>），没有成功，移动硬盘没办法读取；</li>
+<li>继续利用<code>Paragon NTFS for Mac</code>的<code>Verify</code>修复（见：<a href="https://www.ntfsformac.cn/shiyongjiqiao/zms-rhxfcp.html">如何在Mac上修复问题硬盘-Paragon NTFS for Mac中文官网</a>），依然没有成功，移动硬盘还是没办法读取。</li>
+</ul>
+<p>最后，连接移动硬盘到<code>Windows</code>系统上，特征为：</p>
+<ul>
+<li>能够看到有<code>G</code>盘，看不到容量，读取不了；</li>
+<li>完全点不开，强行打开硬盘，双击后电脑就死机了，一直在转圈圈，拔掉移动硬盘后，电脑恢复正常。</li>
+</ul>
+<p>以上在<code>Windows</code>下的特征与<a href="https://zhuanlan.zhihu.com/p/327970093">移动硬盘无法读取如何修复 - 知乎</a>描述的一样。</p>
+<h1 id="2-正确的修复过程">2. 正确的修复过程</h1>
+<p>首先，在<code>Windows</code>系统下，打开<code>cmd</code> （系统键+R调出运行窗口（系统键就是键盘左下角ctrl和alt中间那个），输入cmd）；
+其次，在<code>cmd</code>中输入命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chkdsk g: /f
+</span></span></code></pre></div><p>这里，<code>g:</code>为盘符，即移动硬盘的编号，为<code>G</code>盘，其他可能为<code>E</code>盘(<code>e:</code>)，<code>F</code>盘(<code>f:</code>)和<code>H</code>盘(<code>h:</code>)等。具体修复过程如下：</p>
+<embed src="/figures/20210514/pic.png">
+<p>总共花了<code>1.15小时</code>，终于修复了问题，移动硬盘能够正常在<code>Windows</code>系统、<code>Ubuntu</code>系统和<code>macOS</code>系统下正确地识别。</p>
+<h1 id="3-分析原因">3. 分析原因</h1>
+<p>为什么在<code>macOS</code>系统下不能修复，而在<code>Windows</code>系统下可以修复？</p>
+<p>很可能是因为：希捷<code>4T移动硬盘</code>的文件系统类型是<code>NTFS</code>。</p>
+<p>根据<a href="https://baike.baidu.com/item/ntfs/91761">ntfs-百度百科</a>显示：</p>
+<blockquote>
+<p>NTFS（New Technology File System）是Windows NT内核的系列操作系统支持的、一个特别为网络和磁盘配额、文件加密等管理安全特性设计的磁盘格式。</p>
+<p>NTFS是一个日志文件系统，这意味着除了向磁盘中写入信息，该文件系统还会为所发生的所有改变保留一份日志。这一功能让NTFS文件系统在发生错误的时候（比如系统崩溃或电源供应中断）更容易恢复，也让这一系统更加强壮。在这些情况下，NTFS能够很快恢复正常，而且不会丢失任何数据。</p>
+<p>磁盘自我修复功能：NTFS可以对硬盘上的逻辑错误和物理错误进行自动侦测和修复。</p>
+</blockquote>
+<h1 id="4-参考资料">4. 参考资料</h1>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/83542978">Mac 下移动硬盘异常退出修复 - 知乎</a></li>
+<li><a href="https://www.ntfsformac.cn/shiyongjiqiao/zms-rhxfcp.html">如何在Mac上修复问题硬盘-Paragon NTFS for Mac中文官网</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/327970093">移动硬盘无法读取如何修复 - 知乎</a></li>
+<li><a href="https://baike.baidu.com/item/ntfs/91761">ntfs-百度百科</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

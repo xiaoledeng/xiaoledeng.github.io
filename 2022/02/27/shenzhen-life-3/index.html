@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>记深圳居家办公的日子(3)—Ubuntu利用Timeshift进行系统备份与还原 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">记深圳居家办公的日子(3)—Ubuntu利用Timeshift进行系统备份与还原</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-02-27</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/life/">#Life</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-安装">1. 安装</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-add-repository -y ppa:teejee2008/ppa
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install timeshift
+</span></span></code></pre></div><h1 id="2-备份">2. 备份</h1>
+<p>打开<code>Timeshift</code>，进行基本的设置，包括：</p>
+<ul>
+<li>备份文件格式：【RSYNC】</li>
+<li>选取备份文件位置：【位置】，硬盘文件格式要为Linux文件系统<code>ext4</code>，Windows的NTFS格式不支持</li>
+<li>设置备份计划频率：【计划】</li>
+<li>【用户】和【筛选】选择默认即可</li>
+</ul>
+<h1 id="3-还原">3. 还原</h1>
+<h2 id="31-能进入系统">3.1 能进入系统</h2>
+<p>直接打开<code>Timeshift</code>，选择合适节点，进行还原。</p>
+<h2 id="32-能进入终端">3.2 能进入终端</h2>
+<p>1.<code>Ctrl+Alt+F1</code>进入终端</p>
+<p>2.查看可以还原节点</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo timeshift --list
+</span></span></code></pre></div><p>3.选择节点（如：2019-07-16_16-35-42）进行还原</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo timeshift --restore --snapshot <span style="color:#c30">&#39;2019-07-16_16-35-42&#39;</span> --skip-grub
+</span></span></code></pre></div><p>或</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo timeshift --restore --snapshot <span style="color:#c30">&#39;2019-07-16_16-35-42&#39;</span> --skip-grub --scripted
+</span></span></code></pre></div><h2 id="33-无法进入系统通过u盘启动系统">3.3 无法进入系统，通过U盘启动系统</h2>
+<p>1.制作<code>Linux live CD</code>的U盘系统启动盘</p>
+<p>2.进入U盘的Live CD系统，打开<code>Timeshift</code>软件，点击设置按钮，设置快照的存储位置</p>
+<p>3.按照<code>3.1节</code>内容设置还原即可</p>
+<h1 id="4-参考">4. 参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/wf19930209/article/details/104236358">Timeshift系统备份与还原_FlyWine的博客-CSDN博客_timeshift</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
