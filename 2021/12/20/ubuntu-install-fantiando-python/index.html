@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu installs Fatiando 0.5 in Python 2.7 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu installs Fatiando 0.5 in Python 2.7</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-12-20</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/researchsoftware/">#Researchsoftware</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-introduction">1. Introduction</h1>
+<p>The general introduction is:</p>
+<blockquote>
+<p>Fantiando is an open-source Python library for modeling and inversion in geophysics.</p>
+</blockquote>
+<p>Fantiando 0.5 (<a href="https://legacy.fatiando.org/index.html">https://legacy.fatiando.org/index.html</a>) is tested on <strong>Python 2.7</strong>, now <a href="https://www.fatiando.org/">Fatiando a Terra</a> is updated in <strong>Python 3</strong> and divided as:</p>
+<ul>
+<li>Pooch: Easily download datasets at <a href="https://github.com/fatiando/pooch">https://github.com/fatiando/pooch</a></li>
+<li>Verde: Gridding, machine learning style at <a href="https://github.com/fatiando/verde">https://github.com/fatiando/verde</a></li>
+<li>Harmonica: All things potential fields at <a href="https://github.com/fatiando/harmonica">https://github.com/fatiando/harmonica</a></li>
+<li>Boule: Ellipsoids and normal gravity at <a href="https://github.com/fatiando/boule">https://github.com/fatiando/boule</a></li>
+</ul>
+<h1 id="2-install">2. Install</h1>
+<h2 id="21-install-anaconda">2.1 Install Anaconda</h2>
+<p>The page of installing <code>Anaconda</code> is at <a href="/2021/12/20/ubuntu-install-anaconda/">Ubuntu install Anaconda</a>.</p>
+<h2 id="22-create-environment-of-python27">2.2 Create environment of Python2.7</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda create -n python2.7 <span style="color:#033">python</span><span style="color:#555">=</span>2.7
+</span></span></code></pre></div><p>It will creat an environment of <code>python2.7</code> at <code>/home/deng/anaconda3/envs/</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># To activate this environment, use</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#     $ conda activate python2.7</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># To deactivate an active environment, use</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#     $ conda deactivate</span>
+</span></span></code></pre></div><h2 id="23-activate-python27">2.3 Activate python2.7</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda activate python2.7
+</span></span></code></pre></div><h2 id="24-install-dependencies">2.4 Install dependencies</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda install numpy scipy numba future matplotlib pillow jupyter basemap mayavi
+</span></span></code></pre></div><h2 id="25-install-fatiando-with-conda">2.5 Install fatiando with conda</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda install fatiando --channel conda-forge
+</span></span></code></pre></div><p>This command can be performed successfully.</p>
+<p>However, <code>pip install fatiando</code> and <code>pip install https://github.com/fatiando/fatiando/archive/master.zip</code> will have this error:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ERROR: Could not find a version that satisfies the requirement jupyterlab-widgets&gt;<span style="color:#555">=</span>1.0.0 
+</span></span><span style="display:flex;"><span><span style="color:#555">(</span>from ipywidgets-&gt;jupyter-&gt;fatiando<span style="color:#555">==</span>0.5<span style="color:#555">)</span> <span style="color:#555">(</span>from versions: 0.3.2, 0.3.3, 0.4.0, 0.4.1, 0.5.0, 0.6.0, 0.6.1, 0.6.2, 0.6.3, 0.6.4, 0.6.5, 0.6.6, 0.6.7, 0.6.8, 0.6.9, 0.6.10, 0.6.11, 0.6.12, 0.6.13, 0.6.14, 0.6.15<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>ERROR: No matching distribution found <span style="color:#069;font-weight:bold">for</span> jupyterlab-widgets&gt;<span style="color:#555">=</span>1.0.0 <span style="color:#555">(</span>from ipywidgets-&gt;jupyter-&gt;fatiando<span style="color:#555">==</span>0.5<span style="color:#555">)</span>
+</span></span></code></pre></div><h1 id="3-reference">3. Reference</h1>
+<ul>
+<li><a href="https://legacy.fatiando.org/install.html">Installing Fatiando — Fatiando 0.5</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

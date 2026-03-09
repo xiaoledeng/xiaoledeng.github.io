@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu修改TeXstudio的背景色为黑色 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu修改TeXstudio的背景色为黑色</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-22</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1编辑器配色方案修改">1.编辑器配色方案修改</h1>
+<p>【选项】–【设置TexStudio】–【常规】–【配色方案】中选择“现代”</p>
+<h1 id="2修改-texstudioini-文件">2.修改 texstudio.ini 文件</h1>
+<ul>
+<li>定位到TeXStudio的配置文件: texstudio.init, 一般位于: ~\AppData\Roaming\texstudio\texstudio.ini, 如果找不到的话, 可以在主界面→Help→Check LaTeX Installation→在弹出的System Report文件中查找Setting file对应的路径即可。</li>
+<li>然后在texstudio.ini文件中查找[formats]标签, 并用配置文件替换即可。</li>
+</ul>
+<p>Ubuntu下的路径地址为：/home/shalom/.config/texstudio/texstudio.ini</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#555">[</span>formats<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">version</span><span style="color:#555">=</span>1.0
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>ormal<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>ormal<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>ormal<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>ormal<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>ormal<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>ormal<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>ormal<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>ormal<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#f3f3f3</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>ormal<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#272727</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>ormal<span style="color:#c30;font-weight:bold">\l</span>inescolor<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#55ffff</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>ormal<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>ormal<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>ormal<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#272727</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ine%3Awarning<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ine%3Awarning<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ine%3Awarning<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ine%3Awarning<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ine%3Awarning<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ine%3Awarning<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ine%3Awarning<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ine%3Awarning<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#b9622f</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ine%3Awarning<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ine%3Awarning<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ine%3Awarning<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>ommentTodo<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>ommentTodo<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>ommentTodo<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>ommentTodo<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>ommentTodo<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>ommentTodo<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>ommentTodo<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>ommentTodo<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#728b58</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>ommentTodo<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>ommentTodo<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>ommentTodo<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>omment<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>omment<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>omment<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>omment<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>omment<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>omment<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>omment<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>omment<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#989898</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>omment<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#272727</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>omment<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>omment<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>omment<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\k</span>eyword<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\k</span>eyword<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\k</span>eyword<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\k</span>eyword<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\k</span>eyword<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\k</span>eyword<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\k</span>eyword<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\k</span>eyword<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#fa9999</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\k</span>eyword<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\k</span>eyword<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\k</span>eyword<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>xtra-keyword<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>xtra-keyword<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>xtra-keyword<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>xtra-keyword<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>xtra-keyword<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>xtra-keyword<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>xtra-keyword<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>xtra-keyword<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#37c0ff</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>xtra-keyword<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>xtra-keyword<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>xtra-keyword<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-keyword<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-keyword<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-keyword<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-keyword<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-keyword<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-keyword<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-keyword<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-keyword<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ffff7f</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-keyword<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-keyword<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-keyword<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ink<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ink<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ink<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ink<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ink<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ink<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ink<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ink<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#00aaff</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ink<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ink<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ink<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\a</span>lign-ampersand<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\a</span>lign-ampersand<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\a</span>lign-ampersand<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\a</span>lign-ampersand<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\a</span>lign-ampersand<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\a</span>lign-ampersand<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\a</span>lign-ampersand<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\a</span>lign-ampersand<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#37c0ff</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\a</span>lign-ampersand<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\a</span>lign-ampersand<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\a</span>lign-ampersand<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\v</span>erbatim<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\v</span>erbatim<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\v</span>erbatim<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\v</span>erbatim<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\v</span>erbatim<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\v</span>erbatim<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\v</span>erbatim<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\v</span>erbatim<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#00b8b8</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\v</span>erbatim<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\v</span>erbatim<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\v</span>erbatim<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>weave-block<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>weave-block<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>weave-block<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>weave-block<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>weave-block<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>weave-block<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>weave-block<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>weave-block<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ff0000</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>weave-block<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>weave-block<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>weave-block<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>weave-block<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>weave-block<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>weave-block<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>weave-block<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>weave-block<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>weave-block<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>weave-block<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>weave-block<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ff0000</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>weave-block<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>weave-block<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>weave-block<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>icture<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>icture<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>icture<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>icture<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>icture<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>icture<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>icture<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>icture<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ffaa00</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>icture<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>icture<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\p</span>icture<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMatch<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMatch<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMatch<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMatch<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMatch<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMatch<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMatch<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMatch<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#c00000</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMatch<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ffb5b0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMatch<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMatch<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMatch<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMismatch<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMismatch<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMismatch<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMismatch<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMismatch<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMismatch<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMismatch<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMismatch<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ffb5b0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMismatch<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ff0000</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMismatch<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMismatch<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>raceMismatch<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>umbers<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span><span style="color:#f60">1</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>umbers<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>umbers<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>umbers<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>umbers<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>umbers<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>umbers<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>umbers<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#61e15f</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>umbers<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>umbers<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\n</span>umbers<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-delimiter<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-delimiter<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-delimiter<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-delimiter<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-delimiter<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-delimiter<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-delimiter<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-delimiter<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#7be279</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-delimiter<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-delimiter<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\m</span>ath-delimiter<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>ext<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>ext<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>ext<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>ext<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>ext<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>ext<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>ext<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>ext<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#e1bf95</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>ext<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>ext<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>ext<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>scapeseq<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>scapeseq<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>scapeseq<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>scapeseq<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>scapeseq<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>scapeseq<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>scapeseq<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>scapeseq<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ff30f5</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>scapeseq<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>scapeseq<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>scapeseq<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>pellingMistake<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>pellingMistake<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>pellingMistake<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>pellingMistake<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>pellingMistake<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>pellingMistake<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>pellingMistake<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>pellingMistake<span style="color:#c30;font-weight:bold">\l</span>inescolor<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ff684a</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>pellingMistake<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>pellingMistake<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>pellingMistake<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>adWord<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>adWord<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>adWord<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>adWord<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>adWord<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>adWord<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>adWord<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>adWord<span style="color:#c30;font-weight:bold">\l</span>inescolor<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#d63f55</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>adWord<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>adWord<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\b</span>adWord<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\g</span>rammarMistake<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\g</span>rammarMistake<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\g</span>rammarMistake<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\g</span>rammarMistake<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\g</span>rammarMistake<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\g</span>rammarMistake<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\g</span>rammarMistake<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\g</span>rammarMistake<span style="color:#c30;font-weight:bold">\l</span>inescolor<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#55aaff</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\g</span>rammarMistake<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\g</span>rammarMistake<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\g</span>rammarMistake<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>atexSyntaxMistake<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>atexSyntaxMistake<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>atexSyntaxMistake<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>atexSyntaxMistake<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>atexSyntaxMistake<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>atexSyntaxMistake<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>atexSyntaxMistake<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>atexSyntaxMistake<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ffaa00</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>atexSyntaxMistake<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#272727</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>atexSyntaxMistake<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>atexSyntaxMistake<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>atexSyntaxMistake<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>emporaryCodeCompletion<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>emporaryCodeCompletion<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>emporaryCodeCompletion<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>emporaryCodeCompletion<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>emporaryCodeCompletion<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>emporaryCodeCompletion<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>emporaryCodeCompletion<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>emporaryCodeCompletion<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#55aaff</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>emporaryCodeCompletion<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>emporaryCodeCompletion<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\t</span>emporaryCodeCompletion<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>nvironment<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>nvironment<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>nvironment<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>nvironment<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>nvironment<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>nvironment<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>nvironment<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>nvironment<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#45dcd2</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>nvironment<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>nvironment<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\e</span>nvironment<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferencePresent<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferencePresent<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferencePresent<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferencePresent<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferencePresent<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferencePresent<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferencePresent<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferencePresent<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#74c37d</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferencePresent<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferencePresent<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferencePresent<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMissing<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMissing<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMissing<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMissing<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMissing<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMissing<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMissing<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMissing<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ffaaff</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMissing<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMissing<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMissing<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMultiple<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMultiple<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMultiple<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMultiple<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMultiple<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMultiple<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMultiple<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMultiple<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#af5fa5</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMultiple<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMultiple<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\r</span>eferenceMultiple<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationPresent<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationPresent<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationPresent<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationPresent<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationPresent<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationPresent<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationPresent<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationPresent<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#74c37d</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationPresent<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationPresent<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationPresent<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationMissing<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationMissing<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationMissing<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationMissing<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationMissing<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationMissing<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationMissing<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationMissing<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ffaaff</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationMissing<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationMissing<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>itationMissing<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>tructure<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>tructure<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>tructure<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>tructure<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>tructure<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>tructure<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>tructure<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>tructure<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#f5e827</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>tructure<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>tructure<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\s</span>tructure<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>urrent<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>urrent<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>urrent<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>urrent<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>urrent<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>urrent<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>urrent<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>urrent<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#3c3c3c</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>urrent<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>urrent<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\c</span>urrent<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffDelete<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffDelete<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffDelete<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffDelete<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffDelete<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffDelete<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffDelete<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffDelete<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ffb5b0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffDelete<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#272727</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffDelete<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffDelete<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffDelete<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffAdd<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffAdd<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffAdd<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffAdd<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffAdd<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffAdd<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffAdd<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffAdd<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#31beff</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffAdd<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#272727</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffAdd<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffAdd<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffAdd<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffReplace<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffReplace<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffReplace<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffReplace<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffReplace<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffReplace<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffReplace<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffReplace<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ffaa7f</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffReplace<span style="color:#c30;font-weight:bold">\b</span>ackground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#272727</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffReplace<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffReplace<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\d</span>iffReplace<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ua%3Akeyword<span style="color:#c30;font-weight:bold">\p</span>riority<span style="color:#555">=</span>-1
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ua%3Akeyword<span style="color:#c30;font-weight:bold">\b</span>old<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ua%3Akeyword<span style="color:#c30;font-weight:bold">\i</span>talic<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ua%3Akeyword<span style="color:#c30;font-weight:bold">\o</span>verline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ua%3Akeyword<span style="color:#c30;font-weight:bold">\u</span>nderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ua%3Akeyword<span style="color:#c30;font-weight:bold">\s</span>trikeout<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ua%3Akeyword<span style="color:#c30;font-weight:bold">\w</span>aveUnderline<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ua%3Akeyword<span style="color:#c30;font-weight:bold">\f</span>oreground<span style="color:#555">=</span><span style="color:#09f;font-style:italic">#ffaaff</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ua%3Akeyword<span style="color:#c30;font-weight:bold">\f</span>ontFamily<span style="color:#555">=</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ua%3Akeyword<span style="color:#c30;font-weight:bold">\p</span>ointSize<span style="color:#555">=</span><span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#c30;font-weight:bold">\l</span>ua%3Akeyword<span style="color:#c30;font-weight:bold">\w</span>rapAround<span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span></code></pre></div><h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/sdnuwjw/article/details/103074228">Windows 10 下 TeXstudio 深色背景主题的设置方法_sdnuwjw的博客-CSDN博客</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/88611021">TeXStudio配置 - 知乎</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

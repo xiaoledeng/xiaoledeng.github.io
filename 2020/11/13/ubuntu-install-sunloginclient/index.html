@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu安装向日葵远程控制 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu安装向日葵远程控制</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-11-13</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-下载">1. 下载</h1>
+<p>下载页面： <a href="https://sunlogin.oray.com/download/">https://sunlogin.oray.com/download/</a></p>
+<p>分为命令行和图像版。</p>
+<h1 id="2-安装命令">2. 安装命令</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dpkg -i sunloginclientshell-10.1.1.28779-amd64.deb
+</span></span></code></pre></div><h1 id="3-安装问题解决">3. 安装问题解决</h1>
+<p>报错libwebkitgtk-3.0-0 is not installed，缺少依赖问题。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gedit  /etc/apt/source.list 
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#然后复制 deb http://cz.archive.ubuntu.com/ubuntu bionic main universe 到文件</span>
+</span></span><span style="display:flex;"><span>sudo apt-get update
+</span></span><span style="display:flex;"><span>sudo apt-get install -f
+</span></span></code></pre></div><h1 id="4-打开和绑定向日葵">4. 打开和绑定向日葵</h1>
+<p>通过命令行开启向日葵:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /usr/local/sunlogin/bin/sunloginclient
+</span></span></code></pre></div><ul>
+<li>开启程序后的初始状态为未绑定，可见界面左上角的提示“Sunlogin （F12）”为进入菜单选项</li>
+<li>敲击F12进入菜单并通过键盘↑↓键选择Bind进行绑定账号</li>
+<li>入账号和密码，通过↓键移至ok处后敲击回车进行登录</li>
+<li>获得Linux主机的识别码(Code)和验证码(Access)</li>
+</ul>
+<h1 id="5-卸载命令">5. 卸载命令</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dpkg -l | grep sunlogin
+</span></span><span style="display:flex;"><span>sudo dpkg -r sunloginclient
+</span></span></code></pre></div><h1 id="6-参考">6. 参考</h1>
+<ul>
+<li><a href="https://service.oray.com/question/11017.html">向日葵X for Linux Terminal 使用教程（命令行版本） - 客服中心 - Oray</a></li>
+<li><a href="https://service.oray.com/question/8286.html">向日葵Linux X因安装依赖问题无法安装成功解决方案 - 客服中心 - Oray</a></li>
+<li><a href="https://www.freesion.com/article/3051977373/">Ubuntu20.04 安装向日葵SunloginClient并解决报错libwebkitgtk-3.0-0 is not installed，解决缺少依赖问题 - 灰信网（软件开发博客聚合）</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
