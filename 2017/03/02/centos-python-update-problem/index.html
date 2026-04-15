@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>服务器Centos(Linux)上Python2-6-6升级到2-7-6问题 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">服务器Centos(Linux)上Python2-6-6升级到2-7-6问题</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2017-03-02</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>服务器Centos(linux)上python2.6.6升级到2.7.6，yum不能用了的解决办法：</p>
+<pre><code>  vim /usr/bin/yum 
+</code></pre>
+<p>编辑第一行</p>
+<pre><code>  #!/usr/bin/python
+  import sys
+  try:
+</code></pre>
+<p>改成如下（原python版本是2.6）</p>
+<pre><code>  #!/usr/bin/python2.6
+  import sys
+  try:
+</code></pre>
+<p>这些yum正常了。</p>
+<pre><code>~ yum --version
+  3.2.29
+    Installed: rpm-4.8.0-47.el6.x86_64 at 2015-10-19 07:20
+    Built    : CentOS BuildSystem &lt;http://bugs.centos.org&gt; at 2015-07-24 11:28
+    Committed: Lubos Kardos &lt;lkardos@redhat.com&gt; at 2015-06-15
+
+    Installed: yum-3.2.29-69.el6.centos.noarch at 2015-10-19 07:20
+    Built    : CentOS BuildSystem &lt;http://bugs.centos.org&gt; at 2015-07-24 10:28
+    Committed: Johnny Hughes &lt;johnny@centos.org&gt; at 2015-07-22
+
+    Installed: yum-plugin-fastestmirror-1.1.30-30.el6.noarch at 2014-12-31 16:13
+    Built    : CentOS BuildSystem &lt;http://bugs.centos.org&gt; at 2014-10-15 07:16
+    Committed: Valentina Mukhamedzhanova &lt;vmukhame@redhat.com&gt; at 2014-08-11
+</code></pre>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

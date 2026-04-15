@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>pip install notebook on Ubuntu - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">pip install notebook on Ubuntu</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-12-27</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-steps">1. Steps</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pip install notebook
+</span></span><span style="display:flex;"><span>DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won<span style="color:#c30">&#39;t be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: notebook in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (5.7.10)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: jupyter-client&gt;=5.2.0 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (5.3.4)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: nbformat in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (4.4.0)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: ipython-genutils in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (0.2.0)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: terminado&gt;=0.8.1 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (0.8.3)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: prometheus-client in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (0.11.0)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: Send2Trash in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (1.8.0)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: pyzmq&gt;=17 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (18.1.0)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: jinja2 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (2.11.3)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: ipaddress; python_version == &#34;2.7&#34; in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (1.0.23)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: tornado&lt;7,&gt;=4.1 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (5.1.1)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: traitlets&gt;=4.2.1 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (4.3.3)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: ipykernel in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (4.6.1)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: nbconvert&lt;6.0 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (5.6.1)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: jupyter-core&gt;=4.4.0 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from notebook) (4.6.1)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: python-dateutil&gt;=2.1 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from jupyter-client&gt;=5.2.0-&gt;notebook) (2.8.2)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: jsonschema!=2.5.0,&gt;=2.4 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from nbformat-&gt;notebook) (2.6.0)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: MarkupSafe&gt;=0.23 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from jinja2-&gt;notebook) (1.1.1)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: futures in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from tornado&lt;7,&gt;=4.1-&gt;notebook) (3.3.0)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: singledispatch in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from tornado&lt;7,&gt;=4.1-&gt;notebook) (3.7.0)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: backports_abc&gt;=0.4 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from tornado&lt;7,&gt;=4.1-&gt;notebook) (0.5)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: enum34; python_version == &#34;2.7&#34; in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from traitlets&gt;=4.2.1-&gt;notebook) (1.1.6)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: six in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from traitlets&gt;=4.2.1-&gt;notebook) (1.16.0)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Requirement already satisfied: decorator in ./anaconda3/envs/python2.7/lib/python2.7/site-packages (from traitlets&gt;=4.2.1-&gt;notebook) (5.1.0)
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">ERROR: Package &#39;</span>decorator<span style="color:#c30">&#39; requires a different Python: 2.7.18 not in &#39;</span>&gt;<span style="color:#555">=</span>3.5<span style="color:#a00;background-color:#faa">&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pip install <span style="color:#033">decorator</span><span style="color:#555">==</span>?
+</span></span><span style="display:flex;"><span>DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won<span style="color:#a00;background-color:#faa">&#39;</span>t be maintained after that date. A future version of pip will drop support <span style="color:#069;font-weight:bold">for</span> Python 2.7. More details about Python <span style="color:#f60">2</span> support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+</span></span><span style="display:flex;"><span>ERROR: Could not find a version that satisfies the requirement <span style="color:#033">decorator</span><span style="color:#555">==</span>? <span style="color:#555">(</span>from versions: 3.3.1, 3.3.2, 3.3.3, 3.4.0, 3.4.2, 4.0.0, 4.0.1, 4.0.2, 4.0.3, 4.0.4, 4.0.6, 4.0.8, 4.0.9, 4.0.10, 4.0.11, 4.1.0, 4.1.1, 4.1.2, 4.2.1, 4.3.0, 4.3.1, 4.3.2, 4.4.0, 4.4.1, 4.4.2<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>ERROR: No matching distribution found <span style="color:#069;font-weight:bold">for</span> <span style="color:#033">decorator</span><span style="color:#555">==</span>?
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pip install <span style="color:#033">decorator</span><span style="color:#555">==</span>4.4.2
+</span></span><span style="display:flex;"><span>DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won<span style="color:#c30">&#39;t be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Collecting decorator==4.4.2
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">  WARNING: Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by &#39;</span>NewConnectionError<span style="color:#555">(</span><span style="color:#c30">&#39;&lt;pip._vendor.urllib3.connection.VerifiedHTTPSConnection object at 0x7f685a8e9d90&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable&#39;</span>,<span style="color:#555">)</span><span style="color:#c30">&#39;: /packages/ed/1b/72a1821152d07cf1d8b6fce298aeb06a7eb90f4d6d41acec9861e7cc6df0/decorator-4.4.2-py2.py3-none-any.whl
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">  WARNING: Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by &#39;</span>NewConnectionError<span style="color:#555">(</span><span style="color:#c30">&#39;&lt;pip._vendor.urllib3.connection.VerifiedHTTPSConnection object at 0x7f685a996650&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable&#39;</span>,<span style="color:#555">)</span><span style="color:#c30">&#39;: /packages/ed/1b/72a1821152d07cf1d8b6fce298aeb06a7eb90f4d6d41acec9861e7cc6df0/decorator-4.4.2-py2.py3-none-any.whl
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">  WARNING: Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by &#39;</span>NewConnectionError<span style="color:#555">(</span><span style="color:#c30">&#39;&lt;pip._vendor.urllib3.connection.VerifiedHTTPSConnection object at 0x7f685a87e050&gt;: Failed to establish a new connection: [Errno 101] Network is unreachable&#39;</span>,<span style="color:#555">)</span><span style="color:#a00;background-color:#faa">&#39;</span>: /packages/ed/1b/72a1821152d07cf1d8b6fce298aeb06a7eb90f4d6d41acec9861e7cc6df0/decorator-4.4.2-py2.py3-none-any.whl
+</span></span><span style="display:flex;"><span>  Downloading https://files.pythonhosted.org/packages/ed/1b/72a1821152d07cf1d8b6fce298aeb06a7eb90f4d6d41acec9861e7cc6df0/decorator-4.4.2-py2.py3-none-any.whl
+</span></span><span style="display:flex;"><span>Installing collected packages: decorator
+</span></span><span style="display:flex;"><span>  Found existing installation: decorator 5.1.0
+</span></span><span style="display:flex;"><span>    Uninstalling decorator-5.1.0:
+</span></span><span style="display:flex;"><span>      Successfully uninstalled decorator-5.1.0
+</span></span><span style="display:flex;"><span>Successfully installed decorator-4.4.2
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pip install notebook
+</span></span><span style="display:flex;"><span>DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won<span style="color:#a00;background-color:#faa">&#39;</span>t be maintained after that date. A future version of pip will drop support <span style="color:#069;font-weight:bold">for</span> Python 2.7. More details about Python <span style="color:#f60">2</span> support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+</span></span><span style="display:flex;"><span>Requirement already satisfied: notebook in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>5.7.10<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: jupyter-client&gt;<span style="color:#555">=</span>5.2.0 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>5.3.4<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: nbformat in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>4.4.0<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: ipython-genutils in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>0.2.0<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: terminado&gt;<span style="color:#555">=</span>0.8.1 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>0.8.3<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: Send2Trash in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>1.8.0<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: pyzmq&gt;<span style="color:#555">=</span><span style="color:#f60">17</span> in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>18.1.0<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: prometheus-client in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>0.11.0<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: jinja2 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>2.11.3<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: ipaddress; <span style="color:#033">python_version</span> <span style="color:#555">==</span> <span style="color:#c30">&#34;2.7&#34;</span> in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>1.0.23<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: tornado&lt;7,&gt;<span style="color:#555">=</span>4.1 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>5.1.1<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: traitlets&gt;<span style="color:#555">=</span>4.2.1 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>4.3.3<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: ipykernel in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>4.6.1<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: nbconvert&lt;6.0 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>5.6.1<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: jupyter-core&gt;<span style="color:#555">=</span>4.4.0 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from notebook<span style="color:#555">)</span> <span style="color:#555">(</span>4.6.1<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: python-dateutil&gt;<span style="color:#555">=</span>2.1 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from jupyter-client&gt;<span style="color:#555">=</span>5.2.0-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>2.8.2<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: jsonschema!<span style="color:#555">=</span>2.5.0,&gt;<span style="color:#555">=</span>2.4 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from nbformat-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>2.6.0<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: MarkupSafe&gt;<span style="color:#555">=</span>0.23 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from jinja2-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>1.1.1<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: futures in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from tornado&lt;7,&gt;<span style="color:#555">=</span>4.1-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>3.3.0<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: singledispatch in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from tornado&lt;7,&gt;<span style="color:#555">=</span>4.1-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>3.7.0<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: backports_abc&gt;<span style="color:#555">=</span>0.4 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from tornado&lt;7,&gt;<span style="color:#555">=</span>4.1-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>0.5<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: enum34; <span style="color:#033">python_version</span> <span style="color:#555">==</span> <span style="color:#c30">&#34;2.7&#34;</span> in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from traitlets&gt;<span style="color:#555">=</span>4.2.1-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>1.1.6<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: six in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from traitlets&gt;<span style="color:#555">=</span>4.2.1-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>1.16.0<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: decorator in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from traitlets&gt;<span style="color:#555">=</span>4.2.1-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>4.4.2<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: entrypoints&gt;<span style="color:#555">=</span>0.2.2 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from nbconvert&lt;6.0-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>0.3<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: testpath in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from nbconvert&lt;6.0-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>0.4.4<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: pygments in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from nbconvert&lt;6.0-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>2.5.2<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: bleach in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from nbconvert&lt;6.0-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>3.3.1<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: pandocfilters&gt;<span style="color:#555">=</span>1.4.1 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from nbconvert&lt;6.0-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>1.4.2<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: mistune&lt;2,&gt;<span style="color:#555">=</span>0.8.1 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from nbconvert&lt;6.0-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>0.8.4<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: defusedxml in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from nbconvert&lt;6.0-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>0.7.1<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: functools32 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from jsonschema!<span style="color:#555">=</span>2.5.0,&gt;<span style="color:#555">=</span>2.4-&gt;nbformat-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>3.2.3.post2<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: webencodings in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from bleach-&gt;nbconvert&lt;6.0-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>0.5.1<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: packaging in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from bleach-&gt;nbconvert&lt;6.0-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>20.9<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Requirement already satisfied: pyparsing&gt;<span style="color:#555">=</span>2.0.2 in ./anaconda3/envs/python2.7/lib/python2.7/site-packages <span style="color:#555">(</span>from packaging-&gt;bleach-&gt;nbconvert&lt;6.0-&gt;notebook<span style="color:#555">)</span> <span style="color:#555">(</span>2.4.7<span style="color:#555">)</span>
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS用yt-dlp和aria2加速下载 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS用yt-dlp和aria2加速下载</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-07</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/software/">#Software</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>之前，用 <code>youtube-dl</code> 下载视频、音频和字幕<sup>1</sup>。</p>
+<p>现在， <code>youtube-dl</code> 下载速度太慢<sup>2</sup>，需要用 <code>yt-dlp</code><sup>3</sup> 和 <code>aria2</code><sup>4</sup> 加速下载。</p>
+<h1 id="2-安装yt-dlp和aria2">2. 安装yt-dlp和aria2</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install yt-dlp aria2
+</span></span></code></pre></div><p>更新 yt-dlp ：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew upgrade yt-dlp
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pip install --upgrade yt-dlp
+</span></span></code></pre></div><h1 id="3-用法">3. 用法</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt-dlp -f mp4 
+</span></span><span style="display:flex;"><span><span style="color:#c30;font-weight:bold">\-</span>-external-downloader aria2c 
+</span></span><span style="display:flex;"><span><span style="color:#c30;font-weight:bold">\-</span>-external-downloader-args <span style="color:#c30">&#34;-x 16 -k 1M&#34;</span> 
+</span></span><span style="display:flex;"><span><span style="color:#c30;font-weight:bold">\&#34;</span>https://www.youtube.com/watch?v<span style="color:#555">=</span>jyDfg3_KAgo<span style="color:#c30">&#34;
+</span></span></span></code></pre></div><p>说明<sup>5</sup>：</p>
+<ul>
+<li>–external-downloader aria2c   # 调用外部下载工具aria2c</li>
+<li>–external-downloader-args     # 外部下载工具指定参数
+<ul>
+<li>-x 16                         # 表示进程数，aria2最高只能16进程</li>
+<li>-k 1M                         # 指定块的大小</li>
+</ul>
+</li>
+</ul>
+<p>当然，<code>aria2c</code> 也可以不用：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yt-dlp -f mp4 https://www.youtube.com/watch?v<span style="color:#555">=</span>jyDfg3_KAgo
+</span></span></code></pre></div><p>其他：</p>
+<ul>
+<li>下载文件保存的路径和名称：-o &ldquo;~/Downloads/%(uploader)s/%(title)s-%(resolution)s.%(ext)s&rdquo;</li>
+<li>下载音频（ mp3 或 m4a 格式）：-f mp3 / -f m4a</li>
+<li>保存下载的视频id，避免重复下载：&ndash;download-archive playlist.txt &ndash;yes-playlist</li>
+<li>代理：&ndash;proxy 127.0.0.1:3128</li>
+</ul>
+<h1 id="4-延伸阅读">4. 延伸阅读</h1>
+<ol>
+<li><a href="/2022/08/11/macOS-youtube-dl-download-videos-audios-subtitles/">macOS系统youtube-dl下载视频、音频和字幕</a></li>
+<li><a href="https://gist.github.com/harishkannarao/3bdc7400cd2d7e7f31d8ffce3ad0e0e9">youtube-dl-github</a></li>
+<li><a href="https://github.com/yt-dlp/yt-dlp">yt-dlp/yt-dlp: A youtube-dl fork with additional features and fixes</a></li>
+<li><a href="https://github.com/aria2/aria2/tree/release-1.37.0">aria2/aria2 at release-1.37.0</a></li>
+<li><a href="https://mikublog.com/tech/2335">youtube-dl结合Aria2实现多线程下载，提高下载速度 – MikuBlog</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

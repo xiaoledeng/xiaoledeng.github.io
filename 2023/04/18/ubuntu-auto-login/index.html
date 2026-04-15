@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>解决Ubuntu系统自动登录 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">解决Ubuntu系统自动登录</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-04-18</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-解决方案">1. 解决方案</h1>
+<p>GDM（GNOME Display Manager）被lightdm覆盖，重新设置 GDM 即可：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dpkg-reconfigure gdm3
+</span></span></code></pre></div><p>在弹出界面，选择 <code>gdm3</code>。</p>
+<h1 id="2-参考">2. 参考</h1>
+<ul>
+<li><a href="https://www.jianshu.com/p/13dc03e96724">解决Ubuntu自动登录失效的问题 - 简书</a></li>
+</ul>
+<p>以下是 ChatGPT （ <a href="https://chat.openai.com/">https://chat.openai.com/</a> ）给出的答案：</p>
+<p>在Ubuntu中，自动登录失效可能是由多种原因引起的。以下是一些可能的解决方法：</p>
+<ul>
+<li>检查自动登录设置：首先，确保已正确设置了自动登录选项。在Ubuntu的登录界面中，点击右上角的设置图标，选择&quot;Settings&quot;，然后选择&quot;Users&quot;，在&quot;Automatic Login&quot;下确认已启用自动登录，并选择正确的用户帐号。</li>
+<li>检查用户密码：自动登录需要正确的用户密码。如果密码被更改或者输入错误，自动登录将失效。确保输入的用户密码是正确的，或者尝试将用户密码重置为正确的密码。</li>
+<li>检查用户权限：自动登录需要足够的权限才能正常工作。确保用户帐号具有足够的权限，尤其是对关键文件和目录的访问权限，例如 /etc/gdm3/custom.conf 文件和 /var/lib/gdm3 文件夹。</li>
+<li>检查系统更新：系统更新可能会导致自动登录失效。确保系统是最新的，并且所有的软件包都已更新到最新版本。可以使用以下命令在终端中进行系统更新：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span>sudo apt upgrade
+</span></span></code></pre></div><ul>
+<li>重新配置GDM：GDM（GNOME Display Manager）是Ubuntu中用于管理登录界面的程序。重新配置GDM可能会解决自动登录问题。可以使用以下命令重新配置GDM：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo dpkg-reconfigure gdm3
+</span></span></code></pre></div><ul>
+<li>
+<p>检查日志文件：登录过程中可能会生成日志文件，其中可能包含有关自动登录失败的信息。可以通过查看 /var/log/auth.log 文件来检查日志，以了解可能的错误消息或警告。</p>
+</li>
+<li>
+<p>重置自动登录设置：如果以上方法都无效，可以尝试重置自动登录设置。可以通过编辑 /etc/gdm3/custom.conf 文件，将其中的自动登录设置注释掉或删除，然后重新配置自动登录选项。</p>
+</li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
