@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS 15.7的Finder访问Ubuntu Samba容易卡的优化 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS 15.7的Finder访问Ubuntu Samba容易卡的优化</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2025-10-29</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-引言">1. 引言</h1>
+<p><code>macOS</code> 的 <code>Finder</code> 在访问 <code>Ubuntu</code> 的 <code>Samba</code> 时，默认会：</p>
+<ol>
+<li>读取每个文件的 metadata（xattr、权限、创建时间）</li>
+<li>请求缩略图或 QuickLook 预览</li>
+<li>尝试写入 .DS_Store 文件（存储视图状态）</li>
+</ol>
+<p>而 Ubuntu 的 Samba 默认配置在响应这些 metadata 请求时非常慢（特别是 fruit: 模块未优化时），于是 Finder 等待超时、卡死。</p>
+<h1 id="2-解决方案">2. 解决方案</h1>
+<p>1、macOS 端优化</p>
+<p>编辑 <code>/etc/nsmb.conf</code>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vim /etc/nsmb.conf
+</span></span></code></pre></div><p>加入以下内容：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#555">[</span>default<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">signing_required</span><span style="color:#555">=</span>no
+</span></span><span style="display:flex;"><span><span style="color:#033">directory_cache_timeout</span><span style="color:#555">=</span><span style="color:#f60">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">soft</span><span style="color:#555">=</span>yes
+</span></span><span style="display:flex;"><span><span style="color:#033">notify_off</span><span style="color:#555">=</span>yes
+</span></span><span style="display:flex;"><span><span style="color:#033">aio</span><span style="color:#555">=</span>no
+</span></span><span style="display:flex;"><span><span style="color:#033">streams</span><span style="color:#555">=</span>no
+</span></span><span style="display:flex;"><span><span style="color:#033">minauth</span><span style="color:#555">=</span>none
+</span></span></code></pre></div><p>解释：</p>
+<ul>
+<li><code>signing_required=no</code> 关闭 SMB 签名（Ubuntu 默认允许关闭），显著提升速度。</li>
+<li><code>directory_cache_timeout</code> 缩短缓存周期。</li>
+<li><code>soft=yes</code> 让 Finder 不会因单次请求超时而整机卡住。</li>
+<li><code>notify_off=yes</code> 关闭 Finder 的目录变动监听，防止阻塞。</li>
+<li><code>aio=no</code> 禁用异步 I/O，可避免 Finder 假死。</li>
+<li><code>streams=no</code> 禁止 NTFS 流（macOS 不需要），减少 metadata 查询。</li>
+</ul>
+<p>执行以下命令（永久关闭 Finder 在网络卷上生成缓存与预览）：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>defaults write com.apple.desktopservices DSDontWriteNetworkStores <span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span>defaults write com.apple.finder FXPreferredViewStyle Nlsv
+</span></span><span style="display:flex;"><span>defaults write com.apple.finder QLEnableXRayFolders -bool <span style="color:#366">false</span>
+</span></span></code></pre></div><p>然后重启 Finder：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>killall Finder
+</span></span></code></pre></div><p>2、Ubuntu Samba 端调整</p>
+<p>编辑 <code>/etc/samba/smb.conf</code>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo vim /etc/samba/smb.conf
+</span></span></code></pre></div><p>加入内容：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#555">[</span>global<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>   server min <span style="color:#033">protocol</span> <span style="color:#555">=</span> SMB2
+</span></span><span style="display:flex;"><span>   server <span style="color:#033">signing</span> <span style="color:#555">=</span> auto
+</span></span><span style="display:flex;"><span>   fruit:metadata <span style="color:#555">=</span> stream
+</span></span><span style="display:flex;"><span>   fruit:posix_rename <span style="color:#555">=</span> yes
+</span></span><span style="display:flex;"><span>   fruit:veto_appledouble <span style="color:#555">=</span> no
+</span></span><span style="display:flex;"><span>   fruit:nfs_aces <span style="color:#555">=</span> no
+</span></span><span style="display:flex;"><span>   ea <span style="color:#033">support</span> <span style="color:#555">=</span> yes
+</span></span><span style="display:flex;"><span>   veto <span style="color:#033">files</span> <span style="color:#555">=</span> /._*/.DS_Store/
+</span></span><span style="display:flex;"><span>   delete veto <span style="color:#033">files</span> <span style="color:#555">=</span> yes
+</span></span><span style="display:flex;"><span>   <span style="color:#033">spotlight</span> <span style="color:#555">=</span> no
+</span></span><span style="display:flex;"><span>   strict <span style="color:#033">locking</span> <span style="color:#555">=</span> no
+</span></span><span style="display:flex;"><span>   aio <span style="color:#366">read</span> <span style="color:#033">size</span> <span style="color:#555">=</span> <span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>   aio write <span style="color:#033">size</span> <span style="color:#555">=</span> <span style="color:#f60">0</span>
+</span></span><span style="display:flex;"><span>   socket <span style="color:#033">options</span> <span style="color:#555">=</span> TCP_NODELAY
+</span></span></code></pre></div><p>解释：</p>
+<ul>
+<li><code>fruit:*</code> 系列是为 macOS 兼容优化的模块（Apple SMB 特性支持）。</li>
+<li><code>veto files</code> 防止 Finder 生成 .DS_Store，减少写入卡顿。</li>
+<li><code>aio read/write size = 0</code> 关闭异步 IO（配合 macOS）。</li>
+<li><code>socket options = TCP_NODELAY</code> 减少延迟。</li>
+<li><code>strict locking = no</code> 防止 Finder 因锁冲突冻结。</li>
+</ul>
+<p>保存并重启 Samba：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart smbd
+</span></span></code></pre></div><h1 id="3-效果预期">3. 效果预期</h1>
+<p>完成以上配置后：</p>
+<ul>
+<li>Finder 打开共享目录速度明显提升</li>
+<li>不再频繁转菊花或卡死</li>
+<li>传输速度恢复正常（100MB/s+ 局域网）</li>
+<li>.DS_Store、.AppleDouble 文件不会再污染服务器</li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

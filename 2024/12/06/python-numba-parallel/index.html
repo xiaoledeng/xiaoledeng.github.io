@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Python使用Numba并行测试 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Python使用Numba并行测试</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-12-06</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/parallel/">#Parallel</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">numba</span> <span style="color:#069;font-weight:bold">import</span> njit, prange
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">numpy</span> <span style="color:#069;font-weight:bold">as</span> <span style="color:#0cf;font-weight:bold">np</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">time</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 纯 Python 实现</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">python_matrix_mult</span>(A, B):
+</span></span><span style="display:flex;"><span>    rows, cols <span style="color:#555">=</span> A<span style="color:#555">.</span>shape[<span style="color:#f60">0</span>], B<span style="color:#555">.</span>shape[<span style="color:#f60">1</span>]
+</span></span><span style="display:flex;"><span>    result <span style="color:#555">=</span> [[<span style="color:#f60">0</span>] <span style="color:#555">*</span> cols <span style="color:#069;font-weight:bold">for</span> _ <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(rows)]
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(rows):
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">for</span> j <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(cols):
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">for</span> k <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(A<span style="color:#555">.</span>shape[<span style="color:#f60">1</span>]):
+</span></span><span style="display:flex;"><span>                result[i][j] <span style="color:#555">+=</span> A[i][k] <span style="color:#555">*</span> B[k][j]
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> result
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Numba 并行实现</span>
+</span></span><span style="display:flex;"><span><span style="color:#99f">@njit</span>(parallel<span style="color:#555">=</span><span style="color:#069;font-weight:bold">True</span>)
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">numba_matrix_mult</span>(A, B):
+</span></span><span style="display:flex;"><span>    rows, cols <span style="color:#555">=</span> A<span style="color:#555">.</span>shape[<span style="color:#f60">0</span>], B<span style="color:#555">.</span>shape[<span style="color:#f60">1</span>]
+</span></span><span style="display:flex;"><span>    result <span style="color:#555">=</span> np<span style="color:#555">.</span>zeros((rows, cols))
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">for</span> i <span style="color:#000;font-weight:bold">in</span> prange(rows):
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">for</span> j <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(cols):
+</span></span><span style="display:flex;"><span>            <span style="color:#069;font-weight:bold">for</span> k <span style="color:#000;font-weight:bold">in</span> <span style="color:#366">range</span>(A<span style="color:#555">.</span>shape[<span style="color:#f60">1</span>]):
+</span></span><span style="display:flex;"><span>                result[i, j] <span style="color:#555">+=</span> A[i, k] <span style="color:#555">*</span> B[k, j]
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> result
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 测试性能</span>
+</span></span><span style="display:flex;"><span>size <span style="color:#555">=</span> <span style="color:#f60">1000</span>
+</span></span><span style="display:flex;"><span>A <span style="color:#555">=</span> np<span style="color:#555">.</span>random<span style="color:#555">.</span>rand(size, size)
+</span></span><span style="display:flex;"><span>B <span style="color:#555">=</span> np<span style="color:#555">.</span>random<span style="color:#555">.</span>rand(size, size)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 测试纯 Python</span>
+</span></span><span style="display:flex;"><span>start <span style="color:#555">=</span> time<span style="color:#555">.</span>time()
+</span></span><span style="display:flex;"><span>result_python <span style="color:#555">=</span> python_matrix_mult(A, B)
+</span></span><span style="display:flex;"><span><span style="color:#366">print</span>(<span style="color:#c30">&#34;纯 Python 耗时:&#34;</span>, time<span style="color:#555">.</span>time() <span style="color:#555">-</span> start, <span style="color:#c30">&#34;秒&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 测试 NumPy</span>
+</span></span><span style="display:flex;"><span>start <span style="color:#555">=</span> time<span style="color:#555">.</span>time()
+</span></span><span style="display:flex;"><span>result_numpy <span style="color:#555">=</span> np<span style="color:#555">.</span>dot(A, B)
+</span></span><span style="display:flex;"><span><span style="color:#366">print</span>(<span style="color:#c30">&#34;NumPy 耗时:&#34;</span>, time<span style="color:#555">.</span>time() <span style="color:#555">-</span> start, <span style="color:#c30">&#34;秒&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 测试 Numba 并行</span>
+</span></span><span style="display:flex;"><span>start <span style="color:#555">=</span> time<span style="color:#555">.</span>time()
+</span></span><span style="display:flex;"><span>result_numba_parallel <span style="color:#555">=</span> numba_matrix_mult(A, B)
+</span></span><span style="display:flex;"><span><span style="color:#366">print</span>(<span style="color:#c30">&#34;Numba 并行耗时:&#34;</span>, time<span style="color:#555">.</span>time() <span style="color:#555">-</span> start, <span style="color:#c30">&#34;秒&#34;</span>)
+</span></span></code></pre></div><p>说明：</p>
+<ul>
+<li><code>@njit(parallel=True)</code>：Numba 会自动分析循环是否可以安全并行化，并利用多核 CPU 运行任务</li>
+<li><code>prange</code> 是 Numba 提供的并行循环，可以让循环在多个 CPU 核心上执行</li>
+</ul>
+<p>结果：</p>
+<pre tabindex="0"><code>纯 Python 耗时: 257.57秒
+NumPy 耗时: 0.05 秒
+Numba 并行耗时: 0.74 秒
+</code></pre></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

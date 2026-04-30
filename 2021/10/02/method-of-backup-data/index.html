@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>随笔—数据备份方法 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">随笔—数据备份方法</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-10-02</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/life/">#Life</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ideas/">#Ideas</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/essay/">#Essay</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>从2010年买了第一台笔记本电脑开始，电子数据开始积累，至今已有十几年的时间，积累了不少电子数据。</p>
+<p>最开始是上传至网络的各种网盘和服务，比如，QQ的微盘、为知笔记、360网盘、新浪微盘和百度云盘等，直到有了第一个移动硬盘，电子资料数据才开始有意识地备份。</p>
+<p>随着时间的过去，网盘有的已经不在了，而移动硬盘也更新了一次，从500G升级到4T。其中，自己也越来越意识到：数据备份是非常有必要的；而且，依靠本地硬盘备份，是必须的手段。</p>
+<h1 id="2-具体方法">2. 具体方法</h1>
+<h2 id="21-硬盘三备份">2.1 硬盘三备份</h2>
+<p>从<code>硬盘双备份</code>升级为<code>硬盘三备份ABC</code>，具体步骤是：A作为连接到常用电脑上的移动硬盘；B和C作为A的定期备份移动硬盘。</p>
+<h2 id="22-日常备份">2.2 日常备份</h2>
+<ul>
+<li><code>1T移动硬盘</code>：用于macOS系统的Time Machine的定期备份；</li>
+<li><code>Syncthing</code>：定期用Syncthing将常用资料从常用电脑同步至一台Ubuntu的服务器上；</li>
+<li><code>OneDrive</code>：重要非保密的科研资料，需要随时随地获取，用OneDrive同步至云端；</li>
+</ul>
+<h1 id="3-一些思考">3. 一些思考</h1>
+<p>关于<code>安全性</code>，避免移动硬盘的遗失或损坏，需要周期性地检查移动硬盘是否有效【可在周期性地备份时检查】。</p>
+<p>待改进的地方：</p>
+<ul>
+<li>科研数据和其他数据需要完全分开，因为科研数据需要频繁地写入写出。</li>
+<li>抗风险能力还需要提高，比如采用异地备份策略等；</li>
+</ul>
+<p>数据备份需要付出的代价，包括：一定的资金预算、周期性的时间投入和固定的行动等。</p>
+<h1 id="4-末了的话">4. 末了的话</h1>
+<p>数据备份的最终目的是：不遗失数据，即数据能够一直保留着，可能是几十年，也可能是一生的时间。</p>
+<p>最后，纸质手稿（碳素墨水和无酸纸）可保存百年乃至千年，而电子数据才出现不到百年的时间，这一点还是要铭记在心的。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
