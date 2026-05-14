@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS系统用 oMLX 在本地运行大模型 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS系统用 oMLX 在本地运行大模型</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2026-05-02</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ai/">#AI</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-引言">1 引言</h1>
+<p>相比于 ollama、LM Studio等，macOS系统使用 oMLX 优化，本地大模型的响应速度明显提高。</p>
+<p>正如官网宣传：</p>
+<blockquote>
+<p>oMLX: macOS-native MLX server with smart caching. Claude Code, OpenClaw, and Cursor respond in 5 seconds, not 90.</p>
+</blockquote>
+<h1 id="2-配置概览">2 配置概览</h1>
+<ul>
+<li>总内存：32 GB；可用显存：23.0 GB（系统内核及后台进程保留约 9 GB）</li>
+<li>总内存：64 GB；可用显存：50.4 GB（系统内核及后台进程保留约 13.6 GB）</li>
+</ul>
+<h1 id="3-环境安装">3 环境安装</h1>
+<ul>
+<li>下载地址： <a href="https://omlx.ai">https://omlx.ai</a></li>
+<li>要求：Apple Silicon / macOS 15+</li>
+</ul>
+<h1 id="4-资源预估">4 资源预估</h1>
+<p>总原则：模型不超过可用显存。</p>
+<p>推荐 Hugging Face 专为 Apple Silicon 优化的 oMLX 格式的 mlx-community 系列模型，比如：</p>
+<table>
+  <thead>
+      <tr>
+          <th>模型名称</th>
+          <th>大小 GB</th>
+          <th>精简特色</th>
+          <th>其他</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>DeepSeek-R1-0528-Qwen3-8B-MLX-8bit</strong></td>
+          <td>~4</td>
+          <td>推理增强版 Qwen3 8B，8-bit 量化，带 DeepSeek 强化学习蒸馏</td>
+          <td>⚠️ 原 mlx-community 仓库已下架；可在 <code>lmstudio-community</code> 社区找到等价版本；Qwen3 8B BF16 约 16 GB，8-bit 后约 4 GB</td>
+      </tr>
+      <tr>
+          <td><strong>DeepSeek-R1-Distill-Llama-70B-4bit</strong></td>
+          <td>~39.5</td>
+          <td>Llama 70B 经过 DeepSeek R1 推理轨迹蒸馏，带思考链能力；4-bit 量化</td>
+          <td>8 文件分片，BF16 源约 140 GB → 4-bit 量化后约 39.5 GB；需 48 GB+ 内存的 Mac；社区版本在 <code>mlx-community</code> 可用</td>
+      </tr>
+      <tr>
+          <td><strong>GLM-4.7-Flash-MLX-8bit</strong></td>
+          <td>~7.5</td>
+          <td>智谱 GLM-4.7-Flash 的 8-bit MLX 量化，支持多语言 (中英)，8.43B 参数量，200K 上下文窗口</td>
+          <td>实际路径：<code>lmstudio-community/GLM-4.7-Flash-MLX-8bit</code>；需 ~8 GB 内存；适合对话/多语言场景</td>
+      </tr>
+      <tr>
+          <td><strong>Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated-mlx-8bit</strong></td>
+          <td>~22</td>
+          <td>Qwen3.6-35B-A3B (MoE: 35B总/3B激活) + Claude 4.7 Opus 推理蒸馏，去默认化 (abliterated) 版本</td>
+          <td>8-bit 量化；Qwen3.6-35B-A3B BF16 源约 70 GB；需 32 GB+ 内存的 Mac；社区仓库 <code>mlx-community</code> 中可能已下架，可查看 <code>lmstudio-community</code> 找等价版本</td>
+      </tr>
+      <tr>
+          <td><strong>Llama-3.3-70B-Instruct-4bit</strong></td>
+          <td>~39</td>
+          <td>Meta Llama 3.3 70B 的 4-bit MLX 量化；通用对话，8 语言支持</td>
+          <td>8 文件分片，与 DeepSeek-R1-Distill-Llama-70B 类似结构；需 48 GB+ 内存；社区版本 <code>mlx-community</code> 中可用（约 27 点赞，4.5k 下载）</td>
+      </tr>
+      <tr>
+          <td><strong>MLX-Qwen3.5-35B-A3B-Claude-4.6-Opus-Reasoning-Distilled-8bit</strong></td>
+          <td>~28</td>
+          <td>Claude 4.6 Opus 推理轨迹蒸馏到 Qwen3.5-35B-A3B (MoE)，8-bit 量化；带 deliberative 推理模式</td>
+          <td>源 BF16 约 70 GB → 8-bit 后约 28 GB；需 32 GB+ 内存；作者 <code>jackrong</code>，社区仓库需通过 <code>mlx-lm</code> 加载</td>
+      </tr>
+      <tr>
+          <td><strong>Phi-4-reasoning-plus-MLX-4bit</strong></td>
+          <td>~3.5</td>
+          <td>微软 Phi-4 推理增强版，带结构化思考链 (Thought + Solution)，4-bit 量化</td>
+          <td>实际路径：<code>lmstudio-community/Phi-4-reasoning-plus-MLX-4bit</code>；Phi-3 架构；小模型，适合低内存 Mac (8-16 GB)；推理能力强，适合数学/代码</td>
+      </tr>
+      <tr>
+          <td><strong>Qwen2.5-72B-Instruct-4bit</strong></td>
+          <td>~42.2</td>
+          <td>通义千问 Qwen2.5-72B 的 4-bit MLX 量化；通用对话</td>
+          <td>8 文件分片，源 BF16 约 144 GB → 4-bit 后约 42 GB；需 48 GB+ 内存；社区版本 <code>mlx-community</code> 中可用</td>
+      </tr>
+      <tr>
+          <td><strong>Qwen2.5-Coder-32B-Instruct-MLX-8bit</strong></td>
+          <td>~16</td>
+          <td>通义千问代码专家版 32B 的 8-bit 量化；代码生成/补全专用优化</td>
+          <td>实际路径：<code>lmstudio-community/Qwen2.5-Coder-32B-Instruct-MLX-8bit</code>；8-bit 量化，源 BF16 约 64 GB；需 32 GB 内存；适合编程场景</td>
+      </tr>
+      <tr>
+          <td><strong>Qwen3-Coder-30B-A3B-Instruct-MLX-4bit</strong></td>
+          <td>~15</td>
+          <td>通义千问 Qwen3-Coder MoE 架构（30B 总参/3B 激活），4-bit 量化；代码能力超强</td>
+          <td>实际路径：<code>lmstudio-community/Qwen3-Coder-30B-A3B-Instruct-MLX-4bit</code>；MoE 架构省内存；需 32 GB 内存；25 点赞，214k 下载，非常活跃</td>
+      </tr>
+      <tr>
+          <td><strong>Qwen3-Coder-Next-MLX-4bit</strong></td>
+          <td>~30+</td>
+          <td>通义千问 Qwen3-Next 代码模型，4-bit 量化；新一代架构</td>
+          <td>实际路径：<code>lmstudio-community/Qwen3-Coder-Next-MLX-4bit</code>；Qwen3-Next 架构 (Qwen3NextForCausalLM)；需 48 GB 内存；250k 下载，27 个点赞，最活跃社区模型之一</td>
+      </tr>
+      <tr>
+          <td><strong>Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-6bit</strong></td>
+          <td>~20</td>
+          <td>Claude 4.6 Opus 推理蒸馏到 Qwen3.5-27B (MoE)，6-bit 量化；Deliberative reasoning 推理模式</td>
+          <td>作者 BeastCode；源 BF16 约 56 GB → 6-bit 后约 20 GB (5 文件分片)；需 32 GB 内存 (64 GB 推荐)；M4 Pro 上约 10-11 tok/s；3/3 推理挑战全通过</td>
+      </tr>
+      <tr>
+          <td><strong>Qwen3.6-35B-A3B-4bit</strong></td>
+          <td>~18</td>
+          <td>通义千问 Qwen3.6-35B-A3B (MoE) 的 4-bit 量化；<strong>多模态视觉</strong>能力 (支持图片输入/OCR)</td>
+          <td>使用 <code>mlx-vlm</code> 加载；MoE 架构 (35B 总/3B 激活)；110k+ 下载；18 GB，适合 24-32 GB 内存的 Mac；支持文本+图片</td>
+      </tr>
+      <tr>
+          <td><strong>gemma-4-31b-it-4bit</strong></td>
+          <td>~18</td>
+          <td>Google Gemma 4 系统，31B 参数，4-bit 量化；多模态交互 (图片/文本)</td>
+          <td>使用 <code>mlx-vlm</code> 加载；工具调用能力；39k 下载；18 GB，适合 24-32 GB 内存的 Mac；Google 官方团队原模型</td>
+      </tr>
+      <tr>
+          <td><strong>gpt-oss-20b-MXFP4-Q8</strong></td>
+          <td>~12</td>
+          <td>OpenAI GPT-oss-20B 的 MXFP4 量化版 (Q8 格式)；混合精度量化</td>
+          <td>使用 <code>mlx-lm</code> 加载；MXFP4 混合精度格式，精度与体积的平衡；20B 参数；16-24 GB 内存即可运行</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="关键总结">关键总结</h2>
+<ul>
+<li><strong>最小内存需求 (8 GB Mac)：</strong> Phi-4-reasoning-plus-MLX-4bit (~3.5 GB)、DeepSeek-R1-0528-Qwen3-8B-MLX-8bit (~4 GB)</li>
+<li><strong>中等内存 (24-32 GB Mac)：</strong> Qwen3-Coder-30B-A3B-4bit (~15 GB)、Qwen3.6-35B-A3B-4bit (~18 GB)、gemma-4-31b-it-4bit (~18 GB)、gpt-oss-20b-MXFP4-Q8 (~12 GB)</li>
+<li><strong>大内存 (48 GB+ Mac)：</strong> 70B 系列 (~39-42 GB)、Llama-3.3-70B-Instruct-4bit</li>
+<li><strong>多模态 (支持图片)：</strong> Qwen3.6-35B-A3B-4bit、gemma-4-31b-it-4bit（需 <code>mlx-vlm</code>）</li>
+<li><strong>推理/思考链最强：</strong> DeepSeek-R1-Distill-Llama-70B、Qwen3.5-27B-Claude-Opus-Distilled、Phi-4-reasoning-plus</li>
+</ul>
+<h2 id="参考资料">参考资料</h2>
+<ul>
+<li>Hugging Face mlx-community: <a href="https://huggingface.co/mlx-community">https://huggingface.co/mlx-community</a></li>
+<li>Hugging Face lmstudio-community: <a href="https://huggingface.co/lmstudio-community">https://huggingface.co/lmstudio-community</a></li>
+<li>Qwen3.6 官方仓库: <a href="https://github.com/QwenLM/Qwen3.6">https://github.com/QwenLM/Qwen3.6</a></li>
+<li>MLX LM 文档: <a href="https://github.com/ml-explore/mlx-lm">https://github.com/ml-explore/mlx-lm</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

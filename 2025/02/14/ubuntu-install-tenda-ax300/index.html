@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu安装Tenda AX300无线网卡 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu安装Tenda AX300无线网卡</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2025-02-14</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-引言">1. 引言</h1>
+<p>在 Ubuntu 的台式机上，因为房间没有网线接口，需要使用 Wi-Fi 联网。</p>
+<p>台式机上的原装 Wi-Fi 天线找不到，故利用 USB 的无线网卡。【注：后面原装天线找到，比 USB 无线网卡好用。】</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<ol>
+<li>
+<p>在 <a href="https://www.tenda.com.cn/material/show/629679242969157">W311MIV6 国产银河麒麟系统（Kylin）及Linux（Ubuntu）驱动（支持内核3.10~6.8）</a> 下载驱动压缩包，解压；</p>
+</li>
+<li>
+<p>在终端输入： <code>sudo dpkg -i ax300-wifi-adapter-linux-driver.deb</code>，直到提示安装成功；</p>
+</li>
+<li>
+<p>将无线网卡插入台式机；</p>
+</li>
+<li>
+<p>执行命令 <code>sudo rfkill unblock wifi</code>，解决无线网卡 Wi-Fi 模块异常情况。</p>
+</li>
+</ol>
+<p>注意⚠️：更新系统后，需要重新安装驱动。</p>
+<h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://www.tenda.com.cn/product/help/W311MIv6#download">W311MI v6.0 服务支持_腾达(Tenda)官方网站</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Windows系统搭建Hugo博客 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Windows系统搭建Hugo博客</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-11-13</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/windows/">#Windows</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-步骤">1. 步骤</h1>
+<ol>
+<li>
+<p>先安装 <code>Hugo</code>，下载 <code>hugo.exe 可执行文件</code>后，关键是添加 <code>可执行文件</code> 到 Windows系统的PATH路径；</p>
+</li>
+<li>
+<p>测试安装 <code>Hugo</code> 是否成功，终端输入：</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo version
+</span></span></code></pre></div><ol start="3">
+<li>终端输入：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new site blog
+</span></span></code></pre></div><ol start="4">
+<li>
+<p>下载 themes 文件夹：<a href="https://github.com/xiaoledeng/simple-style">xiaoledeng/simple-style</a>，放到 themes 文件夹。</p>
+</li>
+<li>
+<p>回到根目录，终端输入：</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo server -t simple-style --buildDrafts
+</span></span></code></pre></div><ol start="6">
+<li>
+<p>根据提示，打开网址： http://localhost:1313/ ，就可以看到网站基本内容。</p>
+</li>
+<li>
+<p>博客文件在 <code>content/post/</code>文件夹，格式为 <code>markdown</code>格式，头文件如下：</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: &#34;标题&#34;
+</span></span><span style="display:flex;"><span>slug: title
+</span></span><span style="display:flex;"><span>date: 2012-01-01T01:00:00+08:00
+</span></span><span style="display:flex;"><span>tags:
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">-</span> &#34;Life&#34;
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">-</span> &#34;Ideas&#34;
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><h1 id="2-参考">2. 参考</h1>
+<ul>
+<li><a href="https://www.gohugo.org/doc/tutorials/installing-on-windows/">Installing on Windows - Hugo中文文档</a></li>
+<li><a href="https://learn.microsoft.com/zh-cn/previous-versions/office/developer/sharepoint-2010/ee537574(v=office.14)">如何：向 PATH 环境变量中添加工具位置 | Microsoft Learn</a></li>
+<li><a href="https://juejin.cn/post/7093136853162786824">在Windows上使用Hugo搭建博客 - 掘金</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

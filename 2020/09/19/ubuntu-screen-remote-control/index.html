@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu虚拟显示器且远程控制（无显示器接入） - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu虚拟显示器且远程控制（无显示器接入）</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-19</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1问题说明">1.问题说明</h1>
+<p>当连接Ubuntu的显示器关闭时，即无显示器接入，通过Teamviewer和Anydesk等远程控制软件无法正常访问该Ubuntu系统。</p>
+<h1 id="2解决方案">2.解决方案</h1>
+<p>使用虚拟显示器，而后就能正常访问。</p>
+<p>0.最开始安装桌面：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install lightdm
+</span></span></code></pre></div><p>配置为<code>lightdm</code>桌面。</p>
+<p>1.安装Ubuntu虚拟显示器的软件(xserver-xorg-video-dummy)：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install xserver-xorg-core
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt-get install xserver-xorg-video-dummy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt install xserver-xorg-core-hwe-18.04
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install xserver-xorg-video-dummy  --fix-missing
+</span></span></code></pre></div><p>2.修改/创建配置文件（慎用，默认就会使用虚拟显示器，而不是显示连接好的外接屏幕)：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gedit /etc/X11/xorg.conf
+</span></span></code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo gedit /usr/share/X11/xorg.conf.d/xorg.conf
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Section <span style="color:#c30">&#34;Device&#34;</span>
+</span></span><span style="display:flex;"><span>    Identifier  <span style="color:#c30">&#34;Configured Video Device&#34;</span>
+</span></span><span style="display:flex;"><span>    Driver      <span style="color:#c30">&#34;dummy&#34;</span>
+</span></span><span style="display:flex;"><span>EndSection
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Section <span style="color:#c30">&#34;Monitor&#34;</span>
+</span></span><span style="display:flex;"><span>    Identifier  <span style="color:#c30">&#34;Configured Monitor&#34;</span>
+</span></span><span style="display:flex;"><span>    HorizSync 31.5-48.5
+</span></span><span style="display:flex;"><span>    VertRefresh 50-70
+</span></span><span style="display:flex;"><span>EndSection
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Section <span style="color:#c30">&#34;Screen&#34;</span>
+</span></span><span style="display:flex;"><span>    Identifier  <span style="color:#c30">&#34;Default Screen&#34;</span>
+</span></span><span style="display:flex;"><span>    Monitor     <span style="color:#c30">&#34;Configured Monitor&#34;</span>
+</span></span><span style="display:flex;"><span>    Device      <span style="color:#c30">&#34;Configured Video Device&#34;</span>
+</span></span><span style="display:flex;"><span>    DefaultDepth <span style="color:#f60">24</span>
+</span></span><span style="display:flex;"><span>    SubSection <span style="color:#c30">&#34;Display&#34;</span>
+</span></span><span style="display:flex;"><span>        Depth <span style="color:#f60">24</span>
+</span></span><span style="display:flex;"><span>        Modes <span style="color:#c30">&#34;1920x1080&#34;</span>
+</span></span><span style="display:flex;"><span>    EndSubSection
+</span></span><span style="display:flex;"><span>EndSection
+</span></span></code></pre></div><p>注释：</p>
+<ul>
+<li>Section &ldquo;Device&rdquo;  # 显卡信息</li>
+<li>Section &ldquo;Monitor&rdquo; # 显示器的信息</li>
+<li>Section &ldquo;Screen&rdquo;  # 显卡和显示器</li>
+</ul>
+<p>3.重启电脑即可。<strong>注意：重启之后，即使接入了显示器，也不会输出信号到显示器上。</strong></p>
+<p>解决思路：</p>
+<ul>
+<li>1）不需要虚拟显示器时，把/etc/X11/xorg.conf移动到桌面；</li>
+<li>2）需要虚拟显示器时，从桌面移动到/etc/X11/xorg.conf；</li>
+</ul>
+<p>命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mv /etc/X11/xorg.conf /home/shalom/Desktop/xorg.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo mv /home/shalom/Desktop/xorg.conf /etc/X11/xorg.conf
+</span></span></code></pre></div><p>4.xrandr: 在使用虚拟显示器之后，使用 xrandr 命令查看显示器信息。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xrandr -q
+</span></span></code></pre></div><p>调整屏幕的分辨率：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>xrandr --fb 1280x1024
+</span></span></code></pre></div><h1 id="3参考">3.参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/qq_29757283/article/details/102604431">【LINUX】（Ubuntu）无显示器接入，使用虚拟显示器且远程控制_RDpWTeHM的博客-CSDN博客</a></li>
+<li><a href="https://askubuntu.com/questions/1033436/how-to-use-ubuntu-18-04-on-vnc-without-display-attached">remote desktop - How to use Ubuntu 18.04 on VNC without display attached? - Ask Ubuntu</a></li>
+<li><a href="https://askubuntu.com/questions/453109/add-fake-display-when-no-monitor-is-plugged-in">14.04 - Add Fake Display when No Monitor is Plugged In - Ask Ubuntu</a></li>
+<li><a href="https://blog.csdn.net/saturnbj/article/details/5442056">xorg.conf配置_Penglunyan-CSDN博客</a></li>
+<li><a href="https://www.cnblogs.com/dlvguo/p/10486640.html">Ubuntu 18.04设置1920*1080 - 国-哥 - 博客园</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/2120957">ubuntu设置远程桌面 ubuntu安装虚拟显示器 - 腾讯云开发者社区-腾讯云</a></li>
+</ul>
+<h1 id="4历史">4.历史</h1>
+<ul>
+<li>2020.09.19，创建此文；</li>
+<li>2023.01.26，完善此文；</li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

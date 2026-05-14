@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ollama 拥抱 MLX： macOS 本地推理迎来 93% 速度飞跃 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ollama 拥抱 MLX： macOS 本地推理迎来 93% 速度飞跃</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2026-05-14</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/openclaw/">#OpenClaw</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ai/">#AI</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/automation/">#Automation</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h2 id="1-引言">1. 引言</h2>
+<p>2026 年 3 月底，Ollama 发布了 0.19 版本，首次引入 <strong>MLX 后端</strong>——这是 Apple 专为 Apple Silicon 打造的机器学习框架。</p>
+<p>这一改变，让本地大模型推理在 macOS 上获得了前所未有的性能提升。</p>
+<h2 id="2-为什么-mlx-比-metal-快">2. 为什么 MLX 比 Metal 快？</h2>
+<p>Ollama 此前在 macOS 上使用 llama.cpp 的 Metal 后端，本质上是把 GPU 当作独立加速卡——即使 CPU 和 GPU 共享同一块物理内存，数据仍要在&quot;CPU 侧&quot;和&quot;GPU 侧&quot;之间来回拷贝。这种拷贝浪费了大量时间。</p>
+<p>MLX 原生理解<strong>统一内存架构（Unified Memory）</strong>：张量生活在单一地址空间，CPU 和 GPU 直接操作同一份数据，<strong>零拷贝</strong>。对于大语言模型这种内存带宽瓶颈型任务，消除拷贝就等于释放速度。</p>
+<h2 id="3-实测数据近乎翻倍">3. 实测数据：近乎翻倍</h2>
+<table>
+  <thead>
+      <tr>
+          <th>指标</th>
+          <th>Metal 后端 (0.18)</th>
+          <th>MLX 后端 (0.19)</th>
+          <th>提升</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Prefill（提示词处理）</td>
+          <td>1,154 tok/s</td>
+          <td>1,810 tok/s</td>
+          <td><strong>1.6x</strong></td>
+      </tr>
+      <tr>
+          <td>Decode（文本生成）</td>
+          <td>58 tok/s</td>
+          <td>112 tok/s</td>
+          <td><strong>~1.93x (93%)</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p>测试模型：Qwen3.5-35B-A3B，硬件：M4 Max 64GB。</p>
+<p>一位开发者的实际体验：<strong>&ldquo;我昨天用 M4 Max 跑 Qwen3.5 是 58 tok/s，今天启用 MLX 后是 112。同一个模型、同一台机器、同一个 Prompt。只改了一个环境变量。&rdquo;</strong></p>
+<h2 id="4-支持模型">4. 支持模型</h2>
+<p>目前 Ollama MLX 后端已支持或计划支持的模型：</p>
+<ul>
+<li><strong>Qwen3.6 系列</strong>（当前已支持，包括 9B、35B-A3B MoE，含 coding-nvfp4 量化版）: <a href="https://ollama.com/library/qwen3.6">https://ollama.com/library/qwen3.6</a> ，不过只是 Text</li>
+<li><strong>Gemma 4 系列</strong>（0.20 版本已加入，支持 MTP  speculative decoding，coding 任务可再翻倍）</li>
+<li>未来将逐步扩展更多架构</li>
+</ul>
+<p>官方博客中明确提到：&ldquo;We are actively working to support future models.&rdquo; 每个架构需要专门的 MLX 实现，按优先级逐一推进。</p>
+<h2 id="5-硬件门槛">5. 硬件门槛</h2>
+<p>MLX 后端要求 <strong>32GB 以上统一内存</strong>，这意味着：</p>
+<ul>
+<li>M1/M2 基础款（8GB/16GB）→ 不支持</li>
+<li>M3 Pro / M4 Pro（36GB+）→ 支持，约 60-80% 提升</li>
+<li>M4 Max / M5 Max（64GB+）→ 支持，约 90-95%+ 提升</li>
+<li>M5 Max（128GB）→ 最快本地推理体验</li>
+</ul>
+<h2 id="6-如何启用">6. 如何启用</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 确保 Ollama ≥ 0.19</span>
+</span></span><span style="display:flex;"><span>ollama --version
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 停止并重启，启用 MLX 后端</span>
+</span></span><span style="display:flex;"><span>osascript -e <span style="color:#c30">&#39;quit app &#34;Ollama&#34;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">OLLAMA_MLX</span><span style="color:#555">=</span><span style="color:#f60">1</span> ollama serve
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 跑模型</span>
+</span></span><span style="display:flex;"><span>ollama run qwen3.5:35b-a3b
+</span></span></code></pre></div><p>如果运行的是 0.30 预发行版（当前最新），MLX 后端已针对 Apple Silicon 直接支持，无需额外环境变量。</p>
+<h2 id="7-参考链接">7. 参考链接</h2>
+<ul>
+<li>Ollama 官方博客： <a href="https://ollama.com/blog/mlx">https://ollama.com/blog/mlx</a></li>
+<li>启用教程（dev.to）： <a href="https://dev.to/alanwest/ollama-just-got-93-faster-on-mac-heres-how-to-enable-it-3gce">https://dev.to/alanwest/ollama-just-got-93-faster-on-mac-heres-how-to-enable-it-3gce</a></li>
+<li>深度实测（byteiota）： <a href="https://byteiota.com/ollama-mlx-integration-93-faster-ai-on-apple-silicon/">https://byteiota.com/ollama-mlx-integration-93-faster-ai-on-apple-silicon/</a></li>
+<li>基准对比（willitrunai）： <a href="https://willitrunai.com/blog/mlx-vs-ollama-apple-silicon-benchmarks">https://willitrunai.com/blog/mlx-vs-ollama-apple-silicon-benchmarks</a></li>
+<li>Ollama GitHub Releases： <a href="https://github.com/ollama/ollama/releases">https://github.com/ollama/ollama/releases</a></li>
+<li>9to5macOS 报道： <a href="https://9to5mac.com/2026/03/31/ollama-adopts-mlx-for-faster-ai-performance-on-apple-silicon/">https://9to5mac.com/2026/03/31/ollama-adopts-mlx-for-faster-ai-performance-on-apple-silicon/</a></li>
+<li>Ars Technica 报道： <a href="https://arstechnica.com/apple/2026/03/running-local-models-on-macs-gets-faster-with-ollamas-mlx-support/">https://arstechnica.com/apple/2026/03/running-local-models-on-macs-gets-faster-with-ollamas-mlx-support/</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

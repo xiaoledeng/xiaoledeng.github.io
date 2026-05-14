@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS下Conda更新PyTorch（GPU 版本） - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS下Conda更新PyTorch（GPU 版本）</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-12-02</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/gpu/">#GPU</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/parallel/">#Parallel</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/software/">#Software</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>查看当前版本：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python -c <span style="color:#c30">&#34;import torch; print(torch.__version__)&#34;</span>
+</span></span><span style="display:flex;"><span>2.3.0.dev20231221
+</span></span></code></pre></div><p>更新命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda install pytorch torchvision torchaudio -c pytorch
+</span></span></code></pre></div><p>显示：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Retrieving notices: ...working... <span style="color:#069;font-weight:bold">done</span>
+</span></span><span style="display:flex;"><span>Collecting package metadata <span style="color:#555">(</span>current_repodata.json<span style="color:#555">)</span>: <span style="color:#069;font-weight:bold">done</span>
+</span></span><span style="display:flex;"><span>Solving environment: <span style="color:#069;font-weight:bold">done</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#555">==</span>&gt; WARNING: A newer version of conda exists. &lt;<span style="color:#555">==</span>
+</span></span><span style="display:flex;"><span>  current version: 23.1.0
+</span></span><span style="display:flex;"><span>  latest version: 24.11.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Please update conda by running
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    $ conda update -n base -c defaults conda
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Or to minimize the number of packages updated during conda update use
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     conda install <span style="color:#033">conda</span><span style="color:#555">=</span>24.11.0
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">## Package Plan ##</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  environment location: /Users/deng/anaconda3
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  added / updated specs:
+</span></span><span style="display:flex;"><span>    - pytorch
+</span></span><span style="display:flex;"><span>    - torchaudio
+</span></span><span style="display:flex;"><span>    - torchvision
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The following packages will be downloaded:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    package                    |            build
+</span></span><span style="display:flex;"><span>    ---------------------------|-----------------
+</span></span><span style="display:flex;"><span>    pytorch-2.5.1              |          py3.9_0        56.0 MB  pytorch
+</span></span><span style="display:flex;"><span>    torchaudio-2.5.1           |         py39_cpu         4.8 MB  pytorch
+</span></span><span style="display:flex;"><span>    torchvision-0.20.1         |         py39_cpu         6.6 MB  pytorch
+</span></span><span style="display:flex;"><span>    ------------------------------------------------------------
+</span></span><span style="display:flex;"><span>                                           Total:        67.3 MB
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The following packages will be UPDATED:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  pytorch            pytorch-nightly::pytorch-2.3.0.dev202~ --&gt; pytorch::pytorch-2.5.1-py3.9_0 
+</span></span><span style="display:flex;"><span>  torchaudio         pytorch-nightly::torchaudio-2.2.0.dev~ --&gt; pytorch::torchaudio-2.5.1-py39_cpu 
+</span></span><span style="display:flex;"><span>  torchvision        pytorch-nightly::torchvision-0.18.0.d~ --&gt; pytorch::torchvision-0.20.1-py39_cpu 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Proceed <span style="color:#555">([</span>y<span style="color:#555">]</span>/n<span style="color:#555">)</span>? y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Downloading and Extracting Packages
+</span></span><span style="display:flex;"><span>                                                                                                                          
+</span></span><span style="display:flex;"><span>Preparing transaction: <span style="color:#069;font-weight:bold">done</span>                                                                                               
+</span></span><span style="display:flex;"><span>Verifying transaction: <span style="color:#069;font-weight:bold">done</span>                                                                                               
+</span></span><span style="display:flex;"><span>Executing transaction: <span style="color:#069;font-weight:bold">done</span>
+</span></span></code></pre></div><p>再次查看版本：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python -c <span style="color:#c30">&#34;import torch; print(torch.__version__)&#34;</span>
+</span></span><span style="display:flex;"><span>2.5.1
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>GMT6数据（1）earth_relief: 全球地形起伏数据 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">GMT6数据（1）earth_relief: 全球地形起伏数据</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-10-12</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/gmt/">#GMT</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/drawing/">#Drawing</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1数据简介">1.数据简介</h1>
+<p><strong>earth_relief</strong> 数据是GMT提供的全球地形起伏数据，其包含了全球陆地和洋底的高程数据。
+原始数据来源于公开数据，GMT经过了一些预处理，提供了不同分辨率和不同配准方式的网格数据，
+以满足用户的不同需求。<strong>earth_relief</strong> 数据默认使用GMT内置的 <em>geo</em> CPT文件。</p>
+<p>下表列出了GMT提供的 <strong>earth_relief</strong> 数据的代码、配准方式、分辨率、球面距离(fullwidth)以及文件大小。</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">代码</th>
+          <th style="text-align: center">配准方式</th>
+          <th style="text-align: center">分辨率</th>
+          <th style="text-align: center">球面距离</th>
+          <th style="text-align: right">大小</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">01d</td>
+          <td style="text-align: center">g,p</td>
+          <td style="text-align: center">1 弧度</td>
+          <td style="text-align: center">~111 km</td>
+          <td style="text-align: right">112 KB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">30m</td>
+          <td style="text-align: center">g,p</td>
+          <td style="text-align: center">30 弧分</td>
+          <td style="text-align: center">~55 km</td>
+          <td style="text-align: right">377 KB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">20m</td>
+          <td style="text-align: center">g,p</td>
+          <td style="text-align: center">20 弧分</td>
+          <td style="text-align: center">~37 km</td>
+          <td style="text-align: right">783 KB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">15m</td>
+          <td style="text-align: center">g,p</td>
+          <td style="text-align: center">15 弧分</td>
+          <td style="text-align: center">~28 km</td>
+          <td style="text-align: right">1.4 MB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">10m</td>
+          <td style="text-align: center">g,p</td>
+          <td style="text-align: center">10 弧分</td>
+          <td style="text-align: center">~18 km</td>
+          <td style="text-align: right">2.9 MB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">06m</td>
+          <td style="text-align: center">g,p</td>
+          <td style="text-align: center">6 弧分</td>
+          <td style="text-align: center">~10 km</td>
+          <td style="text-align: right">7.5 MB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">05m</td>
+          <td style="text-align: center">g,p</td>
+          <td style="text-align: center">5 弧分</td>
+          <td style="text-align: center">~9 km</td>
+          <td style="text-align: right">11 MB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">04m</td>
+          <td style="text-align: center">g,p</td>
+          <td style="text-align: center">4 弧分</td>
+          <td style="text-align: center">~7.5 km</td>
+          <td style="text-align: right">16 MB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">03m</td>
+          <td style="text-align: center">g,p</td>
+          <td style="text-align: center">3 弧分</td>
+          <td style="text-align: center">~5.6 km</td>
+          <td style="text-align: right">28 MB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">02m</td>
+          <td style="text-align: center">g,p</td>
+          <td style="text-align: center">2 弧分</td>
+          <td style="text-align: center">~3.7 km</td>
+          <td style="text-align: right">58 MB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">01m</td>
+          <td style="text-align: center">g,p</td>
+          <td style="text-align: center">1 弧分</td>
+          <td style="text-align: center">~1.9 km</td>
+          <td style="text-align: right">214 MB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">30s</td>
+          <td style="text-align: center">g,p</td>
+          <td style="text-align: center">30 弧秒</td>
+          <td style="text-align: center">~1.0 km</td>
+          <td style="text-align: right">778 MB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">15s</td>
+          <td style="text-align: center">p</td>
+          <td style="text-align: center">15 弧秒</td>
+          <td style="text-align: center">~0.5 km</td>
+          <td style="text-align: right">2.6 GB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">03s</td>
+          <td style="text-align: center">g</td>
+          <td style="text-align: center">3 弧秒</td>
+          <td style="text-align: center">~100 m</td>
+          <td style="text-align: right">6.8 GB</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">01s</td>
+          <td style="text-align: center">g</td>
+          <td style="text-align: center">1 弧秒</td>
+          <td style="text-align: center">~30 m</td>
+          <td style="text-align: right">41 GB</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>代码中 <strong>d</strong>、<strong>m</strong>和 <strong>s</strong> 表示弧度、弧分和弧秒</li>
+<li>配准方式中 <strong>g</strong> 和 <strong>p</strong> 分别表示网格线配准和像素配准</li>
+</ul>
+<h1 id="2使用方法">2.使用方法</h1>
+<p>当需要使用地形数据时，可以直接通过 <strong>@earth_relief_</strong> <em>rru</em> [_<em>reg</em>] 的形式调用这些
+地形起伏数据，其中 <em>rru</em> 是网格文件的分辨率代码（上表第一列），<em>reg</em> 是要使用的
+配准方式代码（上表第二列）。配准方式代码是可选的，若不指定，则默认返回像素配准的
+网格数据（若不存在，则返回网格线配准的数据）。如果命令中使用了 <strong>-R</strong> 选项，
+则只会读取该区域内的地形起伏数据。例如：</p>
+<p>查看1弧度分辨率（像素配准）的地形数据的信息::</p>
+<pre><code>gmt grdinfo @earth_relief_60m
+</code></pre>
+<p>查看30弧分分辨率、网格线配准的地形数据的信息::</p>
+<pre><code>gmt grdinfo @earth_relief_30m_g
+</code></pre>
+<p>使用15弧分地形起伏数据绘制全球地形图::</p>
+<pre><code>gmt grdimage -JH15c @earth_relief_15m -pdf map
+</code></pre>
+<p>使用2弧分地形起伏数据绘制一个区域的地形图::</p>
+<pre><code>gmt grdimage -JH15c -R90/120/20/60 @earth_relief_02m -pdf map
+</code></pre>
+<h1 id="3技术细节">3.技术细节</h1>
+<ul>
+<li>数据会自动下载并保存到 <strong>~/.gmt/server/earth/earth_relief</strong> 目录下</li>
+<li>15弧秒的数据来源于 SRTM15+ <a href="http://dx.doi.org/10.1029/2019EA000658">http://dx.doi.org/10.1029/2019EA000658</a></li>
+<li>30弧秒及更低分辨率的全球地形数据均是SRTM15+ 的衍生产品。GMT利用笛卡尔高斯滤波对其进行重采样以防止混叠现象，并保留了原始15弧秒数据的纬度依赖的分辨率信息。可以使用 <code>grdinfo</code> 查看生成网格文件所使用的滤波命令。</li>
+<li>3弧秒和1弧秒的数据来自于NASA提供的SRTM数据。数据被划为为1度x1度的区块。在使用时，GMT会根据 <strong>-R</strong> 选项指定的区域范围只下载区域内的地形数据。</li>
+<li>原始的SRTM3和SRTM1数据只在北纬60度到南纬60度的陆地上有数据。当使用 <strong>@earth_relief_01s</strong> 或 <strong>@earth_relief_03s</strong> 时，GMT会自动对 <strong>@earth_relief_15s</strong> 数据对增采样以填充缺失的海洋部分。</li>
+<li>如果想使用最原始的只包含陆地的SRTM地形数据，则可以使用 <strong>@srtm_relief_03s</strong> 或 <strong>srtm_relief_01s</strong>。</li>
+<li>大部分分辨率的数据都提供了网格线配准和像素配准两种方式的文件。</li>
+</ul>
+<h1 id="4数据来源及引用">4.数据来源及引用</h1>
+<ul>
+<li>SRTM15+ : <a href="http://dx.doi.org/10.1029/2019EA000658">http://dx.doi.org/10.1029/2019EA000658</a></li>
+<li>SRTMGL3数据: <a href="https://lpdaac.usgs.gov/products/srtmgl3v003/">https://lpdaac.usgs.gov/products/srtmgl3v003/</a></li>
+<li>SRTMGL1数据: <a href="https://lpdaac.usgs.gov/products/srtmgl1v003/">https://lpdaac.usgs.gov/products/srtmgl1v003/</a></li>
+</ul>
+<h1 id="5其它地形起伏数据">5.其它地形起伏数据</h1>
+<p>其它机构或单位也提供了不同格式、不同分辨率的地形起伏数据。此处仅列出部分，
+供需要的用户参考与使用：</p>
+<ul>
+<li>ETOPO1 (1弧分): <a href="https://www.ngdc.noaa.gov/mgg/global/">https://www.ngdc.noaa.gov/mgg/global/</a></li>
+<li>GEBCO (30弧秒): <a href="https://www.gebco.net/">https://www.gebco.net/</a></li>
+<li>SRTM30+ (30弧秒): <a href="https://topex.ucsd.edu/WWW_html/srtm30_plus.html">https://topex.ucsd.edu/WWW_html/srtm30_plus.html</a></li>
+<li>SRTM3 (3弧秒，仅陆地): <a href="http://srtm.csi.cgiar.org">http://srtm.csi.cgiar.org</a></li>
+<li>ASTER GDEM (1弧秒，仅陆地): <a href="https://asterweb.jpl.nasa.gov/gdem.asp">https://asterweb.jpl.nasa.gov/gdem.asp</a></li>
+</ul>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://earthscience.stackexchange.com/questions/7350/converting-grid-resolution-from-degrees-to-kilometers">models - Converting grid resolution from degrees to kilometers - Earth Science Stack Exchange</a></li>
+<li><a href="https://docs.gmt-china.org/latest/dataset/earth-relief/">earth_relief: 全球地形起伏数据 — GMT中文手册</a></li>
+<li><a href="http://icgem.gfz-potsdam.de/str-0902-revised.pdf">Definition of Functionals of the Geopotential and Their Calculation from Spherical Harmonic Models</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

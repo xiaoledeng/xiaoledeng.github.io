@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS内存32GB和64GB实测本地大模型 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS内存32GB和64GB实测本地大模型</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2026-05-04</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ai/">#AI</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-说明">1 说明</h1>
+<p>oMLX - LLM inference, optimized for your Mac <a href="https://github.com/jundot/omlx">https://github.com/jundot/omlx</a></p>
+<p>实测本地大模型是在 macOS 系统 32 GB 和 64 GB的两台设备进行：</p>
+<ul>
+<li>总内存：32 GB；可用显存：23.0 GB（系统内核及后台进程保留约 9 GB）</li>
+<li>总内存：64 GB；可用显存：50.4 GB（系统内核及后台进程保留约 13.6 GB）</li>
+</ul>
+<p>补充：</p>
+<ul>
+<li>总内存：46 GB；可用显存：36 GB</li>
+</ul>
+<h1 id="2-结论">2 结论</h1>
+<p>最好单次 E2E(s) 时间为 5s 内，流畅度高，体验流畅。</p>
+<p>总内存 32 GB详细测试：</p>
+<table>
+  <thead>
+      <tr>
+          <th>模型</th>
+          <th>耗时</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Qwen3.6-35B-A3B-4bit</td>
+          <td>3.240s</td>
+      </tr>
+      <tr>
+          <td>Qwen3.6-27B-4bit</td>
+          <td>15.251s</td>
+      </tr>
+      <tr>
+          <td>Qwen3-Coder-30B-A3B-Instruct-MLX-4bit</td>
+          <td>3.375s</td>
+      </tr>
+      <tr>
+          <td>gemma-4-26B-A4B-it-MLX-4bit</td>
+          <td>3.375s</td>
+      </tr>
+  </tbody>
+</table>
+<p>总内存 64 GB详细测试：</p>
+<table>
+  <thead>
+      <tr>
+          <th>模型</th>
+          <th>耗时</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Qwen3.6-35B-A3B-4bit</td>
+          <td>2.837s</td>
+      </tr>
+      <tr>
+          <td>Qwen3.6-35B-A3B-6bit</td>
+          <td>3.367s</td>
+      </tr>
+      <tr>
+          <td>Qwen3.6-35B-A3B-nvfp4</td>
+          <td>2.990s</td>
+      </tr>
+      <tr>
+          <td>Qwen3.6-35B-A3B-8bit</td>
+          <td>3.615s</td>
+      </tr>
+      <tr>
+          <td>DeepSeek-R1-Distill-Llama-70B-4bit</td>
+          <td>2.990s</td>
+      </tr>
+      <tr>
+          <td>GLM-4.7-Flash-MLX-8bit</td>
+          <td>4.673s</td>
+      </tr>
+      <tr>
+          <td>Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated-mlx-8bit</td>
+          <td>3.627s</td>
+      </tr>
+      <tr>
+          <td>Llama-3.3-70B-Instruct-4bit</td>
+          <td>42.217s</td>
+      </tr>
+      <tr>
+          <td>MLX-Qwen3.5-35B-A3B-Claude-4.6-Opus-Reasoning-Distilled-8bit</td>
+          <td>3.625s</td>
+      </tr>
+      <tr>
+          <td>Qwen3-Coder-30B-A3B-Instruct-MLX-4bit</td>
+          <td>2.944s</td>
+      </tr>
+      <tr>
+          <td>Qwen3-Coder-Next-MLX-4bit</td>
+          <td>3.747s</td>
+      </tr>
+      <tr>
+          <td>Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-6bit</td>
+          <td>20.165s</td>
+      </tr>
+      <tr>
+          <td>gemma-4-31b-it-4bit</td>
+          <td>20.325s</td>
+      </tr>
+      <tr>
+          <td>gpt-oss-20b-MXFP4-Q8</td>
+          <td>3.485s</td>
+      </tr>
+  </tbody>
+</table>
+<h1 id="3-总内存-32-gb详细测试">3 总内存 32 GB详细测试</h1>
+<h2 id="benchmark-model-qwen36-35b-a3b-4bit">Benchmark Model: Qwen3.6-35B-A3B-4bit</h2>
+<pre tabindex="0"><code>Single Request Results
+--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1731.1       11.88   591.5 tok/s    84.8 tok/s       3.240   355.5 tok/s    19.24 GB
+pp4096/tg128          5490.4       12.78   746.0 tok/s    78.9 tok/s       7.114   593.8 tok/s    20.04 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          84.8 tok/s     1.00x   591.5 tok/s   591.5 tok/s      1731.1       3.240
+2x         121.2 tok/s     1.43x   620.8 tok/s   310.4 tok/s      3162.9       5.411
+4x         149.8 tok/s     1.77x   620.7 tok/s   155.2 tok/s      6202.0      10.018
+</code></pre><h2 id="benchmark-model-qwen36-27b-4bit">Benchmark Model: Qwen3.6-27B-4bit</h2>
+<pre tabindex="0"><code>Single Request Results
+--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          9144.2       48.09   112.0 tok/s    21.0 tok/s      15.251    75.5 tok/s    15.85 GB
+pp4096/tg128         35801.6       50.76   114.4 tok/s    19.9 tok/s      42.248   100.0 tok/s    17.27 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          21.0 tok/s     1.00x   112.0 tok/s   112.0 tok/s      9144.2      15.251
+2x          28.3 tok/s     1.35x   111.4 tok/s    55.7 tok/s     18230.3      27.413
+4x          30.1 tok/s     1.43x   111.2 tok/s    27.8 tok/s     36281.8      53.836
+</code></pre><h2 id="benchmark-model-qwen3-coder-30b-a3b-instruct-mlx-4bit">Benchmark Model: Qwen3-Coder-30B-A3B-Instruct-MLX-4bit</h2>
+<pre tabindex="0"><code>Single Request Results
+--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1736.9       12.90   589.6 tok/s    78.2 tok/s       3.375   341.4 tok/s    16.59 GB
+pp4096/tg128          6513.8       15.99   628.8 tok/s    63.0 tok/s       8.545   494.3 tok/s    17.20 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          78.2 tok/s     1.00x   589.6 tok/s   589.6 tok/s      1736.9       3.375
+2x         103.1 tok/s     1.32x   598.2 tok/s   299.1 tok/s      3347.2       5.908
+4x         123.8 tok/s     1.58x   697.9 tok/s   174.5 tok/s      4452.0      10.004
+</code></pre><h2 id="benchmark-model-gemma-4-26b-a4b-it-mlx-4bit">Benchmark Model: gemma-4-26B-A4B-it-MLX-4bit</h2>
+<pre tabindex="0"><code>Single Request Results
+--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1884.6       14.65   543.4 tok/s    68.8 tok/s       3.745   307.6 tok/s    14.27 GB
+pp4096/tg128          7043.6       15.51   581.5 tok/s    65.0 tok/s       9.014   468.6 tok/s    14.95 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          68.8 tok/s     1.00x   543.4 tok/s   543.4 tok/s      1884.6       3.745
+2x          95.3 tok/s     1.39x   547.1 tok/s   273.6 tok/s      3591.9       6.430
+4x         112.6 tok/s     1.64x   536.6 tok/s   134.2 tok/s      7019.8      12.182
+</code></pre><h1 id="4-总内存-64-gb详细测试">4 总内存 64 GB详细测试</h1>
+<h2 id="benchmark-model-qwen36-35b-a3b-4bit-1">Benchmark Model: Qwen3.6-35B-A3B-4bit</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1345.8       11.74   760.9 tok/s    85.9 tok/s       2.837   406.1 tok/s    19.27 GB
+pp4096/tg128          4554.1       12.27   899.4 tok/s    82.2 tok/s       6.112   691.1 tok/s    20.04 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          85.9 tok/s     1.00x   760.9 tok/s   760.9 tok/s      1345.8       2.837
+2x         129.2 tok/s     1.50x   763.7 tok/s   381.9 tok/s      2567.0       4.664
+4x         160.9 tok/s     1.87x   749.5 tok/s   187.4 tok/s      5067.9       8.648
+</code></pre><h2 id="benchmark-model-qwen36-35b-a3b-6bit">Benchmark Model: Qwen3.6-35B-A3B-6bit</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1451.9       15.08   705.3 tok/s    66.8 tok/s       3.367   342.1 tok/s    27.30 GB
+pp4096/tg128          4730.4       15.63   865.9 tok/s    64.5 tok/s       6.716   629.0 tok/s    28.11 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          66.8 tok/s     1.00x   705.3 tok/s   705.3 tok/s      1451.9       3.367
+2x          96.3 tok/s     1.44x   728.2 tok/s   364.1 tok/s      2685.8       5.470
+4x         112.7 tok/s     1.69x   709.9 tok/s   177.5 tok/s      5364.2      10.313
+</code></pre><h2 id="benchmark-model-qwen36-35b-a3b-nvfp4">Benchmark Model: Qwen3.6-35B-A3B-nvfp4</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1431.4       12.27   715.4 tok/s    82.1 tok/s       2.990   385.2 tok/s    19.27 GB
+pp4096/tg128          4890.5       12.81   837.5 tok/s    78.7 tok/s       6.517   648.2 tok/s    20.04 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          82.1 tok/s     1.00x   715.4 tok/s   715.4 tok/s      1431.4       2.990
+2x         129.7 tok/s     1.58x   712.5 tok/s   356.3 tok/s      2752.1       4.848
+4x         165.4 tok/s     2.01x   705.9 tok/s   176.5 tok/s      5441.3       8.898
+</code></pre><h2 id="benchmark-model-qwen36-35b-a3b-8bit">Benchmark Model: Qwen3.6-35B-A3B-8bit</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1393.0       17.50   735.1 tok/s    57.6 tok/s       3.615   318.6 tok/s    35.40 GB
+pp4096/tg128          4621.6       18.03   886.3 tok/s    55.9 tok/s       6.911   611.2 tok/s    36.17 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          57.6 tok/s     1.00x   735.1 tok/s   735.1 tok/s      1393.0       3.615
+2x          89.5 tok/s     1.55x   739.9 tok/s   369.9 tok/s      2645.3       5.628
+4x         116.6 tok/s     2.02x   712.3 tok/s   178.1 tok/s      5355.1      10.141
+</code></pre><h2 id="benchmark-model-deepseek-r1-distill-llama-70b-4bit">Benchmark Model: DeepSeek-R1-Distill-Llama-70B-4bit</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1431.4       12.27   715.4 tok/s    82.1 tok/s       2.990   385.2 tok/s    19.27 GB
+pp4096/tg128          4890.5       12.81   837.5 tok/s    78.7 tok/s       6.517   648.2 tok/s    20.04 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          82.1 tok/s     1.00x   715.4 tok/s   715.4 tok/s      1431.4       2.990
+2x         129.7 tok/s     1.58x   712.5 tok/s   356.3 tok/s      2752.1       4.848
+4x         165.4 tok/s     2.01x   705.9 tok/s   176.5 tok/s      5441.3       8.898
+</code></pre><h2 id="benchmark-model-glm-47-flash-mlx-8bit">Benchmark Model: GLM-4.7-Flash-MLX-8bit</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1708.2       23.35   599.5 tok/s    43.2 tok/s       4.673   246.5 tok/s    30.26 GB
+pp4096/tg128          7375.0       26.24   555.4 tok/s    38.4 tok/s      10.707   394.5 tok/s    31.31 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          43.2 tok/s     1.00x   599.5 tok/s   599.5 tok/s      1708.2       4.673
+2x          61.4 tok/s     1.42x   616.7 tok/s   308.4 tok/s      3236.3       7.493
+4x          75.1 tok/s     1.74x   783.0 tok/s   195.8 tok/s      3827.0      12.047
+</code></pre><h2 id="benchmark-model-huihui-qwen36-35b-a3b-claude-47-opus-abliterated-mlx-8bit">Benchmark Model: Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated-mlx-8bit</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1349.4       17.93   758.8 tok/s    56.2 tok/s       3.627   317.6 tok/s    35.40 GB
+pp4096/tg128          4593.4       18.43   891.7 tok/s    54.7 tok/s       6.934   609.2 tok/s    36.17 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          56.2 tok/s     1.00x   758.8 tok/s   758.8 tok/s      1349.4       3.627
+2x          90.8 tok/s     1.62x   752.4 tok/s   376.2 tok/s      2605.6       5.542
+4x         116.3 tok/s     2.07x   745.9 tok/s   186.5 tok/s      5110.9       9.893
+</code></pre><h2 id="benchmark-model-llama-33-70b-instruct-4bit">Benchmark Model: Llama-3.3-70B-Instruct-4bit</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128         20966.4      167.33    48.9 tok/s     6.0 tok/s      42.217    27.3 tok/s    37.78 GB
+pp4096/tg128         97078.0      174.81    42.2 tok/s     5.8 tok/s     119.279    35.4 tok/s    39.01 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x           6.0 tok/s     1.00x    48.9 tok/s    48.9 tok/s     20966.4      42.217
+2x          10.8 tok/s     1.80x    45.1 tok/s    22.6 tok/s     45211.1      68.986
+4x          11.9 tok/s     1.98x    89.3 tok/s    22.3 tok/s     34228.8      88.796
+</code></pre><h2 id="benchmark-model-mlx-qwen35-35b-a3b-claude-46-opus-reasoning-distilled-8bit">Benchmark Model: MLX-Qwen3.5-35B-A3B-Claude-4.6-Opus-Reasoning-Distilled-8bit</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1349.6       17.91   758.7 tok/s    56.3 tok/s       3.625   317.8 tok/s    35.40 GB
+pp4096/tg128          4605.5       18.52   889.4 tok/s    54.4 tok/s       6.958   607.1 tok/s    36.17 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          56.3 tok/s     1.00x   758.7 tok/s   758.7 tok/s      1349.6       3.625
+2x          84.9 tok/s     1.51x   751.6 tok/s   375.8 tok/s      2610.4       5.741
+4x         112.2 tok/s     1.99x   745.8 tok/s   186.4 tok/s      5120.0      10.056
+</code></pre><h2 id="benchmark-model-qwen3-coder-30b-a3b-instruct-mlx-4bit-1">Benchmark Model: Qwen3-Coder-30B-A3B-Instruct-MLX-4bit</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1296.9       12.97   789.6 tok/s    77.7 tok/s       2.944   391.4 tok/s    16.59 GB
+pp4096/tg128          5177.1       15.70   791.2 tok/s    64.2 tok/s       7.171   589.1 tok/s    17.20 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          77.7 tok/s     1.00x   789.6 tok/s   789.6 tok/s      1296.9       2.944
+2x         104.9 tok/s     1.35x   796.6 tok/s   398.3 tok/s      2497.2       5.011
+4x         128.4 tok/s     1.65x   920.1 tok/s   230.0 tok/s      3328.3       8.440
+</code></pre><h2 id="benchmark-model-qwen3-coder-next-mlx-4bit">Benchmark Model: Qwen3-Coder-Next-MLX-4bit</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1660.1       16.43   616.8 tok/s    61.3 tok/s       3.747   307.4 tok/s    43.07 GB
+pp4096/tg128          5969.2       17.42   686.2 tok/s    57.9 tok/s       8.181   516.3 tok/s    43.95 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          61.3 tok/s     1.00x   616.8 tok/s   616.8 tok/s      1660.1       3.747
+2x          91.7 tok/s     1.50x   612.7 tok/s   306.4 tok/s      3273.3       6.134
+4x         120.7 tok/s     1.97x   601.4 tok/s   150.3 tok/s      6588.0      11.052
+</code></pre><h2 id="benchmark-model-qwen35-27b-claude-46-opus-distilled-mlx-6bit">Benchmark Model: Qwen3.5-27B-Claude-4.6-Opus-Distilled-MLX-6bit</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          8569.4       91.30   119.5 tok/s    11.0 tok/s      20.165    57.1 tok/s    22.10 GB
+pp4096/tg128         38513.1       94.14   106.4 tok/s    10.7 tok/s      50.469    83.7 tok/s    23.54 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          11.0 tok/s     1.00x   119.5 tok/s   119.5 tok/s      8569.4      20.165
+2x          16.1 tok/s     1.46x   107.5 tok/s    53.8 tok/s     18880.1      34.982
+4x          18.0 tok/s     1.64x   109.0 tok/s    27.3 tok/s     36916.4      65.946
+</code></pre><h2 id="benchmark-model-gemma-4-31b-it-4bit">Benchmark Model: gemma-4-31b-it-4bit</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128         10034.5       81.03   102.0 tok/s    12.4 tok/s      20.325    56.7 tok/s    17.58 GB
+pp4096/tg128         42774.2       82.78    95.8 tok/s    12.2 tok/s      53.287    79.3 tok/s    20.18 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          12.4 tok/s     1.00x   102.0 tok/s   102.0 tok/s     10034.5      20.325
+2x          20.5 tok/s     1.65x    94.9 tok/s    47.5 tok/s     21397.3      34.070
+4x          22.8 tok/s     1.84x    95.0 tok/s    23.8 tok/s     42386.0      65.527
+</code></pre><h2 id="benchmark-model-gpt-oss-20b-mxfp4-q8">Benchmark Model: gpt-oss-20b-MXFP4-Q8</h2>
+<pre tabindex="0"><code class="language-Single" data-lang="Single">--------------------------------------------------------------------------------
+Test                TTFT(ms)    TPOT(ms)        pp TPS        tg TPS      E2E(s)    Throughput    Peak Mem
+pp1024/tg128          1627.4       14.63   629.2 tok/s    68.9 tok/s       3.485   330.6 tok/s    11.77 GB
+pp4096/tg128          5367.5       15.53   763.1 tok/s    64.9 tok/s       7.340   575.5 tok/s    11.78 GB
+
+Continuous Batching
+pp1024 / tg128
+--------------------------------------------------------------------------------
+Batch           tg TPS   Speedup        pp TPS    pp TPS/req    TTFT(ms)      E2E(s)
+1x          68.9 tok/s     1.00x   629.2 tok/s   629.2 tok/s      1627.4       3.485
+2x          97.6 tok/s     1.42x   694.6 tok/s   347.3 tok/s      2842.7       5.573
+4x         116.2 tok/s     1.69x   892.0 tok/s   223.0 tok/s      3666.6       8.972
+</code></pre><h1 id="5-指标参考">5 指标参考</h1>
+<blockquote>
+<p>TTFT (Time to First Token) TTFT （首 Token 时间）</p>
+</blockquote>
+<p>Latency until the model starts responding. Measures prompt processing (prefill) speed. Lower is better.</p>
+<p>模型开始响应前的延迟。衡量提示词处理（预填充）速度。越低越好。</p>
+<blockquote>
+<p>TPOT (Time Per Output Token) TPOT （每输出 Token 时间）</p>
+</blockquote>
+<p>Average time between each generated token. Measures decode speed. Lower is better.</p>
+<p>每个生成 Token 之间的平均时间。衡量解码速度。越低越好。</p>
+<blockquote>
+<p>pp TPS (Prompt Processing TPS) pp TPS （提示词处理 TPS）</p>
+</blockquote>
+<p>Input/prompt tokens processed per second during prefill. Higher is better.</p>
+<p>预填充阶段每秒处理的输入/提示词 Token 数。越高越好。</p>
+<blockquote>
+<p>tg TPS (Token Generation TPS) tg TPS （Token 生成 TPS）</p>
+</blockquote>
+<p>Output tokens generated per second. Inverse of TPOT. Higher is better.</p>
+<p>每秒生成的输出 Token 数。TPOT 的倒数。越高越好。</p>
+<blockquote>
+<p>E2E Latency (End-to-End) E2E(s) 端到端延迟</p>
+</blockquote>
+<p>Total time from request submission to complete response. Includes prefill + generation.</p>
+<p>从提交请求到完整响应的总时间。包含预填充 + 生成。</p>
+<blockquote>
+<p>Total Throughput Throughput 总吞吐量</p>
+</blockquote>
+<p>Overall tokens (input + output) per second. Measures total system utilization.</p>
+<p>每秒处理的总 Token 数（输入 + 输出）。衡量系统整体利用率。</p>
+<blockquote>
+<p>Batch Size 批量大小</p>
+</blockquote>
+<p>Number of concurrent requests processed together. Higher batch sizes improve total throughput but increase per-request latency.</p>
+<p>同时处理的并发请求数。批量越大总吞吐量越高，但每个请求的延迟会增加。</p>
+<blockquote>
+<p>Speedup 加速比</p>
+</blockquote>
+<p>Token generation throughput multiplier compared to single-request baseline (1x). Higher is better.</p>
+<p>相对于单请求基准（1x）的 Token 生成吞吐量倍数。越高越好。</p>
+<blockquote>
+<p>pp TPS/req (Per-Request Prompt Processing TPS) pp TPS/req （每请求提示词处理 TPS）</p>
+</blockquote>
+<p>Prompt processing throughput divided by batch size. Shows per-request prefill speed under batching load.</p>
+<p>提示词处理吞吐量除以批量大小。显示批量负载下每个请求的预填充速度。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

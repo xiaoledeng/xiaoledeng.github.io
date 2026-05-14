@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS使用pix2tex代替Mathpix识别LaTeX公式 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS使用pix2tex代替Mathpix识别LaTeX公式</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-13</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/minimalism/">#Minimalism</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/software/">#Software</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>Mathpix <sup>1</sup> 是一款年订阅制的收费软件，用于转换图片中公式成 LaTeX 代码。</p>
+<p>LaTeX-OCR 或 pix2tex <sup>2</sup> 是 Python 开源的工具，也可以转换图片中公式成 LaTeX 代码。</p>
+<h1 id="2-安装步骤">2. 安装步骤</h1>
+<ol>
+<li>Python 版本需要 Python 3.7+，终端输入：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install <span style="color:#c30">&#34;pix2tex[gui]&#34;</span>
+</span></span></code></pre></div><ol start="2">
+<li>将以下 Python 代码保存为 <code>LaTeXOCR.py</code>：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">PIL</span> <span style="color:#069;font-weight:bold">import</span> Image
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">pix2tex.cli</span> <span style="color:#069;font-weight:bold">import</span> LatexOCR
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>img <span style="color:#555">=</span> Image<span style="color:#555">.</span>open(<span style="color:#c30">&#39;image.png&#39;</span>)
+</span></span><span style="display:flex;"><span>model <span style="color:#555">=</span> LatexOCR()
+</span></span><span style="display:flex;"><span><span style="color:#366">print</span>(model(img))
+</span></span></code></pre></div><ol start="3">
+<li>
+<p>截图公式，保持为和<code>LaTeXOCR.py</code>同路径下的 <code>image.png</code> 文件</p>
+</li>
+<li>
+<p>运行 <code>python LaTeXOCR.py</code>，</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#555">/</span>Users<span style="color:#555">/</span>name<span style="color:#555">/</span>anaconda3<span style="color:#555">/</span>lib<span style="color:#555">/</span>python3<span style="color:#f60">.9</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages<span style="color:#555">/</span>scipy<span style="color:#555">/</span><span style="color:#c0f">__init__</span><span style="color:#555">.</span>py:<span style="color:#f60">155</span>: 
+</span></span><span style="display:flex;"><span><span style="color:#c00;font-weight:bold">UserWarning</span>: A NumPy version <span style="color:#555">&gt;=</span><span style="color:#f60">1.18.5</span> <span style="color:#000;font-weight:bold">and</span> <span style="color:#555">&lt;</span><span style="color:#f60">1.25.0</span> <span style="color:#000;font-weight:bold">is</span> required <span style="color:#069;font-weight:bold">for</span> this version 
+</span></span><span style="display:flex;"><span>of SciPy (detected version <span style="color:#f60">1.26.2</span>
+</span></span><span style="display:flex;"><span>  warnings<span style="color:#555">.</span>warn(<span style="color:#c30">f</span><span style="color:#c30">&#34;A NumPy version &gt;=</span><span style="color:#a00">{</span>np_minversion<span style="color:#a00">}</span><span style="color:#c30"> and &lt;</span><span style="color:#a00">{</span>np_maxversion<span style="color:#a00">}</span><span style="color:#c30">&#34;</span>
+</span></span><span style="display:flex;"><span>download weights v0<span style="color:#f60">.0.1</span> to 
+</span></span><span style="display:flex;"><span>path <span style="color:#555">/</span>Users<span style="color:#555">/</span>name<span style="color:#555">/</span>anaconda3<span style="color:#555">/</span>lib<span style="color:#555">/</span>python3<span style="color:#f60">.9</span><span style="color:#555">/</span>site<span style="color:#555">-</span>packages<span style="color:#555">/</span>pix2tex<span style="color:#555">/</span>model<span style="color:#555">/</span>checkpoints
+</span></span><span style="display:flex;"><span>weights<span style="color:#555">.</span>pth: <span style="color:#f60">100</span><span style="color:#555">%|</span><span style="color:#a00;background-color:#faa">███████████████████████████</span><span style="color:#555">|</span> <span style="color:#f60">97.4</span>M<span style="color:#555">/</span><span style="color:#f60">97.4</span>M [<span style="color:#f60">00</span>:<span style="color:#f60">24</span><span style="color:#555">&lt;</span><span style="color:#f60">00</span>:<span style="color:#f60">00</span>, <span style="color:#f60">4.12</span>Mb<span style="color:#555">/</span>s]
+</span></span><span style="display:flex;"><span>image_resizer<span style="color:#555">.</span>pth: <span style="color:#f60">100</span><span style="color:#555">%|</span><span style="color:#a00;background-color:#faa">█████████████████████</span><span style="color:#555">|</span> <span style="color:#f60">18.5</span>M<span style="color:#555">/</span><span style="color:#f60">18.5</span>M [<span style="color:#f60">00</span>:<span style="color:#f60">04</span><span style="color:#555">&lt;</span><span style="color:#f60">00</span>:<span style="color:#f60">00</span>, <span style="color:#f60">3.98</span>Mb<span style="color:#555">/</span>s]
+</span></span><span style="display:flex;"><span>\ell<span style="color:#555">=</span>\sqrt{r<span style="color:#555">^</span>{<span style="color:#f60">2</span>}<span style="color:#555">+</span>r<span style="color:#555">^</span>{\prime2}<span style="color:#555">-</span><span style="color:#f60">2</span>r r<span style="color:#555">^</span>{\prime}\cos\psi<span style="color:#555">^</span>{\prime}}
+</span></span></code></pre></div><p>最后一行，即为 LaTeX 代码。</p>
+<p>注意⚠️：如果出现以下错误 <sup>3</sup>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>TypeError: <span style="color:#c30">&#39;numpy._DTypeMeta&#39;</span> object is not subscriptable
+</span></span></code></pre></div><p>可通过更新 numpy 解决：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install numpy --upgrade
+</span></span></code></pre></div><h1 id="3-参考">3. 参考</h1>
+<ol>
+<li><a href="https://mathpix.com/">Mathpix: AI-powered document automation</a></li>
+<li><a href="https://github.com/lukas-blecher/LaTeX-OCR">lukas-blecher: LaTeX-OCR</a></li>
+<li><a href="https://stackoverflow.com/questions/68916893/typeerror-numpy-dtypemeta-object-is-not-subscriptable">python - TypeError: &rsquo;numpy._DTypeMeta&rsquo; object is not subscriptable - Stack Overflow</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

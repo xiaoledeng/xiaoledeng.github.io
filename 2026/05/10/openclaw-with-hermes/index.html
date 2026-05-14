@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>OpenClaw 总控 Hermes 执行：二者定位、差异与结合部署 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">OpenClaw 总控 Hermes 执行：二者定位、差异与结合部署</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2026-05-10</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/openclaw/">#OpenClaw</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ai/">#AI</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/automation/">#Automation</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/hermes/">#Hermes</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h2 id="引言">引言</h2>
+<p>2026 年的开源 AI Agent 赛道拥挤不堪。每天都有新框架冒出来，每个都声称自己是&quot;终极方案&quot;。</p>
+<p>在众多噪音中，两个项目获得了不成比例的开发者关注：</p>
+<ul>
+<li><strong>OpenClaw</strong>（由 Peter Steinberger 创建，GitHub 370K+ stars）</li>
+<li><strong>Hermes Agent</strong>（由 Nous Research 打造，GitHub 142K+ stars）</li>
+</ul>
+<blockquote>
+<p>小孩子才做选择题，成年人当然全都要。</p>
+</blockquote>
+<p>本文基于一手调研和官方文档，系统梳理两者的定位差异，给出具体的使用场景建议和结合部署方案。</p>
+<h2 id="一开源地址与官方资源">一、开源地址与官方资源</h2>
+<h3 id="openclaw">OpenClaw</h3>
+<table>
+  <thead>
+      <tr>
+          <th>资源</th>
+          <th>地址</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>官网文档</td>
+          <td><a href="https://docs.openclaw.ai/">https://docs.openclaw.ai/</a></td>
+      </tr>
+      <tr>
+          <td>社区文档</td>
+          <td><a href="https://clawdocs.org/">https://clawdocs.org/</a></td>
+      </tr>
+      <tr>
+          <td>GitHub</td>
+          <td><a href="https://github.com/openclaw">https://github.com/openclaw</a></td>
+      </tr>
+      <tr>
+          <td>Web UI</td>
+          <td><a href="http://127.0.0.1:18789/">http://127.0.0.1:18789/</a> (本地默认)</td>
+      </tr>
+      <tr>
+          <td>CLI 安装</td>
+          <td><code>npm install -g openclaw@latest</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="hermes-agent">Hermes Agent</h3>
+<table>
+  <thead>
+      <tr>
+          <th>资源</th>
+          <th>地址</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>官网</td>
+          <td><a href="https://hermes-agent.nousresearch.com/">https://hermes-agent.nousresearch.com/</a></td>
+      </tr>
+      <tr>
+          <td>官方文档</td>
+          <td><a href="https://hermes-agent.nousresearch.com/docs/">https://hermes-agent.nousresearch.com/docs/</a></td>
+      </tr>
+      <tr>
+          <td>GitHub</td>
+          <td><a href="https://github.com/NousResearch/hermes-agent">https://github.com/NousResearch/hermes-agent</a></td>
+      </tr>
+      <tr>
+          <td>Discord</td>
+          <td><a href="https://discord.gg/NousResearch">https://discord.gg/NousResearch</a></td>
+      </tr>
+      <tr>
+          <td>官网介绍</td>
+          <td><a href="https://hermes-agent.org/">https://hermes-agent.org/</a></td>
+      </tr>
+      <tr>
+          <td>社区实测</td>
+          <td><a href="https://www.deployagents.co/blog/openclaw-vs-hermes-agent-comparison">https://www.deployagents.co/blog/openclaw-vs-hermes-agent-comparison</a></td>
+      </tr>
+      <tr>
+          <td>社区实测 2</td>
+          <td><a href="https://www.mindstudio.ai/blog/hermes-agent-vs-openclaw-comparison">https://www.mindstudio.ai/blog/hermes-agent-vs-openclaw-comparison</a></td>
+      </tr>
+      <tr>
+          <td>安装脚本</td>
+          <td><code>curl -fsSL https://raw.githubusercontent.com/NousResearch/hermes-agent/main/scripts/install.sh | bash</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="二核心定位差异">二、核心定位差异</h2>
+<h3 id="一句话概括">一句话概括</h3>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>OpenClaw</th>
+          <th>Hermes Agent</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>定位</strong></td>
+          <td>集成网关（Integrated Appliance）—— 一个自洽的运行时</td>
+          <td>模块化工具集（Modular Toolkit）—— 可组装的微服务</td>
+      </tr>
+      <tr>
+          <td><strong>哲学</strong></td>
+          <td>Opinionated：给出了&quot;正确&quot;的构建方式，你专注行为</td>
+          <td>Unopinionated：不限制架构，你组装所需的一切</td>
+      </tr>
+      <tr>
+          <td><strong>技能系统</strong></td>
+          <td>自然语言 SKILL.md 文件，LLM 读取 Markdown 学习工具</td>
+          <td>基于 Python/JS 的编程式工具定义</td>
+      </tr>
+      <tr>
+          <td><strong>编程模型</strong></td>
+          <td>人格驱动：SOUL.md、USER.md、AGENTS.md 纯语言定义</td>
+          <td>结构化显式：通过代码和配置定义任务流</td>
+      </tr>
+      <tr>
+          <td><strong>理想用户</strong></td>
+          <td>独立开发者、提示工程师、小团队、非技术人员</td>
+          <td>DevOps 工程师、平台团队、复杂多 Agent 系统</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="能力矩阵">能力矩阵</h3>
+<table>
+  <thead>
+      <tr>
+          <th>维度</th>
+          <th>OpenClaw</th>
+          <th>Hermes Agent</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>安装难度</strong></td>
+          <td>易（npm install → 交互向导 → &lt;5 分钟）</td>
+          <td>中（克隆仓库 → 配置 .env → Docker Compose）</td>
+      </tr>
+      <tr>
+          <td><strong>多通道</strong></td>
+          <td>内置 13+：Telegram, WhatsApp, Slack, Discord, iMessage, Signal, Matrix, Teams 等</td>
+          <td>内置 6+：Telegram, Discord, Slack, WhatsApp, Signal, CLI</td>
+      </tr>
+      <tr>
+          <td><strong>模型支持</strong></td>
+          <td>单模型加载，按需切换</td>
+          <td>多模型自由切换（OpenRouter 200+、NVIDIA NIM、OpenAI 等）</td>
+      </tr>
+      <tr>
+          <td><strong>子 Agent</strong></td>
+          <td>sessions_spawn 原生支持</td>
+          <td>子 Agent 并行 + RPC 脚本调用</td>
+      </tr>
+      <tr>
+          <td><strong>记忆系统</strong></td>
+          <td>人格文件 + memory 目录 + memory 整理</td>
+          <td>FTS5 全文搜索 + LLM 会话摘要 + 自动技能创建</td>
+      </tr>
+      <tr>
+          <td><strong>部署灵活性</strong></td>
+          <td>单机 Node.js 进程（最低 8GB RAM）</td>
+          <td>7 种终端：本地、Docker、SSH、Singularity、Modal、Daytona、Vercel Sandbox</td>
+      </tr>
+      <tr>
+          <td><strong>Serverless</strong></td>
+          <td>无</td>
+          <td>支持（Modal/Daytona，空闲时休眠，按需唤醒）</td>
+      </tr>
+      <tr>
+          <td><strong>学习闭环</strong></td>
+          <td>手动技能管理 + self-improving-agent 技能</td>
+          <td>内置学习循环：经验生成技能、使用中优化、跨会话持久化</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="三具体使用场景">三、具体使用场景</h2>
+<h3 id="场景-1个人数字管家--选-openclaw">场景 1：个人数字管家 → 选 OpenClaw</h3>
+<ul>
+<li><strong>场景特征</strong>：一个人 + 一台机器，希望所有聊天应用（微信/Telegram/Signal）汇聚到同一个 AI 助手</li>
+<li><strong>为什么</strong>：OpenClaw 的多通道网关是开箱即用的，设置过程不到 5 分钟</li>
+<li><strong>典型部署</strong>：Mac mini 上运行 Gateway，连接 Telegram + WhatsApp + 本地 Web UI</li>
+</ul>
+<h3 id="场景-2复杂自动化流水线--选-hermes">场景 2：复杂自动化流水线 → 选 Hermes</h3>
+<ul>
+<li><strong>场景特征</strong>：需要多步骤并行任务、模型动态切换、Serverless 低成本运行</li>
+<li><strong>为什么</strong>：Hermes 的多模型支持 + Serverless 持久化 + 子 Agent 并行，适合分布式流水线</li>
+<li><strong>典型部署</strong>：$5 VPS 上运行，定时任务 + 子 Agent 并行处理</li>
+</ul>
+<h3 id="场景-3知识库文档检索系统--两者皆可侧重不同">场景 3：知识库/文档检索系统 → 两者皆可，侧重不同</h3>
+<ul>
+<li><strong>OpenClaw 方案</strong>：利用其 Memory 机制 + 会话历史，配合技能系统（如 multi-search-engine）</li>
+<li><strong>Hermes 方案</strong>：利用其 FTS5 搜索 + 技能创建，适合长期演化的知识系统</li>
+</ul>
+<h3 id="场景-4企业级多-agent-编排--推荐结合使用">场景 4：企业级多 Agent 编排 → 推荐结合使用</h3>
+<ul>
+<li><strong>OpenClaw 做 Orchestrator（总控）</strong>：负责任务分发、定时调度、多渠道触发</li>
+<li><strong>Hermes 做 Worker（执行者）</strong>：负责具体分析和执行</li>
+<li><strong>为什么结合</strong>：OpenClaw 强在消息路由和人机交互，Hermes 强在多模型灵活调度和持久化学习</li>
+</ul>
+<hr>
+<h2 id="四结合部署方案openclaw-当-orchestrator-hermes-当-worker">四、结合部署方案：OpenClaw 当 Orchestrator ，Hermes 当 Worker</h2>
+<h3 id="架构图">架构图</h3>
+<pre tabindex="0"><code>┌─────────────────────────────────────────────────┐
+│                  用户消息来源                     │
+│  Telegram / WhatsApp / Slack / 微信 / CLI        │
+└──────────────────────┬──────────────────────────┘
+                       │
+                       ▼
+┌─────────────────────────────────────────────────┐
+│              OpenClaw Gateway (总控层)           │
+│  ┌──────────┐ ┌───────────┐ ┌────────────────┐  │
+│  │ 路由引擎  │ │ 定时调度   │ │ 多渠道管理     │ │   │
+│  └──────────┘ └───────────┘ └────────────────┘  │
+│                                                 │
+│  任务判断：                                       │
+│  - 简单对话 → 本地模型直接回答                      │
+│  - 复杂任务 → 通过 API 路由到 Hermes Worker        │
+└──────────────┬──────────────────────────────────┘
+               │ (HTTP/gRPC 调用)
+               ▼
+┌─────────────────────────────────────────────────┐
+│            Hermes Agent (执行层)                 │
+│  ┌────────────┐ ┌────────────┐ ┌─────────────┐  │
+│  │ 多模型切换  │ │ 子Agent    │ │ 学习/记忆    │ │
+│  │ (灵活选模)  │ │ (并行处理)  │ │ (自动技能)  │ │
+│  └────────────┘ └────────────┘ └─────────────┘ │
+└─────────────────────────────────────────────────┘
+</code></pre><h3 id="方案-aapi-网关模式推荐">方案 A：API 网关模式（推荐）</h3>
+<ol>
+<li><strong>OpenClaw</strong> 运行在 Mac mini / 开发机上，作为唯一消息入口</li>
+<li><strong>Hermes</strong> 运行在云服务器（$5 VPS 或 GPU 集群）</li>
+<li>通过 OpenClaw 的 <code>sessions_spawn</code> + 自定义脚本调用 Hermes API</li>
+<li>OpenClaw 负责任务分类和结果转发</li>
+</ol>
+<h3 id="方案-b双网关模式">方案 B：双网关模式</h3>
+<ol>
+<li><strong>OpenClaw Gateway</strong> 处理用户交互和消息路由</li>
+<li><strong>Hermes Gateway</strong> 处理模型调度和深度学习任务</li>
+<li>两个系统通过消息队列（Redis/ZeroMQ）通信</li>
+<li>适用于大规模并行处理场景</li>
+</ol>
+<h3 id="方案-c混合执行模式适合个人开发者">方案 C：混合执行模式（适合个人开发者）</h3>
+<pre tabindex="0"><code>日常任务（&lt;100 token 处理）
+  └→ 本地模型直接回答（本地 Qwen3.6-35B）
+
+复杂分析任务
+  └→ OpenClaw 路由判断
+     └→ 需要多模型 → 调用 Hermes + 最佳模型
+     └→ 需要并行 → 子 Agent 并行 → 结果合并
+
+定时自动化任务
+  └→ OpenClaw Cron 调度
+     └→ 具体执行 → 可选调用 Hermes Worker
+</code></pre><h2 id="五决策参考">五、决策参考</h2>
+<h3 id="选-openclaw-如果">选 OpenClaw 如果……</h3>
+<ul>
+<li>你只需要一个 AI 助手，跑在自己的机器上</li>
+<li>你希望从聊天应用（Telegram/WhatsApp 等）直接对话</li>
+<li>你是非技术人员，想要人格化、可定制的 AI</li>
+<li>你偏好低延迟的本地处理</li>
+</ul>
+<h3 id="选-hermes-如果">选 Hermes 如果……</h3>
+<ul>
+<li>你需要灵活的模型切换（200+ 模型池）</li>
+<li>你的业务需要 Serverless 部署来降低成本</li>
+<li>你需要复杂的多步骤并行流水线</li>
+<li>你想要内置的学习闭环和技能自动生成</li>
+</ul>
+<h3 id="两个都选最佳实践如果">两个都选（最佳实践）如果……</h3>
+<ul>
+<li>你有混合负载：轻量交互 + 重型分析</li>
+<li>你希望用户侧体验简单（OpenClaw），后端算力灵活（Hermes）</li>
+<li>你同时面向个人和企业客户</li>
+</ul>
+<h2 id="六结论">六、结论</h2>
+<p>OpenClaw 和 Hermes 不是竞争对手，而是互补品。</p>
+<ul>
+<li><strong>OpenClaw</strong> 解决了&quot;如何让 AI 到达用户&quot;的问题——多渠道接入、低延迟、人格化交互。</li>
+<li><strong>Hermes</strong> 解决了&quot;如何让 AI 持续变强&quot;的问题——多模型自由、Serverless 弹性、学习闭环。</li>
+</ul>
+<p>最佳实践：<strong>OpenClaw 当 Orchestrator，Hermes 当 Worker</strong>。前者守在人机交互的最前线，后者在后台灵活调度算力。各司其职，各展所长。</p>
+<h2 id="参考链接">参考链接</h2>
+<h3 id="官方资源">官方资源</h3>
+<ul>
+<li>OpenClaw 官网文档: <a href="https://docs.openclaw.ai/">https://docs.openclaw.ai/</a></li>
+<li>OpenClaw GitHub: <a href="https://github.com/openclaw">https://github.com/openclaw</a></li>
+<li>OpenClaw 社区文档: <a href="https://clawdocs.org/">https://clawdocs.org/</a></li>
+<li>Hermes 官网: <a href="https://hermes-agent.nousresearch.com/">https://hermes-agent.nousresearch.com/</a></li>
+<li>Hermes 官方文档: <a href="https://hermes-agent.nousresearch.com/docs/">https://hermes-agent.nousresearch.com/docs/</a></li>
+<li>Hermes GitHub: <a href="https://github.com/NousResearch/hermes-agent">https://github.com/NousResearch/hermes-agent</a></li>
+<li>Hermes 官网介绍: <a href="https://hermes-agent.org/">https://hermes-agent.org/</a></li>
+</ul>
+<h3 id="社区实测与分析">社区实测与分析</h3>
+<ul>
+<li>OpenClaw vs Hermes 深度对比: <a href="https://www.deployagents.co/blog/openclaw-vs-hermes-agent-comparison">https://www.deployagents.co/blog/openclaw-vs-hermes-agent-comparison</a></li>
+<li>Hermes vs OpenClaw 对比 (MindStudio): <a href="https://www.mindstudio.ai/blog/hermes-agent-vs-openclaw-comparison">https://www.mindstudio.ai/blog/hermes-agent-vs-openclaw-comparison</a></li>
+<li>Hermes vs OpenClaw 2026 对比 (Amir Teymoori): <a href="https://amirteymoori.com/hermes-agent-vs-openclaw-ai-assistant-comparison/">https://amirteymoori.com/hermes-agent-vs-openclaw-ai-assistant-comparison/</a></li>
+<li>OpenClaw vs Hermes 对比 (Clawvard): <a href="https://clawvard.school/blog/hermes-agent-vs-openclaw-2026">https://clawvard.school/blog/hermes-agent-vs-openclaw-2026</a></li>
+<li>OpenClaw 框架解析: <a href="https://www.clawbot.blog/blog/openclaw-the-ai-agent-framework-explained-2026-refresh/">https://www.clawbot.blog/blog/openclaw-the-ai-agent-framework-explained-2026-refresh/</a></li>
+<li>OpenClaw 技能展示: <a href="https://openclaw-ai.dev/">https://openclaw-ai.dev/</a></li>
+<li>六 Agent 网络方案: <a href="https://www.reddit.com/r/openclaw/comments/1r7z8sr/i_spent_2_weeks_building_a_6agent_ai_network_to/">https://www.reddit.com/r/openclaw/comments/1r7z8sr/i_spent_2_weeks_building_a_6agent_ai_network_to/</a></li>
+<li>OpenClaw 运行机制: <a href="https://www.reddit.com/r/moltbot/comments/1r01890/how_openclaw_actually_works/">https://www.reddit.com/r/moltbot/comments/1r01890/how_openclaw_actually_works/</a></li>
+<li>OpenClaw 2026 更新: <a href="https://petronellatech.com/blog/openclaw-ai-agent-guide-2026">https://petronellatech.com/blog/openclaw-ai-agent-guide-2026</a></li>
+<li>Hermes 社区反馈: <a href="https://www.reddit.com/r/LocalLLaMA/comments/1rf5mvu/nous_research_releases_hermes_agent/">https://www.reddit.com/r/LocalLLaMA/comments/1rf5mvu/nous_research_releases_hermes_agent/</a></li>
+<li>Hermes 社区讨论: <a href="https://www.reddit.com/r/hermesagent/comments/1sbgktk/anyone_want_this/">https://www.reddit.com/r/hermesagent/comments/1sbgktk/anyone_want_this/</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
