@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Windows下TeXstudio编译PDF目录乱码的解决方案 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Windows下TeXstudio编译PDF目录乱码的解决方案</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-05-16</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-说明">1. 说明</h1>
+<p>在<code>Windows</code>系统下，安装<code>CTeX</code>和<code>TeXstudio</code>，编译出来的PDF文件中文目录有乱码。</p>
+<p>在网上查了下解决方案，总结而言，解决问题的关键是<code>gbk2uni.exe</code>工具。</p>
+<h1 id="2-解决步骤">2. 解决步骤</h1>
+<p>第一步，拷贝<code>gbk2uni.exe</code>工具到TeX目录下。</p>
+<p><code>gbk2uni.exe</code>工具已默认包含在CTeX里，具体路径为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>C:<span style="color:#c30;font-weight:bold">\C</span>TEX<span style="color:#c30;font-weight:bold">\C</span>TeX<span style="color:#c30;font-weight:bold">\c</span>ct<span style="color:#c30;font-weight:bold">\b</span>in<span style="color:#c30;font-weight:bold">\g</span>bk2uni.exe
+</span></span></code></pre></div><p>第二步，在TeXstudio下面，点击<code>工具</code>—<code>打开终端</code>。</p>
+<p>第三步，在终端里，输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gbk2uni.exe Manuscript.out
+</span></span></code></pre></div><p>第四步，再次重新正常编译Tex，就能解决问题。</p>
+<h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/zxia1/article/details/17504147">Latex之CJK中文书签乱码_为伊憔悴的博客-CSDN博客_latex书签乱码</a></li>
+<li><a href="https://blog.csdn.net/erdaidai/article/details/121503237">latex—中文目录乱码_erdaidai的博客-CSDN博客_latex目录乱码</a></li>
+<li><a href="https://blog.csdn.net/aaon22357/article/details/104834138">latex生成pdf标签乱码解决方案_aaon22357的博客-CSDN博客_latex上传后生成pdf乱码</a></li>
+<li><a href="https://blog.csdn.net/pang9998/article/details/88090767">CeTx解决pdf书签乱码问题_pang9998的博客-CSDN博客_pdftexify和pdflatex</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu安装Texlive2022 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu安装Texlive2022</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-04-06</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-下载iso镜像">1. 下载ISO镜像</h1>
+<p>可以在中科大网站下载：</p>
+<p><a href="http://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/">http://mirrors.ustc.edu.cn/CTAN/systems/texlive/Images/</a></p>
+<h1 id="2-安装步骤">2. 安装步骤</h1>
+<p>挂载ISO：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mount -o loop texlive2022.iso /mnt 
+</span></span><span style="display:flex;"><span><span style="color:#366">cd</span> /mnt
+</span></span><span style="display:flex;"><span>sudo ./install-tl
+</span></span></code></pre></div><p>选择<code>I</code>进行安装。</p>
+<p>安装完毕后，显示：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Welcome to TeX Live!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>See /usr/local/texlive/2022/index.html <span style="color:#069;font-weight:bold">for</span> links to documentation.
+</span></span><span style="display:flex;"><span>The TeX Live web site <span style="color:#555">(</span>https://tug.org/texlive/<span style="color:#555">)</span> contains any updates and corrections. TeX Live is a joint project of the TeX user groups around the world; please consider supporting it by joining the group best <span style="color:#069;font-weight:bold">for</span> you. The list of groups is available on the web at https://tug.org/usergroups.html.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Add /usr/local/texlive/2022/texmf-dist/doc/man to MANPATH.
+</span></span><span style="display:flex;"><span>Add /usr/local/texlive/2022/texmf-dist/doc/info to INFOPATH.
+</span></span><span style="display:flex;"><span>Most importantly, add /usr/local/texlive/2022/bin/x86_64-linux
+</span></span><span style="display:flex;"><span>to your PATH <span style="color:#069;font-weight:bold">for</span> current and future sessions.
+</span></span><span style="display:flex;"><span>Logfile: /usr/local/texlive/2022/install-tl.log
+</span></span></code></pre></div><p>打开<code>bashrc</code>文件，加入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 2022.04.06</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">export</span> <span style="color:#033">PATH</span><span style="color:#555">=</span>/usr/local/texlive/2022/bin/x86_64-linux:<span style="color:#033">$PATH</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">export</span> <span style="color:#033">MANPATH</span><span style="color:#555">=</span>/usr/local/texlive/2022/texmf-dist/doc/man:<span style="color:#033">$MANPATH</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">export</span> <span style="color:#033">INFOPATH</span><span style="color:#555">=</span>/usr/local/texlive/2022/texmf-dist/doc/info:<span style="color:#033">$INFOPATH</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">source</span> ~/.bashrc
+</span></span></code></pre></div><p>测试是否能够调用：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ tex -version
+</span></span><span style="display:flex;"><span>TeX 3.141592653 <span style="color:#555">(</span>TeX Live 2022<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>kpathsea version 6.3.4
+</span></span><span style="display:flex;"><span>Copyright <span style="color:#f60">2022</span> D.E. Knuth.
+</span></span><span style="display:flex;"><span>There is NO warranty.  Redistribution of this software is
+</span></span><span style="display:flex;"><span>covered by the terms of both the TeX copyright and
+</span></span><span style="display:flex;"><span>the Lesser GNU General Public License.
+</span></span><span style="display:flex;"><span>For more information about these matters, see the file
+</span></span><span style="display:flex;"><span>named COPYING and the TeX source.
+</span></span><span style="display:flex;"><span>Primary author of TeX: D.E. Knuth.
+</span></span></code></pre></div><p>挂载mnt：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo umount /mnt
+</span></span></code></pre></div><h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://www.jianshu.com/p/b87a8d80e685">texlive 镜像 中科大</a></li>
+<li><a href="http://www.360doc.com/content/19/0126/22/52645714_811482441.shtml">Linux install LaTeX 2018</a></li>
+<li><a href="https://blog.csdn.net/qq_33276736/article/details/109328032">Linux TeX Live 安装教程</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

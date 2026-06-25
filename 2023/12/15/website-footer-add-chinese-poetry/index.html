@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>个人网站底部添加中华诗词 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">个人网站底部添加中华诗词</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-15</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/markdown/">#Markdown</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/java/">#Java</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>说明： html 路径为 <code>/themes/simple-style/layouts/_default/baseof.html</code></p>
+<h1 id="1-今日诗词脚本">1. 今日诗词脚本</h1>
+<p>通用简单 html 代码 <sup>1</sup>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">span</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;jinrishici-sentence&#34;</span>&gt;正在加载今日诗词....&lt;/<span style="color:#309;font-weight:bold">span</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#309;font-weight:bold">script</span> <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;https://sdk.jinrishici.com/v2/browser/jinrishici.js&#34;</span> <span style="color:#309">charset</span><span style="color:#555">=</span><span style="color:#c30">&#34;utf-8&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
+</span></span></code></pre></div><p>显示效果：</p>
+<p><span id="jinrishici-sentence">正在加载今日诗词&hellip;.</span>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script></p>
+<p>高级版的 html 代码 <sup>1</sup>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">script</span> <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;https://sdk.jinrishici.com/v2/browser/jinrishici.js&#34;</span> <span style="color:#309">charset</span><span style="color:#555">=</span><span style="color:#c30">&#34;utf-8&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;poem_sentence&#34;</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;display: inline;&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt; —— &lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;poem_info&#34;</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;display: inline;&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">script</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  jinrishici.load(<span style="color:#069;font-weight:bold">function</span>(result) {
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">var</span> sentence <span style="color:#555">=</span> <span style="color:#366">document</span>.querySelector(<span style="color:#c30">&#34;#poem_sentence&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">var</span> info <span style="color:#555">=</span> <span style="color:#366">document</span>.querySelector(<span style="color:#c30">&#34;#poem_info&#34;</span>)
+</span></span><span style="display:flex;"><span>    sentence.innerHTML <span style="color:#555">=</span> result.data.content
+</span></span><span style="display:flex;"><span>    info.innerHTML <span style="color:#555">=</span> <span style="color:#c30">&#39;【&#39;</span> <span style="color:#555">+</span> result.data.origin.dynasty <span style="color:#555">+</span> <span style="color:#c30">&#39;】&#39;</span> <span style="color:#555">+</span> result.data.origin.author <span style="color:#555">+</span> <span style="color:#c30">&#39;《&#39;</span> <span style="color:#555">+</span> result.data.origin.title <span style="color:#555">+</span> <span style="color:#c30">&#39;》&#39;</span>
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
+</span></span></code></pre></div><p>显示效果：</p>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+<h1 id="2-一句">2. 一句</h1>
+<p>通用简单 html 代码 <sup>2</sup>：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">script</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text/javascript&#34;</span> <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;http://yijuzhan.com/api/word.php?m=js&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;&lt;<span style="color:#309;font-weight:bold">script</span>&gt;<span style="color:#366">document</span>.write(<span style="color:#c30">&#34;&lt;div&gt;&#34;</span>);yiju(<span style="color:#069;font-weight:bold">true</span>);<span style="color:#366">document</span>.write(<span style="color:#c30">&#34;&lt;/div&gt;&#34;</span>);&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
+</span></span></code></pre></div><p>显示效果：</p>
+<script type="text/javascript" src="http://yijuzhan.com/api/word.php?m=js"></script><script>document.write("<div>");yiju(true);document.write("</div>");</script>
+<h1 id="3-参考">3. 参考</h1>
+<ol>
+<li><a href="https://www.jinrishici.com/doc/">今日诗词开放接口 - 今日诗词 - 诗词实时智能推荐</a></li>
+<li><a href="http://yijuzhan.com/help/yiju_api.html">一句 - 接口</a></li>
+<li><a href="https://github.com/vv314/quotes">vv314/quotes: 收集了一些每日一句的接口与网站。</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Nature期刊的LaTeX模版 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Nature期刊的LaTeX模版</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-11-03</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-下载nature的latex模版">1. 下载Nature的LaTeX模版</h1>
+<p>在<a href="https://ctan.org/tex-archive/macros/latex/contrib/nature/">CTAN: /tex-archive/macros/latex/contrib/nature</a>下载模版，基本信息如下：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Nature package
+</span></span><span style="display:flex;"><span>Version: 1.0, <span style="color:#f60">24</span> Feb. <span style="color:#f60">2004</span>
+</span></span><span style="display:flex;"><span>by Peter Czoschke
+</span></span></code></pre></div><h1 id="2-添加图片模块">2. 添加图片模块</h1>
+<p>默认Nature模版是不加入图片模块的，可通过<a href="https://tex.stackexchange.com/questions/362195/nature-include-graphics">templates - Nature include graphics - TeX - LaTeX Stack Exchange</a>给出的解决方案：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-LaTeX" data-lang="LaTeX"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\documentclass</span><span style="color:#366">{</span>nature<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\usepackage</span><span style="color:#366">{</span>graphicx<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\makeatletter</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\let\saved</span>@includegraphics<span style="color:#069;font-weight:bold">\includegraphics</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\AtBeginDocument</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\let\includegraphics\saved</span>@includegraphics<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\renewenvironment*</span><span style="color:#366">{</span>figure<span style="color:#366">}{</span><span style="color:#069;font-weight:bold">\@</span>float<span style="color:#366">{</span>figure<span style="color:#366">}}{</span><span style="color:#069;font-weight:bold">\end</span>@float<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\makeatother</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\begin</span><span style="color:#366">{</span>document<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\begin</span><span style="color:#366">{</span>figure<span style="color:#366">}</span>[!htbp]
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">\centering</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">\includegraphics</span><span style="color:#309">[width=4.0in]</span><span style="color:#366">{</span>name.pdf<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">\caption</span><span style="color:#366">{</span>Descriptions of the picture<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#069;font-weight:bold">\label</span><span style="color:#366">{</span>label of the picture<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\end</span><span style="color:#366">{</span>figure<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\end</span><span style="color:#366">{</span>document<span style="color:#366">}</span>
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

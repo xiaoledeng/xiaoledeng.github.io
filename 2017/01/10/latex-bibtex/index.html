@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>终极参考文献引用管理—BibTeX - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">终极参考文献引用管理—BibTeX</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2017-01-10</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>就我而言，关于文献管理，在科研写作中，就是在Reference部分中排版，然后在论文中适当地格式引用。</p>
+<p>最早用文献管理的软件是NoteExpress，而后是Endnote，现在是BibTex。</p>
+<p>关于Endnote，批量参考文献的引用撰写了一个文稿：<a href="/2016/11/15/reference-form-cite/">批量参考文献格式的引用技巧</a>。Endnote适合在Windows下面的Word里面来引用，对应不同杂志的格式，在Endnote里面来变换不同的格式，将增加大量的重复工作。</p>
+<p>现在，在Mac下面使用MacTex套装来科研写作。对于参考文献的管理和引用，得跟得上国际步伐，故此使用Latex工作流，发现并采用BibTeX格式的参考文献管理。</p>
+<p>可以这样坦诚以及很负责任地说：一旦掌握了基本的BibTeX用法后，剩下的未来科研写作人生，都不需要自己去调整参考文献的格式了，只需要找到对应的模板，而后更换一行命令为对应模板即可。</p>
+<h1 id="1-下载bib格式的参考文献格式">1. 下载bib格式的参考文献格式</h1>
+<ul>
+<li>在每个杂志的电子文档页面都会有导出参考格式；</li>
+<li>当然GoogleScholar也有导出BibTeX的格式，方法类似于：<a href="/2016/11/15/reference-form-cite/">批量参考文献格式的引用技巧</a>。</li>
+<li><a href="http://www.latexstudio.net/archives/7131">LaTeX技巧857：如何找到标准的参考文献Bib文件-LaTeX工作室</a></li>
+</ul>
+<p>将所有的BibTeX内容都复制到一个格式为bib的文件中，如mybibex.bib 。这个mybibex.bib就是包括了你写文章所有的参考文献，也可以说是你一生科研写作的参考文献库。</p>
+<h1 id="2-编译引用技巧">2. 编译引用技巧</h1>
+<ul>
+<li>参考文献的内容放在：mybibex.bib文件；</li>
+<li>natbib.bst格式的文件，即为参考文献样式文件，针对不同的杂志会有不同的样式，需要自己Google到对应的bst文件。</li>
+<li>主文件a.tex文件。</li>
+</ul>
+<p>在主文件a.tex中，参考文献部分插入以下代码：</p>
+<pre><code>% BibTeX References
+\bibliographystyle{natbib}  
+\bibliography{mybibtex}   % name my BibTeX data base
+</code></pre>
+<p>注意：</p>
+<ul>
+<li>\bibliographystyle{natbib}  为参考文献的样式，注意为natbib，不需要后缀；</li>
+<li>\bibliography{mybibtex} 为个人的参考文献库。</li>
+<li>在a.tex其他的位置，需要有\cite{文献a}、\citet{文献a}、\citep{文献a} 等的引用格式，否则参考文献不会显示；</li>
+<li>编译a.tex的时候，LaTex—BibTeX—LaTex—LaTex，需要编译四次。</li>
+</ul>
+<p>详细地论述，可以参考<a href="http://www.latexstudio.net/archives/5594">LaTeX技巧829:使用BibTeX生成参考文献列表-LaTeX工作室</a>。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

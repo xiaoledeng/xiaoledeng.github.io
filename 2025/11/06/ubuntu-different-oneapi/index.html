@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu切换2023/2024/2025版oneAPI - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu切换2023/2024/2025版oneAPI</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2025-11-06</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/fortran/">#Fortran</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/c/">#C</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>开发测试时，可能需要不同版本的 <code>oneAPI</code> ，需要在命令行切换。</p>
+<p>这里，提供 <code>Linux</code> 离线2023版、2024版、2025版的详细下载地址：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># BaseKit 2023.2.0.49397</span>
+</span></span><span style="display:flex;"><span>wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/992857b9-624c-45de-9701-f6445d845359/l_BaseKit_p_2023.2.0.49397_offline.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># BaseKit 2024.2.1.100</span>
+</span></span><span style="display:flex;"><span>wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/e6ff8e9c-ee28-47fb-abd7-5c524c983e1c/l_BaseKit_p_2024.2.1.100_offline.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Base-toolkit 2025.3.0.375</span>
+</span></span><span style="display:flex;"><span>wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/d640da34-77cc-4ab2-8019-ac5592f4ec19/intel-oneapi-base-toolkit-2025.3.0.375_offline.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># HPCKit 2023.2.0.49440</span>
+</span></span><span style="display:flex;"><span>wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/0722521a-34b5-4c41-af3f-d5d14e88248d/l_HPCKit_p_2023.2.0.49440_offline.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># HPCKit 2024.2.1.79</span>
+</span></span><span style="display:flex;"><span>wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/d461a695-6481-426f-a22f-b5644cd1fa8b/l_HPCKit_p_2024.2.1.79_offline.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># HPC-toolkit 2025.3.0.381</span>
+</span></span><span style="display:flex;"><span>wget https://registrationcenter-download.intel.com/akdlm/IRC_NAS/66021d90-934d-41f4-bedf-b8c00bbe98bc/intel-oneapi-hpc-toolkit-2025.3.0.381_offline.sh
+</span></span></code></pre></div><p>2023版和2024版也见： <a href="https://assets.steelstack.io/contribs/intel/oneapi/">https://assets.steelstack.io/contribs/intel/oneapi/</a></p>
+<p>安装可以参考： <a href="/2021/11/22/ubuntu-install-intel-oneapi/">Ubuntu安装Intel® oneAPI Base &amp; HPC Toolkit</a></p>
+<h1 id="2-步骤">2. 步骤</h1>
+<p>1、准备 <code>~/switch-oneapi.sh</code> 文件，内容为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#099">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span><span style="color:#09f;font-style:italic"># ==========================================================</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Intel oneAPI 多版本切换脚本</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 支持版本：2023, 2024, 2025</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#   ~/intel/oneapi-old/compiler/2023.2.0/env/vars.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#        ~/intel/oneapi-old/compiler/2023.2.0/linux/bin</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#   ~/intel/oneapi-old/compiler/2024.2.1/env/vars.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#        ~/intel/oneapi-old/compiler/2024.2.1/linux/bin</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#   ~/intel/oneapi/setvars.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 定义各版本安装路径</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">ONEAPI_2023_PATH</span><span style="color:#555">=</span><span style="color:#c30">&#34;</span><span style="color:#033">$HOME</span><span style="color:#c30">/intel/oneapi-old/compiler/2023.2.0/env&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">ONEAPI_2023_MKL_PATH</span><span style="color:#555">=</span><span style="color:#c30">&#34;</span><span style="color:#033">$HOME</span><span style="color:#c30">/intel/oneapi-old/mkl/2023.2.0/env&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">ONEAPI_2024_PATH</span><span style="color:#555">=</span><span style="color:#c30">&#34;</span><span style="color:#033">$HOME</span><span style="color:#c30">/intel/oneapi-old/compiler/2024.2.1/env&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">ONEAPI_2024_MKL_PATH</span><span style="color:#555">=</span><span style="color:#c30">&#34;</span><span style="color:#033">$HOME</span><span style="color:#c30">/intel/oneapi-old/mkl/2024.2.1/env&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">ONEAPI_2025_PATH</span><span style="color:#555">=</span><span style="color:#c30">&#34;</span><span style="color:#033">$HOME</span><span style="color:#c30">/intel/oneapi&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 检查参数</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">if</span> <span style="color:#555">[</span> <span style="color:#033">$#</span> -ne <span style="color:#f60">1</span> <span style="color:#555">]</span>; <span style="color:#069;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#366">echo</span> <span style="color:#c30">&#34;用法: source ~/switch-oneapi.sh [2023|2024|2025|unset]&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#033">VERSION</span><span style="color:#555">=</span><span style="color:#033">$1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 清理当前环境</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">if</span> <span style="color:#555">[</span> ! -z <span style="color:#c30">&#34;</span><span style="color:#033">$ONEAPI_ROOT</span><span style="color:#c30">&#34;</span> <span style="color:#555">]</span>; <span style="color:#069;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#366">echo</span> <span style="color:#c30">&#34;🔹 清除当前 oneAPI 环境变量...&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#366">unset</span> ONEAPI_ROOT CPATH LIBRARY_PATH LD_LIBRARY_PATH PATH PKG_CONFIG_PATH MANPATH CMAKE_PREFIX_PATH
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 版本选择</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">case</span> <span style="color:#033">$VERSION</span> in
+</span></span><span style="display:flex;"><span>    2023<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span> <span style="color:#555">[</span> -f <span style="color:#c30">&#34;</span><span style="color:#033">$ONEAPI_2023_PATH</span><span style="color:#c30">/vars.sh&#34;</span> <span style="color:#555">]</span>; <span style="color:#069;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#366">echo</span> <span style="color:#c30">&#34;✅ 切换到 Intel oneAPI 2023 环境...&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#366">source</span> <span style="color:#c30">&#34;</span><span style="color:#033">$ONEAPI_2023_PATH</span><span style="color:#c30">/vars.sh&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#366">source</span> <span style="color:#c30">&#34;</span><span style="color:#033">$ONEAPI_2023_MKL_PATH</span><span style="color:#c30">/vars.sh&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#366">echo</span> <span style="color:#c30">&#34;❌ 未找到 </span><span style="color:#033">$ONEAPI_2023_PATH</span><span style="color:#c30">/vars.sh&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    2024<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span> <span style="color:#555">[</span> -f <span style="color:#c30">&#34;</span><span style="color:#033">$ONEAPI_2024_PATH</span><span style="color:#c30">/vars.sh&#34;</span> <span style="color:#555">]</span>; <span style="color:#069;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#366">echo</span> <span style="color:#c30">&#34;✅ 切换到 Intel oneAPI 2024 环境...&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#366">source</span> <span style="color:#c30">&#34;</span><span style="color:#033">$ONEAPI_2024_PATH</span><span style="color:#c30">/vars.sh&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#366">source</span> <span style="color:#c30">&#34;</span><span style="color:#033">$ONEAPI_2024_MKL_PATH</span><span style="color:#c30">/vars.sh&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#366">echo</span> <span style="color:#c30">&#34;❌ 未找到 </span><span style="color:#033">$ONEAPI_2024_PATH</span><span style="color:#c30">/vars.sh&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    2025<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">if</span> <span style="color:#555">[</span> -f <span style="color:#c30">&#34;</span><span style="color:#033">$ONEAPI_2025_PATH</span><span style="color:#c30">/setvars.sh&#34;</span> <span style="color:#555">]</span>; <span style="color:#069;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#366">echo</span> <span style="color:#c30">&#34;✅ 切换到 Intel oneAPI 2025 环境...&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#366">source</span> <span style="color:#c30">&#34;</span><span style="color:#033">$ONEAPI_2025_PATH</span><span style="color:#c30">/setvars.sh&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#366">echo</span> <span style="color:#c30">&#34;❌ 未找到 </span><span style="color:#033">$ONEAPI_2025_PATH</span><span style="color:#c30">/setvars.sh&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    <span style="color:#366">unset</span><span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#366">echo</span> <span style="color:#c30">&#34;🔹 已清除 oneAPI 环境。&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span>    *<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#366">echo</span> <span style="color:#c30">&#34;❌ 无效选项：</span><span style="color:#033">$VERSION</span><span style="color:#c30">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#366">echo</span> <span style="color:#c30">&#34;请使用：2023、2024、2025 或 unset&#34;</span>
+</span></span><span style="display:flex;"><span>        ;;
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">esac</span>
+</span></span></code></pre></div><p>2、赋予执行权限</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod +x ~/switch-oneapi.sh
+</span></span></code></pre></div><p>3、在 <code>~/.bashrc</code> 或 <code>~/.zshrc</code> 加入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">alias</span> <span style="color:#033">oneapi2023</span><span style="color:#555">=</span><span style="color:#c30">&#39;source ~/switch-oneapi.sh 2023&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">alias</span> <span style="color:#033">oneapi2024</span><span style="color:#555">=</span><span style="color:#c30">&#39;source ~/switch-oneapi.sh 2024&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">alias</span> <span style="color:#033">oneapi2025</span><span style="color:#555">=</span><span style="color:#c30">&#39;source ~/switch-oneapi.sh 2025&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">alias</span> <span style="color:#033">oneapiunset</span><span style="color:#555">=</span><span style="color:#c30">&#39;source ~/switch-oneapi.sh unset&#39;</span>
+</span></span></code></pre></div><p>4、刷新：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">source</span> ~/.bashrc
+</span></span></code></pre></div><p>5、之后只需输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>oneapi2024
+</span></span></code></pre></div><p>即可立即切换环境，非常方便。</p>
+<p>6、查看具体版本：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Fortran</span>
+</span></span><span style="display:flex;"><span>ifx --version
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># C++</span>
+</span></span><span style="display:flex;"><span>icpx --version
+</span></span><span style="display:flex;"><span>icx --version
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

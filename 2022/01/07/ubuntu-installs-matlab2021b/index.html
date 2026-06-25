@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu installs Matlab2021b - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu installs Matlab2021b</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-01-07</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/matlab/">#Matlab</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-steps">1. Steps</h1>
+<ol>
+<li>
+<p>Download the <code>matlab_R2021b_glnxa64.zip</code> at the matlab page <a href="https://ww2.mathworks.cn/licensecenter/licenses">https://ww2.mathworks.cn/licensecenter/licenses</a></p>
+</li>
+<li>
+<p>Unzip and install:</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>unzip matlab_R2021b_glnxa64.zip
+</span></span><span style="display:flex;"><span><span style="color:#366">cd</span> matlab_R2021b_glnxa64/
+</span></span><span style="display:flex;"><span>./install
+</span></span></code></pre></div><p>Note that the difference between <code>sudo ./install</code> (for root) and <code>./install</code> (for current user).</p>
+<p>When installing matlab, the paths are <code>/home/deng/MATLAB/R2021b</code> other than <code>/usr/local/MATLAB/R2021b</code> and <code>/home/deng/bin</code> other than <code>/usr/local/bin</code>.</p>
+<ol start="3">
+<li>Add the command <code>matlab</code> into the file <code>~/.bashrc</code> by:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gedit ~/.bashrc
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">alias</span> <span style="color:#033">matlab</span><span style="color:#555">=</span><span style="color:#c30;font-weight:bold">\&#39;</span><span style="color:#c30">&#39;/home/deng/bin/matlab&#39;</span><span style="color:#c30;font-weight:bold">\&#39;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">source</span> ~/.bashrc
+</span></span></code></pre></div><ol start="4">
+<li>Add the Pin icon to Favorites:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">cd</span> ~/.local/share/applications
+</span></span><span style="display:flex;"><span>sudo gedit matlab.desktop
+</span></span></code></pre></div><p>add the contents into <code>matlab.desktop</code></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#555">[</span>Desktop Entry<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">Categories</span><span style="color:#555">=</span>Application;Development;
+</span></span><span style="display:flex;"><span><span style="color:#033">Encoding</span><span style="color:#555">=</span>UTF-8
+</span></span><span style="display:flex;"><span><span style="color:#033">Exec</span><span style="color:#555">=</span>/home/deng/MATLAB/R2021b/bin/matlab -desktop
+</span></span><span style="display:flex;"><span><span style="color:#033">Icon</span><span style="color:#555">=</span>/home/deng/MATLAB/R2021b/toolbox/shared/dastudio/resources/MatlabIcon.png
+</span></span><span style="display:flex;"><span><span style="color:#033">Name</span><span style="color:#555">=</span>MATLAB2021b
+</span></span><span style="display:flex;"><span><span style="color:#033">StartupNotify</span><span style="color:#555">=</span><span style="color:#366">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">Terminal</span><span style="color:#555">=</span><span style="color:#366">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">Type</span><span style="color:#555">=</span>Application
+</span></span></code></pre></div><p>PS: Icon=/home/deng/MATLAB/R2021b/bin/glnxa64/cef_resources/matlab_icon.png</p>
+<ol start="5">
+<li>Solve the problem <code>Gtk-Message: 15:06:42.429: Failed to load module &quot;canberra-gtk-module&quot;</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt install libcanberra-gtk-module
+</span></span><span style="display:flex;"><span>$ sudo apt install mlocate
+</span></span><span style="display:flex;"><span>$ locate libcanberra-gtk-module.so
+</span></span><span style="display:flex;"><span>/snap/gnome-3-34-1804/72/usr/lib/gtk-3.0/modules/libcanberra-gtk-module.so
+</span></span><span style="display:flex;"><span>/snap/gnome-3-34-1804/77/usr/lib/gtk-3.0/modules/libcanberra-gtk-module.so
+</span></span><span style="display:flex;"><span>/snap/gnome-3-38-2004/87/usr/lib/gtk-3.0/modules/libcanberra-gtk-module.so
+</span></span><span style="display:flex;"><span>/usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+</span></span><span style="display:flex;"><span>/usr/lib/x86_64-linux-gnu/gtk-3.0/modules/libcanberra-gtk-module.so
+</span></span></code></pre></div><p>Just establish a soft connection. Matlab uses the module of gtk-2.0:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ln -s /usr/lib/x86_64-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so /usr/lib/libcanberra-gtk-module.so
+</span></span></code></pre></div><h1 id="2-reference">2. Reference</h1>
+<ul>
+<li><a href="https://www.xiaoheidiannao.com/250684.html">配置 MATLAB for Linux 设置启动图标 MATLAB2021a Ubuntu 20.04.3 LTS - 小黑电脑</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

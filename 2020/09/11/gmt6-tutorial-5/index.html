@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>GMT6入门教程（5）绘制地形起伏和直方图 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">GMT6入门教程（5）绘制地形起伏和直方图</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-11</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/gmt/">#GMT</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/drawing/">#Drawing</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1绘制地形起伏">1.绘制地形起伏</h1>
+<p>原文地址：<a href="https://docs.gmt-china.org/latest/tutorial/earth-relief/">绘制地形起伏 — GMT中文手册</a></p>
+<p>模块：<a href="https://docs.gmt-china.org/latest/module/grdimage/">grdimage</a></p>
+<h2 id="11全球地形起伏数据">1.1全球地形起伏数据</h2>
+<p>要绘制全球或区域地形起伏图，首先需要拥有地形起伏数据，即不同经纬度处的高程或海深数据。</p>
+<p>GMT用户可以通过给定文件名 <code>@earth_relief_xxx</code> 的方式来指定要使用某个精度的地形。xxx 用于指定数据精度，例如：15m、05m、01m和 15s 分别表示数据分辨率为15弧分、5弧分、1弧分和15弧秒。</p>
+<p>全球地形起伏数据的详细介绍见: <a href="https://docs.gmt-china.org/latest/dataset/earth-relief/">earth_relief: 全球地形起伏数据</a>。</p>
+<h2 id="12绘制全球地形起伏图">1.2绘制全球地形起伏图</h2>
+<p>命令：gmt grdimage @earth_relief_05m -JH180/10c</p>
+<h2 id="13绘图区域地形起伏图">1.3绘图区域地形起伏图</h2>
+<p>命令：gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen</p>
+<h2 id="12增加光照效果">1.2增加光照效果</h2>
+<p>为图幅加上光照效果，是为了让地形起伏图更加立体。可以指定光照的方向、强度等参数，也可以直接使用 -I+d 以使用默认的光照效果。</p>
+<blockquote>
+<p>增加光照效果本质上是计算了每个点沿着某个方位角的方向梯度，然后根据每个点的方向梯度的正负以及振幅调节该点颜色的亮度值。对于向阳处，其方向梯度为正值，则增加该点颜色的亮度；对于背阴处，其方向梯度为负值，则降低该点颜色的亮度。由此达到增加光照效果、增强立体感的目的。</p>
+</blockquote>
+<p>命令：gmt grdimage @earth_relief_30s -JM15c -R118/125/20/26 -Baf -BWSen -I+d</p>
+<h2 id="13添加色标">1.3添加色标</h2>
+<p>grdimage 绘制地形起伏数据本质上就是将高程的数值与颜色之间对应起来。二者之间的对应关系由色标文件（即CPT文件）决定。用 <a href="https://docs.gmt-china.org/latest/module/colorbar/">colorbar</a> 向图中添加色标。</p>
+<p>模块：<a href="https://docs.gmt-china.org/latest/module/colorbar/">colorbar</a></p>
+<p>初始命令：gmt colorbar</p>
+<p>进一步使用 -B 选项设置色标的标注间隔，并为色标添加一个标签，</p>
+<p>命令: gmt colorbar -Bxaf+l&quot;Elevation (m)&quot;</p>
+<p>也可以使用了 -D 选项将色标放在了地形起伏图的右侧中间（JMR）向右偏移1.5厘米，色标长度为10厘米，并将标签放在了色标左侧（+ml）</p>
+<p>命令：gmt colorbar -DJMR+w10c+o1.5c/0c+ml -Bxa1000f -By+l&quot;m&quot;</p>
+<h2 id="14制作cpt文件">1.4制作CPT文件</h2>
+<p>模块：<a href="https://docs.gmt-china.org/latest/module/makecpt/">makecpt</a>和<a href="https://docs.generic-mapping-tools.org/6.1/grd2cpt.html">grd2cpt</a></p>
+<p>使用 makecpt 模块在GMT内置CPT globe 的基础上生成了一个-8000到8000范围内的新CPT文件。生成的CPT文件将作为当前CPT文件，供接下来的 grdimage 和 colorbar 命令使用。</p>
+<p>命令：gmt makecpt -Cglobe -T-8000/8000</p>
+<p>gmt grdimage @earth_relief_30s -I+d</p>
+<p>gmt colorbar -Bxa2000 -B+l&quot;m&quot;</p>
+<h1 id="2绘制直方图">2.绘制直方图</h1>
+<p>原文地址：<a href="https://docs.gmt-china.org/latest/tutorial/histogram/">绘制直方图 — GMT中文手册</a></p>
+<p>模块：<a href="https://docs.gmt-china.org/latest/module/histogram/">histogram</a></p>
+<p>使用数据地址：<a href="https://docs.gmt-china.org/latest/_downloads/63a7ff01f5c85236ea9a103761f6f4cd/eq.dat">eq.dat</a></p>
+<h2 id="21垂直直方图">2.1垂直直方图</h2>
+<p>GMT中默认绘制垂直直方图。绘制直方图只需要一列数据，而上面的示例数据有三列。我们需要使用 -i2 选项将输入数据的第三列（GMT中列号从0开始）传递给 histogram。</p>
+<p>命令：gmt histogram eq.dat -Baf -T5 -W1p -i2 -png hist1</p>
+<p>解释：</p>
+<ul>
+<li>-T5 设置了统计时每一个直方的宽度是5。该选项还可以更灵活地设置直方的最大最小值等属性，详见 histogram 模块文档</li>
+<li>-W1p 设置直方的边框宽度为1p</li>
+<li>-Baf 则为整张图加了一个自动的边框</li>
+</ul>
+<h2 id="22增加修饰">2.2增加修饰</h2>
+<p>命令：gmt histogram eq.dat -JX15c/9c -R0/40/0/600 -Bxaf+l&quot;Depth&quot; -Byaf+l&quot;Counts&quot; -BWSen -D -W1p -Gred -T5 -i2 -png hist2</p>
+<p>解释：</p>
+<ul>
+<li>-JX15c/9c 指定了整张直方图的宽度和高度。若不指定，GMT会自动指定一个合适的值</li>
+<li>-R0/40/0/600 设置了直方图的数据范围。若不指定，histogram 会自动确定最适合的数据范围。这里我们根据前图的统计结果指定了新的 -R 范围</li>
+<li>-B 选项用于指定底图边框和坐标轴属性</li>
+<li>-Gred 表示为直方填充红色</li>
+<li>-D 会在每个直方的上方标注该直方中的数量。该选项还可以接更多的子选项以控制标注的位置、字体和角度等</li>
+</ul>
+<h2 id="23水平直方图">2.3水平直方图</h2>
+<p>绘制水平直方图，需要增加 -A 选项。</p>
+<p>命令：gmt histogram eq.dat -JX15c/9c -R0/40/0/600 -Bxaf+l&quot;Depth&quot; -Byaf+l&quot;Counts&quot; -BWSen -A -D -W1p -Gred -T5 -i2 -png hist3</p>
+<h2 id="24百分比直方图">2.4百分比直方图</h2>
+<p>histogram 的 -Z 选项可以进一步控制统计图的类型。默认纵轴为统计数目。 -Z1 表示绘制百分比直方图。</p>
+<p>命令：gmt histogram eq.dat -JX15c/9c -Bxaf+l&quot;Depth&quot; -Byaf+l&quot;Counts&quot;+u&quot;%&quot; -BWSen -Z1 -W1p -Gred -T5 -i2 -png hist4</p>
+<p>解释：由于纵轴的含义变了，之前的 -R 选项就不再合适了，因而我们去除了 -R 选项让GMT自动确定最佳数据范围。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

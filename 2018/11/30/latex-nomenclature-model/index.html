@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>LaTeX-术语表的一个经典模版 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">LaTeX-术语表的一个经典模版</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2018-11-30</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>三列术语表、或四列术语表，都可以按照这个模板修改而得。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\documentclass</span><span style="color:#366">{</span>article<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\usepackage</span><span style="color:#366">{</span>nomencl,etoolbox,ragged2e,siunitx,mathtools<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\DeclarePairedDelimiter</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\abs</span><span style="color:#366">}{</span><span style="color:#069;font-weight:bold">\lvert</span><span style="color:#366">}{</span><span style="color:#069;font-weight:bold">\rvert</span><span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\newcommand</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\DimensUnits</span><span style="color:#366">}</span>[2]<span style="color:#366">{</span><span style="color:#069;font-weight:bold">\hfill\makebox</span><span style="color:#309">[8em]</span><span style="color:#366">{</span>#1<span style="color:#069;font-weight:bold">\hfill</span><span style="color:#366">}</span><span style="color:#09f;font-style:italic">%
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">\makebox</span><span style="color:#309">[4em]</span><span style="color:#366">{</span>#2<span style="color:#069;font-weight:bold">\hfill</span><span style="color:#366">}</span><span style="color:#069;font-weight:bold">\ignorespaces</span><span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\newcommand</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\DefinitionCol</span><span style="color:#366">}</span>[1]<span style="color:#366">{</span><span style="color:#069;font-weight:bold">\hfill\parbox</span><span style="color:#309">[t]</span><span style="color:#366">{</span>12em<span style="color:#366">}{</span>#1<span style="color:#366">}</span><span style="color:#069;font-weight:bold">\ignorespaces</span><span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\newcommand</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomsubtitle</span><span style="color:#366">}</span>[1]<span style="color:#366">{</span><span style="color:#069;font-weight:bold">\item</span><span style="color:#309">[\large\bfseries #1]</span><span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\renewcommand\nomgroup</span><span style="color:#309">[1]</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\def\nomtemp</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\csname</span> nomstart#1<span style="color:#069;font-weight:bold">\endcsname</span><span style="color:#366">}</span><span style="color:#069;font-weight:bold">\nomtemp</span><span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\newcommand</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomstartR</span><span style="color:#366">}{</span><span style="color:#069;font-weight:bold">\nomsubtitle</span><span style="color:#366">{</span>Roman Symbols<span style="color:#366">}</span><span style="color:#09f;font-style:italic">%
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>  <span style="color:#069;font-weight:bold">\item</span><span style="color:#309">[\bfseries Symbol]</span><span style="color:#09f;font-style:italic">%
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>  <span style="color:#069;font-weight:bold">\textbf</span><span style="color:#366">{</span>Description<span style="color:#366">}</span><span style="color:#069;font-weight:bold">\DimensUnits</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\textbf</span><span style="color:#366">{</span>Dimensions<span style="color:#366">}}{</span><span style="color:#069;font-weight:bold">\textbf</span><span style="color:#366">{</span>Units<span style="color:#366">}}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\newcommand</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomstartG</span><span style="color:#366">}{</span><span style="color:#069;font-weight:bold">\nomsubtitle</span><span style="color:#366">{</span>Greek Symbols<span style="color:#366">}</span><span style="color:#09f;font-style:italic">%
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>  <span style="color:#069;font-weight:bold">\item</span><span style="color:#309">[\bfseries Symbol]</span><span style="color:#09f;font-style:italic">%
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>  <span style="color:#069;font-weight:bold">\textbf</span><span style="color:#366">{</span>Description<span style="color:#366">}</span><span style="color:#069;font-weight:bold">\DimensUnits</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\textbf</span><span style="color:#366">{</span>Dimensions<span style="color:#366">}}{</span><span style="color:#069;font-weight:bold">\textbf</span><span style="color:#366">{</span>Units<span style="color:#366">}}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\newcommand</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomstartD</span><span style="color:#366">}{</span><span style="color:#069;font-weight:bold">\nomsubtitle</span><span style="color:#366">{</span>Dimensionless Numbers<span style="color:#366">}</span><span style="color:#09f;font-style:italic">%
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>  <span style="color:#069;font-weight:bold">\item</span><span style="color:#309">[\bfseries Symbol]</span><span style="color:#069;font-weight:bold">\textbf</span><span style="color:#366">{</span>Description<span style="color:#366">}</span><span style="color:#069;font-weight:bold">\DefinitionCol</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\textbf</span><span style="color:#366">{</span>Definition<span style="color:#366">}}}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\renewcommand*</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nompreamble</span><span style="color:#366">}{</span><span style="color:#069;font-weight:bold">\markboth</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomname</span><span style="color:#366">}{</span><span style="color:#069;font-weight:bold">\nomname</span><span style="color:#366">}}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\newcommand</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomdescr</span><span style="color:#366">}</span>[1]<span style="color:#366">{</span><span style="color:#069;font-weight:bold">\parbox</span><span style="color:#309">[t]</span><span style="color:#366">{</span>4cm<span style="color:#366">}{</span><span style="color:#069;font-weight:bold">\RaggedRight</span> #1<span style="color:#366">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\newcommand</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomwithdim</span><span style="color:#366">}</span>[5]<span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomenclature</span><span style="color:#309">[#1]</span><span style="color:#366">{</span>#2<span style="color:#366">}</span><span style="color:#09f;font-style:italic">%
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomdescr</span><span style="color:#366">{</span>#3<span style="color:#366">}</span><span style="color:#069;font-weight:bold">\DimensUnits</span><span style="color:#366">{</span>#4<span style="color:#366">}{</span>#5<span style="color:#366">}}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\newcommand</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomtypeR</span><span style="color:#366">}</span>[5][]<span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomwithdim</span><span style="color:#366">{</span>R#1<span style="color:#366">}{</span>#2<span style="color:#366">}{</span>#3<span style="color:#366">}{</span>#4<span style="color:#366">}{</span>#5<span style="color:#366">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\newcommand</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomtypeG</span><span style="color:#366">}</span>[5][]<span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomwithdim</span><span style="color:#366">{</span>G#1<span style="color:#366">}{</span>#2<span style="color:#366">}{</span>#3<span style="color:#366">}{</span>#4<span style="color:#366">}{</span>#5<span style="color:#366">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\newcommand</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomtypeD</span><span style="color:#366">}</span>[4][]<span style="color:#366">{</span><span style="color:#069;font-weight:bold">\nomenclature</span><span style="color:#309">[D#1]</span><span style="color:#366">{</span>#2<span style="color:#366">}{</span><span style="color:#069;font-weight:bold">\nomdescr</span><span style="color:#366">{</span>#3<span style="color:#366">}</span><span style="color:#069;font-weight:bold">\DefinitionCol</span><span style="color:#366">{</span>#4<span style="color:#366">}}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\makenomenclature</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\begin</span><span style="color:#366">{</span>document<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\mbox</span><span style="color:#366">{}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\nomtypeR</span><span style="color:#309">[abc]</span><span style="color:#366">{</span><span style="color:#c30">\(</span><span style="color:#366">a,b,c</span><span style="color:#c30">\)</span><span style="color:#366">}{</span>half axes of ellipsoid<span style="color:#366">}{</span>L<span style="color:#366">}{</span><span style="color:#069;font-weight:bold">\si</span><span style="color:#366">{</span>m<span style="color:#366">}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\nomtypeR</span><span style="color:#309">[C]</span><span style="color:#366">{</span><span style="color:#c30">\(</span><span style="color:#366">C</span><span style="color:#c30">\)</span><span style="color:#366">}{</span>dimensionless coefficient (e.g.<span style="color:#069;font-weight:bold">\ </span>for drag model)<span style="color:#366">}{</span>--<span style="color:#366">}{</span>1<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\nomtypeG</span><span style="color:#366">{</span><span style="color:#c30">\(</span><span style="color:#366"> </span><span style="color:#033">\varepsilon</span><span style="color:#366">_</span><span style="color:#f60">0</span><span style="color:#366"> </span><span style="color:#c30">\)</span><span style="color:#366">}{</span>vacuum permittivity<span style="color:#366">}{</span>F/L<span style="color:#366">}{</span><span style="color:#069;font-weight:bold">\si</span><span style="color:#366">{</span>F.m<span style="color:#366">^{</span>-1<span style="color:#366">}}}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\nomtypeD</span><span style="color:#366">{</span><span style="color:#c30">\(</span><span style="color:#366"> </span><span style="color:#033">\mathcal</span><span style="color:#366"> A_r </span><span style="color:#c30">\)</span><span style="color:#366">}{</span>Archimedes number<span style="color:#366">}{</span><span style="color:#c30">\(</span><span style="color:#033">\displaystyle</span><span style="color:#366">
+</span></span></span><span style="display:flex;"><span><span style="color:#366"></span><span style="color:#033">\frac</span><span style="color:#366">{d^</span><span style="color:#f60">3</span><span style="color:#366">g</span><span style="color:#033">\rho</span><span style="color:#366">_c</span><span style="color:#033">\abs</span><span style="color:#366">{</span><span style="color:#033">\Delta\rho</span><span style="color:#366">}}{</span><span style="color:#033">\mu</span><span style="color:#366">_c^</span><span style="color:#f60">2</span><span style="color:#366">} </span><span style="color:#555">=</span><span style="color:#366"> </span><span style="color:#033">\sqrt</span><span style="color:#366">{</span><span style="color:#033">\frac</span><span style="color:#366">{</span><span style="color:#033">\mathcal</span><span style="color:#366">
+</span></span></span><span style="display:flex;"><span><span style="color:#366">E_</span><span style="color:#f60">0</span><span style="color:#366">^</span><span style="color:#f60">3</span><span style="color:#366">}{</span><span style="color:#033">\mathcal</span><span style="color:#366"> M_</span><span style="color:#f60">0</span><span style="color:#366">}} </span><span style="color:#c30">\)</span><span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\nomtypeR</span><span style="color:#309">[CC]</span><span style="color:#366">{</span><span style="color:#c30">\(</span><span style="color:#033">\mathbf</span><span style="color:#366">{C}</span><span style="color:#c30">\)</span><span style="color:#366">}{</span>another dimensionless coefficient<span style="color:#366">}{</span>--<span style="color:#366">}{</span>1<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\nomtypeR</span><span style="color:#309">[A]</span><span style="color:#366">{</span><span style="color:#c30">\(</span><span style="color:#366">A</span><span style="color:#c30">\)</span><span style="color:#366">}{</span>a dimensionless coefficient<span style="color:#366">}{</span>--<span style="color:#366">}{</span>1<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\nomtypeR</span><span style="color:#309">[Z]</span><span style="color:#366">{</span><span style="color:#c30">\(</span><span style="color:#366">Z</span><span style="color:#c30">\)</span><span style="color:#366">}{</span>a dimensionless coefficient<span style="color:#366">}{</span>--<span style="color:#366">}{</span>1<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\printnomenclature</span><span style="color:#309">[6em]</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\end</span><span style="color:#366">{</span>document<span style="color:#366">}</span>
+</span></span></code></pre></div><h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://tex.stackexchange.com/questions/112884/how-to-achieve-nomenclature-entries-like-symbol-description-dimension-and-uni">How to achieve nomenclature entries like: symbol, Description, Dimension and unit, etc? - TeX - LaTeX Stack Exchange</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

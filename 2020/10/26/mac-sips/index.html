@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Mac图片处理工具sips - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Mac图片处理工具sips</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-10-26</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1简介">1.简介</h1>
+<p>Mac终端下，输入<code>sips</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sips -Z <span style="color:#f60">1400</span> input.jpeg -o output.jpg
+</span></span></code></pre></div><h1 id="2-帮助手册">2. 帮助手册</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sips - scriptable image processing system.
+</span></span><span style="display:flex;"><span>This tool is used to query or modify raster image files and ColorSync ICC profiles.
+</span></span><span style="display:flex;"><span>Its functionality can also be used through the <span style="color:#c30">&#34;Image Events&#34;</span> AppleScript suite.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Usages:
+</span></span><span style="display:flex;"><span>    sips <span style="color:#555">[</span>image-functions<span style="color:#555">]</span> imagefile ...
+</span></span><span style="display:flex;"><span>    sips <span style="color:#555">[</span>profile-functions<span style="color:#555">]</span> profile ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Profile query functions:
+</span></span><span style="display:flex;"><span>    -g, --getProperty key
+</span></span><span style="display:flex;"><span>    -X, --extractTag tag tagFile
+</span></span><span style="display:flex;"><span>        --verify
+</span></span><span style="display:flex;"><span>    -1, --oneLine
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Image query functions:
+</span></span><span style="display:flex;"><span>    -g, --getProperty key
+</span></span><span style="display:flex;"><span>    -x, --extractProfile profile
+</span></span><span style="display:flex;"><span>    -1, --oneLine
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Profile modification functions:
+</span></span><span style="display:flex;"><span>    -s, --setProperty key value
+</span></span><span style="display:flex;"><span>    -d, --deleteProperty key
+</span></span><span style="display:flex;"><span>        --deleteTag tag
+</span></span><span style="display:flex;"><span>        --copyTag srcTag dstTag
+</span></span><span style="display:flex;"><span>        --loadTag tag tagFile
+</span></span><span style="display:flex;"><span>        --repair
+</span></span><span style="display:flex;"><span>    -o, --out file-or-directory
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Image modification functions:
+</span></span><span style="display:flex;"><span>    -s, --setProperty key value
+</span></span><span style="display:flex;"><span>    -d, --deleteProperty key
+</span></span><span style="display:flex;"><span>    -e, --embedProfile profile
+</span></span><span style="display:flex;"><span>    -E, --embedProfileIfNone profile
+</span></span><span style="display:flex;"><span>    -m, --matchTo profile
+</span></span><span style="display:flex;"><span>    -M, --matchToWithIntent profile intent
+</span></span><span style="display:flex;"><span>        --deleteColorManagementProperties
+</span></span><span style="display:flex;"><span>    -r, --rotate degreesCW
+</span></span><span style="display:flex;"><span>    -f, --flip horizontal|vertical
+</span></span><span style="display:flex;"><span>    -c, --cropToHeightWidth pixelsH pixelsW
+</span></span><span style="display:flex;"><span>        --cropOffset offsetY offsetH
+</span></span><span style="display:flex;"><span>    -p, --padToHeightWidth pixelsH pixelsW
+</span></span><span style="display:flex;"><span>        --padColor hexcolor
+</span></span><span style="display:flex;"><span>    -z, --resampleHeightWidth pixelsH pixelsW
+</span></span><span style="display:flex;"><span>        --resampleWidth pixelsW
+</span></span><span style="display:flex;"><span>        --resampleHeight pixelsH
+</span></span><span style="display:flex;"><span>    -Z, --resampleHeightWidthMax pixelsWH
+</span></span><span style="display:flex;"><span>    -i, --addIcon
+</span></span><span style="display:flex;"><span>        --optimizeColorForSharing
+</span></span><span style="display:flex;"><span>    -o, --out file-or-directory
+</span></span><span style="display:flex;"><span>    -j, --js file
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Other functions:
+</span></span><span style="display:flex;"><span>        --debug           Enable debugging output
+</span></span><span style="display:flex;"><span>    -h, --help            Show <span style="color:#366">help</span>
+</span></span><span style="display:flex;"><span>    -H, --helpProperties  Show <span style="color:#366">help</span> <span style="color:#069;font-weight:bold">for</span> properties
+</span></span><span style="display:flex;"><span>        --man             Generate man pages
+</span></span><span style="display:flex;"><span>    -v, --version         Show the version
+</span></span><span style="display:flex;"><span>        --formats         Show the read/write formats
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

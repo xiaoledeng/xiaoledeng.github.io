@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS系统32G显存 Claude Code 用本地大模型的实测速度对比 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS系统32G显存 Claude Code 用本地大模型的实测速度对比</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2026-05-11</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ai/">#AI</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h2 id="1-引言">1. 引言</h2>
+<p>在 macOS 系统，配置为 32G 显存（可用 23.0 GB），利用 <a href="https://omlx.ai">oMLX</a> 做本地大模型管理端，在 Claude Code 里问「你好」，给出本地大模型的实测响应速度对比。</p>
+<h2 id="2-实测速度对比">2. 实测速度对比</h2>
+<table>
+  <thead>
+      <tr>
+          <th>模型</th>
+          <th>响应速度</th>
+          <th>模型大小</th>
+          <th>提示词处理平均速度</th>
+          <th>Token 生成平均速度</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Qwen3.5-27B-4bit</td>
+          <td>3m 52s</td>
+          <td>14.98 GB</td>
+          <td>103.6 tok/s</td>
+          <td>15.5 tok/s</td>
+      </tr>
+      <tr>
+          <td>Qwen3.5-9B-MLX-4bit</td>
+          <td>1m 5s</td>
+          <td>5.57 GB</td>
+          <td>383.7 tok/s</td>
+          <td>46.8 tok/s</td>
+      </tr>
+      <tr>
+          <td>Qwen3.5-9B-OptiQ-4bit</td>
+          <td>1m 4s</td>
+          <td>6.63 GB</td>
+          <td>384.2 tok/s</td>
+          <td>36.7 tok/s</td>
+      </tr>
+      <tr>
+          <td>DeepSeek-R1-0528-Qwen3-8B-MLX-4bit</td>
+          <td>31s</td>
+          <td>4.30 GB</td>
+          <td>369.9 tok/s</td>
+          <td>44.8 tok/s</td>
+      </tr>
+      <tr>
+          <td>Qwen3.5-4B-MLX-4bit</td>
+          <td>38s</td>
+          <td>2.85 GB</td>
+          <td>670.6 tok/s</td>
+          <td>66.1 tok/s</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="3-建议">3. 建议</h2>
+<p>27B 直接排除，本地用 27B 太慢（3分52秒响应），日常写代码等不起。</p>
+<p>推荐排序：</p>
+<table>
+  <thead>
+      <tr>
+          <th>排名</th>
+          <th>模型</th>
+          <th>理由</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>Qwen3.5-9B-MLX-4bit</td>
+          <td>性价比之王：1分4秒响应，384 tok/s，token 生成更快</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>DeepSeek-R1-0528-Qwen3-8B-MLX-4bit</td>
+          <td>31秒响应，推理能力强，要复杂代码时切它</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Qwen3.5-4B-MLX-4bit</td>
+          <td>38秒+最快token生成，小脚本/简单任务秒回</td>
+      </tr>
+  </tbody>
+</table>
+<p>Claude Code三种模式的实际建议：</p>
+<ul>
+<li>Sonnet：均衡，代码/分析/推理首选。主模型用 Qwen3.5-9B-MLX-4bit，又够用又够快。</li>
+<li>Opus：最强推理，复杂问题/深度思考时用，又慢又贵。遇到复杂推理切 DeepSeek R1 4bit。</li>
+<li>Haiku：快、便宜，日常问答/格式化任务。小任务 用 Qwen3.5-4B-MLX-4bit。</li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

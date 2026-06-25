@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu默认进入命令行模式 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu默认进入命令行模式</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-26</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-引言">1. 引言</h1>
+<p>如果保持 Ubuntu 长期运行，默认进入命令行模式（command-line interface，CLI），有助于避免各种弹窗更新通知或桌面崩溃，而且能够节省开启桌面的资源。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<p>1.查看当前默认进入界面，终端输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl get-default
+</span></span></code></pre></div><p>显示：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>graphical.target
+</span></span></code></pre></div><p>即：图形界面。</p>
+<p>2.关闭用户图形界面，使用字符模式登录：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl set-default multi-user.target
+</span></span></code></pre></div><p>显示：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#555">====</span> AUTHENTICATING FOR org.freedesktop.systemd1.manage-unit-files <span style="color:#555">===</span>
+</span></span><span style="display:flex;"><span>Authentication is required to manage system service or unit files.
+</span></span><span style="display:flex;"><span>Authenticating as: name,,, <span style="color:#555">(</span>name<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Password:
+</span></span><span style="display:flex;"><span><span style="color:#555">====</span> AUTHENTICATION <span style="color:#033">COMPLETE</span> <span style="color:#555">===</span>
+</span></span><span style="display:flex;"><span>Created symlink /etc/systemd/system/default.target → /lib/systemd/system/multi-user.target.
+</span></span><span style="display:flex;"><span><span style="color:#555">====</span> AUTHENTICATING FOR org.freedesktop.systemd1.reload-daemon <span style="color:#555">===</span>
+</span></span><span style="display:flex;"><span>Authentication is required to reload the systemd state.
+</span></span><span style="display:flex;"><span>Authenticating as: name,,, <span style="color:#555">(</span>name<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Password:
+</span></span><span style="display:flex;"><span><span style="color:#555">====</span> AUTHENTICATION <span style="color:#033">COMPLETE</span> <span style="color:#555">===</span>
+</span></span></code></pre></div><p>3.再次查看当前默认进入界面，终端输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl get-default
+</span></span></code></pre></div><p>显示：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>multi-user.target
+</span></span></code></pre></div><p>即：已经完成设置。</p>
+<h1 id="3快速进入图形模式的命令">3.快速进入图形模式的命令</h1>
+<p>一种方法：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#当前立即进入字符模式</span>
+</span></span><span style="display:flex;"><span>systemctl isolate multi-user.target
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#当前立即进入图形模式</span>
+</span></span><span style="display:flex;"><span>systemctl isolate graphical.target
+</span></span></code></pre></div><p>另一种方法：<code>startx</code>，进入图形模式后，点击右上角 <code>Log Out</code>，可退出 X11 图形界面。</p>
+<h1 id="4-关于图形模式">4. 关于图形模式</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#555">====================================</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 显示管理器启动、停止、查看状态</span>
+</span></span><span style="display:flex;"><span>sudo service gdm3 start
+</span></span><span style="display:flex;"><span>sudo service gdm3 stop
+</span></span><span style="display:flex;"><span>sudo service gdm3 <span style="color:#033">status</span>
+</span></span><span style="display:flex;"><span><span style="color:#555">====================================</span>
+</span></span><span style="display:flex;"><span>较新的gdm3使用最小版本的gnome-shell，并提供与GNOME3会话相同的外观。而gdm是GNOME显示管理器。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 安装gdm3</span>
+</span></span><span style="display:flex;"><span>sudo apt install gdm3
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 卸载gdm3</span>
+</span></span><span style="display:flex;"><span>sudo apt remove <span style="color:#033">gdm3</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#555">====================================</span>
+</span></span><span style="display:flex;"><span>LightDM是Canonical的轻量级的、可配置的、显示管理器解决方案，它提供各种主题。
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 安装lightdm</span>
+</span></span><span style="display:flex;"><span>sudo apt install lightdm
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 卸载lightdm</span>
+</span></span><span style="display:flex;"><span>sudo apt remove <span style="color:#033">lightdm</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#555">====================================</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 多显示模式切换</span>
+</span></span><span style="display:flex;"><span>sudo dpkg-reconfigure gdm3
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 或</span>
+</span></span><span style="display:flex;"><span>sudo dpkg-reconfigure <span style="color:#033">lightdm</span>
+</span></span><span style="display:flex;"><span><span style="color:#555">====================================</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ubuntu安装gnome桌面
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 可在命令后面添加 --no-install-recommends 可选参数以避免非必要组件的安装，节省安装时间</span>
+</span></span><span style="display:flex;"><span>sudo apt install ubuntu-desktop gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#555">====================================</span>
+</span></span></code></pre></div><h1 id="5-延伸阅读">5. 延伸阅读</h1>
+<ol>
+<li><a href="https://blog.csdn.net/sedbz/article/details/129173024">ubuntu20.04 图形界面和CLI模式开启与关闭_ubuntu 启动图形界面命令-CSDN博客</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

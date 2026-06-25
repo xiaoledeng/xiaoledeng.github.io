@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>PyQtGraph: Python科研必备数据可视化作图 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">PyQtGraph: Python科研必备数据可视化作图</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-25</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/software/">#Software</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1简介">1.简介</h1>
+<blockquote>
+<p>PyQtGraph是一个纯python的图形和GUI库，构建于PyQt4/PySide和numpy之上，它主要用于数学/科学/工程应用方面。——<a href="https://mp.weixin.qq.com/s/UId14Ea1PpRnCkqPzNAgPQ">推荐一款科研必备的Python数据可视化神器——PyQtGraph</a></p>
+</blockquote>
+<h1 id="2安装">2.安装</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pip install pyqtgraph
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>conda install -c conda-forge pyqtgraph
+</span></span></code></pre></div><h1 id="3学习资料">3.学习资料</h1>
+<ul>
+<li>官网：<a href="http://www.pyqtgraph.org/">PyQtGraph - Scientific Graphics and GUI Library for Python</a></li>
+<li>GitHub：<a href="https://github.com/pyqtgraph/pyqtgraph">pyqtgraph/pyqtgraph: Fast data visualization and GUI tools for scientific / engineering applications</a></li>
+<li>Document：<a href="https://pyqtgraph.readthedocs.io/en/latest/">Welcome to the documentation for pyqtgraph — pyqtgraph 0.11.0 documentation</a></li>
+</ul>
+<h1 id="4例子">4.例子</h1>
+<p>终端下直接输入，弹出运行实例的界面：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>python -m pyqtgraph.examples
+</span></span></code></pre></div><h1 id="5comparison-to-other-python-graphics-packages">5.Comparison to other python graphics packages</h1>
+<p>This part is from <a href="http://www.pyqtgraph.org/">PyQtGraph - Scientific Graphics and GUI Library for Python</a>.</p>
+<blockquote>
+<p><strong>Matplotlib</strong> is more or less the de-facto standard plotting library for python. If you are starting a new project and do not need any of the features specifically provided by pyqtgraph, you should start with matplotlib. It is much more mature, has an enormous user community, and produces very nice publication-quality graphics. Reasons you might want to use pyqtgraph instead:</p>
+</blockquote>
+<blockquote>
+<p>1.Speed. If you are doing anything requiring rapid plot updates, video, or realtime interactivity, matplotlib is not the best choice. This is (in my opinion) matplotlib&rsquo;s greatest weakness.</p>
+</blockquote>
+<blockquote>
+<p>2.Portability / ease of installation. PyQtGraph is a pure-python package, which means that it runs on virtually every platform supported by numpy and PyQt, no compiling required. If you require portability in your application, this can make your life a lot easier.</p>
+</blockquote>
+<blockquote>
+<p>3.Many other features&ndash;pyqtgraph is much more than a plotting library; it strives to cover many aspects of science/engineering application development with more advanced features like its ImageView and ScatterPlotWidget analysis tools, ROI-based data slicing, parameter trees, flowcharts, multiprocessing, and more.</p>
+<p><strong>VisPy</strong> is a new 2D/3D visualization library based on OpenGL that is developed as a collaboration between the authors of PyQtGraph, VisVis, Galry, and Glumpy. It is presently in early development and has a narrower scope than PyQtGraph&ndash;it will focus on visualization without the GUI toolkit features provided by PyQtGraph. In the long term, we hope VisPy will be able to replace Qt as the rendering engine for 2D graphics, and replace the pyqtgraph.opengl 3D system entirely. More about VisPy here.</p>
+<p><strong>PyQwt</strong> has a very nice set of features and is fast enough for realtime work. Its main drawback is that it is currently unmaintained and can be difficult to get working on a variety of platforms. Hopefully in the future it may find a new maintainer, but until then it may be best to avoid PyQwt (the original PyQwt maintainer is currently recommending to use pyqtgraph instead; check their mailing lists for updates). Like matplotlib, PyQwt lacks some of the more advanced features of pyqtgraph.
+<strong>Chaco</strong> is a very interesting project&ndash;nice graphics, good speed, and actively developed. Like PyQwt, however, Chaco can be challenging to install on a wide variety of platforms and lacks some of pyqtgraph&rsquo;s more advanced features (although pyqtgraph certainly lacks many of Chaco&rsquo;s features as well).
+<strong>GuiQwt</strong> is an interesting project with many advanced features similar to pyqtgraph. It is presently based on PyQwt and thus comes with some of its drawbacks, although there appear to be plans to change this in the future.</p>
+</blockquote>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

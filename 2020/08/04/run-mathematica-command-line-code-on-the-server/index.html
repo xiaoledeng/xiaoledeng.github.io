@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>服务器上运行Mathematica命令行代码 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">服务器上运行Mathematica命令行代码</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-08-04</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/mathematica/">#Mathematica</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>标题可以分为两个问题：</p>
+<ol>
+<li>如何在服务器上面运行Mathematica命令行代码？</li>
+<li>如何把nb文件转换成txt文件？</li>
+</ol>
+<h1 id="1服务器上运行mathematica命令行代码">1.服务器上运行Mathematica命令行代码</h1>
+<p>关键命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nohup math &lt;test1.txt&gt; test1.out &amp;
+</span></span></code></pre></div><p>解释：</p>
+<ul>
+<li>nohup和&amp;为服务器后台运行命令；</li>
+<li>math为Mathematica调用的命令行工具；</li>
+<li>test1.txt为输入的nb文件的txt格式文件；</li>
+<li>test1.out为输出的记录文件；</li>
+</ul>
+<p>关键点：如何把nb文件转换成txt文件。</p>
+<h1 id="2nb文件转换为txt文件">2.nb文件转换为txt文件</h1>
+<p>关键步骤如下：</p>
+<ol>
+<li>在Mathematica中，先选中所有Cell单元——点击一个Cell，键盘输入Ctrl+A选中所有Cell；</li>
+<li>执行菜单命令 &ldquo;Cell -&gt; Convert to -&gt; Input Form&rdquo; ，将所有的Cell转换成标准输入形式；</li>
+<li>执行菜单命令 &ldquo;File -&gt; Save As &hellip;&rdquo; ，另存为 txt 格式；</li>
+</ol>
+<h1 id="3注意去掉多余的内容">3.注意去掉多余的内容</h1>
+<p>在后续的Mathematica版本中，可能会包含：<code>In[]:=</code>和<code>Out[]=</code>格式，注意打开txt文件，进行全文替换删除操作。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

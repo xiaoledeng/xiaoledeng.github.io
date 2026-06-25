@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Github的blog上传password authentication出错的解决方案 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Github的blog上传password authentication出错的解决方案</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-08-20</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="问题">问题</h1>
+<blockquote>
+<p>remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.</p>
+<p>remote: Please see <a href="https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/">https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/</a> for more information.</p>
+<p>fatal: unable to access &lsquo;<a href="https://github.com/xiaoledeng/xiaoledeng.github.io.git/'">https://github.com/xiaoledeng/xiaoledeng.github.io.git/'</a>: The requested URL returned error: 403</p>
+</blockquote>
+<h1 id="解决方式">解决方式</h1>
+<p>解释：由于Github采用<code>personal access token</code>的方式，所以需要修改命令行的密码验证方式。</p>
+<p>主要思想是：利用<code>SSH key</code>方式进行验证。</p>
+<h2 id="1-生成ssh">1. 生成SSH</h2>
+<ul>
+<li>在终端输入：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ssh-keygen -t ed25519 -C <span style="color:#c30">&#34;your_email@example.com&#34;</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Generating public/private ed25519 key pair.
+</span></span><span style="display:flex;"><span>Enter file in which to save the key <span style="color:#555">(</span>/Users/name/.ssh/id_ed25519<span style="color:#555">)</span>:
+</span></span><span style="display:flex;"><span>Enter passphrase <span style="color:#555">(</span>empty <span style="color:#069;font-weight:bold">for</span> no passphrase<span style="color:#555">)</span>:
+</span></span><span style="display:flex;"><span>Enter same passphrase again:
+</span></span><span style="display:flex;"><span>Your identification has been saved in /Users/name/.ssh/id_ed25519.
+</span></span><span style="display:flex;"><span>Your public key has been saved in /Users/name/.ssh/id_ed25519.pub.
+</span></span><span style="display:flex;"><span>The key fingerprint is:
+</span></span><span style="display:flex;"><span>SHA256:/QHOD/0oNoakMV2xSOTlOtdEh3INPsRttg your_email@example.com
+</span></span><span style="display:flex;"><span>The key<span style="color:#a00;background-color:#faa">&#39;</span>s randomart image is:
+</span></span><span style="display:flex;"><span>+--<span style="color:#555">[</span>ED25519 256<span style="color:#555">]</span>--+
+</span></span><span style="display:flex;"><span>|        .<span style="color:#555">=</span>+<span style="color:#555">=</span>.+.  |
+</span></span><span style="display:flex;"><span>|       o*.o<span style="color:#555">=</span>*.   |
+</span></span><span style="display:flex;"><span>|      .o<span style="color:#555">=</span>oB.o    |
+</span></span><span style="display:flex;"><span>|       +.<span style="color:#555">=</span> B .   |
+</span></span><span style="display:flex;"><span>|    . . S O B    |
+</span></span><span style="display:flex;"><span>|     + . + &amp; <span style="color:#555">=</span>   |
+</span></span><span style="display:flex;"><span>|      o   * E    |
+</span></span><span style="display:flex;"><span>|         . o .   |
+</span></span><span style="display:flex;"><span>|          . .    |
+</span></span><span style="display:flex;"><span>+----<span style="color:#555">[</span>SHA256<span style="color:#555">]</span>-----+
+</span></span></code></pre></div><p><code>your_email@example.com</code> 是 GitHub email address。</p>
+<ul>
+<li>输入密码</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt; Enter passphrase <span style="color:#555">(</span>empty <span style="color:#069;font-weight:bold">for</span> no passphrase<span style="color:#555">)</span>: <span style="color:#555">[</span>Type a passphrase<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>&gt; Enter same passphrase again: <span style="color:#555">[</span>Type passphrase again<span style="color:#555">]</span>
+</span></span></code></pre></div><h2 id="2-把ssh加入到ssh-agent">2. 把SSH加入到ssh-agent</h2>
+<ul>
+<li>启动ssh-agent：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#366">eval</span> <span style="color:#c30">&#34;</span><span style="color:#069;font-weight:bold">$(</span>ssh-agent -s<span style="color:#069;font-weight:bold">)</span><span style="color:#c30">&#34;</span>
+</span></span><span style="display:flex;"><span>&gt; Agent pid <span style="color:#f60">59566</span>
+</span></span></code></pre></div><ul>
+<li>生成文件：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ touch ~/.ssh/config
+</span></span></code></pre></div><ul>
+<li>打开文件：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ open ~/.ssh/config
+</span></span></code></pre></div><ul>
+<li>加入内容：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Host *
+</span></span><span style="display:flex;"><span>  AddKeysToAgent yes
+</span></span><span style="display:flex;"><span>  UseKeychain yes
+</span></span><span style="display:flex;"><span>  IdentityFile ~/.ssh/id_ed25519
+</span></span></code></pre></div><ul>
+<li>储存keychain：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ssh-add -K ~/.ssh/id_ed25519
+</span></span></code></pre></div><h2 id="3-把ssh-key加入到github账户">3. 把SSH key加入到GitHub账户</h2>
+<ul>
+<li>复制SSH key</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pbcopy &lt; ~/.ssh/id_ed25519.pub
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Copies the contents of the id_ed25519.pub file to your clipboard</span>
+</span></span></code></pre></div><ul>
+<li>打开 <a href="https://github.com/settings/keys">https://github.com/settings/keys</a> 网站 —— <code>SSH and GPG keys</code> —— <code>New SSH key</code> —— 黏贴 —— <code>Add SSH key</code></li>
+</ul>
+<h2 id="4-把remote-urls从https改为ssh">4. 把remote URLs从HTTPS改为SSH</h2>
+<ul>
+<li>
+<p>打开终端，切换到工作目录</p>
+</li>
+<li>
+<p>查看已有remote：</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git remote -v
+</span></span><span style="display:flex;"><span>&gt; origin  https://github.com/USERNAME/REPOSITORY.git <span style="color:#555">(</span>fetch<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>&gt; origin  https://github.com/USERNAME/REPOSITORY.git <span style="color:#555">(</span>push<span style="color:#555">)</span>
+</span></span></code></pre></div><ul>
+<li>从HTTPS改为SSH：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git remote set-url origin git@github.com:USERNAME/REPOSITORY.git
+</span></span></code></pre></div><ul>
+<li>检验是否改了：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ git remote -v
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Verify new remote URL</span>
+</span></span><span style="display:flex;"><span>&gt; origin  git@github.com:USERNAME/REPOSITORY.git <span style="color:#555">(</span>fetch<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>&gt; origin  git@github.com:USERNAME/REPOSITORY.git <span style="color:#555">(</span>push<span style="color:#555">)</span>
+</span></span></code></pre></div><h2 id="5-git上传到命令">5. Git上传到命令</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Add changes to git.</span>
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>git add -A
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># Commit changes.</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">msg</span><span style="color:#555">=</span><span style="color:#c30">&#34;building site `date`&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">if</span> <span style="color:#555">[</span> <span style="color:#033">$#</span> -eq <span style="color:#f60">1</span> <span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">then</span> <span style="color:#033">msg</span><span style="color:#555">=</span><span style="color:#c30">&#34;</span><span style="color:#033">$1</span><span style="color:#c30">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span>git commit -m <span style="color:#c30">&#34;</span><span style="color:#033">$msg</span><span style="color:#c30">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># SSH</span>
+</span></span><span style="display:flex;"><span>git remote add origin git@github.com:xiaoledeng/xiaoledeng.github.io.git
+</span></span><span style="display:flex;"><span>git branch -M main
+</span></span><span style="display:flex;"><span>git push origin main --force
+</span></span></code></pre></div><h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">Generating a new SSH key and adding it to the ssh-agent - GitHub Docs</a></li>
+<li><a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Adding a new SSH key to your GitHub account - GitHub Docs</a></li>
+<li><a href="https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#switching-remote-urls-from-https-to-ssh">Managing remote repositories - GitHub Docs</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

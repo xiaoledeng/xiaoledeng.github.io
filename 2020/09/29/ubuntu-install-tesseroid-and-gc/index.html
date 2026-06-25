@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu installs Tesseroid1.2.1 and Gravitational Curvatures of Tesseroids - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu installs Tesseroid1.2.1 and Gravitational Curvatures of Tesseroids</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-09-29</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/researchsoftware/">#Researchsoftware</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/geodesy/">#Geodesy</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-download">1. Download</h1>
+<p>Dowload the files:</p>
+<ul>
+<li><a href="https://github.com/leouieda/tesseroids/releases/tag/v1.2.1">Release v1.2.1 · leouieda/tesseroids</a></li>
+<li><a href="https://github.com/xiaoledeng/Gravitational_Curvatures_of_Tesseroids">xiaoledeng/Gravitational_Curvatures_of_Tesseroids</a></li>
+</ul>
+<p>The references are:</p>
+<blockquote>
+<p>Uieda, L., V. Barbosa, and C. Braitenberg (2016), <em>Tesseroids: Forward-modeling gravitational fields in spherical coordinates</em>, <em><strong>GEOPHYSICS</strong></em>, F41-F48, doi:<a href="http://dx.doi.org/10.1190/geo2015-0204.1">10.1190/geo2015-0204.1</a>.</p>
+<p>Deng, X.L., Shen, W.B (2019), <em>Topographic effects up to Gravitational Curvatures of tesseroids: A case study in China</em>,  <em><strong>Studia Geophysica et Geodaetica</strong></em>, 63(3), 345-366, doi:<a href="http://dx.doi.org/10.1007/s11200-018-0772-4">10.1007/s11200-018-0772-4</a>.</p>
+</blockquote>
+<h1 id="2-install">2. Install</h1>
+<ol>
+<li>Unzip and copy</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>unzip tesseroids-1.2.1.zip
+</span></span><span style="display:flex;"><span>unzip Gravitational_Curvatures_of_Tesseroids-master.zip
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#366">cd</span> Gravitational_Curvatures_of_Tesseroids-master/
+</span></span><span style="display:flex;"><span>cp -r src/ ../tesseroids-1.2.1
+</span></span><span style="display:flex;"><span>cp SConstruct ../tesseroids-1.2.1
+</span></span></code></pre></div><ol start="2">
+<li>Install python requirements</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">cd</span> ../tesseroids-1.2.1/
+</span></span><span style="display:flex;"><span>cat python-requirements.txt
+</span></span></code></pre></div><p>It shows:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>matplotlib
+</span></span><span style="display:flex;"><span>basemap
+</span></span><span style="display:flex;"><span>numpy
+</span></span><span style="display:flex;"><span>sphinx
+</span></span><span style="display:flex;"><span>scons
+</span></span></code></pre></div><p>Using <code>conda</code> to install python requirements:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda install matplotlib
+</span></span><span style="display:flex;"><span>conda install basemap
+</span></span><span style="display:flex;"><span>conda install numpy
+</span></span><span style="display:flex;"><span>conda install sphinx
+</span></span><span style="display:flex;"><span>conda install scons
+</span></span></code></pre></div><p>The <a href="https://www.anaconda.com/products/individual">Anaconda3</a> should be installed firstly.</p>
+<h1 id="4-scons-compile">4. scons compile</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>scons
+</span></span></code></pre></div><p>After the compilation is successful, you can see the <code>bin</code> directory.</p>
+<p>Original <code>tesseroids-1.2.1/SConstruct</code> will have the following error:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>File <span style="color:#c30">&#34;/home/shalom/tesseroids-1.2.1/SConstruct&#34;</span>, line <span style="color:#f60">22</span>
+</span></span><span style="display:flex;"><span>    print <span style="color:#c30">&#34;Error: unknown mode &#39;%s&#39;&#34;</span> % <span style="color:#555">(</span>mode<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>          ^
+</span></span><span style="display:flex;"><span>SyntaxError: invalid syntax
+</span></span></code></pre></div><p>This error is due to that <code>tesseroids1.2.1</code> uses the output of <code>python2</code>, which needs to be changed to the output of <code>python3</code>.</p>
+<p>On lines 22 and 25 of the <code>SConstruct</code> file, the codes change to:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>   print<span style="color:#555">(</span><span style="color:#c30">&#34;Error: unknown mode &#39;%s&#39;&#34;</span> % mode<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print<span style="color:#555">(</span><span style="color:#c30">&#39;**** Compiling in &#39;</span> + mode + <span style="color:#c30">&#39; mode...&#39;</span><span style="color:#555">)</span>   
+</span></span></code></pre></div><p>After modification, <code>scons</code> can be compiled successfully.</p>
+<h1 id="4-adding-path-environment">4. Adding PATH environment</h1>
+<p>It needs to add the <code>bin</code> directory to the environment variable of the system.</p>
+<p>Windows: <a href="http://www.computerhope.com/issues/ch000549.htm">adding the bin folder to your PATH environment variable</a></p>
+<p>On Ubuntu, open <code>~/.bashrc</code> by:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gedit ~/.bashrc
+</span></span></code></pre></div><p>Add the following command:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">export</span> <span style="color:#033">PATH</span><span style="color:#555">=</span><span style="color:#c30">&#34;/home/shalom/tesseroids-1.2.1/bin:</span><span style="color:#033">$PATH</span><span style="color:#c30">&#34;</span>
+</span></span></code></pre></div><p>Source it by:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">source</span> ~/.bashrc
+</span></span></code></pre></div><h1 id="5-test">5. Test</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tessgzzz -h
+</span></span></code></pre></div><p>shows</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tessgzzz -h
+</span></span><span style="display:flex;"><span>Usage: tessgzzz MODELFILE <span style="color:#555">[</span>OPTIONS<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Calculate the gzzz component due to a tesseroid model on
+</span></span><span style="display:flex;"><span>specified observation points.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Values are calculated in the <span style="color:#366">local</span> coordinate system of the
+</span></span><span style="display:flex;"><span>observation point: x-&gt; North  y-&gt; East  z-&gt; Up <span style="color:#555">(</span>away from the
+</span></span><span style="display:flex;"><span>center of the Earth<span style="color:#555">)</span>.
+</span></span><span style="display:flex;"><span>In order to maintain mainstream convention, component gz is
+</span></span><span style="display:flex;"><span>calculated with z-&gt; Down.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>All units either SI or degrees!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The computation of the gravitational effect of the tesseroids
+</span></span><span style="display:flex;"><span>is <span style="color:#069;font-weight:bold">done</span> using the Gauss-Legendre Quadrature <span style="color:#555">(</span>GLQ<span style="color:#555">)</span> numerical
+</span></span><span style="display:flex;"><span>integration method.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>WARNING: Avoid computing directly on top or inside the
+</span></span><span style="display:flex;"><span>         tesseroids! This will <span style="color:#366">break</span> the GLQ and the formulas!
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Input:
+</span></span><span style="display:flex;"><span>  Computation points passed through standard input <span style="color:#555">(</span>stdin<span style="color:#555">)</span>.
+</span></span><span style="display:flex;"><span>  Reads <span style="color:#f60">3</span> or more values per line and inteprets the first <span style="color:#f60">3</span> as:
+</span></span><span style="display:flex;"><span>    longitude, latitude and height
+</span></span><span style="display:flex;"><span>  of a computation points. Height should be in meters.
+</span></span><span style="display:flex;"><span>  Othervalues in the line are ignored.
+</span></span><span style="display:flex;"><span>  Lines that start with <span style="color:#09f;font-style:italic"># are ignored as comments.</span>
+</span></span><span style="display:flex;"><span>  Lines should be no longer than <span style="color:#f60">10000</span> <span style="color:#555">(</span>ten thousand<span style="color:#555">)</span> characters.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Output:
+</span></span><span style="display:flex;"><span>  Printed to standard output <span style="color:#555">(</span>stdout<span style="color:#555">)</span> in the form:
+</span></span><span style="display:flex;"><span>    lon lat height ... result
+</span></span><span style="display:flex;"><span>  ... represents any values that were <span style="color:#366">read</span> from input and
+</span></span><span style="display:flex;"><span>  ignored. In other words, the result is appended to the last
+</span></span><span style="display:flex;"><span>  column of the input. Use this to pipe tessg* programs
+</span></span><span style="display:flex;"><span>  together.
+</span></span><span style="display:flex;"><span>  * Comments about the provenance of the data are inserted into
+</span></span><span style="display:flex;"><span>    the top of the output
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>MODELFILE: File containing the tesseroid model
+</span></span><span style="display:flex;"><span>  * Each tesseroid is specified by the values of its borders
+</span></span><span style="display:flex;"><span>    and Density
+</span></span><span style="display:flex;"><span>  * The file should contain one tesseroid per line
+</span></span><span style="display:flex;"><span>  * Each line should have the following column format:
+</span></span><span style="display:flex;"><span>      West East South North Top Bottom Density
+</span></span><span style="display:flex;"><span>  * Top and Bottom should be <span style="color:#366">read</span> as <span style="color:#c30">&#39;height to top&#39;</span> and 
+</span></span><span style="display:flex;"><span>    <span style="color:#c30">&#39;height to bottom&#39;</span> from the mean Earth radius. Use negative
+</span></span><span style="display:flex;"><span>    values <span style="color:#069;font-weight:bold">if</span> bellow the surface, <span style="color:#069;font-weight:bold">for</span> example when modeling
+</span></span><span style="display:flex;"><span>    deep structures, and positive <span style="color:#069;font-weight:bold">if</span> above the surface, <span style="color:#069;font-weight:bold">for</span>
+</span></span><span style="display:flex;"><span>    example when modeling topography.
+</span></span><span style="display:flex;"><span>  * If a line starts with <span style="color:#09f;font-style:italic"># it will be considered a comment and</span>
+</span></span><span style="display:flex;"><span>    will be ignored.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Options:
+</span></span><span style="display:flex;"><span>  -a             Disable the automatic subdividing of
+</span></span><span style="display:flex;"><span>                 tesseroids. Subdividing is <span style="color:#069;font-weight:bold">done</span> to ensure the
+</span></span><span style="display:flex;"><span>                 GLQ gives accurate results. ONLY USE THIS
+</span></span><span style="display:flex;"><span>                 OPTION IF YOU KNOW WHAT YOU ARE DOING!
+</span></span><span style="display:flex;"><span>  -tRATIO        Use a custom distance-size ratio <span style="color:#069;font-weight:bold">for</span> the
+</span></span><span style="display:flex;"><span>                 automatic subdivision of tesseroids. ONLY USE
+</span></span><span style="display:flex;"><span>                 THIS OPTION IF YOU KNOW WHAT YOU ARE DOING!
+</span></span><span style="display:flex;"><span>  -oOLON/OLAT/OR GLQ order to use in the longitudinal,
+</span></span><span style="display:flex;"><span>                 latitudinal and radial integrations,
+</span></span><span style="display:flex;"><span>                 respectively. Defaults to 2/2/2.
+</span></span><span style="display:flex;"><span>                 Subdividing of tesseroids works best with the
+</span></span><span style="display:flex;"><span>                 default order.
+</span></span><span style="display:flex;"><span>  -h             Print instructions.
+</span></span><span style="display:flex;"><span>  --version      Print version and license information.
+</span></span><span style="display:flex;"><span>  -v             Enable verbose printing to stderr.
+</span></span><span style="display:flex;"><span>  -lFILENAME     Print log messages to file FILENAME.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Part of the Tesseroids package <span style="color:#555">(</span>v1.2.1<span style="color:#555">)</span>.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Project site: &lt;http://www.leouieda.com/tesseroids/&gt;
+</span></span><span style="display:flex;"><span>Report bugs at: &lt;https://github.com/leouieda/tesseroids/issues&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Copyright <span style="color:#555">(</span>C<span style="color:#555">)</span> 2011-2020, Leonardo Uieda.
+</span></span><span style="display:flex;"><span>This software is distributed under the terms of the BSD License:
+</span></span><span style="display:flex;"><span>&lt;http://tesseroids.readthedocs.org/en/latest/license.html&gt;
+</span></span><span style="display:flex;"><span>This is free software: you are free to change and redistribute it.
+</span></span><span style="display:flex;"><span>There is NO WARRANTY, to the extent permitted by law.
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

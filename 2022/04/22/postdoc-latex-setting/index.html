@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>博士后出站报告LaTeX模版的编译环境配置 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">博士后出站报告LaTeX模版的编译环境配置</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-04-22</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/windows/">#Windows</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>最新消息：最近<a href="http://www.ctex.org/packagepostdocrep">博士后工作报告宏包:CTEX</a>的v0.1g 2022/05/14版本—<a href="http://www.ctex.org/PackagePostDocRep/files.xml?action=download&amp;file=PostDocRep-1g.zip">PostDocRep-1g.zip</a>，可以直接利用<code>XeTeX</code>（包括在macOS系统）编译成功，不再需要下面具体步骤的设置（仅对PostDocRep-1e版本）。</p>
+<h1 id="1-编译环境配置的具体步骤">1. 编译环境配置的具体步骤</h1>
+<ol>
+<li>在Windows系统下，下载并安装CTEX，见：<a href="http://www.ctex.org/CTeXDownload">下载中心:CTEX</a>；</li>
+<li>下载并安装<code>TeXstudio</code>软件，见：<a href="http://texstudio.sourceforge.net/">TeXstudio - A LaTeX editor</a>，注意：Windows 7/8/10 (32 bit)的版本是<a href="https://github.com/texstudio-org/texstudio/releases/tag/2.12.22">Release 2.12.22 · texstudio-org/texstudio</a></li>
+<li>在<a href="http://www.ctex.org/packagepostdocrep">博士后工作报告宏包:CTEX</a>下载<a href="http://www.ctex.org/PackagePostDocRep/files.xml?action=download&amp;file=PostDocRep-1e.zip">PostDocRep-1e.zip</a>文件，解压；</li>
+<li>利用<code>TeXstudio</code>打开<code>template文件夹</code>中的<code>template.tex</code>文件，设置 <code>GBK</code> 编码，步骤依次为：<code>Options</code>—<code>Configure TeXstudio</code>—<code>Editor</code>—<code>Default Font Encoding</code>—<code>GBK</code>，不然就是乱码，并且出现<code>Package CJK Error: Invalid character code</code>的问题。</li>
+<li>在<code>Options</code>—<code>Configure TeXstudio</code>—<code>Build</code>设置<code>Default compiler</code>，编译用<code>PdfLaTeX</code>—<code>BibTeX</code>—<code>PdfLaTeX</code>—<code>PdfLaTeX</code>的顺序。</li>
+</ol>
+<p><code>template.tex</code>文件有以下修改：</p>
+<ul>
+<li>\documentclass[dvipdfm]{PostDocRep} 改为 \documentclass[notypeinfo,pdftex]{PostDocRep}</li>
+</ul>
+<p><code>PostDocRep.cls</code>文件有以下修改：</p>
+<ul>
+<li>\RequirePackage[dvipdfm]{hyperref} 改为 \RequirePackage{hyperref}</li>
+<li>\CTEXunderline 改为 \underline，不然下划线是蓝色的</li>
+</ul>
+<p>PS：在macOS系统下面，没有测试成功，会出现的问题有：</p>
+<ul>
+<li>中文字符乱码；</li>
+<li>Package hyperref Error: Wrong DVI mode driver option `dvipdfm&rsquo;, [\ProcessKeyvalOptions{Hyp}]</li>
+<li>LaTeX Error: File `dvipdfm.def&rsquo; not found. [&hellip;d{ver@\Gin@driver}{\input{\Gin@driver}}{}]</li>
+</ul>
+<p>测试后，在Windows系统上编译成功。</p>
+<h1 id="2-参考">2. 参考</h1>
+<ul>
+<li><a href="http://cache.baiducontent.com/c?m=ajfiqv0qvIs_6jQQQ7czQrNBO5d_00ptPBpVy5gFVtiC3nskwZnwpHc-azFuLnWBq0G8gX1x3OLjb_bmLJPaFRn0_uMQzV4ZWludJsNPGx-t3-TRn5rqjVvw_cSn5umpaPS11DjlaO0w6ay_rqAzNU8cllTgR3x7fecTIEIjs7ysy0MbzqFgV3yfWh1fkEfn_C-GqY3uThH9eHoHzVL8Yq&amp;p=98769a4783934eac58edcf3e4d4786&amp;newp=8b2a971186cc42af58fbcb0c554e9f231610db2151d4d4166b82c825d7331b001c3bbfb422201a01d9c17b6c0baa4e5eecf23573370923a3dda5c91d9fb4c57479dc&amp;s=c81e728d9d4c2f63&amp;user=baidu&amp;fm=sc&amp;query=%B2%A9%CA%BF%BA%F3%B3%F6%D5%BE%B1%A8%B8%E6+latex&amp;qid=f0fb34f800003089&amp;p1=11">博后出站报告模板的bug和解决方法_zhoulm_新浪博客</a></li>
+<li><a href="https://blog.csdn.net/qq_41731861/article/details/107717161">Package CJK Error: Invalid character code._晓野豬的博客-CSDN博客</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

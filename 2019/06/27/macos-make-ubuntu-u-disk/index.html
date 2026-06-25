@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS制作Ubuntu的U盘启动盘 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS制作Ubuntu的U盘启动盘</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2019-06-27</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-下载ubuntu的iso镜像文件">1. 下载Ubuntu的iso镜像文件</h1>
+<p>地址为：<a href="https://ubuntu.com/download/desktop">https://ubuntu.com/download/desktop</a></p>
+<h1 id="2--把iso镜像文件转换成dmg文件">2.  把iso镜像文件转换成dmg文件</h1>
+<pre><code>cd Downloads/
+hdiutil convert -format UDRW -o ubuntu.iso ubuntu-18.04.2-desktop-amd64.iso
+</code></pre>
+<p>-format为生成文件的权限；UDRW :表示转换成有read/write的权限的镜像。</p>
+<p>终端里面出现以下的成功信息：</p>
+<pre><code>Reading Driver Descriptor Map (DDM : 0)…
+Reading Ubuntu 18.04.2 LTS amd64         (Apple_ISO : 1)…
+Reading Apple (Apple_partition_map : 2)…
+Reading Ubuntu 18.04.2 LTS amd64         (Apple_ISO : 3)…
+.............................................................................
+Reading EFI (Apple_HFS : 4)…
+.............................................................................
+Reading Ubuntu 18.04.2 LTS amd64         (Apple_ISO : 5)…
+..............................................................................
+Elapsed Time:  9.422s
+Speed: 202.1Mbytes/sec
+Savings: 0.0%
+created: /Users/name/Downloads/ubuntu.iso.dmg
+</code></pre>
+<h1 id="3-插入u盘并用命令行卸载u盘">3. 插入U盘，并用命令行卸载U盘</h1>
+<p>注意找到U盘的路径，使用diskutil list命令查询。</p>
+<p>找到U盘的路径为/dev/disk4，并使用命令行卸载U盘：</p>
+<pre><code>diskutil unmountDisk /dev/disk4
+</code></pre>
+<p>显示信息为：</p>
+<pre><code>Unmount of all volumes on disk4 was successful。
+</code></pre>
+<h1 id="4-把iso文件写入u盘">4. 把iso文件写入U盘</h1>
+<pre><code>mv ubuntu.iso.dmg ubuntu.iso
+sudo dd if=./ubuntu.iso of=/dev/disk4 bs=1m
+</code></pre>
+<p>显示信息为：</p>
+<pre><code>1904+0 records in
+1904+0 records out
+1996488704 bytes transferred in 4678.453125 secs (426741 bytes/sec)
+</code></pre>
+<h1 id="5-弹出u盘">5. 弹出U盘</h1>
+<pre><code>sudo eject /dev/disk4
+</code></pre>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

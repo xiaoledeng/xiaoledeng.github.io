@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>SSH加密算法ED25519优于RSA - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">SSH加密算法ED25519优于RSA</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-04</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>在密钥加密算法中， Ed25519 是使用 SHA-512（SHA-2）和 Curve25519 的 EdDSA 签名方案 <sup>1</sup>。</p>
+<p>从 2020 年开始，在 Secure Shell (SSH) 协议中， Ed25519 已经成为标准 <sup>2</sup>，有如下优势 <sup>3</sup>：</p>
+<ul>
+<li>快速单签名验证 Fast single-signature verification</li>
+<li>更快的批量验证 Even faster batch verification</li>
+<li>非常快速的签名 Very fast signing</li>
+<li>快速密钥生成 Fast key generation</li>
+<li>高安全级别 High security level</li>
+<li>万无一失的会话密钥 Foolproof session keys</li>
+<li>碰撞复原力 Collision resilience</li>
+<li>没有秘密数组索引 No secret array indices</li>
+<li>没有秘密分支条件 No secret branch conditions</li>
+<li>小签名 Small signatures</li>
+<li>小钥匙 Small keys</li>
+</ul>
+<p>GitHub 发表更新密钥的声明<sup>4</sup>：</p>
+<blockquote>
+<p>Note: GitHub improved security by dropping older, insecure key types on March 15, 2022.</p>
+<p>As of that date, DSA keys (ssh-dss) are no longer supported. You cannot add new DSA keys to your personal account on GitHub.com.</p>
+<p>RSA keys (ssh-rsa) with a valid_after before November 2, 2021 may continue to use any signature algorithm.</p>
+<p>RSA keys generated after that date must use a SHA-2 signature algorithm. Some older clients may need to be upgraded in order to use SHA-2 signatures.</p>
+</blockquote>
+<p>本地终端，生成 ed25519 密钥：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen -t ed25519 -C <span style="color:#c30">&#34;your_email@example.com&#34;</span>
+</span></span></code></pre></div><p>注意⚠️： &lsquo;<a href="mailto:your_email@example.com">your_email@example.com</a>&rsquo; 可以是邮箱<sup>5</sup> 或 服务器登录命令<sup>6</sup>。</p>
+<h1 id="延伸阅读">延伸阅读</h1>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/EdDSA#Ed25519">EdDSA - Wikipedia</a></li>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc8709">RFC 8709 - Ed25519 and Ed448 Public Key Algorithms for the Secure Shell (SSH) Protocol</a></li>
+<li><a href="https://ed25519.cr.yp.to/">Ed25519: high-speed high-security signatures</a></li>
+<li><a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Adding a new SSH key to your GitHub account - GitHub Docs</a></li>
+<li><a href="/2024/01/04/macOS-github-login/">macOS设置GitHub公钥命令行登录</a></li>
+<li><a href="/2024/01/04/macOS-terminal-ssh-login-server/">macOS终端SSH公钥登陆服务器</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

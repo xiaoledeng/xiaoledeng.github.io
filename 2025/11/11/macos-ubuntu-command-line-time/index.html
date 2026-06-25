@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS/Ubuntu统计命令运行时间 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS/Ubuntu统计命令运行时间</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2025-11-11</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>macOS 或 Ubuntu 在运行过长时间终端命令时，需要统计程序运行的时间。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<p><code>run_with_timer.sh</code> 详细代码：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#099">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span><span style="color:#09f;font-style:italic"># 用法： ./run_with_timer.sh bash job.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 定义日志文件（可按日期分文件）</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">LOG_DIR</span><span style="color:#555">=</span><span style="color:#c30">&#34;</span><span style="color:#033">$HOME</span><span style="color:#c30">/job_logs&#34;</span>
+</span></span><span style="display:flex;"><span>mkdir -p <span style="color:#c30">&#34;</span><span style="color:#033">$LOG_DIR</span><span style="color:#c30">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">LOG_FILE</span><span style="color:#555">=</span><span style="color:#c30">&#34;</span><span style="color:#033">$LOG_DIR</span><span style="color:#c30">/</span><span style="color:#069;font-weight:bold">$(</span>date +%Y-%m-%d<span style="color:#069;font-weight:bold">)</span><span style="color:#c30">.log&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 获取开始时间</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">start_time</span><span style="color:#555">=</span><span style="color:#069;font-weight:bold">$(</span>date +%s<span style="color:#069;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">start_str</span><span style="color:#555">=</span><span style="color:#069;font-weight:bold">$(</span>date <span style="color:#c30">&#34;+%Y-%m-%d %H:%M:%S&#34;</span><span style="color:#069;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 执行命令</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">echo</span> <span style="color:#c30">&#34;[</span><span style="color:#033">$start_str</span><span style="color:#c30">] 开始执行命令：</span><span style="color:#033">$*</span><span style="color:#c30">&#34;</span> | tee -a <span style="color:#c30">&#34;</span><span style="color:#033">$LOG_FILE</span><span style="color:#c30">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c30">&#34;</span><span style="color:#033">$@</span><span style="color:#c30">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">exit_code</span><span style="color:#555">=</span><span style="color:#033">$?</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 获取结束时间与耗时</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">end_time</span><span style="color:#555">=</span><span style="color:#069;font-weight:bold">$(</span>date +%s<span style="color:#069;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">end_str</span><span style="color:#555">=</span><span style="color:#069;font-weight:bold">$(</span>date <span style="color:#c30">&#34;+%Y-%m-%d %H:%M:%S&#34;</span><span style="color:#069;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">duration</span><span style="color:#555">=</span><span style="color:#069;font-weight:bold">$((</span>end_time <span style="color:#555">-</span> start_time<span style="color:#069;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 记录日志</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">days</span><span style="color:#555">=</span><span style="color:#069;font-weight:bold">$((</span>duration/86400<span style="color:#069;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">hours</span><span style="color:#555">=</span><span style="color:#069;font-weight:bold">$((</span>duration%86400/3600<span style="color:#069;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">mins</span><span style="color:#555">=</span><span style="color:#069;font-weight:bold">$((</span>duration%3600/60<span style="color:#069;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">secs</span><span style="color:#555">=</span><span style="color:#069;font-weight:bold">$((</span>duration%60<span style="color:#069;font-weight:bold">))</span>
+</span></span><span style="display:flex;"><span><span style="color:#366">printf</span> <span style="color:#c30">&#34;[%s] 命令结束，耗时：%02d天%02d小时%02d分%02d秒，退出码：%d\n\n&#34;</span> <span style="color:#c30;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span><span style="color:#c30;font-weight:bold"></span>  <span style="color:#c30">&#34;</span><span style="color:#033">$end_str</span><span style="color:#c30">&#34;</span> <span style="color:#c30">&#34;</span><span style="color:#033">$days</span><span style="color:#c30">&#34;</span> <span style="color:#c30">&#34;</span><span style="color:#033">$hours</span><span style="color:#c30">&#34;</span> <span style="color:#c30">&#34;</span><span style="color:#033">$mins</span><span style="color:#c30">&#34;</span> <span style="color:#c30">&#34;</span><span style="color:#033">$secs</span><span style="color:#c30">&#34;</span> <span style="color:#c30">&#34;</span><span style="color:#033">$exit_code</span><span style="color:#c30">&#34;</span> | tee -a <span style="color:#c30">&#34;</span><span style="color:#033">$LOG_FILE</span><span style="color:#c30">&#34;</span>
+</span></span></code></pre></div><p>Ubuntu 操作步骤：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 让脚本可执行</span>
+</span></span><span style="display:flex;"><span>chmod +x run_with_timer.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 系统全局使用</span>
+</span></span><span style="display:flex;"><span>sudo cp run_with_timer.sh /usr/local/bin/
+</span></span><span style="display:flex;"><span>sudo chmod +x /usr/local/bin/run_with_timer.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 运行任务</span>
+</span></span><span style="display:flex;"><span>run_with_timer.sh bash job.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 查看日志</span>
+</span></span><span style="display:flex;"><span>cat ~/job_logs/2025-11-11.log
+</span></span></code></pre></div><p>运行效果：</p>
+<pre tabindex="0"><code>[2025-11-11 10:30:05] 开始执行命令：bash job.sh
+[2025-11-11 10:32:18] 命令结束，耗时：02分13秒，退出码：0
+</code></pre><p>另外， macOS 可放在个人脚本目录：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir -p ~/bin
+</span></span><span style="display:flex;"><span>mv run_with_timer.sh ~/bin/
+</span></span><span style="display:flex;"><span>chmod +x ~/bin/run_with_timer.sh
+</span></span><span style="display:flex;"><span><span style="color:#366">echo</span> <span style="color:#c30">&#39;export PATH=&#34;$HOME/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.zshrc
+</span></span><span style="display:flex;"><span><span style="color:#366">source</span> ~/.zshrc
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

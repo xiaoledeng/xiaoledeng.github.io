@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>工作站安装FreeBSD 14.0 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">工作站安装FreeBSD 14.0</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-06</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/freebsd/">#FreeBSD</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>在虚拟机上安装了两次 FreeBSD 后，趁着 Ubuntu 上的程序刚好跑完，就重装台式机的系统为 FreeBSD。</p>
+<p>重点：在配置 ZFS 的 Swap 时，大小应为实际内存的 1/4 ，即： 64 G内存，Swap设置为 16 G。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<ol>
+<li>下载 ISO 文件，制作 U 盘启动盘</li>
+</ol>
+<p>下载地址： <a href="https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/14.0/">https://download.freebsd.org/releases/amd64/amd64/ISO-IMAGES/14.0/</a></p>
+<p>根据官网的推荐 (<a href="https://docs.freebsd.org/en/books/handbook/bsdinstall">https://docs.freebsd.org/en/books/handbook/bsdinstall</a>)，在 Windows 下安装 <code>win32diskimager</code> 软件，而后制作 U 盘启动盘。</p>
+<ol start="2">
+<li>台式机 BIOS 从 U 盘启动，按照顺序安装</li>
+</ol>
+<p>参考： <a href="/2023/12/29/parallels-desktop-installl-freebsd/">Parallels Desktop安装FreeBSD 14.0</a></p>
+<p>这一步，Swap Volume Size 选择 (参考：<a href="https://forums.freebsd.org/threads/swap-size-on-zfs-with-high-amount-of-ram.71059/">swap size on ZFS with high amount of RAM | The FreeBSD Forums</a>)：</p>
+<table>
+  <thead>
+      <tr>
+          <th>System Type</th>
+          <th>Swap Volume Size</th>
+          <th>Dump Volume Size</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>System with about 4 GB of physical memory</td>
+          <td>1 GB</td>
+          <td>2 GB</td>
+      </tr>
+      <tr>
+          <td>Mid-range server with about 8 GB of physical memory</td>
+          <td>2 GB</td>
+          <td>4 GB</td>
+      </tr>
+      <tr>
+          <td>High-end server with about 16 to 128 GB of physical memory</td>
+          <td>4-32 GB</td>
+          <td>8-64 GB</td>
+      </tr>
+      <tr>
+          <td>High-end server with more than 128 GB of physical memory</td>
+          <td>1/4 of physical memory size</td>
+          <td>1/2 of physical memory size</td>
+      </tr>
+  </tbody>
+</table>
+<ol start="3">
+<li>更新系统</li>
+</ol>
+<p>以 root 执行以下命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>freebsd-update fetch
+</span></span><span style="display:flex;"><span>freebsd-update install
+</span></span></code></pre></div><ol start="4">
+<li>安装 sudo 并创建用户组</li>
+</ol>
+<p>以 root 执行以下命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pkg install sudo vim
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pw groupadd admin
+</span></span><span style="display:flex;"><span>pw groupmod admin -m myself
+</span></span></code></pre></div><p>在 <code>/usr/local/etc/sudoers.d/</code> 下新建文件 <code>admin</code> ，内容为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>%admin <span style="color:#033">ALL</span><span style="color:#555">=(</span>ALL<span style="color:#555">)</span> ALL
+</span></span></code></pre></div><p>而后重启： <code>reboot</code>。</p>
+<ol start="5">
+<li>安装 <code>zsh</code>、<code>wget</code>、<code>git</code>、<code>htop</code>和<code>oh-my-zsh</code>：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pkg install zsh wget git htop
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 配置 zsh</span>
+</span></span><span style="display:flex;"><span>chsh -s /usr/local/bin/zsh
+</span></span><span style="display:flex;"><span>touch ~/.zshrc
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 安装 oh-my-zsh  ( https://ohmyz.sh/ )</span>
+</span></span><span style="display:flex;"><span>sh -c <span style="color:#c30">&#34;</span><span style="color:#069;font-weight:bold">$(</span>wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -<span style="color:#069;font-weight:bold">)</span><span style="color:#c30">&#34;</span>
+</span></span></code></pre></div><p>设置 <code>vim</code> 为默认编辑器： <a href="/2024/01/06/freebsd-set-default-editor/">FreeBSD设置默认编辑器</a></p>
+<ol start="6">
+<li>设置 SSH</li>
+</ol>
+<p>参考：</p>
+<ul>
+<li><a href="/2023/12/29/freebsd-ssh/">FreeBSD设置SSH</a></li>
+<li><a href="/2023/12/27/update-ssh-setting/">Ubuntu系统SSH设置小结</a></li>
+<li><a href="/2024/01/04/macOS-terminal-ssh-login-server/">macOS终端SSH公钥登陆服务器</a></li>
+</ul>
+<p>思路：</p>
+<ul>
+<li>先用本地 <code>ssh name@IP</code> 登录服务器</li>
+<li>将本地创建的公钥上传至服务器</li>
+<li>设置服务器 <code>sudo vim /etc/ssh/sshd_config</code></li>
+<li>本地用公钥登录服务器</li>
+</ul>
+<ol start="7">
+<li>安装 Python 和 Fortran</li>
+</ol>
+<p>参考：</p>
+<ul>
+<li><a href="/2023/12/29/freebsd-install-python/">FreeBSD安装Python</a></li>
+<li><a href="/2023/12/29/freebsd-install-fortran/">FreeBSD安装Fortran</a></li>
+</ul>
+<p>Python 和 pip 安装后，可以安装一些库：<code>pip install yagmail feedparser</code>：</p>
+<ul>
+<li><a href="/2020/09/23/python-yagmail/">yagmail: Python发送邮件</a></li>
+<li><a href="/2023/12/17/python-analysis-rss-feedparser/">Python解析RSS库feedparser</a></li>
+</ul>
+<p>可能需要安装部件：<code>pip install libxslt</code>。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

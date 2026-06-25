@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu 16.04 LTS配置国内高速apt-get更新源 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu 16.04 LTS配置国内高速apt-get更新源</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2019-11-21</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <p>Ubuntu 16.04下载软件速度有点慢，因为默认的是从国外下载软件，那就更换到国内比较好的快速更新源（就是这些软件所在的服务器），一般直接百度Ubuntu更新源就能出来一大堆，这时候最好是找和自己Ubuntu版本一致的更新源，我的Ubuntu版本是16.04，下面是我找到的一个比较好的更新源。</p>
+<h1 id="1-寻找国内镜像源">1. 寻找国内镜像源</h1>
+<p><a href="https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/">https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/</a></p>
+<p>Ubuntu 镜像使用帮助</p>
+<p>Ubuntu 的软件源配置文件是 /etc/apt/sources.list。将系统自带的该文件做个备份，将该文件替换为下面内容，即可使用 TUNA 的软件源镜像。</p>
+<p>选择你的ubuntu版本:  16.04 LTS</p>
+<h1 id="2-配置source-list源">2. 配置source list源</h1>
+<p>sources.list系统自带的，源是来Ubuntu的官网！安装包比较慢，所以最好切换成国内的</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>linuxidc.com@ubuntu:~$ <span style="color:#366">cd</span> /etc/apt
+</span></span><span style="display:flex;"><span>linuxidc.com@ubuntu:/etc/apt$ sudo cp sources.list sources.list.bak
+</span></span><span style="display:flex;"><span>linuxidc.com@ubuntu:/etc/apt$ vim sources.list
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释</span>
+</span></span><span style="display:flex;"><span>deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse</span>
+</span></span><span style="display:flex;"><span>deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse</span>
+</span></span><span style="display:flex;"><span>deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse</span>
+</span></span><span style="display:flex;"><span>deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 预发布软件源，不建议启用</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-proposed main restricted universe multiverse</span>
+</span></span></code></pre></div><h1 id="3-更新源">3. 更新源</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>linuxidc.com@ubuntu:/etc/apt$ sudo apt-get update
+</span></span><span style="display:flex;"><span>命中:1 http://mirrors.aliyun.com/ubuntu xenial InRelease
+</span></span><span style="display:flex;"><span>命中:2 http://mirrors.aliyun.com/ubuntu xenial-updates InRelease   
+</span></span><span style="display:flex;"><span>命中:3 http://mirrors.aliyun.com/ubuntu xenial-backports InRelease  
+</span></span><span style="display:flex;"><span>命中:4 http://mirrors.aliyun.com/ubuntu xenial-security InRelease   
+</span></span><span style="display:flex;"><span>正在读取软件包列表... 完成
+</span></span></code></pre></div><p>测试：安装sl包</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>linuxidc.com@ubuntu:/etc/apt$ sudo apt-get install sl
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>linuxidc.com@ubuntu:/etc/apt$ sl
+</span></span></code></pre></div><h1 id="4-其他一些命令">4. 其他一些命令</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get update 更新源
+</span></span><span style="display:flex;"><span>sudo apt-get install package 安装包
+</span></span><span style="display:flex;"><span>sudo apt-get remove package 删除包
+</span></span><span style="display:flex;"><span>sudo apt-cache search package 搜索软件包
+</span></span><span style="display:flex;"><span>sudo apt-cache show package 获取包的相关信息，如说明、大小、版本等
+</span></span><span style="display:flex;"><span>sudo apt-get install package --reinstall 重新安装包
+</span></span><span style="display:flex;"><span>sudo apt-get -f install 修复安装
+</span></span><span style="display:flex;"><span>sudo apt-get remove package --purge 删除包，包括配置文件等
+</span></span><span style="display:flex;"><span>sudo apt-get build-dep package 安装相关的编译环境
+</span></span><span style="display:flex;"><span>sudo apt-get upgrade 更新已安装的包
+</span></span><span style="display:flex;"><span>sudo apt-get dist-upgrade 升级系统
+</span></span><span style="display:flex;"><span>sudo apt-cache depends package 了解使用该包依赖那些包
+</span></span><span style="display:flex;"><span>sudo apt-cache rdepends package 查看该包被哪些包依赖
+</span></span><span style="display:flex;"><span>sudo apt-get <span style="color:#366">source</span> package 下载该包的源代码
+</span></span><span style="display:flex;"><span>sudo apt-get clean <span style="color:#555">&amp;&amp;</span> sudo apt-get autoclean 清理无用的包
+</span></span><span style="display:flex;"><span>sudo apt-get check 检查是否有损坏的依赖
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

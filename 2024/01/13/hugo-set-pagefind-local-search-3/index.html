@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Hugo网站设置Pagefind本地搜索(3) - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Hugo网站设置Pagefind本地搜索(3)</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-13</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>Hugo 给出的网站搜索工具 <sup>1</sup>，比较有名的是 lunr.js 和 Fuse.js，不过设置比较复杂 <sup>2</sup>。</p>
+<p>已有的实践是：利用外部搜索，比如，Google、Bing、Baidu等，前提是收录了个人网站<sup>3, 4</sup>。</p>
+<p>比较简单的本地搜索策略是：Pagefind <sup>5</sup>，只需要两步就能设置完成网站的本地搜索 <sup>6</sup>。</p>
+<h1 id="2-安装和设置pagefind">2. 安装和设置Pagefind</h1>
+<ol>
+<li>安装 npm 工具</li>
+</ol>
+<p>macOS 下用 brew 安装命令行工具 npm ：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install nmp
+</span></span></code></pre></div><p>Linux 和 Windows 下安装 npm ： <a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+<ol start="2">
+<li>在网站的根目录下，运行以下命令：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm i pagefind
+</span></span><span style="display:flex;"><span>hugo
+</span></span></code></pre></div><p>说明：安装 Pagefind 工具，并发布 hugo 站点。网站的默认发布文件夹为网站的根目录下的 <code>public/</code></p>
+<ol start="3">
+<li>生成索引</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx pagefind --source public --bundle-dir search
+</span></span></code></pre></div><p>说明： pagefind 在 <code>public/</code>文件夹下生成索引 <code>search/</code>文件夹</p>
+<h1 id="3-设置静态网页的搜索入口">3. 设置静态网页的搜索入口</h1>
+<ol>
+<li>创建 html 格式的 shortcodes 文件</li>
+</ol>
+<p>在 <code>themes/simple-style/layouts/shortcodes/</code>目录下，新建 <code>search.html</code> 模板文件，内容为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">link</span> <span style="color:#309">href</span><span style="color:#555">=</span><span style="color:#c30">&#34;/search/pagefind-ui.css&#34;</span> <span style="color:#309">rel</span><span style="color:#555">=</span><span style="color:#c30">&#34;stylesheet&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">script</span> <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;/search/pagefind-ui.js&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;text/javascript&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;search&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">script</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#366">window</span>.addEventListener(<span style="color:#c30">&#39;DOMContentLoaded&#39;</span>, (event) =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#069;font-weight:bold">new</span> PagefindUI({ element<span style="color:#555">:</span> <span style="color:#c30">&#34;#search&#34;</span> });
+</span></span><span style="display:flex;"><span>    });
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
+</span></span></code></pre></div><ol start="2">
+<li>创建搜索页面</li>
+</ol>
+<p>在 <code>content</code>路径下，新建 <code>search.md</code>文件，内容为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>title: &#34;Local Search&#34;
+</span></span><span style="display:flex;"><span>date: 2024-01-13T16:54:22+01:00
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Please enter what you want to search for this website directly in the input box below:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>\{\{&lt; search &gt;}}
+</span></span></code></pre></div><p>注意⚠️：<code>\{\{</code> 变为 <code>{{</code>，此行代码为搜索框的位置。</p>
+<p>而后，在根目录的 <code>config.toml</code> 文件中，加入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[[menu.main]]
+</span></span><span style="display:flex;"><span>weight = <span style="color:#f60">40</span>
+</span></span><span style="display:flex;"><span>name = <span style="color:#c30">&#34;Search&#34;</span>
+</span></span><span style="display:flex;"><span>url = <span style="color:#c30">&#34;/search/&#34;</span>
+</span></span></code></pre></div><p>说明：</p>
+<ul>
+<li>这是在网站的主菜单 main 中，添加 search 页面的入口</li>
+<li>用 <code>hugo server</code>可以本地浏览 search 页面，但搜索框看不到</li>
+<li>上传 GitHub 后，search 页面可以看到搜索框</li>
+</ul>
+<p>注意⚠️：</p>
+<ul>
+<li>搜索结果中，标题可以指定，即<code>themes/simple-style/layouts/_default/single.html</code>加入标题的<code>data-pagefind-meta=&quot;title&quot;</code>属性<sup>7, 8, 9</sup></li>
+<li>搜索结果中，日期可以指定，即<code>themes/simple-style/layouts/_default/single.html</code>加入日期的<code>data-pagefind-meta=&quot;date&quot;</code>属性</li>
+<li>搜索结果中，可以去除重复的 tags / categories 目录下的结果，即<code>themes/simple-style/layouts/_default/list.html</code> 加入 <code>aside data-pagefind-ignore</code> 属性</li>
+<li>搜索结果中，可以去除重复的 pages 下的结果，即<code>themes/simple-style/layouts/_default/section.html</code> 加入 <code>aside data-pagefind-ignore</code> 属性</li>
+<li>搜索结果中，可以去除重复的 主页目录 下的结果，即<code>themes/simple-style/layouts/index.html</code> 加入 <code>aside data-pagefind-ignore</code> 属性</li>
+</ul>
+<h1 id="3-每次上传-public-文件夹">3. 每次上传 public 文件夹</h1>
+<p>在 job.sh 文件里加入命令：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 生成新索引</span>
+</span></span><span style="display:flex;"><span>/opt/homebrew/bin/npx pagefind --source public --bundle-dir search
+</span></span></code></pre></div><p>逻辑是：每次上传 public 文件夹时，都重新生成搜索索引。</p>
+<h1 id="4-延伸阅读">4. 延伸阅读</h1>
+<ol>
+<li><a href="https://gohugo.io/tools/search/">Search tools | Hugo</a></li>
+<li><a href="https://fatedeity.cn/posts/z-turn/hugo-add-local-search.html">给 hugo 博客添加搜索功能 - 程序员翔仔</a></li>
+<li><a href="/2020/05/28/blog-content-search/">Hugo博客设置搜索(1)</a></li>
+<li><a href="/2023/11/12/blog-content-search-2/">Hugo博客设置搜索(2)</a></li>
+<li><a href="https://pagefind.app/">Pagefind | Pagefind — Static low-bandwidth search at scale</a></li>
+<li><a href="https://www.yolichan.fun/zh/2023/08/06/2023-08-06-add-pagefind-search-tool/">#hugo #Pagefind 为静态博客配置站内搜索工具 · yoli の 树洞 bot</a></li>
+<li><a href="https://www.ncartron.org/installing-pagefind-a-static-search-engine-on-freebsd.html">Installing Pagefind, a static search engine, on FreeBSD</a></li>
+<li><a href="https://pagefind.app/docs/metadata/#tagging-an-element-as-metadata">Setting up metadata | Pagefind — Static low-bandwidth search at scale</a></li>
+<li><a href="https://www.fournoas.com/posts/adding-full-text-search-to-a-hugo-static-website/">为 Hugo 静态网站添加全文检索功能 · 白汤四物</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

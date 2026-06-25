@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>GMT画图中图片的网格分散问题 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">GMT画图中图片的网格分散问题</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2017-03-17</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/gmt/">#GMT</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/drawing/">#Drawing</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1问题描述和解决方案">1.问题描述和解决方案</h1>
+<p>在GMT画关于地学方面的图片时，出现了下图中的网格分散问题：</p>
+<p>查找代码，以及与人交流，最后定位到此行代码问题：</p>
+<pre tabindex="0"><code>gmt xyz2grd xyz.xyz -G$GRD2 -I0.0833333333333/0.0833333333333 -R$R
+</code></pre><p>通过查看gmt的<a href="http://modules.gmt-china.org/xyz2grd.html">xyz2grd</a>函数，发现是网格分辨率的问题：-I，以及-R。</p>
+<p>对于xyz.xyz数据文件，使用gmtinfo命令查看其属性：</p>
+<pre tabindex="0"><code>➜  gmtinfo xyz.xyz
+   xyz.xyz: N = 9331200	&lt;-179.958328/179.958328&gt;	&lt;-89.958336/89.958336&gt;	&lt;-10513/6573&gt;
+</code></pre><ul>
+<li>对应的x值为：-179.958328/179.958328，即为经度范围，间隔为：0.083328；</li>
+<li>对应的y值为：-89.958336/89.958336，即为纬度范围，间隔为：0.083328；</li>
+<li>对应的z值为：-10513/6573，即为数据范围。</li>
+</ul>
+<p>故此，问题代码行改为：</p>
+<pre tabindex="0"><code>gmt xyz2grd xyz_BED2014.xyz -G$GRD2 -I0.083328/0.083328  -R$R -V
+</code></pre><p>正确的图片就出来了：</p>
+<p>至此，此问题就解决了。</p>
+<h1 id="2总结一般规律">2.总结一般规律</h1>
+<ul>
+<li>使用gmt xyz2grd 的时候一定要加上-V 选项，输出的信息可以帮助判断自己的转换是否正确；</li>
+<li>不仅要考虑到数据xy的间隔，即为调整-I的分辨率；</li>
+<li>而且xy各自的最大最小值范围，即为-R，也需要正确；</li>
+</ul>
+<h1 id="3reference">3.Reference</h1>
+<ul>
+<li><a href="http://modules.gmt-china.org/xyz2grd.html">xyz2grd — GMT模块手册</a></li>
+<li><a href="https://www.soest.hawaii.edu/gmt/gmt/html/man/xyz2grd.html">XYZ2GRD — 官网</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

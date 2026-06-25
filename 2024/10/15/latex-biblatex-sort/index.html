@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>LaTeX设置参考文献的排序方式 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">LaTeX设置参考文献的排序方式</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-10-15</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/latex/">#LaTeX</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/lists/">#Lists</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-latex" data-lang="latex"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\documentclass</span><span style="color:#366">{</span>article<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\usepackage</span><span style="color:#309">[sorting=ynt]</span><span style="color:#366">{</span>biblatex<span style="color:#366">}</span>  <span style="color:#09f;font-style:italic">% 按年份降序排序
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">\addbibresource</span><span style="color:#366">{</span>yourbibliography.bib<span style="color:#366">}</span>  <span style="color:#09f;font-style:italic">% 加载.bib 文件
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">% 定义自定义标题
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">\newcommand</span><span style="color:#366">{</span><span style="color:#069;font-weight:bold">\ebibname</span><span style="color:#366">}{</span>参考文献<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\begin</span><span style="color:#366">{</span>document<span style="color:#366">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>这是引用文献的示例 <span style="color:#069;font-weight:bold">\cite</span><span style="color:#366">{</span>examplecitation<span style="color:#366">}</span>。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic">% 打印参考文献，加入目录，并自定义标题
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span><span style="color:#069;font-weight:bold">\printbibliography</span><span style="color:#309">[heading=bibintoc, title=\ebibname]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">\end</span><span style="color:#366">{</span>document<span style="color:#366">}</span>
+</span></span></code></pre></div><p>在 biblatex 中，sorting 选项决定了参考文献列表的排序方式。sorting 选项的含义为：</p>
+<ul>
+<li><code>n</code> 表示按 作者姓名 (Name) 排序。</li>
+<li><code>y</code> 表示按 年份 (Year) 排序。</li>
+<li><code>t</code> 表示按 标题 (Title) 排序。</li>
+<li><code>v</code> 表示按 卷号 (Volume) 排序。</li>
+<li><code>a</code> 表示按 字母顺序 (Alphabetical) 排列。</li>
+<li><code>d</code> 表示按 降序 (Descending) 排列。</li>
+<li><code>none</code> 表示按 原始顺序 不进行任何排序。</li>
+<li><code>count</code> 表示按 引用顺序 排列文献。</li>
+<li><code>debug</code> 用于 调试 排序问题。</li>
+</ul>
+<p>组合：</p>
+<ul>
+<li><code>nty</code> (Name, Title, Year) 先按作者姓名排序，然后是标题，最后按年份排序。这是默认的排序方式。</li>
+<li><code>nyt</code> (Name, Year, Title) 先按作者姓名，然后按年份，最后按标题排序。</li>
+<li><code>nyvt</code> (Name, Year, Volume, Title) 先按作者姓名，再按年份、卷号和标题排序。这种方式适用于有卷号的出版物（如期刊）。</li>
+<li><code>anyt</code> (Alphabetical, Name, Year, Title) 先按字母顺序排列，然后按作者姓名、年份和标题顺序。这种方式通常用于按字母顺序显示参考文献的情况。</li>
+<li><code>anyvt</code> (Alphabetical, Name, Year, Volume, Title) 先按字母顺序，然后按作者、年份、卷号和标题排列。</li>
+<li><code>ynt</code> (Year, Name, Title) 先按年份（从旧到新）排序，再按作者姓名和标题排序。</li>
+<li><code>ydnt</code> (Year (descending), Name (descending), Title) 先按年份（从新到旧）排序，再按作者姓名降序和标题排序。</li>
+<li><code>none</code> (No sorting) 不进行排序。文献会按它们在 .bib 文件中出现的顺序输出。</li>
+<li><code>count</code> (Citation order) 参考文献按它们被引用的顺序排序。第一次引用的文献排在最前面，后面引用的按顺序排列。</li>
+<li><code>debug</code> (Debug information) 输出排序的调试信息。这种模式用于调试排序问题，不适合用于生成实际文献列表。</li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

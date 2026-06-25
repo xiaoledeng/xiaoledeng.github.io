@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>GMT绘制各省的地形图 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">GMT绘制各省的地形图</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-03-08</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/gmt/">#GMT</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/drawing/">#Drawing</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-下载地形grd数据">1. 下载地形grd数据</h1>
+<p>下载地址： <a href="https://mirrors.ustc.edu.cn/gmt/data/">https://mirrors.ustc.edu.cn/gmt/data/</a></p>
+<p>上述数据中，最高分辨率为<code>15s</code>（即：<code>earth_relief_15s.grd</code>，约 <code>2.77G</code>）。</p>
+<p>如果需要 <code>1s</code> 分辨率，可从SRTM内插数据下载：</p>
+<ul>
+<li><a href="https://topex.ucsd.edu/WWW_html/srtm30_plus.html">https://topex.ucsd.edu/WWW_html/srtm30_plus.html</a></li>
+</ul>
+<h1 id="2-绘图代码">2. 绘图代码</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#099">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span><span style="color:#09f;font-style:italic"># gmt version: Version 5.4.5 [64-bit] [4 cores]</span>
+</span></span><span style="display:flex;"><span><span style="color:#033">ps</span><span style="color:#555">=</span>province.ps
+</span></span><span style="display:flex;"><span>gmt gmtset <span style="color:#033">FORMAT_GEO_MAP</span> <span style="color:#555">=</span> dddF <span style="color:#033">MAP_FRAME_WIDTH</span><span style="color:#555">=</span>2p
+</span></span><span style="display:flex;"><span>gmt gmtset FONT_ANNOT_PRIMARY 7p,Helvetica,black FONT_LABEL 7p,Helvetica,black 
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 根据需要选择省界，CN.42为湖北</span>
+</span></span><span style="display:flex;"><span>gmt pscoast -ECN.42 -M -Df &gt; sd.txt
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># psclip 使用省界裁切地图 Begin of the clip</span>
+</span></span><span style="display:flex;"><span>gmt psclip sd.txt <span style="color:#c30">`</span>gmt gmtinfo sd.txt -I0.000001<span style="color:#c30">`</span> -JM2i -K &gt; <span style="color:#033">$ps</span>
+</span></span><span style="display:flex;"><span>gmt makecpt -Cdem2 -T0/2000/1 &gt; mss.cpt
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 数据的绝对路径为：/Users/name/gmt/earth_relief_15s.grd</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># grdimage 添加DEM绘图，并添加方位光照效果。</span>
+</span></span><span style="display:flex;"><span>gmt grdimage -J -R /Users/name/gmt/earth_relief_15s.grd -Cmss.cpt  -O -K  -I+a0 -Q &gt;&gt; <span style="color:#033">$ps</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># End of the clip</span>
+</span></span><span style="display:flex;"><span>gmt psclip -C -O  -R -J &gt;&gt; <span style="color:#033">$ps</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 转换成pdf</span>
+</span></span><span style="display:flex;"><span>gmt psconvert <span style="color:#033">$ps</span> -A -P -Tf
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 删除多余的文件</span>
+</span></span><span style="display:flex;"><span>rm sd.txt mss.cpt *.ps
+</span></span></code></pre></div><p>说明：</p>
+<ul>
+<li>
+<p><code>pscoast</code> 导出省界，省界代码如<code>-ECN.42</code>（湖北），可从GMT目录下<code>dcw-states.txt</code>文件中找到，也可使用命令 <code>gmt coast -E+L</code> 查看省代码（来自<a href="https://docs.gmt-china.org/latest/dataset/dcw/">DCW: 世界数字图表 — GMT中文手册</a>）。</p>
+</li>
+<li>
+<p>以中国的数据为例，其包括全部 34 个省级行政区域：23 个省（包括台湾省）， 5 个自治区，4 个直辖市，以及香港，澳门 2 个特别行政区。 中国的省代码是数字，和中国居民身份证号码相同:</p>
+<ul>
+<li>CN 11 Beijing 北京</li>
+<li>CN 50 Chongqing 重庆</li>
+<li>CN 31 Shanghai 上海</li>
+<li>CN 12 Tianjin 天津</li>
+<li>CN 34 Anhui 安徽</li>
+<li>CN 35 Fujian 福建</li>
+<li>CN 62 Gansu 甘肃</li>
+<li>CN 44 Guangdong 广东</li>
+<li>CN 52 Guizhou 贵州</li>
+<li>CN 46 Hainan 海南</li>
+<li>CN 13 Hebei 河北</li>
+<li>CN 23 Heilongjiang 黑龙江</li>
+<li>CN 41 Henan 河南</li>
+<li>CN 42 Hubei 湖北</li>
+<li>CN 43 Hunan 湖南</li>
+<li>CN 32 Jiangsu 江苏</li>
+<li>CN 36 Jiangxi 江西</li>
+<li>CN 22 Jilin 吉林</li>
+<li>CN 21 Liaoning 辽宁</li>
+<li>CN 63 Qinghai 青海</li>
+<li>CN 61 Shaanxi 陕西，注意与山西区分</li>
+<li>CN 37 Shandong 山东</li>
+<li>CN 14 Shanxi 山西，注意与陕西区分</li>
+<li>CN 51 Sichuan 四川</li>
+<li>CN 71 Taiwan 台湾</li>
+<li>CN 53 Yunnan 云南</li>
+<li>CN 33 Zhejiang 浙江</li>
+<li>CN 45 Guangxi 广西</li>
+<li>CN 15 Nei Monggu 内蒙古</li>
+<li>CN 64 Ningxia 宁夏</li>
+<li>CN 65 Xinjiang 新疆</li>
+<li>CN 54 Xizang 西藏</li>
+<li>CN 91 Xianggang (Hong Kong) 香港</li>
+<li>CN 92 Aomen (Macao) 澳门</li>
+</ul>
+</li>
+</ul>
+<h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://mp.weixin.qq.com/s/omdtmtzDNJ-jQhsgY_iDqA">GMT绘制中国各省DEM地图</a>\</li>
+<li><a href="https://docs.gmt-china.org/latest/dataset/dcw/">DCW: 世界数字图表 — GMT中文手册</a></li>
+<li><a href="https://github.com/gmt-china/GMT_Docs/blob/master/source/dataset/dcw/index.rst">GMT_docs/index.rst at master · gmt-china/GMT_docs</a></li>
+<li><a href="https://github.com/GenericMappingTools/dcw-gmt">GenericMappingTools/dcw-gmt: Data and scripts that maintain and build the DCW data used in GMT</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

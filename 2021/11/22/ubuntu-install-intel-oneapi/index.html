@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu安装Intel® oneAPI Base &amp; HPC Toolkit - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu安装Intel® oneAPI Base &amp; HPC Toolkit</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-11-22</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/fortran/">#Fortran</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-下载">1. 下载</h1>
+<p>在<a href="https://www.intel.cn/content/www/cn/zh/developer/tools/oneapi/base-toolkit-download.html">Download the Intel® oneAPI Base Toolkit</a>页面，选择 <code>Linux</code>-<code>网络和本地</code>-<code>脱机</code>，并下载<code>l_BaseKit_p_2021.4.0.3422_offline.sh</code>文件。</p>
+<p>在<a href="https://www.intel.cn/content/www/cn/zh/developer/tools/oneapi/hpc-toolkit-download.html">Download the Intel® oneAPI HPC Toolkit</a>页面，选择 <code>Linux</code>-<code>网络和本地</code>-<code>脱机</code>，并下载<code>l_HPCKit_p_2021.4.0.3347_offline.sh</code>文件。</p>
+<h1 id="2-安装">2. 安装</h1>
+<p>cd进入，ls查看，而后安装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sh l_BaseKit_p_2021.4.0.3422_offline.sh
+</span></span><span style="display:flex;"><span>sudo sh l_HPCKit_p_2021.4.0.3347_offline.sh
+</span></span></code></pre></div><p>选择合适的安装路：By default, &lt;install_dir&gt; is:</p>
+<ul>
+<li>For root installations: /opt/intel/oneapi</li>
+<li>For non-root installations: $HOME/intel</li>
+</ul>
+<h1 id="3-调用">3. 调用</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ gedit ~/.bashrc
+</span></span></code></pre></div><p>加入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">source</span> /opt/intel/oneapi/setvars.sh intel64
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#366">source</span> ~/.bashrc 
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>:: initializing oneAPI environment ...
+</span></span><span style="display:flex;"><span>   bash: <span style="color:#033">BASH_VERSION</span> <span style="color:#555">=</span> 5.0.17<span style="color:#555">(</span>1<span style="color:#555">)</span>-release
+</span></span><span style="display:flex;"><span>:: advisor -- latest
+</span></span><span style="display:flex;"><span>:: ccl -- latest
+</span></span><span style="display:flex;"><span>:: clck -- latest
+</span></span><span style="display:flex;"><span>:: compiler -- latest
+</span></span><span style="display:flex;"><span>:: dal -- latest
+</span></span><span style="display:flex;"><span>:: debugger -- latest
+</span></span><span style="display:flex;"><span>:: dev-utilities -- latest
+</span></span><span style="display:flex;"><span>:: dnnl -- latest
+</span></span><span style="display:flex;"><span>:: dpcpp-ct -- latest
+</span></span><span style="display:flex;"><span>:: dpl -- latest
+</span></span><span style="display:flex;"><span>:: inspector -- latest
+</span></span><span style="display:flex;"><span>:: intelpython -- latest
+</span></span><span style="display:flex;"><span>:: ipp -- latest
+</span></span><span style="display:flex;"><span>:: ippcp -- latest
+</span></span><span style="display:flex;"><span>:: ipp -- latest
+</span></span><span style="display:flex;"><span>:: itac -- latest
+</span></span><span style="display:flex;"><span>:: mkl -- latest
+</span></span><span style="display:flex;"><span>:: mpi -- latest
+</span></span><span style="display:flex;"><span>:: tbb -- latest
+</span></span><span style="display:flex;"><span>:: vpl -- latest
+</span></span><span style="display:flex;"><span>:: vtune -- latest
+</span></span><span style="display:flex;"><span>:: oneAPI environment initialized ::
+</span></span></code></pre></div><p>验证是否调用成功：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ifort -V
+</span></span><span style="display:flex;"><span>Intel<span style="color:#555">(</span>R<span style="color:#555">)</span> Fortran Intel<span style="color:#555">(</span>R<span style="color:#555">)</span> <span style="color:#f60">64</span> Compiler Classic <span style="color:#069;font-weight:bold">for</span> applications running on Intel<span style="color:#555">(</span>R<span style="color:#555">)</span> 64, Version 2021.4.0 Build 20210910_000000
+</span></span><span style="display:flex;"><span>Copyright <span style="color:#555">(</span>C<span style="color:#555">)</span> 1985-2021 Intel Corporation.  All rights reserved.
+</span></span></code></pre></div><p>至此，安装成功。</p>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/364632368">intel fortran免费版安装 - 知乎</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

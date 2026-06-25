@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Python函数【001】——提取doi号 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Python函数【001】——提取doi号</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2020-11-10</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-函数">1. 函数</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#09f;font-style:italic">#!/usr/local/bin/python3</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># -*- coding: utf-8 -*-  </span>
+</span></span><span style="display:flex;"><span><span style="color:#c30">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Date: Nov.10.2020
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Author: Xiao-Le Deng
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Function: find out doi from the input text
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Input:  text
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">Output:  dois
+</span></span></span><span style="display:flex;"><span><span style="color:#c30">&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">import</span> <span style="color:#0cf;font-weight:bold">re</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">def</span> <span style="color:#c0f">extract_doi</span>(text):
+</span></span><span style="display:flex;"><span>    DOI_REGEX <span style="color:#555">=</span> <span style="color:#c30">r</span><span style="color:#c30">&#34;&#34;&#34;\b(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![&#34;&amp;\&#39;&lt;&gt;])\S)+)\b&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    res <span style="color:#555">=</span> re<span style="color:#555">.</span>findall(DOI_REGEX, text, re<span style="color:#555">.</span>IGNORECASE)
+</span></span><span style="display:flex;"><span>    <span style="color:#069;font-weight:bold">return</span> res
+</span></span></code></pre></div><h1 id="2-doi正则化通配符">2. doi正则化通配符</h1>
+<pre tabindex="0"><code>\b(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![&#34;&amp;\&#39;&lt;&gt;])\S)+)\b
+
+\b(10[.][0-9]{4,}(?:[.][0-9]+)*/(?:(?![&#34;&amp;\&#39;&lt;&gt;])[[:graph:]])+)\b
+
+/^10.\d{4,9}/[-._;()/:A-Z0-9]+$/i
+
+(10.(\d)+/([^(\s\&gt;\&#34;\&lt;)])+)
+
+(10[.][0-9]{4,}[^\s&#34;/&lt;&gt;]*/[^\s&#34;&lt;&gt;]+)
+
+\b10\.(\d+\.*)+[\/](([^\s\.])+\.*)+\b
+</code></pre><h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://www.itranslater.com/qa/details/2583588325344936960">正则表达式-在文档或分页中查找DOI - ITranslater</a></li>
+<li><a href="https://stackoverflow.com/questions/27910/finding-a-doi-in-a-document-or-page">regex - Finding a DOI in a document or page - Stack Overflow</a></li>
+<li><a href="https://stackoverflow.com/questions/27910/finding-a-doi-in-a-document-or-page">regex - Finding a DOI in a document or page - Stack Overflow</a></li>
+<li><a href="https://www.crossref.org/blog/dois-and-matching-regular-expressions/">DOIs and matching regular expressions - Crossref</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

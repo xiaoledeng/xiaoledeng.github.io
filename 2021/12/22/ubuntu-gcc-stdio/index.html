@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu gcc problem: fatal error: stdio.h: No such file or directory - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu gcc problem: fatal error: stdio.h: No such file or directory</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-12-22</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/c/">#C</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-简介">1. 简介</h1>
+<p><code>gcc</code> in Ubuntu is not installed by default and needs to be installed:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt-get install gcc
+</span></span></code></pre></div><p>However, after installing <code>gcc</code>, there is still such error: <code>fatal error: stdio.h: No such file or directory</code>。</p>
+<p>Installation required:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get install build-essential
+</span></span><span style="display:flex;"><span>Reading package lists... Done
+</span></span><span style="display:flex;"><span>Building dependency tree       
+</span></span><span style="display:flex;"><span>Reading state information... Done
+</span></span><span style="display:flex;"><span>E: Unable to locate package build-essential
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get install libc6-dev
+</span></span><span style="display:flex;"><span>Reading package lists... Done
+</span></span><span style="display:flex;"><span>Building dependency tree       
+</span></span><span style="display:flex;"><span>Reading state information... Done
+</span></span><span style="display:flex;"><span>Package libc6-dev is not available, but is referred to by another package.
+</span></span><span style="display:flex;"><span>This may mean that the package is missing, has been obsoleted, or
+</span></span><span style="display:flex;"><span>is only available from another <span style="color:#366">source</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>E: Package <span style="color:#c30">&#39;libc6-dev&#39;</span> has no installation candidate
+</span></span></code></pre></div><h1 id="2-steps">2. Steps</h1>
+<ol>
+<li>
+<p>Change the source first and select<code>Software &amp; Updates</code>, choose China <code>mirrors.aliyun.com</code>. Note that it depends on your location.</p>
+</li>
+<li>
+<p>Update system</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get update
+</span></span><span style="display:flex;"><span>Hit:1 http://mirrors.aliyun.com/ubuntu focal InRelease
+</span></span><span style="display:flex;"><span>Hit:2 http://mirrors.aliyun.com/ubuntu focal-updates InRelease                                                     
+</span></span><span style="display:flex;"><span>Hit:3 http://mirrors.aliyun.com/ubuntu focal-backports InRelease                                                   
+</span></span><span style="display:flex;"><span>Hit:4 http://mirrors.aliyun.com/ubuntu focal-security InRelease                                                    
+</span></span><span style="display:flex;"><span>Hit:5 http://download.zerotier.com/debian/bionic bionic InRelease                                                  
+</span></span><span style="display:flex;"><span>Hit:6 http://archive.canonical.com/ubuntu focal InRelease           
+</span></span><span style="display:flex;"><span>Hit:7 http://archive.ubuntu.com/ubuntu focal InRelease
+</span></span><span style="display:flex;"><span>Reading package lists... Done
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get upgrade
+</span></span><span style="display:flex;"><span>Reading package lists... Done
+</span></span><span style="display:flex;"><span>Building dependency tree       
+</span></span><span style="display:flex;"><span>Reading state information... Done
+</span></span><span style="display:flex;"><span>Calculating upgrade... Done
+</span></span><span style="display:flex;"><span><span style="color:#f60">0</span> upgraded, <span style="color:#f60">0</span> newly installed, <span style="color:#f60">0</span> to remove and <span style="color:#f60">0</span> not upgraded.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get install libc6-dev
+</span></span><span style="display:flex;"><span>Reading package lists... Done
+</span></span><span style="display:flex;"><span>Building dependency tree       
+</span></span><span style="display:flex;"><span>Reading state information... Done
+</span></span><span style="display:flex;"><span>Some packages could not be installed. This may mean that you have
+</span></span><span style="display:flex;"><span>requested an impossible situation or <span style="color:#069;font-weight:bold">if</span> you are using the unstable
+</span></span><span style="display:flex;"><span>distribution that some required packages have not yet been created
+</span></span><span style="display:flex;"><span>or been moved out of Incoming.
+</span></span><span style="display:flex;"><span>The following information may <span style="color:#366">help</span> to resolve the situation:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The following packages have unmet dependencies:
+</span></span><span style="display:flex;"><span> libc6-dev : Depends: libc6 <span style="color:#555">(=</span> 2.31-0ubuntu9<span style="color:#555">)</span> but 2.31-0ubuntu9.2 is to be installed
+</span></span><span style="display:flex;"><span>E: Unable to correct problems, you have held broken packages.
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get install <span style="color:#033">libc6</span><span style="color:#555">=</span>2.31-0ubuntu9
+</span></span><span style="display:flex;"><span>Reading package lists... Done
+</span></span><span style="display:flex;"><span>Building dependency tree       
+</span></span><span style="display:flex;"><span>Reading state information... Done
+</span></span><span style="display:flex;"><span>Suggested packages:
+</span></span><span style="display:flex;"><span>  glibc-doc
+</span></span><span style="display:flex;"><span>The following packages will be REMOVED:
+</span></span><span style="display:flex;"><span>  libc6-dbg
+</span></span><span style="display:flex;"><span>The following packages will be DOWNGRADED:
+</span></span><span style="display:flex;"><span>  libc6
+</span></span><span style="display:flex;"><span><span style="color:#f60">0</span> upgraded, <span style="color:#f60">0</span> newly installed, <span style="color:#f60">1</span> downgraded, <span style="color:#f60">1</span> to remove and <span style="color:#f60">0</span> not upgraded.
+</span></span><span style="display:flex;"><span>Need to get 2,713 kB of archives.
+</span></span><span style="display:flex;"><span>After this operation, 76.4 MB disk space will be freed.
+</span></span><span style="display:flex;"><span>Do you want to <span style="color:#069;font-weight:bold">continue</span>? <span style="color:#555">[</span>Y/n<span style="color:#555">]</span> y
+</span></span><span style="display:flex;"><span>Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 libc6 amd64 2.31-0ubuntu9 <span style="color:#555">[</span>2,713 kB<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>Fetched 2,713 kB in 2s <span style="color:#555">(</span>1,414 kB/s<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Preconfiguring packages ...
+</span></span><span style="display:flex;"><span><span style="color:#555">(</span>Reading database ... <span style="color:#f60">375751</span> files and directories currently installed.<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Removing libc6-dbg:amd64 <span style="color:#555">(</span>2.31-0ubuntu9.2<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>dpkg: warning: downgrading libc6:amd64 from 2.31-0ubuntu9.2 to 2.31-0ubuntu9
+</span></span><span style="display:flex;"><span><span style="color:#555">(</span>Reading database ... <span style="color:#f60">375437</span> files and directories currently installed.<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Preparing to unpack .../libc6_2.31-0ubuntu9_amd64.deb ...
+</span></span><span style="display:flex;"><span>Unpacking libc6:amd64 <span style="color:#555">(</span>2.31-0ubuntu9<span style="color:#555">)</span> over <span style="color:#555">(</span>2.31-0ubuntu9.2<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Setting up libc6:amd64 <span style="color:#555">(</span>2.31-0ubuntu9<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Processing triggers <span style="color:#069;font-weight:bold">for</span> libc-bin <span style="color:#555">(</span>2.31-0ubuntu9.2<span style="color:#555">)</span> ...
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get install libc6-dev
+</span></span><span style="display:flex;"><span>Reading package lists... Done
+</span></span><span style="display:flex;"><span>Building dependency tree       
+</span></span><span style="display:flex;"><span>Reading state information... Done
+</span></span><span style="display:flex;"><span>The following additional packages will be installed:
+</span></span><span style="display:flex;"><span>  libc-dev-bin libcrypt-dev linux-libc-dev manpages-dev
+</span></span><span style="display:flex;"><span>Suggested packages:
+</span></span><span style="display:flex;"><span>  glibc-doc
+</span></span><span style="display:flex;"><span>The following NEW packages will be installed:
+</span></span><span style="display:flex;"><span>  libc-dev-bin libc6-dev libcrypt-dev linux-libc-dev manpages-dev
+</span></span><span style="display:flex;"><span><span style="color:#f60">0</span> upgraded, <span style="color:#f60">5</span> newly installed, <span style="color:#f60">0</span> to remove and <span style="color:#f60">0</span> not upgraded.
+</span></span><span style="display:flex;"><span>Need to get 6,068 kB of archives.
+</span></span><span style="display:flex;"><span>After this operation, 30.1 MB of additional disk space will be used.
+</span></span><span style="display:flex;"><span>Do you want to <span style="color:#069;font-weight:bold">continue</span>? <span style="color:#555">[</span>Y/n<span style="color:#555">]</span> y
+</span></span><span style="display:flex;"><span>Get:1 http://archive.ubuntu.com/ubuntu focal/main amd64 libc-dev-bin amd64 2.31-0ubuntu9 <span style="color:#555">[</span>71.8 kB<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>Get:2 http://archive.ubuntu.com/ubuntu focal/main amd64 linux-libc-dev amd64 5.4.0-26.30 <span style="color:#555">[</span>1,106 kB<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>Get:3 http://archive.ubuntu.com/ubuntu focal/main amd64 libcrypt-dev amd64 1:4.4.10-10ubuntu4 <span style="color:#555">[</span><span style="color:#f60">104</span> kB<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>Get:4 http://archive.ubuntu.com/ubuntu focal/main amd64 libc6-dev amd64 2.31-0ubuntu9 <span style="color:#555">[</span>2,520 kB<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>Get:5 http://archive.ubuntu.com/ubuntu focal/main amd64 manpages-dev all 5.05-1 <span style="color:#555">[</span>2,266 kB<span style="color:#555">]</span>                         
+</span></span><span style="display:flex;"><span>Fetched 6,068 kB in 12s <span style="color:#555">(</span><span style="color:#f60">486</span> kB/s<span style="color:#555">)</span>                                                                                 
+</span></span><span style="display:flex;"><span>Selecting previously unselected package libc-dev-bin.
+</span></span><span style="display:flex;"><span><span style="color:#555">(</span>Reading database ... <span style="color:#f60">375437</span> files and directories currently installed.<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Preparing to unpack .../libc-dev-bin_2.31-0ubuntu9_amd64.deb ...
+</span></span><span style="display:flex;"><span>Unpacking libc-dev-bin <span style="color:#555">(</span>2.31-0ubuntu9<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Selecting previously unselected package linux-libc-dev:amd64.
+</span></span><span style="display:flex;"><span>Preparing to unpack .../linux-libc-dev_5.4.0-26.30_amd64.deb ...
+</span></span><span style="display:flex;"><span>Unpacking linux-libc-dev:amd64 <span style="color:#555">(</span>5.4.0-26.30<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Selecting previously unselected package libcrypt-dev:amd64.
+</span></span><span style="display:flex;"><span>Preparing to unpack .../libcrypt-dev_1%3a4.4.10-10ubuntu4_amd64.deb ...
+</span></span><span style="display:flex;"><span>Unpacking libcrypt-dev:amd64 <span style="color:#555">(</span>1:4.4.10-10ubuntu4<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Selecting previously unselected package libc6-dev:amd64.
+</span></span><span style="display:flex;"><span>Preparing to unpack .../libc6-dev_2.31-0ubuntu9_amd64.deb ...
+</span></span><span style="display:flex;"><span>Unpacking libc6-dev:amd64 <span style="color:#555">(</span>2.31-0ubuntu9<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Selecting previously unselected package manpages-dev.
+</span></span><span style="display:flex;"><span>Preparing to unpack .../manpages-dev_5.05-1_all.deb ...
+</span></span><span style="display:flex;"><span>Unpacking manpages-dev <span style="color:#555">(</span>5.05-1<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Setting up manpages-dev <span style="color:#555">(</span>5.05-1<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Setting up linux-libc-dev:amd64 <span style="color:#555">(</span>5.4.0-26.30<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Setting up libcrypt-dev:amd64 <span style="color:#555">(</span>1:4.4.10-10ubuntu4<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Setting up libc-dev-bin <span style="color:#555">(</span>2.31-0ubuntu9<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Setting up libc6-dev:amd64 <span style="color:#555">(</span>2.31-0ubuntu9<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Processing triggers <span style="color:#069;font-weight:bold">for</span> man-db <span style="color:#555">(</span>2.9.1-1<span style="color:#555">)</span> ...
+</span></span></code></pre></div><h1 id="3-summary">3. Summary</h1>
+<p>Summarize key points:</p>
+<ul>
+<li>Change the source, preferably commercial;</li>
+<li><code>libc6-dev</code> is the key to <code>stdio.h</code>.</li>
+</ul>
+<h1 id="4-reference">4. Reference</h1>
+<ul>
+<li><a href="https://www.cnblogs.com/zhchoutai/p/8470122.html">关于在linux下出现stdio.h文件不存在等gcc标准库不能找到的解决的方法 - zhchoutai - 博客园</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

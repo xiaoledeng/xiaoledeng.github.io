@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Fortran常用内置数学函数 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Fortran常用内置数学函数</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2021-12-01</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/fortran/">#Fortran</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-三角函数">1. 三角函数</h1>
+<p><code>acos</code> 反余弦</p>
+<p><code>acosh</code> 反双曲余弦</p>
+<p><code>acot</code> 反余切</p>
+<p><code>acoth</code> 反双曲余切</p>
+<p><code>acsc</code> 反余割</p>
+<p><code>acsch</code> 反双曲余割</p>
+<p><code>asin</code> 反正弦</p>
+<p><code>asinh</code> 反双曲正弦</p>
+<p><code>atan</code> 反正切</p>
+<p><code>atanh</code> 反双曲正切</p>
+<p><code>cos</code> 余弦</p>
+<p><code>cosh</code> 双曲余弦</p>
+<p><code>cotg</code> 余切</p>
+<p><code>coth</code> 双曲余切</p>
+<p><code>sin</code> 正弦</p>
+<p><code>sinh</code> 双曲正弦</p>
+<p><code>tan</code> 正切</p>
+<p><code>tanh</code> 双曲正切</p>
+<p>注意：<code>sin()</code>为弧度，<code>sind()</code>为角度。</p>
+<h1 id="2-其他函数">2. 其他函数</h1>
+<p><code>exp</code> 指数</p>
+<p><code>log</code> 自然对数</p>
+<p><code>log10</code> 常用对数</p>
+<p><code>log2</code> 以2为底的对数</p>
+<p><code>sqrt</code> 平方根</p>
+<p><code>cbrt</code> 立方根</p>
+<p><code>abs</code> 绝对值</p>
+<h1 id="3-参考">3. 参考</h1>
+<ul>
+<li><a href="https://docs.oracle.com/cd/E19205-01/820-1202/aetmd/index.html">3.1.3 三角函数 (Sun Studio 12：Fortran 库参考)</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_12bc540820102xlgf.html">Fortran语言常用函数_淼先生_LH_新浪博客</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

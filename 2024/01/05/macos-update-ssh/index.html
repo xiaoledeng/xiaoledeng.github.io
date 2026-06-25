@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS更新SSH - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS更新SSH</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-05</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<p>安全外壳协议（Secure Shell Protocol, SSH）是一种加密网络协议，用于在不安全的网络上安全地操作网络服务。SSH 最引人注目的应用程序是<code>远程登录</code>和<code>命令行</code>执行。<sup>1</sup></p>
+<p>OpenSSH 是使用 SSH 协议远程登录的首要连接工具。它对所有流量进行加密，以消除窃听、连接劫持和其他攻击。此外，OpenSSH 提供了一大套安全隧道功能、几种身份验证方法和复杂的配置选项。<sup>2</sup></p>
+<p>OpenSSH 会定期更新，主要是许多安全修复程序、一些小功能和错误修复。<sup>3</sup></p>
+<h1 id="2-macos-更新-ssh">2. macOS 更新 SSH</h1>
+<ol>
+<li>查看当前版本，终端命令：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -V
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 显示</span>
+</span></span><span style="display:flex;"><span>OpenSSH_9.0p1, LibreSSL 3.3.6
+</span></span></code></pre></div><p><a href="https://www.openssh.com/releasenotes.html">OpenSSH: Release Notes</a> 显示：2023-12-18，最新版本为：OpenSSH 9.6/9.6p1</p>
+<ol start="2">
+<li>brew 安装 openssh ，终端命令：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew update
+</span></span><span style="display:flex;"><span>brew install openssh
+</span></span></code></pre></div><p>查看当前 SSH 版本：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>which ssh
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 显示</span>
+</span></span><span style="display:flex;"><span>/usr/bin/ssh
+</span></span><span style="display:flex;"><span>/opt/homebrew/bin/ssh
+</span></span></code></pre></div><p>输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/bin/ssh -V
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 显示</span>
+</span></span><span style="display:flex;"><span>OpenSSH_9.0p1, LibreSSL 3.3.6
+</span></span></code></pre></div><p>输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/opt/homebrew/bin/ssh -V
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 显示</span>
+</span></span><span style="display:flex;"><span>OpenSSH_9.6p1, OpenSSL 3.2.0 <span style="color:#f60">23</span> Nov <span style="color:#f60">2023</span>
+</span></span></code></pre></div><p>第二个是 brew 安装的 SSH 。</p>
+<ol start="3">
+<li>清理残余文件</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew autoremove
+</span></span></code></pre></div><p>brew 安装的 SSH ：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>which ssh
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 显示</span>
+</span></span><span style="display:flex;"><span>/opt/homebrew/bin/ssh
+</span></span></code></pre></div><p>输入：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -V
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 显示</span>
+</span></span><span style="display:flex;"><span>OpenSSH_9.6p1, OpenSSL 3.2.0 <span style="color:#f60">23</span> Nov <span style="color:#f60">2023</span>
+</span></span></code></pre></div><p><del>也可以参考 <sup>6</sup>，移除旧的SSH，保留新的SSH。</del></p>
+<p><strong>PS：不建议移除苹果默认的 SSH 。如果移除，会出现<code>每次都要输入公钥密码</code>的问题，因为开源的 SSH 没有苹果自带 <code>ssh-add</code> 的 <code>--apple-use-keychain</code> 和 <code>--apple-load-keychain</code>。</strong></p>
+<h1 id="3-延伸阅读">3. 延伸阅读</h1>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Secure_Shell">Secure Shell - Wikipedia</a></li>
+<li><a href="https://www.openssh.com/">OpenSSH</a></li>
+<li><a href="https://www.openssh.com/releasenotes.html">OpenSSH: Release Notes</a></li>
+<li><a href="https://www.openssl.org/source/">OpenSSL: /source/index.html</a></li>
+<li><a href="https://www.linkedin.com/advice/1/how-do-you-update-upgrade-your-ssh-client-software#how-to-update-and-upgrade-ssh-on-linux?">How do you update and upgrade your SSH client software and dependencies?</a></li>
+<li><a href="https://timhilliard.com/blog/upgrading-openssh-client-mac-osx-using-homebrew/">Upgrading OpenSSH Client on Mac OSX using Homebrew · Tim Hilliard</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

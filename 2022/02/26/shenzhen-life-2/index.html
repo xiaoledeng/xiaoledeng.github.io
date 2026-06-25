@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>记深圳居家办公的日子(2)—Parallels desktop上Manjaro安装记录 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">记深圳居家办公的日子(2)—Parallels desktop上Manjaro安装记录</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-02-26</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/life/">#Life</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-下载iso镜像">1. 下载ISO镜像</h1>
+<p>在Manjaro Linux中文网下载Archlinux的ISO文件，地址：</p>
+<ul>
+<li><a href="https://manjaro.org.cn/category/download-manjaro">下载 | Manjaro Linux 乐于简单</a></li>
+</ul>
+<h1 id="2-parallels-desktop问题">2. Parallels desktop问题</h1>
+<p>执行该操作失败的解决方案，见：<a href="https://zhuanlan.zhihu.com/p/454602605">Parallels Desktop 17.1.1 操作失败 执行该操作失败 解决方案 - 知乎</a>。</p>
+<h1 id="3-基本设置">3. 基本设置</h1>
+<p>更换软件源：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman-mirrors -i -c China -m rank
+</span></span></code></pre></div><p>更新软件库：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -Syy
+</span></span></code></pre></div><p>更新系统：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -Syu
+</span></span></code></pre></div><p>注意：不建议配置archlinuxcn的源。</p>
+<p>必须要做timeshift （备份回滚系统的工具），防止重装：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S timeshift
+</span></span></code></pre></div><p>其他软件：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S bat
+</span></span><span style="display:flex;"><span>sudo pacman -S neofetch
+</span></span><span style="display:flex;"><span>sudo pacman -S htop
+</span></span><span style="display:flex;"><span>sudo pacman -S btop
+</span></span><span style="display:flex;"><span>sudo pacman -S duf
+</span></span></code></pre></div><h1 id="4-参考">4. 参考</h1>
+<ul>
+<li><a href="https://linuxacme.cn/99/">manjaro安装教程</a></li>
+<li><a href="https://linuxacme.cn/477/">Manjaro Linux 更换软件源 | 极致linux|Linuxacme</a></li>
+<li><a href="https://linuxacme.cn/559/">Arch/Manjaro安装搜狗/ibus/fcitx/fcitx5中文输入法大杂烩 | 极致linux|Linuxacme</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/334808120">Manjaro安装与配置指南 - 知乎</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/462061314">Manjaro Linux系统安装配置，一篇小白必看入门指南 - 知乎</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

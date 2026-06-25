@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu 14.04 LTS安装Pelican elegant主题 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu 14.04 LTS安装Pelican elegant主题</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2014-05-02</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="一-安装软件及环境准备">一. 安装软件及环境准备:</h1>
+<h2 id="1软件安装">1.软件安装:</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get install python-pip
+</span></span><span style="display:flex;"><span>$ sudo apt-get install python-virtualenv
+</span></span><span style="display:flex;"><span>$ virtualenv ~/virtualenvs/pelican
+</span></span><span style="display:flex;"><span>$ <span style="color:#366">cd</span> ~/virtualenvs/pelican
+</span></span><span style="display:flex;"><span>$ . bin/activate
+</span></span><span style="display:flex;"><span>$ pip install -e git://github.com/getpelican/pelican#egg<span style="color:#555">=</span>pelican
+</span></span><span style="display:flex;"><span>$ pip install Markdown
+</span></span><span style="display:flex;"><span>$ mkdir blog
+</span></span><span style="display:flex;"><span>$ <span style="color:#366">cd</span> blog
+</span></span><span style="display:flex;"><span>$ pelican-quikstart
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>blog/
+</span></span><span style="display:flex;"><span>|--content <span style="color:#09f;font-style:italic">#存储所写的blog文件目录，</span>
+</span></span><span style="display:flex;"><span>|   └──（blog pages<span style="color:#555">)</span> <span style="color:#09f;font-style:italic">#博客文件，如*.md后缀的文件</span>
+</span></span><span style="display:flex;"><span>|--output <span style="color:#09f;font-style:italic">#执行make publish之后，会将博客文件转换成相应的html文件及相应的存储目录</span>
+</span></span><span style="display:flex;"><span>|   └──.git <span style="color:#09f;font-style:italic">#执行git init之后，产生的远程仓库目录</span>
+</span></span><span style="display:flex;"><span>|   └──author <span style="color:#09f;font-style:italic">#作者目录，存放pelicanconf.py中指定的Author文件</span>
+</span></span><span style="display:flex;"><span>|   └──category <span style="color:#09f;font-style:italic">#分类目录，默认目录文件为misc，在编辑器中指定</span>
+</span></span><span style="display:flex;"><span>|   └──feeds <span style="color:#09f;font-style:italic">#目录，pelicanconf.py中FEED_RSS指定的XML文件</span>
+</span></span><span style="display:flex;"><span>|   └──pages <span style="color:#09f;font-style:italic">#目录，pelicanconf.py中ARTICLE_URL指定格式分类文件</span>
+</span></span><span style="display:flex;"><span>|   └──tag <span style="color:#09f;font-style:italic">#目录，存放编辑器开头所指定的Tag</span>
+</span></span><span style="display:flex;"><span>|   └──theme <span style="color:#09f;font-style:italic">#目录，存放博客模板文件</span>
+</span></span><span style="display:flex;"><span>|   └──archives.html,authors.html,categories.html,index.html, tags.html
+</span></span><span style="display:flex;"><span>|——pelican-plugins <span style="color:#09f;font-style:italic">#目录，pelican插件</span>
+</span></span><span style="display:flex;"><span>|——develop_server.sh <span style="color:#09f;font-style:italic">#pelican简易web服务器操作文件</span>
+</span></span><span style="display:flex;"><span>|——fabfile.py <span style="color:#09f;font-style:italic"># 与make类似，可用fab publish, fab server命令</span>
+</span></span><span style="display:flex;"><span>|——Makefile <span style="color:#09f;font-style:italic">#make 命令文件</span>
+</span></span><span style="display:flex;"><span>|——pelicanconf.py <span style="color:#09f;font-style:italic">#主要的pelican配置文件</span>
+</span></span><span style="display:flex;"><span>|——publishconf.py <span style="color:#09f;font-style:italic">#发布配置文件,可有可无</span>
+</span></span></code></pre></div><h2 id="2文章模板如下">2.文章模板如下：</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Title: Ubuntu14.04LTS安装Pelican elegant主题
+</span></span><span style="display:flex;"><span>Date: 2014-05-03
+</span></span><span style="display:flex;"><span>Category: Ubuntu
+</span></span><span style="display:flex;"><span>Tags: Ubuntu,Theme
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>This is my first page.
+</span></span></code></pre></div><h2 id="3-编译page">3. 编译page</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ make html  <span style="color:#09f;font-style:italic">#出现错误,修改pelicanconf.py</span>
+</span></span><span style="display:flex;"><span>$ make publish
+</span></span><span style="display:flex;"><span>$ make serve <span style="color:#09f;font-style:italic">#查看 http://localhost:8000</span>
+</span></span></code></pre></div><h2 id="4创建一个页面">4.创建一个页面</h2>
+<p>这里以创建 About页面为例,在content目录创建pages目录</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ mkdir content/pages
+</span></span></code></pre></div><p>然后创建About.md并填入下面内容</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Title: About Me
+</span></span><span style="display:flex;"><span>Date: 2013-05-03
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>About me content
+</span></span></code></pre></div><p>执行 make html 生成html, 然后打http://localhost:8000查看效果.</p>
+<h2 id="5推送到github网页">5.推送到github网页:</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#366">cd</span> output
+</span></span><span style="display:flex;"><span>$ git init
+</span></span><span style="display:flex;"><span>$ git add .
+</span></span><span style="display:flex;"><span>$ git remote add origin  https://github.com/xiaoledeng/xiaoledeng.github.io
+</span></span><span style="display:flex;"><span>$ git pull origin master
+</span></span><span style="display:flex;"><span>$ git add .
+</span></span><span style="display:flex;"><span>$ git commit -m <span style="color:#c30">&#34;your message&#34;</span>
+</span></span><span style="display:flex;"><span>$ git push --force origin master
+</span></span></code></pre></div><h1 id="二-安装pelican-elegant主题">二. 安装pelican-elegant主题:</h1>
+<p>复制 <a href="http://pan.baidu.com/s/1kTt6GOR">pelican-elegant-1.3</a>文件夹到pelican目录下</p>
+<p>在pelicanconf.py中添加</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#033">THEME</span> <span style="color:#555">=</span> <span style="color:#c30">&#39;pelican-elegant-1.3&#39;</span>
+</span></span></code></pre></div><p>然后重新make publish即可</p>
+<h1 id="三-谷歌分析">三. 谷歌分析:</h1>
+<p>去Google Analytics申请账号，记下跟踪ID。</p>
+<p>在pelicanconf.py添加</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#033">GOOGLE_ANALYTICS</span> <span style="color:#555">=</span> <span style="color:#c30">&#39;跟踪ID&#39;</span> 
+</span></span></code></pre></div><h1 id="reference">Reference:</h1>
+<ol>
+<li><a href="http://blog.csdn.net/zwjlpeng/article/details/16918289">http://blog.csdn.net/zwjlpeng/article/details/16918289</a></li>
+<li><a href="http://blog.csdn.net/zwjlpeng/article/details/18010345">http://blog.csdn.net/zwjlpeng/article/details/18010345</a></li>
+<li><a href="http://www.dongxf.com/3_Build_Personal_Blog_With_Pelican_And_GitHub_Pages.html">http://www.dongxf.com/3_Build_Personal_Blog_With_Pelican_And_GitHub_Pages.html</a></li>
+<li><a href="http://akenzc.com/how-to-build-a-blog-with-pelican.html">http://akenzc.com/how-to-build-a-blog-with-pelican.html</a></li>
+</ol>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

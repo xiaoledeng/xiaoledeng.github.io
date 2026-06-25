@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Keyboard Maestro设置中文OCR - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Keyboard Maestro设置中文OCR</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-12</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/minimalism/">#Minimalism</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/automation/">#Automation</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-前言">1. 前言</h1>
+<blockquote>
+<p>OCR (Optical Character Recognition，光学字符识别)，即：检查图片中的字符，并将其翻译成计算机文字。</p>
+</blockquote>
+<p>Keyboard Maestro 支持调用 macOS 内置 OCR 的功能，实现的功能为：</p>
+<ul>
+<li>点击右上角 Keyboard Maestro 图标，选择 <code>Capture &amp; OCR Chinese</code></li>
+<li>截取一段屏幕区域后，自动识别文字到剪贴板</li>
+<li>黏贴对应的文字即可</li>
+</ul>
+<h1 id="2-设置步骤">2. 设置步骤</h1>
+<ol>
+<li>
+<p>新建一个 Macros，命名为 <code>Capture &amp; OCR Chinese</code></p>
+</li>
+<li>
+<p>点击「New Trigger - Status Menu Trigger」</p>
+</li>
+<li>
+<p>点击「New Action」，进入 Categories 的「Execute」，选中「Execute Shell Script」，鼠标🖱️双击添加，加入命令行： <code>screencapture -ic</code>，设置为 <code>Ignore results</code></p>
+</li>
+<li>
+<p>关闭「Actions」，再次点击「New Action」，进入 Categories 的「Image」，选中「OCR Images」，鼠标🖱️双击添加，Language选为： <code>Languages - Chinese sim</code>【即，中文简体】，设置为 <code>Save results to a clipboard</code>，Save to <code>System Clipboard</code></p>
+</li>
+<li>
+<p>关闭「Actions」，再次点击「New Action」，进入 Categories 的「Variables」，选中「Filter」，鼠标🖱️双击添加，Filter 选为 <code>System Clipboard</code>，with 选为 <code>Trim Whiterspace</code>，to 选为 <code>System Clipboard</code></p>
+</li>
+<li>
+<p>关闭「Actions」，再次点击「New Action」，进入 Categories 的「Notifications」，选中「Display Text」，鼠标🖱️双击添加，填入内容： <code>%SystemClipboard%</code>，设置为 <code>Display text briefly</code></p>
+</li>
+<li>
+<p>关闭「Actions」，完成✅操作</p>
+</li>
+</ol>
+<p>注意⚠️： Language 选择影响识别文字效果，默认 <code>Apple Text Recongnition</code> 识别英文不能识别中文。 <code>Languages - Chinese sim</code> 可识别简体中文和英文。</p>
+<h1 id="3-延伸阅读">3. 延伸阅读</h1>
+<ul>
+<li><a href="https://sspai.com/post/83932">Keyboard Maestro 11 更新，这些功能值得关注 - 少数派</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/143162320">在 Mac 上随时提取屏幕上的文字和解析二维码</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

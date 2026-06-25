@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Ubuntu系统解决AnyDesk开机启动问题 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Ubuntu系统解决AnyDesk开机启动问题</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2022-04-24</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/ubuntu/">#Ubuntu</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-问题描述">1. 问题描述</h1>
+<p>AnyDesk开机不能自动启动，错误为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Gtk-Message: 12:58:56.932: Failed to load module <span style="color:#c30">&#34;canberra-gtk-module&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#555">(</span>anydesk:2240<span style="color:#555">)</span>: Gtk-CRITICAL **: 12:58:56.959: IA__gtk_widget_set_tooltip_markup: assertion <span style="color:#c30">&#39;GTK_IS_WIDGET (widget)&#39;</span> failed
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#555">(</span>anydesk:2240<span style="color:#555">)</span>: Gtk-CRITICAL **: 12:58:56.961: IA__gtk_widget_set_tooltip_markup: assertion <span style="color:#c30">&#39;GTK_IS_WIDGET (widget)&#39;</span> failed
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#555">(</span>anydesk:2240<span style="color:#555">)</span>: Gtk-CRITICAL **: 12:58:56.980: IA__gtk_signal_connect_full: assertion <span style="color:#c30">&#39;GTK_IS_OBJECT (object)&#39;</span> failed
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#555">(</span>anydesk:2240<span style="color:#555">)</span>: Gtk-CRITICAL **: 12:58:56.980: IA__gtk_signal_connect_full: assertion <span style="color:#c30">&#39;GTK_IS_OBJECT (object)&#39;</span> failed
+</span></span></code></pre></div><h1 id="2-问题解决">2. 问题解决</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo apt-get install libcanberra-gtk-module
+</span></span><span style="display:flex;"><span>Reading package lists... Done
+</span></span><span style="display:flex;"><span>Building dependency tree       
+</span></span><span style="display:flex;"><span>Reading state information... Done
+</span></span><span style="display:flex;"><span>The following additional packages will be installed:
+</span></span><span style="display:flex;"><span>  libcanberra-gtk0
+</span></span><span style="display:flex;"><span>The following NEW packages will be installed:
+</span></span><span style="display:flex;"><span>  libcanberra-gtk-module libcanberra-gtk0
+</span></span><span style="display:flex;"><span><span style="color:#f60">0</span> upgraded, <span style="color:#f60">2</span> newly installed, <span style="color:#f60">0</span> to remove and <span style="color:#f60">0</span> not upgraded.
+</span></span><span style="display:flex;"><span>Need to get 17.8 kB of archives.
+</span></span><span style="display:flex;"><span>After this operation, 92.2 kB of additional disk space will be used.
+</span></span><span style="display:flex;"><span>Do you want to <span style="color:#069;font-weight:bold">continue</span>? <span style="color:#555">[</span>Y/n<span style="color:#555">]</span> y
+</span></span><span style="display:flex;"><span>Get:1 http://mirrors.ustc.edu.cn/ubuntu focal/universe amd64 libcanberra-gtk0 amd64 0.30-7ubuntu1 <span style="color:#555">[</span>7,916 B<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>Get:2 http://mirrors.ustc.edu.cn/ubuntu focal/universe amd64 libcanberra-gtk-module amd64 0.30-7ubuntu1 <span style="color:#555">[</span>9,904 B<span style="color:#555">]</span>
+</span></span><span style="display:flex;"><span>Fetched 17.8 kB in 0s <span style="color:#555">(</span><span style="color:#f60">176</span> kB/s<span style="color:#555">)</span>             
+</span></span><span style="display:flex;"><span>Selecting previously unselected package libcanberra-gtk0:amd64.
+</span></span><span style="display:flex;"><span><span style="color:#555">(</span>Reading database ... <span style="color:#f60">158884</span> files and directories currently installed.<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Preparing to unpack .../libcanberra-gtk0_0.30-7ubuntu1_amd64.deb ...
+</span></span><span style="display:flex;"><span>Unpacking libcanberra-gtk0:amd64 <span style="color:#555">(</span>0.30-7ubuntu1<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Selecting previously unselected package libcanberra-gtk-module:amd64.
+</span></span><span style="display:flex;"><span>Preparing to unpack .../libcanberra-gtk-module_0.30-7ubuntu1_amd64.deb ...
+</span></span><span style="display:flex;"><span>Unpacking libcanberra-gtk-module:amd64 <span style="color:#555">(</span>0.30-7ubuntu1<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Setting up libcanberra-gtk0:amd64 <span style="color:#555">(</span>0.30-7ubuntu1<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Setting up libcanberra-gtk-module:amd64 <span style="color:#555">(</span>0.30-7ubuntu1<span style="color:#555">)</span> ...
+</span></span><span style="display:flex;"><span>Processing triggers <span style="color:#069;font-weight:bold">for</span> libc-bin <span style="color:#555">(</span>2.31-0ubuntu9.7<span style="color:#555">)</span> ...
+</span></span></code></pre></div><p>打开在<code>Show Applications</code>的<code>Startup Applications Preferences</code>，编辑为：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/bin/anydesk
+</span></span></code></pre></div><h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://blog.csdn.net/footrip/article/details/103639958">解决Failed to load module canberra-gtk-module错误_footrip的博客-CSDN博客_canberra-gtk-module</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

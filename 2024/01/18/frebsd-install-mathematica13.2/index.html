@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>FreeBSD 14.0 install Mathematica 13.2 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">FreeBSD 14.0 install Mathematica 13.2</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-18</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/freebsd/">#FreeBSD</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/mathematica/">#Mathematica</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-enable-linux-binary-compatibility-on-freebsd">1. Enable Linux binary compatibility on FreeBSD</h1>
+<p>Run these commands with <code>root</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># enable the Linux ABI at boot time</span>
+</span></span><span style="display:flex;"><span>sysrc <span style="color:#033">linux_enable</span><span style="color:#555">=</span><span style="color:#c30">&#34;YES&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># start linux without rebooting</span>
+</span></span><span style="display:flex;"><span>service linux start
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># install CentOS Base System from FreeBSD Packages</span>
+</span></span><span style="display:flex;"><span>pkg install linux_base-c7
+</span></span></code></pre></div><h1 id="2-run-the-mathematica-installer">2. Run the Mathematica Installer</h1>
+<ol>
+<li>Run the command with <code>root</code>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># set the default ELF brand to Linux for all unbranded binaries</span>
+</span></span><span style="display:flex;"><span>sysctl kern.fallback_elf_brand<span style="color:#555">=</span><span style="color:#f60">3</span>
+</span></span></code></pre></div><ol start="2">
+<li>Open the Linux installer with <code>root</code>:</li>
+</ol>
+<pre tabindex="0"><code>vim Mathematica_13.2.1_LINUX_CN.sh
+</code></pre><p>Replace the first line <code>/bin/sh</code> by <code>/compat/linux/bin/sh</code>.</p>
+<ol start="3">
+<li>Set <code>Mathematica_13.2.1_LINUX_CN.sh</code> executable and install with <code>root</code>:</li>
+</ol>
+<pre tabindex="0"><code>chmod a+x Mathematica_13.2.1_LINUX_CN.sh
+./Mathematica_13.2.1_LINUX_CN.sh
+</code></pre><p>Note that the default paths are set as:</p>
+<ul>
+<li><code>/usr/local/Wolfram/Mathematica/13.2</code></li>
+<li><code>/usr/local/bin</code></li>
+</ul>
+<h1 id="3-modifying-the-mathematica-executables">3. Modifying the Mathematica Executables</h1>
+<p>Replace <code>/bin/sh</code> by <code>/compat/linux/bin/sh</code> inside the files <code>math</code>, <code>mathematica</code>, <code>Mathematica</code>, <code>MathKernel</code>, <code>WolframKernel</code>, <code>wolfram</code> at the path <code>/compat/linux/usr/local/Wolfram/Mathematica/13.2/Executables/</code>, then make these files executable using the command <code>chmod a+x</code> with <code>root</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#099">#!/bin/sh
+</span></span></span><span style="display:flex;"><span><span style="color:#099"></span><span style="color:#366">cd</span> /compat/linux/usr/local/Wolfram/Mathematica/13.2/Executables/
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">for</span> i in math mathematica Mathematica MathKernel WolframKernel wolfram
+</span></span><span style="display:flex;"><span>  <span style="color:#069;font-weight:bold">do</span> sed <span style="color:#c30">&#39;s/\/bin\/sh/\/compat\/linux\/bin\/sh/g&#39;</span> <span style="color:#033">$i</span> &gt; <span style="color:#033">$i</span>
+</span></span><span style="display:flex;"><span>  chmod a+x <span style="color:#033">$i</span>
+</span></span><span style="display:flex;"><span><span style="color:#069;font-weight:bold">done</span>
+</span></span></code></pre></div><p>Note that it doesn&rsquo;t need to replace <code>Linux</code> with <code>FreeBSD</code>, otherwise it will show <code>Cannot determine operating system.</code>.</p>
+<h1 id="4-add-the-path-of-mathematica-executables-to-zshrc">4. Add the path of Mathematica Executables to ~/.zshrc</h1>
+<p>Open ~/.zshrc (<code>vim ~/.zshrc</code>) and add this command with <code>common user</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">export</span> <span style="color:#033">PATH</span><span style="color:#555">=</span><span style="color:#033">$PATH</span>:/compat/linux/usr/local/Wolfram/Mathematica/13.2/Executables/
+</span></span></code></pre></div><h1 id="5-run-mathematica-executables-and-input-the-activation-key-password">5. Run Mathematica Executables and input the Activation Key, Password</h1>
+<ol>
+<li>Run the following Mathematica Executables with <code>common user</code>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>math
+</span></span><span style="display:flex;"><span>MathKernel
+</span></span><span style="display:flex;"><span>WolframKernel
+</span></span><span style="display:flex;"><span>wolfram
+</span></span></code></pre></div><ol start="2">
+<li>
+<p>According to the <code>MathID</code>, input the <code>Activation Key</code> and <code>Password</code>.</p>
+</li>
+<li>
+<p>Everything goes well as follows:</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Mathematica 13.2.1 Kernel <span style="color:#069;font-weight:bold">for</span> Linux x86 <span style="color:#555">(</span>64-bit<span style="color:#555">)</span>
+</span></span><span style="display:flex;"><span>Copyright 1988-2023 Wolfram Research, Inc.
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In<span style="color:#555">[</span>1<span style="color:#555">]</span>:<span style="color:#555">=</span> 
+</span></span></code></pre></div><h1 id="6-reference">6. Reference</h1>
+<ul>
+<li><a href="https://docs.freebsd.org/en/books/handbook/linuxemu/">Chapter 12. Linux Binary Compatibility | FreeBSD Documentation Portal</a></li>
+<li><a href="http://mirror.sars.tw/FreeBSD_Handbook_2006/linuxemu-mathematica.html">Installing Mathematica</a></li>
+<li><a href="https://forums.freebsd.org/threads/mathematica-7-0-on-fbsd-8.8243/">Mathematica 7.0 on FBSD 8 | The FreeBSD Forums</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

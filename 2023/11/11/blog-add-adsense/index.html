@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Hugo博客添加Google AdSense - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Hugo博客添加Google AdSense</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-11-11</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-步骤">1. 步骤</h1>
+<ol>
+<li>在<code>simple-style主题</code>文件夹 <code>/layouts/partials/</code> 建立 <code>Google AdSense</code> 文件 <code>ad.html</code>，内容为：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#09f;font-style:italic">&lt;!-- Google Adsense --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#309;font-weight:bold">script</span> <span style="color:#309">async</span> <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3168821395322381&#34;</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#309">crossorigin</span><span style="color:#555">=</span><span style="color:#c30">&#34;anonymous&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
+</span></span></code></pre></div><p>注意⚠️： <code>3168821395322381</code> 为 Google AdSense 的账号</p>
+<ol start="2">
+<li>在主题文件夹 <code>/layouts/_default/</code>的 <code>baseof.html</code> 文件中的 <code>&lt;head&gt;..&lt;/head&gt;</code>之间，加入：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{ partial &#34;ad.html&#34; . }}
+</span></span></code></pre></div><p>注意⚠️：第1步和第2步，主要是将<code>script代码</code>放入<code>&lt;head&gt;..&lt;/head&gt;</code>中。</p>
+<ol start="3">
+<li>在博客目录<code>static</code>文件夹，创建 <code>ads.txt</code>文件，内容为：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>google.com, pub-3168821395322381, DIRECT, f08c47fec0942fa0
+</span></span></code></pre></div><h1 id="2-参考">2. 参考</h1>
+<ul>
+<li><a href="/2020/05/28/blog-content-search/">Hugo博客添加搜索</a></li>
+<li><a href="https://mephisto.cc/tech/hugo-adsense/">Hugo静态站点接入Adsense广告 |mephisto.cc</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/582559756">Google Adsense在Hugo中的配置 - 知乎</a></li>
+<li><a href="https://www.sulinehk.com/post/add-google-adsense-to-hugo-website/">在 Hugo 博客中添加 Google AdSense - sulinehk&rsquo;s blog - 专注于计算机科学与软件工程的技术博客</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1561759">申请Google Adsense, 结合Hugo配置-腾讯云开发者社区-腾讯云</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

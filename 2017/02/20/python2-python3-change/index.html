@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Python2和3切换默认 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">Python2和3切换默认</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2017-02-20</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/python/">#Python</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  <span style="color:#555">~</span> which python
+</span></span><span style="display:flex;"><span><span style="color:#555">/</span>usr<span style="color:#555">/</span>local<span style="color:#555">/</span><span style="color:#366">bin</span><span style="color:#555">/</span>python
+</span></span><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  <span style="color:#555">~</span> python <span style="color:#555">-</span>V
+</span></span><span style="display:flex;"><span>Python <span style="color:#f60">3.5.0</span>
+</span></span><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  <span style="color:#555">~</span> python2 <span style="color:#555">-</span>V
+</span></span><span style="display:flex;"><span>Python <span style="color:#f60">2.7.6</span>
+</span></span><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  <span style="color:#555">~</span> python3 <span style="color:#555">-</span>V
+</span></span><span style="display:flex;"><span>zsh: command <span style="color:#000;font-weight:bold">not</span> found: python3
+</span></span><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  <span style="color:#555">~</span> which python
+</span></span><span style="display:flex;"><span><span style="color:#555">/</span>usr<span style="color:#555">/</span>local<span style="color:#555">/</span><span style="color:#366">bin</span><span style="color:#555">/</span>python
+</span></span><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  <span style="color:#555">~</span> l <span style="color:#555">/</span>usr<span style="color:#555">/</span>local<span style="color:#555">/</span><span style="color:#366">bin</span><span style="color:#555">/</span>python
+</span></span><span style="display:flex;"><span>lrwxrwxrwx<span style="color:#555">.</span> <span style="color:#f60">1</span> root root <span style="color:#f60">35</span> Nov  <span style="color:#f60">4</span>  <span style="color:#f60">2015</span> <span style="color:#555">/</span>usr<span style="color:#555">/</span>local<span style="color:#555">/</span><span style="color:#366">bin</span><span style="color:#555">/</span>python <span style="color:#555">-&gt;</span> <span style="color:#555">/</span>usr<span style="color:#555">/</span>local<span style="color:#555">/</span>Python<span style="color:#555">-</span><span style="color:#f60">3.5.0</span><span style="color:#555">/</span><span style="color:#366">bin</span><span style="color:#555">/</span>python3
+</span></span><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  <span style="color:#555">~</span> cd <span style="color:#555">/</span>usr<span style="color:#555">/</span>local<span style="color:#555">/</span><span style="color:#366">bin</span><span style="color:#555">/</span>
+</span></span><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  which python2
+</span></span><span style="display:flex;"><span><span style="color:#555">/</span>usr<span style="color:#555">/</span><span style="color:#366">bin</span><span style="color:#555">/</span>python2
+</span></span><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  ls <span style="color:#555">-</span>alch py<span style="color:#555">*</span>
+</span></span><span style="display:flex;"><span>lrwxrwxrwx<span style="color:#555">.</span> <span style="color:#f60">1</span> root root <span style="color:#f60">35</span> Nov  <span style="color:#f60">4</span>  <span style="color:#f60">2015</span> python <span style="color:#555">-&gt;</span> <span style="color:#555">/</span>usr<span style="color:#555">/</span>local<span style="color:#555">/</span>Python<span style="color:#555">-</span><span style="color:#f60">3.5.0</span><span style="color:#555">/</span><span style="color:#366">bin</span><span style="color:#555">/</span>python3
+</span></span><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  ln <span style="color:#555">-</span>s <span style="color:#555">/</span>usr<span style="color:#555">/</span><span style="color:#366">bin</span><span style="color:#555">/</span>python2 python
+</span></span><span style="display:flex;"><span>ln: creating symbolic link <span style="color:#a00;background-color:#faa">`</span>python<span style="color:#c30">&#39;: File exists</span>
+</span></span><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  rm <span style="color:#555">-</span>rf python
+</span></span><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  ln <span style="color:#555">-</span>s <span style="color:#555">/</span>usr<span style="color:#555">/</span><span style="color:#366">bin</span><span style="color:#555">/</span>python2 python
+</span></span><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  cd
+</span></span><span style="display:flex;"><span><span style="color:#a00;background-color:#faa">➜</span>  <span style="color:#555">~</span> python
+</span></span></code></pre></div></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

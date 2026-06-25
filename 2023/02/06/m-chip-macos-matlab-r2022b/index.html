@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS系统安装m芯片的MATLAB R2022b测试版 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS系统安装m芯片的MATLAB R2022b测试版</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-02-06</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/experiences/">#Experiences</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/matlab/">#Matlab</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/java/">#Java</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-步骤">1. 步骤</h1>
+<ol>
+<li>
+<p>先安装JAVA包，比如 <a href="https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/macOS-install.html?version=java-8-lts&amp;os=macOS&amp;architecture=arm-64-bit&amp;package=jdk#download-openjdk">Amazon Corretto 8 JDK</a>，下载页面为：<a href="https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html">Downloads for Amazon Corretto 8</a>，选 macOS aarch64。导入路径到环境变量，比如，在<code>～/.zshrc</code>加入<code>export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home</code>。</p>
+</li>
+<li>
+<p>下载 <a href="https://www.mathworks.com/downloads/csd/AppleSiliconPlatformOpenBeta/MATLAB_R2022b_Beta_install.dmg">MATLAB_R2022b_Beta_install.dmg</a> 包，并安装。因为是测试版，所以不需要激活，直接可以使用。</p>
+</li>
+</ol>
+<p>注意：This beta will be available until <code>June 30, 2023</code>.</p>
+<h1 id="2-参考">2. 参考</h1>
+<ul>
+<li><a href="https://www.mathworks.com/support/apple-silicon-r2022b-beta-conf.html">Install MATLAB R2022b Native Apple Silicon Open Beta </a></li>
+<li><a href="https://blogs.mathworks.com/matlab/2022/12/08/playing-with-the-r2022b-matlab-apple-silicon-beta-for-m1-m2-mac/">Playing with the R2022b MATLAB Apple Silicon beta for M1/M2 Mac</a></li>
+<li><a href="https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/macOS-install.html?version=java-8-lts&amp;os=macOS&amp;architecture=arm-64-bit&amp;package=jdk#download-openjdk">Amazon Corretto 8 Installation Instructions for macOS 10.10 or later</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

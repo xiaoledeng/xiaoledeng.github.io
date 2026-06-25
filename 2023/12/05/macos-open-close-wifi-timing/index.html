@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS系统定时关闭和开启Wi-Fi - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">macOS系统定时关闭和开启Wi-Fi</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2023-12-05</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/minimalism/">#Minimalism</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/automation/">#Automation</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-引言">1. 引言</h1>
+<p>macOS 系统，需要定时关闭和定时开启 Wi-Fi <sup>1</sup>。</p>
+<p>搜索了一下，发现 macOS 系统终端实现定时任务有两个工具： <code>Launchd（或launchctl）</code> 和 <code>crontab</code> <sup>2</sup>。</p>
+<p><code>crontab</code> 更通用一点，兼容适合更多的 Linux 系统。故而，选择 <code>crontab</code> <sup>3</sup>。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<h2 id="21-开启-crontab">2.1 开启 crontab</h2>
+<ol>
+<li>查看 crontab 是否启动：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo launchctl list | grep cron
+</span></span></code></pre></div><p>显示：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>-   <span style="color:#f60">0</span>   com.vix.cron
+</span></span></code></pre></div><ol start="2">
+<li>检查需要的文件：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls -al /etc/crontab
+</span></span></code></pre></div><p>显示：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ls: /etc/crontab: No such file or directory
+</span></span></code></pre></div><p>如果 crontab 文件不存在则创建：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo touch /etc/crontab
+</span></span></code></pre></div><h2 id="22-crontab-创建任务">2.2 crontab 创建任务</h2>
+<ol>
+<li>编辑定时任务：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>crontab -e
+</span></span></code></pre></div><p>一般是进入 vi 编辑模式，点击 <code>i</code> 开始编辑，复制并黏贴指定的定时任务：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每天9点关闭Wi-Fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#f60">0</span> <span style="color:#f60">9</span> * * * /usr/sbin/networksetup -setairportpower en0 off
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每天12点开启Wi-Fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#f60">0</span> <span style="color:#f60">12</span> * * * /usr/sbin/networksetup -setairportpower en0 on
+</span></span></code></pre></div><p><code>:wq</code>退出并保存文件。</p>
+<ol start="2">
+<li>查看定时任务</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>crontab -l
+</span></span></code></pre></div><p>显示：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每天9点关闭Wi-Fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#f60">0</span> <span style="color:#f60">9</span> * * * /usr/sbin/networksetup -setairportpower en0 off
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 每天12点开启Wi-Fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#f60">0</span> <span style="color:#f60">12</span> * * * /usr/sbin/networksetup -setairportpower en0 on
+</span></span></code></pre></div><p>这里， <code>en0</code> 是Wi-Fi端口，可以用以下命令查看：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/sbin/networksetup -listnetworkserviceorder
+</span></span></code></pre></div><h1 id="3-注意">3. 注意</h1>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo touch /etc/crontab
+</span></span><span style="display:flex;"><span>touch: /etc/crontab: Operation not permitted
+</span></span></code></pre></div><p>如果出现了文件权限问题，<code>touch: /etc/crontab: Operation not permitted</code>，可以按照如下操作关闭 macOS 系统的 Rootless 机制（对于一些特殊路径增加了保护，即使 root 权限也不可以操作）<sup>4</sup>。</p>
+<p>关闭 macOS 系统的 Rootless 机制<sup>5</sup>：</p>
+<ul>
+<li>
+<p>重启 macOS 系统，按住 Command + R，先看到 Apple 标志或旋转的地球，进入 macOS 恢复模式（Recovery Mode）</p>
+</li>
+<li>
+<p>点击左上角菜单栏的<code>实用工具</code>，进入终端，键入：</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 关闭 Rootless</span>
+</span></span><span style="display:flex;"><span>csrutil disable
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 开启 Rootless</span>
+</span></span><span style="display:flex;"><span>csrutil <span style="color:#366">enable</span>
+</span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"># 查看开启状态</span>
+</span></span><span style="display:flex;"><span>csrutil status
+</span></span></code></pre></div><ul>
+<li>重启电脑，再在终端输入： <code>sudo touch /etc/crontab</code></li>
+</ul>
+<h1 id="4-延伸阅读">4. 延伸阅读</h1>
+<ol>
+<li><a href="https://meta.appinn.net/t/topic/34670">求Mac定时断开WiFi的工具</a></li>
+<li><a href="https://linuxtools-rst.readthedocs.io/zh-cn/latest/tool/crontab.html">19. crontab 定时任务 — Linux Tools Quick Tutorial</a></li>
+<li><a href="https://www.jianshu.com/p/fa179bfbf8b4">Mac 之 crontab 定时任务 - 简书</a></li>
+<li><a href="https://blog.bihe0832.com/imac-crontab.html">iMac配置基于crontab的定时任务 | 子勰的博客</a></li>
+<li><a href="https://www.cnblogs.com/jiaoran/p/10805361.html">macOS 中的 Rootless 机制 - 皎然CEO - 博客园</a></li>
+</ol>
+<ul>
+<li><a href="https://ss64.com/osx/crontab.html">crontab Man Page - macOS - SS64.com</a></li>
+<li><a href="https://ss64.com/osx/launchctl.html">launchctl Man Page - macOS - SS64.com</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,178 @@
+body{margin:0 auto;max-width:800px;padding:10px;color:#333;line-height:1.6;
+    font-size: 100%;font-family: "Times New Roman"}
+h1{line-height:0.1;font-size:160%}
+h2{line-height:1.5;font-size:140%}
+h3{line-height:1.3;font-size: 120%}
+/*h4,h5,h6{line-height:1.2;font-size:100%}*/
+header{margin:0;padding:0;border-bottom:1px solid #999;line-height:1;font-family: "Times New Roman"}
+footer{margin:0;padding:10px 0;border-top:1px solid #999;line-height:1;text-align:center;font-family: "Times New Roman"}
+p,div,table,ul,ol{margin:10px 0;font-size: 100%;font-family: "Times New Roman"}
+img{margin:10px auto;width:90%;max-width:600px;padding:0 10px;height:auto;display:block}
+hr{border:none;border-top:1px dashed #999;color:#fff;background-color:#fff;height:1px}
+a{color:#00f;word-wrap:break-word}
+a:visited{color:#009}
+a:hover{color:#f00}
+header a,header a:visited,footer a,footer a:visited,h1 a,h1 a:visited,h2 a,h2 a:visited,h3 a,h3 a:visited,h4 a,h4 a:visited,h5 a,h5 a:visited,h6 a,h6 a:visited{text-decoration:none;color:#333}
+header a:hover,footer a:hover,h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover{text-decoration:none;color:#f00}
+nav{padding:10px 0;text-align:right}
+nav a{padding-left:15px}
+table{border-collapse:collapse}
+th,td{border:1px solid gray;padding:2px 5px}
+code{border:1px dotted #999;background-color:#fffff;padding:1px 2px;line-height:200%;word-wrap:break-word}
+pre{border:1px solid #999;background-color:#f0f0f0;padding:5px;overflow:auto;max-height:500px}
+pre code{border:0;background:none;padding:0}
+/* 不带行号的代码块 */
+.highlight>pre {
+  padding: 10px;  /* 适当留出边距 */
+  overflow: auto; /* 代码行太长向右滚动 */
+}
+.highlight{
+  /* 统一行高，让行号和代码能对齐 */
+  line-height: 18px;
+}
+blockquote {
+    border-left: 4px solid #8fe5f7;
+    padding: 0 15px;
+    color: #000000;
+}
+ul.pagination{list-style-type:none;text-align:center}
+li.page-item{display:inline;padding-right:15px}
+svg.permalink{color:#666;fill:currentColor}
+svg:hover.permalink{color:#f00;fill:currentColor}
+.title{padding:0;margin:20px 0;font-family: "Times New Roman"}
+.meta,.content{padding:0;margin:10px 0}
+.title h1,.title h2{padding:0}
+.meta div{padding:0}
+.content h1{padding:0;margin:20px 0 0;line-height: 2.6;font-size: 130%;font-family: "Times New Roman"}
+.content h2{padding:0;margin:18px 0 0;line-height: 2.3;font-size: 120%;font-family: "Times New Roman"}
+.content h3{padding:0;margin:16px 0 0;line-height: 2;font-size: 110%;font-family: "Times New Roman"}
+/*.content h4{padding:0;margin:15px 0 0;line-height: 1;font-size: 100%}
+.content h5{padding:0;margin:10px 0 0;line-height: 1;font-size: 100%}
+.content h6{padding:0;margin:10px 0 0;line-height: 1;font-size: 100%}*/
+.content p{padding:0;margin:10px 0;font-size: 105%;font-family: "Times New Roman"}
+
+.content p{
+    margin-top: 0;
+    /* margin-bottom: 1rem; */
+    /* text-indent: 2rem; */
+    text-align: justify;
+}
+
+div.search2 {
+    position: fixed;
+    right: -30px;
+    max-width: 300px;
+    overflow: auto;
+    top: 1px;
+    width: 300px;
+    bottom: 100px
+}
+
+div.search {
+    display: inline-block;
+    margin-bottom: -12px;
+}
+
+form.search {
+    width: 125px;
+    margin-left: 20px;
+}
+form.search input[type=text] {
+    padding: 5px 38px 6px 5px;
+    border: 1px solid #999;
+    float: left;
+    font-size: 14px;
+    width: 80px;
+}
+form.search input[type=text]:focus {
+    border: 1px solid #333;
+    float: left;
+    width: 80px;
+}
+form.search button {
+    float: left;
+    width: 30px;
+    padding: 5px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    margin-left: -30px;
+}
+form.search .fa-search::before {
+    content: "\1F50D";
+    font-style: normal;
+    color: #999;
+}
+form.search button:hover {
+    color: #333;
+}
+
+/* nav#TableOfContents {
+    float: right;
+    width: 200px;
+    overflow: auto;
+    margin: 0;
+    padding: 0 10px;
+    vertical-align: top;
+}
+
+nav#TableOfContents:before {
+    content: 'Content';
+    font-weight: bold;
+}
+
+nav#TableOfContents:lang(*-Hans)::before {
+    content: '目录';
+    font-weight: bold;
+}
+
+nav#TableOfContents ul {
+    margin: 0;
+    padding-inline-start: 24px;
+}
+
+.content-with-toc {
+    width: calc(100% - 220px);
+    margin: 0;
+}
+
+@media (max-width:500px) {
+    nav#TableOfContents {
+        float: none;
+        width: 100%;
+    }
+
+    .content-with-toc {
+        width: 100%;
+    }
+} */
+
+@media only screen and (max-width: 1224px) {
+    .toc {
+        display: none;
+    }
+} 
+
+.article-list li {
+    margin-bottom: 0.5em;
+}
+
+.article-list li .article-date,
+.article-list li .article-title {
+    display: inline-block;
+}
+
+.article-list li .article-date:after {
+    content: ' - ';
+}
+
+@media (max-width:500px) {
+    .article-list li .article-date,
+    .article-date li .article-title {
+        display: block;
+    }
+
+    .article-list li .article-date:after {
+        content: '';
+    }
+}

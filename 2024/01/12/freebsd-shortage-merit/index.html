@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>FreeBSD的不足和优点 - Xiao-Le Deng (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le Deng (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title">FreeBSD的不足和优点</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2024-01-12</span></div>
+  <div>
+    <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/freebsd/">#FreeBSD</a></span>
+      <span><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      </div>
+  </div>
+
+<div class="content">
+  <h1 id="1-不足">1. 不足</h1>
+<ol>
+<li>
+<p>硬件兼容性有待提高</p>
+</li>
+<li>
+<p>第三方软件支持，可以通过 Linux 兼容层解决</p>
+</li>
+<li>
+<p>无商业支持</p>
+</li>
+</ol>
+<h1 id="2-优点">2. 优点</h1>
+<ol>
+<li>
+<p>稳定：作为服务器，有坚如磐石 (Rock-stable Performance)的口碑</p>
+</li>
+<li>
+<p>无广告</p>
+</li>
+<li>
+<p>保护隐私：整个操作系统的源码公开，不会暗箱操作，不会泄漏隐私</p>
+</li>
+<li>
+<p>不收集用户信息：整个操作系统的源码公开，不会有底层操作，不收集用户信息</p>
+</li>
+<li>
+<p>精简优雅 (Minimalism and Elegant)：安装完操作系统后，文件夹清晰明了，系统自动进程不超过 20 个。用户设置和系统默认文件分离：</p>
+</li>
+</ol>
+<ul>
+<li><code>/etc/rc.d/</code>的脚本是为基本系统的应用程序服务，如 cron 、sshd 、syslog 等。</li>
+<li><code>/usr/local/etc/rc.d/</code>的脚本是用户安装的第三方应用程序，如 NGINX 、 Postfix 等。</li>
+<li>用户安装的应用程序在 <code>/usr/local/</code>，安装的二进制文件位于 <code>/usr/local/bin/</code>，配置文件位于 <code>/usr/local/etc/</code></li>
+</ul>
+<ol start="6">
+<li>
+<p>pkg 一站式软件管理，查询、安装、卸载、清理软件包</p>
+</li>
+<li>
+<p>根据自己需求，决定是否安装桌面，无错误弹窗</p>
+</li>
+<li>
+<p>及时发布安全通知，或给系统打补丁，或升级小系统</p>
+</li>
+<li>
+<p>系统完整：整个操作系统和软件由一个开发团队从 1993 年维护至今，将近 30 多年的时间，保持了系统的完整性</p>
+</li>
+<li>
+<p>RELEASE 系统更新，跨版本升级容易升</p>
+</li>
+</ol>
+<h1 id="3-已有文章">3. 已有文章</h1>
+<ul>
+<li><a href="/2023/12/28/freebsd-introduction/">FreeBSD入门</a></li>
+<li><a href="/2023/12/29/parallels-desktop-installl-freebsd/">Parallels Desktop安装FreeBSD 14.0</a></li>
+<li><a href="/2023/12/29/frebds-mount-u-disk/">FreeBSD挂载U盘</a></li>
+<li><a href="/2023/12/29/freebsd-ssh/">FreeBSD设置SSH</a></li>
+<li><a href="/2023/12/29/freebsd-install-fortran/">FreeBSD安装Fortran</a></li>
+<li><a href="/2023/12/29/freebsd-install-python/">FreeBSD安装Python</a></li>
+<li><a href="/2023/12/30/unix-system-family-tree/">Unix system family tree</a></li>
+<li><a href="/2024/01/03/subscribe-freebsd-security-notifications/">Subscribe FreeBSD security notifications</a></li>
+<li><a href="/2024/01/05/freebsd-update-ssh/">FreeBSD更新SSH</a></li>
+<li><a href="/2024/01/06/freebsd-set-default-editor/">FreeBSD设置默认编辑器</a></li>
+<li><a href="/2024/01/06/workstation-install-freebsd/">工作站安装FreeBSD 14.0</a></li>
+</ul>
+<h1 id="4-延伸阅读">4. 延伸阅读</h1>
+<ul>
+<li><a href="https://www.linuxjiaocheng.com/1389.html">freebsd 桌面 linux FreeBSD桌面：优缺点一览 - LinuxJiaoCheng</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/471720864">FreeBSD 大败局 - 知乎</a></li>
+<li><a href="https://www.yisu.com/ask/34805765.html">FreeBSD的优点和缺点是什么 - 问答 - 亿速云</a></li>
+<li><a href="https://www.zhihu.com/question/23710284">BSD 相比 Linux 有哪些优势? - 知乎</a></li>
+</ul>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le Deng</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
