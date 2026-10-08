@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS ls 命令常用组合 - Xiao-Le DENG (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le DENG (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title" data-pagefind-weight="10">macOS ls 命令常用组合</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2026-10-02</span></div>
+  <div data-pagefind-weight="5">
+    <span data-pagefind-filter="tag"><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span data-pagefind-filter="tag"><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content" data-pagefind-body>
+  <table>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>用途</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>ls</code></td>
+          <td>查看当前目录</td>
+      </tr>
+      <tr>
+          <td><code>ls -l</code></td>
+          <td>显示详细信息</td>
+      </tr>
+      <tr>
+          <td><code>ls -lh</code></td>
+          <td>详细信息 + 易读文件大小</td>
+      </tr>
+      <tr>
+          <td><code>ls -a</code></td>
+          <td>显示所有文件，包括隐藏文件</td>
+      </tr>
+      <tr>
+          <td><code>ls -Alh</code></td>
+          <td>隐藏文件 + 详细信息 + 易读大小</td>
+      </tr>
+      <tr>
+          <td><code>ls -lht</code></td>
+          <td>按修改时间排序，最新在前</td>
+      </tr>
+      <tr>
+          <td><code>ls -lhtr</code></td>
+          <td>按修改时间排序，最新在后</td>
+      </tr>
+      <tr>
+          <td><code>ls -lhS</code></td>
+          <td>按文件大小排序，最大在前</td>
+      </tr>
+      <tr>
+          <td><code>ls -lhSr</code></td>
+          <td>按文件大小排序，最小在前</td>
+      </tr>
+      <tr>
+          <td><code>ls -lT</code></td>
+          <td>显示完整修改时间</td>
+      </tr>
+      <tr>
+          <td><code>ls -ld DIR</code></td>
+          <td>查看目录本身的信息和权限</td>
+      </tr>
+      <tr>
+          <td><code>ls -R</code></td>
+          <td>递归显示所有子目录</td>
+      </tr>
+      <tr>
+          <td><code>ls -F</code></td>
+          <td>标记文件类型，如 <code>/</code>、<code>*</code>、<code>@</code></td>
+      </tr>
+      <tr>
+          <td><code>ls -G</code></td>
+          <td>macOS 彩色显示</td>
+      </tr>
+      <tr>
+          <td><code>ls -leO@</code></td>
+          <td>查看 ACL、文件 flags 和扩展属性</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le DENG</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

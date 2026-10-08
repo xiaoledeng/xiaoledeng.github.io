@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>Hugo网站更新Pagefind本地搜索(4) - Xiao-Le DENG (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le DENG (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title" data-pagefind-weight="10">Hugo网站更新Pagefind本地搜索(4)</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2026-09-16</span></div>
+  <div data-pagefind-weight="5">
+    <span data-pagefind-filter="tag"><a href="https://xiaoledeng.github.io/tags/blog/">#Blog</a></span>
+      <span data-pagefind-filter="tag"><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content" data-pagefind-body>
+  <h1 id="1-前言">1. 前言</h1>
+<p>Hugo 网站，也就是个人网站，是利用 <a href="https://pagefind.app">Pagefind</a> 来实现本地搜索。运行至今，效果满意。</p>
+<p>之前的安装和设置，见：<a href="/2024/01/13/hugo-set-pagefind-local-search-3/">Hugo网站设置Pagefind本地搜索(3)</a>。</p>
+<p>此次，需要更新 Pagefind 到最新版 <code>1.5.2</code>。</p>
+<h1 id="2-更新步骤">2. 更新步骤</h1>
+<ol>
+<li>命令行切换路径到 blog/ 下：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#366">cd</span> blog/
+</span></span></code></pre></div><ol start="2">
+<li>输入更新命令：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npx pagefind@latest --site public
+</span></span></code></pre></div><p>更新信息如下：</p>
+<pre tabindex="0"><code>blog git:(master) ✗ npx pagefind@latest --site public
+Need to install the following packages:
+pagefind@1.5.2
+Ok to proceed? (y) y
+
+
+Running Pagefind v1.5.2 (Extended)
+Running from: &#34;/Users/deng/blog&#34;
+Source:       &#34;public&#34;
+Output:       &#34;public/pagefind&#34;
+
+[Walking source directory]
+Found 2560 files matching **/*.{html}
+
+[Parsing files]
+Found a data-pagefind-body element on the site.
+↳ Ignoring pages without this tag.
+
+[Reading languages]
+Discovered 1 language: zh
+
+[Building search indexes]
+Total: 
+  Indexed 1 language
+  Indexed 2381 pages
+  Indexed 71697 words
+  Indexed 0 filters
+  Indexed 0 sorts
+Note: Pagefind doesn&#39;t support stemming for the language zh. 
+Search will still work, but will not match across root words.
+Note: Pagefind doesn&#39;t support stemming for the language zh. 
+Search will still work, but will not match across root words.
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│  Pagefind found references to the Default UI (pagefind-ui.js)           │
+│  on your site. The Default UI is supported and will continue            │
+│  to work.                                                               │
+│                                                                         │
+│  As of 1.5.0, if you are setting up a new integration, use the          │
+│  Component UI instead. It includes a search modal, better               │
+│  accessibility and customization: https://pagefind.app/docs/search-ui/  │
+└─────────────────────────────────────────────────────────────────────────┘
+
+Finished in 2.484 seconds
+</code></pre></div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le DENG</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
