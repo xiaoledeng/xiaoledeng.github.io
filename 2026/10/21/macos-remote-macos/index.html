@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>macOS 局域网远程 macOS 桌面 - Xiao-Le DENG (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le DENG (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title" data-pagefind-weight="10">macOS 局域网远程 macOS 桌面</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2026-10-21</span></div>
+  <div data-pagefind-weight="5">
+    <span data-pagefind-filter="tag"><a href="https://xiaoledeng.github.io/tags/unix/">#Unix</a></span>
+      <span data-pagefind-filter="tag"><a href="https://xiaoledeng.github.io/tags/macos/">#macOS</a></span>
+      </div>
+  </div>
+
+<div class="content" data-pagefind-body>
+  <h1 id="1-简介">1. 简介</h1>
+<p>局域网内 Mac 远程控制 Mac mini，直接使用 macOS 自带的 Screen Sharing（屏幕共享），无需安装第三方软件。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<ol>
+<li>Mac mini 开启屏幕共享</li>
+</ol>
+<p>进入：</p>
+<blockquote>
+<p>系统设置 → 通用 → 共享 → 屏幕共享 → 开启</p>
+</blockquote>
+<p>设置允许访问的用户。</p>
+<ol start="2">
+<li>Mac 连接 Mac mini</li>
+</ol>
+<p>打开：</p>
+<blockquote>
+<p>Finder → 网络 → Mac mini → 共享屏幕</p>
+</blockquote>
+<p>输入 Mac mini 的用户名和密码即可。</p>
+<p>也可以使用 Spotlight：</p>
+<blockquote>
+<p><code>⌘ + Space</code> → 搜索 <code>Screen Sharing</code></p>
+</blockquote>
+<p>如果知道 Mac mini 的局域网 IP，例如 <code>123.456.7.89</code>，终端可直接运行：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>open vnc://123.456.7.89
+</span></span></code></pre></div><ol start="3">
+<li>快速进入</li>
+</ol>
+<p>首次连接成功后，将 Screen Sharing 固定到 Dock：</p>
+<blockquote>
+<p>右键 Screen Sharing → 选项 → 在 Dock 中保留</p>
+</blockquote>
+<p>之后直接：</p>
+<blockquote>
+<p>Screen Sharing → Mac mini → 连接</p>
+</blockquote>
+<h1 id="3-总结">3. 总结</h1>
+<p>Mac mini 开启 Screen Sharing，另一台 Mac 直接连接即可。</p>
+<p>这是局域网内 Mac → Mac 远程桌面最简单的方法，特别适合将 Mac mini 作为无显示器远程工作站。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le DENG</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>
