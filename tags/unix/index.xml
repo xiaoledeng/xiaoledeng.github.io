@@ -12,9 +12,16 @@
 			<copyright>2012 – 2026 © [Xiao-Le DENG](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
 		
 		
-			<lastBuildDate>Sat, 24 Oct 2026 10:56:33 +0200</lastBuildDate>
+			<lastBuildDate>Mon, 26 Oct 2026 09:12:24 +0100</lastBuildDate>
 		
 			<atom:link href="https://xiaoledeng.github.io/tags/unix/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>macOS 远程ssh错误修复</title>
+				<link>https://xiaoledeng.github.io/2026/10/26/macos-ssh-repair/</link>
+				<pubDate>Mon, 26 Oct 2026 09:12:24 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/2026/10/26/macos-ssh-repair/</guid>
+				<description>&lt;h1 id=&#34;1-问题&#34;&gt;1. 问题&lt;/h1&gt;&#xA;&lt;p&gt;运行 ssh 远程时，出现以下错误：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/etc/ssh/sshd_config.d/100-macos.conf: line 2: Bad configuration option: usepam&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/etc/ssh/sshd_config.d/100-macos.conf: line 3: Bad configuration option: acceptenv&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/etc/ssh/sshd_config.d/100-macos.conf: terminating, &lt;span style=&#34;color:#f60&#34;&gt;2&lt;/span&gt; bad configuration options&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;2-解决方案&#34;&gt;2. 解决方案&lt;/h1&gt;&#xA;&lt;p&gt;打开文件：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo vim /etc/ssh/ssh_config&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改内容：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;#Include /etc/ssh/sshd_config.d/*&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Include /etc/ssh/ssh_config.d/*&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;# 注释这一行&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#09f;font-style:italic&#34;&gt;#AuthorizedKeysFile .ssh/authorized_keys&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+			</item>
 			<item>
 				<title>macOS命令行打开辅助功能权限 Accessibility</title>
 				<link>https://xiaoledeng.github.io/2026/10/24/macos-accessibility/</link>

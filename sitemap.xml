@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://xiaoledeng.github.io/tags/macos/</loc>
+    <lastmod>2026-10-26T09:12:24+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/2026/10/26/macos-ssh-repair/</loc>
+    <lastmod>2026-10-26T09:12:24+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/post/</loc>
+    <lastmod>2026-10-26T09:12:24+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/</loc>
+    <lastmod>2026-10-26T09:12:24+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/unix/</loc>
+    <lastmod>2026-10-26T09:12:24+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/</loc>
+    <lastmod>2026-10-26T09:12:24+01:00</lastmod>
+  </url><url>
     <loc>https://xiaoledeng.github.io/2026/10/26/songshu-zhi-4/</loc>
     <lastmod>2026-10-26T01:00:00+01:00</lastmod>
   </url><url>
@@ -26,25 +44,10 @@
     <loc>https://xiaoledeng.github.io/tags/iching/</loc>
     <lastmod>2026-10-26T01:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://xiaoledeng.github.io/post/</loc>
-    <lastmod>2026-10-26T01:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/</loc>
-    <lastmod>2026-10-26T01:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/</loc>
-    <lastmod>2026-10-26T01:00:00+01:00</lastmod>
-  </url><url>
     <loc>https://xiaoledeng.github.io/2026/10/25/songshu-zhi-3/</loc>
     <lastmod>2026-10-25T01:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://xiaoledeng.github.io/tags/macos/</loc>
-    <lastmod>2026-10-24T10:56:33+02:00</lastmod>
-  </url><url>
     <loc>https://xiaoledeng.github.io/2026/10/24/macos-accessibility/</loc>
-    <lastmod>2026-10-24T10:56:33+02:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/unix/</loc>
     <lastmod>2026-10-24T10:56:33+02:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/2026/10/24/songshu-zhi-2/</loc>
