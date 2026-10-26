@@ -12,9 +12,58 @@
 			<copyright>2012 – 2026 © [Xiao-Le DENG](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
 		
 		
-			<lastBuildDate>Sat, 24 Oct 2026 10:56:33 +0200</lastBuildDate>
+			<lastBuildDate>Mon, 26 Oct 2026 01:00:00 +0100</lastBuildDate>
 		
 			<atom:link href="https://xiaoledeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Book</title>
+				<link>https://xiaoledeng.github.io/tags/book/</link>
+				<pubDate>Mon, 26 Oct 2026 01:00:00 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/tags/book/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>ChineseAstronomy</title>
+				<link>https://xiaoledeng.github.io/tags/chineseastronomy/</link>
+				<pubDate>Mon, 26 Oct 2026 01:00:00 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/tags/chineseastronomy/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>ChineseClassics</title>
+				<link>https://xiaoledeng.github.io/tags/chineseclassics/</link>
+				<pubDate>Mon, 26 Oct 2026 01:00:00 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/tags/chineseclassics/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Dao</title>
+				<link>https://xiaoledeng.github.io/tags/dao/</link>
+				<pubDate>Mon, 26 Oct 2026 01:00:00 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/tags/dao/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Destiny</title>
+				<link>https://xiaoledeng.github.io/tags/destiny/</link>
+				<pubDate>Mon, 26 Oct 2026 01:00:00 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/tags/destiny/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>History</title>
+				<link>https://xiaoledeng.github.io/tags/history/</link>
+				<pubDate>Mon, 26 Oct 2026 01:00:00 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/tags/history/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>IChing</title>
+				<link>https://xiaoledeng.github.io/tags/iching/</link>
+				<pubDate>Mon, 26 Oct 2026 01:00:00 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/tags/iching/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>MacOS</title>
 				<link>https://xiaoledeng.github.io/tags/macos/</link>
@@ -27,41 +76,6 @@
 				<link>https://xiaoledeng.github.io/tags/unix/</link>
 				<pubDate>Sat, 24 Oct 2026 10:56:33 +0200</pubDate>
 				<guid>https://xiaoledeng.github.io/tags/unix/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Book</title>
-				<link>https://xiaoledeng.github.io/tags/book/</link>
-				<pubDate>Sat, 24 Oct 2026 01:00:00 +0100</pubDate>
-				<guid>https://xiaoledeng.github.io/tags/book/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>ChineseClassics</title>
-				<link>https://xiaoledeng.github.io/tags/chineseclassics/</link>
-				<pubDate>Sat, 24 Oct 2026 01:00:00 +0100</pubDate>
-				<guid>https://xiaoledeng.github.io/tags/chineseclassics/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Dao</title>
-				<link>https://xiaoledeng.github.io/tags/dao/</link>
-				<pubDate>Sat, 24 Oct 2026 01:00:00 +0100</pubDate>
-				<guid>https://xiaoledeng.github.io/tags/dao/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>History</title>
-				<link>https://xiaoledeng.github.io/tags/history/</link>
-				<pubDate>Sat, 24 Oct 2026 01:00:00 +0100</pubDate>
-				<guid>https://xiaoledeng.github.io/tags/history/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>IChing</title>
-				<link>https://xiaoledeng.github.io/tags/iching/</link>
-				<pubDate>Sat, 24 Oct 2026 01:00:00 +0100</pubDate>
-				<guid>https://xiaoledeng.github.io/tags/iching/</guid>
 				<description></description>
 			</item>
 			<item>
@@ -93,13 +107,6 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Destiny</title>
-				<link>https://xiaoledeng.github.io/tags/destiny/</link>
-				<pubDate>Fri, 23 Oct 2026 07:58:00 +0200</pubDate>
-				<guid>https://xiaoledeng.github.io/tags/destiny/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>English</title>
 				<link>https://xiaoledeng.github.io/tags/english/</link>
 				<pubDate>Thu, 22 Oct 2026 08:00:00 +0200</pubDate>
@@ -118,13 +125,6 @@
 				<link>https://xiaoledeng.github.io/tags/human/</link>
 				<pubDate>Wed, 21 Oct 2026 10:16:49 +0200</pubDate>
 				<guid>https://xiaoledeng.github.io/tags/human/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>ChineseAstronomy</title>
-				<link>https://xiaoledeng.github.io/tags/chineseastronomy/</link>
-				<pubDate>Wed, 21 Oct 2026 08:14:40 +0200</pubDate>
-				<guid>https://xiaoledeng.github.io/tags/chineseastronomy/</guid>
 				<description></description>
 			</item>
 			<item>
