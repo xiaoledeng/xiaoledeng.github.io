@@ -27,7 +27,7 @@
 				<link>https://xiaoledeng.github.io/2026/10/24/macos-accessibility/</link>
 				<pubDate>Sat, 24 Oct 2026 10:56:33 +0200</pubDate>
 				<guid>https://xiaoledeng.github.io/2026/10/24/macos-accessibility/</guid>
-				<description>&lt;p&gt;终端命令行：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;open &amp;#34;x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility&amp;#34;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
+				<description>&lt;p&gt;终端运行命令：&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;open &amp;#34;x-apple.systempreferences:com.apple.preference.security?Privacy_Accessibility&amp;#34;&#xA;&lt;/code&gt;&lt;/pre&gt;</description>
 			</item>
 			<item>
 				<title>macOS 局域网远程 macOS 桌面</title>
