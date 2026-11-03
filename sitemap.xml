@@ -2,46 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://xiaoledeng.github.io/post/</loc>
+    <lastmod>2026-11-03T13:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/</loc>
+    <lastmod>2026-11-03T13:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/windows/</loc>
+    <lastmod>2026-11-03T13:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/2026/11/03/windows-11-wallpaper/</loc>
+    <lastmod>2026-11-03T13:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/</loc>
+    <lastmod>2026-11-03T13:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/macos/</loc>
+    <lastmod>2026-11-03T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/2026/11/03/macos-remove-aerial-wallpaper/</loc>
+    <lastmod>2026-11-03T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/unix/</loc>
+    <lastmod>2026-11-03T12:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/2026/11/03/nqs-zhi-3/</loc>
+    <lastmod>2026-11-03T01:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/book/</loc>
+    <lastmod>2026-11-03T01:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/chineseastronomy/</loc>
+    <lastmod>2026-11-03T01:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/chineseclassics/</loc>
+    <lastmod>2026-11-03T01:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/history/</loc>
+    <lastmod>2026-11-03T01:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/2026/11/02/nqs-zhi-2/</loc>
+    <lastmod>2026-11-02T01:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/2026/11/01/nqs-zhi-1/</loc>
+    <lastmod>2026-11-01T01:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/2026/10/31/2026-10-month-summary/</loc>
+    <lastmod>2026-10-31T10:21:04+02:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/ideas/</loc>
+    <lastmod>2026-10-31T10:21:04+02:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/life/</loc>
+    <lastmod>2026-10-31T10:21:04+02:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/summary/</loc>
+    <lastmod>2026-10-31T10:21:04+02:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/2026/10/30/songshu-zhi-8/</loc>
+    <lastmod>2026-10-30T01:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/dao/</loc>
+    <lastmod>2026-10-30T01:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/iching/</loc>
+    <lastmod>2026-10-30T01:00:00+01:00</lastmod>
+  </url><url>
     <loc>https://xiaoledeng.github.io/2026/10/29/6-minute-english-202511-202512/</loc>
     <lastmod>2026-10-29T08:00:00+02:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/tags/english/</loc>
     <lastmod>2026-10-29T08:00:00+02:00</lastmod>
   </url><url>
-    <loc>https://xiaoledeng.github.io/post/</loc>
-    <lastmod>2026-10-29T08:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/</loc>
-    <lastmod>2026-10-29T08:00:00+02:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/</loc>
-    <lastmod>2026-10-29T08:00:00+02:00</lastmod>
-  </url><url>
     <loc>https://xiaoledeng.github.io/2026/10/29/songshu-zhi-7/</loc>
-    <lastmod>2026-10-29T01:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/book/</loc>
-    <lastmod>2026-10-29T01:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/chineseclassics/</loc>
     <lastmod>2026-10-29T01:00:00+01:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/tags/chinesegeography/</loc>
     <lastmod>2026-10-29T01:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://xiaoledeng.github.io/tags/dao/</loc>
-    <lastmod>2026-10-29T01:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/history/</loc>
-    <lastmod>2026-10-29T01:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/iching/</loc>
-    <lastmod>2026-10-29T01:00:00+01:00</lastmod>
-  </url><url>
     <loc>https://xiaoledeng.github.io/2026/10/28/songshu-zhi-6/</loc>
-    <lastmod>2026-10-28T01:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/chineseastronomy/</loc>
     <lastmod>2026-10-28T01:00:00+01:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/tags/destiny/</loc>
@@ -56,13 +95,7 @@
     <loc>https://xiaoledeng.github.io/2026/10/27/songshu-zhi-5/</loc>
     <lastmod>2026-10-27T01:00:00+01:00</lastmod>
   </url><url>
-    <loc>https://xiaoledeng.github.io/tags/macos/</loc>
-    <lastmod>2026-10-26T09:12:24+01:00</lastmod>
-  </url><url>
     <loc>https://xiaoledeng.github.io/2026/10/26/macos-ssh-repair/</loc>
-    <lastmod>2026-10-26T09:12:24+01:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/unix/</loc>
     <lastmod>2026-10-26T09:12:24+01:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/2026/10/26/songshu-zhi-4/</loc>
@@ -264,15 +297,6 @@
     <lastmod>2026-10-01T06:14:40+02:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/2026/09/30/2026-09-month-summary/</loc>
-    <lastmod>2026-09-30T10:21:04+02:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/ideas/</loc>
-    <lastmod>2026-09-30T10:21:04+02:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/life/</loc>
-    <lastmod>2026-09-30T10:21:04+02:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/summary/</loc>
     <lastmod>2026-09-30T10:21:04+02:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/2026/09/30/macos-ssh-mac-mini/</loc>
@@ -1516,9 +1540,6 @@
   </url><url>
     <loc>https://xiaoledeng.github.io/2025/10/15/zhouyi-cantongqi/</loc>
     <lastmod>2025-10-15T08:03:22+02:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/windows/</loc>
-    <lastmod>2025-10-14T15:44:41+02:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/2025/10/14/windows-history-cycle/</loc>
     <lastmod>2025-10-14T15:44:41+02:00</lastmod>

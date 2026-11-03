@@ -12,9 +12,16 @@
 			<copyright>2012 – 2026 © [Xiao-Le DENG](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
 		
 		
-			<lastBuildDate>Mon, 26 Oct 2026 09:12:24 +0100</lastBuildDate>
+			<lastBuildDate>Tue, 03 Nov 2026 12:00:00 +0100</lastBuildDate>
 		
 			<atom:link href="https://xiaoledeng.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>macOS删除动态航拍Aerial壁纸</title>
+				<link>https://xiaoledeng.github.io/2026/11/03/macos-remove-aerial-wallpaper/</link>
+				<pubDate>Tue, 03 Nov 2026 12:00:00 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/2026/11/03/macos-remove-aerial-wallpaper/</guid>
+				<description>&lt;ol&gt;&#xA;&lt;li&gt;查看文件有多大：&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;du -sh ~/Library/Application&lt;span style=&#34;color:#c30;font-weight:bold&#34;&gt;\ &lt;/span&gt;Support/com.apple.wallpaper/aerials/*&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;772K    ~/Library/Application Support/com.apple.wallpaper/aerials/manifest&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;2.0M    ~/Library/Application Support/com.apple.wallpaper/aerials/manifest.tar&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt; 12M    ~/Library/Application Support/com.apple.wallpaper/aerials/thumbnails&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;3.9G    ~/Library/Application Support/com.apple.wallpaper/aerials/videos&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;删除视频航拍壁纸&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rm -rf ~/Library/Application&lt;span style=&#34;color:#c30;font-weight:bold&#34;&gt;\ &lt;/span&gt;Support/com.apple.wallpaper/aerials/videos/*&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+			</item>
 			<item>
 				<title>macOS 远程ssh错误修复</title>
 				<link>https://xiaoledeng.github.io/2026/10/26/macos-ssh-repair/</link>

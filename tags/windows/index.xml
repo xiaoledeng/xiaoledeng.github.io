@@ -12,9 +12,16 @@
 			<copyright>2012 – 2026 © [Xiao-Le DENG](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
 		
 		
-			<lastBuildDate>Tue, 14 Oct 2025 15:44:41 +0200</lastBuildDate>
+			<lastBuildDate>Tue, 03 Nov 2026 13:00:00 +0100</lastBuildDate>
 		
 			<atom:link href="https://xiaoledeng.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Windows 11保存当前壁纸</title>
+				<link>https://xiaoledeng.github.io/2026/11/03/windows-11-wallpaper/</link>
+				<pubDate>Tue, 03 Nov 2026 13:00:00 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/2026/11/03/windows-11-wallpaper/</guid>
+				<description>&lt;ol&gt;&#xA;&lt;li&gt;按 &lt;code&gt;Win + R&lt;/code&gt;，输入：&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;%AppData%\Microsoft\Windows\Themes&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;回车。&lt;/p&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;通常会看到一个文件： TranscodedWallpaper ，就是当前桌面壁纸，只是没有扩展名。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;复制 TranscodedWallpaper 到其他位置&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;重命名为：wallpaper.jpg&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;双击即可查看&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+			</item>
 			<item>
 				<title>Windows系统的历史版本与周期</title>
 				<link>https://xiaoledeng.github.io/2025/10/14/windows-history-cycle/</link>
