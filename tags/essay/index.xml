@@ -12,9 +12,16 @@
 			<copyright>2012 – 2026 © [Xiao-Le DENG](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
 		
 		
-			<lastBuildDate>Fri, 23 Oct 2026 19:39:00 +0200</lastBuildDate>
+			<lastBuildDate>Wed, 04 Nov 2026 08:30:00 +0200</lastBuildDate>
 		
 			<atom:link href="https://xiaoledeng.github.io/tags/essay/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>随笔—晨窗喜鹊吟</title>
+				<link>https://xiaoledeng.github.io/2026/11/04/chenchuang-xique-yin/</link>
+				<pubDate>Wed, 04 Nov 2026 08:30:00 +0200</pubDate>
+				<guid>https://xiaoledeng.github.io/2026/11/04/chenchuang-xique-yin/</guid>
+				<description>&lt;p&gt;晨起推窗望乾方，坤茵喜鹊振翅翔。&lt;/p&gt;&#xA;&lt;p&gt;翩然左转青龙位，进德修业待时昌。&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>随笔—斯图霜降吟</title>
 				<link>https://xiaoledeng.github.io/2026/10/23/situ-shuangjiang/</link>
@@ -2053,18 +2060,18 @@
 				<description>&lt;p&gt;开始思考并构建一个新的项目——自己带领并原创的项目。&lt;/p&gt;&#xA;&lt;p&gt;成果最好是一款软件。&lt;/p&gt;&#xA;&lt;p&gt;原创项目能持续推动科研的进行，并且沿着一个领域和方向走下去。&lt;/p&gt;</description>
 			</item>
 			<item>
+				<title>科研高效率(6)—工具篇：磨刀不误砍材工</title>
+				<link>https://xiaoledeng.github.io/2016/05/12/research-efficient-6-tool/</link>
+				<pubDate>Thu, 12 May 2016 12:00:00 +0800</pubDate>
+				<guid>https://xiaoledeng.github.io/2016/05/12/research-efficient-6-tool/</guid>
+				<description>&lt;p&gt;一般而言，正确并熟练地使用科研工具和软件，能够让科研能够超高效率地进行。&lt;/p&gt;&#xA;&lt;p&gt;注意：以下的软件推荐仅是个人喜好并用顺手了而推荐的，适用于理工科，欢迎有其他软件补充。&lt;/p&gt;&#xA;&lt;h1 id=&#34;a-硬件方面&#34;&gt;A. 硬件方面&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;高性能的计算机。一台高性能的computer计算机能够大大提升文字编辑、软件打开、网页打开速度；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;屏幕。大屏幕以及多屏幕能节约切换程序以及软件的的时间；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;输入设备——鼠标键盘。打字首选高效率的机械键盘；鼠标点击提高点击效率。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;运行程序的效率。能够跑数据的大型服务器是首推之选，注意学会使用并行计算的相关操作；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;b-软件方面&#34;&gt;B. 软件方面&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;上网软件。此能够透过一些优质的网页高效率地搜索并获取国际上相关对应的领域里面最优秀的资源；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;数学计算软件，Matlab以及Mathematica软件。Matlab主要用于数据的处理；Mathematica主要用于公式的推导；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;公式编辑器Mathtype。配合Mathematica用，公式编辑效率大大提升；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;词典。阅读英语文献时，能够实时看到单词的意思；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;画图软件。GMT学会以后，可重复性极强；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;文献管理软件。可以用来做笔记，归纳，以及后来写文章过程中，高效率地插入合适的引用文献的格式，并且能够针对不同的杂志的格式要求进行针对性地修改。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+			</item>
+			<item>
 				<title>科研高效率(5)—站在前人的肩膀上</title>
 				<link>https://xiaoledeng.github.io/2016/05/12/research-efficient-5-formers/</link>
 				<pubDate>Thu, 12 May 2016 10:00:00 +0800</pubDate>
 				<guid>https://xiaoledeng.github.io/2016/05/12/research-efficient-5-formers/</guid>
 				<description>&lt;p&gt;谷歌学术(Google Scholar)里面有句话，站在巨人肩膀上(stand on the shoulder of the giants)，而科研的超高效率有一点就是：站在前人的肩膀上(stand on the shoulder of the formers)。&lt;/p&gt;&#xA;&lt;p&gt;前人的研究，包括思想、文章、公式、代码、程序等等，都是非常好的垫脚石。&lt;/p&gt;&#xA;&lt;p&gt;也正是这些垫脚石，一直不断地推动科学研究前进。&lt;/p&gt;&#xA;&lt;p&gt;当然，前人和巨人之间是有差别的，更棒地就是站在巨人的肩膀上。&lt;/p&gt;</description>
-			</item>
-			<item>
-				<title>科研高效率(6)—工具篇：磨刀不误砍材工</title>
-				<link>https://xiaoledeng.github.io/2016/05/12/research-efficient-6-tool/</link>
-				<pubDate>Thu, 12 May 2016 10:00:00 +0800</pubDate>
-				<guid>https://xiaoledeng.github.io/2016/05/12/research-efficient-6-tool/</guid>
-				<description>&lt;p&gt;一般而言，正确并熟练地使用科研工具和软件，能够让科研能够超高效率地进行。&lt;/p&gt;&#xA;&lt;p&gt;注意：以下的软件推荐仅是个人喜好并用顺手了而推荐的，适用于理工科，欢迎有其他软件补充。&lt;/p&gt;&#xA;&lt;h1 id=&#34;a-硬件方面&#34;&gt;A. 硬件方面&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;高性能的计算机。一台高性能的computer计算机能够大大提升文字编辑、软件打开、网页打开速度；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;屏幕。大屏幕以及多屏幕能节约切换程序以及软件的的时间；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;输入设备——鼠标键盘。打字首选高效率的机械键盘；鼠标点击提高点击效率。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;运行程序的效率。能够跑数据的大型服务器是首推之选，注意学会使用并行计算的相关操作；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h1 id=&#34;b-软件方面&#34;&gt;B. 软件方面&lt;/h1&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;上网软件。此能够透过一些优质的网页高效率地搜索并获取国际上相关对应的领域里面最优秀的资源；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;数学计算软件，Matlab以及Mathematica软件。Matlab主要用于数据的处理；Mathematica主要用于公式的推导；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;公式编辑器Mathtype。配合Mathematica用，公式编辑效率大大提升；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;词典。阅读英语文献时，能够实时看到单词的意思；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;画图软件。GMT学会以后，可重复性极强；&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;文献管理软件。可以用来做笔记，归纳，以及后来写文章过程中，高效率地插入合适的引用文献的格式，并且能够针对不同的杂志的格式要求进行针对性地修改。&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
 			</item>
 			<item>
 				<title>科研高效率(4)—高效专注的时间投入</title>
@@ -2085,7 +2092,7 @@
 				<link>https://xiaoledeng.github.io/2016/05/09/research-efficient-2-literature/</link>
 				<pubDate>Mon, 09 May 2016 13:00:00 +0800</pubDate>
 				<guid>https://xiaoledeng.github.io/2016/05/09/research-efficient-2-literature/</guid>
-				<description>&lt;p&gt;针对本领域的研究关注点，进行持续地跟踪研究。&lt;/p&gt;&#xA;&lt;p&gt;#一、关键词&lt;/p&gt;&#xA;&lt;p&gt;##1. 人名&#xA;一般而言，根据主要关注的学者的名字，来查询其纵向时间发表的文章，推荐网址：&lt;a href=&#34;https://www.researchgate.net/&#34;&gt;ResearchGate - Share and discover research&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;##2. 研究团队&#xA;注意定时关注研究团队的官方网站的相关更新。此更新频率不是太快，一般一个月一次。&lt;/p&gt;&#xA;&lt;p&gt;##3.期刊杂志&#xA;持续关注一些主要期刊（如，Science、Nature、JGR、GRL、GJI等）的最新动态，以及最近accepted或者online的文章。&lt;/p&gt;&#xA;&lt;p&gt;#二、工具&lt;/p&gt;&#xA;&lt;p&gt;##1. 谷歌学术&#xA;这个不用说，是最主要的文献搜索以及下载工具。地址：&lt;a href=&#34;https://scholar.google.com/&#34;&gt;Google Scholar&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;##2. Email订阅&#xA;通过Email来订阅期刊的最新更新以及收录通知。&lt;/p&gt;</description>
+				<description>&lt;p&gt;针对本领域的研究关注点，进行持续地跟踪研究。&lt;/p&gt;&#xA;&lt;h1 id=&#34;一关键词&#34;&gt;一、关键词&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1-人名&#34;&gt;1. 人名&lt;/h2&gt;&#xA;&lt;p&gt;一般而言，根据主要关注的学者的名字，来查询其纵向时间发表的文章，推荐网址：&lt;a href=&#34;https://www.researchgate.net/&#34;&gt;ResearchGate - Share and discover research&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-研究团队&#34;&gt;2. 研究团队&lt;/h2&gt;&#xA;&lt;p&gt;注意定时关注研究团队的官方网站的相关更新。此更新频率不是太快，一般一个月一次。&lt;/p&gt;&#xA;&lt;h2 id=&#34;3-期刊杂志&#34;&gt;3. 期刊杂志&lt;/h2&gt;&#xA;&lt;p&gt;持续关注一些主要期刊（如，Science、Nature、JGR、GRL、GJI等）的最新动态，以及最近accepted或者online的文章。&lt;/p&gt;&#xA;&lt;h1 id=&#34;二工具&#34;&gt;二、工具&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1-谷歌学术&#34;&gt;1. 谷歌学术&lt;/h2&gt;&#xA;&lt;p&gt;这个不用说，是最主要的文献搜索以及下载工具。地址：&lt;a href=&#34;https://scholar.google.com/&#34;&gt;Google Scholar&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;2-email订阅&#34;&gt;2. Email订阅&lt;/h2&gt;&#xA;&lt;p&gt;通过Email来订阅期刊的最新更新以及收录通知。&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>科研灵感(2)—纵向积累至一本书</title>
