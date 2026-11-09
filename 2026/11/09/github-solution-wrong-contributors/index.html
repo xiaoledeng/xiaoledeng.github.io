@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+
+
+<aside data-pagefind-ignore>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="wVu0YjRHHVQnFGYaFYxdYucVcQMkAa11hcJpD_EARdY">
+<meta name="author" content="X.L. Deng">
+<meta name="referrer" content="always">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script><title>GitHub 显示错误贡献者 Contributors 解决方法 - Xiao-Le DENG (邓小乐)</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<link rel="icon" href="/logo/logo.ico" type="image/x-icon">
+</head>
+</aside>
+
+
+<body>
+
+
+<aside data-pagefind-ignore>
+<header>
+<div>
+    <h1><a href="https://xiaoledeng.github.io/" target="_self">Xiao-Le DENG (邓小乐)</a></h1>
+    
+    
+  </div>
+  <nav><a href="/">Home</a><a href="/research/">Research</a><a href="/publications/">Publications</a><a href="/tools/">Tools</a><a href="/dao/">Dao</a><a href="/life/">Life</a><a href="/tags/">Tags</a><a href="/search/">Search</a><a href="/about/">About</a>
+  </nav>
+
+</header>
+
+</aside>
+
+
+
+<main data-pagefind-body>
+<main>
+  <article>
+    <div class="title">
+  <h2 data-pagefind-meta="title" data-pagefind-weight="10">GitHub 显示错误贡献者 Contributors 解决方法</h2>
+
+</div>
+
+
+
+<div class="meta">
+  <div><span data-pagefind-meta="date">2026-11-09</span></div>
+  <div data-pagefind-weight="5">
+    <span data-pagefind-filter="tag"><a href="/tags/macos/">#MacOS</a></span>
+    <span data-pagefind-filter="tag"><a href="/tags/blog/">#Blog</a></span>
+    </div>
+  </div>
+
+<div class="content" data-pagefind-body>
+  <h1 id="1-前言">1. 前言</h1>
+<p>GitHub 仓库修改 Git 提交历史后，即使已经纠正作者信息并强制推送，Contributors 页面仍可能显示旧的贡献者。</p>
+<p>这通常与 GitHub 的贡献者统计缓存有关。</p>
+<p>经实践，通过临时切换默认分支，可以尝试触发 Contributors 重新统计，从而清除错误的贡献者记录。</p>
+<h1 id="2-步骤">2. 步骤</h1>
+<h2 id="21-确认-git-提交历史">2.1 确认 Git 提交历史</h2>
+<p>进入本地 Git 仓库，检查作者和提交者：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git log --all --format<span style="color:#555">=</span><span style="color:#c30">&#39;%an &lt;%ae&gt; | %cn &lt;%ce&gt;&#39;</span> | sort -u
+</span></span></code></pre></div><p>确保错误的用户名及邮箱已经从需要保留的提交历史中清除。如果尚未修正，应先处理提交历史。</p>
+<h2 id="22-创建临时分支">2.2 创建临时分支</h2>
+<p>确保本地 <code>main</code> 与远程同步，然后执行：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git fetch origin
+</span></span><span style="display:flex;"><span>git branch temp-main main
+</span></span><span style="display:flex;"><span>git push origin temp-main
+</span></span></code></pre></div><h2 id="23-切换-github-默认分支">2.3 切换 GitHub 默认分支</h2>
+<p>进入 GitHub 仓库：</p>
+<p><strong>Settings → Branches → Default branch</strong></p>
+<p>依次操作：</p>
+<ol>
+<li>将默认分支由 <code>main</code> 改为 <code>temp-main</code></li>
+<li>保存后，再将默认分支由 <code>temp-main</code> 改回 <code>main</code></li>
+<li>确认默认分支最终为 <code>main</code></li>
+</ol>
+<p>此操作可能触发 GitHub 重新计算贡献者统计。</p>
+<h2 id="24-删除临时分支">2.4 删除临时分支</h2>
+<p>确认默认分支恢复为 <code>main</code> 后，执行：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push origin --delete temp-main
+</span></span><span style="display:flex;"><span>git branch -d temp-main
+</span></span></code></pre></div><h2 id="25-验证结果">2.5 验证结果</h2>
+<p>打开仓库的 Contributors 页面：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>https://github.com/OWNER/REPOSITORY/graphs/contributors
+</span></span></code></pre></div><p>也可以通过 GitHub API 检查：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s https://api.github.com/repos/OWNER/REPOSITORY/contributors <span style="color:#c30;font-weight:bold">\
+</span></span></span><span style="display:flex;"><span>  | grep <span style="color:#c30">&#39;&#34;login&#34;&#39;</span>
+</span></span></code></pre></div><p>将 <code>OWNER</code> 和 <code>REPOSITORY</code> 替换为实际仓库信息。</p>
+<p>如果旧贡献者消失，说明统计已经成功刷新。</p>
+<h1 id="3-注意事项">3. 注意事项</h1>
+<ul>
+<li>此方法仅用于尝试刷新贡献者统计，<strong>不能替代 Git 历史修正</strong></li>
+<li>GitHub 不保证切换默认分支一定触发重新统计</li>
+<li>操作前确保没有未同步的提交，并注意分支保护及 GitHub Pages 配置</li>
+<li>若仍显示错误贡献者，可等待统计缓存更新，或联系 GitHub Support</li>
+</ul>
+<h1 id="4-总结">4. 总结</h1>
+<p><strong>核心方法：</strong></p>
+<p><code>创建临时分支 → 切换默认分支 → 切回 main → 删除临时分支</code></p>
+<p>对于已经修正 Git 历史、但 GitHub Contributors 仍显示旧账号的问题，这是一个值得尝试的简便方法，无需再次重写提交历史。</p>
+</div>
+
+
+
+
+  </article>
+</main>
+</main>
+
+
+
+<aside data-pagefind-ignore>
+<footer>
+
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<div id="poem_sentence" style="display: inline;"></div> —— <div id="poem_info" style="display: inline;"></div>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    });
+</script>
+
+  <div>
+    <div>
+      2012 – 2026 © <a href="https://xiaoledeng.github.io">Xiao-Le DENG</a> · Powered by <a href="https://github.com/xiaoledeng/simple-style">Simple Style</a></div>
+  </div>
+</footer>
+
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1KQQ878L22"></script>
+      <script>
+        var doNotTrack = false;
+        if ( true ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-1KQQ878L22');
+        }
+      </script><script>
+window.onload = function() {
+    var links = document.getElementsByTagName('a');
+    for (var i in links) {
+        if (links[i].nodeType != 1) continue;
+        if (links[i].hostname != '' && links[i].hostname != window.location.hostname) {
+            links[i].className += 'external';
+        }
+    }
+}
+</script>
+
+</aside>
+
+
+</body>
+
+
+</html>

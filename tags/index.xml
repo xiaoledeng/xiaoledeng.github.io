@@ -12,9 +12,23 @@
 			<copyright>2012 – 2026 © [Xiao-Le DENG](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
 		
 		
-			<lastBuildDate>Mon, 09 Nov 2026 01:00:00 +0100</lastBuildDate>
+			<lastBuildDate>Mon, 09 Nov 2026 18:05:58 +0100</lastBuildDate>
 		
 			<atom:link href="https://xiaoledeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Blog</title>
+				<link>https://xiaoledeng.github.io/tags/blog/</link>
+				<pubDate>Mon, 09 Nov 2026 18:05:58 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/tags/blog/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>MacOS</title>
+				<link>https://xiaoledeng.github.io/tags/macos/</link>
+				<pubDate>Mon, 09 Nov 2026 18:05:58 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/tags/macos/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>Book</title>
 				<link>https://xiaoledeng.github.io/tags/book/</link>
@@ -97,13 +111,6 @@
 				<link>https://xiaoledeng.github.io/tags/windows/</link>
 				<pubDate>Tue, 03 Nov 2026 13:00:00 +0100</pubDate>
 				<guid>https://xiaoledeng.github.io/tags/windows/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>MacOS</title>
-				<link>https://xiaoledeng.github.io/tags/macos/</link>
-				<pubDate>Tue, 03 Nov 2026 12:00:00 +0100</pubDate>
-				<guid>https://xiaoledeng.github.io/tags/macos/</guid>
 				<description></description>
 			</item>
 			<item>
@@ -216,13 +223,6 @@
 				<link>https://xiaoledeng.github.io/tags/ai/</link>
 				<pubDate>Wed, 23 Sep 2026 10:59:54 +0200</pubDate>
 				<guid>https://xiaoledeng.github.io/tags/ai/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Blog</title>
-				<link>https://xiaoledeng.github.io/tags/blog/</link>
-				<pubDate>Wed, 16 Sep 2026 13:56:39 +0200</pubDate>
-				<guid>https://xiaoledeng.github.io/tags/blog/</guid>
 				<description></description>
 			</item>
 			<item>

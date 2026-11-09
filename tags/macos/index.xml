@@ -12,9 +12,16 @@
 			<copyright>2012 – 2026 © [Xiao-Le DENG](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
 		
 		
-			<lastBuildDate>Tue, 03 Nov 2026 12:00:00 +0100</lastBuildDate>
+			<lastBuildDate>Mon, 09 Nov 2026 18:05:58 +0100</lastBuildDate>
 		
 			<atom:link href="https://xiaoledeng.github.io/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>GitHub 显示错误贡献者 Contributors 解决方法</title>
+				<link>https://xiaoledeng.github.io/2026/11/09/github-solution-wrong-contributors/</link>
+				<pubDate>Mon, 09 Nov 2026 18:05:58 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/2026/11/09/github-solution-wrong-contributors/</guid>
+				<description>&lt;h1 id=&#34;1-前言&#34;&gt;1. 前言&lt;/h1&gt;&#xA;&lt;p&gt;GitHub 仓库修改 Git 提交历史后，即使已经纠正作者信息并强制推送，Contributors 页面仍可能显示旧的贡献者。&lt;/p&gt;&#xA;&lt;p&gt;这通常与 GitHub 的贡献者统计缓存有关。&lt;/p&gt;&#xA;&lt;p&gt;经实践，通过临时切换默认分支，可以尝试触发 Contributors 重新统计，从而清除错误的贡献者记录。&lt;/p&gt;&#xA;&lt;h1 id=&#34;2-步骤&#34;&gt;2. 步骤&lt;/h1&gt;&#xA;&lt;h2 id=&#34;21-确认-git-提交历史&#34;&gt;2.1 确认 Git 提交历史&lt;/h2&gt;&#xA;&lt;p&gt;进入本地 Git 仓库，检查作者和提交者：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git log --all --format&lt;span style=&#34;color:#555&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#c30&#34;&gt;&amp;#39;%an &amp;lt;%ae&amp;gt; | %cn &amp;lt;%ce&amp;gt;&amp;#39;&lt;/span&gt; | sort -u&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;确保错误的用户名及邮箱已经从需要保留的提交历史中清除。如果尚未修正，应先处理提交历史。&lt;/p&gt;&#xA;&lt;h2 id=&#34;22-创建临时分支&#34;&gt;2.2 创建临时分支&lt;/h2&gt;&#xA;&lt;p&gt;确保本地 &lt;code&gt;main&lt;/code&gt; 与远程同步，然后执行：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git fetch origin&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git branch temp-main main&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push origin temp-main&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;23-切换-github-默认分支&#34;&gt;2.3 切换 GitHub 默认分支&lt;/h2&gt;&#xA;&lt;p&gt;进入 GitHub 仓库：&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Settings → Branches → Default branch&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;依次操作：&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;将默认分支由 &lt;code&gt;main&lt;/code&gt; 改为 &lt;code&gt;temp-main&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;保存后，再将默认分支由 &lt;code&gt;temp-main&lt;/code&gt; 改回 &lt;code&gt;main&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;确认默认分支最终为 &lt;code&gt;main&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;此操作可能触发 GitHub 重新计算贡献者统计。&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>macOS删除动态航拍Aerial壁纸</title>
 				<link>https://xiaoledeng.github.io/2026/11/03/macos-remove-aerial-wallpaper/</link>

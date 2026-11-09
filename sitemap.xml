@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://xiaoledeng.github.io/tags/blog/</loc>
+    <lastmod>2026-11-09T18:05:58+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/2026/11/09/github-solution-wrong-contributors/</loc>
+    <lastmod>2026-11-09T18:05:58+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/macos/</loc>
+    <lastmod>2026-11-09T18:05:58+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/post/</loc>
+    <lastmod>2026-11-09T18:05:58+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/</loc>
+    <lastmod>2026-11-09T18:05:58+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/</loc>
+    <lastmod>2026-11-09T18:05:58+01:00</lastmod>
+  </url><url>
     <loc>https://xiaoledeng.github.io/2026/11/09/ws-zhi-1/</loc>
     <lastmod>2026-11-09T01:00:00+01:00</lastmod>
   </url><url>
@@ -15,15 +33,6 @@
     <lastmod>2026-11-09T01:00:00+01:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/tags/history/</loc>
-    <lastmod>2026-11-09T01:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/post/</loc>
-    <lastmod>2026-11-09T01:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/</loc>
-    <lastmod>2026-11-09T01:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/</loc>
     <lastmod>2026-11-09T01:00:00+01:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/2026/11/08/nqs-zhi-8/</loc>
@@ -67,9 +76,6 @@
   </url><url>
     <loc>https://xiaoledeng.github.io/2026/11/03/windows-11-wallpaper/</loc>
     <lastmod>2026-11-03T13:00:00+01:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/macos/</loc>
-    <lastmod>2026-11-03T12:00:00+01:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/2026/11/03/macos-remove-aerial-wallpaper/</loc>
     <lastmod>2026-11-03T12:00:00+01:00</lastmod>
@@ -322,9 +328,6 @@
   </url><url>
     <loc>https://xiaoledeng.github.io/2026/09/17/6-minute-english-202607-202609/</loc>
     <lastmod>2026-09-17T10:29:55+02:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/blog/</loc>
-    <lastmod>2026-09-16T13:56:39+02:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/2026/09/16/hugo-update-pagefind-local-search-4/</loc>
     <lastmod>2026-09-16T13:56:39+02:00</lastmod>
