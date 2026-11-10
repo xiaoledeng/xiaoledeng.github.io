@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://xiaoledeng.github.io/tags/destiny/</loc>
-    <lastmod>2026-11-10T09:15:13+01:00</lastmod>
-  </url><url>
     <loc>https://xiaoledeng.github.io/tags/essay/</loc>
     <lastmod>2026-11-10T09:15:13+01:00</lastmod>
   </url><url>
@@ -17,7 +14,13 @@
     <loc>https://xiaoledeng.github.io/post/</loc>
     <lastmod>2026-11-10T09:15:13+01:00</lastmod>
   </url><url>
+    <loc>https://xiaoledeng.github.io/tags/season/</loc>
+    <lastmod>2026-11-10T09:15:13+01:00</lastmod>
+  </url><url>
     <loc>https://xiaoledeng.github.io/tags/</loc>
+    <lastmod>2026-11-10T09:15:13+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/x/</loc>
     <lastmod>2026-11-10T09:15:13+01:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/</loc>
@@ -60,6 +63,9 @@
     <lastmod>2026-11-08T01:00:00+01:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/tags/dao/</loc>
+    <lastmod>2026-11-08T01:00:00+01:00</lastmod>
+  </url><url>
+    <loc>https://xiaoledeng.github.io/tags/destiny/</loc>
     <lastmod>2026-11-08T01:00:00+01:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/2026/11/07/nqs-zhi-7/</loc>
@@ -130,12 +136,6 @@
   </url><url>
     <loc>https://xiaoledeng.github.io/2026/10/24/macos-accessibility/</loc>
     <lastmod>2026-10-24T10:56:33+02:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/season/</loc>
-    <lastmod>2026-10-23T19:39:00+02:00</lastmod>
-  </url><url>
-    <loc>https://xiaoledeng.github.io/tags/x/</loc>
-    <lastmod>2026-10-23T19:39:00+02:00</lastmod>
   </url><url>
     <loc>https://xiaoledeng.github.io/2026/10/23/situ-shuangjiang/</loc>
     <lastmod>2026-10-23T19:39:00+02:00</lastmod>
