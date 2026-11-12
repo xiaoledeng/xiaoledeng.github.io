@@ -132,7 +132,7 @@
 				<link>https://xiaoledeng.github.io/2017/03/15/markdown-latex/</link>
 				<pubDate>Wed, 15 Mar 2017 10:00:00 +0800</pubDate>
 				<guid>https://xiaoledeng.github.io/2017/03/15/markdown-latex/</guid>
-				<description>&lt;h1 id=&#34;网页版-mathjax&#34;&gt;网页版-MathJax&lt;/h1&gt;&#xA;&lt;p&gt;Markdown文本一般使用&lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt;来插入Latex公式。&lt;/p&gt;&#xA;&lt;h1 id=&#34;本地版-macdown&#34;&gt;本地版-Macdown&lt;/h1&gt;&#xA;&lt;p&gt;因为Mac下面使用的是&lt;a href=&#34;http://macdown.uranusjr.com/features/&#34;&gt;Macdown&lt;/a&gt;的编辑器。只需要设置一些就OK了，支持Latex公式插入( $&amp;hellip;$ )。&lt;/p&gt;</description>
+				<description>&lt;h1 id=&#34;网页版-mathjax&#34;&gt;网页版-MathJax&lt;/h1&gt;&#xA;&lt;p&gt;Markdown文本一般使用&lt;a href=&#34;https://www.mathjax.org/&#34;&gt;MathJax&lt;/a&gt;来插入Latex公式。&lt;/p&gt;&#xA;&lt;h1 id=&#34;本地版-macdown&#34;&gt;本地版-Macdown&lt;/h1&gt;&#xA;&lt;p&gt;因为Mac下面使用的是&lt;a href=&#34;http://macdown.uranusjr.com/features/&#34;&gt;Macdown&lt;/a&gt;的编辑器。只需要设置一些就OK了，支持Latex公式插入( $...$ )。&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

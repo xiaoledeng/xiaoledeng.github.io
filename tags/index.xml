@@ -12,9 +12,23 @@
 			<copyright>2012 – 2026 © [Xiao-Le DENG](https://xiaoledeng.github.io) · Powered by [Simple Style](https://github.com/xiaoledeng/simple-style)</copyright>
 		
 		
-			<lastBuildDate>Thu, 12 Nov 2026 08:00:00 +0200</lastBuildDate>
+			<lastBuildDate>Thu, 12 Nov 2026 16:56:05 +0100</lastBuildDate>
 		
 			<atom:link href="https://xiaoledeng.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Experiences</title>
+				<link>https://xiaoledeng.github.io/tags/experiences/</link>
+				<pubDate>Thu, 12 Nov 2026 16:56:05 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/tags/experiences/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Notes</title>
+				<link>https://xiaoledeng.github.io/tags/notes/</link>
+				<pubDate>Thu, 12 Nov 2026 16:56:05 +0100</pubDate>
+				<guid>https://xiaoledeng.github.io/tags/notes/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>English</title>
 				<link>https://xiaoledeng.github.io/tags/english/</link>
@@ -191,13 +205,6 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Experiences</title>
-				<link>https://xiaoledeng.github.io/tags/experiences/</link>
-				<pubDate>Mon, 12 Oct 2026 20:07:00 +0800</pubDate>
-				<guid>https://xiaoledeng.github.io/tags/experiences/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>Geodesy</title>
 				<link>https://xiaoledeng.github.io/tags/geodesy/</link>
 				<pubDate>Mon, 12 Oct 2026 20:07:00 +0800</pubDate>
@@ -307,13 +314,6 @@
 				<link>https://xiaoledeng.github.io/tags/hermes/</link>
 				<pubDate>Sun, 10 May 2026 10:14:00 +0200</pubDate>
 				<guid>https://xiaoledeng.github.io/tags/hermes/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Notes</title>
-				<link>https://xiaoledeng.github.io/tags/notes/</link>
-				<pubDate>Thu, 07 May 2026 18:15:00 +0200</pubDate>
-				<guid>https://xiaoledeng.github.io/tags/notes/</guid>
 				<description></description>
 			</item>
 			<item>
